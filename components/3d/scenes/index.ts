@@ -1,0 +1,10 @@
+export { default as KitchenScene } from './KitchenScene';
+export { default as BathroomScene } from './BathroomScene';
+export { default as ElectricityScene } from './ElectricityScene';
+export { default as PlumbingScene } from './PlumbingScene';
+export { default as TilingScene } from './TilingScene';
+export { default as FacadeScene } from './FacadeScene';
+export { default as LandscapeScene } from './LandscapeScene';
+export { default as PaintScene } from './PaintScene';
+export { default as ChargingScene } from './ChargingScene';
+export { default as SolarScene } from './SolarScene';

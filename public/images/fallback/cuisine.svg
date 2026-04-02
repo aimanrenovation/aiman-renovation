@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <rect width="1920" height="1080" fill="#0A0A0A"/>
+  <rect x="0" y="0" width="1920" height="1080" fill="url(#grad)" opacity="0.3"/>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E50000;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#0A0A0A;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <text x="960" y="520" font-family="Arial,sans-serif" font-size="48" fill="white" text-anchor="middle" opacity="0.8">Cuisine</text>
+  <text x="960" y="580" font-family="Arial,sans-serif" font-size="24" fill="white" text-anchor="middle" opacity="0.4">De la ruine au rêve</text>
+  <line x1="860" y1="550" x2="1060" y2="550" stroke="#E50000" stroke-width="2"/>
+</svg>
