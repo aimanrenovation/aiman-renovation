@@ -39,10 +39,10 @@ export function Navbar() {
           </Link>
         </div>
 
-        <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
-          <span className={`block w-6 h-0.5 bg-white transition-transform ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-white transition-opacity ${mobileOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-white transition-transform ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+        <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden flex flex-col gap-[5px] p-2" aria-label="Menu">
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
         </button>
       </div>
 
@@ -54,7 +54,7 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link href={CTA_LINK.href} className={cn(buttonVariants(), "bg-red hover:bg-red-dark text-white w-full mt-2")}>
+            <Link href={CTA_LINK.href} onClick={() => setMobileOpen(false)} className={cn(buttonVariants(), "bg-red hover:bg-red-dark text-white w-full mt-2")}>
               {CTA_LINK.label}
             </Link>
           </div>
