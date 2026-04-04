@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { COMPANY } from "@/lib/constants";
 import { LinkButton } from "@/components/ui/link-button";
 import { ScrollReveal } from "@/components/sections/scroll-reveal";
+import { ContactForm } from "@/components/sections/contact-form";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -59,6 +60,12 @@ export default function ContactPage() {
         <section className="relative z-10 pb-20 pt-16 bg-black">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Colonne gauche : formulaire de contact */}
+              <div className="bg-[#111111] border border-white/5 rounded-lg p-6 md:p-8">
+                <ContactForm />
+              </div>
+
+              {/* Colonne droite : infos + horaires */}
               <div className="space-y-8">
                 <div>
                   <h2 className="font-heading text-xl text-white mb-4">
@@ -167,19 +174,20 @@ export default function ContactPage() {
                   Demander un devis gratuit
                 </LinkButton>
               </div>
+            </div>
 
-              <div className="rounded-lg overflow-hidden border border-white/10 h-[400px] md:h-full min-h-[400px]">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10706!2d7.5596!3d47.5845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4791b7b2a0e7ddd7%3A0x40a5fb99a3f0dd0!2sSaint-Louis!5e0!3m2!1sfr!2sfr"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Aiman Renovation - Saint-Louis 68300"
-                />
-              </div>
+            {/* Google Maps - pleine largeur sous le formulaire et les infos */}
+            <div className="mt-12 rounded-lg overflow-hidden border border-white/10 h-[400px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10706!2d7.5596!3d47.5845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4791b7b2a0e7ddd7%3A0x40a5fb99a3f0dd0!2sSaint-Louis!5e0!3m2!1sfr!2sfr"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Aiman Renovation - Saint-Louis 68300"
+              />
             </div>
           </div>
         </section>

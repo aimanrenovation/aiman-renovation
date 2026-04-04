@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { SERVICES } from "@/lib/services";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { ScrollReveal } from "@/components/sections/scroll-reveal";
@@ -18,6 +19,8 @@ const PROJECTS = [
     surface: "18 m²",
     description:
       "Transformation complète d'une cuisine fermée en un espace ouvert sur le séjour. Îlot central, plan de travail en quartz, éclairage LED encastré.",
+    before: "/images/realisations/cuisine-avant.png",
+    after: "/images/realisations/cuisine-apres.png",
   },
   {
     title: "Salle de bain parentale moderne",
@@ -27,6 +30,8 @@ const PROJECTS = [
     surface: "9 m²",
     description:
       "Remplacement d'une baignoire par une douche à l'italienne. Double vasque suspendue, carrelage grand format imitation marbre, niche éclairée.",
+    before: "/images/realisations/salle-de-bain-avant.png",
+    after: "/images/realisations/salle-de-bain-apres.png",
   },
   {
     title: "Ravalement façade ITE",
@@ -36,6 +41,8 @@ const PROJECTS = [
     surface: "180 m²",
     description:
       "Isolation thermique par l'extérieur d'une maison des années 70. Polystyrène 16 cm, enduit gratté ton pierre. Gain énergétique estimé : 40%.",
+    before: "/images/realisations/facade-ite-avant.png",
+    after: "/images/realisations/facade-ite-apres.png",
   },
   {
     title: "Jardin paysager avec terrasse",
@@ -45,6 +52,8 @@ const PROJECTS = [
     surface: "85 m²",
     description:
       "Création d'une terrasse en bois composite, allées en pavés autobloquants, plantation de haies, éclairage extérieur LED.",
+    before: "/images/realisations/jardin-avant.png",
+    after: "/images/realisations/jardin-apres.png",
   },
   {
     title: "Borne de recharge en copropriété",
@@ -54,6 +63,8 @@ const PROJECTS = [
     surface: "—",
     description:
       "Installation d'une wallbox 7,4 kW dans le parking souterrain d'une copropriété de 24 lots. Tirage de câble depuis le tableau général.",
+    before: "/images/realisations/borne-irve-avant.png",
+    after: "/images/realisations/borne-irve-apres.png",
   },
   {
     title: "Installation photovoltaïque 6 kWc",
@@ -63,6 +74,8 @@ const PROJECTS = [
     surface: "32 m² de panneaux",
     description:
       "Pose de 16 panneaux monocristallins sur toiture sud. Autoconsommation avec revente du surplus à EDF OA. Production estimée : 6 500 kWh/an.",
+    before: "/images/realisations/panneaux-solaires-avant.png",
+    after: "/images/realisations/panneaux-solaires-apres.png",
   },
   {
     title: "Rénovation complète appartement",
@@ -72,6 +85,8 @@ const PROJECTS = [
     surface: "72 m²",
     description:
       "Peinture complète (murs et plafonds), pose de parquet stratifié, rénovation électrique et remplacement de la salle de bain. Un appartement transformé.",
+    before: "/images/realisations/peinture-avant.png",
+    after: "/images/realisations/peinture-apres.png",
   },
   {
     title: "Mise aux normes électrique",
@@ -81,6 +96,8 @@ const PROJECTS = [
     surface: "110 m²",
     description:
       "Remplacement complet du tableau électrique, passage de nouveaux câbles, ajout de prises et interrupteurs, installation éclairage LED dans toute la maison.",
+    before: "/images/realisations/electricite-avant.png",
+    after: "/images/realisations/electricite-apres.png",
   },
   {
     title: "Salle de bain PMR",
@@ -90,6 +107,8 @@ const PROJECTS = [
     surface: "7 m²",
     description:
       "Aménagement d'une salle de bain accessible : douche plain-pied extra-plate, barres d'appui, siège rabattable, sol antidérapant.",
+    before: "/images/realisations/salle-de-bain-avant.png",
+    after: "/images/realisations/salle-de-bain-apres.png",
   },
   {
     title: "Cuisine équipée sur mesure",
@@ -99,6 +118,8 @@ const PROJECTS = [
     surface: "14 m²",
     description:
       "Cuisine en L avec rangements optimisés, crédence en carrelage métro, plan de travail stratifié imitation bois, éclairage sous meubles hauts.",
+    before: "/images/realisations/cuisine-avant.png",
+    after: "/images/realisations/cuisine-apres.png",
   },
   {
     title: "Rénovation plomberie maison",
@@ -108,6 +129,8 @@ const PROJECTS = [
     surface: "—",
     description:
       "Remplacement complet des canalisations en plomb par du PER. Installation d'un chauffe-eau thermodynamique. Création d'un point d'eau en buanderie.",
+    before: "/images/realisations/plomberie-avant.png",
+    after: "/images/realisations/plomberie-apres.png",
   },
   {
     title: "Carrelage salon et cuisine",
@@ -117,6 +140,8 @@ const PROJECTS = [
     surface: "45 m²",
     description:
       "Pose de carrelage grès cérame 60x120 imitation béton ciré. Ragréage complet du support, joints fins assortis, plinthes à gorge.",
+    before: "/images/realisations/carrelage-avant.png",
+    after: "/images/realisations/carrelage-apres.png",
   },
 ];
 
@@ -162,12 +187,41 @@ export default function RealisationsPage() {
                 delay={0.05 * (i % 3)}
               >
                 <div className="group relative bg-[#111111] rounded-lg overflow-hidden border border-white/5 hover:border-[#E50000]/30 transition-all h-full">
-                  {/* Image placeholder */}
-                  <div className="aspect-[4/3] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative">
-                    <span className="text-6xl opacity-20">
-                      {SERVICES.find((s) => s.slug === project.service)?.icon}
-                    </span>
-                    <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm rounded-full px-3 py-1">
+                  {/* Before / After images */}
+                  <div className="aspect-[4/3] bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
+                    {project.before ? (
+                      <div className="relative w-full h-full group/img">
+                        <Image
+                          src={project.after}
+                          alt={`${project.title} — après`}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 opacity-0 group-hover/img:opacity-100 transition-opacity duration-500">
+                          <Image
+                            src={project.before}
+                            alt={`${project.title} — avant`}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            className="object-cover"
+                          />
+                          <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-sm rounded-full px-3 py-1">
+                            <span className="text-xs text-white font-medium">AVANT</span>
+                          </div>
+                        </div>
+                        <div className="absolute top-3 left-3 group-hover/img:opacity-0 transition-opacity duration-500 bg-[#E50000]/90 backdrop-blur-sm rounded-full px-3 py-1">
+                          <span className="text-xs text-white font-medium">APRÈS</span>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex items-center justify-center w-full h-full">
+                        <span className="text-6xl opacity-20">
+                          {SERVICES.find((s) => s.slug === project.service)?.icon}
+                        </span>
+                      </div>
+                    )}
+                    <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm rounded-full px-3 py-1 z-10">
                       <span className="text-xs text-gray-300">
                         {project.location}
                       </span>

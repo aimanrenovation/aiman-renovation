@@ -3,11 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { NAV_LINKS, CTA_LINK } from "@/lib/constants";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -29,11 +31,23 @@ export function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm text-white/80 hover:text-white transition-colors">
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "text-sm transition-colors relative pb-1",
+                  isActive
+                    ? "text-white after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#E50000] after:rounded-full"
+                    : "text-white/80 hover:text-white"
+                )}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <Link href={CTA_LINK.href} className={cn(buttonVariants(), "bg-red hover:bg-red-dark text-white rounded-md px-6")}>
             {CTA_LINK.label}
           </Link>
@@ -49,11 +63,24 @@ export function Navbar() {
       {mobileOpen && (
         <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-white/10 mt-3">
           <div className="flex flex-col px-6 py-4 gap-4">
-            {NAV_LINKS.map((link) => (
-              <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="text-white/80 hover:text-white text-lg">
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={cn(
+                    "text-lg transition-colors",
+                    isActive
+                      ? "text-white border-l-2 border-[#E50000] pl-3"
+                      : "text-white/80 hover:text-white"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <Link href={CTA_LINK.href} onClick={() => setMobileOpen(false)} className={cn(buttonVariants(), "bg-red hover:bg-red-dark text-white w-full mt-2")}>
               {CTA_LINK.label}
             </Link>

@@ -21,6 +21,25 @@ export const metadata: Metadata = {
   },
   description:
     "Spécialiste rénovation second œuvre, façades, isolation et aménagement paysager à Saint-Louis et environs. 19 ans d'expérience. Devis gratuit.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+  },
+  metadataBase: new URL("https://aiman-renovation.fr"),
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: "Aiman Renovation",
+    title: "Aiman Renovation | Rénovation à Saint-Louis (68)",
+    description:
+      "Spécialiste rénovation second œuvre, façades, isolation et aménagement paysager à Saint-Louis et environs. 19 ans d'expérience. Devis gratuit.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aiman Renovation | Rénovation à Saint-Louis (68)",
+    description:
+      "Spécialiste rénovation second œuvre, façades, isolation et aménagement paysager. Devis gratuit.",
+  },
 };
 
 // Static JSON-LD for SEO - no user input, safe to inline
@@ -58,9 +77,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-black text-white font-sans">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaJsonLd }} />
         <Navbar />
-        <SmoothScrollProvider>
-          <main className="flex-1">{children}</main>
-        </SmoothScrollProvider>
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>
