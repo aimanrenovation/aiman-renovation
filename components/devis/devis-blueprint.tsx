@@ -67,7 +67,7 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
 
   if (state.view === "success") {
     return (
-      <div className="relative h-screen w-full bg-[#0A0A0A]">
+      <div className="relative min-h-[calc(100vh-64px)] w-full bg-[#091428]">
         <BlueprintComponent state={state} dispatch={dispatch} />
         <StepSuccessOverlay dispatch={dispatch} />
       </div>
@@ -78,7 +78,7 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
 
   if (state.view === "recap") {
     return (
-      <div className="relative h-screen w-full bg-[#0A0A0A]">
+      <div className="relative min-h-[calc(100vh-64px)] w-full bg-[#091428]">
         <BlueprintComponent state={state} dispatch={dispatch} />
         <PanelRecap state={state} dispatch={dispatch} onSubmit={handleSubmit} />
       </div>
@@ -88,7 +88,7 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
   // ─── Global / Zoomed view ───────────────────────────────────────────
 
   return (
-    <div className="flex h-screen w-full bg-[#0A0A0A]">
+    <div className="flex min-h-[calc(100vh-64px)] w-full bg-[#091428]">
       {/* Plan area */}
       <div className="relative flex-1">
         <BlueprintComponent state={state} dispatch={dispatch} />
