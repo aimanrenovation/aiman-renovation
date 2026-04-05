@@ -64,36 +64,33 @@ function EngagementIcon({ name }: { name: string }) {
   );
 }
 
-const PARCOURS_FRAMES = 40;
-const PARCOURS_FRAME_PATH = "/frames/parcours/frame-";
+const PARCOURS_FRAMES = 80;
 
 export default function AProposPage() {
   const heroTitleRef = useRef<HTMLHeadingElement>(null);
   const storyContainerRef = useRef<HTMLElement>(null);
-  const storyVideoRef = useRef<HTMLVideoElement>(null);
   const storyCanvasRef = useRef<HTMLCanvasElement>(null);
   const storyTitleRef = useRef<HTMLHeadingElement>(null);
   const storyTextsRef = useRef<(HTMLDivElement | null)[]>([]);
   const parcoursFramesRef = useRef<HTMLImageElement[]>([]);
-  const [isMobile, setIsMobile] = useState(false);
+  const [framePath, setFramePath] = useState("/frames/parcours-desktop/frame-");
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
   const engagementRefs = useRef<(HTMLDivElement | null)[]>([]);
   const certRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  /* Détection mobile */
+  /* Mobile ou desktop frames */
   useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
+    if (window.innerWidth < 768) {
+      setFramePath("/frames/parcours/frame-");
+    }
   }, []);
 
-  /* Mobile: Canvas frames (technique Apple) */
+  /* Canvas scroll-driven — technique Apple (mobile + desktop) */
   useEffect(() => {
-    if (!isMobile) return;
-
-    // Précharger frames
     const images: HTMLImageElement[] = [];
     for (let i = 1; i <= PARCOURS_FRAMES; i++) {
       const img = document.createElement("img");
-      img.src = `${PARCOURS_FRAME_PATH}${String(i).padStart(4, "0")}.jpg`;
+      img.src = `${framePath}${String(i).padStart(4, "0")}.jpg`;
       images.push(img);
     }
     parcoursFramesRef.current = images;
@@ -105,7 +102,12 @@ export default function AProposPage() {
     const ctx2d = canvas.getContext("2d");
     if (!ctx2d) return;
 
-    const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
+    const resize = () => {
+      canvas.width = window.innerWidth * (window.devicePixelRatio || 1);
+      canvas.height = window.innerHeight * (window.devicePixelRatio || 1);
+      canvas.style.width = window.innerWidth + "px";
+      canvas.style.height = window.innerHeight + "px";
+    };
     resize();
     window.addEventListener("resize", resize);
 
@@ -119,7 +121,7 @@ export default function AProposPage() {
           const idx = Math.min(Math.floor(self.progress * (PARCOURS_FRAMES - 1)), PARCOURS_FRAMES - 1);
           const img = parcoursFramesRef.current[idx];
           if (img && img.complete && ctx2d) {
-            const scale = Math.min(canvas.width / img.naturalWidth, canvas.height / img.naturalHeight);
+            const scale = Math.max(canvas.width / img.naturalWidth, canvas.height / img.naturalHeight);
             const w = img.naturalWidth * scale;
             const h = img.naturalHeight * scale;
             ctx2d.fillStyle = "#000";
@@ -131,35 +133,7 @@ export default function AProposPage() {
     }, container);
 
     return () => { window.removeEventListener("resize", resize); gsapCtx.revert(); };
-  }, [isMobile]);
-
-  /* Desktop: Vidéo scroll-driven */
-  useEffect(() => {
-    if (isMobile) return;
-    const container = storyContainerRef.current;
-    const video = storyVideoRef.current;
-    if (!container || !video) return;
-
-    const ctx = gsap.context(() => {
-      const onLoaded = () => {
-        video.pause();
-        video.currentTime = 0;
-        ScrollTrigger.create({
-          trigger: container,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 0.3,
-          onUpdate: (self) => {
-            if (video.duration) {
-              video.currentTime = self.progress * video.duration;
-            }
-          },
-        });
-      };
-    }, container);
-
-    return () => ctx.revert();
-  }, [isMobile]);
+  }, [framePath]);
 
   /* Textes synchronisés parcours (mobile + desktop) */
   useEffect(() => {
@@ -186,7 +160,7 @@ export default function AProposPage() {
     }, container);
 
     return () => ctx.revert();
-  }, [isMobile]);
+  }, [framePath]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -273,31 +247,7 @@ export default function AProposPage() {
       {/* Notre histoire — vidéo scroll-driven du parcours */}
       <section ref={storyContainerRef} className="relative z-10 bg-black" style={{ height: "500vh" }}>
         <div className="sticky top-0 h-screen overflow-hidden">
-          {/* Mobile: Canvas frames */}
-          {isMobile && (
-            <canvas ref={storyCanvasRef} className="absolute inset-0 w-full h-full" />
-          )}
-
-          {/* Desktop: Vidéo */}
-          {!isMobile && (
-            <video
-              ref={storyVideoRef}
-              muted
-              playsInline
-              preload="auto"
-              poster="/images/parcours-poster.jpg"
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{ willChange: "transform" }}
-            >
-              <source src="/videos/parcours-desktop.mp4" type="video/mp4" />
-            </video>
-          )}
-
-          {/* Poster mobile pendant chargement */}
-          {isMobile && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src="/images/parcours-poster.jpg" alt="" className="absolute inset-0 w-full h-full object-contain bg-black" style={{ zIndex: -1 }} />
-          )}
+          <canvas ref={storyCanvasRef} className="absolute inset-0" />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40" />
 

@@ -7,9 +7,6 @@ import { LinkButton } from "@/components/ui/link-button";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TOTAL_FRAMES = 145;
-const FRAME_PATH = "/frames/hero/frame-";
-
 const SCROLL_TEXTS = [
   { text: "Votre habitat", highlight: "mérite mieux", side: "left" as const, startPct: 2, endPct: 14 },
   { text: "Nos artisans", highlight: "prennent le relais", side: "right" as const, startPct: 14, endPct: 28 },
@@ -22,41 +19,36 @@ const SCROLL_TEXTS = [
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
   const textsRef = useRef<(HTMLDivElement | null)[]>([]);
   const framesRef = useRef<HTMLImageElement[]>([]);
   const [ready, setReady] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [frameConfig, setFrameConfig] = useState({ path: "/frames/hero-desktop/frame-", total: 145 });
 
-  /* Détection mobile */
   useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
+    if (window.innerWidth < 768) {
+      setFrameConfig({ path: "/frames/hero/frame-", total: 145 });
+    }
   }, []);
 
-  /* Précharger les frames (mobile) */
+  /* Précharger les frames */
   const preloadFrames = useCallback(() => {
     let loaded = 0;
     const images: HTMLImageElement[] = [];
-
-    for (let i = 1; i <= TOTAL_FRAMES; i++) {
-      const img = new Image();
-      const num = String(i).padStart(4, "0");
-      img.src = `${FRAME_PATH}${num}.jpg`;
+    for (let i = 1; i <= frameConfig.total; i++) {
+      const img = document.createElement("img");
+      img.src = `${frameConfig.path}${String(i).padStart(4, "0")}.jpg`;
       img.onload = () => {
         loaded++;
-        if (loaded >= 10) setReady(true); // Afficher dès 10 frames chargées
+        if (loaded >= 10) setReady(true);
       };
       images.push(img);
     }
-
     framesRef.current = images;
-  }, []);
+  }, [frameConfig]);
 
-  /* Canvas mobile — technique Apple */
+  /* Canvas scroll-driven — technique Apple */
   useEffect(() => {
-    if (!isMobile) return;
-
     preloadFrames();
 
     const container = containerRef.current;
@@ -66,10 +58,11 @@ export function Hero() {
     const ctx2d = canvas.getContext("2d");
     if (!ctx2d) return;
 
-    // Taille canvas
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth * (window.devicePixelRatio || 1);
+      canvas.height = window.innerHeight * (window.devicePixelRatio || 1);
+      canvas.style.width = window.innerWidth + "px";
+      canvas.style.height = window.innerHeight + "px";
     };
     resize();
     window.addEventListener("resize", resize);
@@ -81,68 +74,22 @@ export function Hero() {
         end: "bottom bottom",
         scrub: 0,
         onUpdate: (self) => {
-          const frameIndex = Math.min(
-            Math.floor(self.progress * (TOTAL_FRAMES - 1)),
-            TOTAL_FRAMES - 1
-          );
-          const img = framesRef.current[frameIndex];
+          const idx = Math.min(Math.floor(self.progress * (frameConfig.total - 1)), frameConfig.total - 1);
+          const img = framesRef.current[idx];
           if (img && img.complete && ctx2d) {
-            // Contain with black bars — montre plus de l'image
-            const scale = Math.min(
-              canvas.width / img.naturalWidth,
-              canvas.height / img.naturalHeight
-            );
+            const scale = Math.max(canvas.width / img.naturalWidth, canvas.height / img.naturalHeight);
             const w = img.naturalWidth * scale;
             const h = img.naturalHeight * scale;
-            const x = (canvas.width - w) / 2;
-            const y = (canvas.height - h) / 2;
             ctx2d.fillStyle = "#000";
             ctx2d.fillRect(0, 0, canvas.width, canvas.height);
-            ctx2d.drawImage(img, x, y, w, h);
+            ctx2d.drawImage(img, (canvas.width - w) / 2, (canvas.height - h) / 2, w, h);
           }
         },
       });
     }, container);
 
-    return () => {
-      window.removeEventListener("resize", resize);
-      gsapCtx.revert();
-    };
-  }, [isMobile, preloadFrames]);
-
-  /* Vidéo desktop — scroll-driven classique */
-  useEffect(() => {
-    if (isMobile) return;
-
-    const container = containerRef.current;
-    const video = videoRef.current;
-    if (!container || !video) return;
-
-    const ctx = gsap.context(() => {
-      const onLoaded = () => {
-        video.pause();
-        video.currentTime = 0;
-        setReady(true);
-
-        ScrollTrigger.create({
-          trigger: container,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 0.3,
-          onUpdate: (self) => {
-            if (video.duration) {
-              video.currentTime = self.progress * video.duration;
-            }
-          },
-        });
-      };
-
-      if (video.readyState >= 1) onLoaded();
-      else video.addEventListener("loadedmetadata", onLoaded, { once: true });
-    }, container);
-
-    return () => ctx.revert();
-  }, [isMobile]);
+    return () => { window.removeEventListener("resize", resize); gsapCtx.revert(); };
+  }, [frameConfig, preloadFrames]);
 
   /* Animations textes + intro + CTA */
   useEffect(() => {
@@ -166,8 +113,7 @@ export function Hero() {
       if (ctaEl) {
         gsap.fromTo(ctaEl,
           { opacity: 0, y: 20 },
-          {
-            opacity: 1, y: 0, duration: 0.5,
+          { opacity: 1, y: 0, duration: 0.5,
             scrollTrigger: { trigger: container, start: "82% top", end: "86% top", scrub: 0.5 },
           }
         );
@@ -183,12 +129,7 @@ export function Hero() {
           { opacity: 0, x: fromX, y: cfg.side === "center" ? 20 : 0 },
           {
             opacity: 1, x: 0, y: 0, duration: 0.5,
-            scrollTrigger: {
-              trigger: container,
-              start: `${cfg.startPct}% top`,
-              end: `${cfg.startPct + fadeDuration}% top`,
-              scrub: 0.5,
-            },
+            scrollTrigger: { trigger: container, start: `${cfg.startPct}% top`, end: `${cfg.startPct + fadeDuration}% top`, scrub: 0.5 },
           }
         );
 
@@ -197,70 +138,34 @@ export function Hero() {
             opacity: 0,
             x: cfg.side === "left" ? -40 : cfg.side === "right" ? 40 : 0,
             y: cfg.side === "center" ? -20 : 0,
-            scrollTrigger: {
-              trigger: container,
-              start: `${cfg.endPct - fadeDuration}% top`,
-              end: `${cfg.endPct}% top`,
-              scrub: 0.5,
-            },
+            scrollTrigger: { trigger: container, start: `${cfg.endPct - fadeDuration}% top`, end: `${cfg.endPct}% top`, scrub: 0.5 },
           });
         }
       });
     }, container);
 
     return () => ctx.revert();
-  }, [isMobile]);
+  }, []);
 
   return (
     <div ref={containerRef} className="relative" style={{ height: "500vh" }}>
       <div className="sticky top-0 h-screen overflow-hidden">
-        {/* Mobile: Canvas frames (technique Apple) */}
-        {isMobile && (
-          <canvas
-            ref={canvasRef}
-            className="absolute inset-0 w-full h-full"
-          />
-        )}
+        <canvas ref={canvasRef} className="absolute inset-0" />
 
-        {/* Desktop: Vidéo scroll-driven */}
-        {!isMobile && (
-          <video
-            ref={videoRef}
-            muted
-            playsInline
-            preload="auto"
-            poster="/images/hero-poster.jpg"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ willChange: "transform" }}
-          >
-            <source src="/videos/hero-scroll-smooth.mp4" type="video/mp4" />
-          </video>
-        )}
-
-        {/* Poster mobile pendant chargement */}
-        {isMobile && !ready && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src="/images/hero-poster.jpg"
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        )}
-
-        {/* Loader */}
+        {/* Poster pendant chargement */}
         {!ready && (
-          <div className="absolute inset-0 flex items-center justify-center z-30">
-            <div className="w-10 h-10 border-2 border-white/20 border-t-white rounded-full animate-spin" />
-          </div>
+          <>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/hero-poster.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 flex items-center justify-center z-30">
+              <div className="w-10 h-10 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+            </div>
+          </>
         )}
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
 
-        {/* Intro */}
-        <div
-          ref={introRef}
-          className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6 text-center"
-        >
+        <div ref={introRef} className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6 text-center">
           <div data-anim className="flex items-center gap-2 mb-6">
             <div className="w-8 h-0.5 bg-[#002B7F]" />
             <div className="w-8 h-0.5 bg-white" />
@@ -279,16 +184,13 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Textes scroll-driven */}
         {SCROLL_TEXTS.map((cfg, i) => (
           <div
             key={i}
             ref={(el) => { textsRef.current[i] = el; }}
             className={`absolute z-10 px-6 sm:px-8 md:px-16 ${
-              cfg.side === "left"
-                ? "left-0 top-1/2 -translate-y-1/2 text-left"
-                : cfg.side === "right"
-                ? "right-0 top-1/2 -translate-y-1/2 text-right"
+              cfg.side === "left" ? "left-0 top-1/2 -translate-y-1/2 text-left"
+                : cfg.side === "right" ? "right-0 top-1/2 -translate-y-1/2 text-right"
                 : "inset-0 flex items-center justify-center text-center"
             }`}
             style={{ opacity: 0 }}
@@ -297,9 +199,7 @@ export function Hero() {
               <p
                 style={{ textShadow: "0 2px 20px rgba(0,0,0,0.8)" }}
                 className={`font-heading leading-tight text-white ${
-                  cfg.side === "center"
-                    ? "text-2xl sm:text-3xl md:text-5xl"
-                    : "text-xl sm:text-2xl md:text-4xl"
+                  cfg.side === "center" ? "text-2xl sm:text-3xl md:text-5xl" : "text-xl sm:text-2xl md:text-4xl"
                 }`}
               >
                 {cfg.text}{" "}
@@ -309,7 +209,6 @@ export function Hero() {
           </div>
         ))}
 
-        {/* CTA */}
         <div className="absolute bottom-16 left-0 right-0 z-10 flex justify-center">
           <div className="flex flex-col sm:flex-row items-center gap-3 opacity-0" id="hero-cta">
             <LinkButton href="/devis" size="lg" className="bg-[#E50000] hover:bg-[#B80000] text-white px-8 py-4 md:py-5 rounded-md">
