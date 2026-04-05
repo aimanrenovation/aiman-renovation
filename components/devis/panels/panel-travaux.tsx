@@ -13,6 +13,7 @@ interface PanelTravauxProps {
 }
 
 export function PanelTravaux({ state, dispatch, isMobile }: PanelTravauxProps) {
+  if (!state.activeZone) return null;
   const zoneConfig = getZoneConfig(state.activeZone);
 
   if (!zoneConfig) return null;

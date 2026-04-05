@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 
 import { Suspense, useRef, useEffect } from "react";

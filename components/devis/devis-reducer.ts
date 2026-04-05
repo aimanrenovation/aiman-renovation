@@ -23,10 +23,22 @@ const ALL_ZONES: ZoneId[] = [
 ];
 
 function createEmptyWorks(): Record<ZoneId, string[]> {
-  return Object.fromEntries(ALL_ZONES.map((z) => [z, []])) as Record<
-    ZoneId,
-    string[]
-  >;
+  return {
+    cuisine: [],
+    salon: [],
+    sam: [],
+    vestibule: [],
+    wc: [],
+    sdb: [],
+    chambre1: [],
+    chambre2: [],
+    garage: [],
+    terrasse: [],
+    jardin: [],
+    haie: [],
+    facades: [],
+    toiture: [],
+  };
 }
 
 export const initialDevisState: DevisState = {
