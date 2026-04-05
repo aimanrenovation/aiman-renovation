@@ -89,30 +89,9 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
 
   return (
     <div className="flex min-h-[calc(100vh-64px)] w-full bg-[#091428]">
-      {/* Plan area */}
-      <div className="relative flex-1">
+      {/* Plan area — instructions et bouton gérés dans BlueprintComponent */}
+      <div className="relative flex-1 min-h-[500px]">
         <BlueprintComponent state={state} dispatch={dispatch} />
-
-        {/* Instruction overlay */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 flex justify-center pt-6">
-          <div className="rounded-full bg-black/60 backdrop-blur-sm px-5 py-2 text-sm text-white/70">
-            {state.view === "zoomed"
-              ? "Selectionnez les travaux souhaites"
-              : "Cliquez sur une piece pour commencer"}
-          </div>
-        </div>
-
-        {/* Submit button (global view, when works selected) */}
-        {state.view === "global" && totalWorks > 0 && (
-          <div className="absolute inset-x-0 bottom-0 flex justify-center pb-6">
-            <button
-              onClick={() => dispatch({ type: "SHOW_RECAP" })}
-              className="rounded-2xl bg-[#E50000] px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-red-500/20 transition-all hover:bg-red-700 hover:shadow-red-500/30 active:scale-95"
-            >
-              Envoyer mon devis ({totalWorks} travaux)
-            </button>
-          </div>
-        )}
       </div>
 
       {/* Travaux panel (zoomed only) */}
