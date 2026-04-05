@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useCallback, useEffect } from "react";
+import { useRef, useCallback, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ZONES_CONFIG } from "../devis-zones-config";
 import type { ZoneId, DevisState, DevisAction } from "../devis-types";
@@ -9,6 +9,10 @@ interface BlueprintInteractiveProps {
   state: DevisState;
   dispatch: React.Dispatch<DevisAction>;
 }
+
+const IMG_W = 2812;
+const IMG_H = 1536;
+const IMG_RATIO = IMG_W / IMG_H;
 
 // Zones en % de l'image (2812x1536) — mesurées pixel par pixel
 const ZONE_POSITIONS: Record<ZoneId, { left: number; top: number; width: number; height: number }> = {
@@ -29,9 +33,38 @@ const ZONE_POSITIONS: Record<ZoneId, { left: number; top: number; width: number;
 };
 
 export function BlueprintInteractive({ state, dispatch }: BlueprintInteractiveProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
+  const [imgSize, setImgSize] = useState({ w: 0, h: 0, x: 0, y: 0 });
 
-  // Zoom vers une pièce
+  // Calcule la taille réelle de l'image dans le conteneur (contain behavior)
+  useEffect(() => {
+    const update = () => {
+      const el = containerRef.current;
+      if (!el) return;
+      const cw = el.clientWidth;
+      const ch = el.clientHeight;
+
+      let w: number, h: number;
+      if (cw / ch > IMG_RATIO) {
+        // Conteneur plus large que l'image → hauteur constrainte
+        h = ch;
+        w = ch * IMG_RATIO;
+      } else {
+        // Conteneur plus haut que l'image → largeur constrainte
+        w = cw;
+        h = cw / IMG_RATIO;
+      }
+      const x = (cw - w) / 2;
+      const y = (ch - h) / 2;
+      setImgSize({ w, h, x, y });
+    };
+
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   const handleZoneClick = useCallback((zoneId: ZoneId) => {
     if (state.view !== "global") return;
     const pos = ZONE_POSITIONS[zoneId];
@@ -50,7 +83,6 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
     dispatch({ type: "ZOOM_ZONE", zone: zoneId });
   }, [state.view, dispatch]);
 
-  // Dézoom fluide quand state.view revient à "global"
   useEffect(() => {
     if (state.view === "global" && wrapRef.current) {
       gsap.to(wrapRef.current, {
@@ -67,24 +99,29 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
   );
 
   return (
-    <div className="relative w-full h-full overflow-hidden bg-[#091428]">
-      {/* Conteneur centré — aspect-ratio fixe = image toujours à 100% */}
-      <div className="absolute inset-0 flex items-center justify-center">
+    <div ref={containerRef} className="relative w-full h-full overflow-hidden bg-[#091428]">
+      {/* Wrapper positionné exactement sur l'image (contain) */}
+      {imgSize.w > 0 && (
         <div
           ref={wrapRef}
-          className="relative will-change-transform"
+          className="absolute will-change-transform"
           style={{
-            aspectRatio: "2812 / 1536",
-            maxWidth: "100%",
-            maxHeight: "100%",
-            width: "100%",
-            backgroundImage: "url(/images/blueprint-plan.jpeg)",
-            backgroundSize: "100% 100%",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
+            left: imgSize.x,
+            top: imgSize.y,
+            width: imgSize.w,
+            height: imgSize.h,
           }}
         >
-          {/* Zones intérieures */}
+          {/* Image qui remplit exactement le wrapper */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/blueprint-plan.jpeg"
+            alt="Plan de maison interactif"
+            className="absolute inset-0 w-full h-full"
+            draggable={false}
+          />
+
+          {/* Zones intérieures — % du wrapper = % de l'image (PIXEL PERFECT) */}
           {ZONES_CONFIG.filter(z => z.category === "interieur").map((zone) => {
             const pos = ZONE_POSITIONS[zone.id];
             if (!pos) return null;
@@ -159,9 +196,9 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
             );
           })}
         </div>
-      </div>
+      )}
 
-      {/* Instructions — vue globale */}
+      {/* Instructions */}
       {state.view === "global" && (
         <div className="absolute inset-x-0 bottom-0 z-10 pointer-events-none">
           <div className="flex flex-col items-center gap-3 pb-4 sm:pb-6">
@@ -182,7 +219,7 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
         </div>
       )}
 
-      {/* Bouton retour — vue zoomée */}
+      {/* Bouton retour */}
       {state.view === "zoomed" && (
         <button
           onClick={() => dispatch({ type: "ZOOM_OUT" })}
