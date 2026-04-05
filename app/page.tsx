@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HeroFrames } from "@/components/sections/hero-frames";
+import { Hero } from "@/components/sections/hero";
 import { SavoirFaire } from "@/components/sections/savoir-faire";
 import { ServicesPreview } from "@/components/sections/services-preview";
 import { TestimonialsCarousel } from "@/components/sections/testimonials-carousel";
@@ -16,7 +16,7 @@ const ZONES = [
 export default function HomePage() {
   return (
     <>
-      <HeroFrames />
+      <Hero />
       <SavoirFaire />
 
       {/* Bandeau visuel — rouleau de peinture style Apple */}

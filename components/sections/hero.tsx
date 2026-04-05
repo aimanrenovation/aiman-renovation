@@ -97,6 +97,23 @@ export function Hero() {
         });
       }
 
+      // CTA buttons — apparaissent avec le dernier texte
+      const ctaEl = document.getElementById("hero-cta");
+      if (ctaEl) {
+        gsap.fromTo(ctaEl,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1, y: 0, duration: 0.5,
+            scrollTrigger: {
+              trigger: container,
+              start: "82% top",
+              end: "86% top",
+              scrub: 0.5,
+            },
+          }
+        );
+      }
+
       textsRef.current.forEach((el, i) => {
         if (!el) return;
         const cfg = SCROLL_TEXTS[i];
@@ -211,10 +228,11 @@ export function Hero() {
           ref={videoRef}
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
+          poster="/images/hero-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/hero.mp4" type="video/mp4" />
+          <source src="/videos/hero-optimized.mp4" type="video/mp4" />
         </video>
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
