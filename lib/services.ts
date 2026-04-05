@@ -22,6 +22,8 @@ export const PHOTO_MAP: Record<string, string> = {
   "peinture-finitions": "/images/photo-peinture.jpg",
   "borne-recharge": "/images/photo-borne-recharge.jpg",
   "panneaux-photovoltaiques": "/images/photo-photovoltaique.jpg",
+  "entretien-exterieur": "/images/photo-entretien-exterieur.jpg",
+  "depannage-urgence": "/images/photo-depannage.jpg",
 };
 
 export const ICON_MAP: Record<string, string> = {
@@ -307,5 +309,59 @@ export const SERVICES: Service[] = [
     whyPro:
       "L'installation de panneaux photovoltaïques implique des travaux en toiture (risque de chute) et des raccordements électriques haute tension. Une pose non conforme peut provoquer des infiltrations en toiture, des risques d'incendie ou une production sous-optimale. Pour bénéficier des aides (prime autoconsommation, TVA réduite), l'installation doit être réalisée par un professionnel qualifié RGE. Aiman Renovation gère l'intégralité du projet pour vous.",
     priceRange: "7 000 € – 15 000 € pour 3 à 6 kWc (avant prime autoconsommation de 1 000 € à 2 500 €)",
+  },
+  {
+    slug: "entretien-exterieur",
+    title: "Entretien des espaces extérieurs",
+    shortTitle: "Entretien extérieur",
+    description:
+      "Gardez votre extérieur impeccable toute l'année. Tonte, taille, débroussaillage, nettoyage — en intervention ponctuelle ou en abonnement annuel.",
+    icon: "🌳",
+    features: [
+      "Tonte et scarification",
+      "Taille de haies et arbustes",
+      "Débroussaillage",
+      "Nettoyage haute pression",
+      "Abonnement annuel",
+    ],
+    longDescription:
+      "Un beau jardin, ça s'entretient. Mais entre le travail, la famille et le quotidien, qui a le temps de tondre chaque semaine, tailler les haies deux fois par an et nettoyer la terrasse avant l'été ? Aiman Renovation prend en charge l'entretien complet de vos espaces extérieurs pour que vous puissiez en profiter sans lever le petit doigt.\n\nNous proposons des interventions ponctuelles — tonte, taille de haies, débroussaillage, nettoyage haute pression des terrasses et allées, ramassage de feuilles, traitement anti-mousse — mais surtout des abonnements annuels. Vous choisissez la fréquence (hebdomadaire, bimensuel ou mensuel), nous planifions les passages et vous n'avez plus à y penser. Votre jardin reste propre et soigné toute l'année.\n\nNos abonnements incluent un bilan saisonnier : au printemps, on prépare (scarification, désherbage, fertilisation) ; en été, on entretient ; à l'automne, on protège (ramassage, taille, paillage) ; en hiver, on surveille. C'est la tranquillité d'esprit, clé en main.",
+    process: [
+      { step: "Visite d'évaluation", detail: "Nous évaluons votre terrain : superficie, type de végétation, état actuel, besoins spécifiques." },
+      { step: "Proposition sur mesure", detail: "Devis détaillé avec le programme d'entretien adapté : fréquence des passages, prestations incluses, tarif mensuel ou annuel." },
+      { step: "Planning des passages", detail: "Un calendrier de passages est défini selon les saisons. Vous êtes prévenu à l'avance de chaque intervention." },
+      { step: "Interventions régulières", detail: "Nos équipes interviennent selon le planning : tonte, taille, nettoyage, traitements saisonniers." },
+      { step: "Bilan et ajustement", detail: "Un point annuel pour ajuster les prestations selon l'évolution de votre jardin et vos besoins." },
+    ],
+    whyPro:
+      "Un entretien régulier par un professionnel préserve la valeur de votre propriété et la santé de vos végétaux. Une haie mal taillée devient envahissante, une pelouse non scarifiée s'étouffe, une terrasse non traitée devient glissante et dangereuse. Nos équipes connaissent les essences locales alsaciennes et adaptent les soins aux saisons. Avec un abonnement, vous avez la garantie d'un suivi constant sans avoir à y penser.",
+    priceRange: "À partir de 80 € / intervention ponctuelle, abonnement annuel à partir de 150 € / mois",
+  },
+  {
+    slug: "depannage-urgence",
+    title: "SAV et dépannage d'urgence",
+    shortTitle: "Dépannage",
+    description:
+      "Fuite d'eau, panne électrique, dégât des eaux — nous intervenons 7j/7 pour sécuriser et réparer.",
+    icon: "🚨",
+    features: [
+      "Fuite d'eau urgente",
+      "Panne électrique",
+      "Dégât des eaux",
+      "7 jours sur 7",
+      "SAV chantiers réalisés",
+    ],
+    longDescription:
+      "Une fuite d'eau à 22h, un court-circuit un dimanche, un dégât des eaux qui menace votre appartement — les urgences n'attendent pas et nous non plus. Aiman Renovation intervient 7 jours sur 7 pour sécuriser votre logement avant que les dégâts ne s'aggravent.\n\nNotre service couvre toutes les urgences : plomberie (fuite sur canalisation, robinet, chasse d'eau, chauffe-eau, dégât des eaux), électricité (disjoncteur qui saute, prise brûlée, panne de courant, court-circuit) et tout ce qui nécessite une intervention rapide. Nous intervenons pour stopper le sinistre, sécuriser les installations et vous proposer un devis de remise en état.\n\nPour nos clients existants, nous assurons également un SAV sur les chantiers que nous avons réalisés. Un problème sur une installation que nous avons posée ? Nous revenons, nous diagnostiquons et nous réparons. C'est ça, la relation de confiance sur le long terme.",
+    process: [
+      { step: "Appel d'urgence", detail: "Vous nous appelez, nous évaluons la situation par téléphone et vous donnons les premiers gestes à faire en attendant." },
+      { step: "Intervention rapide", detail: "Un technicien se déplace dans les meilleurs délais pour sécuriser et stopper le sinistre." },
+      { step: "Diagnostic sur place", detail: "Identification précise de la cause : fuite, court-circuit, infiltration. Photos et rapport." },
+      { step: "Réparation d'urgence", detail: "Réparation immédiate si possible, ou mise en sécurité temporaire avec devis de remise en état définitive." },
+      { step: "Suivi et remise en état", detail: "Planification des travaux de remise en état si nécessaire. Accompagnement pour la déclaration d'assurance." },
+    ],
+    whyPro:
+      "En cas d'urgence, chaque minute compte. Une fuite non traitée peut provoquer des milliers d'euros de dégâts en quelques heures. Un circuit électrique défaillant représente un risque d'incendie. Faire appel à un professionnel qualifié garantit une intervention sûre, conforme aux normes et documentée pour votre assurance. Notre connaissance du terrain à Saint-Louis et dans le Haut-Rhin nous permet d'intervenir rapidement.",
+    priceRange: "Déplacement + diagnostic : à partir de 90 €, réparation sur devis",
   },
 ];
