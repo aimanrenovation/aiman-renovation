@@ -10,12 +10,12 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 gsap.registerPlugin(ScrollTrigger);
 
 const STORY_TEXTS = [
-  { text: "Tout commence par", highlight: "un rêve d'enfant", story: "Un petit garçon qui dessine des maisons. Qui rêve de construire, de créer, de transformer.", startPct: 0, endPct: 12 },
-  { text: "Les premiers chantiers,", highlight: "les premières sueurs", story: "À 20 ans, Aiman entre sur les chantiers. Ouvrier polyvalent, il apprend chaque métier sur le terrain. Plomberie, électricité, carrelage, peinture.", startPct: 12, endPct: 25 },
-  { text: "Tomber sous la pluie,", highlight: "se relever plus fort", story: "Les épreuves forgent le caractère. Chaque obstacle devient une leçon. Chaque échec, un tremplin.", startPct: 25, endPct: 40 },
-  { text: "Devenir chef,", highlight: "mener les hommes", story: "Chef d'équipe, il coordonne, il supervise, il transmet. 19 ans d'expérience, des centaines de chantiers, un savoir-faire irréprochable.", startPct: 40, endPct: 55 },
-  { text: "Porter les couleurs", highlight: "d'Aiman Renovation", story: "En 2024, il crée sa propre entreprise. Un seul interlocuteur, tous les corps de métier, une exigence sans compromis.", startPct: 55, endPct: 72 },
-  { text: "Et un jour, ouvrir", highlight: "les portes de son entreprise", story: "14 rue de la Paix, Saint-Louis. Au cœur du Trois Pays. Nous rénovons jusqu'au bout de vos rêves.", startPct: 72, endPct: 100 },
+  { text: "Il était une fois", highlight: "un gamin qui rêvait", story: "Pendant que les autres jouaient dehors, lui dessinait des maisons. Il ne le savait pas encore, mais ce cahier d'écolier allait changer sa vie.", startPct: 0, endPct: 12 },
+  { text: "À 20 ans,", highlight: "il entre dans l'arène", story: "Le ciment sous les ongles, le dos en feu, 12 heures par jour. Personne ne lui a fait de cadeau. Chaque mur monté, chaque tuyau soudé — il a tout appris à la dure.", startPct: 12, endPct: 25 },
+  { text: "La vie l'a mis", highlight: "à genoux", story: "Il y a eu des jours où tout s'effondrait. Des chantiers perdus, des portes fermées, la pluie qui ne s'arrêtait pas. Mais un homme qui tombe n'est pas un homme fini. C'est un homme qui apprend.", startPct: 25, endPct: 40 },
+  { text: "Il s'est relevé", highlight: "et il a mené", story: "Chef d'équipe. Celui qu'on appelle quand c'est compliqué. 19 ans de terrain, des centaines de chantiers, et une certitude : il était prêt.", startPct: 40, endPct: 55 },
+  { text: "Il a porté ses couleurs", highlight: "sur son cœur", story: "Aiman Renovation. Pas juste un nom sur une veste. Une promesse. Un seul interlocuteur, tous les métiers, zéro compromis sur la qualité.", startPct: 55, endPct: 72 },
+  { text: "Aujourd'hui, il ouvre", highlight: "les portes de son rêve", story: "14 rue de la Paix, Saint-Louis. Le gamin qui dessinait des maisons les construit maintenant pour de vrai. Et il n'a qu'une devise : rénover jusqu'au bout de vos rêves.", startPct: 72, endPct: 100 },
 ];
 
 const STEPS = [
@@ -246,22 +246,18 @@ export default function AProposPage() {
             <div
               key={i}
               ref={(el) => { storyTextsRef.current[i] = el; }}
-              className="absolute bottom-20 left-0 right-0 z-10 px-6"
+              className="absolute bottom-16 left-0 right-0 z-10 px-6"
               style={{ opacity: 0 }}
             >
               <div className="max-w-5xl mx-auto">
-                <p
-                  style={{ textShadow: "0 2px 20px rgba(0,0,0,0.9)" }}
-                  className="font-heading text-xl sm:text-2xl md:text-3xl text-white leading-tight max-w-lg"
-                >
-                  {cfg.text} <span className="text-[#E50000]">{cfg.highlight}</span>
-                </p>
-                <p
-                  style={{ textShadow: "0 2px 15px rgba(0,0,0,0.9)" }}
-                  className="mt-3 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-md"
-                >
-                  {cfg.story}
-                </p>
+                <div className="bg-black/60 backdrop-blur-md rounded-xl p-5 md:p-8 max-w-lg border border-white/5">
+                  <p className="font-heading text-xl sm:text-2xl md:text-3xl text-white leading-tight">
+                    {cfg.text} <span className="text-[#E50000]">{cfg.highlight}</span>
+                  </p>
+                  <p className="mt-3 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
+                    {cfg.story}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
