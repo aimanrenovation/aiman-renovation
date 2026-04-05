@@ -64,26 +64,78 @@ function EngagementIcon({ name }: { name: string }) {
   );
 }
 
+const PARCOURS_FRAMES = 40;
+const PARCOURS_FRAME_PATH = "/frames/parcours/frame-";
+
 export default function AProposPage() {
   const heroTitleRef = useRef<HTMLHeadingElement>(null);
   const storyContainerRef = useRef<HTMLElement>(null);
   const storyVideoRef = useRef<HTMLVideoElement>(null);
+  const storyCanvasRef = useRef<HTMLCanvasElement>(null);
   const storyTitleRef = useRef<HTMLHeadingElement>(null);
   const storyTextsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const [storyVideoSrc, setStoryVideoSrc] = useState("/videos/parcours-desktop.mp4");
+  const parcoursFramesRef = useRef<HTMLImageElement[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
   const engagementRefs = useRef<(HTMLDivElement | null)[]>([]);
   const certRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  /* Vidéo mobile ou desktop */
+  /* Détection mobile */
   useEffect(() => {
-    if (window.innerWidth < 768) {
-      setStoryVideoSrc("/videos/parcours-mobile.mp4");
-    }
+    setIsMobile(window.innerWidth < 768);
   }, []);
 
-  /* Vidéo parcours scroll-driven */
+  /* Mobile: Canvas frames (technique Apple) */
   useEffect(() => {
+    if (!isMobile) return;
+
+    // Précharger frames
+    const images: HTMLImageElement[] = [];
+    for (let i = 1; i <= PARCOURS_FRAMES; i++) {
+      const img = document.createElement("img");
+      img.src = `${PARCOURS_FRAME_PATH}${String(i).padStart(4, "0")}.jpg`;
+      images.push(img);
+    }
+    parcoursFramesRef.current = images;
+
+    const container = storyContainerRef.current;
+    const canvas = storyCanvasRef.current;
+    if (!container || !canvas) return;
+
+    const ctx2d = canvas.getContext("2d");
+    if (!ctx2d) return;
+
+    const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
+    resize();
+    window.addEventListener("resize", resize);
+
+    const gsapCtx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: container,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0,
+        onUpdate: (self) => {
+          const idx = Math.min(Math.floor(self.progress * (PARCOURS_FRAMES - 1)), PARCOURS_FRAMES - 1);
+          const img = parcoursFramesRef.current[idx];
+          if (img && img.complete && ctx2d) {
+            const scale = Math.min(canvas.width / img.naturalWidth, canvas.height / img.naturalHeight);
+            const w = img.naturalWidth * scale;
+            const h = img.naturalHeight * scale;
+            ctx2d.fillStyle = "#000";
+            ctx2d.fillRect(0, 0, canvas.width, canvas.height);
+            ctx2d.drawImage(img, (canvas.width - w) / 2, (canvas.height - h) / 2, w, h);
+          }
+        },
+      });
+    }, container);
+
+    return () => { window.removeEventListener("resize", resize); gsapCtx.revert(); };
+  }, [isMobile]);
+
+  /* Desktop: Vidéo scroll-driven */
+  useEffect(() => {
+    if (isMobile) return;
     const container = storyContainerRef.current;
     const video = storyVideoRef.current;
     if (!container || !video) return;
@@ -104,10 +156,17 @@ export default function AProposPage() {
           },
         });
       };
-      if (video.readyState >= 1) onLoaded();
-      else video.addEventListener("loadedmetadata", onLoaded, { once: true });
+    }, container);
 
-      /* Textes synchronisés */
+    return () => ctx.revert();
+  }, [isMobile]);
+
+  /* Textes synchronisés parcours (mobile + desktop) */
+  useEffect(() => {
+    const container = storyContainerRef.current;
+    if (!container) return;
+
+    const ctx = gsap.context(() => {
       storyTextsRef.current.forEach((el, i) => {
         if (!el) return;
         const cfg = STORY_TEXTS[i];
@@ -127,7 +186,7 @@ export default function AProposPage() {
     }, container);
 
     return () => ctx.revert();
-  }, [storyVideoSrc]);
+  }, [isMobile]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -214,17 +273,31 @@ export default function AProposPage() {
       {/* Notre histoire — vidéo scroll-driven du parcours */}
       <section ref={storyContainerRef} className="relative z-10 bg-black" style={{ height: "500vh" }}>
         <div className="sticky top-0 h-screen overflow-hidden">
-          <video
-            ref={storyVideoRef}
-            muted
-            playsInline
-            preload="auto"
-            poster="/images/parcours-poster.jpg"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ willChange: "transform" }}
-          >
-            <source src={storyVideoSrc} type="video/mp4" />
-          </video>
+          {/* Mobile: Canvas frames */}
+          {isMobile && (
+            <canvas ref={storyCanvasRef} className="absolute inset-0 w-full h-full" />
+          )}
+
+          {/* Desktop: Vidéo */}
+          {!isMobile && (
+            <video
+              ref={storyVideoRef}
+              muted
+              playsInline
+              preload="auto"
+              poster="/images/parcours-poster.jpg"
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ willChange: "transform" }}
+            >
+              <source src="/videos/parcours-desktop.mp4" type="video/mp4" />
+            </video>
+          )}
+
+          {/* Poster mobile pendant chargement */}
+          {isMobile && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src="/images/parcours-poster.jpg" alt="" className="absolute inset-0 w-full h-full object-contain bg-black" style={{ zIndex: -1 }} />
+          )}
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40" />
 

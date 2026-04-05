@@ -87,8 +87,8 @@ export function Hero() {
           );
           const img = framesRef.current[frameIndex];
           if (img && img.complete && ctx2d) {
-            // Cover fill
-            const scale = Math.max(
+            // Contain with black bars — montre plus de l'image
+            const scale = Math.min(
               canvas.width / img.naturalWidth,
               canvas.height / img.naturalHeight
             );
@@ -96,7 +96,8 @@ export function Hero() {
             const h = img.naturalHeight * scale;
             const x = (canvas.width - w) / 2;
             const y = (canvas.height - h) / 2;
-            ctx2d.clearRect(0, 0, canvas.width, canvas.height);
+            ctx2d.fillStyle = "#000";
+            ctx2d.fillRect(0, 0, canvas.width, canvas.height);
             ctx2d.drawImage(img, x, y, w, h);
           }
         },
