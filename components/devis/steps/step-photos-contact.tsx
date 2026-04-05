@@ -146,7 +146,7 @@ export function StepPhotosContactOverlay({ state, dispatch }: StepPhotosContactP
             <Input
               value={state.contact.address}
               onChange={(e) => dispatch({ type: "SET_CONTACT", field: "address", value: e.target.value })}
-              placeholder="14 rue de la Paix, 68300 Saint-Louis"
+              placeholder="Votre adresse complète"
               className="bg-white/10 border-white/20 text-white placeholder:text-gray-500"
             />
           </div>

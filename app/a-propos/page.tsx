@@ -15,7 +15,7 @@ const STORY_TEXTS = [
   { text: "La vie l'a mis", highlight: "à genoux", story: "Il y a eu des jours où tout s'effondrait. Des chantiers perdus, des portes fermées, la pluie qui ne s'arrêtait pas. Mais un homme qui tombe n'est pas un homme fini. C'est un homme qui apprend.", startPct: 25, endPct: 40 },
   { text: "Il s'est relevé", highlight: "et il a mené", story: "Chef d'équipe. Celui qu'on appelle quand c'est compliqué. 19 ans de terrain, des centaines de chantiers, et une certitude : il était prêt.", startPct: 40, endPct: 55 },
   { text: "Il a porté ses couleurs", highlight: "sur son cœur", story: "Aiman Renovation. Pas juste un nom sur une veste. Une promesse. Un seul interlocuteur, tous les métiers, zéro compromis sur la qualité.", startPct: 55, endPct: 72 },
-  { text: "Aujourd'hui, il ouvre", highlight: "les portes de son rêve", story: "14 rue de la Paix, Saint-Louis. Le gamin qui dessinait des maisons les construit maintenant pour de vrai. Et il n'a qu'une devise : rénover jusqu'au bout de vos rêves.", startPct: 72, endPct: 100 },
+  { text: "Aujourd'hui, il ouvre", highlight: "les portes de son rêve", story: "Au cœur du Trois Pays, le gamin qui dessinait des maisons les construit maintenant pour de vrai. Et il n'a qu'une devise : rénover jusqu'au bout de vos rêves.", startPct: 72, endPct: 100 },
 ];
 
 const STEPS = [
