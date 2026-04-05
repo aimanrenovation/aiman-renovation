@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef, useCallback } from "react";
-import Image from "next/image";
+import { useRef, useCallback, useEffect } from "react";
 import { gsap } from "gsap";
 import { ZONES_CONFIG } from "../devis-zones-config";
 import type { ZoneId, DevisState, DevisAction } from "../devis-types";
@@ -11,8 +10,7 @@ interface BlueprintInteractiveProps {
   dispatch: React.Dispatch<DevisAction>;
 }
 
-// Zones en % de l'image — mesurées pixel par pixel sur blueprint.jpeg (2812x1536)
-// Vérifié visuellement avec blueprint-zones-final.jpeg
+// Zones en % de l'image (2812x1536) — mesurées pixel par pixel
 const ZONE_POSITIONS: Record<ZoneId, { left: number; top: number; width: number; height: number }> = {
   cuisine:   { left: 10.1, top: 12.4, width: 23.1, height: 28.8 },
   sdb:       { left: 33.3, top: 12.4, width: 11.2, height: 16.9 },
@@ -64,30 +62,51 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
     dispatch({ type: "ZOOM_OUT" });
   }, [dispatch]);
 
+  // Dézoom automatique quand le state passe à "global" (ex: depuis PanelTravaux)
+  useEffect(() => {
+    if (state.view === "global" && imageWrapRef.current) {
+      gsap.to(imageWrapRef.current, {
+        scale: 1,
+        transformOrigin: "50% 50%",
+        duration: 0.8,
+        ease: "power2.inOut",
+      });
+    }
+  }, [state.view]);
+
   const totalWorks = Object.values(state.selectedWorks).reduce(
     (sum, arr) => sum + arr.length, 0
   );
 
   return (
     <div className="relative w-full h-full overflow-hidden bg-[#091428]">
-      {/* Wrapper image avec aspect ratio */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      {/* Conteneur centré qui respecte le ratio image DANS TOUS LES CAS */}
+      <div className="absolute inset-0 flex items-center justify-center p-2">
+        {/*
+          Le wrapper a aspect-ratio fixe + max-width ET max-height à 100%
+          → il s'adapte à la fenêtre sans jamais déformer ni cropper
+          → les zones en % restent TOUJOURS alignées
+        */}
         <div
           ref={imageWrapRef}
-          className="relative w-full"
-          style={{ aspectRatio: "2812 / 1536", maxHeight: "100%" }}
+          className="relative"
+          style={{
+            aspectRatio: "2812 / 1536",
+            maxWidth: "100%",
+            maxHeight: "100%",
+            width: "100%",
+          }}
         >
-          <Image
+          {/* Image en background pour un alignement pixel-perfect */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/images/blueprint-plan.jpeg"
-            alt="Plan de maison interactif — cliquez sur une pièce"
-            fill
-            className="object-cover"
-            priority
-            quality={90}
-            sizes="100vw"
+            alt="Plan de maison interactif"
+            className="absolute inset-0 w-full h-full"
+            draggable={false}
           />
 
-          {/* Zones intérieures cliquables */}
+          {/* ═══ Zones intérieures ═══ */}
           {ZONES_CONFIG.filter(z => z.category === "interieur").map((zone) => {
             const pos = ZONE_POSITIONS[zone.id];
             if (!pos) return null;
@@ -113,15 +132,13 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
                   height: `${pos.height}%`,
                 }}
               >
-                {/* Nom au hover */}
-                <span className={`absolute inset-0 flex items-center justify-center text-sm font-bold pointer-events-none transition-opacity
-                  ${isActive || hasWorks ? "opacity-0" : "opacity-0 group-hover:opacity-100 text-[#4A9EFF]"}
+                <span className={`absolute inset-0 flex items-center justify-center text-xs sm:text-sm font-bold pointer-events-none transition-opacity
+                  ${isActive || hasWorks ? "opacity-0" : "opacity-0 group-hover:opacity-100 text-[#4A9EFF] drop-shadow-[0_0_8px_rgba(74,158,255,0.6)]"}
                 `}>
                   {zone.label}
                 </span>
-                {/* Badge compteur */}
                 {hasWorks && (
-                  <span className="absolute -top-2 -right-2 bg-[#E50000] text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-lg z-10">
+                  <span className="absolute -top-1.5 -right-1.5 sm:-top-2 sm:-right-2 bg-[#E50000] text-white text-[10px] sm:text-xs font-bold w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center shadow-lg z-10">
                     {state.selectedWorks[zone.id].length}
                   </span>
                 )}
@@ -129,7 +146,7 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
             );
           })}
 
-          {/* Zones extérieures */}
+          {/* ═══ Zones extérieures ═══ */}
           {ZONES_CONFIG.filter(z => z.category === "exterieur").map((zone) => {
             const pos = ZONE_POSITIONS[zone.id];
             if (!pos) return null;
@@ -140,7 +157,7 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
                 key={zone.id}
                 onClick={() => handleZoneClick(zone.id)}
                 aria-label={`Sélectionner ${zone.label}`}
-                className={`absolute transition-all duration-300 cursor-pointer border
+                className={`absolute transition-all duration-300 cursor-pointer border group
                   ${hasWorks
                     ? "bg-[#E50000]/10 border-[#E50000]/30"
                     : "bg-transparent border-transparent hover:bg-[#1a7a3a]/15 hover:border-[#1a7a3a]/40"
@@ -152,8 +169,11 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
                   height: `${pos.height}%`,
                 }}
               >
+                <span className="absolute inset-0 flex items-center justify-center text-xs font-bold pointer-events-none transition-opacity opacity-0 group-hover:opacity-100 text-[#1a7a3a] drop-shadow-[0_0_6px_rgba(26,122,58,0.5)]">
+                  {zone.label}
+                </span>
                 {hasWorks && (
-                  <span className="absolute -top-2 -right-2 bg-[#E50000] text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center z-10">
+                  <span className="absolute -top-1.5 -right-1.5 bg-[#E50000] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center z-10">
                     {state.selectedWorks[zone.id].length}
                   </span>
                 )}
@@ -163,19 +183,19 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
         </div>
       </div>
 
-      {/* Instructions client — vue globale */}
+      {/* Instructions — vue globale */}
       {state.view === "global" && (
         <div className="absolute inset-x-0 bottom-0 z-10 pointer-events-none">
-          <div className="flex flex-col items-center gap-3 pb-6">
+          <div className="flex flex-col items-center gap-3 pb-4 sm:pb-6">
             {totalWorks === 0 ? (
-              <div className="pointer-events-auto bg-black/70 backdrop-blur-sm rounded-2xl px-6 py-3 text-center animate-pulse">
-                <p className="text-white font-semibold text-lg">Cliquez sur une pièce pour commencer</p>
-                <p className="text-gray-400 text-sm mt-1">Sélectionnez les zones de votre maison à rénover</p>
+              <div className="pointer-events-auto bg-black/70 backdrop-blur-sm rounded-2xl px-5 py-2.5 sm:px-6 sm:py-3 text-center animate-pulse">
+                <p className="text-white font-semibold text-base sm:text-lg">Cliquez sur une pièce pour commencer</p>
+                <p className="text-gray-400 text-xs sm:text-sm mt-1">Sélectionnez les zones de votre maison à rénover</p>
               </div>
             ) : (
               <button
                 onClick={() => dispatch({ type: "SHOW_RECAP" })}
-                className="pointer-events-auto rounded-2xl bg-[#E50000] px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-red-500/20 transition-all hover:bg-red-700 active:scale-95"
+                className="pointer-events-auto rounded-2xl bg-[#E50000] px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold text-white shadow-lg shadow-red-500/20 transition-all hover:bg-red-700 active:scale-95"
               >
                 Envoyer mon devis ({totalWorks} travaux)
               </button>
@@ -188,7 +208,7 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
       {state.view === "zoomed" && (
         <button
           onClick={handleZoomOut}
-          className="absolute top-20 left-4 z-20 bg-black/80 backdrop-blur-sm text-white px-5 py-2.5 rounded-xl text-sm font-medium hover:bg-black/95 transition-all shadow-lg"
+          className="absolute top-20 left-4 z-20 bg-black/80 backdrop-blur-sm text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-sm font-medium hover:bg-black/95 transition-all shadow-lg"
         >
           ← Retour au plan
         </button>
