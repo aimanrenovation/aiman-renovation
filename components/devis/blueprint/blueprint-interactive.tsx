@@ -12,22 +12,22 @@ interface BlueprintInteractiveProps {
 
 // Coordonnées en PIXELS du viewBox SVG (2812x1536)
 // Mesurées depuis le screenshot réel avec conversion screen→SVG
-// Inset ~30px inside walls for clean alignment
+// Coordonnées calculées : screen pixels → SVG viewBox via getBoundingClientRect
 const ZONES: Record<ZoneId, { x: number; y: number; w: number; h: number }> = {
-  cuisine:   { x:  370, y:  130, w:  830, h:  480 },
-  sdb:       { x: 1250, y:  130, w:  310, h:  330 },
-  wc:        { x: 1250, y:  490, w:  310, h:  120 },
-  garage:    { x: 1610, y:  130, w:  620, h:  560 },
-  vestibule: { x:  370, y:  645, w: 1190, h:   55 },
-  salon:     { x:  370, y:  730, w:  380, h:  420 },
-  sam:       { x:  790, y:  730, w:  240, h:  420 },
-  chambre1:  { x: 1070, y:  730, w:  540, h:  420 },
-  chambre2:  { x: 1680, y:  730, w:  540, h:  420 },
-  terrasse:  { x:  370, y: 1185, w:  660, h:   85 },
-  jardin:    { x:   80, y: 1290, w: 2650, h:  170 },
-  haie:      { x:   10, y:   10, w:  100, h: 1516 },
-  facades:   { x: 2300, y:  130, w:  100, h: 1020 },
-  toiture:   { x:  370, y:   15, w: 1860, h:   80 },
+  cuisine:   { x:  403, y:  242, w:  735, h:  410 },
+  sdb:       { x: 1138, y:  242, w:  295, h:  279 },
+  wc:        { x: 1138, y:  521, w:  295, h:  131 },
+  garage:    { x: 1433, y:  242, w:  590, h:  461 },
+  vestibule: { x:  403, y:  652, w: 1030, h:   51 },
+  salon:     { x:  403, y:  703, w:  410, h:  388 },
+  sam:       { x:  813, y:  703, w:  217, h:  388 },
+  chambre1:  { x: 1030, y:  703, w:  501, h:  388 },
+  chambre2:  { x: 1531, y:  703, w:  492, h:  388 },
+  terrasse:  { x:  403, y: 1091, w:  664, h:   79 },
+  jardin:    { x:   80, y: 1200, w: 2650, h:  260 },
+  haie:      { x:   10, y:   10, w:  120, h: 1516 },
+  facades:   { x: 2100, y:  242, w:  120, h:  849 },
+  toiture:   { x:  403, y:  100, w: 1620, h:  130 },
 };
 
 export function BlueprintInteractive({ state, dispatch }: BlueprintInteractiveProps) {
@@ -76,6 +76,16 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
         preserveAspectRatio="xMidYMid meet"
         style={{ maxWidth: "100%", maxHeight: "100%" }}
       >
+        {/* Styles hover SVG */}
+        <style>{`
+          .zone-label { opacity: 0; transition: opacity 0.3s; filter: drop-shadow(0 0 10px rgba(74,158,255,0.8)); }
+          .zone-rect { transition: all 0.3s; }
+          .zone-btn:hover .zone-label { opacity: 1; }
+          .zone-btn:hover .zone-rect { fill: rgba(74,158,255,0.15); stroke: rgba(74,158,255,0.6); stroke-width: 4; }
+          .zone-ext-btn:hover .zone-rect { fill: rgba(26,122,58,0.12); stroke: rgba(26,122,58,0.5); stroke-width: 3; }
+          .zone-ext-btn:hover .zone-label { opacity: 1; }
+        `}</style>
+
         {/* Image de fond */}
         <image href="/images/blueprint-plan.jpeg" x="0" y="0" width="2812" height="1536" />
 
@@ -87,14 +97,25 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
           const isActive = state.activeZone === zone.id;
 
           return (
-            <g key={zone.id} onClick={() => handleZoneClick(zone.id)} style={{ cursor: "pointer" }}>
+            <g key={zone.id} onClick={() => handleZoneClick(zone.id)} className="zone-btn" style={{ cursor: "pointer" }}>
               <rect
                 x={z.x} y={z.y} width={z.w} height={z.h}
-                fill={isActive ? "rgba(229,0,0,0.2)" : hasWorks ? "rgba(229,0,0,0.1)" : "rgba(255,0,0,0.08)"}
-                stroke={isActive ? "#E50000" : hasWorks ? "rgba(229,0,0,0.5)" : "rgba(255,0,0,0.4)"}
-                strokeWidth={isActive ? 6 : 3}
+                fill={isActive ? "rgba(229,0,0,0.2)" : hasWorks ? "rgba(229,0,0,0.1)" : "transparent"}
+                stroke={isActive ? "#E50000" : hasWorks ? "rgba(229,0,0,0.5)" : "transparent"}
+                strokeWidth={isActive ? 6 : hasWorks ? 3 : 0}
                 rx={4}
+                className="zone-rect"
               />
+              {/* Nom de la pièce au hover */}
+              <text
+                x={z.x + z.w / 2} y={z.y + z.h / 2}
+                textAnchor="middle" dominantBaseline="middle"
+                fill="#4A9EFF" fontSize={z.w < 300 ? 28 : 40} fontFamily="Arial, sans-serif" fontWeight="bold"
+                className="zone-label"
+                style={{ pointerEvents: "none" }}
+              >
+                {zone.label}
+              </text>
               {/* Badge compteur */}
               {hasWorks && (
                 <>
@@ -120,15 +141,23 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
           const hasWorks = (state.selectedWorks[zone.id]?.length ?? 0) > 0;
 
           return (
-            <g key={zone.id} onClick={() => handleZoneClick(zone.id)} style={{ cursor: "pointer" }}>
+            <g key={zone.id} onClick={() => handleZoneClick(zone.id)} className="zone-ext-btn" style={{ cursor: "pointer" }}>
               <rect
                 x={z.x} y={z.y} width={z.w} height={z.h}
                 fill={hasWorks ? "rgba(229,0,0,0.1)" : "transparent"}
                 stroke={hasWorks ? "rgba(229,0,0,0.3)" : "transparent"}
                 strokeWidth={3}
-                className="hover:fill-[rgba(26,122,58,0.1)] hover:stroke-[rgba(26,122,58,0.4)]"
-                style={{ transition: "all 0.3s" }}
+                className="zone-rect"
               />
+              <text
+                x={z.x + z.w / 2} y={z.y + z.h / 2}
+                textAnchor="middle" dominantBaseline="middle"
+                fill="#1a7a3a" fontSize={24} fontFamily="Arial, sans-serif" fontWeight="bold"
+                className="zone-label"
+                style={{ pointerEvents: "none" }}
+              >
+                {zone.label}
+              </text>
               {hasWorks && (
                 <>
                   <circle cx={z.x + z.w - 10} cy={z.y + 10} r={18} fill="#E50000" />
