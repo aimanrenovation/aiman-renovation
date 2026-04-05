@@ -33,6 +33,8 @@ export interface DevisState {
   view: DevisView;
   activeZone: ZoneId | null;
   selectedWorks: Record<ZoneId, string[]>;
+  zoneNotes: Record<ZoneId, string>;
+  zonePhotos: Record<ZoneId, File[]>;
   budget: BudgetRange | null;
   message: string;
   contact: ContactInfo;
@@ -48,6 +50,9 @@ export type DevisAction =
   | { type: "SET_BUDGET"; budget: BudgetRange | null }
   | { type: "SET_MESSAGE"; message: string }
   | { type: "SET_CONTACT"; field: keyof ContactInfo; value: string }
+  | { type: "SET_ZONE_NOTE"; zone: ZoneId; note: string }
+  | { type: "ADD_ZONE_PHOTOS"; zone: ZoneId; files: File[] }
+  | { type: "REMOVE_ZONE_PHOTO"; zone: ZoneId; index: number }
   | { type: "SET_SUBMITTING"; isSubmitting: boolean }
   | { type: "SET_SUCCESS" }
   | { type: "SET_ERROR"; error: string | null }

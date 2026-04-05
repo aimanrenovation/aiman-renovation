@@ -29,47 +29,35 @@ const ZONE_POSITIONS: Record<ZoneId, { left: number; top: number; width: number;
 };
 
 export function BlueprintInteractive({ state, dispatch }: BlueprintInteractiveProps) {
-  const imageWrapRef = useRef<HTMLDivElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
 
+  // Zoom vers une pièce
   const handleZoneClick = useCallback((zoneId: ZoneId) => {
-    if (state.view === "global") {
-      const pos = ZONE_POSITIONS[zoneId];
-      if (pos && imageWrapRef.current) {
-        const centerX = pos.left + pos.width / 2;
-        const centerY = pos.top + pos.height / 2;
-        const scale = Math.min(55 / pos.width, 55 / pos.height, 3);
+    if (state.view !== "global") return;
+    const pos = ZONE_POSITIONS[zoneId];
+    if (!pos || !wrapRef.current) return;
 
-        gsap.to(imageWrapRef.current, {
-          scale,
-          transformOrigin: `${centerX}% ${centerY}%`,
-          duration: 0.8,
-          ease: "power2.inOut",
-        });
-      }
-      dispatch({ type: "ZOOM_ZONE", zone: zoneId });
-    }
+    const centerX = pos.left + pos.width / 2;
+    const centerY = pos.top + pos.height / 2;
+    const scale = Math.min(55 / pos.width, 55 / pos.height, 3);
+
+    gsap.to(wrapRef.current, {
+      scale,
+      transformOrigin: `${centerX}% ${centerY}%`,
+      duration: 1,
+      ease: "power3.inOut",
+    });
+    dispatch({ type: "ZOOM_ZONE", zone: zoneId });
   }, [state.view, dispatch]);
 
-  const handleZoomOut = useCallback(() => {
-    if (imageWrapRef.current) {
-      gsap.to(imageWrapRef.current, {
-        scale: 1,
-        transformOrigin: "50% 50%",
-        duration: 0.8,
-        ease: "power2.inOut",
-      });
-    }
-    dispatch({ type: "ZOOM_OUT" });
-  }, [dispatch]);
-
-  // Dézoom automatique quand le state passe à "global" (ex: depuis PanelTravaux)
+  // Dézoom fluide quand state.view revient à "global"
   useEffect(() => {
-    if (state.view === "global" && imageWrapRef.current) {
-      gsap.to(imageWrapRef.current, {
+    if (state.view === "global" && wrapRef.current) {
+      gsap.to(wrapRef.current, {
         scale: 1,
         transformOrigin: "50% 50%",
-        duration: 0.8,
-        ease: "power2.inOut",
+        duration: 1,
+        ease: "power3.inOut",
       });
     }
   }, [state.view]);
@@ -80,33 +68,23 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
 
   return (
     <div className="relative w-full h-full overflow-hidden bg-[#091428]">
-      {/* Conteneur centré qui respecte le ratio image DANS TOUS LES CAS */}
-      <div className="absolute inset-0 flex items-center justify-center p-2">
-        {/*
-          Le wrapper a aspect-ratio fixe + max-width ET max-height à 100%
-          → il s'adapte à la fenêtre sans jamais déformer ni cropper
-          → les zones en % restent TOUJOURS alignées
-        */}
+      {/* Conteneur centré — aspect-ratio fixe = image toujours à 100% */}
+      <div className="absolute inset-0 flex items-center justify-center">
         <div
-          ref={imageWrapRef}
-          className="relative"
+          ref={wrapRef}
+          className="relative will-change-transform"
           style={{
             aspectRatio: "2812 / 1536",
             maxWidth: "100%",
             maxHeight: "100%",
             width: "100%",
+            backgroundImage: "url(/images/blueprint-plan.jpeg)",
+            backgroundSize: "100% 100%",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         >
-          {/* Image en background pour un alignement pixel-perfect */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/blueprint-plan.jpeg"
-            alt="Plan de maison interactif"
-            className="absolute inset-0 w-full h-full"
-            draggable={false}
-          />
-
-          {/* ═══ Zones intérieures ═══ */}
+          {/* Zones intérieures */}
           {ZONES_CONFIG.filter(z => z.category === "interieur").map((zone) => {
             const pos = ZONE_POSITIONS[zone.id];
             if (!pos) return null;
@@ -146,7 +124,7 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
             );
           })}
 
-          {/* ═══ Zones extérieures ═══ */}
+          {/* Zones extérieures */}
           {ZONES_CONFIG.filter(z => z.category === "exterieur").map((zone) => {
             const pos = ZONE_POSITIONS[zone.id];
             if (!pos) return null;
@@ -207,7 +185,7 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
       {/* Bouton retour — vue zoomée */}
       {state.view === "zoomed" && (
         <button
-          onClick={handleZoomOut}
+          onClick={() => dispatch({ type: "ZOOM_OUT" })}
           className="absolute top-20 left-4 z-20 bg-black/80 backdrop-blur-sm text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-sm font-medium hover:bg-black/95 transition-all shadow-lg"
         >
           ← Retour au plan

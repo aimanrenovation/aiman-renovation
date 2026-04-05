@@ -41,10 +41,28 @@ function createEmptyWorks(): Record<ZoneId, string[]> {
   };
 }
 
+function createEmptyNotes(): Record<ZoneId, string> {
+  return {
+    cuisine: "", salon: "", sam: "", vestibule: "", wc: "", sdb: "",
+    chambre1: "", chambre2: "", garage: "",
+    terrasse: "", jardin: "", haie: "", facades: "", toiture: "",
+  };
+}
+
+function createEmptyPhotos(): Record<ZoneId, File[]> {
+  return {
+    cuisine: [], salon: [], sam: [], vestibule: [], wc: [], sdb: [],
+    chambre1: [], chambre2: [], garage: [],
+    terrasse: [], jardin: [], haie: [], facades: [], toiture: [],
+  };
+}
+
 export const initialDevisState: DevisState = {
   view: "global",
   activeZone: null,
   selectedWorks: createEmptyWorks(),
+  zoneNotes: createEmptyNotes(),
+  zonePhotos: createEmptyPhotos(),
   budget: null,
   message: "",
   contact: {
@@ -82,6 +100,15 @@ export function devisReducer(
         selectedWorks: { ...state.selectedWorks, [action.zone]: updated },
       };
     }
+
+    case "SET_ZONE_NOTE":
+      return { ...state, zoneNotes: { ...state.zoneNotes, [action.zone]: action.note } };
+
+    case "ADD_ZONE_PHOTOS":
+      return { ...state, zonePhotos: { ...state.zonePhotos, [action.zone]: [...state.zonePhotos[action.zone], ...action.files] } };
+
+    case "REMOVE_ZONE_PHOTO":
+      return { ...state, zonePhotos: { ...state.zonePhotos, [action.zone]: state.zonePhotos[action.zone].filter((_, i) => i !== action.index) } };
 
     case "SET_BUDGET":
       return { ...state, budget: action.budget };
