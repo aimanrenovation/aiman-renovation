@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { FAQ_ITEMS } from "@/lib/faq";
 import {
   Accordion,
@@ -82,6 +83,19 @@ export default function FaqPage() {
                         </AccordionTrigger>
                         <AccordionContent className="text-gray-400">
                           {item.answer}
+                          {item.relatedServices && item.relatedServices.length > 0 && (
+                            <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-white/10">
+                              {item.relatedServices.map((link) => (
+                                <Link
+                                  key={link.href}
+                                  href={link.href}
+                                  className="text-sm text-[#E50000] hover:underline"
+                                >
+                                  {link.label} →
+                                </Link>
+                              ))}
+                            </div>
+                          )}
                         </AccordionContent>
                       </AccordionItem>
                     )
