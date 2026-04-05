@@ -29,11 +29,35 @@ export default async function ServicePage({ params }: Props) {
   const service = SERVICES.find((s) => s.slug === slug);
   if (!service) notFound();
 
+  const serviceJsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.description,
+    provider: {
+      "@type": "HomeAndConstructionBusiness",
+      "@id": "https://aiman-renovation.fr/#organization",
+      name: "Aiman Renovation",
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Saint-Louis",
+    },
+    offers: {
+      "@type": "Offer",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "EUR",
+      },
+    },
+  });
+
   const photo = PHOTO_MAP[service.slug];
   const icon = ICON_MAP[service.slug];
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serviceJsonLd }} />
       {/* ─── Hero full-bleed avec photo ─── */}
       <section className="relative min-h-[85vh] flex items-end overflow-hidden">
         {photo && (
