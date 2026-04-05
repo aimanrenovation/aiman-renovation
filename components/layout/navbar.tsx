@@ -26,7 +26,15 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center">
+        <Link
+          href="/"
+          onClick={() => {
+            if (pathname === "/") {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          className="flex items-center"
+        >
           <Image src="/logo/logo-white.png" alt="Aiman Renovation" width={140} height={40} priority />
         </Link>
 
