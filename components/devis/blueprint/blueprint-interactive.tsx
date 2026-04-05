@@ -12,21 +12,22 @@ interface BlueprintInteractiveProps {
 }
 
 // Zones en % de l'image — mesurées pixel par pixel sur blueprint.jpeg (2812x1536)
+// Vérifié visuellement avec blueprint-zones-final.jpeg
 const ZONE_POSITIONS: Record<ZoneId, { left: number; top: number; width: number; height: number }> = {
-  cuisine:   { left: 10.3, top: 12.7, width: 23.1, height: 29.0 },
-  sdb:       { left: 33.4, top: 12.7, width: 6.8,  height: 29.0 },
-  wc:        { left: 40.2, top: 12.7, width: 4.4,  height: 29.0 },
-  garage:    { left: 44.6, top: 12.7, width: 33.6, height: 34.8 },
-  vestibule: { left: 10.3, top: 41.7, width: 34.3, height: 5.9 },
-  salon:     { left: 10.3, top: 47.5, width: 14.2, height: 29.6 },
-  sam:       { left: 24.5, top: 47.5, width: 8.0,  height: 29.6 },
-  chambre1:  { left: 32.5, top: 47.5, width: 18.7, height: 29.6 },
-  chambre2:  { left: 51.2, top: 47.5, width: 35.6, height: 29.6 },
-  terrasse:  { left: 10.3, top: 77.1, width: 37.7, height: 8.1 },
-  jardin:    { left: 2.8,  top: 85.3, width: 94.2, height: 10.4 },
-  haie:      { left: 0,    top: 0,    width: 3.5,  height: 100 },
-  facades:   { left: 83,   top: 12.7, width: 5,    height: 64.4 },
-  toiture:   { left: 10.3, top: 3,    width: 76.5, height: 8 },
+  cuisine:   { left: 10.1, top: 12.4, width: 23.1, height: 28.8 },
+  sdb:       { left: 33.3, top: 12.4, width: 11.2, height: 16.9 },
+  wc:        { left: 33.3, top: 29.3, width: 11.2, height: 11.8 },
+  garage:    { left: 44.5, top: 12.4, width: 33.6, height: 28.8 },
+  vestibule: { left: 10.1, top: 41.1, width: 34.3, height: 6.1 },
+  salon:     { left: 10.1, top: 47.2, width: 13.5, height: 29.6 },
+  sam:       { left: 23.6, top: 47.2, width: 8.0,  height: 29.6 },
+  chambre1:  { left: 31.7, top: 47.2, width: 19.9, height: 29.6 },
+  chambre2:  { left: 51.6, top: 47.2, width: 34.9, height: 29.6 },
+  terrasse:  { left: 10.1, top: 76.8, width: 27.2, height: 8.5 },
+  jardin:    { left: 2.5,  top: 85.3, width: 95.3, height: 10.4 },
+  haie:      { left: 0,    top: 0,    width: 3,    height: 100 },
+  facades:   { left: 83,   top: 12.4, width: 5,    height: 64.8 },
+  toiture:   { left: 10.1, top: 3,    width: 76,   height: 8 },
 };
 
 export function BlueprintInteractive({ state, dispatch }: BlueprintInteractiveProps) {
