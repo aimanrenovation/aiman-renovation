@@ -3,9 +3,9 @@ import { RealisationsGrid } from "@/components/sections/realisations-grid";
 import { CtaBanner } from "@/components/sections/cta-banner";
 
 export const metadata: Metadata = {
-  title: "Nos réalisations",
+  title: "Nos Réalisations — Projets de Rénovation Haut-Rhin",
   description:
-    "Découvrez nos projets de rénovation à Saint-Louis et environs. Cuisines, salles de bain, façades, aménagements extérieurs.",
+    "Découvrez nos projets de rénovation terminés à Saint-Louis et dans le Haut-Rhin : cuisine, salle de bain, façades, aménagement. Photos avant/après.",
 };
 
 export default function RealisationsPage() {

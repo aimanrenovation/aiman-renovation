@@ -23,7 +23,7 @@ export default function HomePage() {
       <section className="relative z-10 bg-black py-20 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/3 flex justify-center">
-            <Image src="/images/element-rouleau.jpg" alt="" width={300} height={300} className="w-48 md:w-64 h-auto" />
+            <Image src="/images/element-rouleau.jpg" alt="Rouleau de peinture — rénovation intérieure Saint-Louis" width={300} height={300} className="w-48 md:w-64 h-auto" />
           </div>
           <div className="md:w-2/3 text-center md:text-left">
             <p className="font-heading text-2xl md:text-3xl text-white leading-snug">
@@ -42,7 +42,7 @@ export default function HomePage() {
       <section className="relative z-10 h-[50vh] overflow-hidden">
         <Image
           src="/images/ambiance-resultat.jpg"
-          alt="Intérieur rénové par Aiman Renovation"
+          alt="Salon rénové par Aiman Renovation — rénovation complète Haut-Rhin 68"
           fill
           className="object-cover"
         />
@@ -60,7 +60,7 @@ export default function HomePage() {
       {/* Zone d'intervention avec photo Alsace */}
       <section className="relative z-10 overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/ambiance-alsace.jpg" alt="Alsace" fill className="object-cover" />
+          <Image src="/images/ambiance-alsace.jpg" alt="Paysage alsacien — zone intervention rénovation Saint-Louis Haut-Rhin" fill className="object-cover" />
           <div className="absolute inset-0 bg-black/80" />
         </div>
         <div className="relative py-20 md:py-32 max-w-4xl mx-auto px-6 text-center">

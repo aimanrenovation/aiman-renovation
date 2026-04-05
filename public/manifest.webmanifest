@@ -1,0 +1,20 @@
+{
+  "name": "Aiman Renovation — Rénovation à Saint-Louis",
+  "short_name": "Aiman Renovation",
+  "description": "Spécialiste rénovation second œuvre, façades, isolation et aménagement paysager à Saint-Louis 68300",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "orientation": "portrait-primary",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

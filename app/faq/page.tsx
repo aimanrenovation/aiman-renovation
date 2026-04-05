@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { FAQ_ITEMS } from "@/lib/faq";
 import {
   Accordion,
@@ -10,9 +11,9 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { ScrollReveal } from "@/components/sections/scroll-reveal";
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "FAQ Rénovation — Questions Fréquentes",
   description:
-    "Questions fréquentes sur la rénovation, devis, garanties, aides financières (MaPrimeRénov', CEE, éco-PTZ) et déroulement des travaux.",
+    "Réponses à vos questions sur la rénovation : devis gratuit, délais, garanties, aides financières (MaPrimeRénov', CEE, éco-PTZ). Artisan Saint-Louis 68.",
 };
 
 // Static FAQ schema - no user input, safe to inline
@@ -82,6 +83,19 @@ export default function FaqPage() {
                         </AccordionTrigger>
                         <AccordionContent className="text-gray-400">
                           {item.answer}
+                          {item.relatedServices && item.relatedServices.length > 0 && (
+                            <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-white/10">
+                              {item.relatedServices.map((link) => (
+                                <Link
+                                  key={link.href}
+                                  href={link.href}
+                                  className="text-sm text-[#E50000] hover:underline"
+                                >
+                                  {link.label} →
+                                </Link>
+                              ))}
+                            </div>
+                          )}
                         </AccordionContent>
                       </AccordionItem>
                     )

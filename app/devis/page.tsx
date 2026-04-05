@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { DevisPageContent } from "@/components/devis/devis-page-content";
 
 export const metadata: Metadata = {
-  title: "Devis gratuit — Aiman Renovation",
+  title: "Devis Gratuit Rénovation — Saint-Louis et Haut-Rhin",
   description:
-    "Demandez votre devis de renovation gratuit en ligne. Experience interactive 3D pour visualiser votre projet. Saint-Louis 68300.",
+    "Demandez votre devis gratuit en ligne pour vos travaux de rénovation à Saint-Louis et dans le Haut-Rhin. Réponse sous 48h, sans engagement.",
   openGraph: {
-    title: "Devis gratuit — Aiman Renovation",
+    title: "Devis Gratuit Rénovation — Saint-Louis et Haut-Rhin",
     description:
-      "Configurez votre projet de renovation en 3D et recevez un devis gratuit.",
+      "Demandez votre devis gratuit en ligne pour vos travaux de rénovation à Saint-Louis et dans le Haut-Rhin. Réponse sous 48h, sans engagement.",
   },
 };
 
