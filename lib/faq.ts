@@ -11,7 +11,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: "Devis",
     question: "Comment obtenir un devis ?",
     answer:
-      "Remplissez notre formulaire en ligne ou appelez-nous au 03 56 89 44 03. Nous vous envoyons un devis détaillé sous 48h après visite technique.",
+      "Remplissez notre formulaire en ligne ou appelez-nous au 06 33 49 69 25. Nous vous envoyons un devis détaillé sous 4 jours après visite technique.",
     relatedServices: [{ label: "Demander un devis", href: "/devis" }],
   },
   {

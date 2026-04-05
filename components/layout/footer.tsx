@@ -41,10 +41,9 @@ export function Footer() {
           <div>
             <h4 className="font-heading text-sm uppercase tracking-wider text-white mb-4">Contact</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="hover:text-white transition-colors">{COMPANY.phone}</a></li>
               <li><a href={`tel:${COMPANY.mobile.replace(/\s/g, "")}`} className="hover:text-white transition-colors">{COMPANY.mobile}</a></li>
               <li><a href={`mailto:${COMPANY.email}`} className="hover:text-white transition-colors">{COMPANY.email}</a></li>
-              <li>{COMPANY.address}<br />{COMPANY.zip} {COMPANY.city}</li>
+              <li>{COMPANY.city} et environs</li>
             </ul>
           </div>
         </div>
@@ -52,6 +51,7 @@ export function Footer() {
           <p className="text-xs text-gray-400">© {new Date().getFullYear()} {COMPANY.name}. Tous droits réservés.</p>
           <div className="flex gap-6 text-xs text-gray-400">
             <Link href="/mentions-legales" className="hover:text-white transition-colors">Mentions légales</Link>
+            <Link href="/cgv" className="hover:text-white transition-colors">CGV</Link>
             <Link href="/politique-confidentialite" className="hover:text-white transition-colors">Confidentialité</Link>
           </div>
         </div>
