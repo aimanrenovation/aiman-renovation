@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useCallback, useEffect, useState } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import { gsap } from "gsap";
 import { ZONES_CONFIG } from "../devis-zones-config";
 import type { ZoneId, DevisState, DevisAction } from "../devis-types";
@@ -10,73 +10,40 @@ interface BlueprintInteractiveProps {
   dispatch: React.Dispatch<DevisAction>;
 }
 
-const IMG_W = 2812;
-const IMG_H = 1536;
-const IMG_RATIO = IMG_W / IMG_H;
-
-// Zones en % du wrapper image — mesurées sur le screenshot réel du viewport
-const ZONE_POSITIONS: Record<ZoneId, { left: number; top: number; width: number; height: number }> = {
-  cuisine:   { left: 8.9,  top: 6.1,  width: 35.1, height: 35.9 },
-  sdb:       { left: 44.0, top: 6.1,  width: 10.9, height: 23.3 },
-  wc:        { left: 44.0, top: 29.3, width: 10.9, height: 12.6 },
-  garage:    { left: 54.9, top: 6.1,  width: 26.3, height: 42.2 },
-  vestibule: { left: 8.9,  top: 41.9, width: 45.9, height: 6.4 },
-  salon:     { left: 8.9,  top: 48.3, width: 18.8, height: 34.7 },
-  sam:       { left: 27.7, top: 48.3, width: 11.3, height: 34.7 },
-  chambre1:  { left: 39.1, top: 48.3, width: 21.5, height: 34.7 },
-  chambre2:  { left: 60.5, top: 48.3, width: 20.7, height: 34.7 },
-  terrasse:  { left: 8.9,  top: 83.0, width: 30.1, height: 7.1 },
-  jardin:    { left: 1.5,  top: 91.0, width: 97,   height: 7 },
-  haie:      { left: 0,    top: 0,    width: 2.5,  height: 100 },
-  facades:   { left: 83,   top: 6.1,  width: 4,    height: 77 },
-  toiture:   { left: 8.9,  top: 0,    width: 72,   height: 5 },
+// Coordonnées en PIXELS de l'image source (2812x1536)
+// Le SVG a le même viewBox → alignement automatique
+const ZONES: Record<ZoneId, { x: number; y: number; w: number; h: number }> = {
+  cuisine:   { x: 452,  y: 200,  w: 490,  h: 445 },
+  sdb:       { x: 942,  y: 200,  w: 200,  h: 250 },
+  wc:        { x: 942,  y: 450,  w: 200,  h: 195 },
+  garage:    { x: 1142, y: 200,  w: 515,  h: 445 },
+  vestibule: { x: 452,  y: 645,  w: 690,  h: 90 },
+  salon:     { x: 452,  y: 735,  w: 320,  h: 346 },
+  sam:       { x: 772,  y: 735,  w: 210,  h: 346 },
+  chambre1:  { x: 982,  y: 735,  w: 300,  h: 346 },
+  chambre2:  { x: 1282, y: 735,  w: 375,  h: 346 },
+  terrasse:  { x: 452,  y: 1081, w: 530,  h: 120 },
+  jardin:    { x: 100,  y: 1201, w: 2600, h: 200 },
+  haie:      { x: 20,   y: 20,   w: 100,  h: 1480 },
+  facades:   { x: 1700, y: 200,  w: 100,  h: 880 },
+  toiture:   { x: 452,  y: 50,   w: 1200, h: 140 },
 };
 
 export function BlueprintInteractive({ state, dispatch }: BlueprintInteractiveProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const wrapRef = useRef<HTMLDivElement>(null);
-  const [imgSize, setImgSize] = useState({ w: 0, h: 0, x: 0, y: 0 });
-
-  // Calcule la taille réelle de l'image dans le conteneur (contain behavior)
-  useEffect(() => {
-    const update = () => {
-      const el = containerRef.current;
-      if (!el) return;
-      const cw = el.clientWidth;
-      const ch = el.clientHeight;
-
-      let w: number, h: number;
-      if (cw / ch > IMG_RATIO) {
-        // Conteneur plus large que l'image → hauteur constrainte
-        h = ch;
-        w = ch * IMG_RATIO;
-      } else {
-        // Conteneur plus haut que l'image → largeur constrainte
-        w = cw;
-        h = cw / IMG_RATIO;
-      }
-      const x = (cw - w) / 2;
-      const y = (ch - h) / 2;
-      setImgSize({ w, h, x, y });
-    };
-
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
+  const svgRef = useRef<SVGSVGElement>(null);
 
   const handleZoneClick = useCallback((zoneId: ZoneId) => {
     if (state.view !== "global") return;
-    const pos = ZONE_POSITIONS[zoneId];
-    if (!pos || !wrapRef.current) return;
+    const z = ZONES[zoneId];
+    if (!z || !svgRef.current) return;
 
-    const centerX = pos.left + pos.width / 2;
-    const centerY = pos.top + pos.height / 2;
-    const scale = Math.min(55 / pos.width, 55 / pos.height, 3);
+    const cx = z.x + z.w / 2;
+    const cy = z.y + z.h / 2;
+    const scale = Math.min(1400 / z.w, 750 / z.h, 3);
 
-    gsap.to(wrapRef.current, {
+    gsap.to(svgRef.current, {
       scale,
-      transformOrigin: `${centerX}% ${centerY}%`,
+      transformOrigin: `${(cx / 2812) * 100}% ${(cy / 1536) * 100}%`,
       duration: 1,
       ease: "power3.inOut",
     });
@@ -84,8 +51,8 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
   }, [state.view, dispatch]);
 
   useEffect(() => {
-    if (state.view === "global" && wrapRef.current) {
-      gsap.to(wrapRef.current, {
+    if (state.view === "global" && svgRef.current) {
+      gsap.to(svgRef.current, {
         scale: 1,
         transformOrigin: "50% 50%",
         duration: 1,
@@ -99,104 +66,106 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
   );
 
   return (
-    <div ref={containerRef} className="relative w-full h-full overflow-hidden bg-[#091428]">
-      {/* Wrapper positionné exactement sur l'image (contain) */}
-      {imgSize.w > 0 && (
-        <div
-          ref={wrapRef}
-          className="absolute will-change-transform"
-          style={{
-            left: imgSize.x,
-            top: imgSize.y,
-            width: imgSize.w,
-            height: imgSize.h,
-          }}
-        >
-          {/* Image qui remplit exactement le wrapper */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/blueprint-plan.jpeg"
-            alt="Plan de maison interactif"
-            className="absolute inset-0 w-full h-full"
-            draggable={false}
-          />
+    <div className="relative w-full h-full overflow-hidden bg-[#091428] flex items-center justify-center">
+      {/* SVG avec image en fond + zones cliquables — même viewBox = alignement parfait */}
+      <svg
+        ref={svgRef}
+        viewBox="0 0 2812 1536"
+        className="w-full h-full will-change-transform"
+        preserveAspectRatio="xMidYMid meet"
+        style={{ maxWidth: "100%", maxHeight: "100%" }}
+      >
+        {/* Image de fond */}
+        <image href="/images/blueprint-plan.jpeg" x="0" y="0" width="2812" height="1536" />
 
-          {/* Zones intérieures — % du wrapper = % de l'image (PIXEL PERFECT) */}
-          {ZONES_CONFIG.filter(z => z.category === "interieur").map((zone) => {
-            const pos = ZONE_POSITIONS[zone.id];
-            if (!pos) return null;
-            const hasWorks = (state.selectedWorks[zone.id]?.length ?? 0) > 0;
-            const isActive = state.activeZone === zone.id;
+        {/* Zones intérieures */}
+        {ZONES_CONFIG.filter(z => z.category === "interieur").map((zone) => {
+          const z = ZONES[zone.id];
+          if (!z) return null;
+          const hasWorks = (state.selectedWorks[zone.id]?.length ?? 0) > 0;
+          const isActive = state.activeZone === zone.id;
 
-            return (
-              <button
-                key={zone.id}
-                onClick={() => handleZoneClick(zone.id)}
-                aria-label={`Sélectionner ${zone.label}`}
-                className={`absolute transition-all duration-300 cursor-pointer border-2 group
-                  ${isActive
-                    ? "bg-[#E50000]/20 border-[#E50000] shadow-[0_0_20px_rgba(229,0,0,0.4)]"
-                    : hasWorks
-                      ? "bg-[#E50000]/10 border-[#E50000]/50"
-                      : "border-red-500/50 hover:bg-[#4A9EFF]/15 hover:border-[#4A9EFF]/50"
-                  }`}
-                style={{
-                  left: `${pos.left}%`,
-                  top: `${pos.top}%`,
-                  width: `${pos.width}%`,
-                  height: `${pos.height}%`,
-                }}
+          return (
+            <g key={zone.id} onClick={() => handleZoneClick(zone.id)} style={{ cursor: "pointer" }}>
+              <rect
+                x={z.x} y={z.y} width={z.w} height={z.h}
+                fill={isActive ? "rgba(229,0,0,0.2)" : hasWorks ? "rgba(229,0,0,0.1)" : "transparent"}
+                stroke={isActive ? "#E50000" : hasWorks ? "rgba(229,0,0,0.5)" : "transparent"}
+                strokeWidth={isActive ? 6 : hasWorks ? 4 : 0}
+                rx={4}
+                className="transition-all duration-300"
+              />
+              {/* Hover effect */}
+              <rect
+                x={z.x} y={z.y} width={z.w} height={z.h}
+                fill="transparent"
+                stroke="transparent"
+                strokeWidth={4}
+                rx={4}
+                className="hover:fill-[rgba(74,158,255,0.12)] hover:stroke-[rgba(74,158,255,0.5)]"
+                style={{ transition: "all 0.3s" }}
+              />
+              {/* Label au centre */}
+              <text
+                x={z.x + z.w / 2} y={z.y + z.h / 2}
+                textAnchor="middle" dominantBaseline="middle"
+                fill="#4A9EFF" fontSize={z.w < 250 ? 28 : 36} fontFamily="sans-serif" fontWeight="bold"
+                opacity={0} className="hover:opacity-80"
+                style={{ transition: "opacity 0.3s", pointerEvents: "none" }}
               >
-                <span className={`absolute inset-0 flex items-center justify-center text-xs sm:text-sm font-bold pointer-events-none transition-opacity
-                  ${isActive || hasWorks ? "opacity-0" : "opacity-0 group-hover:opacity-100 text-[#4A9EFF] drop-shadow-[0_0_8px_rgba(74,158,255,0.6)]"}
-                `}>
-                  {zone.label}
-                </span>
-                {hasWorks && (
-                  <span className="absolute -top-1.5 -right-1.5 sm:-top-2 sm:-right-2 bg-[#E50000] text-white text-[10px] sm:text-xs font-bold w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center shadow-lg z-10">
+                {zone.label}
+              </text>
+              {/* Badge compteur */}
+              {hasWorks && (
+                <>
+                  <circle cx={z.x + z.w - 10} cy={z.y + 10} r={22} fill="#E50000" />
+                  <text
+                    x={z.x + z.w - 10} y={z.y + 12}
+                    textAnchor="middle" dominantBaseline="middle"
+                    fill="white" fontSize={22} fontWeight="bold" fontFamily="sans-serif"
+                    style={{ pointerEvents: "none" }}
+                  >
                     {state.selectedWorks[zone.id].length}
-                  </span>
-                )}
-              </button>
-            );
-          })}
+                  </text>
+                </>
+              )}
+            </g>
+          );
+        })}
 
-          {/* Zones extérieures */}
-          {ZONES_CONFIG.filter(z => z.category === "exterieur").map((zone) => {
-            const pos = ZONE_POSITIONS[zone.id];
-            if (!pos) return null;
-            const hasWorks = (state.selectedWorks[zone.id]?.length ?? 0) > 0;
+        {/* Zones extérieures */}
+        {ZONES_CONFIG.filter(z => z.category === "exterieur").map((zone) => {
+          const z = ZONES[zone.id];
+          if (!z) return null;
+          const hasWorks = (state.selectedWorks[zone.id]?.length ?? 0) > 0;
 
-            return (
-              <button
-                key={zone.id}
-                onClick={() => handleZoneClick(zone.id)}
-                aria-label={`Sélectionner ${zone.label}`}
-                className={`absolute transition-all duration-300 cursor-pointer border group
-                  ${hasWorks
-                    ? "bg-[#E50000]/10 border-[#E50000]/30"
-                    : "bg-transparent border-transparent hover:bg-[#1a7a3a]/15 hover:border-[#1a7a3a]/40"
-                  }`}
-                style={{
-                  left: `${pos.left}%`,
-                  top: `${pos.top}%`,
-                  width: `${pos.width}%`,
-                  height: `${pos.height}%`,
-                }}
-              >
-                <span className="absolute inset-0 flex items-center justify-center text-xs font-bold pointer-events-none transition-opacity opacity-0 group-hover:opacity-100 text-[#1a7a3a] drop-shadow-[0_0_6px_rgba(26,122,58,0.5)]">
-                  {zone.label}
-                </span>
-                {hasWorks && (
-                  <span className="absolute -top-1.5 -right-1.5 bg-[#E50000] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center z-10">
+          return (
+            <g key={zone.id} onClick={() => handleZoneClick(zone.id)} style={{ cursor: "pointer" }}>
+              <rect
+                x={z.x} y={z.y} width={z.w} height={z.h}
+                fill={hasWorks ? "rgba(229,0,0,0.1)" : "transparent"}
+                stroke={hasWorks ? "rgba(229,0,0,0.3)" : "transparent"}
+                strokeWidth={3}
+                className="hover:fill-[rgba(26,122,58,0.1)] hover:stroke-[rgba(26,122,58,0.4)]"
+                style={{ transition: "all 0.3s" }}
+              />
+              {hasWorks && (
+                <>
+                  <circle cx={z.x + z.w - 10} cy={z.y + 10} r={18} fill="#E50000" />
+                  <text
+                    x={z.x + z.w - 10} y={z.y + 12}
+                    textAnchor="middle" dominantBaseline="middle"
+                    fill="white" fontSize={18} fontWeight="bold" fontFamily="sans-serif"
+                    style={{ pointerEvents: "none" }}
+                  >
                     {state.selectedWorks[zone.id].length}
-                  </span>
-                )}
-              </button>
-            );
-          })}
-        </div>
-      )}
+                  </text>
+                </>
+              )}
+            </g>
+          );
+        })}
+      </svg>
 
       {/* Instructions */}
       {state.view === "global" && (
@@ -223,7 +192,7 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
       {state.view === "zoomed" && (
         <button
           onClick={() => dispatch({ type: "ZOOM_OUT" })}
-          className="absolute top-20 left-4 z-20 bg-black/80 backdrop-blur-sm text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-sm font-medium hover:bg-black/95 transition-all shadow-lg"
+          className="absolute top-4 left-4 z-20 bg-black/80 backdrop-blur-sm text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-sm font-medium hover:bg-black/95 transition-all shadow-lg"
         >
           ← Retour au plan
         </button>
