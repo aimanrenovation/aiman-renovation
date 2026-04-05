@@ -33,21 +33,22 @@ interface BlueprintInteractiveProps {
 // Cuisine→SDB: x=747  SDB/WC→Garage: x=1298
 // SDB→WC horiz: y=503  Corridor: y=647→680
 // Salon→SAM: x=629  Ch1→Ch2: x=1700
+// Vérifié visuellement sur blueprint-final-check.jpeg
 const ZONES: Record<ZoneId, { x: number; y: number; w: number; h: number }> = {
-  cuisine:   { x:  453, y:  204, w:  294, h:  440 },
-  sdb:       { x:  752, y:  204, w:  540, h:  261 },
-  wc:        { x:  752, y:  542, w:  540, h:  102 },
-  garage:    { x: 1302, y:  204, w:  358, h:  476 },
-  vestibule: { x:  453, y:  647, w:  845, h:   33 },
-  salon:     { x:  453, y:  680, w:  176, h:  409 },
-  sam:       { x:  629, y:  680, w:  523, h:  409 },
-  chambre1:  { x: 1152, y:  680, w:  548, h:  409 },
-  chambre2:  { x: 1700, y:  680, w:  507, h:  409 },
-  terrasse:  { x:  453, y: 1089, w:  699, h:  100 },
-  jardin:    { x:   80, y: 1200, w: 2650, h:  260 },
-  haie:      { x:   10, y:   10, w:  120, h: 1516 },
-  facades:   { x: 2220, y:  204, w:  120, h:  885 },
-  toiture:   { x:  453, y:   80, w: 1207, h:  110 },
+  cuisine:   { x:   455, y:   205, w:   605, h:   433 },
+  sdb:       { x:  1060, y:   205, w:   230, h:   285 },
+  wc:        { x:  1060, y:   490, w:   230, h:   148 },
+  garage:    { x:  1290, y:   205, w:   355, h:   465 },
+  vestibule: { x:   455, y:   638, w:   835, h:    32 },
+  salon:     { x:   455, y:   670, w:   305, h:   410 },
+  sam:       { x:   760, y:   670, w:   200, h:   410 },
+  chambre1:  { x:   960, y:   670, w:   680, h:   410 },
+  chambre2:  { x:  1640, y:   670, w:   555, h:   410 },
+  terrasse:  { x:   455, y:  1080, w:   505, h:   120 },
+  jardin:    { x:    80, y:  1210, w:  2650, h:   250 },
+  haie:      { x:    10, y:    10, w:   120, h:  1516 },
+  facades:   { x:  2220, y:   205, w:   120, h:   875 },
+  toiture:   { x:   455, y:    80, w:  1190, h:   115 },
 };
 
 export function BlueprintInteractive({ state, dispatch }: BlueprintInteractiveProps) {
