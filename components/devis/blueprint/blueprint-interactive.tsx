@@ -12,26 +12,26 @@ interface BlueprintInteractiveProps {
 
 // Coordonnées en PIXELS du viewBox SVG (2812x1536)
 // Mesurées depuis le screenshot réel avec conversion screen→SVG
-// Coordonnées SVG via getScreenCTM().inverse() — EXACTES depuis le navigateur
-// ext: left=403 right=2023 top=169 bottom=1073
-// cui→sdb: x=1136  sdb→wc: y=466  sdbwc→gar: x=1433
-// corridor: top=606 bottom=665
-// sal→sam: x=817  sam→ch1: x=1030  ch1→ch2: x=1531
+// Coordonnées PIXELS image source (2812x1536) — détectées par analyse de pixels
+// Murs extérieurs: L=453 T=201 B=1081 R_gar=2317 R_bot=2197
+// Cloisons: cui→sdb=920 sdb_wc=450 sdbwc→gar=1250
+// Corridor: top=648 bot=665
+// Salon→SAM=629 SAM→Ch1=776 Ch1→Ch2=1279
 const ZONES: Record<ZoneId, { x: number; y: number; w: number; h: number }> = {
-  cuisine:   { x:  403, y:  169, w:  733, h:  437 },  // 403→1136, 169→606
-  sdb:       { x: 1136, y:  169, w:  297, h:  297 },  // 1136→1433, 169→466
-  wc:        { x: 1136, y:  466, w:  297, h:  140 },  // 1136→1433, 466→606
-  garage:    { x: 1433, y:  169, w:  590, h:  496 },  // 1433→2023, 169→665
-  vestibule: { x:  403, y:  606, w: 1030, h:   59 },  // 403→1433, 606→665
-  salon:     { x:  403, y:  665, w:  414, h:  408 },  // 403→817, 665→1073
-  sam:       { x:  817, y:  665, w:  213, h:  408 },  // 817→1030, 665→1073
-  chambre1:  { x: 1030, y:  665, w:  501, h:  408 },  // 1030→1531, 665→1073
-  chambre2:  { x: 1531, y:  665, w:  492, h:  408 },  // 1531→2023, 665→1073
-  terrasse:  { x:  403, y: 1073, w:  627, h:   84 },  // 403→1030, 1073→1157
-  jardin:    { x:   80, y: 1170, w: 2650, h:  290 },
+  cuisine:   { x:  453, y:  201, w:  467, h:  447 },
+  sdb:       { x:  920, y:  201, w:  330, h:  249 },
+  wc:        { x:  920, y:  450, w:  330, h:  198 },
+  garage:    { x: 1250, y:  201, w: 1067, h:  464 },
+  vestibule: { x:  453, y:  648, w:  797, h:   17 },
+  salon:     { x:  453, y:  665, w:  176, h:  416 },
+  sam:       { x:  629, y:  665, w:  147, h:  416 },
+  chambre1:  { x:  776, y:  665, w:  503, h:  416 },
+  chambre2:  { x: 1279, y:  665, w:  918, h:  416 },
+  terrasse:  { x:  453, y: 1081, w:  323, h:  120 },
+  jardin:    { x:   80, y: 1210, w: 2650, h:  250 },
   haie:      { x:   10, y:   10, w:  120, h: 1516 },
-  facades:   { x: 2050, y:  169, w:  120, h:  904 },
-  toiture:   { x:  403, y:   60, w: 1620, h:  100 },
+  facades:   { x: 2350, y:  201, w:  120, h:  880 },
+  toiture:   { x:  453, y:   60, w: 1864, h:  130 },
 };
 
 export function BlueprintInteractive({ state, dispatch }: BlueprintInteractiveProps) {
