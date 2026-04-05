@@ -1,11 +1,14 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LinkButton } from "@/components/ui/link-button";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const TOTAL_FRAMES = 145;
+const FRAME_PATH = "/frames/hero/frame-";
 
 const SCROLL_TEXTS = [
   { text: "Votre habitat", highlight: "mérite mieux", side: "left" as const, startPct: 2, endPct: 14 },
@@ -18,21 +21,98 @@ const SCROLL_TEXTS = [
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
   const textsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const framesRef = useRef<HTMLImageElement[]>([]);
   const [ready, setReady] = useState(false);
-  const [videoSrc, setVideoSrc] = useState("/videos/hero-scroll-smooth.mp4");
+  const [isMobile, setIsMobile] = useState(false);
 
-  /* Choisir la vidéo mobile ou desktop */
+  /* Détection mobile */
   useEffect(() => {
-    if (window.innerWidth < 768) {
-      setVideoSrc("/videos/hero-mobile.mp4");
-    }
+    setIsMobile(window.innerWidth < 768);
   }, []);
 
-  /* Vidéo scroll-driven — mobile + desktop */
+  /* Précharger les frames (mobile) */
+  const preloadFrames = useCallback(() => {
+    let loaded = 0;
+    const images: HTMLImageElement[] = [];
+
+    for (let i = 1; i <= TOTAL_FRAMES; i++) {
+      const img = new Image();
+      const num = String(i).padStart(4, "0");
+      img.src = `${FRAME_PATH}${num}.jpg`;
+      img.onload = () => {
+        loaded++;
+        if (loaded >= 10) setReady(true); // Afficher dès 10 frames chargées
+      };
+      images.push(img);
+    }
+
+    framesRef.current = images;
+  }, []);
+
+  /* Canvas mobile — technique Apple */
   useEffect(() => {
+    if (!isMobile) return;
+
+    preloadFrames();
+
+    const container = containerRef.current;
+    const canvas = canvasRef.current;
+    if (!container || !canvas) return;
+
+    const ctx2d = canvas.getContext("2d");
+    if (!ctx2d) return;
+
+    // Taille canvas
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    resize();
+    window.addEventListener("resize", resize);
+
+    const gsapCtx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: container,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0,
+        onUpdate: (self) => {
+          const frameIndex = Math.min(
+            Math.floor(self.progress * (TOTAL_FRAMES - 1)),
+            TOTAL_FRAMES - 1
+          );
+          const img = framesRef.current[frameIndex];
+          if (img && img.complete && ctx2d) {
+            // Cover fill
+            const scale = Math.max(
+              canvas.width / img.naturalWidth,
+              canvas.height / img.naturalHeight
+            );
+            const w = img.naturalWidth * scale;
+            const h = img.naturalHeight * scale;
+            const x = (canvas.width - w) / 2;
+            const y = (canvas.height - h) / 2;
+            ctx2d.clearRect(0, 0, canvas.width, canvas.height);
+            ctx2d.drawImage(img, x, y, w, h);
+          }
+        },
+      });
+    }, container);
+
+    return () => {
+      window.removeEventListener("resize", resize);
+      gsapCtx.revert();
+    };
+  }, [isMobile, preloadFrames]);
+
+  /* Vidéo desktop — scroll-driven classique */
+  useEffect(() => {
+    if (isMobile) return;
+
     const container = containerRef.current;
     const video = videoRef.current;
     if (!container || !video) return;
@@ -58,8 +138,17 @@ export function Hero() {
 
       if (video.readyState >= 1) onLoaded();
       else video.addEventListener("loadedmetadata", onLoaded, { once: true });
+    }, container);
 
-      /* Intro — fade in puis fade out au scroll */
+    return () => ctx.revert();
+  }, [isMobile]);
+
+  /* Animations textes + intro + CTA */
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const ctx = gsap.context(() => {
       if (introRef.current) {
         const els = introRef.current.querySelectorAll("[data-anim]");
         gsap.fromTo(els,
@@ -72,7 +161,6 @@ export function Hero() {
         });
       }
 
-      /* CTA buttons */
       const ctaEl = document.getElementById("hero-cta");
       if (ctaEl) {
         gsap.fromTo(ctaEl,
@@ -84,7 +172,6 @@ export function Hero() {
         );
       }
 
-      /* Textes synchronisés au scroll */
       textsRef.current.forEach((el, i) => {
         if (!el) return;
         const cfg = SCROLL_TEXTS[i];
@@ -121,25 +208,45 @@ export function Hero() {
     }, container);
 
     return () => ctx.revert();
-  }, []);
+  }, [isMobile]);
 
   return (
     <div ref={containerRef} className="relative" style={{ height: "500vh" }}>
       <div className="sticky top-0 h-screen overflow-hidden">
-        {/* Vidéo scroll-driven — GPU accelerated */}
-        <video
-          ref={videoRef}
-          muted
-          playsInline
-          preload="auto"
-          poster="/images/hero-poster.jpg"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ willChange: "transform" }}
-        >
-          <source src={videoSrc} type="video/mp4" />
-        </video>
+        {/* Mobile: Canvas frames (technique Apple) */}
+        {isMobile && (
+          <canvas
+            ref={canvasRef}
+            className="absolute inset-0 w-full h-full"
+          />
+        )}
 
-        {/* Loader — transparent pour voir le poster */}
+        {/* Desktop: Vidéo scroll-driven */}
+        {!isMobile && (
+          <video
+            ref={videoRef}
+            muted
+            playsInline
+            preload="auto"
+            poster="/images/hero-poster.jpg"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ willChange: "transform" }}
+          >
+            <source src="/videos/hero-scroll-smooth.mp4" type="video/mp4" />
+          </video>
+        )}
+
+        {/* Poster mobile pendant chargement */}
+        {isMobile && !ready && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src="/images/hero-poster.jpg"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        )}
+
+        {/* Loader */}
         {!ready && (
           <div className="absolute inset-0 flex items-center justify-center z-30">
             <div className="w-10 h-10 border-2 border-white/20 border-t-white rounded-full animate-spin" />
