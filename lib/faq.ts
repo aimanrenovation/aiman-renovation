@@ -35,7 +35,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: "Devis",
     question: "Sous quel délai recevrai-je mon devis ?",
     answer:
-      "Nous nous engageons à vous envoyer votre devis sous 48 heures après la visite technique. Pour les projets complexes (façade, photovoltaïque), comptez 3 à 5 jours ouvrés.",
+      "Nous nous engageons à vous envoyer votre devis sous 4 jours après la visite technique. Pour les projets complexes (façade, photovoltaïque), comptez 5 à 7 jours ouvrés.",
     relatedServices: [
       { label: "Demander un devis", href: "/devis" },
       { label: "Ravalement de façade", href: "/services/ravalement-facade" },

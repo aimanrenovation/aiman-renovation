@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Aiman Renovation",
   },
   description:
-    "Artisan rénovation à Saint-Louis (68300) : cuisine, salle de bain, façades, isolation, peinture, carrelage. 19 ans d'expérience en Haut-Rhin. Devis gratuit sous 48h.",
+    "Artisan rénovation à Saint-Louis (68300) : cuisine, salle de bain, façades, isolation, peinture, carrelage. 19 ans d'expérience en Haut-Rhin. Devis gratuit sous 4 jours.",
   icons: {
     icon: "/favicon.png",
     apple: "/apple-touch-icon.png",
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     siteName: "Aiman Renovation",
     title: "Rénovation Maison Saint-Louis 68300 | Devis Gratuit — Aiman Renovation",
     description:
-      "Artisan rénovation à Saint-Louis (68300) : cuisine, salle de bain, façades, isolation, peinture, carrelage. 19 ans d'expérience en Haut-Rhin. Devis gratuit sous 48h.",
+      "Artisan rénovation à Saint-Louis (68300) : cuisine, salle de bain, façades, isolation, peinture, carrelage. 19 ans d'expérience en Haut-Rhin. Devis gratuit sous 4 jours.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Rénovation Maison Saint-Louis 68300 | Devis Gratuit — Aiman Renovation",
     description:
-      "Artisan rénovation à Saint-Louis (68300) : cuisine, salle de bain, façades, isolation, peinture, carrelage. 19 ans d'expérience en Haut-Rhin. Devis gratuit sous 48h.",
+      "Artisan rénovation à Saint-Louis (68300) : cuisine, salle de bain, façades, isolation, peinture, carrelage. 19 ans d'expérience en Haut-Rhin. Devis gratuit sous 4 jours.",
   },
 };
 
