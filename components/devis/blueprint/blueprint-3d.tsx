@@ -23,8 +23,8 @@ function svgToWorld(x: number, y: number): [number, number] {
 }
 
 // ─── Global camera defaults ────────────────────────────────────────
-const GLOBAL_CAM_POS = new THREE.Vector3(0, 24, 0.01);
-const GLOBAL_CAM_TARGET = new THREE.Vector3(0, 0, 0);
+const GLOBAL_CAM_POS = new THREE.Vector3(0, 14, 1);
+const GLOBAL_CAM_TARGET = new THREE.Vector3(0, 0, 0.5);
 
 // ─── Props ─────────────────────────────────────────────────────────
 interface Blueprint3DProps {
@@ -142,7 +142,7 @@ function RoomLabel({ x, y, text }: { x: number; y: number; text: string }) {
   }, [text]);
 
   return (
-    <sprite position={[wx, 0.3, wz]} scale={[1.5, 0.4, 1]}>
+    <sprite position={[wx, 0.3, wz]} scale={[2.5, 0.65, 1]}>
       <spriteMaterial map={canvasTexture} transparent depthWrite={false} />
     </sprite>
   );
@@ -227,7 +227,7 @@ export function Blueprint3D({ state, dispatch }: Blueprint3DProps) {
         gl={{ antialias: true }}
         style={{ background: BP.bg }}
       >
-        <PerspectiveCamera makeDefault position={[0, 24, 0.01]} fov={45} />
+        <PerspectiveCamera makeDefault position={[0, 14, 1]} fov={55} />
         <CameraController state={state} />
 
         {/* Lighting */}
