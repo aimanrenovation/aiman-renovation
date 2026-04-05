@@ -10,11 +10,11 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 gsap.registerPlugin(ScrollTrigger);
 
 const STEPS = [
-  { number: "01", title: "Premier contact", desc: "Vous nous appelez ou remplissez le formulaire en ligne. Nous échangeons sur votre projet, vos envies et votre budget." },
-  { number: "02", title: "Visite technique", desc: "Nous nous déplaçons chez vous pour prendre les mesures et évaluer l'état existant. Gratuit et sans engagement." },
-  { number: "03", title: "Devis détaillé", desc: "Sous 4 jours, vous recevez un devis complet : travaux poste par poste, matériaux, planning et montant total." },
-  { number: "04", title: "Réalisation", desc: "Nos artisans interviennent selon le planning. Aiman supervise chaque chantier. Photos d'avancement régulières." },
-  { number: "05", title: "Réception", desc: "Visite de réception ensemble, point par point. Notre garantie décennale vous protège pendant 10 ans." },
+  { number: "01", title: "Premier contact", desc: "Vous nous appelez ou remplissez le formulaire en ligne. Nous échangeons sur votre projet, vos envies et votre budget.", image: "/images/process-contact.jpg" },
+  { number: "02", title: "Visite technique", desc: "Nous nous déplaçons chez vous pour prendre les mesures et évaluer l'état existant. Gratuit et sans engagement.", image: "/images/process-visite.jpg" },
+  { number: "03", title: "Devis détaillé", desc: "Sous 4 jours, vous recevez un devis complet : travaux poste par poste, matériaux, planning et montant total.", image: "/images/process-devis.jpg" },
+  { number: "04", title: "Réalisation", desc: "Nos artisans interviennent selon le planning. Aiman supervise chaque chantier. Photos d'avancement régulières.", image: "/images/process-travaux.jpg" },
+  { number: "05", title: "Réception", desc: "Visite de réception ensemble, point par point. Notre garantie décennale vous protège pendant 10 ans.", image: "/images/process-reception.jpg" },
 ];
 
 const ENGAGEMENTS = [
@@ -192,31 +192,41 @@ export default function AProposPage() {
 
       {/* Processus */}
       <section className="relative z-10 bg-[#0A0A0A] py-20 md:py-32">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="font-heading text-3xl md:text-5xl text-center mb-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="font-heading text-3xl md:text-5xl text-center mb-20">
             NOTRE <span className="text-[#E50000]">PROCESSUS</span>
           </h2>
-          <div className="relative">
-            {/* Ligne verticale */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2" />
 
+          <div className="space-y-24">
             {STEPS.map((step, i) => (
               <div
                 key={step.number}
                 ref={(el) => { stepRefs.current[i] = el; }}
-                className={`relative flex items-start gap-6 mb-12 last:mb-0 ${
+                className={`flex flex-col gap-8 items-center ${
                   i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
                 style={{ opacity: 0 }}
               >
-                <div className={`flex-1 ${i % 2 === 0 ? "md:text-right md:pr-12" : "md:text-left md:pl-12"} pl-16 md:pl-0`}>
-                  <span className="text-[#E50000] font-heading text-sm tracking-widest">{step.number}</span>
-                  <h3 className="font-heading text-xl md:text-2xl text-white mt-1 mb-2">{step.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{step.desc}</p>
+                {/* Image */}
+                <div className="w-full md:w-1/2 relative aspect-video rounded-2xl overflow-hidden">
+                  <Image
+                    src={step.image}
+                    alt={step.title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-[#E50000] flex items-center justify-center">
+                    <span className="font-heading text-white text-sm">{step.number}</span>
+                  </div>
                 </div>
-                {/* Point sur la ligne */}
-                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#E50000] border-2 border-black z-10 mt-1" />
-                <div className="flex-1 hidden md:block" />
+
+                {/* Texte */}
+                <div className={`w-full md:w-1/2 ${i % 2 === 0 ? "md:pl-8" : "md:pr-8"}`}>
+                  <div className="w-10 h-0.5 bg-[#E50000] mb-4" />
+                  <h3 className="font-heading text-2xl md:text-3xl text-white mb-3">{step.title}</h3>
+                  <p className="text-gray-400 text-lg leading-relaxed">{step.desc}</p>
+                </div>
               </div>
             ))}
           </div>
