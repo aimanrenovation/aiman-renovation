@@ -26,21 +26,28 @@ interface BlueprintInteractiveProps {
 // SAM = table à manger au centre-gauche
 // Ch1 = "Chambre 1 Parentale" grande pièce centre-bas
 // Ch2 = "Chambre 2" droite-bas
+// SCAN PIXEL AUTOMATIQUE sur l'image source 2812x1536
+// Murs épais bleus détectés par analyse PIL (is_blue b>120 r<120)
+// Ext gauche: x=441  Ext droite haut: x=1660  Ext droite bas: x=2207
+// Ext haut: y=192  Ext bas: y=1089
+// Cuisine→SDB: x=747  SDB/WC→Garage: x=1298
+// SDB→WC horiz: y=503  Corridor: y=647→680
+// Salon→SAM: x=629  Ch1→Ch2: x=1700
 const ZONES: Record<ZoneId, { x: number; y: number; w: number; h: number }> = {
-  cuisine:   { x:  453, y:  201, w:  617, h:  447 },  // 453→1070
-  sdb:       { x: 1070, y:  201, w:  270, h:  249 },  // 1070→1340, petite pièce SDB
-  wc:        { x: 1070, y:  450, w:  270, h:  198 },  // sous SDB
-  garage:    { x: 1340, y:  201, w:  977, h:  464 },  // 1340→2317
-  vestibule: { x:  453, y:  648, w:  887, h:   17 },  // corridor
-  salon:     { x:  453, y:  665, w:  340, h:  416 },  // 453→793, TV+canapé
-  sam:       { x:  793, y:  665, w:  260, h:  416 },  // 793→1053, table à manger
-  chambre1:  { x: 1053, y:  665, w:  480, h:  416 },  // 1053→1533, Ch1 Parentale
-  chambre2:  { x: 1533, y:  665, w:  664, h:  416 },  // 1533→2197, Ch2
-  terrasse:  { x:  453, y: 1081, w:  600, h:  120 },  // dallée
-  jardin:    { x:   80, y: 1210, w: 2650, h:  250 },
+  cuisine:   { x:  453, y:  204, w:  294, h:  440 },
+  sdb:       { x:  752, y:  204, w:  540, h:  261 },
+  wc:        { x:  752, y:  542, w:  540, h:  102 },
+  garage:    { x: 1302, y:  204, w:  358, h:  476 },
+  vestibule: { x:  453, y:  647, w:  845, h:   33 },
+  salon:     { x:  453, y:  680, w:  176, h:  409 },
+  sam:       { x:  629, y:  680, w:  523, h:  409 },
+  chambre1:  { x: 1152, y:  680, w:  548, h:  409 },
+  chambre2:  { x: 1700, y:  680, w:  507, h:  409 },
+  terrasse:  { x:  453, y: 1089, w:  699, h:  100 },
+  jardin:    { x:   80, y: 1200, w: 2650, h:  260 },
   haie:      { x:   10, y:   10, w:  120, h: 1516 },
-  facades:   { x: 2350, y:  201, w:  120, h:  880 },
-  toiture:   { x:  453, y:   60, w: 1864, h:  130 },
+  facades:   { x: 2220, y:  204, w:  120, h:  885 },
+  toiture:   { x:  453, y:   80, w: 1207, h:  110 },
 };
 
 export function BlueprintInteractive({ state, dispatch }: BlueprintInteractiveProps) {
