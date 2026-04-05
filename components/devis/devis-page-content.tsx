@@ -3,22 +3,27 @@
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { canRender3D } from "./gpu-detector";
-import { DevisWizard2D } from "./devis-wizard-2d";
+import { DevisBlueprint } from "./devis-blueprint";
+import { Blueprint2D } from "./blueprint/blueprint-2d";
 
-// Import dynamique du wizard 3D (evite le chargement de Three.js si inutile)
-const DevisWizard3D = dynamic(
-  () => import("./devis-wizard-3d").then((mod) => ({ default: mod.DevisWizard3D })),
+const Blueprint3D = dynamic(
+  () =>
+    import("./blueprint/blueprint-3d").then((mod) => ({
+      default: mod.Blueprint3D,
+    })),
   {
     ssr: false,
     loading: () => (
-      <div className="min-h-screen bg-[#0A0A0A] flex items-center justify-center">
+      <div className="flex h-screen w-full items-center justify-center bg-[#0A0A0A]">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-[#E50000] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-white text-lg">Chargement de l&apos;experience 3D...</p>
+          <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-4 border-[#E50000] border-t-transparent" />
+          <p className="text-lg text-white">
+            Chargement de l&apos;experience 3D...
+          </p>
         </div>
       </div>
     ),
-  }
+  },
 );
 
 export function DevisPageContent() {
@@ -28,20 +33,16 @@ export function DevisPageContent() {
     setUse3D(canRender3D());
   }, []);
 
-  // En attente de detection
+  // Detection in progress
   if (use3D === null) {
     return (
-      <div className="min-h-screen bg-[#0A0A0A] flex items-center justify-center">
-        <div className="w-12 h-12 border-4 border-[#E50000] border-t-transparent rounded-full animate-spin" />
+      <div className="flex h-screen w-full items-center justify-center bg-[#0A0A0A]">
+        <div className="h-12 w-12 animate-spin rounded-full border-4 border-[#E50000] border-t-transparent" />
       </div>
     );
   }
 
-  // Fallback 2D
-  if (!use3D) {
-    return <DevisWizard2D />;
-  }
-
-  // Experience 3D
-  return <DevisWizard3D />;
+  return (
+    <DevisBlueprint BlueprintComponent={use3D ? Blueprint3D : Blueprint2D} />
+  );
 }
