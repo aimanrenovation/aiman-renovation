@@ -10,23 +10,23 @@ interface BlueprintInteractiveProps {
   dispatch: React.Dispatch<DevisAction>;
 }
 
-// Coordonnées en PIXELS de l'image source (2812x1536)
-// Le SVG a le même viewBox → alignement automatique
+// Coordonnées en PIXELS du viewBox SVG (2812x1536)
+// Mesurées depuis le screenshot réel avec conversion screen→SVG
 const ZONES: Record<ZoneId, { x: number; y: number; w: number; h: number }> = {
-  cuisine:   { x: 452,  y: 200,  w: 490,  h: 445 },
-  sdb:       { x: 942,  y: 200,  w: 200,  h: 250 },
-  wc:        { x: 942,  y: 450,  w: 200,  h: 195 },
-  garage:    { x: 1142, y: 200,  w: 515,  h: 445 },
-  vestibule: { x: 452,  y: 645,  w: 690,  h: 90 },
-  salon:     { x: 452,  y: 735,  w: 320,  h: 346 },
-  sam:       { x: 772,  y: 735,  w: 210,  h: 346 },
-  chambre1:  { x: 982,  y: 735,  w: 300,  h: 346 },
-  chambre2:  { x: 1282, y: 735,  w: 375,  h: 346 },
-  terrasse:  { x: 452,  y: 1081, w: 530,  h: 120 },
-  jardin:    { x: 100,  y: 1201, w: 2600, h: 200 },
-  haie:      { x: 20,   y: 20,   w: 100,  h: 1480 },
-  facades:   { x: 1700, y: 200,  w: 100,  h: 880 },
-  toiture:   { x: 452,  y: 50,   w: 1200, h: 140 },
+  cuisine:   { x:  331, y:   91, w:  906, h:  548 },
+  sdb:       { x: 1237, y:   91, w:  359, h:  390 },
+  wc:        { x: 1237, y:  481, w:  359, h:  158 },
+  garage:    { x: 1596, y:   91, w:  685, h:  622 },
+  vestibule: { x:  331, y:  639, w: 1265, h:   74 },
+  salon:     { x:  331, y:  713, w:  432, h:  464 },
+  sam:       { x:  763, y:  713, w:  285, h:  464 },
+  chambre1:  { x: 1048, y:  713, w:  611, h:  464 },
+  chambre2:  { x: 1659, y:  713, w:  622, h:  464 },
+  terrasse:  { x:  331, y: 1177, w:  717, h:   95 },
+  jardin:    { x:   80, y: 1280, w: 2650, h:  180 },
+  haie:      { x:   10, y:   10, w:  100, h: 1516 },
+  facades:   { x: 2300, y:   91, w:  100, h: 1086 },
+  toiture:   { x:  331, y:   10, w: 1950, h:   80 },
 };
 
 export function BlueprintInteractive({ state, dispatch }: BlueprintInteractiveProps) {
