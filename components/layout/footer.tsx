@@ -20,7 +20,7 @@ export function Footer() {
           <div>
             <h4 className="font-heading text-sm uppercase tracking-wider text-white mb-4">Services</h4>
             <ul className="space-y-2">
-              {SERVICES.slice(0, 6).map((s) => (
+              {SERVICES.map((s) => (
                 <li key={s.slug}>
                   <Link href={`/services/${s.slug}`} className="text-sm text-gray-400 hover:text-white transition-colors">{s.shortTitle}</Link>
                 </li>
