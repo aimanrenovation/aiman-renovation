@@ -138,7 +138,7 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
                     ? "bg-[#E50000]/20 border-[#E50000] shadow-[0_0_20px_rgba(229,0,0,0.4)]"
                     : hasWorks
                       ? "bg-[#E50000]/10 border-[#E50000]/50"
-                      : "bg-transparent border-transparent hover:bg-[#4A9EFF]/15 hover:border-[#4A9EFF]/50"
+                      : "border-red-500/50 hover:bg-[#4A9EFF]/15 hover:border-[#4A9EFF]/50"
                   }`}
                 style={{
                   left: `${pos.left}%`,

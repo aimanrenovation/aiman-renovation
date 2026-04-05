@@ -88,9 +88,9 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
   // ─── Global / Zoomed view ───────────────────────────────────────────
 
   return (
-    <div className="flex min-h-[calc(100vh-64px)] w-full bg-[#091428]">
-      {/* Plan area — instructions et bouton gérés dans BlueprintComponent */}
-      <div className="relative flex-1 min-h-[500px]">
+    <div className="flex h-[calc(100vh-64px)] w-full bg-[#091428] overflow-hidden">
+      {/* Plan area — hauteur fixe, pas de scroll */}
+      <div className="relative flex-1 h-full">
         <BlueprintComponent state={state} dispatch={dispatch} />
       </div>
 

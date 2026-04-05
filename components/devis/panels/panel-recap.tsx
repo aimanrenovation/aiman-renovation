@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { ChevronLeft, Send, Loader2 } from "lucide-react";
 import { ZONES_CONFIG } from "../devis-zones-config";
+import { AddressAutocomplete } from "./address-autocomplete";
 import type { DevisState, DevisAction, BudgetRange } from "../devis-types";
 
 interface PanelRecapProps {
@@ -37,6 +38,7 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
     state.contact.firstName.trim() !== "" &&
     state.contact.phone.trim() !== "" &&
     state.contact.email.trim() !== "" &&
+    state.contact.address.trim() !== "" &&
     totalWorks > 0;
 
   return (
@@ -207,20 +209,19 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
 
           <div className="space-y-1.5">
             <Label htmlFor="address" className="text-white/70 text-sm">
-              Adresse du chantier
+              Adresse du chantier *
             </Label>
-            <Input
-              id="address"
+            <AddressAutocomplete
               value={state.contact.address}
-              onChange={(e) =>
+              onChange={(val) =>
                 dispatch({
                   type: "SET_CONTACT",
                   field: "address",
-                  value: e.target.value,
+                  value: val,
                 })
               }
-              className="bg-white/5 border-white/10 text-white"
             />
+            <p className="text-gray-500 text-xs">Suggestions automatiques — France, Allemagne, Suisse</p>
           </div>
         </div>
 
