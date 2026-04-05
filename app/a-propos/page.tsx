@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,6 +8,14 @@ import { COMPANY } from "@/lib/constants";
 import { CtaBanner } from "@/components/sections/cta-banner";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const STORY_TEXTS = [
+  { text: "Tout commence", highlight: "à l'école", startPct: 0, endPct: 16 },
+  { text: "Les premiers chantiers,", highlight: "les premières sueurs", startPct: 16, endPct: 33 },
+  { text: "Tomber,", highlight: "se relever", startPct: 33, endPct: 50 },
+  { text: "Devenir chef d'équipe,", highlight: "mener les hommes", startPct: 50, endPct: 66 },
+  { text: "Et un jour, créer", highlight: "Aiman Renovation", startPct: 66, endPct: 100 },
+];
 
 const STEPS = [
   { number: "01", title: "Premier contact", desc: "Vous nous appelez ou remplissez le formulaire en ligne. Nous échangeons sur votre projet, vos envies et votre budget.", image: "/images/process-contact.jpg" },
@@ -57,11 +65,68 @@ function EngagementIcon({ name }: { name: string }) {
 
 export default function AProposPage() {
   const heroTitleRef = useRef<HTMLHeadingElement>(null);
+  const storyContainerRef = useRef<HTMLElement>(null);
+  const storyVideoRef = useRef<HTMLVideoElement>(null);
   const storyTitleRef = useRef<HTMLHeadingElement>(null);
-  const storyLinesRef = useRef<(HTMLParagraphElement | null)[]>([]);
+  const storyTextsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const [storyVideoSrc, setStoryVideoSrc] = useState("/videos/parcours-desktop.mp4");
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
   const engagementRefs = useRef<(HTMLDivElement | null)[]>([]);
   const certRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  /* Vidéo mobile ou desktop */
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setStoryVideoSrc("/videos/parcours-mobile.mp4");
+    }
+  }, []);
+
+  /* Vidéo parcours scroll-driven */
+  useEffect(() => {
+    const container = storyContainerRef.current;
+    const video = storyVideoRef.current;
+    if (!container || !video) return;
+
+    const ctx = gsap.context(() => {
+      const onLoaded = () => {
+        video.pause();
+        video.currentTime = 0;
+        ScrollTrigger.create({
+          trigger: container,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.3,
+          onUpdate: (self) => {
+            if (video.duration) {
+              video.currentTime = self.progress * video.duration;
+            }
+          },
+        });
+      };
+      if (video.readyState >= 1) onLoaded();
+      else video.addEventListener("loadedmetadata", onLoaded, { once: true });
+
+      /* Textes synchronisés */
+      storyTextsRef.current.forEach((el, i) => {
+        if (!el) return;
+        const cfg = STORY_TEXTS[i];
+        const fadeDuration = 5;
+        gsap.fromTo(el,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.5,
+            scrollTrigger: { trigger: container, start: `${cfg.startPct}% top`, end: `${cfg.startPct + fadeDuration}% top`, scrub: 0.5 } }
+        );
+        if (i < STORY_TEXTS.length - 1) {
+          gsap.to(el, {
+            opacity: 0, y: -10,
+            scrollTrigger: { trigger: container, start: `${cfg.endPct - fadeDuration}% top`, end: `${cfg.endPct}% top`, scrub: 0.5 },
+          });
+        }
+      });
+    }, container);
+
+    return () => ctx.revert();
+  }, [storyVideoSrc]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -82,15 +147,6 @@ export default function AProposPage() {
             scrollTrigger: { trigger: storyTitleRef.current, start: "top 80%", end: "top 50%", scrub: 1 } }
         );
       }
-
-      /* Story lines */
-      storyLinesRef.current.forEach((line) => {
-        if (!line) return;
-        gsap.fromTo(line, { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.8,
-            scrollTrigger: { trigger: line, start: "top 85%", end: "top 70%", scrub: 0.5 } }
-        );
-      });
 
       /* Steps */
       stepRefs.current.forEach((step, i) => {
@@ -154,39 +210,56 @@ export default function AProposPage() {
         </div>
       </section>
 
-      {/* Notre histoire */}
-      <section className="relative z-10 bg-black py-20 md:py-32">
-        <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2
-              ref={storyTitleRef}
-              className="font-heading text-3xl md:text-5xl mb-10"
-              style={{ clipPath: "inset(0 100% 0 0)" }}
-            >
-              NOTRE <span className="text-[#E50000]">HISTOIRE</span>
-            </h2>
-            <div className="space-y-5">
-              {[
-                `Depuis l'âge de 20 ans, Aiman travaille dans le bâtiment. D'abord ouvrier polyvalent, puis chef d'équipe — ${COMPANY.experience} ans à poser, construire, rénover. Des centaines de chantiers qui forgent un savoir-faire qu'aucune école ne peut enseigner.`,
-                `En 2024, fort de cette expérience, il crée ${COMPANY.name}. L'idée est simple : offrir aux habitants de Saint-Louis et du Haut-Rhin un artisan de confiance, capable de prendre en charge un projet de A à Z.`,
-                `Installé au cœur du Trois Pays, chaque projet est abordé avec la même philosophie :`,
-              ].map((line, i) => (
-                <p key={i} ref={(el) => { storyLinesRef.current[i] = el; }} className="text-gray-400 text-lg leading-relaxed">
-                  {line}
-                  {i === 2 && <em className="text-[#E50000]"> &ldquo;{COMPANY.slogan}&rdquo;</em>}
-                </p>
-              ))}
+      {/* Notre histoire — vidéo scroll-driven du parcours */}
+      <section ref={storyContainerRef} className="relative z-10 bg-black" style={{ height: "300vh" }}>
+        <div className="sticky top-0 h-screen overflow-hidden">
+          <video
+            ref={storyVideoRef}
+            muted
+            playsInline
+            preload="auto"
+            poster="/images/parcours-poster.jpg"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ willChange: "transform" }}
+          >
+            <source src={storyVideoSrc} type="video/mp4" />
+          </video>
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40" />
+
+          {/* Titre reveal */}
+          <div className="absolute top-20 left-0 right-0 z-10 px-6">
+            <div className="max-w-5xl mx-auto">
+              <h2
+                ref={storyTitleRef}
+                className="font-heading text-3xl md:text-5xl"
+                style={{ clipPath: "inset(0 100% 0 0)" }}
+              >
+                NOTRE <span className="text-[#E50000]">HISTOIRE</span>
+              </h2>
             </div>
           </div>
-          <div className="flex justify-center">
-            <Image
-              src="/images/element-atelier.jpg"
-              alt="Outils d'artisan — le savoir-faire Aiman Renovation"
-              width={400}
-              height={400}
-              className="rounded-2xl w-full max-w-sm"
-            />
-          </div>
+
+          {/* Textes synchronisés au scroll */}
+          {STORY_TEXTS.map((cfg, i) => (
+            <div
+              key={i}
+              ref={(el) => { storyTextsRef.current[i] = el; }}
+              className="absolute bottom-20 left-0 right-0 z-10 px-6"
+              style={{ opacity: 0 }}
+            >
+              <div className="max-w-5xl mx-auto">
+                <p
+                  style={{ textShadow: "0 2px 20px rgba(0,0,0,0.9)" }}
+                  className="font-heading text-xl sm:text-2xl md:text-3xl text-white leading-tight max-w-lg"
+                >
+                  {cfg.text} <span className="text-[#E50000]">{cfg.highlight}</span>
+                </p>
+              </div>
+            </div>
+          ))}
+
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
         </div>
       </section>
 
