@@ -77,7 +77,10 @@ export function Hero() {
           const idx = Math.min(Math.floor(self.progress * (frameConfig.total - 1)), frameConfig.total - 1);
           const img = framesRef.current[idx];
           if (img && img.complete && ctx2d) {
-            const scale = Math.max(canvas.width / img.naturalWidth, canvas.height / img.naturalHeight);
+            const isMob = window.innerWidth < 768;
+            const scale = isMob
+              ? Math.min(canvas.width / img.naturalWidth, canvas.height / img.naturalHeight)
+              : Math.max(canvas.width / img.naturalWidth, canvas.height / img.naturalHeight);
             const w = img.naturalWidth * scale;
             const h = img.naturalHeight * scale;
             ctx2d.fillStyle = "#000";
