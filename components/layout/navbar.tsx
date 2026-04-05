@@ -22,10 +22,10 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-black/70 backdrop-blur-xl shadow-lg py-1.5" : "bg-transparent py-3"
+        scrolled ? "bg-black/40 backdrop-blur-xl py-1" : "bg-transparent py-2"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
         <Link
           href="/"
           onClick={() => {
@@ -35,7 +35,7 @@ export function Navbar() {
           }}
           className="flex items-center"
         >
-          <Image src="/logo/logo-white.png" alt="Aiman Renovation" width={120} height={34} priority />
+          <Image src="/logo/logo-white.png" alt="Aiman Renovation" width={100} height={28} priority />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
