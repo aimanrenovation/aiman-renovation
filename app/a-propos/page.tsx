@@ -27,10 +27,10 @@ const ENGAGEMENTS = [
 ];
 
 const CERTIFICATIONS = [
-  { title: "Garantie décennale", desc: "10 ans de couverture sur la solidité de l'ouvrage." },
-  { title: "RC Professionnelle", desc: "Dommages aux tiers couverts pendant les travaux." },
-  { title: "Certification IRVE", desc: "Installation bornes de recharge véhicules électriques." },
-  { title: "Habilitations électriques", desc: "B1V, B2V, BR, BC — interventions basse tension." },
+  { title: "Garantie décennale", desc: "10 ans de couverture sur la solidité de l'ouvrage.", image: "/images/cert-decennale.jpg" },
+  { title: "RC Professionnelle", desc: "Dommages aux tiers couverts pendant les travaux.", image: "/images/cert-rc.jpg" },
+  { title: "Certification IRVE", desc: "Installation bornes de recharge véhicules électriques.", image: "/images/cert-irve.jpg" },
+  { title: "Habilitations électriques", desc: "B1V, B2V, BR, BC — interventions basse tension.", image: "/images/cert-elec.jpg" },
 ];
 
 const ZONES = [
@@ -284,17 +284,29 @@ export default function AProposPage() {
               <div
                 key={cert.title}
                 ref={(el) => { certRefs.current[i] = el; }}
-                className="bg-[#111111] border border-white/5 rounded-xl p-8 flex items-start gap-5"
+                className="group relative rounded-2xl overflow-hidden h-52"
                 style={{ opacity: 0 }}
               >
-                <div className="shrink-0 w-10 h-10 rounded-full bg-[#E50000]/10 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#E50000" className="w-5 h-5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="font-heading text-lg text-white mb-1">{cert.title}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">{cert.desc}</p>
+                {/* Image fond */}
+                <Image
+                  src={cert.image}
+                  alt={cert.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
+
+                {/* Contenu */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-full bg-[#E50000] flex items-center justify-center shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="white" className="w-4 h-4">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                      </svg>
+                    </div>
+                    <h3 className="font-heading text-xl text-white">{cert.title}</h3>
+                  </div>
+                  <p className="text-gray-300 text-sm leading-relaxed">{cert.desc}</p>
                 </div>
               </div>
             ))}
