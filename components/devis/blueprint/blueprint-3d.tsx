@@ -23,7 +23,7 @@ function svgToWorld(x: number, y: number): [number, number] {
 }
 
 // ─── Global camera defaults ────────────────────────────────────────
-const GLOBAL_CAM_POS = new THREE.Vector3(0, 16, 0.01);
+const GLOBAL_CAM_POS = new THREE.Vector3(0, 24, 0.01);
 const GLOBAL_CAM_TARGET = new THREE.Vector3(0, 0, 0);
 
 // ─── Props ─────────────────────────────────────────────────────────
@@ -227,7 +227,7 @@ export function Blueprint3D({ state, dispatch }: Blueprint3DProps) {
         gl={{ antialias: true }}
         style={{ background: BP.bg }}
       >
-        <PerspectiveCamera makeDefault position={[0, 16, 0.01]} fov={50} />
+        <PerspectiveCamera makeDefault position={[0, 24, 0.01]} fov={45} />
         <CameraController state={state} />
 
         {/* Lighting */}
