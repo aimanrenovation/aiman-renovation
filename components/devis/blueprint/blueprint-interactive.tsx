@@ -12,21 +12,22 @@ interface BlueprintInteractiveProps {
 
 // Coordonnées en PIXELS du viewBox SVG (2812x1536)
 // Mesurées depuis le screenshot réel avec conversion screen→SVG
+// Inset ~30px inside walls for clean alignment
 const ZONES: Record<ZoneId, { x: number; y: number; w: number; h: number }> = {
-  cuisine:   { x:  331, y:   91, w:  906, h:  548 },
-  sdb:       { x: 1237, y:   91, w:  359, h:  390 },
-  wc:        { x: 1237, y:  481, w:  359, h:  158 },
-  garage:    { x: 1596, y:   91, w:  685, h:  622 },
-  vestibule: { x:  331, y:  639, w: 1265, h:   74 },
-  salon:     { x:  331, y:  713, w:  432, h:  464 },
-  sam:       { x:  763, y:  713, w:  285, h:  464 },
-  chambre1:  { x: 1048, y:  713, w:  611, h:  464 },
-  chambre2:  { x: 1659, y:  713, w:  622, h:  464 },
-  terrasse:  { x:  331, y: 1177, w:  717, h:   95 },
-  jardin:    { x:   80, y: 1280, w: 2650, h:  180 },
+  cuisine:   { x:  370, y:  130, w:  830, h:  480 },
+  sdb:       { x: 1250, y:  130, w:  310, h:  330 },
+  wc:        { x: 1250, y:  490, w:  310, h:  120 },
+  garage:    { x: 1610, y:  130, w:  620, h:  560 },
+  vestibule: { x:  370, y:  645, w: 1190, h:   55 },
+  salon:     { x:  370, y:  730, w:  380, h:  420 },
+  sam:       { x:  790, y:  730, w:  240, h:  420 },
+  chambre1:  { x: 1070, y:  730, w:  540, h:  420 },
+  chambre2:  { x: 1680, y:  730, w:  540, h:  420 },
+  terrasse:  { x:  370, y: 1185, w:  660, h:   85 },
+  jardin:    { x:   80, y: 1290, w: 2650, h:  170 },
   haie:      { x:   10, y:   10, w:  100, h: 1516 },
-  facades:   { x: 2300, y:   91, w:  100, h: 1086 },
-  toiture:   { x:  331, y:   10, w: 1950, h:   80 },
+  facades:   { x: 2300, y:  130, w:  100, h: 1020 },
+  toiture:   { x:  370, y:   15, w: 1860, h:   80 },
 };
 
 export function BlueprintInteractive({ state, dispatch }: BlueprintInteractiveProps) {
