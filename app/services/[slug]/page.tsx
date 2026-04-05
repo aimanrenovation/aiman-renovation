@@ -40,7 +40,7 @@ export default async function ServicePage({ params }: Props) {
           <>
             <Image
               src={photo}
-              alt={service.title}
+              alt={`${service.title} — Aiman Renovation Saint-Louis 68`}
               fill
               priority
               className="object-cover"
@@ -107,7 +107,7 @@ export default async function ServicePage({ params }: Props) {
         <section className="relative z-10 h-[40vh] md:h-[50vh] overflow-hidden">
           <Image
             src={photo}
-            alt={service.title}
+            alt={`Travaux ${service.title.toLowerCase()} en cours — artisan Haut-Rhin`}
             fill
             className="object-cover"
           />
