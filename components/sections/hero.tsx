@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LinkButton } from "@/components/ui/link-button";
@@ -17,74 +16,42 @@ const SCROLL_TEXTS = [
   { text: "Nous rénovons jusqu'au bout", highlight: "de vos rêves", side: "center" as const, startPct: 78, endPct: 100 },
 ];
 
-const MOBILE_IMAGES = [
-  "/images/hero-1.png",
-  "/images/hero-2.png",
-  "/images/hero-3.png",
-  "/images/hero-4.png",
-];
-
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
-  const mobileRef = useRef<HTMLDivElement>(null);
   const textsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const [currentImg, setCurrentImg] = useState(0);
-  const [isDesktop, setIsDesktop] = useState<boolean | null>(null);
+  const [ready, setReady] = useState(false);
 
-  /* Détection une seule fois au mount */
+  /* Vidéo scroll-driven — mobile + desktop */
   useEffect(() => {
-    setIsDesktop(window.innerWidth >= 768);
-  }, []);
-
-  /* Carrousel mobile */
-  useEffect(() => {
-    if (isDesktop !== false) return;
-    const interval = setInterval(() => {
-      setCurrentImg((prev) => (prev + 1) % MOBILE_IMAGES.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [isDesktop]);
-
-  /* Animations mobile */
-  useEffect(() => {
-    if (isDesktop !== false || !mobileRef.current) return;
-    const els = mobileRef.current.querySelectorAll("[data-anim]");
-    gsap.fromTo(els,
-      { opacity: 0, y: 25 },
-      { opacity: 1, y: 0, stagger: 0.12, duration: 0.8, delay: 0.3, ease: "power3.out" }
-    );
-  }, [isDesktop]);
-
-  /* Animations desktop — vidéo scroll-driven */
-  useEffect(() => {
-    if (isDesktop !== true) return;
     const container = containerRef.current;
     const video = videoRef.current;
-    if (!container) return;
+    if (!container || !video) return;
 
     const ctx = gsap.context(() => {
-      if (video) {
-        const onLoaded = () => {
-          video.pause();
-          video.currentTime = 0;
-          ScrollTrigger.create({
-            trigger: container,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 0.3,
-            onUpdate: (self) => {
-              if (video.duration) {
-                video.currentTime = self.progress * video.duration;
-              }
-            },
-          });
-        };
-        if (video.readyState >= 1) onLoaded();
-        else video.addEventListener("loadedmetadata", onLoaded, { once: true });
-      }
+      const onLoaded = () => {
+        video.pause();
+        video.currentTime = 0;
+        setReady(true);
 
+        ScrollTrigger.create({
+          trigger: container,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.3,
+          onUpdate: (self) => {
+            if (video.duration) {
+              video.currentTime = self.progress * video.duration;
+            }
+          },
+        });
+      };
+
+      if (video.readyState >= 1) onLoaded();
+      else video.addEventListener("loadedmetadata", onLoaded, { once: true });
+
+      /* Intro — fade in puis fade out au scroll */
       if (introRef.current) {
         const els = introRef.current.querySelectorAll("[data-anim]");
         gsap.fromTo(els,
@@ -97,23 +64,19 @@ export function Hero() {
         });
       }
 
-      // CTA buttons — apparaissent avec le dernier texte
+      /* CTA buttons */
       const ctaEl = document.getElementById("hero-cta");
       if (ctaEl) {
         gsap.fromTo(ctaEl,
           { opacity: 0, y: 20 },
           {
             opacity: 1, y: 0, duration: 0.5,
-            scrollTrigger: {
-              trigger: container,
-              start: "82% top",
-              end: "86% top",
-              scrub: 0.5,
-            },
+            scrollTrigger: { trigger: container, start: "82% top", end: "86% top", scrub: 0.5 },
           }
         );
       }
 
+      /* Textes synchronisés au scroll */
       textsRef.current.forEach((el, i) => {
         if (!el) return;
         const cfg = SCROLL_TEXTS[i];
@@ -150,93 +113,34 @@ export function Hero() {
     }, container);
 
     return () => ctx.revert();
-  }, [isDesktop]);
+  }, []);
 
-  /* ═══ SSR + chargement : fond noir pour éviter le flash blanc ═══ */
-  if (isDesktop === null) {
-    return (
-      <div className="h-screen bg-black flex items-center justify-center">
-        <h1 className="font-heading text-3xl md:text-6xl leading-none tracking-tight text-white">
-          RÉNOVATION <span className="text-[#E50000]">SUR MESURE</span>
-        </h1>
-      </div>
-    );
-  }
-
-  /* ═══ Mobile ═══ */
-  if (!isDesktop) {
-    return (
-      <div ref={mobileRef} className="relative h-screen overflow-hidden bg-black">
-        {MOBILE_IMAGES.map((src, i) => (
-          <Image
-            key={src}
-            src={src}
-            alt="Aiman Renovation"
-            fill
-            priority={i === 0}
-            className={`object-cover transition-opacity duration-1000 ${
-              i === currentImg ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        ))}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/20" />
-
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6 text-center">
-          <div data-anim className="flex items-center gap-2 mb-6">
-            <div className="w-8 h-0.5 bg-[#002B7F]" />
-            <div className="w-8 h-0.5 bg-white" />
-            <div className="w-8 h-0.5 bg-[#CE1126]" />
-          </div>
-          <h1 data-anim className="font-heading text-3xl sm:text-4xl leading-none tracking-tight">
-            RÉNOVATION <span className="text-[#E50000]">SUR MESURE</span>
-          </h1>
-          <p data-anim className="mt-4 text-base text-white/70 max-w-xs mx-auto font-light">
-            Nous rénovons jusqu&apos;au bout{" "}
-            <span className="text-[#E50000]">de vos rêves</span>
-          </p>
-          <div data-anim className="mt-8 flex flex-col items-center gap-3">
-            <LinkButton href="/devis" size="lg" className="bg-[#E50000] hover:bg-[#B80000] text-white px-8 py-4 rounded-md">
-              Devis gratuit
-            </LinkButton>
-            <LinkButton href="/realisations" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-md">
-              Nos réalisations
-            </LinkButton>
-          </div>
-        </div>
-
-        <div className="absolute bottom-8 left-0 right-0 z-20 flex justify-center gap-2">
-          {MOBILE_IMAGES.map((_, i) => (
-            <div
-              key={i}
-              className={`h-2 rounded-full transition-all duration-500 ${
-                i === currentImg ? "bg-[#E50000] w-6" : "bg-white/30 w-2"
-              }`}
-            />
-          ))}
-        </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
-      </div>
-    );
-  }
-
-  /* ═══ Desktop ═══ */
   return (
     <div ref={containerRef} className="relative" style={{ height: "500vh" }}>
       <div className="sticky top-0 h-screen overflow-hidden">
+        {/* Vidéo scroll-driven — GPU accelerated */}
         <video
           ref={videoRef}
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           poster="/images/hero-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ willChange: "transform" }}
         >
           <source src="/videos/hero-scroll-smooth.mp4" type="video/mp4" />
         </video>
 
+        {/* Loader */}
+        {!ready && (
+          <div className="absolute inset-0 flex items-center justify-center z-30 bg-black">
+            <div className="w-10 h-10 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+          </div>
+        )}
+
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
 
+        {/* Intro */}
         <div
           ref={introRef}
           className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6 text-center"
@@ -246,10 +150,10 @@ export function Hero() {
             <div className="w-8 h-0.5 bg-white" />
             <div className="w-8 h-0.5 bg-[#CE1126]" />
           </div>
-          <h1 data-anim className="font-heading text-4xl md:text-6xl leading-none tracking-tight">
+          <h1 data-anim className="font-heading text-3xl sm:text-4xl md:text-6xl leading-none tracking-tight">
             RÉNOVATION <span className="text-[#E50000]">SUR MESURE</span>
           </h1>
-          <p data-anim className="mt-5 text-lg text-white/70 max-w-md mx-auto font-light">
+          <p data-anim className="mt-4 md:mt-5 text-base md:text-lg text-white/70 max-w-md mx-auto font-light">
             Scrollez pour découvrir notre savoir-faire
           </p>
           <div data-anim className="absolute bottom-10 animate-bounce">
@@ -259,11 +163,12 @@ export function Hero() {
           </div>
         </div>
 
+        {/* Textes scroll-driven */}
         {SCROLL_TEXTS.map((cfg, i) => (
           <div
             key={i}
             ref={(el) => { textsRef.current[i] = el; }}
-            className={`absolute z-10 px-8 md:px-16 ${
+            className={`absolute z-10 px-6 sm:px-8 md:px-16 ${
               cfg.side === "left"
                 ? "left-0 top-1/2 -translate-y-1/2 text-left"
                 : cfg.side === "right"
@@ -272,12 +177,15 @@ export function Hero() {
             }`}
             style={{ opacity: 0 }}
           >
-            <div className={cfg.side === "center" ? "" : "max-w-md"}>
-              <p className={`font-heading leading-tight text-white ${
-                cfg.side === "center"
-                  ? "text-3xl md:text-5xl"
-                  : "text-2xl md:text-4xl"
-              }`}>
+            <div className={cfg.side === "center" ? "" : "max-w-xs sm:max-w-sm md:max-w-md"}>
+              <p
+                style={{ textShadow: "0 2px 20px rgba(0,0,0,0.8)" }}
+                className={`font-heading leading-tight text-white ${
+                  cfg.side === "center"
+                    ? "text-2xl sm:text-3xl md:text-5xl"
+                    : "text-xl sm:text-2xl md:text-4xl"
+                }`}
+              >
                 {cfg.text}{" "}
                 <span className="text-[#E50000]">{cfg.highlight}</span>
               </p>
@@ -285,12 +193,13 @@ export function Hero() {
           </div>
         ))}
 
+        {/* CTA */}
         <div className="absolute bottom-16 left-0 right-0 z-10 flex justify-center">
-          <div className="flex items-center gap-4 opacity-0" id="hero-cta">
-            <LinkButton href="/devis" size="lg" className="bg-[#E50000] hover:bg-[#B80000] text-white px-8 py-5 rounded-md">
+          <div className="flex flex-col sm:flex-row items-center gap-3 opacity-0" id="hero-cta">
+            <LinkButton href="/devis" size="lg" className="bg-[#E50000] hover:bg-[#B80000] text-white px-8 py-4 md:py-5 rounded-md">
               Devis gratuit
             </LinkButton>
-            <LinkButton href="/realisations" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 px-8 py-5 rounded-md">
+            <LinkButton href="/realisations" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 px-8 py-4 md:py-5 rounded-md">
               Nos réalisations
             </LinkButton>
           </div>
