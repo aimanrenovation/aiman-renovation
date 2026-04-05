@@ -180,8 +180,8 @@ export default function AProposPage() {
           </div>
           <div className="flex justify-center">
             <Image
-              src="/images/element-casque.jpg"
-              alt="Casque de chantier"
+              src="/images/element-atelier.jpg"
+              alt="Outils d'artisan — le savoir-faire Aiman Renovation"
               width={400}
               height={400}
               className="rounded-2xl w-full max-w-sm"
