@@ -89,32 +89,11 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
             <g key={zone.id} onClick={() => handleZoneClick(zone.id)} style={{ cursor: "pointer" }}>
               <rect
                 x={z.x} y={z.y} width={z.w} height={z.h}
-                fill={isActive ? "rgba(229,0,0,0.2)" : hasWorks ? "rgba(229,0,0,0.1)" : "transparent"}
-                stroke={isActive ? "#E50000" : hasWorks ? "rgba(229,0,0,0.5)" : "transparent"}
-                strokeWidth={isActive ? 6 : hasWorks ? 4 : 0}
+                fill={isActive ? "rgba(229,0,0,0.2)" : hasWorks ? "rgba(229,0,0,0.1)" : "rgba(255,0,0,0.08)"}
+                stroke={isActive ? "#E50000" : hasWorks ? "rgba(229,0,0,0.5)" : "rgba(255,0,0,0.4)"}
+                strokeWidth={isActive ? 6 : 3}
                 rx={4}
-                className="transition-all duration-300"
               />
-              {/* Hover effect */}
-              <rect
-                x={z.x} y={z.y} width={z.w} height={z.h}
-                fill="transparent"
-                stroke="transparent"
-                strokeWidth={4}
-                rx={4}
-                className="hover:fill-[rgba(74,158,255,0.12)] hover:stroke-[rgba(74,158,255,0.5)]"
-                style={{ transition: "all 0.3s" }}
-              />
-              {/* Label au centre */}
-              <text
-                x={z.x + z.w / 2} y={z.y + z.h / 2}
-                textAnchor="middle" dominantBaseline="middle"
-                fill="#4A9EFF" fontSize={z.w < 250 ? 28 : 36} fontFamily="sans-serif" fontWeight="bold"
-                opacity={0} className="hover:opacity-80"
-                style={{ transition: "opacity 0.3s", pointerEvents: "none" }}
-              >
-                {zone.label}
-              </text>
               {/* Badge compteur */}
               {hasWorks && (
                 <>
