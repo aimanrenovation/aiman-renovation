@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ARGUMENTS = [
   { title: "Garantie décennale", desc: "Tous nos travaux couverts par une assurance décennale et RC professionnelle.", img: "/images/element-casque.jpg" },
-  { title: "Devis gratuit sous 48h", desc: "Visite technique incluse, devis détaillé et transparent. Sans engagement.", img: "/images/element-niveau.jpg" },
+  { title: "Devis gratuit sous 4 jours", desc: "Visite technique incluse, devis détaillé et transparent. Sans engagement.", img: "/images/element-niveau.jpg" },
   { title: "Artisan local", desc: "Basés à Saint-Louis, nous connaissons le terrain et les fournisseurs locaux.", img: "/images/ambiance-alsace.jpg" },
   { title: "19 ans d'expérience", desc: "Un savoir-faire éprouvé sur tous les corps de métier de la rénovation.", img: "/images/element-marteau.jpg" },
   { title: "Accompagnement aides", desc: "MaPrimeRénov', CEE, éco-PTZ — nous montons vos dossiers.", img: "/images/element-cle.jpg" },

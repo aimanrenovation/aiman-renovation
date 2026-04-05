@@ -6,7 +6,7 @@ import { ContactForm } from "@/components/sections/contact-form";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Contactez ${COMPANY.name} à ${COMPANY.city}. Devis gratuit sous 48h, sans engagement. Appelez-nous ou remplissez le formulaire.`,
+  description: `Contactez ${COMPANY.name} à ${COMPANY.city}. Devis gratuit sous 4 jours, sans engagement. Appelez-nous ou remplissez le formulaire.`,
 };
 
 export default function ContactPage() {
@@ -38,7 +38,7 @@ export default function ContactPage() {
                 },
                 {
                   icon: "⏱️",
-                  text: "Réponse sous 48 heures",
+                  text: "Réponse sous 4 jours",
                 },
                 {
                   icon: "🤝",

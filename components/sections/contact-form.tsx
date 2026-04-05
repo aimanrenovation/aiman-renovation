@@ -103,7 +103,7 @@ export function ContactForm() {
 
       {status === "success" && (
         <p className="text-green-400 text-sm text-center">
-          Message envoy&eacute; avec succ&egrave;s ! Nous vous r&eacute;pondrons sous 48h.
+          Message envoy&eacute; avec succ&egrave;s ! Nous vous r&eacute;pondrons sous 4 jours.
         </p>
       )}
 

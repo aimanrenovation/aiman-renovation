@@ -249,7 +249,7 @@ export default async function ServicePage({ params }: Props) {
               CE <span className="text-[#E50000]">SERVICE</span> ?
             </h2>
             <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-              Décrivez votre projet et recevez un devis gratuit sous 48h.
+              Décrivez votre projet et recevez un devis gratuit sous 4 jours.
               Sans engagement.
             </p>
             <div className="flex flex-col sm:flex-row items-start gap-4">

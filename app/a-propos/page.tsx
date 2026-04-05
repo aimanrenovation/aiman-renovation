@@ -22,7 +22,7 @@ const STEPS = [
   {
     number: "03",
     title: "Devis détaillé",
-    desc: "Sous 48 heures, vous recevez un devis complet : détail des travaux poste par poste, matériaux préconisés, planning prévisionnel et montant total. Tout est transparent.",
+    desc: "Sous 4 jours, vous recevez un devis complet : détail des travaux poste par poste, matériaux préconisés, planning prévisionnel et montant total. Tout est transparent.",
   },
   {
     number: "04",

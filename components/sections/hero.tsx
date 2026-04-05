@@ -131,9 +131,9 @@ export function Hero() {
           <source src="/videos/hero-scroll-smooth.mp4" type="video/mp4" />
         </video>
 
-        {/* Loader */}
+        {/* Loader — transparent pour voir le poster */}
         {!ready && (
-          <div className="absolute inset-0 flex items-center justify-center z-30 bg-black">
+          <div className="absolute inset-0 flex items-center justify-center z-30">
             <div className="w-10 h-10 border-2 border-white/20 border-t-white rounded-full animate-spin" />
           </div>
         )}

@@ -22,7 +22,7 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-black/40 backdrop-blur-xl py-1" : "bg-transparent py-2"
+        scrolled ? "bg-black/40 backdrop-blur-xl py-2" : "bg-transparent py-3"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
@@ -35,7 +35,7 @@ export function Navbar() {
           }}
           className="flex items-center"
         >
-          <Image src="/logo/logo-white.png" alt="Aiman Renovation" width={100} height={28} priority />
+          <Image src="/logo/logo-white.png" alt="Aiman Renovation" width={140} height={44} className="h-auto" priority />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">

@@ -39,7 +39,7 @@ export function CtaBanner() {
         <h2 ref={titleRef} className="font-heading text-3xl sm:text-4xl md:text-6xl text-white mb-6 leading-tight">
           UN PROJET EN TÊTE ?
         </h2>
-        <p className="text-white/60 text-lg mb-10">Devis gratuit sous 48h, sans engagement.</p>
+        <p className="text-white/60 text-lg mb-10">Devis gratuit sous 4 jours, sans engagement.</p>
         <LinkButton href="/devis" size="lg" className="bg-white text-black hover:bg-gray-200 px-12 py-6 rounded-md font-semibold">
           Demander un devis
         </LinkButton>
