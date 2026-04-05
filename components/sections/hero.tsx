@@ -22,6 +22,14 @@ export function Hero() {
   const introRef = useRef<HTMLDivElement>(null);
   const textsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [ready, setReady] = useState(false);
+  const [videoSrc, setVideoSrc] = useState("/videos/hero-scroll-smooth.mp4");
+
+  /* Choisir la vidéo mobile ou desktop */
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setVideoSrc("/videos/hero-mobile.mp4");
+    }
+  }, []);
 
   /* Vidéo scroll-driven — mobile + desktop */
   useEffect(() => {
@@ -128,7 +136,7 @@ export function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ willChange: "transform" }}
         >
-          <source src="/videos/hero-scroll-smooth.mp4" type="video/mp4" />
+          <source src={videoSrc} type="video/mp4" />
         </video>
 
         {/* Loader — transparent pour voir le poster */}
