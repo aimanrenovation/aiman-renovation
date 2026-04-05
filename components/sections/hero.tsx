@@ -232,7 +232,7 @@ export function Hero() {
           poster="/images/hero-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/hero-optimized.mp4" type="video/mp4" />
+          <source src="/videos/hero-scroll-smooth.mp4" type="video/mp4" />
         </video>
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
