@@ -5,8 +5,8 @@ import { ScrollReveal } from "@/components/sections/scroll-reveal";
 import { ContactForm } from "@/components/sections/contact-form";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: `Contactez ${COMPANY.name} à ${COMPANY.city}. Devis gratuit sous 4 jours, sans engagement. Appelez-nous ou remplissez le formulaire.`,
+  title: "Contact — Rénovation Saint-Louis 68300",
+  description: "Contactez Aiman Renovation au 03 56 89 44 03 ou par email. 14 rue de la Paix, Saint-Louis 68300. Devis gratuit sous 48h pour vos travaux de rénovation.",
 };
 
 export default function ContactPage() {

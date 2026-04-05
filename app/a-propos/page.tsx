@@ -4,8 +4,8 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { ScrollReveal } from "@/components/sections/scroll-reveal";
 
 export const metadata: Metadata = {
-  title: "À propos",
-  description: `${COMPANY.name} — ${COMPANY.experience} ans d'expérience en rénovation à ${COMPANY.city}. Découvrez notre histoire, nos valeurs et notre processus de travail.`,
+  title: "À Propos — Artisan Rénovation depuis 19 ans",
+  description: "Aiman Renovation, entreprise de rénovation à Saint-Louis (68300). 19 ans d'expérience, assurance décennale, devis gratuit. Découvrez notre équipe.",
 };
 
 const STEPS = [

@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = SERVICES.find((s) => s.slug === slug);
   if (!service) return {};
   return {
-    title: service.title,
-    description: service.description,
+    title: `${service.title} à Saint-Louis (68) — Devis Gratuit`,
+    description: `${service.description} Artisan qualifié à Saint-Louis et Haut-Rhin. Devis gratuit sous 48h.`,
   };
 }
 

@@ -10,9 +10,9 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { ScrollReveal } from "@/components/sections/scroll-reveal";
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "FAQ Rénovation — Questions Fréquentes",
   description:
-    "Questions fréquentes sur la rénovation, devis, garanties, aides financières (MaPrimeRénov', CEE, éco-PTZ) et déroulement des travaux.",
+    "Réponses à vos questions sur la rénovation : devis gratuit, délais, garanties, aides financières (MaPrimeRénov', CEE, éco-PTZ). Artisan Saint-Louis 68.",
 };
 
 // Static FAQ schema - no user input, safe to inline
