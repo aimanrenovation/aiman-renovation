@@ -1,39 +1,21 @@
 export type ZoneId =
-  | "cuisine"
-  | "salle-de-bain"
-  | "facade"
-  | "toit"
-  | "garage"
-  | "exterieur";
+  | "salon" | "sam" | "cuisine" | "vestibule" | "wc" | "sdb"
+  | "chambre1" | "chambre2" | "garage"
+  | "terrasse" | "jardin" | "haie" | "facades" | "toiture";
+
+export interface WorkItem {
+  id: string;
+  label: string;
+}
 
 export interface ZoneConfig {
   id: ZoneId;
   label: string;
-  icon: string;
-  cameraPosition: [number, number, number];
-  cameraTarget: [number, number, number];
-  problems: ProblemOption[];
-  renovationOptions: RenovationOption[];
+  category: "interieur" | "exterieur";
+  workItems: WorkItem[];
+  bounds: { x: number; y: number; w: number; h: number };
+  camera3D: { position: [number, number, number]; target: [number, number, number] };
 }
-
-export interface ProblemOption {
-  id: string;
-  label: string;
-  position3D: [number, number, number];
-}
-
-export interface RenovationOption {
-  id: string;
-  label: string;
-  description: string;
-}
-
-export type BudgetRange =
-  | "< 5000"
-  | "5000-15000"
-  | "15000-30000"
-  | "30000-50000"
-  | "> 50000";
 
 export interface ContactInfo {
   firstName: string;
@@ -43,39 +25,30 @@ export interface ContactInfo {
   address: string;
 }
 
-export interface DevisFormState {
-  currentStep: number;
-  selectedZones: ZoneId[];
+export type BudgetRange = "< 5000" | "5000-15000" | "15000-30000" | "30000-50000" | "> 50000";
+
+export type DevisView = "global" | "zoomed" | "recap" | "success";
+
+export interface DevisState {
+  view: DevisView;
   activeZone: ZoneId | null;
-  problems: Record<ZoneId, string[]>;
-  renovationOptions: Record<ZoneId, string[]>;
-  surface: number | null;
+  selectedWorks: Record<ZoneId, string[]>;
   budget: BudgetRange | null;
   message: string;
-  photos: File[];
   contact: ContactInfo;
   isSubmitting: boolean;
-  isSubmitted: boolean;
   error: string | null;
 }
 
 export type DevisAction =
-  | { type: "SET_STEP"; step: number }
-  | { type: "NEXT_STEP" }
-  | { type: "PREV_STEP" }
-  | { type: "TOGGLE_ZONE"; zone: ZoneId }
-  | { type: "SET_ACTIVE_ZONE"; zone: ZoneId | null }
-  | { type: "TOGGLE_PROBLEM"; zone: ZoneId; problemId: string }
-  | { type: "TOGGLE_RENOVATION_OPTION"; zone: ZoneId; optionId: string }
-  | { type: "SET_SURFACE"; surface: number | null }
+  | { type: "ZOOM_ZONE"; zone: ZoneId }
+  | { type: "ZOOM_OUT" }
+  | { type: "SHOW_RECAP" }
+  | { type: "TOGGLE_WORK"; zone: ZoneId; workId: string }
   | { type: "SET_BUDGET"; budget: BudgetRange | null }
   | { type: "SET_MESSAGE"; message: string }
-  | { type: "ADD_PHOTOS"; files: File[] }
-  | { type: "REMOVE_PHOTO"; index: number }
   | { type: "SET_CONTACT"; field: keyof ContactInfo; value: string }
   | { type: "SET_SUBMITTING"; isSubmitting: boolean }
-  | { type: "SET_SUBMITTED" }
+  | { type: "SET_SUCCESS" }
   | { type: "SET_ERROR"; error: string | null }
   | { type: "RESET" };
-
-export const TOTAL_STEPS = 6;
