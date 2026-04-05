@@ -35,6 +35,7 @@ const TESTIMONIALS = [
 
 export function TestimonialsCarousel() {
   const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -42,6 +43,14 @@ export function TestimonialsCarousel() {
     if (!section) return;
 
     const ctx = gsap.context(() => {
+      if (titleRef.current) {
+        gsap.fromTo(titleRef.current,
+          { clipPath: "inset(0 100% 0 0)" },
+          { clipPath: "inset(0 0% 0 0)", duration: 1.5, ease: "power4.inOut",
+            scrollTrigger: { trigger: titleRef.current, start: "top 80%", end: "top 50%", scrub: 1 } }
+        );
+      }
+
       cardsRef.current.forEach((card, i) => {
         if (!card) return;
         gsap.fromTo(card,
@@ -60,7 +69,7 @@ export function TestimonialsCarousel() {
   return (
     <section ref={sectionRef} className="relative z-10 bg-black py-20 md:py-32">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="font-heading text-3xl md:text-4xl mb-4">
+        <h2 ref={titleRef} className="font-heading text-3xl md:text-4xl mb-4" style={{ clipPath: "inset(0 100% 0 0)" }}>
           ILS NOUS FONT <span className="text-[#E50000]">CONFIANCE</span>
         </h2>
         <p className="text-gray-500 mb-16">Retours de nos clients en Alsace.</p>

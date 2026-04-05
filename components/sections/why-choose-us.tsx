@@ -18,6 +18,7 @@ const ARGUMENTS = [
 
 export function WhyChooseUs() {
   const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
   const rowsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -25,6 +26,14 @@ export function WhyChooseUs() {
     if (!section) return;
 
     const ctx = gsap.context(() => {
+      if (titleRef.current) {
+        gsap.fromTo(titleRef.current,
+          { clipPath: "inset(0 100% 0 0)" },
+          { clipPath: "inset(0 0% 0 0)", duration: 1.5, ease: "power4.inOut",
+            scrollTrigger: { trigger: titleRef.current, start: "top 80%", end: "top 50%", scrub: 1 } }
+        );
+      }
+
       rowsRef.current.forEach((row) => {
         if (!row) return;
         gsap.fromTo(row,
@@ -41,7 +50,7 @@ export function WhyChooseUs() {
   return (
     <section ref={sectionRef} className="relative z-10 bg-[#0A0A0A] py-20 md:py-32">
       <div className="max-w-5xl mx-auto px-6">
-        <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl mb-10 md:mb-16">
+        <h2 ref={titleRef} className="font-heading text-2xl sm:text-3xl md:text-5xl mb-10 md:mb-16" style={{ clipPath: "inset(0 100% 0 0)" }}>
           POURQUOI NOUS <span className="text-[#E50000]">CHOISIR</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

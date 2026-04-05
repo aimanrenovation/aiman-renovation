@@ -13,6 +13,7 @@ const HERO_SERVICES = ["cuisine", "facade-isolation", "paysager"];
 
 export function ServicesPreview() {
   const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
   const heroBlocksRef = useRef<(HTMLDivElement | null)[]>([]);
   const gridRef = useRef<HTMLDivElement>(null);
 
@@ -21,6 +22,15 @@ export function ServicesPreview() {
     if (!section) return;
 
     const ctx = gsap.context(() => {
+      // Titre — même reveal clipPath que "Notre savoir-faire"
+      if (titleRef.current) {
+        gsap.fromTo(titleRef.current,
+          { clipPath: "inset(0 100% 0 0)" },
+          { clipPath: "inset(0 0% 0 0)", duration: 1.5, ease: "power4.inOut",
+            scrollTrigger: { trigger: titleRef.current, start: "top 80%", end: "top 50%", scrub: 1 } }
+        );
+      }
+
       heroBlocksRef.current.forEach((block) => {
         if (!block) return;
         const title = block.querySelector("[data-title]");
@@ -53,7 +63,7 @@ export function ServicesPreview() {
     <section ref={sectionRef} className="relative z-10 bg-black">
       <div className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-heading text-3xl md:text-5xl">NOS <span className="text-[#E50000]">SERVICES</span></h2>
+          <h2 ref={titleRef} className="font-heading text-3xl md:text-5xl" style={{ clipPath: "inset(0 100% 0 0)" }}>NOS <span className="text-[#E50000]">SERVICES</span></h2>
         </div>
       </div>
 
