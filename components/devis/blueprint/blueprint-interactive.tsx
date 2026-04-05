@@ -17,17 +17,26 @@ interface BlueprintInteractiveProps {
 // Cloisons: cui→sdb=920 sdb_wc=450 sdbwc→gar=1250
 // Corridor: top=648 bot=665
 // Salon→SAM=629 SAM→Ch1=776 Ch1→Ch2=1279
+// Corrigé après analyse visuelle debug toutes zones visibles
+// Cuisine = tout le haut-gauche avec le carrelage
+// SDB = petite pièce "SDB" en haut à droite de la cuisine (avec douche+baignoire)
+// WC = sous la SDB (avec cuvette)
+// Garage = grande pièce droite en haut (voiture)
+// Salon = bas-gauche (TV+canapé) — LARGE, inclut l'espace jusqu'au mur SAM
+// SAM = table à manger au centre-gauche
+// Ch1 = "Chambre 1 Parentale" grande pièce centre-bas
+// Ch2 = "Chambre 2" droite-bas
 const ZONES: Record<ZoneId, { x: number; y: number; w: number; h: number }> = {
-  cuisine:   { x:  453, y:  201, w:  467, h:  447 },
-  sdb:       { x:  920, y:  201, w:  330, h:  249 },
-  wc:        { x:  920, y:  450, w:  330, h:  198 },
-  garage:    { x: 1250, y:  201, w: 1067, h:  464 },
-  vestibule: { x:  453, y:  648, w:  797, h:   17 },
-  salon:     { x:  453, y:  665, w:  176, h:  416 },
-  sam:       { x:  629, y:  665, w:  147, h:  416 },
-  chambre1:  { x:  776, y:  665, w:  503, h:  416 },
-  chambre2:  { x: 1279, y:  665, w:  918, h:  416 },
-  terrasse:  { x:  453, y: 1081, w:  323, h:  120 },
+  cuisine:   { x:  453, y:  201, w:  617, h:  447 },  // 453→1070
+  sdb:       { x: 1070, y:  201, w:  270, h:  249 },  // 1070→1340, petite pièce SDB
+  wc:        { x: 1070, y:  450, w:  270, h:  198 },  // sous SDB
+  garage:    { x: 1340, y:  201, w:  977, h:  464 },  // 1340→2317
+  vestibule: { x:  453, y:  648, w:  887, h:   17 },  // corridor
+  salon:     { x:  453, y:  665, w:  340, h:  416 },  // 453→793, TV+canapé
+  sam:       { x:  793, y:  665, w:  260, h:  416 },  // 793→1053, table à manger
+  chambre1:  { x: 1053, y:  665, w:  480, h:  416 },  // 1053→1533, Ch1 Parentale
+  chambre2:  { x: 1533, y:  665, w:  664, h:  416 },  // 1533→2197, Ch2
+  terrasse:  { x:  453, y: 1081, w:  600, h:  120 },  // dallée
   jardin:    { x:   80, y: 1210, w: 2650, h:  250 },
   haie:      { x:   10, y:   10, w:  120, h: 1516 },
   facades:   { x: 2350, y:  201, w:  120, h:  880 },
