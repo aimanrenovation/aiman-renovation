@@ -10,11 +10,12 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 gsap.registerPlugin(ScrollTrigger);
 
 const STORY_TEXTS = [
-  { text: "Tout commence", highlight: "à l'école", startPct: 0, endPct: 16 },
-  { text: "Les premiers chantiers,", highlight: "les premières sueurs", startPct: 16, endPct: 33 },
-  { text: "Tomber,", highlight: "se relever", startPct: 33, endPct: 50 },
-  { text: "Devenir chef d'équipe,", highlight: "mener les hommes", startPct: 50, endPct: 66 },
-  { text: "Et un jour, créer", highlight: "Aiman Renovation", startPct: 66, endPct: 100 },
+  { text: "Tout commence par", highlight: "un rêve d'enfant", story: "Un petit garçon qui dessine des maisons. Qui rêve de construire, de créer, de transformer.", startPct: 0, endPct: 12 },
+  { text: "Les premiers chantiers,", highlight: "les premières sueurs", story: "À 20 ans, Aiman entre sur les chantiers. Ouvrier polyvalent, il apprend chaque métier sur le terrain. Plomberie, électricité, carrelage, peinture.", startPct: 12, endPct: 25 },
+  { text: "Tomber sous la pluie,", highlight: "se relever plus fort", story: "Les épreuves forgent le caractère. Chaque obstacle devient une leçon. Chaque échec, un tremplin.", startPct: 25, endPct: 40 },
+  { text: "Devenir chef,", highlight: "mener les hommes", story: "Chef d'équipe, il coordonne, il supervise, il transmet. 19 ans d'expérience, des centaines de chantiers, un savoir-faire irréprochable.", startPct: 40, endPct: 55 },
+  { text: "Porter les couleurs", highlight: "d'Aiman Renovation", story: "En 2024, il crée sa propre entreprise. Un seul interlocuteur, tous les corps de métier, une exigence sans compromis.", startPct: 55, endPct: 72 },
+  { text: "Et un jour, ouvrir", highlight: "les portes de son entreprise", story: "14 rue de la Paix, Saint-Louis. Au cœur du Trois Pays. Nous rénovons jusqu'au bout de vos rêves.", startPct: 72, endPct: 100 },
 ];
 
 const STEPS = [
@@ -211,7 +212,7 @@ export default function AProposPage() {
       </section>
 
       {/* Notre histoire — vidéo scroll-driven du parcours */}
-      <section ref={storyContainerRef} className="relative z-10 bg-black" style={{ height: "300vh" }}>
+      <section ref={storyContainerRef} className="relative z-10 bg-black" style={{ height: "500vh" }}>
         <div className="sticky top-0 h-screen overflow-hidden">
           <video
             ref={storyVideoRef}
@@ -254,6 +255,12 @@ export default function AProposPage() {
                   className="font-heading text-xl sm:text-2xl md:text-3xl text-white leading-tight max-w-lg"
                 >
                   {cfg.text} <span className="text-[#E50000]">{cfg.highlight}</span>
+                </p>
+                <p
+                  style={{ textShadow: "0 2px 15px rgba(0,0,0,0.9)" }}
+                  className="mt-3 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-md"
+                >
+                  {cfg.story}
                 </p>
               </div>
             </div>
