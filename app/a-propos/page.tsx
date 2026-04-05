@@ -18,12 +18,12 @@ const STEPS = [
 ];
 
 const ENGAGEMENTS = [
-  { icon: "quality", title: "Qualité sans compromis", desc: "Matériaux sélectionnés, exécution soignée dans les règles de l'art." },
-  { icon: "calendar", title: "Respect des délais", desc: "Le planning du devis est notre feuille de route. Aucune mauvaise surprise." },
-  { icon: "clean", title: "Chantier propre", desc: "Protection dès le premier jour, nettoyage complet en fin de chantier." },
-  { icon: "chat", title: "Transparence totale", desc: "Un interlocuteur unique, photos WhatsApp, disponible du lundi au samedi." },
-  { icon: "handshake", title: "Écoute et conseil", desc: "Si une solution plus simple ou moins coûteuse existe, on vous la propose." },
-  { icon: "shield", title: "Sérénité garantie", desc: "Garantie décennale, RC professionnelle. Votre investissement est protégé." },
+  { icon: "quality", title: "Qualité sans compromis", desc: "Matériaux sélectionnés, exécution soignée dans les règles de l'art.", image: "/images/engage-qualite.jpg" },
+  { icon: "calendar", title: "Respect des délais", desc: "Le planning du devis est notre feuille de route. Aucune mauvaise surprise.", image: "/images/engage-delais.jpg" },
+  { icon: "clean", title: "Chantier propre", desc: "Protection dès le premier jour, nettoyage complet en fin de chantier.", image: "/images/engage-propre.jpg" },
+  { icon: "chat", title: "Transparence totale", desc: "Un interlocuteur unique, photos WhatsApp, disponible du lundi au samedi.", image: "/images/engage-communication.jpg" },
+  { icon: "handshake", title: "Écoute et conseil", desc: "Si une solution plus simple ou moins coûteuse existe, on vous la propose.", image: "/images/engage-ecoute.jpg" },
+  { icon: "shield", title: "Sérénité garantie", desc: "Garantie décennale, RC professionnelle. Votre investissement est protégé.", image: "/images/engage-garantie.jpg" },
 ];
 
 const CERTIFICATIONS = [
@@ -244,14 +244,29 @@ export default function AProposPage() {
               <div
                 key={e.title}
                 ref={(el) => { engagementRefs.current[i] = el; }}
-                className="group bg-[#111111] border border-white/5 rounded-xl p-8 hover:border-[#E50000]/20 transition-all"
+                className="group bg-[#111111] border border-white/5 rounded-xl overflow-hidden hover:border-[#E50000]/20 transition-all"
                 style={{ opacity: 0 }}
               >
-                <div className="w-12 h-12 rounded-full bg-[#E50000]/10 flex items-center justify-center text-[#E50000] mb-5 group-hover:bg-[#E50000]/20 transition-colors">
-                  <EngagementIcon name={e.icon} />
+                {/* Image */}
+                <div className="relative h-44 overflow-hidden">
+                  <Image
+                    src={e.image}
+                    alt={e.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent" />
                 </div>
-                <h3 className="font-heading text-lg text-white mb-2">{e.title}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">{e.desc}</p>
+                {/* Texte */}
+                <div className="p-6 pt-2">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-9 h-9 rounded-full bg-[#E50000]/10 flex items-center justify-center text-[#E50000] shrink-0 group-hover:bg-[#E50000]/20 transition-colors">
+                      <EngagementIcon name={e.icon} />
+                    </div>
+                    <h3 className="font-heading text-lg text-white">{e.title}</h3>
+                  </div>
+                  <p className="text-sm text-gray-400 leading-relaxed">{e.desc}</p>
+                </div>
               </div>
             ))}
           </div>
