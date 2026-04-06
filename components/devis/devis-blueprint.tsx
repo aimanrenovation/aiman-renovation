@@ -39,6 +39,19 @@ function loadSavedState(locale: string): DevisState {
   const params = new URLSearchParams(window.location.search);
   if (params.get("reset") === "1") {
     localStorage.removeItem(getStorageKey(locale));
+    const zone = params.get("zone");
+    const work = params.get("work");
+    if (zone && work) {
+      return {
+        ...initialDevisState,
+        view: "zoomed",
+        activeZone: zone as DevisState["activeZone"],
+        selectedWorks: {
+          ...initialDevisState.selectedWorks,
+          [zone]: [work],
+        },
+      };
+    }
     return initialDevisState;
   }
 
