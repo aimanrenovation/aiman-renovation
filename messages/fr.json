@@ -816,6 +816,46 @@
       ],
       "whyPro": "En cas d'urgence, chaque minute compte. Une fuite non traitée peut provoquer des milliers d'euros de dégâts en quelques heures. Un circuit électrique défaillant représente un risque d'incendie. Faire appel à un professionnel qualifié garantit une intervention sûre, conforme aux normes et documentée pour votre assurance. Notre connaissance du terrain à Saint-Louis et dans le Haut-Rhin nous permet d'intervenir rapidement.",
       "priceRange": "Déplacement + diagnostic : à partir de 90 €, réparation sur devis"
+    },
+    {
+      "slug": "renovation-complete",
+      "title": "Rénovation complète",
+      "shortTitle": "Réno complète",
+      "description": "Rénovation totale de votre appartement ou maison. Un interlocuteur unique, tous corps de métier coordonnés, résultat clé en main.",
+      "icon": "🏠",
+      "features": [
+        "Gestion complète du chantier",
+        "Tous corps de métier",
+        "Démolition et dépose",
+        "Second œuvre complet",
+        "Finitions haut de gamme",
+        "Garantie décennale"
+      ],
+      "longDescription": "Rénover entièrement un appartement ou une maison est un projet complexe qui implique de nombreux corps de métier : démolition, plomberie, électricité, carrelage, peinture, menuiserie. Coordonner ces interventions, gérer les délais et assurer la qualité à chaque étape — c'est exactement ce que fait Aiman Renovation pour vous.\n\nEn tant que maître d'œuvre de votre chantier, nous sommes votre interlocuteur unique. Vous n'avez pas à contacter dix artisans différents, à gérer les plannings ou à vérifier la qualité de chaque corps de métier. Nous prenons en charge l'intégralité du projet : du diagnostic initial au rendu des clés, en passant par la conception, le suivi de chantier quotidien et la réception des travaux.\n\nNous intervenons sur tout type de bien : appartement haussmannien à rénover, maison des années 70 à moderniser, local commercial à transformer en logement. Notre zone d'intervention couvre Saint-Louis, Mulhouse, Huningue, Hégenheim et toute la zone transfrontalière Haut-Rhin / Bâle. Chaque rénovation est unique, chaque budget est respecté.",
+      "process": [
+        {
+          "step": "Visite et diagnostic",
+          "detail": "Inspection complète du bien : état des réseaux, des murs, des sols, de la toiture. Identification des travaux obligatoires et des améliorations possibles."
+        },
+        {
+          "step": "Conception et devis",
+          "detail": "Plan d'aménagement détaillé, sélection des matériaux, devis global transparent par corps de métier. Pas de surprise en cours de chantier."
+        },
+        {
+          "step": "Démolition et gros œuvre",
+          "detail": "Démontage soigneux des éléments à remplacer, évacuation des gravats, consolidation si nécessaire. Le chantier est sécurisé et protégé."
+        },
+        {
+          "step": "Second œuvre",
+          "detail": "Plomberie, électricité, isolation, plâtrerie dans l'ordre logique. Chaque corps de métier intervient au bon moment pour un résultat optimal."
+        },
+        {
+          "step": "Finitions et réception",
+          "detail": "Carrelage, peinture, menuiseries, luminaires. Nettoyage complet, visite de réception avec vous, levée des réserves sous 48h si nécessaire."
+        }
+      ],
+      "whyPro": "Une rénovation complète réussie, c'est avant tout une question de coordination. Un artisan qui arrive trop tôt ou trop tard peut bloquer tout le chantier. Un mauvais ordre d'intervention crée des reprises coûteuses (retirer du carrelage pour accéder à une canalisation). Aiman Renovation maîtrise l'ordre logique des interventions et anticipe chaque contrainte pour vous offrir un chantier fluide, dans les délais annoncés et sans mauvaise surprise.",
+      "priceRange": "20 000 € – 80 000 € selon la superficie et l'état du bien (estimation avant visite)"
     }
   ],
   "contact": {
@@ -1714,7 +1754,8 @@
       "Borne de recharge",
       "Panneaux photovoltaïques",
       "Entretien extérieur",
-      "Dépannage & Urgence"
+      "Dépannage & Urgence",
+      "Rénovation complète"
     ],
     "catalog_name": "Nos services de rénovation"
   },

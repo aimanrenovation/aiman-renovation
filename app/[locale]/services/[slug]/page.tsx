@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SERVICES, PHOTO_MAP, ICON_MAP } from "@/lib/services";
 import { COMPANY } from "@/lib/constants";
@@ -37,16 +38,54 @@ export async function generateMetadata({ params }: Props) {
   const { slug, locale } = await params;
   const service = SERVICES.find((s) => s.slug === slug);
   if (!service) return {};
-  const t = await getTranslations({ locale, namespace: "services" });
   const translated = await getTranslatedService(locale, slug);
-  const title = translated?.title ?? service.title;
-  const description = translated?.description ?? service.description;
+  const title = service.seoTitle ?? `${translated?.title ?? service.title} à Saint-Louis (68) — Devis Gratuit`;
+  const description = service.seoDescription ?? `${translated?.description ?? service.description} Artisan qualifié Haut-Rhin.`;
+  const ogImage = PHOTO_MAP[service.slug] ?? "/images/ambiance-resultat.jpg";
+
   return {
-    title: `${title} ${t("service_meta_suffix")}`,
-    description: `${description} ${t("service_meta_desc_suffix")}`,
+    title,
+    description,
     alternates: getAlternates(`/services/${slug}`),
+    openGraph: {
+      title,
+      description,
+      url: `https://aiman-renovation.fr/services/${slug}`,
+      siteName: "Aiman Renovation",
+      images: [
+        {
+          url: `https://aiman-renovation.fr${ogImage}`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      type: "website",
+      locale: locale === "fr" ? "fr_FR" : locale === "de" ? "de_DE" : "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`https://aiman-renovation.fr${ogImage}`],
+    },
   };
 }
+
+const ZONE_VILLES = [
+  "Saint-Louis",
+  "Huningue",
+  "Village-Neuf",
+  "Hégenheim",
+  "Hésingue",
+  "Bartenheim",
+  "Blotzheim",
+  "Kembs",
+  "Sierentz",
+  "Rosenau",
+  "Mulhouse",
+  "Bâle (CH)",
+];
 
 export default async function ServicePage({ params }: Props) {
   const { slug, locale } = await params;
@@ -64,7 +103,11 @@ export default async function ServicePage({ params }: Props) {
   const whyPro = translated?.whyPro ?? service.whyPro;
   const priceRange = translated?.priceRange ?? service.priceRange;
 
-  // Static JSON-LD schema - no user input, safe to inline
+  const relatedServices = SERVICES.filter(
+    (s) => service.relatedSlugs.includes(s.slug)
+  ).slice(0, 3);
+
+  // JSON-LD Service — données statiques, aucune entrée utilisateur
   const serviceJsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
@@ -75,17 +118,48 @@ export default async function ServicePage({ params }: Props) {
       "@id": "https://aiman-renovation.fr/#organization",
       name: "Aiman Renovation",
     },
-    areaServed: {
-      "@type": "City",
-      name: "Saint-Louis",
-    },
+    areaServed: [
+      { "@type": "City", name: "Saint-Louis" },
+      { "@type": "City", name: "Mulhouse" },
+      { "@type": "City", name: "Huningue" },
+      { "@type": "City", name: "Hégenheim" },
+      { "@type": "City", name: "Bartenheim" },
+      { "@type": "City", name: "Kembs" },
+    ],
     offers: {
       "@type": "Offer",
       priceSpecification: {
         "@type": "PriceSpecification",
         priceCurrency: "EUR",
+        description: priceRange,
       },
     },
+  });
+
+  // BreadcrumbList — navigation hiérarchique pour Google
+  const breadcrumbJsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Accueil",
+        item: "https://aiman-renovation.fr/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: "https://aiman-renovation.fr/services",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: title,
+        item: `https://aiman-renovation.fr/services/${slug}`,
+      },
+    ],
   });
 
   const photo = PHOTO_MAP[service.slug];
@@ -98,6 +172,34 @@ export default async function ServicePage({ params }: Props) {
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: serviceJsonLd }}
       />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }}
+      />
+
+      {/* Breadcrumb visuel */}
+      <nav
+        aria-label="Fil d'Ariane"
+        className="relative z-20 bg-black border-b border-white/5 px-6 py-3"
+      >
+        <ol className="max-w-6xl mx-auto flex items-center gap-2 text-sm text-gray-500">
+          <li>
+            <Link href="/" className="hover:text-white transition-colors">
+              Accueil
+            </Link>
+          </li>
+          <li aria-hidden="true" className="text-gray-700">/</li>
+          <li>
+            <Link href="/services" className="hover:text-white transition-colors">
+              Services
+            </Link>
+          </li>
+          <li aria-hidden="true" className="text-gray-700">/</li>
+          <li className="text-white font-medium truncate">{title}</li>
+        </ol>
+      </nav>
+
       {/* Hero full-bleed avec photo */}
       <section className="relative min-h-[85vh] flex items-end overflow-hidden">
         {photo && (
@@ -287,6 +389,76 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </section>
       </ScrollReveal>
+
+      {/* Zone d'intervention */}
+      <ScrollReveal direction="up">
+        <section className="relative z-10 bg-[#0A0A0A] py-16 md:py-24 border-t border-white/5">
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
+            <h2 className="font-heading text-xl md:text-2xl mb-4">
+              ZONE D&apos;INTERVENTION{" "}
+              <span className="text-[#E50000]">HAUT-RHIN</span>
+            </h2>
+            <p className="text-gray-400 mb-8 max-w-2xl">
+              Nous intervenons à Saint-Louis et dans un rayon de 30 km : agglomération mulhousienne, rives du Rhin, zone transfrontalière Bâle / Lörrach / Saint-Louis.
+            </p>
+            <ul className="flex flex-wrap gap-3">
+              {ZONE_VILLES.map((ville) => (
+                <li
+                  key={ville}
+                  className="bg-[#111111] border border-white/5 rounded-full px-4 py-2 text-sm text-gray-300"
+                >
+                  {ville}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Services liés — maillage interne */}
+      {relatedServices.length > 0 && (
+        <ScrollReveal direction="up">
+          <section className="relative z-10 bg-black py-16 md:py-24 border-t border-white/5">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
+              <h2 className="font-heading text-xl md:text-2xl mb-8">
+                SERVICES <span className="text-[#E50000]">ASSOCIÉS</span>
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {relatedServices.map((related) => {
+                  const relPhoto = PHOTO_MAP[related.slug];
+                  return (
+                    <Link
+                      key={related.slug}
+                      href={`/services/${related.slug}`}
+                      className="group relative h-48 overflow-hidden rounded-xl border border-white/5 hover:border-[#E50000]/30 transition-colors"
+                    >
+                      {relPhoto && (
+                        <Image
+                          src={relPhoto}
+                          alt={related.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        <p className="font-heading text-white text-sm md:text-base leading-tight">
+                          {related.shortTitle.toUpperCase()}
+                        </p>
+                        <p className="text-[#E50000] text-xs mt-1 font-medium">
+                          Voir le service →
+                        </p>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
 
       {/* CTA final */}
       <section className="relative z-10 overflow-hidden">

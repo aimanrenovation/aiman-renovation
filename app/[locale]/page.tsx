@@ -16,10 +16,34 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "seo" });
+  const title = t("home_title");
+  const description = t("home_description");
   return {
-    title: t("home_title"),
-    description: t("home_description"),
+    title,
+    description,
     alternates: getAlternates("/"),
+    openGraph: {
+      title,
+      description,
+      url: "https://aiman-renovation.fr",
+      siteName: "Aiman Renovation",
+      images: [
+        {
+          url: "https://aiman-renovation.fr/images/ambiance-resultat.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Aiman Renovation — Artisan rénovation Saint-Louis Haut-Rhin",
+        },
+      ],
+      type: "website",
+      locale: locale === "fr" ? "fr_FR" : locale === "de" ? "de_DE" : "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://aiman-renovation.fr/images/ambiance-resultat.jpg"],
+    },
   };
 }
 

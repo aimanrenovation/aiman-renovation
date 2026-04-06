@@ -816,6 +816,46 @@
       ],
       "whyPro": "In an emergency, every minute counts. An untreated leak can cause thousands of euros of damage in just a few hours. A faulty electrical circuit poses a fire risk. Using a qualified professional guarantees a safe, compliant and documented intervention for your insurance. Our local knowledge of Saint-Louis and the Basel area allows us to respond quickly.",
       "priceRange": "Call-out + diagnosis: from €90, repair on quote"
+    },
+    {
+      "slug": "renovation-complete",
+      "title": "Full renovation",
+      "shortTitle": "Full renovation",
+      "description": "Complete renovation of your apartment or house. One point of contact, all trades coordinated, turnkey result.",
+      "icon": "🏠",
+      "features": [
+        "Complete project management",
+        "All trades covered",
+        "Demolition and stripping",
+        "Full interior works",
+        "High-end finishes",
+        "Ten-year warranty"
+      ],
+      "longDescription": "Fully renovating an apartment or house is a complex project involving many trades: demolition, plumbing, electrical, tiling, painting, joinery. Coordinating these interventions, managing schedules and ensuring quality at every stage — that's exactly what Aiman Renovation does for you.\n\nAs your project manager, we are your single point of contact. You don't need to deal with ten different craftsmen or manage schedules. We handle the entire project: from the initial diagnosis to handing over the keys.\n\nWe work in Saint-Louis, Mulhouse, Huningue, Hégenheim and the entire cross-border zone Haut-Rhin / Basel. Every renovation is unique, every budget is respected.",
+      "process": [
+        {
+          "step": "Visit and diagnosis",
+          "detail": "Complete inspection of the property: condition of networks, walls, floors and roof. Identification of mandatory works and possible improvements."
+        },
+        {
+          "step": "Design and quote",
+          "detail": "Detailed layout plan, material selection, transparent overall quote by trade. No surprises during the project."
+        },
+        {
+          "step": "Demolition",
+          "detail": "Careful dismantling of elements to be replaced, rubble removal, consolidation if necessary."
+        },
+        {
+          "step": "Interior works",
+          "detail": "Plumbing, electrical, insulation, plastering in the right order for an optimal result."
+        },
+        {
+          "step": "Finishes and handover",
+          "detail": "Tiling, painting, joinery, lighting. Full cleaning, handover visit with you, snagging resolved within 48h."
+        }
+      ],
+      "whyPro": "A successful full renovation is above all a matter of coordination. A tradesman who arrives too early or too late can block the entire site. Aiman Renovation masters the logical order of interventions and anticipates every constraint to offer you a smooth project within the announced deadlines.",
+      "priceRange": "€20,000 – €80,000 depending on the area and condition of the property (estimate before visit)"
     }
   ],
   "contact": {
@@ -1714,7 +1754,8 @@
       "EV Charging Station",
       "Solar Panels",
       "Exterior Maintenance",
-      "Emergency Repairs"
+      "Emergency Repairs",
+      "Full renovation"
     ],
     "catalog_name": "Our renovation services"
   },

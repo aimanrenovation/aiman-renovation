@@ -58,18 +58,24 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const organizationJsonLd = {
     "@context": "https://schema.org",
-    "@type": ts("organization_type"),
+    "@type": ["HomeAndConstructionBusiness", "LocalBusiness"],
     "@id": "https://aiman-renovation.fr/#organization",
     name: tc("company_name"),
     legalName: `${tc("company_name")} ${tc("legal_form")}`,
     url: tc("website"),
-    logo: "https://aiman-renovation.fr/images/logo.png",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://aiman-renovation.fr/images/logo.png",
+      width: 200,
+      height: 60,
+    },
     image: "https://aiman-renovation.fr/images/ambiance-resultat.jpg",
     description: tc("slogan"),
     slogan: tc("slogan"),
     inLanguage: locale,
     telephone: tc("phone"),
     email: tc("email"),
+    foundingDate: "2024",
     address: {
       "@type": "PostalAddress",
       streetAddress: "12 Rue de Bâle",
@@ -91,6 +97,10 @@ export default async function LocaleLayout({ children, params }: Props) {
         itemOffered: {
           "@type": "Service",
           name,
+          provider: {
+            "@id": "https://aiman-renovation.fr/#organization",
+          },
+          areaServed: { "@type": "City", name: "Saint-Louis" },
         },
       })),
     },
@@ -112,6 +122,13 @@ export default async function LocaleLayout({ children, params }: Props) {
       },
     ],
     sameAs: ["https://www.facebook.com/aimansarl"],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: tc("phone"),
+      contactType: "customer service",
+      areaServed: "FR",
+      availableLanguage: ["French"],
+    },
   };
 
   // All data is internal/static — no user input, XSS-safe

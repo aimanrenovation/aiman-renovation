@@ -816,6 +816,46 @@
       ],
       "whyPro": "Im Notfall zählt jede Minute. Ein unbehandeltes Leck kann innerhalb weniger Stunden Schäden von Tausenden Euro verursachen. Ein defekter Stromkreis birgt Brandgefahr. Einen qualifizierten Fachmann zu rufen garantiert einen sicheren, normgerechten und für Ihre Versicherung dokumentierten Einsatz. Unsere Ortskenntnis in der Region ermöglicht schnelles Eingreifen.",
       "priceRange": "Anfahrt + Diagnose: ab 90 €, Reparatur auf Offerte"
+    },
+    {
+      "slug": "renovation-complete",
+      "title": "Vollrenovierung",
+      "shortTitle": "Vollrenovierung",
+      "description": "Komplette Renovierung Ihrer Wohnung oder Ihres Hauses. Ein Ansprechpartner, alle Gewerke koordiniert, schlüsselfertiges Ergebnis.",
+      "icon": "🏠",
+      "features": [
+        "Komplette Bauleitung",
+        "Alle Gewerke",
+        "Abriss und Demontage",
+        "Kompletter Innenausbau",
+        "Hochwertige Ausführung",
+        "Zehnjährige Garantie"
+      ],
+      "longDescription": "Eine komplette Renovierung eines Apartments oder Hauses ist ein komplexes Projekt, das viele Gewerke umfasst: Abriss, Sanitär, Elektrik, Fliesen, Malerarbeiten, Tischlerarbeiten. Die Koordination dieser Arbeiten, die Verwaltung der Termine und die Qualitätssicherung in jeder Phase — das ist genau das, was Aiman Renovation für Sie übernimmt.\n\nAls Bauleiter sind wir Ihr einziger Ansprechpartner. Sie müssen sich nicht mit zehn verschiedenen Handwerkern auseinandersetzen oder Zeitpläne verwalten. Wir übernehmen das gesamte Projekt: von der ersten Bestandsaufnahme bis zur Schlüsselübergabe.\n\nWir arbeiten in Saint-Louis, Mulhouse, Huningue, Hégenheim und der gesamten grenzüberschreitenden Zone Oberrhein / Basel. Jede Renovierung ist einzigartig, jedes Budget wird respektiert.",
+      "process": [
+        {
+          "step": "Besichtigung und Diagnose",
+          "detail": "Vollständige Inspektion des Gebäudes: Zustand der Leitungen, Wände, Böden und Dach."
+        },
+        {
+          "step": "Planung und Angebot",
+          "detail": "Detaillierter Einrichtungsplan, Materialauswahl, transparentes Gesamtangebot je Gewerk."
+        },
+        {
+          "step": "Abriss und Rohbau",
+          "detail": "Sorgfältige Demontage der zu ersetzenden Elemente, Schuttentsorgung und Sicherung der Baustelle."
+        },
+        {
+          "step": "Innenausbau",
+          "detail": "Sanitär, Elektrik, Dämmung, Putz in der richtigen Reihenfolge für ein optimales Ergebnis."
+        },
+        {
+          "step": "Fertigstellung und Abnahme",
+          "detail": "Fliesen, Malerarbeiten, Türen, Leuchten. Vollständige Reinigung und Abnahmebesichtigung mit Ihnen."
+        }
+      ],
+      "whyPro": "Eine erfolgreiche Vollrenovierung ist vor allem eine Frage der Koordination. Ein Handwerker, der zu früh oder zu spät kommt, kann die gesamte Baustelle blockieren. Aiman Renovation beherrscht die logische Reihenfolge der Eingriffe und antizipiert jede Einschränkung, um Ihnen eine reibungslose Baustelle innerhalb der angekündigten Fristen zu bieten.",
+      "priceRange": "20 000 € – 80 000 € je nach Fläche und Zustand des Objekts (Schätzung vor Besichtigung)"
     }
   ],
   "contact": {
@@ -1714,7 +1754,8 @@
       "Ladestation Elektroauto",
       "Photovoltaikanlagen",
       "Außenpflege",
-      "Notfalldienst & Reparatur"
+      "Notfalldienst & Reparatur",
+      "Vollrenovierung"
     ],
     "catalog_name": "Unsere Renovierungsleistungen"
   },

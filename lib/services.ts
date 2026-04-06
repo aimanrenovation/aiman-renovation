@@ -9,6 +9,12 @@ export interface Service {
   process: { step: string; detail: string }[];
   whyPro: string;
   priceRange: string;
+  /** Titre SEO optimisé (50-60 chars), mot-clé + localisation */
+  seoTitle: string;
+  /** Description SEO (150-160 chars), incitation au clic */
+  seoDescription: string;
+  /** Slugs des services liés pour le maillage interne */
+  relatedSlugs: string[];
 }
 
 export const PHOTO_MAP: Record<string, string> = {
@@ -24,6 +30,7 @@ export const PHOTO_MAP: Record<string, string> = {
   "panneaux-photovoltaiques": "/images/photo-photovoltaique.jpg",
   "entretien-exterieur": "/images/photo-entretien-exterieur.jpg",
   "depannage-urgence": "/images/photo-depannage.jpg",
+  "renovation-complete": "/images/ambiance-resultat.jpg",
 };
 
 export const ICON_MAP: Record<string, string> = {
@@ -66,6 +73,9 @@ export const SERVICES: Service[] = [
     whyPro:
       "Une rénovation de cuisine implique de la plomberie, de l'électricité, du carrelage et de la menuiserie — autant de métiers qui exigent un savoir-faire précis. Un défaut d'étanchéité sous l'évier, un circuit électrique sous-dimensionné ou un plan de travail mal ajusté peuvent engendrer des problèmes coûteux. Faire appel à un professionnel, c'est la garantie d'un travail conforme aux normes, d'une coordination fluide entre les différents corps de métier et d'un résultat à la hauteur de vos attentes. De plus, notre garantie décennale vous protège pendant 10 ans.",
     priceRange: "8 000 € – 25 000 € selon la superficie et les matériaux choisis",
+    seoTitle: "Rénovation Cuisine Saint-Louis 68 | Devis Gratuit",
+    seoDescription: "Artisan rénovation cuisine à Saint-Louis 68300 et Haut-Rhin. Cuisine clé en main : plomberie, électricité, carrelage, menuiserie. Devis gratuit sous 48h.",
+    relatedSlugs: ["salle-de-bain", "carrelage", "plomberie"],
   },
   {
     slug: "salle-de-bain",
@@ -93,6 +103,9 @@ export const SERVICES: Service[] = [
     whyPro:
       "La salle de bain est la pièce la plus technique de votre logement. Une mauvaise étanchéité peut entraîner des infiltrations, des moisissures et des dégâts structurels graves. La plomberie doit être irréprochable pour éviter les fuites. Nos artisans maîtrisent les normes DTU et les techniques d'étanchéité sous carrelage. Avec Aiman Renovation, vous bénéficiez d'une garantie décennale et de la tranquillité d'esprit.",
     priceRange: "6 000 € – 18 000 € selon la configuration et les équipements",
+    seoTitle: "Rénovation Salle de Bain Saint-Louis 68 | Artisan",
+    seoDescription: "Rénovation salle de bain à Saint-Louis et Haut-Rhin. Douche italienne, carrelage, plomberie complète, étanchéité DTU. Artisan qualifié, devis gratuit.",
+    relatedSlugs: ["cuisine", "plomberie", "carrelage"],
   },
   {
     slug: "electricite",
@@ -120,6 +133,9 @@ export const SERVICES: Service[] = [
     whyPro:
       "L'électricité ne pardonne pas les approximations. Une installation mal réalisée peut provoquer des courts-circuits, des incendies ou des électrocutions. La norme NF C 15-100 impose des règles strictes que seul un professionnel qualifié peut appliquer correctement. De plus, une attestation de conformité (Consuel) est obligatoire pour les rénovations lourdes. Confiez vos travaux électriques à Aiman Renovation pour une installation sûre et conforme.",
     priceRange: "3 000 € – 12 000 € selon l'ampleur de la rénovation (appartement ou maison)",
+    seoTitle: "Électricien Saint-Louis 68300 | Mise aux Normes",
+    seoDescription: "Électricien qualifié à Saint-Louis 68300, Mulhouse et Haut-Rhin. Mise aux normes NF C 15-100, tableau électrique, domotique. Attestation Consuel fournie.",
+    relatedSlugs: ["plomberie", "borne-recharge", "renovation-complete"],
   },
   {
     slug: "plomberie",
@@ -147,6 +163,9 @@ export const SERVICES: Service[] = [
     whyPro:
       "Une fuite d'eau peut causer des dégâts considérables en quelques heures : plafonds endommagés, moisissures, courts-circuits. Les raccordements en plomberie exigent une maîtrise des techniques de soudure, de sertissage et des normes sanitaires. Faire appel à Aiman Renovation, c'est l'assurance d'un réseau fiable, d'une eau saine et d'une couverture par notre garantie décennale en cas de sinistre.",
     priceRange: "2 000 € – 10 000 € selon le nombre de points d'eau et la complexité",
+    seoTitle: "Plombier Saint-Louis 68300 | Dépannage Haut-Rhin",
+    seoDescription: "Plombier à Saint-Louis 68300 et Haut-Rhin. Rénovation tuyauterie, installation chauffe-eau, fuites, raccordements. Intervention rapide. Devis gratuit.",
+    relatedSlugs: ["salle-de-bain", "electricite", "depannage-urgence"],
   },
   {
     slug: "carrelage",
@@ -174,6 +193,9 @@ export const SERVICES: Service[] = [
     whyPro:
       "Un carrelage mal posé se fissure, sonne creux et se décolle en quelques années. La préparation du support, le choix de la colle et le respect des joints de dilatation sont des étapes techniques qui nécessitent un vrai savoir-faire. Nos carreleurs cumulent des années d'expérience et utilisent des outils professionnels (coupe-carreaux diamant, niveau laser) pour un résultat impeccable et garanti.",
     priceRange: "40 € – 120 € / m² pose comprise, selon le type de revêtement",
+    seoTitle: "Carreleur Saint-Louis 68 | Sols & Carrelage Alsace",
+    seoDescription: "Pose carrelage, parquet, béton ciré à Saint-Louis, Mulhouse et Haut-Rhin. Travaux intérieur/extérieur, grand format, rénovation complète. Devis gratuit.",
+    relatedSlugs: ["salle-de-bain", "cuisine", "peinture-finitions"],
   },
   {
     slug: "facade-isolation",
@@ -201,6 +223,9 @@ export const SERVICES: Service[] = [
     whyPro:
       "L'isolation et le ravalement de façade sont des travaux techniques qui engagent la durabilité de votre bâtiment. Une ITE mal posée peut entraîner des infiltrations, des décollements et une perte d'efficacité thermique. Ces travaux sont éligibles à MaPrimeRénov' et aux CEE, mais uniquement si réalisés par un professionnel qualifié RGE. Aiman Renovation vous accompagne dans le montage des dossiers d'aides pour réduire votre reste à charge.",
     priceRange: "80 € – 200 € / m² pour une ITE complète, 30 € – 80 € / m² pour un ravalement simple",
+    seoTitle: "Façade & Isolation Thermique Saint-Louis | ITE Alsace",
+    seoDescription: "Ravalement de façade et isolation thermique (ITE/ITI) à Saint-Louis 68 et Haut-Rhin. Artisan RGE, éligible MaPrimeRénov'. Devis gratuit sous 48h.",
+    relatedSlugs: ["peinture-finitions", "renovation-complete", "entretien-exterieur"],
   },
   {
     slug: "paysager",
@@ -228,6 +253,9 @@ export const SERVICES: Service[] = [
     whyPro:
       "Un aménagement extérieur mal conçu se détériore rapidement : terrasse qui se soulève avec le gel, allée qui s'affaisse, stagnation d'eau. La maîtrise du terrassement, du drainage et des fondations est essentielle pour un résultat durable. Nos équipes connaissent les contraintes spécifiques du climat alsacien (gel, pluies abondantes) et sélectionnent des matériaux adaptés. Garantie décennale incluse sur les ouvrages de maçonnerie paysagère.",
     priceRange: "5 000 € – 30 000 € selon la surface et les aménagements souhaités",
+    seoTitle: "Aménagement Paysager Haut-Rhin | Saint-Louis 68300",
+    seoDescription: "Création et aménagement de jardins, terrasses et allées à Saint-Louis 68300 et Haut-Rhin. Dallage, clôtures, plantations, éclairage extérieur. Devis gratuit.",
+    relatedSlugs: ["entretien-exterieur", "facade-isolation"],
   },
   {
     slug: "peinture-finitions",
@@ -255,6 +283,9 @@ export const SERVICES: Service[] = [
     whyPro:
       "Un travail de peinture réussi repose à 70% sur la préparation du support. Sans ponçage, sans rebouchage et sans primaire adaptés, la peinture cloque, s'écaille et jaunit prématurément. Nos peintres professionnels maîtrisent les techniques de préparation, choisissent les produits adaptés à chaque support (plâtre, bois, métal, ciment) et appliquent la peinture avec des outils professionnels pour un rendu impeccable.",
     priceRange: "20 € – 45 € / m² murs et plafonds, préparation et 2 couches comprises",
+    seoTitle: "Peintre Bâtiment Saint-Louis 68 | Haut-Rhin Alsace",
+    seoDescription: "Peinture intérieure et extérieure à Saint-Louis 68300, Mulhouse et Haut-Rhin. Enduits décoratifs, papier peint, finitions soignées. Devis gratuit en 48h.",
+    relatedSlugs: ["carrelage", "renovation-complete", "facade-isolation"],
   },
   {
     slug: "borne-recharge",
@@ -282,6 +313,9 @@ export const SERVICES: Service[] = [
     whyPro:
       "L'installation d'une borne de recharge touche à l'électricité haute puissance et nécessite une certification IRVE obligatoire au-delà de 3,7 kW. Un câblage inadapté peut provoquer une surchauffe, un disjoncteur qui saute ou pire, un incendie. La certification IRVE est également une condition pour bénéficier du crédit d'impôt et de la prime ADVENIR. Ne prenez aucun risque : faites appel à un installateur certifié.",
     priceRange: "1 200 € – 2 500 € pose comprise (avant aides), 900 € – 1 800 € après crédit d'impôt",
+    seoTitle: "Borne Recharge Voiture Électrique Saint-Louis 68",
+    seoDescription: "Installation borne IRVE à Saint-Louis 68300 et Haut-Rhin. Wallbox 7,4 à 22 kW, copropriété ou maison. Crédit d'impôt 300 €, prime ADVENIR. Devis gratuit.",
+    relatedSlugs: ["electricite", "panneaux-photovoltaiques"],
   },
   {
     slug: "panneaux-photovoltaiques",
@@ -309,6 +343,9 @@ export const SERVICES: Service[] = [
     whyPro:
       "L'installation de panneaux photovoltaïques implique des travaux en toiture (risque de chute) et des raccordements électriques haute tension. Une pose non conforme peut provoquer des infiltrations en toiture, des risques d'incendie ou une production sous-optimale. Pour bénéficier des aides (prime autoconsommation, TVA réduite), l'installation doit être réalisée par un professionnel qualifié RGE. Aiman Renovation gère l'intégralité du projet pour vous.",
     priceRange: "7 000 € – 15 000 € pour 3 à 6 kWc (avant prime autoconsommation de 1 000 € à 2 500 €)",
+    seoTitle: "Panneaux Solaires Saint-Louis 68 | Aiman Renovation",
+    seoDescription: "Installation panneaux photovoltaïques à Saint-Louis 68300 et Haut-Rhin. RGE certifié, autoconsommation, aide MaPrimeRénov'. Devis solaire gratuit.",
+    relatedSlugs: ["borne-recharge", "electricite", "facade-isolation"],
   },
   {
     slug: "entretien-exterieur",
@@ -337,6 +374,9 @@ export const SERVICES: Service[] = [
     whyPro:
       "Un entretien régulier par un professionnel préserve la valeur de votre propriété et la santé de vos végétaux. Une haie mal taillée devient envahissante, une pelouse non scarifiée s'étouffe, une terrasse non traitée devient glissante et dangereuse. Nos équipes connaissent les essences locales alsaciennes et adaptent les soins aux saisons. Avec un abonnement, vous avez la garantie d'un suivi constant sans avoir à y penser.",
     priceRange: "À partir de 80 € / intervention ponctuelle, abonnement annuel à partir de 150 € / mois",
+    seoTitle: "Entretien Jardin Saint-Louis 68 | Espaces Verts Alsace",
+    seoDescription: "Entretien jardins et espaces extérieurs à Saint-Louis 68 et Haut-Rhin. Tonte, taille, nettoyage haute pression, abonnement annuel. Devis gratuit.",
+    relatedSlugs: ["paysager", "facade-isolation"],
   },
   {
     slug: "depannage-urgence",
@@ -365,5 +405,39 @@ export const SERVICES: Service[] = [
     whyPro:
       "En cas d'urgence, chaque minute compte. Une fuite non traitée peut provoquer des milliers d'euros de dégâts en quelques heures. Un circuit électrique défaillant représente un risque d'incendie. Faire appel à un professionnel qualifié garantit une intervention sûre, conforme aux normes et documentée pour votre assurance. Notre connaissance du terrain à Saint-Louis et dans le Haut-Rhin nous permet d'intervenir rapidement.",
     priceRange: "Déplacement + diagnostic : à partir de 90 €, réparation sur devis",
+    seoTitle: "Dépannage Urgence Saint-Louis 68 | 24h/24 Haut-Rhin",
+    seoDescription: "Dépannage urgence plomberie et électricité à Saint-Louis 68300, 24h/24 7j/7. Fuite, panne, dégât des eaux. Intervention rapide Haut-Rhin et Bâle.",
+    relatedSlugs: ["plomberie", "electricite"],
+  },
+  {
+    slug: "renovation-complete",
+    title: "Rénovation complète",
+    shortTitle: "Réno complète",
+    description:
+      "Rénovation totale de votre appartement ou maison. Un interlocuteur unique, tous corps de métier coordonnés, résultat clé en main.",
+    icon: "🏠",
+    features: [
+      "Gestion complète du chantier",
+      "Tous corps de métier",
+      "Démolition et dépose",
+      "Second œuvre complet",
+      "Finitions haut de gamme",
+      "Garantie décennale",
+    ],
+    longDescription:
+      "Rénover entièrement un appartement ou une maison est un projet complexe qui implique de nombreux corps de métier : démolition, plomberie, électricité, carrelage, peinture, menuiserie. Coordonner ces interventions, gérer les délais et assurer la qualité à chaque étape — c'est exactement ce que fait Aiman Renovation pour vous.\n\nEn tant que maître d'œuvre de votre chantier, nous sommes votre interlocuteur unique. Vous n'avez pas à contacter dix artisans différents, à gérer les plannings ou à vérifier la qualité de chaque corps de métier. Nous prenons en charge l'intégralité du projet : du diagnostic initial au rendu des clés, en passant par la conception, le suivi de chantier quotidien et la réception des travaux.\n\nNous intervenons sur tout type de bien : appartement haussmannien à rénover, maison des années 70 à moderniser, local commercial à transformer en logement. Notre zone d'intervention couvre Saint-Louis, Mulhouse, Huningue, Hégenheim et toute la zone transfrontalière Haut-Rhin / Bâle. Chaque rénovation est unique, chaque budget est respecté.",
+    process: [
+      { step: "Visite et diagnostic", detail: "Inspection complète du bien : état des réseaux, des murs, des sols, de la toiture. Identification des travaux obligatoires et des améliorations possibles." },
+      { step: "Conception et devis", detail: "Plan d'aménagement détaillé, sélection des matériaux, devis global transparent par corps de métier. Pas de surprise en cours de chantier." },
+      { step: "Démolition et gros œuvre", detail: "Démontage soigneux des éléments à remplacer, évacuation des gravats, consolidation si nécessaire. Le chantier est sécurisé et protégé." },
+      { step: "Second œuvre", detail: "Plomberie, électricité, isolation, plâtrerie dans l'ordre logique. Chaque corps de métier intervient au bon moment pour un résultat optimal." },
+      { step: "Finitions et réception", detail: "Carrelage, peinture, menuiseries, luminaires. Nettoyage complet, visite de réception avec vous, levée des réserves sous 48h si nécessaire." },
+    ],
+    whyPro:
+      "Une rénovation complète réussie, c'est avant tout une question de coordination. Un artisan qui arrive trop tôt ou trop tard peut bloquer tout le chantier. Un mauvais ordre d'intervention crée des reprises coûteuses (retirer du carrelage pour accéder à une canalisation). Aiman Renovation maîtrise l'ordre logique des interventions et anticipe chaque contrainte pour vous offrir un chantier fluide, dans les délais annoncés et sans mauvaise surprise.",
+    priceRange: "20 000 € – 80 000 € selon la superficie et l'état du bien (estimation avant visite)",
+    seoTitle: "Rénovation Complète Maison Appartement Saint-Louis 68",
+    seoDescription: "Rénovation complète maison et appartement à Saint-Louis 68300, Mulhouse, Haut-Rhin. Tous corps de métier, interlocuteur unique, clé en main. Devis gratuit.",
+    relatedSlugs: ["cuisine", "salle-de-bain", "electricite", "plomberie"],
   },
 ];
