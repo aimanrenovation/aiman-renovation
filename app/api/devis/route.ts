@@ -3,6 +3,7 @@ import { resend, DEVIS_FROM_EMAIL, DEVIS_RECIPIENT_EMAIL } from "@/lib/email";
 import { generateDevisEmailHtml } from "@/lib/email-templates/devis-confirmation";
 import type { DevisState } from "@/components/devis/devis-types";
 import { ZONES_CONFIG } from "@/components/devis/devis-zones-config";
+import { createMagicPlanProject, getMagicPlanDeepLink } from "@/lib/magicplan";
 
 export async function POST(request: NextRequest) {
   try {
@@ -75,7 +76,28 @@ export async function POST(request: NextRequest) {
       html: generateDevisEmailHtml({ data: data as DevisState, isClientCopy: true, locale }),
     });
 
-    return NextResponse.json({ success: true });
+    // Create MagicPlan project
+    let magicplanProjectId: string | null = null;
+    let magicplanDeepLink: string | null = null;
+
+    try {
+      const refId = `devis-${Date.now()}`;
+      const project = await createMagicPlanProject({
+        name: `${data.contact.firstName} ${data.contact.lastName}`,
+        externalReferenceId: refId,
+        address: data.contact.address,
+      });
+      magicplanProjectId = project.id;
+      magicplanDeepLink = getMagicPlanDeepLink(project.id);
+    } catch (err) {
+      console.error("MagicPlan project creation failed (non-blocking):", err);
+    }
+
+    return NextResponse.json({
+      success: true,
+      magicplanProjectId,
+      magicplanDeepLink,
+    });
   } catch (error) {
     console.error("Erreur envoi devis:", error);
     return NextResponse.json(
