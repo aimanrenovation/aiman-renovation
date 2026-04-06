@@ -13,6 +13,12 @@ export const COMPANY = {
   projects: 50,
   founded: 2024,
   website: "https://aiman-renovation.fr",
+  social: {
+    facebook: "https://www.facebook.com/aimanrenovation",
+    instagram: "https://www.instagram.com/aimanrenovation",
+    linkedin: "https://www.linkedin.com/company/aiman-renovation",
+    tiktok: "https://www.tiktok.com/@aimanrenovation",
+  },
 } as const;
 
 export const NAV_LINKS = [

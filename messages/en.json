@@ -1974,52 +1974,80 @@
         "description": "Vehicle, PPE, quality tools, technology (MagicPlan, ProGBat). We invest so you can do good work."
       }
     ],
-    "positions_title": "Open positions",
-    "positions_subtitle": "Full-time permanent contracts, based in Saint-Louis (68) — Alsace and Basel area projects.",
+    "positions_title": "All our trades",
+    "positions_subtitle": "Full-time permanent contracts, based in Saint-Louis (68) — Alsace and Basel area projects. All our trades match our services.",
     "positions": [
       {
-        "title": "Mason / Plasterer (multi-skilled)",
+        "title": "Kitchen installer",
         "type": "Permanent — Full-time",
-        "description": "Structural work, partitions, plastering, screeds and finishing work on full renovation projects.",
-        "requirements": [
-          "Minimum 2 years experience in renovation",
-          "Driving license required",
-          "Autonomous on small projects",
-          "Careful, rigorous, punctual"
-        ]
+        "description": "Installation of custom fitted kitchens: cabinets, countertops, appliances, connections.",
+        "requirements": ["Kitchen installation experience", "Precision and attention to detail", "Driving license", "Autonomous"]
       },
       {
-        "title": "Building painter",
+        "title": "Bathroom specialist",
         "type": "Permanent — Full-time",
-        "description": "Surface preparation, wall coverings, interior and exterior painting, facade renovation.",
-        "requirements": [
-          "Vocational training or equivalent experience",
-          "Mastery of finishing techniques",
-          "Eye for detail and beautiful work",
-          "Team spirit"
-        ]
+        "description": "Complete bathroom renovation: walk-in showers, plumbing, tiling, sanitary installations.",
+        "requirements": ["Versatility tiling / plumbing", "2+ years experience", "Waterproofing mastery", "Driving license"]
       },
       {
         "title": "Qualified electrician",
         "type": "Permanent — Full-time",
-        "description": "Electrical installation and renovation: panel, sockets, lighting, EV charging stations, home automation, code compliance.",
-        "requirements": [
-          "Up-to-date electrical certifications (B1V, BR, BC)",
-          "Minimum 3 years experience",
-          "Knowledge of NF C 15-100",
-          "Reading plans and schematics"
-        ]
+        "description": "Electrical installation and renovation: panel, sockets, lighting, code compliance, home automation.",
+        "requirements": ["B1V, BR, BC certifications up-to-date", "3 years experience", "NF C 15-100 knowledge", "Reading plans"]
+      },
+      {
+        "title": "Plumber / Heating engineer",
+        "type": "Permanent — Full-time",
+        "description": "Installation, repair and renovation of plumbing, heating and sanitary systems. Residential and small collective.",
+        "requirements": ["Plumbing qualification", "2+ years experience", "Copper / PER soldering", "Driving license"]
       },
       {
         "title": "Tiler",
         "type": "Permanent — Full-time",
         "description": "Tile and ceramic installation for bathrooms, kitchens, floors and terraces. Careful finishing required.",
-        "requirements": [
-          "2 years experience in all formats",
-          "Mastery of cuts and joints",
-          "Aesthetic sense",
-          "Driving license"
-        ]
+        "requirements": ["2 years experience all formats", "Mastery of cuts and joints", "Aesthetic sense", "Driving license"]
+      },
+      {
+        "title": "Facade / Insulation specialist",
+        "type": "Permanent — Full-time",
+        "description": "Facade renovation, external thermal insulation (ETI), decorative coatings, anti-moss treatments.",
+        "requirements": ["ETI experience", "Working at heights (scaffolding)", "Driving license", "Team spirit"]
+      },
+      {
+        "title": "Landscape gardener",
+        "type": "Permanent — Full-time",
+        "description": "Garden creation and maintenance, terraces, paths, planting, lawn, irrigation, outdoor lighting.",
+        "requirements": ["Landscaping qualification or experience", "Equipment mastery", "Driving license required", "Creative mind"]
+      },
+      {
+        "title": "Building painter",
+        "type": "Permanent — Full-time",
+        "description": "Surface preparation, wall coverings, interior and exterior painting, careful finishing.",
+        "requirements": ["Painter qualification", "Mastery of finishing techniques", "Eye for detail", "Team spirit"]
+      },
+      {
+        "title": "EV charging station installer",
+        "type": "Permanent — Full-time",
+        "description": "Installation of EV charging stations, connections, commissioning, maintenance.",
+        "requirements": ["IRVE level 1 certification", "Electrical certifications", "2 years electrical experience", "Driving license"]
+      },
+      {
+        "title": "Solar panel installer",
+        "type": "Permanent — Full-time",
+        "description": "Solar panel installation on roofs, electrical connections, commissioning, customer support.",
+        "requirements": ["QualiPV preferred", "Working at heights", "Electrical certifications", "Driving license"]
+      },
+      {
+        "title": "Outdoor maintenance technician",
+        "type": "Permanent — Full-time",
+        "description": "Regular garden maintenance, green spaces, hedge trimming, terrace cleaning, ecological weeding.",
+        "requirements": ["Green space maintenance experience", "Equipment mastery", "Driving license required", "Autonomous and reliable"]
+      },
+      {
+        "title": "Emergency repair technician",
+        "type": "Permanent — Full-time",
+        "description": "Emergency interventions: plumbing, electrical, locksmith, small repairs for individuals.",
+        "requirements": ["Multi-trade versatility", "Customer service mindset", "Availability (on-call possible)", "Driving license"]
       }
     ],
     "apply_button": "Apply",
@@ -2032,6 +2060,30 @@
     "contact_phone_label": "Phone",
     "contact_location_label": "Office",
     "contact_more": "Contact page",
-    "email_subject": "Job application — Aiman Renovation"
+    "email_subject": "Job application — Aiman Renovation",
+    "form": {
+      "title": "Apply at Aiman Renovation",
+      "position_label": "Position",
+      "spontaneous_option": "Spontaneous application",
+      "firstname_label": "First name",
+      "lastname_label": "Last name",
+      "email_label": "Email",
+      "phone_label": "Phone",
+      "experience_label": "Experience",
+      "experience_placeholder": "e.g. 5 years in renovation",
+      "cv_label": "CV (PDF or Word)",
+      "motivation_label": "Cover letter",
+      "files_hint": "Accepted formats: PDF, DOC, DOCX — 5 MB max per file",
+      "social_label": "Your links (optional)",
+      "website_placeholder": "Website / Portfolio",
+      "message_label": "Your message",
+      "message_placeholder": "Tell us about yourself, your experience, your motivations…",
+      "submit": "Send my application",
+      "submitting": "Sending…",
+      "success_title": "Application sent!",
+      "success_message": "Thank you for your application. We're reviewing it and will get back to you very soon.",
+      "close": "Close",
+      "error_generic": "An error occurred. Please try again or contact us directly."
+    }
   }
 }

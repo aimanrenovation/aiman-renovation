@@ -1974,52 +1974,80 @@
         "description": "Véhicule, EPI, outillage de qualité, technologie (MagicPlan, ProGBat). On investit pour que vous travailliez bien."
       }
     ],
-    "positions_title": "Postes à pourvoir",
-    "positions_subtitle": "CDI temps plein, basés à Saint-Louis (68) — chantiers Alsace et Bâle.",
+    "positions_title": "Tous nos métiers",
+    "positions_subtitle": "CDI temps plein, basés à Saint-Louis (68) — chantiers Alsace et Bâle. Tous nos métiers correspondent à nos services.",
     "positions": [
       {
-        "title": "Maçon / Plâtrier polyvalent",
+        "title": "Cuisiniste / Poseur de cuisine",
         "type": "CDI — Temps plein",
-        "description": "Réalisation de gros œuvre, cloisons, enduits, dallages et travaux de finition sur chantiers de rénovation complète.",
-        "requirements": [
-          "Expérience 2 ans minimum en rénovation",
-          "Permis B obligatoire",
-          "Autonomie sur petits chantiers",
-          "Soigneux, rigoureux, ponctuel"
-        ]
+        "description": "Pose et installation de cuisines équipées sur mesure : meubles, plans de travail, électroménager, raccordements.",
+        "requirements": ["Expérience en pose de cuisines", "Précision et sens du détail", "Permis B", "Autonomie"]
       },
       {
-        "title": "Peintre en bâtiment",
+        "title": "Spécialiste salle de bain",
         "type": "CDI — Temps plein",
-        "description": "Préparation des supports, pose de revêtements muraux, peinture intérieure et extérieure, ravalements de façades.",
-        "requirements": [
-          "CAP peintre ou expérience équivalente",
-          "Maîtrise des techniques de finition",
-          "Sens du détail et du beau travail",
-          "Esprit d'équipe"
-        ]
+        "description": "Rénovation complète de salles de bain : douche italienne, plomberie, carrelage, faïence, sanitaires.",
+        "requirements": ["Polyvalence carrelage / plomberie", "2 ans d'expérience minimum", "Étanchéité maîtrisée", "Permis B"]
       },
       {
         "title": "Électricien qualifié",
         "type": "CDI — Temps plein",
-        "description": "Installation et rénovation électrique : tableau, prises, éclairage, IRVE (bornes recharge), domotique, mise aux normes.",
-        "requirements": [
-          "Habilitations électriques à jour (B1V, BR, BC)",
-          "Expérience 3 ans minimum",
-          "Connaissance NF C 15-100",
-          "Lecture de plans et schémas"
-        ]
+        "description": "Installation et rénovation électrique : tableau, prises, éclairage, mise aux normes, domotique.",
+        "requirements": ["Habilitations B1V, BR, BC à jour", "3 ans d'expérience", "Connaissance NF C 15-100", "Lecture de plans"]
+      },
+      {
+        "title": "Plombier chauffagiste",
+        "type": "CDI — Temps plein",
+        "description": "Installation, dépannage et rénovation de plomberie, chauffage et sanitaires. Particuliers et petits collectifs.",
+        "requirements": ["CAP plomberie ou équivalent", "Expérience 2 ans minimum", "Soudure cuivre / PER", "Permis B"]
       },
       {
         "title": "Carreleur",
         "type": "CDI — Temps plein",
         "description": "Pose de carrelage et faïence pour salles de bain, cuisines, sols et terrasses. Finitions soignées exigées.",
-        "requirements": [
-          "Expérience 2 ans en pose tous formats",
-          "Maîtrise des découpes et joints",
-          "Sens esthétique",
-          "Permis B"
-        ]
+        "requirements": ["Expérience 2 ans tous formats", "Maîtrise des découpes et joints", "Sens esthétique", "Permis B"]
+      },
+      {
+        "title": "Façadier / Spécialiste isolation",
+        "type": "CDI — Temps plein",
+        "description": "Ravalement de façades, isolation thermique par l'extérieur (ITE), enduits décoratifs, traitements anti-mousse.",
+        "requirements": ["Expérience ITE (RGE souhaité)", "Travail en hauteur (échafaudage)", "Permis B", "Esprit d'équipe"]
+      },
+      {
+        "title": "Paysagiste / Jardinier",
+        "type": "CDI — Temps plein",
+        "description": "Création et entretien de jardins, terrasses, allées, plantations, engazonnement, arrosage, éclairage extérieur.",
+        "requirements": ["CAPA travaux paysagers ou expérience", "Maîtrise des engins (tondeuse, débroussailleuse)", "Permis B obligatoire", "Sens créatif"]
+      },
+      {
+        "title": "Peintre en bâtiment",
+        "type": "CDI — Temps plein",
+        "description": "Préparation des supports, pose de revêtements muraux, peinture intérieure et extérieure, finitions soignées.",
+        "requirements": ["CAP peintre ou équivalent", "Maîtrise techniques de finition", "Sens du détail", "Esprit d'équipe"]
+      },
+      {
+        "title": "Installateur IRVE (bornes de recharge)",
+        "type": "CDI — Temps plein",
+        "description": "Installation de bornes de recharge pour véhicules électriques, raccordements, mise en service, maintenance.",
+        "requirements": ["Habilitation IRVE niveau 1 minimum", "Habilitations électriques", "2 ans d'expérience électricité", "Permis B"]
+      },
+      {
+        "title": "Installateur photovoltaïque",
+        "type": "CDI — Temps plein",
+        "description": "Installation de panneaux solaires en toiture, raccordement électrique, mise en service, accompagnement client.",
+        "requirements": ["QualiPV souhaité", "Travail en hauteur", "Habilitations électriques", "Permis B"]
+      },
+      {
+        "title": "Agent d'entretien extérieur",
+        "type": "CDI — Temps plein",
+        "description": "Entretien régulier de jardins, espaces verts, taille de haies, nettoyage de terrasses, désherbage écologique.",
+        "requirements": ["Expérience entretien espaces verts", "Maîtrise outils thermiques", "Permis B obligatoire", "Autonomie et fiabilité"]
+      },
+      {
+        "title": "Technicien dépannage / Multi-services",
+        "type": "CDI — Temps plein",
+        "description": "Interventions de dépannage urgent : plomberie, électricité, serrurerie, petites réparations chez les particuliers.",
+        "requirements": ["Polyvalence multi-corps d'état", "Sens du service client", "Disponibilité (astreintes possibles)", "Permis B"]
       }
     ],
     "apply_button": "Postuler",
@@ -2032,6 +2060,30 @@
     "contact_phone_label": "Téléphone",
     "contact_location_label": "Bureau",
     "contact_more": "Page contact",
-    "email_subject": "Candidature — Aiman Renovation"
+    "email_subject": "Candidature — Aiman Renovation",
+    "form": {
+      "title": "Postuler chez Aiman Renovation",
+      "position_label": "Poste visé",
+      "spontaneous_option": "Candidature spontanée",
+      "firstname_label": "Prénom",
+      "lastname_label": "Nom",
+      "email_label": "Email",
+      "phone_label": "Téléphone",
+      "experience_label": "Expérience",
+      "experience_placeholder": "Ex: 5 ans dans la rénovation",
+      "cv_label": "CV (PDF ou Word)",
+      "motivation_label": "Lettre de motivation",
+      "files_hint": "Formats acceptés : PDF, DOC, DOCX — 5 Mo max par fichier",
+      "social_label": "Vos liens (optionnel)",
+      "website_placeholder": "Site / Portfolio",
+      "message_label": "Votre message",
+      "message_placeholder": "Parlez-nous de vous, de votre parcours, de vos motivations…",
+      "submit": "Envoyer ma candidature",
+      "submitting": "Envoi en cours…",
+      "success_title": "Candidature envoyée !",
+      "success_message": "Merci pour votre candidature. Nous l'étudions et reviendrons vers vous très prochainement.",
+      "close": "Fermer",
+      "error_generic": "Une erreur est survenue. Réessayez ou contactez-nous directement."
+    }
   }
 }
