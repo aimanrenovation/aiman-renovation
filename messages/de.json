@@ -6,6 +6,7 @@
     "about": "Über uns",
     "contact": "Kontakt",
     "faq": "FAQ",
+    "carrieres": "Karriere",
     "cta": "Kostenlose Offerte"
   },
   "common": {
@@ -1740,5 +1741,95 @@
     "cta": "Kostenlose Diagnose buchen",
     "dismiss": "Später",
     "mention": "Angebot gültig bis Ende Mai 2026"
+  },
+  "carrieres": {
+    "seo_title": "Karriere — Werden Sie Teil von Aiman Renovation | Saint-Louis",
+    "seo_description": "Aiman Renovation sucht leidenschaftliche Handwerker in Saint-Louis und Umgebung. Maurer, Maler, Elektriker, Fliesenleger — bewerben Sie sich jetzt.",
+    "hero_image_alt": "Aiman Renovation Team in Uniform — Stellenangebote",
+    "badge": "Wir stellen ein",
+    "hero_title_line1": "Und wenn Sie",
+    "hero_title_line2": "der nächste sind?",
+    "hero_subtitle": "Aiman Renovation wächst. Wir suchen leidenschaftliche Handwerker, die stolz auf ihren Beruf sind und mit einem Team etwas Bleibendes schaffen wollen, das sich um seine Leute kümmert.",
+    "hero_cta": "Jetzt bewerben",
+    "why_title": "Warum",
+    "why_title_highlight": "uns",
+    "why_subtitle": "Ein Familienunternehmen, das in seine Teams, sein Werkzeug und Qualitätsarbeit investiert.",
+    "values": [
+      {
+        "title": "Ein Team, das Sie respektiert",
+        "description": "Keine Fluktuation. Kein unnötiger Druck. Wir arbeiten zusammen, hören einander zu und kümmern uns umeinander."
+      },
+      {
+        "title": "Schöne Arbeit",
+        "description": "Vielfältige und hochwertige Baustellen: Komplettsanierung, Bad, Küche, Fassaden, Außenanlagen. Etwas, in das man Herz steckt."
+      },
+      {
+        "title": "Mit uns wachsen",
+        "description": "Finanzierte Schulungen, Vielseitigkeit wird geschätzt, Gehalt das mit Ihrem Fortschritt mitwächst."
+      },
+      {
+        "title": "Profi-Werkzeug & Material",
+        "description": "Fahrzeug, PSA, Qualitätswerkzeug, Technologie (MagicPlan, ProGBat). Wir investieren, damit Sie gut arbeiten."
+      }
+    ],
+    "positions_title": "Offene Stellen",
+    "positions_subtitle": "Vollzeit-Festanstellung, Standort Saint-Louis (68) — Baustellen Elsass und Basel.",
+    "positions": [
+      {
+        "title": "Maurer / Verputzer (vielseitig)",
+        "type": "Festanstellung — Vollzeit",
+        "description": "Rohbau, Trockenbau, Putz, Estrich und Endarbeiten auf Komplettsanierungs-Baustellen.",
+        "requirements": [
+          "Mindestens 2 Jahre Erfahrung in der Sanierung",
+          "Führerschein Klasse B erforderlich",
+          "Selbstständig auf kleinen Baustellen",
+          "Sorgfältig, gründlich, pünktlich"
+        ]
+      },
+      {
+        "title": "Maler",
+        "type": "Festanstellung — Vollzeit",
+        "description": "Untergrundvorbereitung, Wandbeläge, Innen- und Außenanstriche, Fassadenrenovierung.",
+        "requirements": [
+          "Berufsausbildung oder gleichwertige Erfahrung",
+          "Beherrschung der Endbearbeitungstechniken",
+          "Sinn für Details und schöne Arbeit",
+          "Teamgeist"
+        ]
+      },
+      {
+        "title": "Qualifizierter Elektriker",
+        "type": "Festanstellung — Vollzeit",
+        "description": "Elektroinstallation und -sanierung: Schaltschrank, Steckdosen, Beleuchtung, Ladestationen, Hausautomation.",
+        "requirements": [
+          "Aktuelle Elektro-Zertifikate (B1V, BR, BC)",
+          "Mindestens 3 Jahre Erfahrung",
+          "Kenntnisse NF C 15-100",
+          "Pläne und Schemata lesen"
+        ]
+      },
+      {
+        "title": "Fliesenleger",
+        "type": "Festanstellung — Vollzeit",
+        "description": "Verlegen von Fliesen für Bäder, Küchen, Böden und Terrassen. Sorgfältige Arbeit erforderlich.",
+        "requirements": [
+          "2 Jahre Erfahrung in allen Formaten",
+          "Beherrschung von Schnitten und Fugen",
+          "Ästhetisches Gespür",
+          "Führerschein Klasse B"
+        ]
+      }
+    ],
+    "apply_button": "Bewerben",
+    "spontaneous_title": "Ihr Beruf ist nicht aufgelistet?",
+    "spontaneous_text": "Wir hören immer auf gute Profile. Dachdecker, Klempner, Schreiner, Gärtner... Wenn Sie Ihre Arbeit gerne gut machen, haben wir etwas zu besprechen.",
+    "spontaneous_cta": "Initiativbewerbung",
+    "contact_title": "Eine Frage vor der Bewerbung?",
+    "contact_subtitle": "Wir sind erreichbar. Rufen Sie an, schreiben Sie uns oder kommen Sie vorbei.",
+    "contact_email_label": "E-Mail",
+    "contact_phone_label": "Telefon",
+    "contact_location_label": "Büro",
+    "contact_more": "Kontaktseite",
+    "email_subject": "Bewerbung — Aiman Renovation"
   }
 }

@@ -6,6 +6,7 @@
     "about": "About",
     "contact": "Contact",
     "faq": "FAQ",
+    "carrieres": "Careers",
     "cta": "Free quote"
   },
   "common": {
@@ -1740,5 +1741,95 @@
     "cta": "Book my free assessment",
     "dismiss": "Maybe later",
     "mention": "Offer valid until end of May 2026"
+  },
+  "carrieres": {
+    "seo_title": "Careers — Join Aiman Renovation | Saint-Louis Alsace",
+    "seo_description": "Aiman Renovation is hiring passionate craftspeople in Saint-Louis and surrounding areas. Mason, painter, electrician, tiler — apply now.",
+    "hero_image_alt": "Aiman Renovation team in uniform — careers Saint-Louis",
+    "badge": "We're hiring",
+    "hero_title_line1": "What if the next hire",
+    "hero_title_line2": "is you?",
+    "hero_subtitle": "Aiman Renovation is growing. We're looking for passionate craftspeople, proud of their trade, who want to build something lasting with a team that takes care of its people.",
+    "hero_cta": "Apply now",
+    "why_title": "Why",
+    "why_title_highlight": "join us",
+    "why_subtitle": "A family business that invests in its teams, tools, and quality of work.",
+    "values": [
+      {
+        "title": "A team that respects you",
+        "description": "No turnover. No unnecessary pressure. We work together, listen to each other, and take care of one another."
+      },
+      {
+        "title": "Beautiful work",
+        "description": "Varied and high-quality projects: full renovations, bathrooms, kitchens, facades, outdoor spaces. Work you can put your heart into."
+      },
+      {
+        "title": "Grow with us",
+        "description": "Funded training, multi-skilling valued, salary that follows your progress. Your skills grow, your pay does too."
+      },
+      {
+        "title": "Pro tools and equipment",
+        "description": "Vehicle, PPE, quality tools, technology (MagicPlan, ProGBat). We invest so you can do good work."
+      }
+    ],
+    "positions_title": "Open positions",
+    "positions_subtitle": "Full-time permanent contracts, based in Saint-Louis (68) — Alsace and Basel area projects.",
+    "positions": [
+      {
+        "title": "Mason / Plasterer (multi-skilled)",
+        "type": "Permanent — Full-time",
+        "description": "Structural work, partitions, plastering, screeds and finishing work on full renovation projects.",
+        "requirements": [
+          "Minimum 2 years experience in renovation",
+          "Driving license required",
+          "Autonomous on small projects",
+          "Careful, rigorous, punctual"
+        ]
+      },
+      {
+        "title": "Building painter",
+        "type": "Permanent — Full-time",
+        "description": "Surface preparation, wall coverings, interior and exterior painting, facade renovation.",
+        "requirements": [
+          "Vocational training or equivalent experience",
+          "Mastery of finishing techniques",
+          "Eye for detail and beautiful work",
+          "Team spirit"
+        ]
+      },
+      {
+        "title": "Qualified electrician",
+        "type": "Permanent — Full-time",
+        "description": "Electrical installation and renovation: panel, sockets, lighting, EV charging stations, home automation, code compliance.",
+        "requirements": [
+          "Up-to-date electrical certifications (B1V, BR, BC)",
+          "Minimum 3 years experience",
+          "Knowledge of NF C 15-100",
+          "Reading plans and schematics"
+        ]
+      },
+      {
+        "title": "Tiler",
+        "type": "Permanent — Full-time",
+        "description": "Tile and ceramic installation for bathrooms, kitchens, floors and terraces. Careful finishing required.",
+        "requirements": [
+          "2 years experience in all formats",
+          "Mastery of cuts and joints",
+          "Aesthetic sense",
+          "Driving license"
+        ]
+      }
+    ],
+    "apply_button": "Apply",
+    "spontaneous_title": "Your trade isn't listed?",
+    "spontaneous_text": "We're always listening for good profiles. Roofer, plumber, carpenter, landscaper... If you like doing your work well, we have something to talk about.",
+    "spontaneous_cta": "Spontaneous application",
+    "contact_title": "A question before applying?",
+    "contact_subtitle": "We're available. Call us, write to us, or come see us.",
+    "contact_email_label": "Email",
+    "contact_phone_label": "Phone",
+    "contact_location_label": "Office",
+    "contact_more": "Contact page",
+    "email_subject": "Job application — Aiman Renovation"
   }
 }
