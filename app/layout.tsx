@@ -18,6 +18,23 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://aiman-renovation.fr"),
   manifest: "/manifest.webmanifest",
+  openGraph: {
+    siteName: "Aiman Renovation",
+    type: "website",
+    images: [
+      {
+        url: "/images/ambiance-resultat.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Aiman Renovation — Artisan rénovation Saint-Louis Haut-Rhin",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@aimanrenovation",
+    creator: "@aimanrenovation",
+  },
 };
 
 export default function RootLayout({

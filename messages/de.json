@@ -201,7 +201,7 @@
     }
   },
   "about": {
-    "seo_title": "Über uns — Aiman Renovation",
+    "seo_title": "Über uns — Handwerker Renovation Region Basel / Elsass",
     "seo_description": "19 Jahre Erfahrung in der Renovierung in Saint-Louis und Region Basel. Entdecken Sie die Geschichte von Aiman Renovation, unsere Werte und unser qualifiziertes Handwerkerteam.",
     "hero_title_prefix": "ÜBER",
     "hero_title_highlight": "UNS",
@@ -859,7 +859,7 @@
     }
   ],
   "contact": {
-    "seo_title": "Kontakt — Renovation Region Basel",
+    "seo_title": "Kontakt — Renovation Region Basel & Dreiländereck | Offerte",
     "seo_description": "Kontaktieren Sie Aiman Renovation unter 03 56 89 44 03 oder per E-Mail. Kostenlose Offerte innert 4 Tagen für Ihre Renovierungsarbeiten in der Region Basel.",
     "hero_title_highlight": "SPRECHEN WIR",
     "hero_title": "ÜBER IHR PROJEKT",
@@ -1160,7 +1160,7 @@
     }
   },
   "faq": {
-    "seo_title": "FAQ Renovation — Häufig gestellte Fragen",
+    "seo_title": "FAQ Renovation Region Basel — Häufig gestellte Fragen",
     "seo_description": "Antworten auf Ihre Fragen zur Renovation: kostenlose Offerte, Fristen, Garantien, Fördermittel. Handwerker Region Basel, Dreiländereck.",
     "hero_title": "HÄUFIG GESTELLTE",
     "hero_title_highlight": "FRAGEN",
@@ -1603,7 +1603,7 @@
     }
   },
   "legal": {
-    "seo_title": "Impressum",
+    "seo_title": "Impressum — Aiman Renovation Saint-Louis 68300",
     "page_title": "IMPRESSUM",
     "page_title_highlight": "",
     "editor_title": "Herausgeber der Website",
@@ -1624,10 +1624,11 @@
     "liability_text": "{company} bemüht sich um die Richtigkeit der auf dieser Website enthaltenen Informationen. Jedoch kann keine Garantie für die Vollständigkeit, Genauigkeit oder Aktualität übernommen werden. {company} lehnt jede Haftung bei Fehlern oder Auslassungen ab.",
     "credits_title": "Credits",
     "credits_design": "Konzeption und Entwicklung:",
-    "credits_images": "Bilder: durch künstliche Intelligenz generiert"
+    "credits_images": "Bilder: durch künstliche Intelligenz generiert",
+    "seo_description": "Impressum von Aiman Renovation SASU — Renovierungshandwerker in Saint-Louis 68300, Elsass. Herausgeber, Hosting, geistiges Eigentum, persönliche Daten."
   },
   "cgv": {
-    "seo_title": "Allgemeine Geschäftsbedingungen",
+    "seo_title": "Allgemeine Geschäftsbedingungen — Aiman Renovation",
     "seo_description": "Allgemeine Geschäftsbedingungen von Aiman Renovation — Renovierungsarbeiten im Baugewerbe.",
     "page_title": "ALLGEMEINE",
     "page_title_highlight": "GESCHÄFTSBEDINGUNGEN",
@@ -1692,7 +1693,7 @@
     ]
   },
   "privacy": {
-    "seo_title": "Datenschutzerklärung",
+    "seo_title": "Datenschutzerklärung — Aiman Renovation",
     "page_title": "DATENSCHUTZ-",
     "page_title_highlight": "ERKLÄRUNG",
     "intro": "{company} legt grossen Wert auf den Schutz Ihrer personenbezogenen Daten. Diese Erklärung beschreibt, wie wir Ihre Informationen erheben und verwenden.",
@@ -1732,11 +1733,12 @@
     "contact_title": "Kontakt",
     "contact_intro": "Bei Fragen zu dieser Datenschutzerklärung kontaktieren Sie uns:",
     "contact_email_label": "E-Mail:",
-    "contact_phone_label": "Telefon:"
+    "contact_phone_label": "Telefon:",
+    "seo_description": "Datenschutzerklärung von Aiman Renovation — Schutz Ihrer persönlichen Daten, DSGVO, Auskunfts- und Berichtigungsrechte. Kontakt: Saint-Louis 68300."
   },
   "seo": {
-    "home_title": "Hausrenovierung Region Basel | Kostenlose Offerte — Aiman Renovation",
-    "home_description": "Renovation Region Basel — Handwerker für Küche renovieren, Badezimmer renovieren, Elektrik, Sanitär, Fassaden, Dämmung. Kostenlose Offerte innert 4 Tagen. Aiman Renovation, Ihr Handwerker im Dreiländereck."
+    "home_title": "Renovation Region Basel | Kostenlose Offerte — Aiman",
+    "home_description": "Renovation Region Basel — Küche, Bad, Elektrik, Sanitär, Fassaden, Dämmung. Handwerker im Dreiländereck. Kostenlose Offerte innert 4 Tagen."
   },
   "schema": {
     "organization_type": "HomeAndConstructionBusiness",

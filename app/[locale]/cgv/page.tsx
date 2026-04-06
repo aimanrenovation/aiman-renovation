@@ -7,10 +7,20 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "cgv" });
+  const title = t("seo_title");
+  const description = t("seo_description");
   return {
-    title: t("seo_title"),
-    description: t("seo_description"),
+    title,
+    description,
     alternates: getAlternates("/cgv"),
+    openGraph: {
+      title,
+      description,
+      url: "https://aiman-renovation.fr/cgv",
+      siteName: "Aiman Renovation",
+      locale: locale === "fr" ? "fr_FR" : locale === "de" ? "de_DE" : "en_US",
+      type: "website",
+    },
   };
 }
 

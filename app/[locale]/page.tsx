@@ -27,6 +27,8 @@ export async function generateMetadata({ params }: Props) {
       description,
       url: "https://aiman-renovation.fr",
       siteName: "Aiman Renovation",
+      locale: locale === "fr" ? "fr_FR" : locale === "de" ? "de_DE" : "en_US",
+      type: "website",
       images: [
         {
           url: "https://aiman-renovation.fr/images/ambiance-resultat.jpg",
@@ -35,8 +37,6 @@ export async function generateMetadata({ params }: Props) {
           alt: "Aiman Renovation — Artisan rénovation Saint-Louis Haut-Rhin",
         },
       ],
-      type: "website",
-      locale: locale === "fr" ? "fr_FR" : locale === "de" ? "de_DE" : "en_US",
     },
     twitter: {
       card: "summary_large_image",

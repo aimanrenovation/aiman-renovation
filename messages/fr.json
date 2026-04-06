@@ -201,8 +201,8 @@
     }
   },
   "about": {
-    "seo_title": "À propos — Aiman Renovation",
-    "seo_description": "19 ans d'expérience en rénovation à Saint-Louis. Découvrez l'histoire d'Aiman Renovation, nos valeurs et notre équipe d'artisans qualifiés.",
+    "seo_title": "À propos — Artisan Rénovation Saint-Louis Haut-Rhin",
+    "seo_description": "19 ans d'expérience en rénovation à Saint-Louis et Haut-Rhin. Découvrez l'histoire d'Aiman Renovation, nos valeurs et notre équipe d'artisans qualifiés.",
     "hero_title_prefix": "À",
     "hero_title_highlight": "PROPOS",
     "hero_subtitle": "{experience} ans d'expérience. Un seul objectif : rénover jusqu'au bout de vos rêves.",
@@ -859,8 +859,8 @@
     }
   ],
   "contact": {
-    "seo_title": "Contact — Rénovation Saint-Louis",
-    "seo_description": "Contactez Aiman Renovation au 03 56 89 44 03 ou par email. Devis gratuit sous 4 jours pour vos travaux de rénovation à Saint-Louis et Haut-Rhin.",
+    "seo_title": "Contact — Rénovation Saint-Louis, Haut-Rhin | Devis Gratuit",
+    "seo_description": "Contactez Aiman Renovation pour votre projet de rénovation à Saint-Louis et dans le Haut-Rhin. Devis gratuit sous 4 jours. Tél. 03 56 89 44 03.",
     "hero_title_highlight": "PARLONS",
     "hero_title": "DE VOTRE PROJET",
     "hero_subtitle": "Premier échange toujours sans engagement.",
@@ -1160,8 +1160,8 @@
     }
   },
   "faq": {
-    "seo_title": "FAQ Rénovation — Questions Fréquentes",
-    "seo_description": "Réponses à vos questions sur la rénovation : devis gratuit, délais, garanties, aides financières. Artisan Saint-Louis, Haut-Rhin.",
+    "seo_title": "FAQ Rénovation Saint-Louis — Questions Fréquentes",
+    "seo_description": "Réponses à vos questions sur la rénovation à Saint-Louis et Haut-Rhin : devis gratuit, délais, garanties, aides financières. Artisan qualifié depuis 19 ans.",
     "hero_title": "QUESTIONS",
     "hero_title_highlight": "FRÉQUENTES",
     "hero_subtitle": "Tout ce que vous devez savoir avant de lancer votre projet.",
@@ -1603,7 +1603,7 @@
     }
   },
   "legal": {
-    "seo_title": "Mentions légales",
+    "seo_title": "Mentions Légales — Aiman Renovation Saint-Louis 68300",
     "page_title": "MENTIONS",
     "page_title_highlight": "LÉGALES",
     "editor_title": "Éditeur du site",
@@ -1624,11 +1624,12 @@
     "liability_text": "{company} s'efforce d'assurer l'exactitude des informations présentes sur ce site. Toutefois, elle ne peut garantir que les informations soient complètes, précises ou à jour. {company} décline toute responsabilité en cas d'erreur ou d'omission.",
     "credits_title": "Crédits",
     "credits_design": "Conception et développement :",
-    "credits_images": "Images : générées par intelligence artificielle"
+    "credits_images": "Images : générées par intelligence artificielle",
+    "seo_description": "Mentions légales d'Aiman Renovation SASU — artisan rénovation à Saint-Louis 68300, Haut-Rhin. Éditeur, hébergement, propriété intellectuelle, données personnelles."
   },
   "cgv": {
-    "seo_title": "Conditions Générales de Vente",
-    "seo_description": "Conditions générales de vente d'Aiman Renovation — travaux de rénovation du bâtiment.",
+    "seo_title": "Conditions Générales de Vente — Aiman Renovation Saint-Louis",
+    "seo_description": "Conditions générales de vente d'Aiman Renovation SASU — travaux de rénovation du bâtiment à Saint-Louis 68300 et dans le Haut-Rhin. Retrouvez nos engagements.",
     "page_title": "CONDITIONS GÉNÉRALES",
     "page_title_highlight": "DE VENTE",
     "last_update": "Dernière mise à jour : avril 2026",
@@ -1692,7 +1693,7 @@
     ]
   },
   "privacy": {
-    "seo_title": "Politique de confidentialité",
+    "seo_title": "Politique de Confidentialité — Aiman Renovation",
     "page_title": "POLITIQUE DE",
     "page_title_highlight": "CONFIDENTIALITÉ",
     "intro": "{company} accorde une grande importance à la protection de vos données personnelles. Cette politique décrit comment nous collectons et utilisons vos informations.",
@@ -1732,7 +1733,8 @@
     "contact_title": "Contact",
     "contact_intro": "Pour toute question relative à cette politique, contactez-nous :",
     "contact_email_label": "Email :",
-    "contact_phone_label": "Téléphone :"
+    "contact_phone_label": "Téléphone :",
+    "seo_description": "Politique de confidentialité d'Aiman Renovation — protection de vos données personnelles, RGPD, droits d'accès et de rectification. Contact : Saint-Louis 68300."
   },
   "seo": {
     "home_title": "Aiman Renovation — Rénovation sur mesure à Saint-Louis (68)",

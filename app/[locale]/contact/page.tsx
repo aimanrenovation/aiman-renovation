@@ -10,10 +10,28 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "contact" });
+  const title = t("seo_title");
+  const description = t("seo_description");
   return {
-    title: t("seo_title"),
-    description: t("seo_description"),
+    title,
+    description,
     alternates: getAlternates("/contact"),
+    openGraph: {
+      title,
+      description,
+      url: "https://aiman-renovation.fr/contact",
+      siteName: "Aiman Renovation",
+      locale: locale === "fr" ? "fr_FR" : locale === "de" ? "de_DE" : "en_US",
+      type: "website",
+      images: [
+        {
+          url: "https://aiman-renovation.fr/images/ambiance-contact.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Contactez Aiman Renovation — Saint-Louis Haut-Rhin",
+        },
+      ],
+    },
   };
 }
 
