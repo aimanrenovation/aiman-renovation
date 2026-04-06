@@ -156,6 +156,7 @@
   },
   "about": {
     "seo_title": "Über uns — Aiman Renovation",
+    "seo_description": "19 Jahre Erfahrung in der Renovierung in Saint-Louis und Region Basel. Entdecken Sie die Geschichte von Aiman Renovation, unsere Werte und unser qualifiziertes Handwerkerteam.",
     "hero_title_prefix": "ÜBER",
     "hero_title_highlight": "UNS",
     "hero_subtitle": "{experience} Jahre Erfahrung. Ein einziges Ziel: renovieren, bis Ihre Träume wahr werden.",
@@ -557,6 +558,14 @@
   "devis": {
     "seo_title": "Kostenlose Offerte Renovation — Region Basel und Dreiländereck",
     "seo_description": "Fordern Sie Ihre kostenlose Offerte online an für Ihre Renovierungsarbeiten in der Region Basel und im Dreiländereck. Antwort innert 4 Tagen, unverbindlich.",
+    "blueprint": {
+      "touch_room": "Tippen Sie auf einen Raum",
+      "click_room": "Klicken Sie auf einen Raum, um zu beginnen",
+      "select_zones_touch": "Dann gewünschte Arbeiten ankreuzen",
+      "select_zones_click": "Wählen Sie die Bereiche Ihres Hauses, die renoviert werden sollen",
+      "send_devis": "Offerte absenden ({count} Arbeiten)",
+      "back_to_plan": "← Zurück zum Plan"
+    },
     "panel_travaux": {
       "works_selected": "{count} Arbeiten ausgewählt",
       "check_works": "Gewünschte Arbeiten ankreuzen",
@@ -1180,7 +1189,21 @@
   "schema": {
     "organization_type": "HomeAndConstructionBusiness",
     "area_served": "Basel",
-    "price_currency": "EUR"
+    "price_currency": "EUR",
+    "service_names": [
+      "Küchenrenovierung",
+      "Badezimmerrenovierung",
+      "Elektroinstallation",
+      "Sanitärinstallation",
+      "Fliesenarbeiten",
+      "Fassade & Dämmung",
+      "Gartengestaltung",
+      "Malerarbeiten & Verputz",
+      "Ladestation Elektroauto",
+      "Photovoltaikanlagen",
+      "Außenpflege",
+      "Notfalldienst & Reparatur"
+    ]
   },
   "email": {
     "devis_client_title": "Ihre Offerte-Anfrage wurde erfolgreich gesendet",

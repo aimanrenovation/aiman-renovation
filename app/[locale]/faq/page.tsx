@@ -2,6 +2,7 @@ import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { COMPANY } from "@/lib/constants";
+import { getAlternates } from "@/lib/i18n-helpers";
 import {
   Accordion,
   AccordionContent,
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: t("seo_title"),
     description: t("seo_description"),
+    alternates: getAlternates("/faq"),
   };
 }
 

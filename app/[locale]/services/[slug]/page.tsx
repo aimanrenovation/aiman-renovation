@@ -5,6 +5,7 @@ import { SERVICES, PHOTO_MAP, ICON_MAP } from "@/lib/services";
 import { COMPANY } from "@/lib/constants";
 import { LinkButton } from "@/components/ui/link-button";
 import { ScrollReveal } from "@/components/sections/scroll-reveal";
+import { getAlternates } from "@/lib/i18n-helpers";
 
 interface Props {
   params: Promise<{ slug: string; locale: string }>;
@@ -22,6 +23,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${service.title} ${t("service_meta_suffix")}`,
     description: `${service.description} ${t("service_meta_desc_suffix")}`,
+    alternates: getAlternates(`/services/${slug}`),
   };
 }
 

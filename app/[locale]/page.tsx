@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { setRequestLocale } from "next-intl/server";
+import { getAlternates } from "@/lib/i18n-helpers";
 import { Hero } from "@/components/sections/hero";
 import { SavoirFaire } from "@/components/sections/savoir-faire";
 import { ServicesPreview } from "@/components/sections/services-preview";
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: t("home_title"),
     description: t("home_description"),
+    alternates: getAlternates("/"),
   };
 }
 

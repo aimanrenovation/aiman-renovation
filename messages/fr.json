@@ -156,6 +156,7 @@
   },
   "about": {
     "seo_title": "À propos — Aiman Renovation",
+    "seo_description": "19 ans d'expérience en rénovation à Saint-Louis. Découvrez l'histoire d'Aiman Renovation, nos valeurs et notre équipe d'artisans qualifiés.",
     "hero_title_prefix": "À",
     "hero_title_highlight": "PROPOS",
     "hero_subtitle": "{experience} ans d'expérience. Un seul objectif : rénover jusqu'au bout de vos rêves.",
@@ -557,6 +558,14 @@
   "devis": {
     "seo_title": "Devis Gratuit Rénovation — Saint-Louis et Haut-Rhin",
     "seo_description": "Demandez votre devis gratuit en ligne pour vos travaux de rénovation à Saint-Louis et dans le Haut-Rhin. Réponse sous 4 jours, sans engagement.",
+    "blueprint": {
+      "touch_room": "Touchez une pièce",
+      "click_room": "Cliquez sur une pièce pour commencer",
+      "select_zones_touch": "Puis cochez les travaux à réaliser",
+      "select_zones_click": "Sélectionnez les zones de votre maison à rénover",
+      "send_devis": "Envoyer mon devis ({count} travaux)",
+      "back_to_plan": "← Retour au plan"
+    },
     "panel_travaux": {
       "works_selected": "{count} travaux sélectionnés",
       "check_works": "Cochez les travaux à réaliser",
@@ -1180,7 +1189,21 @@
   "schema": {
     "organization_type": "HomeAndConstructionBusiness",
     "area_served": "Saint-Louis",
-    "price_currency": "EUR"
+    "price_currency": "EUR",
+    "service_names": [
+      "Rénovation de cuisine",
+      "Rénovation de salle de bain",
+      "Électricité",
+      "Plomberie",
+      "Carrelage",
+      "Façade & Isolation",
+      "Aménagement paysager",
+      "Peinture & Finitions",
+      "Borne de recharge",
+      "Panneaux photovoltaïques",
+      "Entretien extérieur",
+      "Dépannage & Urgence"
+    ]
   },
   "email": {
     "devis_client_title": "Votre demande de devis a bien été envoyée",

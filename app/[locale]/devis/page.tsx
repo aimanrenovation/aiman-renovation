@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { DevisPageContent } from "@/components/devis/devis-page-content";
+import { getAlternates } from "@/lib/i18n-helpers";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -13,6 +14,7 @@ export async function generateMetadata({ params }: Props) {
       title: t("seo_title"),
       description: t("seo_description"),
     },
+    alternates: getAlternates("/devis"),
   };
 }
 

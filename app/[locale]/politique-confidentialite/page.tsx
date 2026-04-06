@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { COMPANY } from "@/lib/constants";
+import { getAlternates } from "@/lib/i18n-helpers";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -9,6 +10,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: t("seo_title"),
     description: `${t("seo_title")} — ${COMPANY.website}`,
+    alternates: getAlternates("/politique-confidentialite"),
   };
 }
 

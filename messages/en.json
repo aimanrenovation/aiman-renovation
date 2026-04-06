@@ -156,6 +156,7 @@
   },
   "about": {
     "seo_title": "About — Aiman Renovation",
+    "seo_description": "19 years of renovation experience in Saint-Louis and the Basel area. Discover the story of Aiman Renovation, our values and our team of skilled craftsmen.",
     "hero_title_prefix": "ABOUT",
     "hero_title_highlight": "US",
     "hero_subtitle": "{experience} years of experience. One goal: to renovate your dreams to the last detail.",
@@ -557,6 +558,14 @@
   "devis": {
     "seo_title": "Free Renovation Quote — Basel Area",
     "seo_description": "Request your free online quote for renovation work in the Basel area and Haut-Rhin. Response within 4 days, no obligation.",
+    "blueprint": {
+      "touch_room": "Tap a room",
+      "click_room": "Click a room to get started",
+      "select_zones_touch": "Then tick the works to carry out",
+      "select_zones_click": "Select the areas of your home to renovate",
+      "send_devis": "Send my quote ({count} works)",
+      "back_to_plan": "← Back to plan"
+    },
     "panel_travaux": {
       "works_selected": "{count} works selected",
       "check_works": "Tick the works to be carried out",
@@ -1180,7 +1189,21 @@
   "schema": {
     "organization_type": "HomeAndConstructionBusiness",
     "area_served": "Basel",
-    "price_currency": "EUR"
+    "price_currency": "EUR",
+    "service_names": [
+      "Kitchen Renovation",
+      "Bathroom Renovation",
+      "Electrical Work",
+      "Plumbing",
+      "Tiling",
+      "Facade & Insulation",
+      "Landscaping",
+      "Painting & Finishing",
+      "EV Charging Station",
+      "Solar Panels",
+      "Exterior Maintenance",
+      "Emergency Repairs"
+    ]
   },
   "email": {
     "devis_client_title": "Your quote request has been sent",

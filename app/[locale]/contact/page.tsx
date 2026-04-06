@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { COMPANY } from "@/lib/constants";
 import { LinkButton } from "@/components/ui/link-button";
 import { ContactForm } from "@/components/sections/contact-form";
+import { getAlternates } from "@/lib/i18n-helpers";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: t("seo_title"),
     description: t("seo_description"),
+    alternates: getAlternates("/contact"),
   };
 }
 
