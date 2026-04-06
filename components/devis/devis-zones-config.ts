@@ -158,6 +158,7 @@ export const ZONES_CONFIG: ZoneConfig[] = [
     label: "Jardin",
     category: "exterieur",
     workItems: [
+      { id: "entretien-jardin", label: "Entretien de jardin" },
       { id: "engazonnement", label: "Engazonnement" },
       { id: "plantation", label: "Plantations" },
       { id: "allee-chemin", label: "Allée / Chemin" },
