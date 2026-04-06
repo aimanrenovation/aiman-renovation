@@ -1,5 +1,1202 @@
 {
   "nav": {
-    "home": "Accueil"
+    "home": "Accueil",
+    "services": "Services",
+    "realisations": "Réalisations",
+    "about": "À propos",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "cta": "Devis gratuit"
+  },
+  "common": {
+    "company_name": "Aiman Renovation",
+    "legal_form": "SASU",
+    "slogan": "Nous rénovons jusqu'au bout de vos rêves !",
+    "phone": "06 33 49 69 25",
+    "email": "contact@aiman-renovation.fr",
+    "city": "Saint-Louis",
+    "region": "Haut-Rhin, Alsace",
+    "website": "https://aiman-renovation.fr",
+    "experience": "19",
+    "projects": "50",
+    "discover": "Découvrir",
+    "discover_arrow": "Découvrir →",
+    "all_our_services": "Tous nos services",
+    "whatsapp_message": "Bonjour, j'ai un projet de rénovation et j'aimerais en discuter avec vous.",
+    "email_subject": "Demande de renseignements — Projet de rénovation",
+    "email_body": "Bonjour,\n\nJ'ai un projet de rénovation et j'aimerais en discuter avec vous.\n\nType de travaux : \nAdresse du chantier : \nBudget estimé : \n\nMerci de me recontacter.\n\nCordialement,\n",
+    "zones": [
+      "Saint-Louis", "Huningue", "Hésingue", "Village-Neuf",
+      "Blotzheim", "Bartenheim", "Kembs", "Sierentz",
+      "Leymen", "Hagenthal", "Rosenau", "Hégenheim"
+    ],
+    "zones_and_beyond": "et au-delà",
+    "zones_subtitle": "Saint-Louis et sud du Haut-Rhin, à la frontière suisse et allemande.",
+    "zone_title": "ZONE D'",
+    "zone_title_highlight": "INTERVENTION",
+    "our_coordinates": "Nos coordonnées",
+    "copyright": "© {year} Aiman Renovation. Tous droits réservés.",
+    "city_and_surroundings": "Saint-Louis et environs"
+  },
+  "home": {
+    "hero": {
+      "title": "RÉNOVATION",
+      "title_highlight": "SUR MESURE",
+      "scroll_hint": "Scrollez pour découvrir notre savoir-faire",
+      "cta_devis": "Devis gratuit",
+      "cta_realisations": "Nos réalisations",
+      "scroll_texts": [
+        { "text": "Votre habitat", "highlight": "mérite mieux" },
+        { "text": "Nos artisans", "highlight": "prennent le relais" },
+        { "text": "19 ans", "highlight": "d'expérience" },
+        { "text": "Chaque détail", "highlight": "compte" },
+        { "text": "Du sol", "highlight": "au plafond" },
+        { "text": "Nous rénovons jusqu'au bout", "highlight": "de vos rêves" }
+      ]
+    },
+    "savoir_faire": {
+      "title": "NOTRE",
+      "title_highlight": "SAVOIR-FAIRE",
+      "lines": [
+        "19 ans d'expérience. Plomberie, électricité, carrelage, peinture, isolation, aménagement extérieur.",
+        "Un interlocuteur unique qui coordonne tous les corps de métier pour un résultat clé en main.",
+        "Nous accompagnons particuliers, copropriétés et professionnels à Saint-Louis et dans tout le Haut-Rhin."
+      ],
+      "stats": {
+        "projects": "projets",
+        "experience": "d'expérience",
+        "services": "services"
+      }
+    },
+    "paint_roller": {
+      "alt": "Rouleau de peinture — rénovation intérieure Saint-Louis",
+      "line1": "Chaque coup de rouleau,",
+      "line2": "chaque joint posé,",
+      "line3": "chaque câble tiré —",
+      "highlight": "c'est notre signature."
+    },
+    "result_banner": {
+      "alt": "Salon rénové par Aiman Renovation — rénovation complète Haut-Rhin 68",
+      "text": "LE RÉSULTAT",
+      "highlight": "PARLE DE LUI-MÊME"
+    },
+    "services_preview": {
+      "title": "NOS",
+      "title_highlight": "SERVICES"
+    }
+  },
+  "sections": {
+    "testimonials": {
+      "title": "ILS NOUS FONT",
+      "title_highlight": "CONFIANCE",
+      "google_verified": "Avis Google vérifiés",
+      "google_review": "Avis Google",
+      "see_all": "Voir tous les avis sur Google →",
+      "items": [
+        {
+          "name": "michel schlachter",
+          "text": "Nous sommes extrêmement satisfaits de la rénovation de nos deux pièces. Le travail de ponçage, d'enduits et de peinture a été réalisé avec un grand professionnalisme et beaucoup de soin. Chantier propre, délais respectés et très bons conseils tout au long du projet. Un travail de grande qualité que nous recommandons sans hésiter !",
+          "rating": 5
+        },
+        {
+          "name": "Nadia MEZIANI",
+          "text": "J'ai fait appel à Aiman Rénovation pour des travaux chez ma mère, installation d'une douche et d'un lavabo PMR, pose d'une nouvelle porte et réfection du plafond de la cuisine, suite à un dégât des eaux.",
+          "rating": 5
+        },
+        {
+          "name": "F R",
+          "text": "Highly recommended! Excellent communication in English, very precise and conscientious work at a fair price. Also very flexible when it comes to working hours. Top craftsman!",
+          "rating": 5
+        },
+        {
+          "name": "yves lesueur",
+          "text": "Rénovation d'un appartement réalisé avec soin, sérieux et professionnalisme. Je recommande vivement cette entreprise. Contact et échanges rapides.",
+          "rating": 5
+        },
+        {
+          "name": "Youssef Yo",
+          "text": "Très professionnel, il veille à ce que tout soit nickel et bien organisé. Excellent service.",
+          "rating": 5
+        },
+        {
+          "name": "Sarah Runser",
+          "text": "Travail impeccable changement de VMC et technicien très aimable a recommander.",
+          "rating": 5
+        },
+        {
+          "name": "Yann Dos santos",
+          "text": "Ravi des services ! Je recommande sans réserves !",
+          "rating": 5
+        },
+        {
+          "name": "Jc ALL (Tuc)",
+          "text": "Réparation d'une fuite sur sous un radiateur, très bon travail.",
+          "rating": 5
+        }
+      ]
+    },
+    "why_choose_us": {
+      "title": "POURQUOI NOUS",
+      "title_highlight": "CHOISIR",
+      "arguments": [
+        { "title": "Garantie décennale", "desc": "Tous nos travaux couverts par une assurance décennale et RC professionnelle." },
+        { "title": "Devis gratuit sous 4 jours", "desc": "Visite technique incluse, devis détaillé et transparent. Sans engagement." },
+        { "title": "Artisan local", "desc": "Basés à Saint-Louis, nous connaissons le terrain et les fournisseurs locaux." },
+        { "title": "19 ans d'expérience", "desc": "Un savoir-faire éprouvé sur tous les corps de métier de la rénovation." },
+        { "title": "Accompagnement aides", "desc": "MaPrimeRénov', CEE, éco-PTZ — nous montons vos dossiers." },
+        { "title": "Chantier propre", "desc": "Protection, évacuation, nettoyage. Vous récupérez un logement prêt à vivre." }
+      ]
+    },
+    "cta_banner": {
+      "title": "UN PROJET EN TÊTE ?",
+      "subtitle": "Devis gratuit sous 4 jours, sans engagement.",
+      "button": "Demander un devis",
+      "call_prefix": "ou appelez le"
+    }
+  },
+  "about": {
+    "seo_title": "À propos — Aiman Renovation",
+    "hero_title_prefix": "À",
+    "hero_title_highlight": "PROPOS",
+    "hero_subtitle": "{experience} ans d'expérience. Un seul objectif : rénover jusqu'au bout de vos rêves.",
+    "story_title": "NOTRE",
+    "story_title_highlight": "HISTOIRE",
+    "story_texts": [
+      { "text": "Il était une fois", "highlight": "un gamin qui rêvait", "story": "Pendant que les autres jouaient dehors, lui dessinait des maisons. Il ne le savait pas encore, mais ce cahier d'écolier allait changer sa vie." },
+      { "text": "À 20 ans,", "highlight": "il entre dans l'arène", "story": "Le ciment sous les ongles, le dos en feu, 12 heures par jour. Personne ne lui a fait de cadeau. Chaque mur monté, chaque tuyau soudé — il a tout appris à la dure." },
+      { "text": "La vie l'a mis", "highlight": "à genoux", "story": "Il y a eu des jours où tout s'effondrait. Des chantiers perdus, des portes fermées, la pluie qui ne s'arrêtait pas. Mais un homme qui tombe n'est pas un homme fini. C'est un homme qui apprend." },
+      { "text": "Il s'est relevé", "highlight": "et il a mené", "story": "Chef d'équipe. Celui qu'on appelle quand c'est compliqué. 19 ans de terrain, des centaines de chantiers, et une certitude : il était prêt." },
+      { "text": "Il a porté ses couleurs", "highlight": "sur son cœur", "story": "Aiman Renovation. Pas juste un nom sur une veste. Une promesse. Un seul interlocuteur, tous les métiers, zéro compromis sur la qualité." },
+      { "text": "Aujourd'hui, il ouvre", "highlight": "les portes de son rêve", "story": "Au cœur du Trois Pays, le gamin qui dessinait des maisons les construit maintenant pour de vrai. Et il n'a qu'une devise : rénover jusqu'au bout de vos rêves." }
+    ],
+    "process_title": "NOTRE",
+    "process_title_highlight": "PROCESSUS",
+    "steps": [
+      { "number": "01", "title": "Premier contact", "desc": "Vous nous appelez ou remplissez le formulaire en ligne. Nous échangeons sur votre projet, vos envies et votre budget." },
+      { "number": "02", "title": "Visite technique", "desc": "Nous nous déplaçons chez vous pour prendre les mesures et évaluer l'état existant. Gratuit et sans engagement." },
+      { "number": "03", "title": "Devis détaillé", "desc": "Sous 4 jours, vous recevez un devis complet : travaux poste par poste, matériaux, planning et montant total." },
+      { "number": "04", "title": "Réalisation", "desc": "Nos artisans interviennent selon le planning. Aiman supervise chaque chantier. Photos d'avancement régulières." },
+      { "number": "05", "title": "Réception", "desc": "Visite de réception ensemble, point par point. Notre garantie décennale vous protège pendant 10 ans." }
+    ],
+    "engagements_title": "NOS",
+    "engagements_title_highlight": "ENGAGEMENTS",
+    "engagements": [
+      { "title": "Qualité sans compromis", "desc": "Matériaux sélectionnés, exécution soignée dans les règles de l'art." },
+      { "title": "Respect des délais", "desc": "Le planning du devis est notre feuille de route. Aucune mauvaise surprise." },
+      { "title": "Chantier propre", "desc": "Protection dès le premier jour, nettoyage complet en fin de chantier." },
+      { "title": "Transparence totale", "desc": "Un interlocuteur unique, photos WhatsApp, disponible du lundi au samedi." },
+      { "title": "Écoute et conseil", "desc": "Si une solution plus simple ou moins coûteuse existe, on vous la propose." },
+      { "title": "Sérénité garantie", "desc": "Garantie décennale, RC professionnelle. Votre investissement est protégé." }
+    ],
+    "certifications_title": "CERTIFICATIONS &",
+    "certifications_title_highlight": "ASSURANCES",
+    "certifications": [
+      { "title": "Garantie décennale", "desc": "10 ans de couverture sur la solidité de l'ouvrage." },
+      { "title": "RC Professionnelle", "desc": "Dommages aux tiers couverts pendant les travaux." },
+      { "title": "Certification IRVE", "desc": "Installation bornes de recharge véhicules électriques." },
+      { "title": "Habilitations électriques", "desc": "B1V, B2V, BR, BC — interventions basse tension." }
+    ]
+  },
+  "services": {
+    "seo_title": "Nos Services de Rénovation à Saint-Louis (68)",
+    "seo_description": "Cuisine, salle de bain, électricité, plomberie, carrelage, façades, isolation, peinture, bornes de recharge, photovoltaïque. Artisan qualifié Haut-Rhin.",
+    "hero_title": "NOS",
+    "hero_title_highlight": "SERVICES",
+    "hero_subtitle": "Du sol au plafond, de l'intérieur à l'extérieur — nous maîtrisons tous les corps de métier.",
+    "detail_title": "EN",
+    "detail_title_highlight": "DÉTAIL",
+    "quality_text": "LA QUALITÉ",
+    "quality_highlight": "SANS COMPROMIS",
+    "features_title": "CE QUE NOUS",
+    "features_title_highlight": "RÉALISONS",
+    "process_title": "NOTRE",
+    "process_title_highlight": "PROCESSUS",
+    "why_pro_title": "POURQUOI UN",
+    "why_pro_highlight": "PRO",
+    "budget_title": "BUDGET",
+    "budget_highlight": "INDICATIF",
+    "budget_disclaimer": "Prix indicatifs TTC pour la région de Saint-Louis et le Haut-Rhin. Chaque projet est unique — le devis détaillé après visite technique est le seul document engageant.",
+    "cta_title_line1": "INTÉRESSÉ PAR",
+    "cta_title_line2": "CE",
+    "cta_title_highlight": "SERVICE",
+    "cta_subtitle": "Décrivez votre projet et recevez un devis gratuit sous 4 jours. Sans engagement.",
+    "cta_button": "Demander un devis",
+    "cta_hero_button": "Demander un devis gratuit",
+    "service_meta_suffix": "à Saint-Louis (68) — Devis Gratuit",
+    "service_meta_desc_suffix": "Artisan qualifié à Saint-Louis et Haut-Rhin. Devis gratuit sous 4 jours."
+  },
+  "service_items": [
+    {
+      "slug": "cuisine",
+      "title": "Rénovation de cuisine",
+      "shortTitle": "Cuisine",
+      "description": "Transformez votre cuisine en un espace moderne et fonctionnel. Du plan de travail aux finitions, nous prenons en charge l'intégralité de votre projet.",
+      "icon": "🍳",
+      "features": [
+        "Démolition et dépose",
+        "Plomberie et électricité",
+        "Pose de meubles et plan de travail",
+        "Carrelage et crédence",
+        "Peinture et finitions"
+      ],
+      "longDescription": "La cuisine est le coeur de votre maison — l'endroit où l'on prépare, partage et se retrouve. Chez Aiman Renovation, nous concevons des cuisines qui allient esthétique et praticité, adaptées à votre mode de vie et à votre budget. Que vous souhaitiez une cuisine ouverte sur le séjour, un îlot central, ou simplement moderniser vos façades et plan de travail, nous vous accompagnons de A à Z.\n\nNos équipes maîtrisent tous les corps de métier nécessaires : plomberie, électricité, carrelage, menuiserie, peinture. Nous coordonnons l'ensemble du chantier pour vous offrir un résultat clé en main, sans que vous ayez à gérer plusieurs artisans. Chaque cuisine est pensée sur mesure, en tenant compte de l'agencement existant, de la luminosité et de vos habitudes.\n\nNous travaillons avec des fournisseurs reconnus pour la qualité de leurs matériaux : plans de travail en quartz, granit ou stratifié haute résistance, crédences en faïence ou en verre, robinetterie durable. Le résultat : une cuisine qui dure dans le temps et valorise votre bien.",
+      "process": [
+        { "step": "Prise de mesures", "detail": "Visite technique pour relever les dimensions exactes et identifier les contraintes (arrivées d'eau, électricité, ventilation)." },
+        { "step": "Conception du projet", "detail": "Plan d'aménagement en 2D/3D, choix des matériaux, coloris et équipements avec vous." },
+        { "step": "Dépose de l'ancienne cuisine", "detail": "Démontage soigné, évacuation des gravats et préparation des murs et sols." },
+        { "step": "Travaux techniques", "detail": "Réfection de la plomberie, mise aux normes électriques, pose du carrelage et de la crédence." },
+        { "step": "Installation et finitions", "detail": "Montage des meubles, pose du plan de travail, raccordements, peinture et nettoyage final." }
+      ],
+      "whyPro": "Une rénovation de cuisine implique de la plomberie, de l'électricité, du carrelage et de la menuiserie — autant de métiers qui exigent un savoir-faire précis. Un défaut d'étanchéité sous l'évier, un circuit électrique sous-dimensionné ou un plan de travail mal ajusté peuvent engendrer des problèmes coûteux. Faire appel à un professionnel, c'est la garantie d'un travail conforme aux normes, d'une coordination fluide entre les différents corps de métier et d'un résultat à la hauteur de vos attentes. De plus, notre garantie décennale vous protège pendant 10 ans.",
+      "priceRange": "8 000 € – 25 000 € selon la superficie et les matériaux choisis"
+    },
+    {
+      "slug": "salle-de-bain",
+      "title": "Rénovation salle de bain",
+      "shortTitle": "Salle de bain",
+      "description": "Créez la salle de bain de vos rêves. Douche à l'italienne, baignoire, vasque design — nous réalisons tous les styles.",
+      "icon": "🚿",
+      "features": [
+        "Plomberie complète",
+        "Étanchéité et isolation",
+        "Carrelage mural et sol",
+        "Installation sanitaires",
+        "Ventilation"
+      ],
+      "longDescription": "Votre salle de bain doit être un espace de bien-être, fonctionnel et agréable au quotidien. Qu'il s'agisse de remplacer une baignoire vieillissante par une douche à l'italienne, de moderniser le carrelage ou de repenser entièrement l'agencement, Aiman Renovation vous propose des solutions sur mesure adaptées à votre espace et à votre budget.\n\nL'étanchéité est au coeur de nos préoccupations : nous utilisons des systèmes d'étanchéité sous carrelage (SPEC) conformes aux DTU en vigueur, pour vous garantir une salle de bain sans infiltrations pendant des années. Nos plombiers réalisent les raccordements avec soin, en privilégiant des matériaux durables (PER, multicouche).\n\nDe la vasque suspendue au meuble double vasque, du carrelage grand format aux mosaïques, nous vous aidons à choisir les équipements et finitions qui correspondent à vos goûts. Nous installons également des solutions d'accessibilité (barres d'appui, douche plain-pied) pour les personnes à mobilité réduite.",
+      "process": [
+        { "step": "Diagnostic et relevé", "detail": "Inspection de la plomberie existante, contrôle de l'étanchéité, mesures précises de la pièce." },
+        { "step": "Choix des équipements", "detail": "Sélection des sanitaires, robinetterie, carrelage et accessoires selon vos envies et votre budget." },
+        { "step": "Dépose et préparation", "detail": "Retrait des anciens équipements, mise à nu des murs et sols, vérification des supports." },
+        { "step": "Plomberie et étanchéité", "detail": "Refonte du réseau d'eau chaude/froide et évacuations, pose du système d'étanchéité (SPEC)." },
+        { "step": "Pose et finitions", "detail": "Carrelage mural et sol, installation des sanitaires, joints silicone, peinture et ventilation." }
+      ],
+      "whyPro": "La salle de bain est la pièce la plus technique de votre logement. Une mauvaise étanchéité peut entraîner des infiltrations, des moisissures et des dégâts structurels graves. La plomberie doit être irréprochable pour éviter les fuites. Nos artisans maîtrisent les normes DTU et les techniques d'étanchéité sous carrelage. Avec Aiman Renovation, vous bénéficiez d'une garantie décennale et de la tranquillité d'esprit.",
+      "priceRange": "6 000 € – 18 000 € selon la configuration et les équipements"
+    },
+    {
+      "slug": "electricite",
+      "title": "Électricité",
+      "shortTitle": "Électricité",
+      "description": "Mise aux normes, rénovation complète ou extension de votre installation électrique. Sécurité et conformité garanties.",
+      "icon": "⚡",
+      "features": [
+        "Mise aux normes NF C 15-100",
+        "Tableau électrique",
+        "Prises et interrupteurs",
+        "Éclairage LED",
+        "Domotique"
+      ],
+      "longDescription": "Une installation électrique vétuste ou non conforme représente un risque majeur pour votre sécurité. En Alsace, de nombreux logements anciens nécessitent une mise aux normes pour répondre à la réglementation NF C 15-100. Aiman Renovation prend en charge la rénovation complète ou partielle de votre installation électrique, du tableau aux prises, en passant par l'éclairage.\n\nNous réalisons le diagnostic de votre installation existante, identifions les points de non-conformité et proposons un plan de rénovation adapté. Remplacement du tableau électrique, passage de nouveaux câbles, ajout de prises et interrupteurs, installation d'un éclairage LED performant — chaque intervention est réalisée dans le respect des normes en vigueur.\n\nNous proposons également des solutions de domotique pour piloter votre éclairage, volets roulants et chauffage depuis votre smartphone. Une maison plus intelligente, plus économe et plus confortable.",
+      "process": [
+        { "step": "Diagnostic électrique", "detail": "Inspection complète de l'installation existante, identification des non-conformités et des risques." },
+        { "step": "Plan de rénovation", "detail": "Schéma électrique détaillé avec positionnement des points lumineux, prises et circuits dédiés." },
+        { "step": "Travaux de câblage", "detail": "Passage des gaines et câbles, encastrement ou pose en apparent selon la configuration." },
+        { "step": "Installation du tableau", "detail": "Pose du nouveau tableau électrique avec disjoncteurs différentiels et protection parafoudre." },
+        { "step": "Contrôle et mise en service", "detail": "Tests de conformité, vérification des terres, mise en service et remise du schéma électrique." }
+      ],
+      "whyPro": "L'électricité ne pardonne pas les approximations. Une installation mal réalisée peut provoquer des courts-circuits, des incendies ou des électrocutions. La norme NF C 15-100 impose des règles strictes que seul un professionnel qualifié peut appliquer correctement. De plus, une attestation de conformité (Consuel) est obligatoire pour les rénovations lourdes. Confiez vos travaux électriques à Aiman Renovation pour une installation sûre et conforme.",
+      "priceRange": "3 000 € – 12 000 € selon l'ampleur de la rénovation (appartement ou maison)"
+    },
+    {
+      "slug": "plomberie",
+      "title": "Plomberie",
+      "shortTitle": "Plomberie",
+      "description": "Installation et rénovation de vos réseaux d'eau. Du remplacement de tuyauterie à la création de nouveaux points d'eau.",
+      "icon": "🔧",
+      "features": [
+        "Remplacement tuyauterie",
+        "Installation chauffe-eau",
+        "Création points d'eau",
+        "Réparation fuites",
+        "Raccordements"
+      ],
+      "longDescription": "La plomberie est l'ossature invisible de votre habitat. Une tuyauterie vétuste en plomb ou en acier galvanisé peut nuire à la qualité de votre eau et provoquer des fuites insidieuses. Aiman Renovation intervient pour rénover, remplacer ou créer vos réseaux d'alimentation et d'évacuation, avec des matériaux modernes et durables.\n\nNous remplaçons les anciennes canalisations par du PER ou du multicouche, installons des chauffe-eau thermodynamiques ou classiques, et créons de nouveaux points d'eau là où vous en avez besoin : buanderie, WC supplémentaire, cuisine d'été. Chaque intervention est pensée pour optimiser votre confort tout en réduisant votre consommation d'eau.\n\nEn copropriété comme en maison individuelle, nous intervenons sur les colonnes montantes, les compteurs divisionnaires et les raccordements au réseau public. Notre connaissance du terrain en Haut-Rhin nous permet de travailler efficacement avec les services des eaux locaux.",
+      "process": [
+        { "step": "Diagnostic plomberie", "detail": "Inspection visuelle et test de pression pour évaluer l'état du réseau existant." },
+        { "step": "Proposition technique", "detail": "Devis détaillé avec choix des matériaux (PER, multicouche, cuivre) et plan du réseau." },
+        { "step": "Dépose et remplacement", "detail": "Retrait des anciennes canalisations, pose du nouveau réseau avec vannes d'arrêt par zone." },
+        { "step": "Raccordements", "detail": "Branchement des équipements sanitaires, chauffe-eau, machine à laver et lave-vaisselle." },
+        { "step": "Mise en eau et contrôle", "detail": "Tests d'étanchéité sous pression, vérification des débits et absence de fuites." }
+      ],
+      "whyPro": "Une fuite d'eau peut causer des dégâts considérables en quelques heures : plafonds endommagés, moisissures, courts-circuits. Les raccordements en plomberie exigent une maîtrise des techniques de soudure, de sertissage et des normes sanitaires. Faire appel à Aiman Renovation, c'est l'assurance d'un réseau fiable, d'une eau saine et d'une couverture par notre garantie décennale en cas de sinistre.",
+      "priceRange": "2 000 € – 10 000 € selon le nombre de points d'eau et la complexité"
+    },
+    {
+      "slug": "carrelage",
+      "title": "Carrelage et revêtement de sol",
+      "shortTitle": "Carrelage",
+      "description": "Pose de carrelage, parquet, vinyle ou béton ciré. Un sol neuf transforme une pièce entière.",
+      "icon": "🏗️",
+      "features": [
+        "Carrelage intérieur/extérieur",
+        "Parquet massif et stratifié",
+        "Vinyle et PVC",
+        "Béton ciré",
+        "Ragréage et préparation"
+      ],
+      "longDescription": "Le sol est le premier élément que l'on remarque en entrant dans une pièce. Un carrelage bien posé, un parquet chaleureux ou un béton ciré contemporain transforment instantanément l'atmosphère de votre intérieur. Aiman Renovation maîtrise la pose de tous types de revêtements de sol, du carrelage grand format au parquet massif en passant par le vinyle haut de gamme.\n\nChaque chantier commence par une préparation minutieuse du support : ragréage, mise à niveau, traitement de l'humidité si nécessaire. C'est cette étape invisible qui garantit un résultat parfait et durable. Nous posons ensuite le revêtement de votre choix avec une attention particulière aux coupes, aux joints et aux finitions de seuil.\n\nPour l'extérieur, nous réalisons des terrasses en grès cérame, des allées en pierre naturelle et des plages de piscine antidérapantes. Nos carreleurs d'expérience interviennent aussi bien dans les appartements du centre de Saint-Louis que dans les maisons des villages environnants.",
+      "process": [
+        { "step": "Évaluation du support", "detail": "Contrôle de la planéité, du taux d'humidité et de la solidité du sol existant." },
+        { "step": "Préparation du support", "detail": "Ragréage, primaire d'accrochage, chape fluide si nécessaire pour obtenir un sol parfaitement plan." },
+        { "step": "Choix du calepinage", "detail": "Définition du sens de pose, de la taille des joints et du motif (droit, diagonal, décalé)." },
+        { "step": "Pose du revêtement", "detail": "Collage ou pose flottante selon le matériau, découpes précises autour des obstacles." },
+        { "step": "Jointage et finitions", "detail": "Joints de couleur assortie, plinthes, barres de seuil, nettoyage en profondeur." }
+      ],
+      "whyPro": "Un carrelage mal posé se fissure, sonne creux et se décolle en quelques années. La préparation du support, le choix de la colle et le respect des joints de dilatation sont des étapes techniques qui nécessitent un vrai savoir-faire. Nos carreleurs cumulent des années d'expérience et utilisent des outils professionnels (coupe-carreaux diamant, niveau laser) pour un résultat impeccable et garanti.",
+      "priceRange": "40 € – 120 € / m² pose comprise, selon le type de revêtement"
+    },
+    {
+      "slug": "facade-isolation",
+      "title": "Façades et isolation",
+      "shortTitle": "Façades",
+      "description": "Ravalement de façade, isolation thermique par l'extérieur (ITE) ou l'intérieur (ITI). Améliorez le confort et réduisez vos factures.",
+      "icon": "🏛️",
+      "features": [
+        "Ravalement de façade",
+        "ITE",
+        "ITI",
+        "Enduit et crépi",
+        "Peinture extérieure"
+      ],
+      "longDescription": "En Alsace, les hivers rigoureux rendent l'isolation thermique indispensable. Une façade mal isolée, c'est jusqu'à 25% de déperditions de chaleur et des factures de chauffage qui s'envolent. Aiman Renovation est spécialisé dans le ravalement de façade et l'isolation thermique, que ce soit par l'extérieur (ITE) ou par l'intérieur (ITI).\n\nL'isolation thermique par l'extérieur (ITE) est la solution la plus performante : elle supprime les ponts thermiques, protège la structure du bâtiment contre les intempéries et embellit la façade en même temps. Nous posons des panneaux isolants (polystyrène, laine de roche ou fibre de bois) recouverts d'un enduit de finition dans le coloris de votre choix.\n\nPour les copropriétés, nous réalisons des ravalements complets incluant la réparation des fissures, le traitement des remontées d'humidité et l'application d'enduits respirants adaptés au bâti alsacien. Nos chantiers respectent les réglementations locales et les prescriptions des Architectes des Bâtiments de France quand c'est nécessaire.",
+      "process": [
+        { "step": "Diagnostic façade", "detail": "Inspection de l'état de la façade, identification des fissures, des infiltrations et des ponts thermiques." },
+        { "step": "Montage de l'échafaudage", "detail": "Installation sécurisée de l'échafaudage avec protection des abords (filets, bâches)." },
+        { "step": "Préparation des murs", "detail": "Nettoyage haute pression, réparation des fissures, traitement anti-mousse et anti-humidité." },
+        { "step": "Pose de l'isolant", "detail": "Fixation mécanique et collage des panneaux isolants, pose des profilés de départ et d'angle." },
+        { "step": "Finition et enduit", "detail": "Application de l'enduit de finition (gratté, taloché ou ribbé), peinture, nettoyage du chantier." }
+      ],
+      "whyPro": "L'isolation et le ravalement de façade sont des travaux techniques qui engagent la durabilité de votre bâtiment. Une ITE mal posée peut entraîner des infiltrations, des décollements et une perte d'efficacité thermique. Ces travaux sont éligibles à MaPrimeRénov' et aux CEE, mais uniquement si réalisés par un professionnel qualifié RGE. Aiman Renovation vous accompagne dans le montage des dossiers d'aides pour réduire votre reste à charge.",
+      "priceRange": "80 € – 200 € / m² pour une ITE complète, 30 € – 80 € / m² pour un ravalement simple"
+    },
+    {
+      "slug": "paysager",
+      "title": "Aménagement paysager",
+      "shortTitle": "Paysager",
+      "description": "Conception et réalisation de vos espaces extérieurs. Terrasses, allées, plantations, clôtures.",
+      "icon": "🌿",
+      "features": [
+        "Création de terrasses",
+        "Allées et bordures",
+        "Plantations et engazonnement",
+        "Clôtures et portails",
+        "Éclairage extérieur"
+      ],
+      "longDescription": "Votre extérieur est la première impression que l'on a de votre maison. Un aménagement paysager bien pensé valorise votre bien, agrandit votre espace de vie et vous offre un cadre agréable tout au long de l'année. Aiman Renovation conçoit et réalise des jardins, terrasses et espaces extérieurs adaptés au climat alsacien et à vos envies.\n\nTerrasse en bois composite, en dalles sur plots ou en pierre naturelle, allées en pavés autobloquants, murets de soutènement, clôtures en aluminium ou en bois — nous maîtrisons tous les matériaux et toutes les techniques. Nous intégrons également l'éclairage extérieur (spots encastrés, bornes, guirlandes LED) pour profiter de votre jardin même en soirée.\n\nNos réalisations tiennent compte du terrain (pente, drainage, nature du sol), de l'exposition et de votre budget. Nous plantons des essences locales résistantes au gel et installons des systèmes d'arrosage automatique si nécessaire. De la pelouse fraîchement semée aux massifs fleuris, votre extérieur prend vie.",
+      "process": [
+        { "step": "Étude du terrain", "detail": "Analyse du sol, des pentes, du drainage naturel et de l'exposition solaire." },
+        { "step": "Plan d'aménagement", "detail": "Conception du projet avec implantation de la terrasse, des allées, des plantations et de l'éclairage." },
+        { "step": "Terrassement", "detail": "Décaissement, nivellement, pose du géotextile et préparation des fondations." },
+        { "step": "Construction", "detail": "Réalisation de la terrasse, des allées, murets, clôtures et portails." },
+        { "step": "Plantations et finitions", "detail": "Mise en terre des végétaux, engazonnement, installation de l'éclairage et nettoyage." }
+      ],
+      "whyPro": "Un aménagement extérieur mal conçu se détériore rapidement : terrasse qui se soulève avec le gel, allée qui s'affaisse, stagnation d'eau. La maîtrise du terrassement, du drainage et des fondations est essentielle pour un résultat durable. Nos équipes connaissent les contraintes spécifiques du climat alsacien (gel, pluies abondantes) et sélectionnent des matériaux adaptés. Garantie décennale incluse sur les ouvrages de maçonnerie paysagère.",
+      "priceRange": "5 000 € – 30 000 € selon la surface et les aménagements souhaités"
+    },
+    {
+      "slug": "peinture-finitions",
+      "title": "Peinture et finitions",
+      "shortTitle": "Peinture",
+      "description": "Peinture intérieure et extérieure, enduits décoratifs, papier peint. La touche finale qui fait toute la différence.",
+      "icon": "🎨",
+      "features": [
+        "Peinture intérieure",
+        "Peinture extérieure",
+        "Enduits décoratifs",
+        "Papier peint",
+        "Préparation des supports"
+      ],
+      "longDescription": "La peinture est bien plus qu'un coup de rouleau : c'est l'art de sublimer vos espaces. Une peinture appliquée dans les règles de l'art, sur un support parfaitement préparé, transforme radicalement l'ambiance d'une pièce. Aiman Renovation réalise tous vos travaux de peinture intérieure et extérieure avec un soin artisanal.\n\nNous commençons toujours par la préparation des supports : rebouchage des fissures, ponçage, lessivage, application d'un primaire d'accrochage. Cette étape représente 70% du temps de travail et fait toute la différence entre un résultat amateur et un rendu professionnel. Nous utilisons des peintures de marques reconnues (Tollens, Sikkens, Zolpan) avec des finitions mat, satiné ou brillant selon l'effet recherché.\n\nEnduits décoratifs (tadelakt, stuc, béton ciré mural), papier peint design, effets de matière — nous réalisons également des finitions créatives pour donner du caractère à votre intérieur. Pour l'extérieur, nous appliquons des peintures microporeuses qui laissent respirer les murs tout en les protégeant des intempéries.",
+      "process": [
+        { "step": "Protection du chantier", "detail": "Bâchage des sols et meubles, pose de ruban de masquage sur les encadrements et plinthes." },
+        { "step": "Préparation des supports", "detail": "Rebouchage, ponçage, lessivage, application du primaire. Traitement des taches et moisissures." },
+        { "step": "Application de la sous-couche", "detail": "Première couche d'accroche pour uniformiser le support et optimiser la tenue de la finition." },
+        { "step": "Couches de finition", "detail": "Application de 2 couches de peinture avec un rendu uniforme, sans traces ni coulures." },
+        { "step": "Retouches et nettoyage", "detail": "Vérification sous éclairage rasant, retouches si nécessaire, retrait des protections et nettoyage." }
+      ],
+      "whyPro": "Un travail de peinture réussi repose à 70% sur la préparation du support. Sans ponçage, sans rebouchage et sans primaire adaptés, la peinture cloque, s'écaille et jaunit prématurément. Nos peintres professionnels maîtrisent les techniques de préparation, choisissent les produits adaptés à chaque support (plâtre, bois, métal, ciment) et appliquent la peinture avec des outils professionnels pour un rendu impeccable.",
+      "priceRange": "20 € – 45 € / m² murs et plafonds, préparation et 2 couches comprises"
+    },
+    {
+      "slug": "borne-recharge",
+      "title": "Borne de recharge véhicule électrique",
+      "shortTitle": "Borne IRVE",
+      "description": "Installation de bornes de recharge pour véhicules électriques. À domicile ou en copropriété.",
+      "icon": "🔌",
+      "features": [
+        "Borne murale (wallbox)",
+        "Installation en copropriété",
+        "Mise aux normes",
+        "Certification IRVE",
+        "Aide et subventions"
+      ],
+      "longDescription": "Le véhicule électrique se démocratise et avec lui, le besoin de solutions de recharge fiables à domicile. Aiman Renovation dispose de la certification IRVE (Infrastructure de Recharge pour Véhicule Électrique) et installe des bornes de recharge dans les maisons individuelles comme dans les copropriétés du Haut-Rhin.\n\nNous installons des wallbox de 7,4 kW à 22 kW selon la puissance de votre compteur et vos besoins de recharge. En maison individuelle, l'installation est généralement simple : tirage de câble depuis le tableau, pose de la borne au garage ou en extérieur (IP54). En copropriété, nous prenons en charge l'étude technique, le passage en assemblée générale et le raccordement individuel.\n\nLa certification IRVE est obligatoire pour l'installation de bornes de plus de 3,7 kW et conditionne l'accès aux aides financières. Avec Aiman Renovation, vous bénéficiez d'un installateur certifié, d'un matériel garanti et d'un accompagnement complet pour obtenir le crédit d'impôt (jusqu'à 300 €) et la prime ADVENIR en copropriété.",
+      "process": [
+        { "step": "Étude de faisabilité", "detail": "Vérification de la puissance du compteur, distance tableau-borne, choix du type de borne adapté." },
+        { "step": "Devis et aides", "detail": "Proposition tarifaire détaillée avec simulation des aides (crédit d'impôt, prime ADVENIR)." },
+        { "step": "Installation électrique", "detail": "Tirage de ligne dédiée depuis le tableau, pose du disjoncteur et du différentiel adaptés." },
+        { "step": "Pose de la borne", "detail": "Fixation murale ou sur pied, raccordement électrique, paramétrage et test de charge." },
+        { "step": "Mise en service", "detail": "Configuration de la borne (puissance, horaires), remise de l'attestation IRVE et du mode d'emploi." }
+      ],
+      "whyPro": "L'installation d'une borne de recharge touche à l'électricité haute puissance et nécessite une certification IRVE obligatoire au-delà de 3,7 kW. Un câblage inadapté peut provoquer une surchauffe, un disjoncteur qui saute ou pire, un incendie. La certification IRVE est également une condition pour bénéficier du crédit d'impôt et de la prime ADVENIR. Ne prenez aucun risque : faites appel à un installateur certifié.",
+      "priceRange": "1 200 € – 2 500 € pose comprise (avant aides), 900 € – 1 800 € après crédit d'impôt"
+    },
+    {
+      "slug": "panneaux-photovoltaiques",
+      "title": "Panneaux photovoltaïques",
+      "shortTitle": "Photovoltaïque",
+      "description": "Produisez votre propre électricité. Installation de panneaux solaires sur toiture.",
+      "icon": "☀️",
+      "features": [
+        "Étude de faisabilité",
+        "Installation sur toiture",
+        "Raccordement réseau",
+        "Autoconsommation",
+        "Aide et subventions"
+      ],
+      "longDescription": "Le Haut-Rhin bénéficie d'un ensoleillement favorable à la production d'énergie solaire, avec plus de 1 700 heures de soleil par an. Installer des panneaux photovoltaïques sur votre toiture, c'est produire votre propre électricité, réduire vos factures et contribuer à la transition énergétique. Aiman Renovation vous accompagne dans cette démarche, de l'étude de faisabilité à la mise en service.\n\nNous installons des panneaux monocristallins de dernière génération, offrant un rendement optimal même par temps nuageux. En autoconsommation avec revente du surplus à EDF OA, vous rentabilisez votre installation en 8 à 12 ans tout en augmentant la valeur de votre bien immobilier. Pour une maison type de 100 m², une installation de 3 kWc (8 panneaux) couvre 30 à 50% de votre consommation annuelle.\n\nLes aides sont nombreuses et cumulables : prime à l'autoconsommation (jusqu'à 1 500 € pour 3 kWc), obligation d'achat EDF OA à tarif garanti pendant 20 ans, TVA réduite à 10% pour les installations de moins de 3 kWc. Nous montons votre dossier complet et gérons les démarches administratives (mairie, Enedis, EDF OA).",
+      "process": [
+        { "step": "Étude solaire", "detail": "Analyse de l'orientation et de l'inclinaison de votre toiture, calcul du productible et simulation financière." },
+        { "step": "Démarches administratives", "detail": "Déclaration préalable en mairie, demande de raccordement Enedis, contrat EDF OA." },
+        { "step": "Installation des panneaux", "detail": "Pose des rails de fixation, installation des panneaux et des micro-onduleurs sur toiture." },
+        { "step": "Raccordement électrique", "detail": "Câblage, pose du coffret AC/DC, raccordement au tableau et au compteur Linky." },
+        { "step": "Mise en service", "detail": "Test de production, mise en service du monitoring, remise du dossier technique complet." }
+      ],
+      "whyPro": "L'installation de panneaux photovoltaïques implique des travaux en toiture (risque de chute) et des raccordements électriques haute tension. Une pose non conforme peut provoquer des infiltrations en toiture, des risques d'incendie ou une production sous-optimale. Pour bénéficier des aides (prime autoconsommation, TVA réduite), l'installation doit être réalisée par un professionnel qualifié RGE. Aiman Renovation gère l'intégralité du projet pour vous.",
+      "priceRange": "7 000 € – 15 000 € pour 3 à 6 kWc (avant prime autoconsommation de 1 000 € à 2 500 €)"
+    },
+    {
+      "slug": "entretien-exterieur",
+      "title": "Entretien des espaces extérieurs",
+      "shortTitle": "Entretien extérieur",
+      "description": "Gardez votre extérieur impeccable toute l'année. Tonte, taille, débroussaillage, nettoyage — en intervention ponctuelle ou en abonnement annuel.",
+      "icon": "🌳",
+      "features": [
+        "Tonte et scarification",
+        "Taille de haies et arbustes",
+        "Débroussaillage",
+        "Nettoyage haute pression eau chaude/froide",
+        "Nettoyage façades et toitures",
+        "Abonnement annuel"
+      ],
+      "longDescription": "Un beau jardin, ça s'entretient. Mais entre le travail, la famille et le quotidien, qui a le temps de tondre chaque semaine, tailler les haies deux fois par an et nettoyer la terrasse avant l'été ? Aiman Renovation prend en charge l'entretien complet de vos espaces extérieurs pour que vous puissiez en profiter sans lever le petit doigt.\n\nNous proposons des interventions ponctuelles — tonte, taille de haies, débroussaillage, ramassage de feuilles, traitement anti-mousse — mais surtout des abonnements annuels. Vous choisissez la fréquence (hebdomadaire, bimensuel ou mensuel), nous planifions les passages et vous n'avez plus à y penser.\n\nNous disposons également d'un équipement professionnel de nettoyage haute pression à eau chaude et froide. Terrasses, allées, façades, toitures — nous redonnons un coup de neuf à toutes les surfaces extérieures de votre propriété. Le nettoyage à eau chaude est particulièrement efficace contre les mousses, lichens et taches de graisse incrustées.\n\nNos abonnements incluent un bilan saisonnier : au printemps, on prépare (scarification, désherbage, fertilisation) ; en été, on entretient ; à l'automne, on protège (ramassage, taille, paillage) ; en hiver, on surveille. C'est la tranquillité d'esprit, clé en main.",
+      "process": [
+        { "step": "Visite d'évaluation", "detail": "Nous évaluons votre terrain : superficie, type de végétation, état actuel, besoins spécifiques." },
+        { "step": "Proposition sur mesure", "detail": "Devis détaillé avec le programme d'entretien adapté : fréquence des passages, prestations incluses, tarif mensuel ou annuel." },
+        { "step": "Planning des passages", "detail": "Un calendrier de passages est défini selon les saisons. Vous êtes prévenu à l'avance de chaque intervention." },
+        { "step": "Interventions régulières", "detail": "Nos équipes interviennent selon le planning : tonte, taille, nettoyage, traitements saisonniers." },
+        { "step": "Bilan et ajustement", "detail": "Un point annuel pour ajuster les prestations selon l'évolution de votre jardin et vos besoins." }
+      ],
+      "whyPro": "Un entretien régulier par un professionnel préserve la valeur de votre propriété et la santé de vos végétaux. Une haie mal taillée devient envahissante, une pelouse non scarifiée s'étouffe, une terrasse non traitée devient glissante et dangereuse. Nos équipes connaissent les essences locales alsaciennes et adaptent les soins aux saisons. Avec un abonnement, vous avez la garantie d'un suivi constant sans avoir à y penser.",
+      "priceRange": "À partir de 80 € / intervention ponctuelle, abonnement annuel à partir de 150 € / mois"
+    },
+    {
+      "slug": "depannage-urgence",
+      "title": "SAV et dépannage d'urgence",
+      "shortTitle": "Dépannage",
+      "description": "Fuite d'eau, panne électrique, débouchage — nous intervenons 24h/24, 7j/7 pour sécuriser et réparer.",
+      "icon": "🚨",
+      "features": [
+        "Fuite d'eau urgente",
+        "Panne électrique",
+        "Dégât des eaux",
+        "Débouchage haute pression",
+        "24h/24, 7j/7",
+        "SAV chantiers réalisés"
+      ],
+      "longDescription": "Une fuite d'eau à 22h, un court-circuit un dimanche, un dégât des eaux qui menace votre appartement — les urgences n'attendent pas et nous non plus. Aiman Renovation intervient 24h/24, 7j/7 pour sécuriser votre logement avant que les dégâts ne s'aggravent.\n\nNotre service couvre toutes les urgences : plomberie (fuite sur canalisation, robinet, chasse d'eau, chauffe-eau, dégât des eaux), électricité (disjoncteur qui saute, prise brûlée, panne de courant, court-circuit), débouchage de canalisations par hydrocurage haute pression, et tout ce qui nécessite une intervention rapide. Nous intervenons pour stopper le sinistre, sécuriser les installations et vous proposer un devis de remise en état.\n\nPour nos clients existants, nous assurons également un SAV sur les chantiers que nous avons réalisés. Un problème sur une installation que nous avons posée ? Nous revenons, nous diagnostiquons et nous réparons. C'est ça, la relation de confiance sur le long terme.",
+      "process": [
+        { "step": "Appel d'urgence", "detail": "Vous nous appelez, nous évaluons la situation par téléphone et vous donnons les premiers gestes à faire en attendant." },
+        { "step": "Intervention rapide", "detail": "Un technicien se déplace dans les meilleurs délais pour sécuriser et stopper le sinistre." },
+        { "step": "Diagnostic sur place", "detail": "Identification précise de la cause : fuite, court-circuit, infiltration. Photos et rapport." },
+        { "step": "Réparation d'urgence", "detail": "Réparation immédiate si possible, ou mise en sécurité temporaire avec devis de remise en état définitive." },
+        { "step": "Suivi et remise en état", "detail": "Planification des travaux de remise en état si nécessaire. Accompagnement pour la déclaration d'assurance." }
+      ],
+      "whyPro": "En cas d'urgence, chaque minute compte. Une fuite non traitée peut provoquer des milliers d'euros de dégâts en quelques heures. Un circuit électrique défaillant représente un risque d'incendie. Faire appel à un professionnel qualifié garantit une intervention sûre, conforme aux normes et documentée pour votre assurance. Notre connaissance du terrain à Saint-Louis et dans le Haut-Rhin nous permet d'intervenir rapidement.",
+      "priceRange": "Déplacement + diagnostic : à partir de 90 €, réparation sur devis"
+    }
+  ],
+  "contact": {
+    "seo_title": "Contact — Rénovation Saint-Louis",
+    "seo_description": "Contactez Aiman Renovation au 03 56 89 44 03 ou par email. Devis gratuit sous 4 jours pour vos travaux de rénovation à Saint-Louis et Haut-Rhin.",
+    "hero_title_highlight": "PARLONS",
+    "hero_title": "DE VOTRE PROJET",
+    "hero_subtitle": "Premier échange toujours sans engagement.",
+    "reassurance_devis": "Devis gratuit",
+    "reassurance_response": "Réponse sous 4 jours",
+    "reassurance_engagement": "Sans engagement",
+    "mobile_whatsapp": "Mobile / WhatsApp",
+    "whatsapp": "WhatsApp",
+    "whatsapp_subtitle": "Réponse rapide",
+    "email_prefilled": "Email pré-rempli",
+    "hours_title": "HORAIRES",
+    "hours_weekdays": "Lundi – Vendredi",
+    "hours_weekdays_value": "8h – 18h",
+    "hours_saturday": "Samedi",
+    "hours_saturday_value": "Sur rendez-vous",
+    "hours_sunday": "Dimanche",
+    "hours_sunday_value": "Fermé",
+    "cta_devis": "Demander un devis gratuit",
+    "form": {
+      "title": "ENVOYEZ-NOUS UN MESSAGE",
+      "label_name": "Nom",
+      "placeholder_name": "Votre nom",
+      "label_email": "Email",
+      "placeholder_email": "votre@email.com",
+      "label_phone": "Téléphone",
+      "placeholder_phone": "06 00 00 00 00",
+      "label_message": "Message",
+      "placeholder_message": "Décrivez votre projet...",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès ! Nous vous répondrons sous 4 jours.",
+      "error": "Une erreur est survenue. Veuillez réessayer ou nous appeler directement."
+    }
+  },
+  "devis": {
+    "seo_title": "Devis Gratuit Rénovation — Saint-Louis et Haut-Rhin",
+    "seo_description": "Demandez votre devis gratuit en ligne pour vos travaux de rénovation à Saint-Louis et dans le Haut-Rhin. Réponse sous 4 jours, sans engagement.",
+    "panel_travaux": {
+      "works_selected": "{count} travaux sélectionnés",
+      "check_works": "Cochez les travaux à réaliser",
+      "describe_needs": "Décrivez vos besoins pour cette pièce",
+      "describe_placeholder": "Ex: fuite sous l'évier, carrelage fissuré, souhaite une douche italienne...",
+      "photos_label": "Photos / Vidéos",
+      "photos_hint": "Plus vous ajoutez de photos, plus votre devis sera précis et rapide !",
+      "add_photos": "Ajouter des photos ou vidéos",
+      "video_label": "Vidéo",
+      "validate_button": "Valider et retour au plan"
+    },
+    "panel_recap": {
+      "back": "Retour",
+      "title": "Récapitulatif",
+      "works_zones": "{works} travaux / {zones} zones",
+      "budget_title": "Budget estimé",
+      "magicplan_title": "Devis plus précis avec MagicPlan",
+      "magicplan_subtitle": "Scannez vos pièces en 5 min avec l'app gratuite MagicPlan.",
+      "magicplan_guide_button": "Voir le guide MagicPlan →",
+      "magicplan_link_label": "Lien MagicPlan (optionnel)",
+      "magicplan_link_placeholder": "https://my.magicplan.app/...",
+      "magicplan_link_hint": "Collez ici le lien de partage MagicPlan",
+      "message_label": "Message (optionnel)",
+      "message_placeholder": "Décrivez votre projet, vos contraintes, vos envies...",
+      "contact_title": "Vos coordonnées",
+      "label_firstname": "Prénom *",
+      "label_lastname": "Nom",
+      "label_phone": "Téléphone *",
+      "label_email": "Email *",
+      "label_address": "Adresse du chantier *",
+      "address_placeholder": "Tapez votre adresse...",
+      "address_hint": "Suggestions automatiques — France, Allemagne, Suisse",
+      "submit_sending": "Envoi en cours...",
+      "submit_button": "Envoyer mon devis",
+      "error_server": "Erreur serveur",
+      "error_generic": "Une erreur est survenue. Veuillez reessayer."
+    },
+    "magicplan_wizard": {
+      "step_label": "Étape {current} sur {total}",
+      "previous": "← Précédent",
+      "skip": "Passer",
+      "next": "Suivant →",
+      "finish": "Continuer mon devis",
+      "steps": [
+        {
+          "title": "Téléchargez l'app",
+          "subtitle": "Gratuit — 2 minutes",
+          "instruction": "Installez MagicPlan sur votre téléphone. C'est gratuit, pas besoin de compte.",
+          "action_label": "Télécharger MagicPlan",
+          "tip": "Déjà installé ? Passez à l'étape suivante."
+        },
+        {
+          "title": "Ouvrez et créez un projet",
+          "subtitle": "30 secondes",
+          "instruction": "Ouvrez MagicPlan, appuyez sur le gros bouton \"+\", puis choisissez \"Nouveau projet\". Donnez un nom (ex: \"Ma maison\").",
+          "tip": "Choisissez le mode \"Scanner\" pour la détection automatique des murs."
+        },
+        {
+          "title": "Scannez votre première pièce",
+          "subtitle": "2 minutes par pièce",
+          "instruction": "Placez-vous au centre de la pièce. Pointez le téléphone vers un coin et suivez les instructions à l'écran. Tournez lentement vers chaque coin.",
+          "tips": [
+            "Tenez le téléphone à hauteur de poitrine",
+            "Allez lentement, coin par coin",
+            "Les portes et fenêtres sont détectées automatiquement",
+            "Répétez pour chaque pièce à rénover"
+          ]
+        },
+        {
+          "title": "Vérifiez le résultat",
+          "subtitle": "1 minute",
+          "instruction": "MagicPlan génère un plan 2D avec les mesures. Tapez sur une cote pour la corriger si besoin.",
+          "tip": "Pas besoin que ce soit parfait — on affinera ensemble."
+        },
+        {
+          "title": "Envoyez-nous le plan",
+          "subtitle": "30 secondes",
+          "instruction": "Appuyez sur \"Partager\" dans MagicPlan, puis choisissez \"PDF\" ou \"Lien\". Copiez le lien et collez-le dans le message de votre devis ci-dessous.",
+          "tips": [
+            "Option 1 : Collez le lien dans le champ \"Message\" du devis",
+            "Option 2 : Envoyez le PDF par email à contact@aiman-renovation.fr"
+          ]
+        }
+      ]
+    },
+    "success": {
+      "title": "Demande envoyee !",
+      "message": "Merci pour votre confiance. Nous avons bien recu votre demande de devis et vous recontactons sous 24h.",
+      "email_sent": "Un email de confirmation a ete envoye a votre adresse.",
+      "back_home": "Retour a l'accueil",
+      "call_now": "Appeler maintenant"
+    },
+    "zones": {
+      "cuisine": {
+        "label": "Cuisine",
+        "workItems": {
+          "sol": "Sol",
+          "murs-credence": "Murs / Crédence",
+          "plomberie-evier": "Plomberie / Évier",
+          "electricite": "Électricité",
+          "meubles-cuisine": "Meubles cuisine",
+          "plan-travail": "Plan de travail",
+          "electromenager": "Électroménager"
+        }
+      },
+      "sdb": {
+        "label": "Salle de bain",
+        "workItems": {
+          "sol": "Sol",
+          "murs-faience": "Murs / Faïence",
+          "douche": "Douche",
+          "baignoire": "Baignoire",
+          "lavabo": "Lavabo",
+          "plomberie": "Plomberie",
+          "vmc": "VMC",
+          "seche-serviettes": "Sèche-serviettes"
+        }
+      },
+      "wc": {
+        "label": "WC",
+        "workItems": {
+          "sol": "Sol",
+          "murs-faience": "Murs / Faïence",
+          "wc-suspendu": "WC suspendu",
+          "lave-mains": "Lave-mains",
+          "plomberie": "Plomberie"
+        }
+      },
+      "garage": {
+        "label": "Garage",
+        "workItems": {
+          "sol-resine": "Sol / Résine",
+          "murs": "Murs",
+          "porte-garage": "Porte de garage",
+          "electricite": "Électricité",
+          "borne-recharge": "Borne de recharge IRVE",
+          "isolation": "Isolation"
+        }
+      },
+      "salon": {
+        "label": "Salon",
+        "workItems": {
+          "sol-parquet": "Sol / Parquet",
+          "murs-peinture": "Murs / Peinture",
+          "plafond": "Plafond",
+          "electricite": "Électricité",
+          "menuiserie": "Menuiserie",
+          "chauffage": "Chauffage"
+        }
+      },
+      "sam": {
+        "label": "Salle à manger",
+        "workItems": {
+          "sol-parquet": "Sol / Parquet",
+          "murs-peinture": "Murs / Peinture",
+          "plafond": "Plafond",
+          "electricite": "Électricité",
+          "menuiserie": "Menuiserie",
+          "chauffage": "Chauffage"
+        }
+      },
+      "chambre1": {
+        "label": "Chambre 1 parentale",
+        "workItems": {
+          "sol-parquet": "Sol / Parquet",
+          "murs-peinture": "Murs / Peinture",
+          "plafond": "Plafond",
+          "electricite": "Électricité",
+          "menuiserie": "Menuiserie / Fenêtres",
+          "placard": "Placard / Rangement"
+        }
+      },
+      "chambre2": {
+        "label": "Chambre 2",
+        "workItems": {
+          "sol-parquet": "Sol / Parquet",
+          "murs-peinture": "Murs / Peinture",
+          "plafond": "Plafond",
+          "electricite": "Électricité",
+          "menuiserie": "Menuiserie / Fenêtres",
+          "placard": "Placard / Rangement"
+        }
+      },
+      "vestibule": {
+        "label": "Vestibule / Entrée",
+        "workItems": {
+          "sol": "Sol",
+          "murs-peinture": "Murs / Peinture",
+          "porte-entree": "Porte d'entrée",
+          "eclairage": "Éclairage"
+        }
+      },
+      "terrasse": {
+        "label": "Terrasse",
+        "workItems": {
+          "dalle-beton": "Dalle béton",
+          "carrelage-ext": "Carrelage extérieur",
+          "bois-composite": "Bois / Composite",
+          "garde-corps": "Garde-corps",
+          "eclairage-ext": "Éclairage extérieur"
+        }
+      },
+      "jardin": {
+        "label": "Jardin",
+        "workItems": {
+          "entretien-jardin": "Entretien de jardin",
+          "engazonnement": "Engazonnement",
+          "plantation": "Plantations",
+          "allee-chemin": "Allée / Chemin",
+          "eclairage-jardin": "Éclairage jardin",
+          "arrosage": "Arrosage automatique",
+          "abri-jardin": "Abri de jardin"
+        }
+      },
+      "haie": {
+        "label": "Haie / Clôture",
+        "workItems": {
+          "haie-vegetale": "Haie végétale",
+          "cloture-pvc": "Clôture PVC / Alu",
+          "grillage": "Grillage",
+          "portail": "Portail",
+          "portillon": "Portillon"
+        }
+      },
+      "facades": {
+        "label": "Façades",
+        "workItems": {
+          "enduit-facade": "Enduit de façade",
+          "peinture-facade": "Peinture façade",
+          "ite": "Isolation par l'extérieur (ITE)",
+          "volets": "Volets",
+          "fenetres": "Fenêtres",
+          "traitement-humidite": "Traitement humidité"
+        }
+      },
+      "toiture": {
+        "label": "Toiture",
+        "workItems": {
+          "couverture-tuiles": "Couverture / Tuiles",
+          "charpente": "Charpente",
+          "isolation-combles": "Isolation combles",
+          "gouttieres": "Gouttières",
+          "velux": "Fenêtre de toit / Velux",
+          "zinguerie": "Zinguerie"
+        }
+      }
+    }
+  },
+  "faq": {
+    "seo_title": "FAQ Rénovation — Questions Fréquentes",
+    "seo_description": "Réponses à vos questions sur la rénovation : devis gratuit, délais, garanties, aides financières. Artisan Saint-Louis, Haut-Rhin.",
+    "hero_title": "QUESTIONS",
+    "hero_title_highlight": "FRÉQUENTES",
+    "hero_subtitle": "Tout ce que vous devez savoir avant de lancer votre projet.",
+    "no_answer": "Vous ne trouvez pas la réponse à votre question ?",
+    "call_prefix": "Appelez le",
+    "contact_us": "Contactez-nous",
+    "categories": {
+      "Devis": "Devis",
+      "Travaux": "Travaux",
+      "Déroulement": "Déroulement",
+      "Garanties": "Garanties",
+      "Aides financières": "Aides financières",
+      "Paiement": "Paiement"
+    },
+    "items": [
+      {
+        "category": "Devis",
+        "question": "Comment obtenir un devis ?",
+        "answer": "Remplissez notre formulaire en ligne ou appelez-nous au 06 33 49 69 25. Nous vous envoyons un devis détaillé sous 4 jours après visite technique.",
+        "relatedServices": [{ "label": "Demander un devis", "href": "/devis" }]
+      },
+      {
+        "category": "Devis",
+        "question": "Le devis est-il gratuit ?",
+        "answer": "Oui, tous nos devis sont gratuits et sans engagement. La visite technique sur place est incluse, elle nous permet d'évaluer précisément votre projet et de vous proposer un chiffrage au plus juste.",
+        "relatedServices": [{ "label": "Demander un devis gratuit", "href": "/devis" }]
+      },
+      {
+        "category": "Devis",
+        "question": "Que contient votre devis ?",
+        "answer": "Notre devis détaille chaque poste de travaux : main-d'oeuvre, matériaux, fournitures, délais prévisionnels et conditions de paiement. Pas de mauvaise surprise : le prix indiqué est le prix final, sauf modification de votre part en cours de chantier.",
+        "relatedServices": [
+          { "label": "Voir nos services", "href": "/services" },
+          { "label": "Demander un devis", "href": "/devis" }
+        ]
+      },
+      {
+        "category": "Devis",
+        "question": "Sous quel délai recevrai-je mon devis ?",
+        "answer": "Nous nous engageons à vous envoyer votre devis sous 4 jours après la visite technique. Pour les projets complexes (façade, photovoltaïque), comptez 5 à 7 jours ouvrés.",
+        "relatedServices": [
+          { "label": "Demander un devis", "href": "/devis" },
+          { "label": "Ravalement de façade", "href": "/services/ravalement-facade" }
+        ]
+      },
+      {
+        "category": "Travaux",
+        "question": "Quelle est votre zone d'intervention ?",
+        "answer": "Nous intervenons à Saint-Louis et dans tout le sud du Haut-Rhin : Huningue, Hésingue, Village-Neuf, Blotzheim, Bartenheim, Kembs, Sierentz, Leymen, Hagenthal-le-Bas, et au-delà sur demande.",
+        "relatedServices": [
+          { "label": "Voir nos services", "href": "/services" },
+          { "label": "Nous contacter", "href": "/contact" }
+        ]
+      },
+      {
+        "category": "Travaux",
+        "question": "Combien de temps durent les travaux ?",
+        "answer": "Cela dépend du projet. À titre indicatif : salle de bain 2-3 semaines, cuisine 3-4 semaines, peinture d'un appartement 1-2 semaines, façade/ITE 3-6 semaines. Le planning précis figure dans le devis.",
+        "relatedServices": [
+          { "label": "Rénovation salle de bain", "href": "/services/salle-de-bain" },
+          { "label": "Rénovation cuisine", "href": "/services/cuisine" },
+          { "label": "Ravalement de façade", "href": "/services/ravalement-facade" }
+        ]
+      },
+      {
+        "category": "Travaux",
+        "question": "Intervenez-vous en copropriété ?",
+        "answer": "Oui : ravalement de façade, isolation, réfection des parties communes, installation de bornes de recharge collectives. Nous travaillons en coordination avec le syndic et respectons le règlement de copropriété.",
+        "relatedServices": [
+          { "label": "Ravalement de façade", "href": "/services/ravalement-facade" },
+          { "label": "Isolation thermique (ITE)", "href": "/services/isolation" },
+          { "label": "Bornes de recharge IRVE", "href": "/services/bornes-irve" }
+        ]
+      },
+      {
+        "category": "Travaux",
+        "question": "Puis-je rester dans mon logement pendant les travaux ?",
+        "answer": "Dans la plupart des cas, oui. Nous organisons le chantier par zones pour limiter les nuisances. Pour une rénovation complète (cuisine + salle de bain simultanément), nous pouvons vous conseiller un hébergement temporaire.",
+        "relatedServices": [
+          { "label": "Rénovation cuisine", "href": "/services/cuisine" },
+          { "label": "Rénovation salle de bain", "href": "/services/salle-de-bain" }
+        ]
+      },
+      {
+        "category": "Déroulement",
+        "question": "Comment se déroule un chantier type ?",
+        "answer": "Après signature du devis : 1) Planification et commande des matériaux, 2) Protection du chantier et dépose, 3) Travaux techniques (plomberie, électricité), 4) Finitions (carrelage, peinture), 5) Réception des travaux avec vous. Un interlocuteur unique vous tient informé à chaque étape.",
+        "relatedServices": [
+          { "label": "Voir nos services", "href": "/services" },
+          { "label": "Demander un devis", "href": "/devis" }
+        ]
+      },
+      {
+        "category": "Déroulement",
+        "question": "Le chantier sera-t-il propre ?",
+        "answer": "Nous nous engageons à maintenir un chantier propre. Des bâches de protection sont installées dès le premier jour, les gravats sont évacués régulièrement, et un nettoyage complet est effectué à la fin des travaux. Vous récupérez votre logement prêt à vivre."
+      },
+      {
+        "category": "Déroulement",
+        "question": "Qu'en est-il du bruit et des nuisances pour les voisins ?",
+        "answer": "Nous respectons les horaires de chantier réglementaires (8h-12h / 14h-18h en semaine). Les travaux bruyants (démolition, perçage) sont concentrés sur des plages horaires définies. En copropriété, nous informons les voisins par un courrier avant le début du chantier."
+      },
+      {
+        "category": "Déroulement",
+        "question": "Aurai-je un interlocuteur dédié ?",
+        "answer": "Oui, Aiman supervise personnellement chaque chantier. Vous avez un numéro direct et pouvez suivre l'avancement de vos travaux en temps réel. Nous envoyons des photos d'avancement régulières par e-mail ou WhatsApp.",
+        "relatedServices": [{ "label": "Nous contacter", "href": "/contact" }]
+      },
+      {
+        "category": "Garanties",
+        "question": "Quelles garanties proposez-vous ?",
+        "answer": "Nous sommes couverts par une RC professionnelle et une garantie décennale. Concrètement : garantie de parfait achèvement (1 an), garantie biennale sur les équipements (2 ans) et garantie décennale sur le gros oeuvre et l'étanchéité (10 ans).",
+        "relatedServices": [
+          { "label": "Voir nos services", "href": "/services" },
+          { "label": "Nous contacter", "href": "/contact" }
+        ]
+      },
+      {
+        "category": "Garanties",
+        "question": "Êtes-vous certifié IRVE ?",
+        "answer": "Oui, nous disposons de la certification IRVE (Infrastructure de Recharge pour Véhicule Électrique), obligatoire pour l'installation de bornes de recharge de plus de 3,7 kW. Cette certification vous permet de bénéficier du crédit d'impôt et de la prime ADVENIR.",
+        "relatedServices": [
+          { "label": "Bornes de recharge IRVE", "href": "/services/bornes-irve" },
+          { "label": "Demander un devis", "href": "/devis" }
+        ]
+      },
+      {
+        "category": "Garanties",
+        "question": "Vos artisans sont-ils qualifiés ?",
+        "answer": "Tous nos artisans sont qualifiés et expérimentés dans leur domaine. Notre équipe cumule 19 ans d'expérience dans le bâtiment. Nous disposons des certifications nécessaires (IRVE, habilitations électriques) et suivons régulièrement des formations pour rester à jour des normes et techniques."
+      },
+      {
+        "category": "Aides financières",
+        "question": "Qu'est-ce que MaPrimeRénov' ?",
+        "answer": "MaPrimeRénov' est une aide de l'État pour financer vos travaux de rénovation énergétique : isolation, chauffage, ventilation, panneaux solaires. Le montant dépend de vos revenus et du type de travaux. Elle peut couvrir jusqu'à 90% du coût pour les ménages modestes. Nous vous aidons à constituer votre dossier.",
+        "relatedServices": [
+          { "label": "Isolation thermique (ITE)", "href": "/services/isolation" },
+          { "label": "Panneaux solaires", "href": "/services/panneaux-solaires" },
+          { "label": "Demander un devis", "href": "/devis" }
+        ]
+      },
+      {
+        "category": "Aides financières",
+        "question": "Qu'est-ce que les CEE (Certificats d'Économie d'Énergie) ?",
+        "answer": "Les CEE sont des primes versées par les fournisseurs d'énergie (EDF, Engie, TotalEnergies) pour encourager les travaux d'économie d'énergie. Isolation des murs, remplacement de fenêtres, installation d'un chauffe-eau thermodynamique : ces primes sont cumulables avec MaPrimeRénov' et peuvent représenter plusieurs milliers d'euros.",
+        "relatedServices": [
+          { "label": "Isolation thermique (ITE)", "href": "/services/isolation" },
+          { "label": "Demander un devis", "href": "/devis" }
+        ]
+      },
+      {
+        "category": "Aides financières",
+        "question": "Puis-je bénéficier de l'éco-PTZ ?",
+        "answer": "L'éco-prêt à taux zéro (éco-PTZ) permet de financer vos travaux de rénovation énergétique sans payer d'intérêts, jusqu'à 50 000 €. Il est accessible sans condition de revenus, auprès de votre banque. Cumulable avec MaPrimeRénov' et les CEE.",
+        "relatedServices": [
+          { "label": "Isolation thermique (ITE)", "href": "/services/isolation" },
+          { "label": "Panneaux solaires", "href": "/services/panneaux-solaires" }
+        ]
+      },
+      {
+        "category": "Aides financières",
+        "question": "La TVA est-elle réduite sur mes travaux ?",
+        "answer": "Oui, pour les logements de plus de 2 ans : TVA à 10% pour les travaux de rénovation classiques (peinture, carrelage, plomberie), TVA à 5,5% pour les travaux de rénovation énergétique (isolation, panneaux solaires de moins de 3 kWc). La TVA réduite s'applique automatiquement sur notre devis.",
+        "relatedServices": [
+          { "label": "Voir nos services", "href": "/services" },
+          { "label": "Demander un devis", "href": "/devis" }
+        ]
+      },
+      {
+        "category": "Aides financières",
+        "question": "Pouvez-vous m'aider à monter mes dossiers d'aides ?",
+        "answer": "Absolument. Nous vous accompagnons dans toutes les démarches : simulation des aides auxquelles vous avez droit, constitution des dossiers MaPrimeRénov' et CEE, demande d'éco-PTZ auprès de votre banque. Notre objectif est de réduire au maximum votre reste à charge.",
+        "relatedServices": [
+          { "label": "Nous contacter", "href": "/contact" },
+          { "label": "Demander un devis", "href": "/devis" }
+        ]
+      },
+      {
+        "category": "Paiement",
+        "question": "Quelles sont les modalités de paiement ?",
+        "answer": "Acompte de 30% à la signature du devis, puis paiements échelonnés selon l'avancement des travaux (généralement à mi-chantier), et solde à la réception des travaux. Nous acceptons les virements et les chèques.",
+        "relatedServices": [{ "label": "Demander un devis", "href": "/devis" }]
+      },
+      {
+        "category": "Paiement",
+        "question": "Puis-je échelonner le paiement ?",
+        "answer": "Oui, le paiement est naturellement échelonné selon l'avancement du chantier. Pour les projets importants, nous pouvons adapter l'échéancier à votre situation. L'éco-PTZ (prêt à taux zéro) est également une solution pour étaler le financement sans frais.",
+        "relatedServices": [
+          { "label": "Nous contacter", "href": "/contact" },
+          { "label": "Demander un devis", "href": "/devis" }
+        ]
+      }
+    ]
+  },
+  "realisations": {
+    "seo_title": "Nos Réalisations — Projets de Rénovation Haut-Rhin",
+    "seo_description": "Découvrez nos projets de rénovation terminés à Saint-Louis et dans le Haut-Rhin : cuisine, salle de bain, façades, aménagement. Photos avant/après.",
+    "hero_title": "NOS",
+    "hero_title_highlight": "RÉALISATIONS",
+    "hero_subtitle": "Chaque projet est unique. Voici un aperçu de nos transformations à Saint-Louis et dans le Haut-Rhin. Des rénovations menées avec exigence, du premier coup de masse à la touche finale."
+  },
+  "notFound": {
+    "badge": "Erreur 404",
+    "variants": [
+      { "title": "Oups, mur porteur !", "subtitle": "Même les meilleurs plans ont parfois un mur au mauvais endroit." },
+      { "title": "Zone en travaux", "subtitle": "Cette page est en cours de démolition... ou n'a jamais existé." },
+      { "title": "Hors niveau !", "subtitle": "On a vérifié au laser — cette page n'est pas d'aplomb." },
+      { "title": "Porte sans serrure", "subtitle": "La clé existe peut-être, mais la porte n'est pas là." },
+      { "title": "Fondations introuvables", "subtitle": "Impossible de construire cette page — les fondations manquent." },
+      { "title": "Coup de peinture raté", "subtitle": "On a repeint l'URL mais la page a disparu sous la couche." },
+      { "title": "Carreau manquant", "subtitle": "Il manque un carreau dans le plan — cette page n'existe pas." },
+      { "title": "Chantier fermé", "subtitle": "Ce chantier est terminé... ou n'a jamais commencé." }
+    ],
+    "back_home": "Retour à l'accueil",
+    "request_devis": "Demander un devis",
+    "quick_links": {
+      "services": "Nos services",
+      "realisations": "Réalisations",
+      "contact": "Contact",
+      "about": "À propos"
+    },
+    "need_help": "Besoin d'aide ?"
+  },
+  "footer": {
+    "services_title": "Services",
+    "navigation_title": "Navigation",
+    "contact_title": "Contact",
+    "legal_links": {
+      "mentions": "Mentions légales",
+      "cgv": "CGV",
+      "privacy": "Confidentialité"
+    }
+  },
+  "legal": {
+    "seo_title": "Mentions légales",
+    "page_title": "MENTIONS",
+    "page_title_highlight": "LÉGALES",
+    "editor_title": "Éditeur du site",
+    "editor_legal_form": "Forme juridique :",
+    "editor_address": "Adresse :",
+    "editor_phone": "Téléphone :",
+    "editor_email": "Email :",
+    "editor_director": "Directeur de la publication : Aiman, gérant",
+    "hosting_title": "Hébergement",
+    "hosting_text": "Ce site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis.",
+    "ip_title": "Propriété intellectuelle",
+    "ip_text": "L'ensemble du contenu de ce site (textes, images, logos, vidéos) est la propriété exclusive d'{company} ou de ses partenaires. Toute reproduction, même partielle, est interdite sans autorisation écrite préalable.",
+    "data_title": "Données personnelles",
+    "data_text": "Les données personnelles collectées via le formulaire de devis sont utilisées uniquement pour répondre à votre demande. Elles ne sont ni vendues ni transmises à des tiers. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Contactez-nous à",
+    "cookies_title": "Cookies",
+    "cookies_text": "Ce site utilise des cookies techniques nécessaires à son fonctionnement. Aucun cookie publicitaire ou de suivi n'est utilisé.",
+    "liability_title": "Responsabilité",
+    "liability_text": "{company} s'efforce d'assurer l'exactitude des informations présentes sur ce site. Toutefois, elle ne peut garantir que les informations soient complètes, précises ou à jour. {company} décline toute responsabilité en cas d'erreur ou d'omission.",
+    "credits_title": "Crédits",
+    "credits_design": "Conception et développement :",
+    "credits_images": "Images : générées par intelligence artificielle"
+  },
+  "cgv": {
+    "seo_title": "Conditions Générales de Vente",
+    "seo_description": "Conditions générales de vente d'Aiman Renovation — travaux de rénovation du bâtiment.",
+    "page_title": "CONDITIONS GÉNÉRALES",
+    "page_title_highlight": "DE VENTE",
+    "last_update": "Dernière mise à jour : avril 2026",
+    "sections": [
+      {
+        "title": "Article 1 — Objet et champ d'application",
+        "content": "Les présentes Conditions Générales de Vente (ci-après « CGV ») s'appliquent à l'ensemble des prestations de travaux de rénovation du bâtiment réalisées par la société {company}, SASU au capital social défini dans ses statuts, immatriculée au Registre du Commerce et des Sociétés, dont le siège social est situé à {city} (ci-après « l'Entreprise »), pour le compte de ses clients particuliers ou professionnels (ci-après « le Client »).\n\nToute commande de travaux implique l'acceptation sans réserve des présentes CGV, qui prévalent sur tout autre document du Client, sauf conditions particulières convenues par écrit entre les parties."
+      },
+      {
+        "title": "Article 2 — Devis et formation du contrat",
+        "content": "2.1. L'Entreprise établit un devis gratuit et détaillé après visite technique sur site. Le devis précise la nature et l'étendue des travaux, les matériaux utilisés, les délais d'exécution prévisionnels et le prix total TTC.\n\n2.2. Le devis est valable trente (30) jours à compter de sa date d'émission, sauf mention contraire.\n\n2.3. Le contrat est formé par la signature du devis par le Client, accompagnée de la mention manuscrite « Bon pour accord ». Le retour du devis signé vaut acceptation des présentes CGV.\n\n2.4. Toute modification du devis initial doit faire l'objet d'un avenant écrit signé par les deux parties. Les travaux supplémentaires non prévus au devis initial ne seront exécutés qu'après acceptation écrite du Client et du nouveau prix correspondant."
+      },
+      {
+        "title": "Article 3 — Prix et révision",
+        "content": "3.1. Les prix sont indiqués en euros toutes taxes comprises (TTC). Le taux de TVA applicable est celui en vigueur au jour de la facturation (10 % pour les travaux de rénovation dans les logements de plus de 2 ans, 20 % dans les autres cas, 5,5 % pour les travaux de rénovation énergétique éligibles).\n\n3.2. Les prix s'entendent hors fourniture de matériaux par le Client, sauf stipulation contraire au devis.\n\n3.3. En cas de variation significative du coût des matériaux ou de la main-d'œuvre entre la date du devis et le début des travaux (supérieure à 5 %), l'Entreprise se réserve le droit de réviser le prix après en avoir informé le Client, qui dispose d'un délai de quinze (15) jours pour accepter ou refuser la révision."
+      },
+      {
+        "title": "Article 4 — Conditions de paiement",
+        "content": "4.1. Sauf accord particulier, les modalités de paiement sont les suivantes :\n— Acompte de 30 % du montant TTC à la signature du devis ;\n— Paiement intermédiaire de 40 % à mi-chantier, sur présentation d'un état d'avancement ;\n— Solde de 30 % à la réception des travaux.\n\n4.2. Les paiements s'effectuent par virement bancaire, chèque ou espèces dans la limite légale. Les paiements par carte bancaire sont acceptés.\n\n4.3. En cas de retard de paiement, des pénalités de retard seront appliquées de plein droit, au taux légal en vigueur majoré de cinq (5) points, sans qu'un rappel soit nécessaire. Une indemnité forfaitaire de recouvrement de quarante (40) euros sera également due conformément à l'article L.441-10 du Code de commerce.\n\n4.4. L'Entreprise se réserve le droit de suspendre l'exécution des travaux en cas de non-paiement d'une échéance à sa date d'exigibilité, après mise en demeure restée infructueuse pendant huit (8) jours."
+      },
+      {
+        "title": "Article 5 — Délais d'exécution",
+        "content": "5.1. Les délais d'exécution mentionnés au devis sont donnés à titre indicatif et courent à compter de la réception de l'acompte et de la fourniture par le Client de tous les éléments nécessaires au démarrage des travaux.\n\n5.2. L'Entreprise s'engage à informer le Client de tout retard prévisible et de ses causes. Les retards dus à des cas de force majeure (intempéries exceptionnelles, pénurie de matériaux, pandémie, grève, etc.), à des modifications demandées par le Client ou à des découvertes imprévues en cours de chantier (amiante, termites, vice caché) ne sauraient engager la responsabilité de l'Entreprise.\n\n5.3. Un retard dans l'exécution des travaux ne peut donner lieu à des dommages et intérêts, à une retenue ou à une annulation de la commande, sauf en cas de retard manifestement excessif et non justifié."
+      },
+      {
+        "title": "Article 6 — Obligations du Client",
+        "content": "6.1. Le Client s'engage à :\n— Assurer le libre accès au chantier aux horaires convenus ;\n— Fournir les autorisations administratives nécessaires (permis de construire, déclaration préalable, accord de copropriété, etc.) ;\n— Signaler tout élément susceptible d'affecter le bon déroulement des travaux (présence d'amiante, de plomb, canalisations enterrées, etc.) ;\n— Protéger ou déplacer les biens meubles et objets de valeur situés dans la zone de travaux.\n\n6.2. Le Client dispose d'un droit de rétractation de quatorze (14) jours à compter de la signature du devis lorsque celui-ci a été conclu hors établissement (à domicile), conformément aux articles L.221-18 et suivants du Code de la consommation. Ce droit de rétractation ne s'applique pas si les travaux ont commencé avant l'expiration de ce délai avec l'accord exprès du Client."
+      },
+      {
+        "title": "Article 7 — Réception des travaux",
+        "content": "7.1. À l'achèvement des travaux, une visite de réception est organisée conjointement entre l'Entreprise et le Client. Un procès-verbal de réception est établi et signé par les deux parties.\n\n7.2. La réception peut être prononcée :\n— Sans réserve : les travaux sont conformes au devis et aux règles de l'art ;\n— Avec réserves : les défauts constatés sont consignés au procès-verbal et l'Entreprise s'engage à les lever dans un délai raisonnable ;\n— Refusée : en cas de non-conformité majeure rendant l'ouvrage impropre à sa destination.\n\n7.3. En l'absence de procès-verbal de réception, la prise de possession des lieux par le Client et le paiement du solde valent réception tacite des travaux.\n\n7.4. La réception marque le point de départ des garanties légales (garantie de parfait achèvement, garantie biennale, garantie décennale)."
+      },
+      {
+        "title": "Article 8 — Garanties",
+        "content": "8.1. Garantie de parfait achèvement (article 1792-6 du Code civil) : l'Entreprise s'engage à réparer tous les désordres signalés par le Client dans l'année suivant la réception des travaux.\n\n8.2. Garantie biennale de bon fonctionnement (article 1792-3 du Code civil) : les éléments d'équipement dissociables de l'ouvrage sont garantis pendant deux (2) ans à compter de la réception.\n\n8.3. Garantie décennale (articles 1792 et suivants du Code civil) : l'Entreprise est responsable pendant dix (10) ans des dommages compromettant la solidité de l'ouvrage ou le rendant impropre à sa destination. L'Entreprise est titulaire d'une assurance responsabilité civile décennale dont les coordonnées sont communiquées sur demande.\n\n8.4. Les garanties ne couvrent pas les dommages résultant d'un usage anormal, d'un défaut d'entretien, d'une modification réalisée par le Client ou un tiers, ou d'un cas de force majeure."
+      },
+      {
+        "title": "Article 9 — Responsabilité",
+        "content": "9.1. L'Entreprise est tenue d'une obligation de résultat quant à la conformité des travaux au devis et aux règles de l'art applicables.\n\n9.2. L'Entreprise est couverte par une assurance Responsabilité Civile Professionnelle pour les dommages causés aux tiers et aux biens du Client pendant l'exécution des travaux.\n\n9.3. La responsabilité de l'Entreprise ne saurait être engagée en cas de dommages résultant de vices cachés de l'ouvrage existant non décelables lors de la visite technique préalable, ni de matériaux fournis par le Client."
+      },
+      {
+        "title": "Article 10 — Sous-traitance",
+        "content": "L'Entreprise se réserve le droit de sous-traiter tout ou partie des travaux à des sous-traitants qualifiés, dans le respect de la loi n° 75-1334 du 31 décembre 1975 relative à la sous-traitance. L'Entreprise demeure seule responsable vis-à-vis du Client de la bonne exécution des travaux confiés aux sous-traitants."
+      },
+      {
+        "title": "Article 11 — Résiliation",
+        "content": "11.1. En cas de manquement grave de l'une des parties à ses obligations, l'autre partie pourra résilier le contrat de plein droit, trente (30) jours après mise en demeure restée infructueuse adressée par lettre recommandée avec accusé de réception.\n\n11.2. En cas de résiliation du fait du Client, les travaux exécutés et les matériaux approvisionnés restent dus. L'Entreprise facturera les travaux réalisés au prorata, majorés d'une indemnité de résiliation de 10 % du montant des travaux restant à exécuter.\n\n11.3. En cas de résiliation du fait de l'Entreprise, le Client sera remboursé des sommes versées au titre des travaux non encore exécutés."
+      },
+      {
+        "title": "Article 12 — Protection des données personnelles",
+        "content": "Les données personnelles collectées dans le cadre de la relation commerciale sont traitées conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés. Le Client dispose d'un droit d'accès, de rectification, de suppression et de portabilité de ses données. Pour exercer ces droits, le Client peut adresser sa demande à {email}."
+      },
+      {
+        "title": "Article 13 — Litiges et droit applicable",
+        "content": "13.1. Les présentes CGV sont soumises au droit français.\n\n13.2. En cas de litige relatif à l'exécution ou à l'interprétation des présentes, les parties s'efforceront de trouver une solution amiable. Le Client est informé qu'il peut recourir à un médiateur de la consommation conformément aux articles L.612-1 et suivants du Code de la consommation.\n\n13.3. À défaut de résolution amiable, le litige sera soumis aux tribunaux compétents du ressort du siège social de l'Entreprise."
+      },
+      {
+        "title": "Article 14 — Propriété intellectuelle",
+        "content": "Les plans, études techniques, croquis et documents remis par l'Entreprise dans le cadre du devis ou de l'exécution des travaux demeurent sa propriété intellectuelle. Ils ne peuvent être communiqués à des tiers, reproduits ou utilisés sans l'accord écrit préalable de l'Entreprise."
+      }
+    ]
+  },
+  "privacy": {
+    "seo_title": "Politique de confidentialité",
+    "page_title": "POLITIQUE DE",
+    "page_title_highlight": "CONFIDENTIALITÉ",
+    "intro": "{company} accorde une grande importance à la protection de vos données personnelles. Cette politique décrit comment nous collectons et utilisons vos informations.",
+    "data_collected_title": "Données collectées",
+    "data_collected_intro": "Nous collectons les données suivantes via notre formulaire de devis :",
+    "data_collected_items": [
+      "Nom et prénom",
+      "Numéro de téléphone",
+      "Adresse email",
+      "Adresse du chantier",
+      "Description et photos du projet"
+    ],
+    "purpose_title": "Finalité",
+    "purpose_intro": "Ces données sont utilisées exclusivement pour :",
+    "purpose_items": [
+      "Répondre à votre demande de devis",
+      "Vous contacter pour organiser une visite technique",
+      "Établir un devis personnalisé"
+    ],
+    "retention_title": "Durée de conservation",
+    "retention_text": "Vos données sont conservées pendant 3 ans à compter de votre dernière interaction avec {company}, sauf obligation légale de conservation plus longue.",
+    "sharing_title": "Partage des données",
+    "sharing_text": "Vos données ne sont jamais vendues ni transmises à des tiers à des fins commerciales. Elles peuvent être transmises à nos sous-traitants techniques (hébergeur, service email) dans le cadre strict du traitement de votre demande.",
+    "rights_title": "Vos droits (RGPD)",
+    "rights_intro": "Conformément au Règlement Général sur la Protection des Données, vous disposez des droits suivants :",
+    "rights_items": [
+      "Droit d'accès à vos données",
+      "Droit de rectification",
+      "Droit de suppression",
+      "Droit à la portabilité",
+      "Droit d'opposition"
+    ],
+    "rights_contact": "Pour exercer ces droits, contactez-nous à",
+    "rights_contact_mail": "ou par courrier au",
+    "cookies_title": "Cookies",
+    "cookies_text": "Ce site utilise uniquement des cookies techniques nécessaires à son fonctionnement. Aucun cookie de suivi publicitaire n'est utilisé.",
+    "contact_title": "Contact",
+    "contact_intro": "Pour toute question relative à cette politique, contactez-nous :",
+    "contact_email_label": "Email :",
+    "contact_phone_label": "Téléphone :"
+  },
+  "seo": {
+    "home_title": "Aiman Renovation — Rénovation sur mesure à Saint-Louis (68)",
+    "home_description": "Rénovation intérieure et extérieure à Saint-Louis et Haut-Rhin. Cuisine, salle de bain, électricité, plomberie, façades, isolation. Devis gratuit sous 4 jours."
+  },
+  "schema": {
+    "organization_type": "HomeAndConstructionBusiness",
+    "area_served": "Saint-Louis",
+    "price_currency": "EUR"
+  },
+  "email": {
+    "devis_client_title": "Votre demande de devis a bien été envoyée",
+    "devis_admin_title": "Nouveau devis — {firstName} {lastName}",
+    "devis_client_intro": "Bonjour {firstName},\nNous avons bien reçu votre demande. Voici le récapitulatif. Nous vous recontactons sous 24h.",
+    "devis_admin_intro": "Nouvelle demande reçue depuis le site.",
+    "section_contact": "Coordonnées",
+    "label_name": "Nom",
+    "label_phone": "Téléphone",
+    "label_email": "Email",
+    "label_address": "Adresse chantier",
+    "section_works": "Travaux demandés — {totalWorks} travaux / {totalZones} zone(s)",
+    "label_note": "Note :",
+    "section_budget": "Budget",
+    "section_magicplan": "Plan MagicPlan",
+    "section_message": "Message",
+    "footer": "Aiman Renovation — 68300 Saint-Louis — aiman-renovation.fr"
   }
 }
