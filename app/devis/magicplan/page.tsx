@@ -13,11 +13,10 @@ const STEPS = [
       label: "Ouvrir MagicPlan",
       onClick: () => {
         const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-        const store = isIOS
+        const url = isIOS
           ? "https://apps.apple.com/app/magicplan/id427424432"
           : "https://play.google.com/store/apps/details?id=com.sensopia.magicplan";
-        window.location.href = "magicplan://";
-        setTimeout(() => { window.location.href = store; }, 1500);
+        window.open(url, "_blank");
       },
     },
   },
