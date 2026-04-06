@@ -26,6 +26,7 @@ export async function createMagicPlanProject(params: {
     headers: getHeaders(),
     body: JSON.stringify({
       name: params.name,
+      email: "contact@aiman-renovation.fr",
       external_reference_id: params.externalReferenceId,
       address_1: params.address,
       city: params.city,
