@@ -25,16 +25,71 @@ const BUDGET_OPTIONS: BudgetRange[] = [
   "> 50000",
 ];
 
-const MAGIC_STEPS = [
-  { title: "Téléchargez MagicPlan", icon: Download, content: "L'application est gratuite et disponible sur iPhone et Android.", hasAction: true },
-  { title: "Scannez chaque pièce", icon: Camera, content: "Créez un nouveau projet, puis scannez chaque pièce. Pointez votre téléphone vers les coins — MagicPlan détecte les murs automatiquement.", tips: ["Tenez le téléphone à hauteur de poitrine", "Tournez lentement, coin par coin"] },
-  { title: "Vérifiez les mesures", icon: Ruler, content: "Vérifiez le plan 2D généré. Corrigez les mesures si besoin en tapant sur les cotes." },
-  { title: "Partagez-nous le plan", icon: Share2, content: "Exportez votre plan (bouton Partager), puis mentionnez-le dans le message du devis ou envoyez-le à contact@aiman-renovation.fr." },
+const WIZARD_STEPS = [
+  {
+    icon: Download,
+    title: "Téléchargez l'app",
+    subtitle: "Gratuit — 2 minutes",
+    instruction: "Installez MagicPlan sur votre téléphone. C'est gratuit, pas besoin de compte.",
+    visual: "📱",
+    action: {
+      label: "Télécharger MagicPlan",
+      onClick: () => {
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        window.open(isIOS ? "https://apps.apple.com/app/magicplan/id427424432" : "https://play.google.com/store/apps/details?id=com.sensopia.magicplan", "_blank");
+      },
+    },
+    tip: "Déjà installé ? Passez à l'étape suivante.",
+  },
+  {
+    icon: Camera,
+    title: "Ouvrez et créez un projet",
+    subtitle: "30 secondes",
+    instruction: "Ouvrez MagicPlan, appuyez sur le gros bouton \"+\", puis choisissez \"Nouveau projet\". Donnez un nom (ex: \"Ma maison\").",
+    visual: "➕",
+    tip: "Choisissez le mode \"Scanner\" pour la détection automatique des murs.",
+  },
+  {
+    icon: Ruler,
+    title: "Scannez votre première pièce",
+    subtitle: "2 minutes par pièce",
+    instruction: "Placez-vous au centre de la pièce. Pointez le téléphone vers un coin et suivez les instructions à l'écran. Tournez lentement vers chaque coin.",
+    visual: "🔄",
+    tips: [
+      "Tenez le téléphone à hauteur de poitrine",
+      "Allez lentement, coin par coin",
+      "Les portes et fenêtres sont détectées automatiquement",
+      "Répétez pour chaque pièce à rénover",
+    ],
+  },
+  {
+    icon: CheckCircle,
+    title: "Vérifiez le résultat",
+    subtitle: "1 minute",
+    instruction: "MagicPlan génère un plan 2D avec les mesures. Tapez sur une cote pour la corriger si besoin.",
+    visual: "✅",
+    tip: "Pas besoin que ce soit parfait — on affinera ensemble.",
+  },
+  {
+    icon: Share2,
+    title: "Envoyez-nous le plan",
+    subtitle: "30 secondes",
+    instruction: "Appuyez sur \"Partager\" dans MagicPlan, puis choisissez \"PDF\" ou \"Lien\". Copiez le lien et collez-le dans le message de votre devis ci-dessous.",
+    visual: "📤",
+    tips: [
+      "Option 1 : Collez le lien dans le champ \"Message\" du devis",
+      "Option 2 : Envoyez le PDF par email à contact@aiman-renovation.fr",
+    ],
+  },
 ];
 
 function MagicPlanSection() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeStep, setActiveStep] = useState(0);
+  const [step, setStep] = useState(0);
+
+  const current = WIZARD_STEPS[step];
+  const Icon = current.icon;
+  const isLast = step === WIZARD_STEPS.length - 1;
 
   return (
     <>
@@ -51,7 +106,7 @@ function MagicPlanSection() {
           </div>
         </div>
         <button
-          onClick={() => setIsOpen(true)}
+          onClick={() => { setStep(0); setIsOpen(true); }}
           className="block w-full text-center bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 text-sm font-medium py-2.5 rounded-lg border border-blue-500/30 transition-colors"
         >
           Voir le guide MagicPlan →
@@ -59,70 +114,95 @@ function MagicPlanSection() {
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4" onClick={() => setIsOpen(false)}>
-          <div className="bg-[#111] border border-white/10 rounded-2xl w-full max-w-lg max-h-[80dvh] overflow-y-auto overscroll-contain" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between p-4 border-b border-white/10 sticky top-0 bg-[#111] z-10">
-              <h3 className="text-white font-semibold">Guide MagicPlan</h3>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+          <div className="bg-[#111] border border-white/10 rounded-2xl w-full max-w-md overflow-hidden" onClick={(e) => e.stopPropagation()}>
+            {/* Progress bar */}
+            <div className="h-1.5 bg-white/5">
+              <div
+                className="h-full bg-blue-500 transition-all duration-500 ease-out"
+                style={{ width: `${((step + 1) / WIZARD_STEPS.length) * 100}%` }}
+              />
+            </div>
+
+            {/* Header */}
+            <div className="flex items-center justify-between px-5 pt-4">
+              <span className="text-xs text-gray-500 font-medium">
+                Étape {step + 1} sur {WIZARD_STEPS.length}
+              </span>
               <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-white transition-colors p-1">
                 <X className="w-5 h-5" />
               </button>
             </div>
-            <div className="p-4 space-y-3">
-              {MAGIC_STEPS.map((step, i) => {
-                const Icon = step.icon;
-                const open = activeStep === i;
-                const done = activeStep > i;
-                return (
-                  <div key={i} className={`rounded-xl border transition-all ${open ? "bg-white/5 border-blue-500/40" : done ? "border-green-500/30" : "border-white/10"}`}>
-                    <button onClick={() => setActiveStep(i)} className="w-full flex items-center gap-3 p-3 text-left">
-                      <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 ${done ? "bg-green-500/20" : open ? "bg-blue-500/20" : "bg-white/5"}`}>
-                        {done ? <CheckCircle className="w-4 h-4 text-green-400" /> : <Icon className={`w-4 h-4 ${open ? "text-blue-400" : "text-gray-500"}`} />}
-                      </div>
-                      <div>
-                        <span className="text-[10px] text-gray-500 font-medium">Étape {i + 1}</span>
-                        <h4 className={`text-sm font-semibold ${done ? "text-green-300" : "text-white"}`}>{step.title}</h4>
-                      </div>
-                    </button>
-                    {open && (
-                      <div className="px-3 pb-3 space-y-2">
-                        <p className="text-gray-400 text-xs leading-relaxed pl-12">{step.content}</p>
-                        {step.tips && (
-                          <div className="pl-12 space-y-1">
-                            {step.tips.map((tip, j) => (
-                              <div key={j} className="flex items-start gap-1.5 text-xs text-gray-500">
-                                <CheckCircle className="w-3 h-3 text-blue-400 mt-0.5 flex-shrink-0" />
-                                <span>{tip}</span>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                        {step.hasAction && (
-                          <div className="pl-12">
-                            <button
-                              onClick={() => {
-                                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-                                window.open(isIOS ? "https://apps.apple.com/app/magicplan/id427424432" : "https://play.google.com/store/apps/details?id=com.sensopia.magicplan", "_blank");
-                              }}
-                              className="bg-blue-500 hover:bg-blue-600 text-white text-xs font-medium px-4 py-2 rounded-lg transition-colors"
-                            >
-                              Télécharger MagicPlan
-                            </button>
-                          </div>
-                        )}
-                        {i < MAGIC_STEPS.length - 1 && (
-                          <div className="pl-12">
-                            <button onClick={() => setActiveStep(i + 1)} className="text-blue-400 text-xs font-medium hover:text-blue-300">Suivant →</button>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+
+            {/* Content */}
+            <div className="px-5 py-6 text-center space-y-5">
+              {/* Visual */}
+              <div className="w-20 h-20 rounded-2xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center mx-auto text-4xl">
+                {current.visual}
+              </div>
+
+              {/* Title */}
+              <div>
+                <h3 className="text-white text-lg font-bold">{current.title}</h3>
+                <p className="text-blue-400 text-xs font-medium mt-1">{current.subtitle}</p>
+              </div>
+
+              {/* Instruction */}
+              <p className="text-gray-300 text-sm leading-relaxed">
+                {current.instruction}
+              </p>
+
+              {/* Tips */}
+              {current.tips && (
+                <div className="bg-white/5 rounded-xl p-4 space-y-2 text-left">
+                  {current.tips.map((tip, i) => (
+                    <div key={i} className="flex items-start gap-2 text-xs text-gray-400">
+                      <CheckCircle className="w-3.5 h-3.5 text-blue-400 mt-0.5 flex-shrink-0" />
+                      <span>{tip}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {current.tip && !current.tips && (
+                <p className="text-gray-500 text-xs italic">{current.tip}</p>
+              )}
+
+              {/* Action button */}
+              {current.action && (
+                <button
+                  onClick={current.action.onClick}
+                  className="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-6 py-3 rounded-xl transition-colors w-full"
+                >
+                  {current.action.label}
+                </button>
+              )}
             </div>
-            <div className="p-4 border-t border-white/10">
-              <button onClick={() => setIsOpen(false)} className="w-full bg-[#E50000] hover:bg-red-700 text-white text-sm font-semibold py-2.5 rounded-lg transition-colors">
-                Fermer et continuer mon devis
+
+            {/* Navigation */}
+            <div className="flex gap-3 p-5 border-t border-white/10">
+              {step > 0 ? (
+                <button
+                  onClick={() => setStep(step - 1)}
+                  className="flex-1 bg-white/5 hover:bg-white/10 text-white text-sm font-medium py-3 rounded-xl transition-colors"
+                >
+                  ← Précédent
+                </button>
+              ) : (
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="flex-1 bg-white/5 hover:bg-white/10 text-gray-400 text-sm font-medium py-3 rounded-xl transition-colors"
+                >
+                  Passer
+                </button>
+              )}
+              <button
+                onClick={() => isLast ? setIsOpen(false) : setStep(step + 1)}
+                className={`flex-[2] text-white text-sm font-semibold py-3 rounded-xl transition-colors ${
+                  isLast ? "bg-[#E50000] hover:bg-red-700" : "bg-blue-500 hover:bg-blue-600"
+                }`}
+              >
+                {isLast ? "Continuer mon devis" : "Suivant →"}
               </button>
             </div>
           </div>
