@@ -1733,5 +1733,12 @@
     "section_magicplan": "Plan MagicPlan",
     "section_message": "Message",
     "footer": "Aiman Renovation — 68300 Saint-Louis — aiman-renovation.fr"
+  },
+  "popup_jardin": {
+    "title": "C'est la saison du jardin",
+    "subtitle": "Profitez d'un diagnostic jardin gratuit — on vient chez vous évaluer vos extérieurs, sans engagement.",
+    "cta": "Réserver mon diagnostic gratuit",
+    "dismiss": "Plus tard",
+    "mention": "Offre valable jusqu'à fin mai 2026"
   }
 }

@@ -1733,5 +1733,12 @@
     "section_magicplan": "MagicPlan-Grundriss",
     "section_message": "Nachricht",
     "footer": "Aiman Renovation — 68300 Saint-Louis — aiman-renovation.fr"
+  },
+  "popup_jardin": {
+    "title": "Es ist Gartensaison",
+    "subtitle": "Nutzen Sie eine kostenlose Gartendiagnose — wir kommen zu Ihnen und bewerten Ihre Außenanlagen, unverbindlich.",
+    "cta": "Kostenlose Diagnose buchen",
+    "dismiss": "Später",
+    "mention": "Angebot gültig bis Ende Mai 2026"
   }
 }

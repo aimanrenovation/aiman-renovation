@@ -1733,5 +1733,12 @@
     "section_magicplan": "MagicPlan floor plan",
     "section_message": "Message",
     "footer": "Aiman Renovation — 68300 Saint-Louis — aiman-renovation.fr"
+  },
+  "popup_jardin": {
+    "title": "It's garden season",
+    "subtitle": "Get a free garden assessment — we'll come to your home to evaluate your outdoor spaces, no commitment.",
+    "cta": "Book my free assessment",
+    "dismiss": "Maybe later",
+    "mention": "Offer valid until end of May 2026"
   }
 }

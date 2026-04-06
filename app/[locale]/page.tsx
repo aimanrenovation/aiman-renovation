@@ -9,6 +9,7 @@ import { TestimonialsCarousel } from "@/components/sections/testimonials-carouse
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { LinkButton } from "@/components/ui/link-button";
+import { SeasonalPopup } from "@/components/seasonal-popup";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -105,6 +106,7 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       <CtaBanner />
+      <SeasonalPopup />
     </>
   );
 }
