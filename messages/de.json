@@ -6,7 +6,6 @@
     "about": "Über uns",
     "contact": "Kontakt",
     "faq": "FAQ",
-    "carrieres": "Karriere",
     "cta": "Kostenlose Offerte"
   },
   "common": {
@@ -818,44 +817,204 @@
       "priceRange": "Anfahrt + Diagnose: ab 90 €, Reparatur auf Offerte"
     },
     {
-      "slug": "renovation-complete",
-      "title": "Vollrenovierung",
-      "shortTitle": "Vollrenovierung",
-      "description": "Komplette Renovierung Ihrer Wohnung oder Ihres Hauses. Ein Ansprechpartner, alle Gewerke koordiniert, schlüsselfertiges Ergebnis.",
-      "icon": "🏠",
+      "slug": "peinture",
+      "title": "Innen- und Aussenanstrich",
+      "shortTitle": "Malerarbeiten",
+      "description": "Professionelle Malerarbeiten im Haut-Rhin. Untergrundvorbereitung, Grundierung und makellose Oberflächen für Wohn- und Gewerbeimmobilien.",
+      "icon": "🎨",
       "features": [
-        "Komplette Bauleitung",
-        "Alle Gewerke",
-        "Abriss und Demontage",
-        "Kompletter Innenausbau",
-        "Hochwertige Ausführung",
-        "Zehnjährige Garantie"
+        "Innenanstrich (Wände, Decken, Holzwerk)",
+        "Diffusionsoffener Aussenanstrich",
+        "Dekorativer Putz (Tadelakt, venezianischer Stuck)",
+        "Tapeten und Wandverkleidungen",
+        "Untergrundvorbereitung: Spachteln, Schleifen, Grundieren",
+        "Anstrich auf Holz, Metall und Beton"
       ],
-      "longDescription": "Eine komplette Renovierung eines Apartments oder Hauses ist ein komplexes Projekt, das viele Gewerke umfasst: Abriss, Sanitär, Elektrik, Fliesen, Malerarbeiten, Tischlerarbeiten. Die Koordination dieser Arbeiten, die Verwaltung der Termine und die Qualitätssicherung in jeder Phase — das ist genau das, was Aiman Renovation für Sie übernimmt.\n\nAls Bauleiter sind wir Ihr einziger Ansprechpartner. Sie müssen sich nicht mit zehn verschiedenen Handwerkern auseinandersetzen oder Zeitpläne verwalten. Wir übernehmen das gesamte Projekt: von der ersten Bestandsaufnahme bis zur Schlüsselübergabe.\n\nWir arbeiten in Saint-Louis, Mulhouse, Huningue, Hégenheim und der gesamten grenzüberschreitenden Zone Oberrhein / Basel. Jede Renovierung ist einzigartig, jedes Budget wird respektiert.",
+      "longDescription": "Farbe ist das erste Zeichen eines gepflegten Interieurs — und der letzte Posten, an dem man sparen sollte. Bei Aiman Renovation arbeiten unsere professionellen Maler in Saint-Louis und im gesamten Haut-Rhin, um ein langlebiges, gleichmässiges und ästhetisches Ergebnis zu garantieren.\n\nAlles beginnt mit der Untergrundvorbereitung — ein Schritt, der 70 % der Arbeit ausmacht und von vielen Heimwerkern vernachlässigt wird. Risse mit Spachtelmasse füllen, fein schleifen, abstauben und eine auf den Untergrund abgestimmte Haftgrundierung auftragen (Putz, Gipskarton, Ziegel, Beton): ohne diese Basis platzt selbst die beste Farbe in weniger als 5 Jahren ab. Wir verwenden professionelle Markfarben — Tollens, Sikkens, Zolpan — in matter, seidenmatter oder glänzender Ausführung je nach Raumnutzung.\n\nFür Feuchträume (Küche, Bad) wählen wir schimmelresistente, dampfbeständige Farben. Für Flure und Treppenhäuser hochbelastbare Alkyd- oder Acrylfarben. Für Aussenbereiche diffusionsoffene Farben, die die Wände atmen lassen und gleichzeitig vor dem Wetter schützen.\n\nWir realisieren auch dekorative Oberflächen: Tadelakt-Putz für einen Hammam-Effekt, perlmuttartigen venezianischen Stuck, Betonoptik-Wandbeschichtung, Kalkfarbe für Altbauten. Egal ob Wohnung in Huningue, Haus in Bartenheim oder Büro in Saint-Louis — wir begleiten Sie von der Farbauswahl bis zur Endreinigung.",
       "process": [
         {
-          "step": "Besichtigung und Diagnose",
-          "detail": "Vollständige Inspektion des Gebäudes: Zustand der Leitungen, Wände, Böden und Dach."
+          "step": "Absicherung der Baustelle",
+          "detail": "Abdecken von Böden, Möbeln und Einbauten. Abklebeband an Sockelleisten, Zargen und Steckdosen."
         },
         {
-          "step": "Planung und Angebot",
-          "detail": "Detaillierter Einrichtungsplan, Materialauswahl, transparentes Gesamtangebot je Gewerk."
+          "step": "Untergrundvorbereitung",
+          "detail": "Risse und Löcher füllen, schleifen, fettige Flächen waschen, Flecken und Schimmel behandeln."
         },
         {
-          "step": "Abriss und Rohbau",
-          "detail": "Sorgfältige Demontage der zu ersetzenden Elemente, Schuttentsorgung und Sicherung der Baustelle."
+          "step": "Grundierungsauftrag",
+          "detail": "Untergrundgerechte Grundierung zum Angleichen der Saugfähigkeit und zur Haftvermittlung der Deckschicht."
         },
         {
-          "step": "Innenausbau",
-          "detail": "Sanitär, Elektrik, Dämmung, Putz in der richtigen Reihenfolge für ein optimales Ergebnis."
+          "step": "Farbanstriche",
+          "detail": "Mindestens zwei Deckschichten, aufgetragen mit Rolle, Pinsel oder Airless-Sprühgerät je nach Fläche."
         },
         {
-          "step": "Fertigstellung und Abnahme",
-          "detail": "Fliesen, Malerarbeiten, Türen, Leuchten. Vollständige Reinigung und Abnahmebesichtigung mit Ihnen."
+          "step": "Nacharbeiten und Abnahme",
+          "detail": "Prüfung unter Streiflicht, Nachbesserungen bei Mängeln, Entfernen der Abdeckungen und gründliche Reinigung."
         }
       ],
-      "whyPro": "Eine erfolgreiche Vollrenovierung ist vor allem eine Frage der Koordination. Ein Handwerker, der zu früh oder zu spät kommt, kann die gesamte Baustelle blockieren. Aiman Renovation beherrscht die logische Reihenfolge der Eingriffe und antizipiert jede Einschränkung, um Ihnen eine reibungslose Baustelle innerhalb der angekündigten Fristen zu bieten.",
-      "priceRange": "20 000 € – 80 000 € je nach Fläche und Zustand des Objekts (Schätzung vor Besichtigung)"
+      "whyPro": "Ein gelungener Anstrich hängt zu 70 % von der Untergrundvorbereitung ab. Ohne richtiges Schleifen, Spachteln und Grundieren platzt die Farbe innerhalb von 2 bis 3 Jahren ab. Unsere Maler beherrschen elsässische Untergründe (Kalkputz, Waschputz, Beton) und wählen die richtigen Produkte für jeden Fall. Professionelles Werkzeug, makellose Oberflächen, eingehaltene Termine — das ist der Unterschied zwischen Heimwerkern und Aiman Renovation.",
+      "priceRange": "20 € – 45 € / m² für Wände und Decken, Vorbereitung und 2 Anstriche inklusive"
+    },
+    {
+      "slug": "sols-carrelage",
+      "title": "Böden & Fliesen",
+      "shortTitle": "Böden & Fliesen",
+      "description": "Fliesen, Parkett, Vinylboden, Betonoptik. Sorgfältige Untergrundvorbereitung und Abschlussarbeiten für alle Innen- und Aussenböden.",
+      "icon": "🏗️",
+      "features": [
+        "Grossformat-Fliesen (60x60, 80x80, 120x60)",
+        "Massiv- und Fertigparkett",
+        "LVT-Vinylboden und hochresistentes PVC",
+        "Betonoptik und Harzboden",
+        "Rutschfeste Aussenbeläge",
+        "Ausgleichsschicht und Untergrundvorbereitung"
+      ],
+      "longDescription": "Der Boden ist die erste Fläche, die man unter den Füssen spürt, und eines der Elemente, die den Stil eines Raumes bestimmen. Grossformatige Feinsteinzeugfliesen für ein klares Bad, geöltes Eichenparkett für ein warmes Wohnzimmer, Betonoptik für eine moderne Küche — Aiman Renovation verlegt alle Arten von Bodenbelägen mit handwerklichem Sorgfalt, die ein dauerhaftes Ergebnis garantiert.\n\nJedes Projekt beginnt mit einer gründlichen Untergrundprüfung: Ebenheitsprüfung mit Lasernivelliergerät, Feuchtigkeitsmessung, Haftprüfung. Wenn der Boden nicht perfekt eben ist — was in älteren Gebäuden im Haut-Rhin häufig vorkommt — führen wir eine selbstnivellierendes Ausgleichsmasse durch. Dieser unsichtbare Schritt ist entscheidend: Fliesen auf einem fehlerhaften Untergrund reissen und lösen sich unvermeidlich.\n\nBeim Fliesenlegen beherrschen wir alle Verlegemuster: gerade, versetzt, Fischgrät, diagonal. Wir schneiden Grossformate mit Profi-Werkzeugen (Diamant-Fliesenschneider, Laser-Schneidtisch) für perfekt ausgerichtete Fugen. Beim Parkett bieten wir Vollverklebung für ein massives, geräuschgedämpftes Ergebnis oder Schwimmendverlegung für leichtere Anwendungen an.\n\nAuf Terrassen und Aussenbereich verlegen wir rutschfestes Feinsteinzeug (R11-R13) auf Stelzlagern oder direkt auf Betonunterlage. Unsere Arbeiten umfassen Saint-Louis, Huningue, Hegenheim, Kembs, Rixheim, Habsheim und das gesamte Grenzgebiet Basel/Elsass.",
+      "process": [
+        {
+          "step": "Untergrundbeurteilung",
+          "detail": "Ebenheitsprüfung mit Lasernivelliergerät, Feuchtigkeitsmessung, Erkennung von Strukturmängeln."
+        },
+        {
+          "step": "Untergrundvorbereitung",
+          "detail": "Selbstnivellierende Ausgleichsmasse falls nötig, Haftgrundierung, Riss- und Dehnfugenbehandlung."
+        },
+        {
+          "step": "Verlegeplanung",
+          "detail": "Verlegeplan mit Richtung, Fugenbreite, Startpunkt und spezifischen Mustern."
+        },
+        {
+          "step": "Bodenverlegung",
+          "detail": "Klebe- oder Schwimmendverlegung je nach Material, präzise Schnitte mit Diamantwerkzeug, Dehnfugen eingehalten."
+        },
+        {
+          "step": "Verfugen und Abschlussarbeiten",
+          "detail": "Passende Fugenmörtelfarbe, Sockelleisten, Edelstahl-Übergangsprofil, gründliche Reinigung und Oberflächenschutz."
+        }
+      ],
+      "whyPro": "Schlecht verlegte Fliesen reissen, klingen hohl und lösen sich innerhalb weniger Jahre. Untergrundvorbereitung, die Auswahl des richtigen Klebers für Format und Untergrund sowie die Einhaltung von Dehnfugen erfordern echtes Fachwissen. Unsere Fliesenleger verwenden professionelle Werkzeuge und bringen jahrelange Erfahrung im Haut-Rhin mit. Garantiertes Ergebnis, normkonform nach DTU 52.1 und 52.2.",
+      "priceRange": "40 € – 120 € / m² inkl. Verlegen, je nach Belagsart und Komplexität"
+    },
+    {
+      "slug": "renovation-complete",
+      "title": "Komplettsanierung",
+      "shortTitle": "Komplettsanierung",
+      "description": "Totale Sanierung Ihrer Immobilie von A bis Z. Ein einziger Ansprechpartner koordiniert alle Gewerke für ein schlüsselfertiges Ergebnis.",
+      "icon": "🏠",
+      "features": [
+        "Koordination aller Gewerke",
+        "Abbruch und leichte Bauarbeiten",
+        "Elektro, Sanitär und Heizung",
+        "Wärme- und Schalldämmung",
+        "Fliesen, Parkett und Malerarbeiten",
+        "Küche und Bad"
+      ],
+      "longDescription": "Die Komplettsanierung einer Wohnung oder eines Hauses ist ein komplexes Projekt, das ein Dutzend verschiedene Gewerke, zu koordinierende Zeitpläne und ein zu kontrollierendes Budget erfordert. Aiman Renovation bietet eine Schlüsselfertig-Lösung: ein einziger Ansprechpartner, der alles vom Abbruch bis zur Endfertigung übernimmt, ohne dass Sie die Koordination zwischen den Handwerkern verwalten müssen.\n\nWir arbeiten an allen Immobilientypen: Wohnungen aus den 1970er Jahren in Saint-Louis oder Mulhouse, elsässische Fachwerkhäuser in Dörfern des Haut-Rhin, neuere Einfamilienhäuser in Grenzgemeinden (Hegenheim, Blotzheim, Kembs, Rixheim, Habsheim). Jede Komplettsanierung beginnt mit einer gründlichen technischen Inspektion und der Erstellung eines detaillierten Bauzeitplans.\n\nUnsere Teams beherrschen alle erforderlichen Gewerke: Abbruch (Trennwände, Beläge, Sanitäranlagen), Elektronormaufrüstung NF C 15-100, Sanitärinstallation (Ersatz veralteter Blei- oder verzinkter Stahlnetze), Wärme- und Schalldämmung, Fliesen, Parkett, Malerarbeiten, Küchen- und Badmontage. Wir arbeiten mit einem Netzwerk qualifizierter Subunternehmer für Spezialarbeiten (Dachstuhl, Dacheindeckung, Aussenjoinery).\n\nEine Komplettsanierung ist auch die Gelegenheit, die Raumaufteilung neu zu überdenken. Eine Trennwand entfernen, um Wohnzimmer und Küche zu öffnen, ein zusätzliches Bad einrichten, den Dachboden ausbauen — wir beraten zu möglichen baulichen Veränderungen und holen die notwendigen Genehmigungen ein.",
+      "process": [
+        {
+          "step": "Technische Inspektion und Diagnose",
+          "detail": "Vollständige Bewertung der Immobilie: Bauzustand, Elektro- und Sanitärnetze, Dämmung, Beläge."
+        },
+        {
+          "step": "Sanierungsplan und Offerte",
+          "detail": "Detailliertes Arbeitsprogramm, Grundrisspläne, Bauzeitplan und Gesamtofferte mit Kostenstaffelung."
+        },
+        {
+          "step": "Abbruch und Rohbauarbeiten",
+          "detail": "Entfernung alter Beläge, Abbruch der geplanten Trennwände, Schuttentsorgung, Untergrundvorbereitung."
+        },
+        {
+          "step": "Technische Arbeiten",
+          "detail": "Elektro, Sanitär, Heizung, Dämmung — in der logischen Reihenfolge ausgeführt, um Nacharbeiten zu vermeiden."
+        },
+        {
+          "step": "Fertigstellung und Übergabe",
+          "detail": "Fliesen, Parkett, Malerarbeiten, Küchen- und Badmontage, Baustellen-reinigung und Schlüsselübergabe."
+        }
+      ],
+      "whyPro": "Eine Komplettsanierung selbst zu verwalten, indem man mehrere Handwerker separat beauftragt, ist eine Quelle von Stress, Kostenüberschreitungen und verlängerten Fristen. Ein Handwerker, der auf einen anderen wartet, sich überschneidende Zeitpläne, Fertigstellungen, die wiederholt werden müssen, weil der Putz nicht trocken war — diese Situationen kosten Zeit und Geld. Aiman Renovation koordiniert alles. Eine Gesamtofferte, ein eingehaltener Zeitplan, eine Zehn-Jahres-Garantie auf alle Arbeiten.",
+      "priceRange": "30 000 € – 120 000 € je nach Wohnfläche, Gebäudezustand und Ausstattungsniveau"
+    },
+    {
+      "slug": "isolation",
+      "title": "Wärme- und Schalldämmung",
+      "shortTitle": "Dämmung",
+      "description": "Aussendämmung (WDVS), Innendämmung und Schalldämmung. Reduzieren Sie Ihre Heizkosten und verbessern Sie Ihren Wohnkomfort.",
+      "icon": "🏛️",
+      "features": [
+        "Aussenwärmedämmung (WDVS)",
+        "Innenwärmedämmung",
+        "Dachraumdämmung (Einblasdämmung und Plattenware)",
+        "Trittschall- und Luftschalldämmung",
+        "Bodenplattendämmung über Kriechkeller",
+        "Förderfähig nach MaPrimeRénov' und CEE"
+      ],
+      "longDescription": "Im Elsass machen strenge Winter und immer heissere Sommer eine Wärmedämmung unerlässlich. Ein schlecht gedämmtes Haus verliert bis zu 30 % seiner Wärme durch die Wände, 25 % durch das Dach und 15 % durch den Boden. Aiman Renovation ist auf Wärmedämmung spezialisiert — ob von aussen (WDVS) oder von innen — um Ihre Heizkosten deutlich zu senken und Ihren Alltag angenehmer zu gestalten.\n\nDie Aussenwärmedämmung (WDVS) ist die effektivste Lösung für Einfamilienhäuser: Sie beseitigt Wärmebrücken, schützt die Gebäudestruktur vor Frost-Tau-Zyklen und verschönert gleichzeitig die Fassade. Wir installieren Dämmplatten von 80 bis 200 mm (graphitiertes Polystyrol, Steinwolle oder Holzfaser für ökologische Bauten), bedeckt mit einem Putzfinish in Ihrer Wunschfarbe.\n\nDie Innendämmung wird bevorzugt, wenn eine Aussendämmung nicht möglich ist (architektonische Einschränkungen, Denkmalschutz, Eigentümergemeinschaft). Wir verwenden Glaswolle-, Steinwolle- oder Polyurethan-Platten, auf Metallschienen befestigt mit hochwertiger Gipskartonbeplankung. Die Dachraumdämmung durch Einblasen von Zelluloseflocken oder loser Mineralwolle ist die rentabelste Investition: ab 1 €/m², mit einer Amortisation in unter 3 Jahren.\n\nArbeiten förderfähig nach MaPrimeRénov' (bis zu 75 €/m² für WDVS), Energiespar-Zertifikaten (CEE) und Öko-PTZ. Aiman Renovation begleitet Sie beim Zusammenstellen der Förderanträge.",
+      "process": [
+        {
+          "step": "Thermische Analyse",
+          "detail": "Wärmebilanz des Gebäudes, Identifikation prioritärer Wärmeverlustbereiche, Energieeinspar-Simulation."
+        },
+        {
+          "step": "Lösungsauswahl",
+          "detail": "WDVS, Innendämmung oder Dachraumdämmung: Auswahl der optimalen Lösung nach Gebäude, Budget und verfügbaren Förderungen."
+        },
+        {
+          "step": "Förderanträge",
+          "detail": "Zusammenstellung der MaPrimeRénov'-, CEE- und Öko-PTZ-Unterlagen. Auswahl Acermi-zertifizierter Materialien."
+        },
+        {
+          "step": "Dämmarbeiten",
+          "detail": "Dämmplatteninstallation, mechanische Befestigung und Verklebung, Wärmebrückenbehandlung, Verfugung."
+        },
+        {
+          "step": "Abschluss und Kontrolle",
+          "detail": "Putz- oder Gipskarton-Finish, Prüfung der Dämm-Kontinuität, Baustellenreinigung."
+        }
+      ],
+      "whyPro": "Schlecht ausgeführte Dämmung kann Wärmebrücken, Tauwasserbildung und Schimmel verursachen und die Situation verschlimmern statt verbessern. Materialien müssen Acermi-zertifiziert sein und die Arbeiten von einem RGE-qualifizierten (Reconnu Garant de l'Environnement) Fachbetrieb ausgeführt werden, um Förderungen zu erhalten. Aiman Renovation verfügt über die RGE-Zulassung und begleitet Sie von der Energieanalyse bis zur Bauabnahme.",
+      "priceRange": "80 € – 200 € / m² für WDVS, 30 € – 80 € / m² für Innendämmung, 20 € – 50 € / m² für Dachraumdämmung"
+    },
+    {
+      "slug": "facade",
+      "title": "Fassadensanierung",
+      "shortTitle": "Fassade",
+      "description": "Fassadenputz, Verputzarbeiten und Aussenanstrich. Geben Sie Ihrem Gebäude seinen Glanz zurück und schützen Sie es vor Witterungseinflüssen.",
+      "icon": "🏛️",
+      "features": [
+        "Vollständige Fassadensanierung mit Putz und Rauhputz",
+        "Diffusionsoffener Aussenfarbanstrich",
+        "Riss- und Feuchtigkeitsbehandlung",
+        "Hochdruckreinigung und Anti-Moos-Behandlung",
+        "Balkon- und Gesimsinstandsetzung",
+        "Zertifiziertes Gerüst und Sicherheitsabsperrung"
+      ],
+      "longDescription": "Die Fassade ist der erste Eindruck Ihres Hauses. Eine sorgfältig ausgeführte Putzrenovierung stellt das ursprüngliche Erscheinungsbild eines Gebäudes wieder her und schützt es dauerhaft vor Witterungseinflüssen, Verschmutzung und UV-Strahlung. Im Elsass erfordert das ausgeprägte Klima (Frost im Winter, Hitze im Sommer, starke Frühjahrsregenfälle) spezifische Materialien und sorgfältige Ausführung.\n\nAiman Renovation führt komplette Fassadensanierungen an Einfamilienhäusern und kleinen Mehrfamilienhäusern im gesamten Haut-Rhin durch: Saint-Louis, Huningue, Hegenheim, Bartenheim, Blotzheim, Kembs, Rixheim, Habsheim, Mulhouse. Unsere Teams arbeiten an allen Untergrundarten: Einlagenputz, traditioneller Kalkputz, Waschputz, Verkleidung, Ziegel oder Naturstein.\n\nJede Fassadensanierung beginnt mit Hochdruckreinigung (150 bis 250 bar) zur Beseitigung eingesessener Schmutzpartikel, Moos und Flechten. Dann folgt die Rissinstandsetzung (Ausfüllen mit faserverstärktem Putz, Einlegen von Bewehrungsbändern bei strukturellen Rissen), die Behandlung von aufsteigender Feuchtigkeit und Dehnfugen. Der Abschlussputz wird anschliessend aufgetragen: gekratzt, gerieben, Waschputz oder gespritzt je nach gewünschtem Effekt, in Ein- oder Zweischicht, mit elastischem Fassadenputz (RFS) zur Aufnahme von Mikrorissen.\n\nWir beachten strikt die Auflagen der Denkmalschutzbehörden für geschützte Bereiche und holen die notwendigen Genehmigungen (Baugenehmigung) vor Beginn jeder Arbeit ein. Unsere Einsätze werden durch zertifizierte Gerüste und Schutzplanen für Anwohner gesichert.",
+      "process": [
+        {
+          "step": "Fassadendiagnose",
+          "detail": "Beurteilung des Putzstands, Erkennung von Rissen, Abplatzungsbereichen und potenziellen Wassereintrittsstellen."
+        },
+        {
+          "step": "Gerüstaufbau",
+          "detail": "Sichere Gerüstinstallation, Abdecken der Öffnungen und Schutz angrenzender Grünbereiche."
+        },
+        {
+          "step": "Reinigung und Abschleifen",
+          "detail": "Hochdruckreinigung (150-250 bar), Abkratzen loser Bereiche, Bürsten und Anti-Moos-Behandlung."
+        },
+        {
+          "step": "Reparatur und Vorbereitung",
+          "detail": "Rissfüllung mit faserverstärktem Putz, Bewehrungsgitter auf aktiven Rissen, Fugenbehandlung."
+        },
+        {
+          "step": "Putzauftrag",
+          "detail": "Haftgrundierung, Auftrag des Abschlussputzes (gekratzt, gerieben oder Waschputz), Farbe nach Ihrer Wahl."
+        }
+      ],
+      "whyPro": "Schlecht ausgeführter Putz kann innerhalb von 2 bis 3 Jahren abplatzen, Wasser in die Wände eindringen und das Gebäude beschleunigt verschlechtern. Gerüstaufbau, Auswahl untergrundgerechter Putze und Umgang mit strukturellen Rissen erfordern Fachkenntnisse. Zudem müssen Fassadenarbeiten über 20 m² bei der Gemeindeverwaltung gemeldet werden. Aiman Renovation erledigt alle Formalitäten und garantiert ein dauerhaftes Ergebnis.",
+      "priceRange": "30 € – 80 € / m² für einfache Fassadensanierung, 60 € – 120 € / m² für Fassadensanierung mit Instandsetzungen"
     }
   ],
   "contact": {
@@ -1756,8 +1915,7 @@
       "Ladestation Elektroauto",
       "Photovoltaikanlagen",
       "Außenpflege",
-      "Notfalldienst & Reparatur",
-      "Vollrenovierung"
+      "Notfalldienst & Reparatur"
     ],
     "catalog_name": "Unsere Renovierungsleistungen"
   },
@@ -1784,95 +1942,5 @@
     "cta": "Kostenlose Diagnose buchen",
     "dismiss": "Später",
     "mention": "Angebot gültig bis Ende Mai 2026"
-  },
-  "carrieres": {
-    "seo_title": "Karriere — Werden Sie Teil von Aiman Renovation | Saint-Louis",
-    "seo_description": "Aiman Renovation sucht leidenschaftliche Handwerker in Saint-Louis und Umgebung. Maurer, Maler, Elektriker, Fliesenleger — bewerben Sie sich jetzt.",
-    "hero_image_alt": "Aiman Renovation Team in Uniform — Stellenangebote",
-    "badge": "Wir stellen ein",
-    "hero_title_line1": "Und wenn Sie",
-    "hero_title_line2": "der nächste sind?",
-    "hero_subtitle": "Aiman Renovation wächst. Wir suchen leidenschaftliche Handwerker, die stolz auf ihren Beruf sind und mit einem Team etwas Bleibendes schaffen wollen, das sich um seine Leute kümmert.",
-    "hero_cta": "Jetzt bewerben",
-    "why_title": "Warum",
-    "why_title_highlight": "uns",
-    "why_subtitle": "Ein Familienunternehmen, das in seine Teams, sein Werkzeug und Qualitätsarbeit investiert.",
-    "values": [
-      {
-        "title": "Ein Team, das Sie respektiert",
-        "description": "Keine Fluktuation. Kein unnötiger Druck. Wir arbeiten zusammen, hören einander zu und kümmern uns umeinander."
-      },
-      {
-        "title": "Schöne Arbeit",
-        "description": "Vielfältige und hochwertige Baustellen: Komplettsanierung, Bad, Küche, Fassaden, Außenanlagen. Etwas, in das man Herz steckt."
-      },
-      {
-        "title": "Mit uns wachsen",
-        "description": "Finanzierte Schulungen, Vielseitigkeit wird geschätzt, Gehalt das mit Ihrem Fortschritt mitwächst."
-      },
-      {
-        "title": "Profi-Werkzeug & Material",
-        "description": "Fahrzeug, PSA, Qualitätswerkzeug, Technologie (MagicPlan, ProGBat). Wir investieren, damit Sie gut arbeiten."
-      }
-    ],
-    "positions_title": "Offene Stellen",
-    "positions_subtitle": "Vollzeit-Festanstellung, Standort Saint-Louis (68) — Baustellen Elsass und Basel.",
-    "positions": [
-      {
-        "title": "Maurer / Verputzer (vielseitig)",
-        "type": "Festanstellung — Vollzeit",
-        "description": "Rohbau, Trockenbau, Putz, Estrich und Endarbeiten auf Komplettsanierungs-Baustellen.",
-        "requirements": [
-          "Mindestens 2 Jahre Erfahrung in der Sanierung",
-          "Führerschein Klasse B erforderlich",
-          "Selbstständig auf kleinen Baustellen",
-          "Sorgfältig, gründlich, pünktlich"
-        ]
-      },
-      {
-        "title": "Maler",
-        "type": "Festanstellung — Vollzeit",
-        "description": "Untergrundvorbereitung, Wandbeläge, Innen- und Außenanstriche, Fassadenrenovierung.",
-        "requirements": [
-          "Berufsausbildung oder gleichwertige Erfahrung",
-          "Beherrschung der Endbearbeitungstechniken",
-          "Sinn für Details und schöne Arbeit",
-          "Teamgeist"
-        ]
-      },
-      {
-        "title": "Qualifizierter Elektriker",
-        "type": "Festanstellung — Vollzeit",
-        "description": "Elektroinstallation und -sanierung: Schaltschrank, Steckdosen, Beleuchtung, Ladestationen, Hausautomation.",
-        "requirements": [
-          "Aktuelle Elektro-Zertifikate (B1V, BR, BC)",
-          "Mindestens 3 Jahre Erfahrung",
-          "Kenntnisse NF C 15-100",
-          "Pläne und Schemata lesen"
-        ]
-      },
-      {
-        "title": "Fliesenleger",
-        "type": "Festanstellung — Vollzeit",
-        "description": "Verlegen von Fliesen für Bäder, Küchen, Böden und Terrassen. Sorgfältige Arbeit erforderlich.",
-        "requirements": [
-          "2 Jahre Erfahrung in allen Formaten",
-          "Beherrschung von Schnitten und Fugen",
-          "Ästhetisches Gespür",
-          "Führerschein Klasse B"
-        ]
-      }
-    ],
-    "apply_button": "Bewerben",
-    "spontaneous_title": "Ihr Beruf ist nicht aufgelistet?",
-    "spontaneous_text": "Wir hören immer auf gute Profile. Dachdecker, Klempner, Schreiner, Gärtner... Wenn Sie Ihre Arbeit gerne gut machen, haben wir etwas zu besprechen.",
-    "spontaneous_cta": "Initiativbewerbung",
-    "contact_title": "Eine Frage vor der Bewerbung?",
-    "contact_subtitle": "Wir sind erreichbar. Rufen Sie an, schreiben Sie uns oder kommen Sie vorbei.",
-    "contact_email_label": "E-Mail",
-    "contact_phone_label": "Telefon",
-    "contact_location_label": "Büro",
-    "contact_more": "Kontaktseite",
-    "email_subject": "Bewerbung — Aiman Renovation"
   }
 }

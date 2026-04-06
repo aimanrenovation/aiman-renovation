@@ -23,9 +23,13 @@ export const PHOTO_MAP: Record<string, string> = {
   "electricite": "/images/photo-electricite.jpg",
   "plomberie": "/images/photo-plomberie.jpg",
   "carrelage": "/images/photo-carrelage.jpg",
+  "sols-carrelage": "/images/photo-carrelage.jpg",
   "facade-isolation": "/images/photo-facade.jpg",
+  "facade": "/images/photo-facade.jpg",
+  "isolation": "/images/photo-facade.jpg",
   "paysager": "/images/photo-paysager.jpg",
   "peinture-finitions": "/images/photo-peinture.jpg",
+  "peinture": "/images/photo-peinture.jpg",
   "borne-recharge": "/images/photo-borne-recharge.jpg",
   "panneaux-photovoltaiques": "/images/photo-photovoltaique.jpg",
   "entretien-exterieur": "/images/photo-entretien-exterieur.jpg",
@@ -39,11 +43,16 @@ export const ICON_MAP: Record<string, string> = {
   "electricite": "/images/icon-electricite.png",
   "plomberie": "/images/icon-plomberie.png",
   "carrelage": "/images/icon-carrelage.png",
+  "sols-carrelage": "/images/icon-carrelage.png",
   "facade-isolation": "/images/icon-facade.png",
+  "facade": "/images/icon-facade.png",
+  "isolation": "/images/icon-facade.png",
   "paysager": "/images/icon-paysager.png",
   "peinture-finitions": "/images/icon-peinture.png",
+  "peinture": "/images/icon-peinture.png",
   "borne-recharge": "/images/icon-borne-recharge.png",
   "panneaux-photovoltaiques": "/images/icon-photovoltaique.png",
+  "renovation-complete": "/images/icon-cuisine.png",
 };
 
 export const SERVICES: Service[] = [
@@ -439,5 +448,145 @@ export const SERVICES: Service[] = [
     seoTitle: "Rénovation Complète Maison Appartement Saint-Louis 68",
     seoDescription: "Rénovation complète maison et appartement à Saint-Louis 68300, Mulhouse, Haut-Rhin. Tous corps de métier, interlocuteur unique, clé en main. Devis gratuit.",
     relatedSlugs: ["cuisine", "salle-de-bain", "electricite", "plomberie"],
+  },
+  {
+    slug: "peinture",
+    title: "Peinture intérieure et extérieure",
+    shortTitle: "Peinture",
+    description:
+      "Travaux de peinture réalisés par des peintres professionnels. Préparation des supports, sous-couche, finitions impeccables dans tout le Haut-Rhin.",
+    icon: "🎨",
+    features: [
+      "Peinture intérieure (murs, plafonds, boiseries)",
+      "Peinture extérieure microporeuse",
+      "Enduits décoratifs (tadelakt, stuc vénitien)",
+      "Papier peint et revêtements muraux",
+      "Préparation des supports : rebouchage, ponçage, primaire",
+      "Peinture sur bois, métal et béton",
+    ],
+    longDescription:
+      "La peinture est le premier signe d'un intérieur soigné — et le dernier poste sur lequel il ne faut pas lésiner. Chez Aiman Renovation, nos peintres professionnels interviennent à Saint-Louis et dans tout le Haut-Rhin pour vous garantir un résultat durable, uniforme et esthétique.\n\nTout commence par la préparation des supports, étape qui représente 70 % du travail et que beaucoup d'amateurs négligent. Rebouchage des fissures avec enduit de lissage, ponçage fin, dépoussiérage et application d'un primaire d'accrochage adapté au support (plâtre, BA13, brique, béton) : sans cette base, même la meilleure peinture cloque en moins de 5 ans. Nous utilisons des peintures de marques professionnelles — Tollens, Sikkens, Zolpan — en finition mate, satinée ou brillante selon l'usage de chaque pièce.\n\nPour les espaces humides (cuisine, salle de bain), nous choisissons des peintures antifongiques résistantes à la vapeur. Pour les couloirs et escaliers soumis aux chocs, des peintures glycéro ou acrylique haute résistance. Pour vos extérieurs, des peintures microporeuses qui laissent respirer les murs tout en les protégeant des intempéries alsaciennes.\n\nNous réalisons également des finitions décoratives : enduit tadelakt pour un effet hammam, stuc vénitien nacré, béton ciré mural, badigeon à la chaux pour les maisons anciennes. Ces techniques artisanales donnent un caractère unique à votre intérieur. Que ce soit pour un appartement à Huningue, une maison à Bartenheim ou un bureau à Saint-Louis, nous vous accompagnons du choix des couleurs jusqu'au nettoyage final.",
+    process: [
+      { step: "Protection du chantier", detail: "Bâchage des sols, meubles et menuiseries. Pose de rubans de masquage sur les plinthes, encadrements et prises." },
+      { step: "Préparation des supports", detail: "Rebouchage des fissures et trous, ponçage, lessivage des surfaces grasses, traitement des taches et moisissures." },
+      { step: "Application du primaire", detail: "Impression adaptée au support pour uniformiser l'absorption et garantir l'adhérence de la finition." },
+      { step: "Couches de peinture", detail: "Deux couches minimum de peinture de finition appliquées au rouleau, pinceau ou airless selon les surfaces." },
+      { step: "Retouches et livraison", detail: "Inspection sous éclairage rasant, retouches des éventuels défauts, retrait des protections et nettoyage complet." },
+    ],
+    whyPro:
+      "Un travail de peinture réussi repose à 70% sur la préparation du support. Sans ponçage, rebouchage et primaire adaptés, la peinture cloque, s'écaille et jaunit en 2 à 3 ans. Nos peintres maîtrisent les supports alsaciens (enduit à la chaux, crépi, béton) et choisissent les produits appropriés à chaque cas. Outils professionnels, finitions irréprochables, délais tenus : c'est la différence entre un amateur et Aiman Renovation. Garantie de résultat, sans mauvaise surprise.",
+    priceRange: "20 € – 45 € / m² murs et plafonds, préparation et 2 couches comprises",
+  },
+  {
+    slug: "sols-carrelage",
+    title: "Sols et carrelage",
+    shortTitle: "Sols & Carrelage",
+    description:
+      "Pose de carrelage, parquet, vinyle, béton ciré. Préparation des supports et finitions soignées pour tous vos sols intérieurs et extérieurs.",
+    icon: "🏗️",
+    features: [
+      "Carrelage grand format (60x60, 80x80, 120x60)",
+      "Parquet massif et parquet contrecollé",
+      "Sol vinyle LVT et PVC haute résistance",
+      "Béton ciré et résine de sol",
+      "Carrelage extérieur antidérapant",
+      "Ragréage et préparation du support",
+    ],
+    longDescription:
+      "Le sol est la première surface que l'on ressent sous les pieds et l'un des éléments qui définit le style d'une pièce. Un carrelage grand format en grès cérame pour une salle de bain épurée, un parquet en chêne huilé pour un salon chaleureux, un béton ciré pour une cuisine contemporaine — Aiman Renovation pose tous les types de revêtements de sol avec le soin artisanal qui garantit un résultat durable.\n\nChaque chantier commence par une évaluation rigoureuse du support : contrôle de la planéité au niveau laser, mesure du taux d'humidité, test d'adhérence. Si le sol n'est pas parfaitement plan — ce qui est souvent le cas dans les logements anciens du Haut-Rhin — nous procédons à un ragréage avec une chape fluide autonivelante. Cette étape invisible est pourtant déterminante : un carrelage posé sur un support défectueux se fissure et se décolle inévitablement.\n\nPour le carrelage, nous maîtrisons toutes les techniques de calepinage : pose droite, décalée, en chevron, en diagonale. Nous travaillons les grands formats avec des outils professionnels (coupe-carreaux diamant, table de découpe laser) pour des joints parfaitement alignés. Pour les parquets, nous proposons la pose à colle pour un résultat massif et silencieux, ou la pose flottante pour les installations plus légères.\n\nSur les terrasses et espaces extérieurs, nous posons des carreaux de grès cérame antidérapants (R11-R13) sur plots réglables ou en collage direct sur dalle béton. Nos interventions couvrent Saint-Louis, Huningue, Hegenheim, Kembs, Rixheim, Habsheim et toute la zone frontalière Bâle/Alsace.",
+    process: [
+      { step: "Évaluation du support", detail: "Contrôle de la planéité au niveau laser, mesure du taux d'humidité, identification des défauts structurels." },
+      { step: "Préparation du support", detail: "Ragréage autonivelant si nécessaire, primaire d'accrochage, traitement des fissures et joints de dilatation." },
+      { step: "Choix du calepinage", detail: "Plan de pose définissant le sens, la taille des joints, le point de départ et les motifs spécifiques." },
+      { step: "Pose du revêtement", detail: "Collage ou pose flottante selon le matériau, découpes précises avec outils diamant, respect des joints de dilatation." },
+      { step: "Jointoiement et finitions", detail: "Joints de couleur assortie, plinthes, barres de seuil inox, nettoyage approfondi et protection du revêtement." },
+    ],
+    whyPro:
+      "Un carrelage mal posé se fissure, sonne creux et se décolle en quelques années. La préparation du support, la sélection de la colle adaptée au format et au support, et le respect des joints de dilatation sont des étapes techniques qui exigent un savoir-faire réel. Nos carreleurs utilisent des outils professionnels et cumulant des années d'expérience dans le Haut-Rhin. Résultat garanti, conforme aux DTU 52.1 et 52.2.",
+    priceRange: "40 € – 120 € / m² pose comprise, selon le type de revêtement et la complexité",
+  },
+  {
+    slug: "renovation-complete",
+    title: "Rénovation complète",
+    shortTitle: "Rénovation complète",
+    description:
+      "Rénovation totale de votre logement, de A à Z. Un interlocuteur unique qui coordonne tous les corps de métier pour un résultat clé en main.",
+    icon: "🏠",
+    features: [
+      "Coordination de tous les corps de métier",
+      "Démolition et gros œuvre léger",
+      "Électricité, plomberie, chauffage",
+      "Isolation thermique et acoustique",
+      "Carrelage, parquet, peinture",
+      "Cuisine et salle de bain",
+    ],
+    longDescription:
+      "Rénover entièrement un appartement ou une maison est un projet complexe qui implique une dizaine de corps de métier différents, des délais à coordonner et un budget à maîtriser. Aiman Renovation vous propose une solution clé en main : un interlocuteur unique qui prend en charge l'intégralité des travaux, de la démolition aux finitions, sans que vous ayez à gérer la coordination entre artisans.\n\nNous intervenons sur tous types de logements : appartements des années 70 à Saint-Louis ou Mulhouse, maisons alsaciennes à colombages dans les villages du Haut-Rhin, pavillons récents des communes frontalières (Hegenheim, Blotzheim, Kembs, Rixheim, Habsheim). Chaque rénovation complète débute par une visite technique approfondie et l'établissement d'un planning de chantier détaillé.\n\nNos équipes maîtrisent tous les corps de métier nécessaires : démolition (cloisons, revêtements, sanitaires), mise aux normes électriques NF C 15-100, plomberie (remplacement des réseaux vétustes en plomb ou acier galvanisé), isolation thermique et phonique, carrelage, parquet, peinture, pose de cuisines et salles de bain. Nous travaillons avec un réseau de sous-traitants qualifiés pour les travaux spécialisés (charpente, couverture, menuiseries extérieures).\n\nLa rénovation complète est aussi l'occasion de repenser la distribution des pièces. Supprimer une cloison pour ouvrir le séjour sur la cuisine, créer une salle de bain supplémentaire, aménager les combles — nous vous conseillons sur les modifications structurelles possibles et obtenons les autorisations nécessaires (déclaration préalable, permis de construire si requis).",
+    process: [
+      { step: "Visite technique et diagnostic", detail: "Évaluation complète du logement : état des structures, réseaux électriques et sanitaires, isolation, revêtements." },
+      { step: "Plan de rénovation et devis", detail: "Programme de travaux détaillé, plans d'aménagement, planning de chantier et devis global avec phasage des coûts." },
+      { step: "Démolition et gros œuvre", detail: "Dépose des anciens revêtements, démolition des cloisons prévues, évacuation des gravats, préparation des supports." },
+      { step: "Travaux techniques", detail: "Électricité, plomberie, chauffage, isolation — interventions réalisées dans l'ordre logique du chantier pour éviter les reprises." },
+      { step: "Finitions et livraison", detail: "Carrelage, parquet, peinture, pose des équipements (cuisine, salle de bain), nettoyage de chantier et remise des clés." },
+    ],
+    whyPro:
+      "Gérer soi-même une rénovation complète en faisant appel à plusieurs artisans séparément est une source de stress, de dépassements de budget et de délais allongés. Un artisan qui attend un autre, des plannings qui se télescopent, des finitions reprises parce que le plâtre n'était pas sec — ces situations coûtent du temps et de l'argent. Aiman Renovation coordonne tout. Un devis global, un planning tenu, une garantie décennale sur l'ensemble des travaux.",
+    priceRange: "30 000 € – 120 000 € selon la superficie, l'état du logement et le niveau de finition",
+  },
+  {
+    slug: "isolation",
+    title: "Isolation thermique et acoustique",
+    shortTitle: "Isolation",
+    description:
+      "Isolation par l'extérieur (ITE), par l'intérieur (ITI) et isolation acoustique. Réduisez vos factures de chauffage et améliorez votre confort.",
+    icon: "🏛️",
+    features: [
+      "Isolation thermique par l'extérieur (ITE)",
+      "Isolation thermique par l'intérieur (ITI)",
+      "Isolation des combles perdus et aménagés",
+      "Isolation acoustique inter-logements",
+      "Isolation des planchers bas sur vide sanitaire",
+      "Éligibilité MaPrimeRénov' et CEE",
+    ],
+    longDescription:
+      "En Alsace, les hivers rigoureux et les étés de plus en plus chauds rendent l'isolation thermique indispensable. Une maison mal isolée perd jusqu'à 30 % de sa chaleur par les murs, 25 % par les combles et 15 % par le sol. Aiman Renovation est spécialisé dans l'isolation thermique, que ce soit par l'extérieur (ITE) ou par l'intérieur (ITI), pour réduire significativement vos factures de chauffage et améliorer votre confort quotidien.\n\nL'isolation thermique par l'extérieur (ITE) est la solution la plus performante pour les maisons individuelles : elle supprime les ponts thermiques, protège la structure du bâtiment contre les cycles gel/dégel et embellit la façade simultanément. Nous posons des panneaux isolants de 80 à 200 mm (polystyrène graphité, laine de roche ou fibre de bois pour les constructions écologiques), recouverts d'un enduit de finition dans le coloris de votre choix.\n\nL'isolation par l'intérieur (ITI) est privilégiée lorsque l'ITE n'est pas possible (contraintes architecturales, copropriété, bâtiment classé). Nous utilisons des doublages en laine de verre, laine de roche ou polyuréthane, fixés sur rail métallique avec un plaquistage en plaque de plâtre haute performance. L'isolation des combles perdus, réalisée par soufflage de ouate de cellulose ou de laine minérale en vrac, est l'investissement le plus rentable : dès 1 €/m², avec un retour sur investissement en moins de 3 ans.\n\nTravaux éligibles à MaPrimeRénov' (jusqu'à 75 € / m² pour une ITE), aux Certificats d'Économie d'Énergie (CEE) et à l'éco-PTZ. Aiman Renovation vous accompagne dans le montage des dossiers d'aides pour minimiser votre reste à charge.",
+    process: [
+      { step: "Audit thermique", detail: "Bilan thermique du logement, identification des zones de déperditions prioritaires, simulation des économies d'énergie." },
+      { step: "Choix de la solution", detail: "ITE, ITI ou isolation des combles : sélection de la solution optimale selon le bâtiment, le budget et les aides disponibles." },
+      { step: "Montage des aides", detail: "Constitution du dossier MaPrimeRénov', CEE et éco-PTZ. Sélection des matériaux éligibles aux certifications Acermi." },
+      { step: "Travaux d'isolation", detail: "Pose des panneaux isolants, fixation mécanique et collage, traitement des ponts thermiques, jointement." },
+      { step: "Finition et contrôle", detail: "Application de l'enduit de finition ou plaquistage, contrôle de la continuité de l'isolant, nettoyage du chantier." },
+    ],
+    whyPro:
+      "Une isolation mal exécutée peut créer des ponts thermiques, des condensations internes et des moisissures, aggravant la situation plutôt qu'en l'améliorant. Les matériaux doivent être certifiés Acermi et les travaux réalisés par un professionnel RGE (Reconnu Garant de l'Environnement) pour être éligibles aux aides financières. Aiman Renovation est qualifié RGE et vous accompagne de l'audit thermique jusqu'à la réception du chantier.",
+    priceRange: "80 € – 200 € / m² pour une ITE, 30 € – 80 € / m² pour une ITI, 20 € – 50 € / m² pour les combles",
+  },
+  {
+    slug: "facade",
+    title: "Ravalement de façade",
+    shortTitle: "Façade",
+    description:
+      "Ravalement de façade, enduits, crépis et peinture extérieure. Redonnez de l'éclat à votre bâtiment tout en le protégeant des intempéries.",
+    icon: "🏛️",
+    features: [
+      "Ravalement de façade enduit et crépi",
+      "Peinture extérieure microporeuse",
+      "Traitement des fissures et infiltrations",
+      "Nettoyage haute pression et anti-mousse",
+      "Réparation des balcons et corniches",
+      "Échafaudage et balisage de sécurité",
+    ],
+    longDescription:
+      "La façade est la première image de votre maison. Un ravalement soigné restitue l'éclat d'origine d'un bâtiment tout en le protégeant durablement contre les intempéries, les pollutions et les UV. En Alsace, le climat marqué (gel en hiver, chaleurs en été, pluies abondantes au printemps) exige des matériaux spécifiques et une mise en œuvre rigoureuse.\n\nAiman Renovation réalise des ravalements de façade complets sur maisons individuelles, pavillons et immeubles de petite taille dans tout le Haut-Rhin : Saint-Louis, Huningue, Hegenheim, Bartenheim, Blotzheim, Kembs, Rixheim, Habsheim, Mulhouse. Nos équipes interviennent sur tous les types de supports : enduit monocouche, enduit traditionnel à la chaux, crépi projeté, bardage, brique ou pierre.\n\nChaque ravalement commence par un nettoyage haute pression (150 à 250 bars) pour éliminer les salissures, mousses et lichens incrustés. Vient ensuite la réparation des fissures (bouchage à l'enduit fibré, pose de bandelettes armées pour les fissures structurelles), le traitement des remontées d'humidité et des joints de dilatation. L'enduit de finition est ensuite appliqué : gratté, taloché, ribbé ou projeté selon l'effet désiré, en monocouche ou bicouche, avec un revêtement de façade souple (RFS) pour absorber les micro-fissures.\n\nNous respectons scrupuleusement les prescriptions des Architectes des Bâtiments de France pour les secteurs protégés, et obtenons les autorisations nécessaires (déclaration préalable en mairie) avant tout démarrage de chantier. Nos interventions sont encadrées par des échafaudages certifiés et des bâches de protection des riverains.",
+    process: [
+      { step: "Diagnostic de façade", detail: "Inspection de l'état des enduits, identification des fissures, des zones de décollement et des infiltrations potentielles." },
+      { step: "Montage de l'échafaudage", detail: "Installation sécurisée de l'échafaudage, bâchage des ouvertures et protection des espaces verts adjacents." },
+      { step: "Nettoyage et décapage", detail: "Nettoyage haute pression (150-250 bars), grattage des zones décollées, brossage et traitement anti-mousse." },
+      { step: "Réparation et préparation", detail: "Rebouchage des fissures avec enduit fibré, pose d'armatures sur les fissures actives, traitement des joints." },
+      { step: "Application de l'enduit", detail: "Sous-couche d'accrochage, application de l'enduit de finition (gratté, taloché ou ribbé), coloris selon votre choix." },
+    ],
+    whyPro:
+      "Un ravalement mal exécuté peut entraîner des décollements d'enduit en 2 à 3 ans, des infiltrations d'eau dans les murs et une dégradation accélérée du bâtiment. Le montage d'un échafaudage, le choix des enduits adaptés au support et la gestion des fissures structurelles nécessitent un savoir-faire professionnel. De plus, au-delà de 20 m² de façade, le ravalement doit être déclaré en mairie. Aiman Renovation gère toutes les démarches et vous garantit un résultat qui tient dans le temps.",
+    priceRange: "30 € – 80 € / m² pour un ravalement simple, 60 € – 120 € / m² pour un ravalement avec réparations",
   },
 ];

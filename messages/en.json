@@ -6,7 +6,6 @@
     "about": "About",
     "contact": "Contact",
     "faq": "FAQ",
-    "carrieres": "Careers",
     "cta": "Free quote"
   },
   "common": {
@@ -818,44 +817,204 @@
       "priceRange": "Call-out + diagnosis: from €90, repair on quote"
     },
     {
-      "slug": "renovation-complete",
-      "title": "Full renovation",
-      "shortTitle": "Full renovation",
-      "description": "Complete renovation of your apartment or house. One point of contact, all trades coordinated, turnkey result.",
-      "icon": "🏠",
+      "slug": "peinture",
+      "title": "Interior & Exterior Painting",
+      "shortTitle": "Painting",
+      "description": "Professional painting services in the Haut-Rhin area. Surface preparation, undercoat, and flawless finishes for homes and businesses.",
+      "icon": "🎨",
       "features": [
-        "Complete project management",
-        "All trades covered",
-        "Demolition and stripping",
-        "Full interior works",
-        "High-end finishes",
-        "Ten-year warranty"
+        "Interior painting (walls, ceilings, woodwork)",
+        "Exterior microporous paint",
+        "Decorative coatings (tadelakt, Venetian stucco)",
+        "Wallpaper and wall coverings",
+        "Surface preparation: filling, sanding, priming",
+        "Painting on wood, metal and concrete"
       ],
-      "longDescription": "Fully renovating an apartment or house is a complex project involving many trades: demolition, plumbing, electrical, tiling, painting, joinery. Coordinating these interventions, managing schedules and ensuring quality at every stage — that's exactly what Aiman Renovation does for you.\n\nAs your project manager, we are your single point of contact. You don't need to deal with ten different craftsmen or manage schedules. We handle the entire project: from the initial diagnosis to handing over the keys.\n\nWe work in Saint-Louis, Mulhouse, Huningue, Hégenheim and the entire cross-border zone Haut-Rhin / Basel. Every renovation is unique, every budget is respected.",
+      "longDescription": "Paint is the first sign of a well-maintained interior — and the last item you should cut corners on. At Aiman Renovation, our professional painters work in Saint-Louis and throughout Haut-Rhin to guarantee a durable, uniform and attractive result.\n\nEverything starts with surface preparation — a step that represents 70% of the work and that many amateurs neglect. Filling cracks with smoothing compound, fine sanding, dedusting and applying a bonding primer suited to the surface (plaster, drywall, brick, concrete): without this base, even the best paint blisters in less than 5 years. We use professional-grade paints from Tollens, Sikkens, and Zolpan, in matte, satin or gloss finishes depending on how each room is used.\n\nFor damp areas (kitchen, bathroom), we choose antifungal paints resistant to steam. For corridors and staircases subject to shocks, high-resistance alkyd or acrylic paints. For your exteriors, microporous paints that let walls breathe while protecting them from the elements.\n\nWe also create decorative finishes: tadelakt plaster for a hammam effect, pearlescent Venetian stucco, wall polished concrete, lime wash for period houses. Whether it is an apartment in Huningue, a house in Bartenheim or an office in Saint-Louis, we guide you from colour selection to final cleaning.",
       "process": [
         {
-          "step": "Visit and diagnosis",
-          "detail": "Complete inspection of the property: condition of networks, walls, floors and roof. Identification of mandatory works and possible improvements."
+          "step": "Site protection",
+          "detail": "Covering floors, furniture and joinery. Masking tape on skirting boards, frames and sockets."
         },
         {
-          "step": "Design and quote",
-          "detail": "Detailed layout plan, material selection, transparent overall quote by trade. No surprises during the project."
+          "step": "Surface preparation",
+          "detail": "Filling cracks and holes, sanding, washing greasy surfaces, treating stains and mould."
         },
         {
-          "step": "Demolition",
-          "detail": "Careful dismantling of elements to be replaced, rubble removal, consolidation if necessary."
+          "step": "Primer application",
+          "detail": "Suitable primer for the substrate to even out absorption and ensure adhesion of the finish coat."
         },
         {
-          "step": "Interior works",
-          "detail": "Plumbing, electrical, insulation, plastering in the right order for an optimal result."
+          "step": "Paint coats",
+          "detail": "Minimum two finish coats applied by roller, brush or airless spray depending on the surface."
+        },
+        {
+          "step": "Touch-ups and handover",
+          "detail": "Inspection under raking light, touch-ups of any defects, removal of protection and thorough cleaning."
+        }
+      ],
+      "whyPro": "A successful paint job depends 70% on surface preparation. Without proper sanding, filling and priming, paint blisters, peels and yellows within 2 to 3 years. Our painters master Alsatian substrates (lime render, pebbledash, concrete) and select the right products for each case. Professional tools, flawless finishes, deadlines met — that is the difference between a DIY job and Aiman Renovation.",
+      "priceRange": "€20 – €45 / m² for walls and ceilings, preparation and 2 coats included"
+    },
+    {
+      "slug": "sols-carrelage",
+      "title": "Flooring & Tiling",
+      "shortTitle": "Flooring",
+      "description": "Tiling, hardwood flooring, vinyl and polished concrete. Careful substrate preparation and finishing for all interior and exterior floors.",
+      "icon": "🏗️",
+      "features": [
+        "Large-format tiles (60x60, 80x80, 120x60)",
+        "Solid and engineered hardwood flooring",
+        "LVT vinyl and high-resistance PVC",
+        "Polished concrete and resin floors",
+        "Non-slip outdoor tiles",
+        "Screeding and substrate preparation"
+      ],
+      "longDescription": "The floor is the first surface you feel underfoot and one of the elements that defines the style of a room. Large-format porcelain stoneware for a sleek bathroom, oiled oak parquet for a warm living room, polished concrete for a contemporary kitchen — Aiman Renovation lays all types of floor coverings with the craftsmanship that guarantees a lasting result.\n\nEvery project starts with a rigorous substrate assessment: flatness check with a laser level, moisture measurement, adhesion test. If the floor is not perfectly level — common in older properties in Haut-Rhin — we carry out a self-levelling compound screed. This invisible step is crucial: tiles laid on a defective substrate will inevitably crack and lift.\n\nFor tiling, we master all laying patterns: straight, offset, herringbone, diagonal. We cut large formats with professional tools (diamond tile saw, laser cutting table) for perfectly aligned joints. For parquet, we offer glue-down laying for a solid, silent result, or floating installation for lighter applications.\n\nOn terraces and outdoor areas, we lay anti-slip porcelain stoneware (R11-R13) on adjustable pedestals or direct adhesive bonding on a concrete slab. Our work covers Saint-Louis, Huningue, Hegenheim, Kembs, Rixheim, Habsheim and the entire Basel border area.",
+      "process": [
+        {
+          "step": "Substrate assessment",
+          "detail": "Flatness check with laser level, moisture measurement, identification of structural defects."
+        },
+        {
+          "step": "Substrate preparation",
+          "detail": "Self-levelling screed if needed, bonding primer, crack and expansion joint treatment."
+        },
+        {
+          "step": "Layout planning",
+          "detail": "Laying plan defining direction, joint size, starting point and specific patterns."
+        },
+        {
+          "step": "Floor laying",
+          "detail": "Glue-down or floating installation depending on material, precise cuts with diamond tools, expansion joints respected."
+        },
+        {
+          "step": "Grouting and finishing",
+          "detail": "Matching grout, skirting boards, stainless threshold bars, thorough cleaning and surface protection."
+        }
+      ],
+      "whyPro": "Poorly laid tiles crack, sound hollow and lift within a few years. Substrate preparation, selecting the right adhesive for the format and substrate, and respecting expansion joints all require real expertise. Our tilers use professional tools and bring years of experience in Haut-Rhin. Guaranteed result, compliant with DTU 52.1 and 52.2.",
+      "priceRange": "€40 – €120 / m² including laying, depending on covering type and complexity"
+    },
+    {
+      "slug": "renovation-complete",
+      "title": "Complete Renovation",
+      "shortTitle": "Full Renovation",
+      "description": "Total renovation of your home from A to Z. One single point of contact coordinating all trades for a turnkey result.",
+      "icon": "🏠",
+      "features": [
+        "Coordination of all trades",
+        "Demolition and light structural work",
+        "Electrical, plumbing and heating",
+        "Thermal and acoustic insulation",
+        "Tiling, flooring and painting",
+        "Kitchen and bathroom"
+      ],
+      "longDescription": "A full renovation of an apartment or house is a complex project involving a dozen different trades, timelines to coordinate and a budget to manage. Aiman Renovation offers a turnkey solution: a single point of contact who handles everything from demolition to finishes, so you never have to manage the coordination between contractors.\n\nWe work on all types of properties: 1970s apartments in Saint-Louis or Mulhouse, Alsatian half-timbered houses in Haut-Rhin villages, modern suburban houses in border towns (Hegenheim, Blotzheim, Kembs, Rixheim, Habsheim). Every full renovation begins with a thorough technical inspection and the drawing up of a detailed project schedule.\n\nOur teams master all required trades: demolition (partition walls, coverings, sanitary ware), electrical standards upgrade NF C 15-100, plumbing (replacement of ageing lead or galvanised steel networks), thermal and acoustic insulation, tiling, parquet, painting, kitchen and bathroom fitting. We work with a network of qualified subcontractors for specialist works (timber frame, roofing, external joinery).\n\nA complete renovation is also the opportunity to rethink the room layout. Removing a partition to open the living room onto the kitchen, creating an extra bathroom, converting the loft — we advise on feasible structural changes and obtain the necessary approvals (prior declaration, building permit if required).",
+      "process": [
+        {
+          "step": "Technical inspection and diagnosis",
+          "detail": "Full assessment of the property: structural condition, electrical and sanitary networks, insulation, coverings."
+        },
+        {
+          "step": "Renovation plan and quote",
+          "detail": "Detailed work programme, layout plans, project schedule and global quote with phased costs."
+        },
+        {
+          "step": "Demolition and structural work",
+          "detail": "Removal of old coverings, planned partition demolition, rubble disposal, substrate preparation."
+        },
+        {
+          "step": "Technical works",
+          "detail": "Electrical, plumbing, heating, insulation — carried out in the logical order to avoid rework."
         },
         {
           "step": "Finishes and handover",
-          "detail": "Tiling, painting, joinery, lighting. Full cleaning, handover visit with you, snagging resolved within 48h."
+          "detail": "Tiling, flooring, painting, fitting of kitchen and bathroom, site cleaning and key handover."
         }
       ],
-      "whyPro": "A successful full renovation is above all a matter of coordination. A tradesman who arrives too early or too late can block the entire site. Aiman Renovation masters the logical order of interventions and anticipates every constraint to offer you a smooth project within the announced deadlines.",
-      "priceRange": "€20,000 – €80,000 depending on the area and condition of the property (estimate before visit)"
+      "whyPro": "Managing a full renovation yourself by calling on several separate contractors is a source of stress, budget overruns and extended delays. A contractor waiting on another, clashing schedules, finishes redone because the plaster was not dry — these situations cost time and money. Aiman Renovation coordinates everything. One global quote, one schedule maintained, one ten-year guarantee on all works.",
+      "priceRange": "€30,000 – €120,000 depending on floor area, property condition and finish level"
+    },
+    {
+      "slug": "isolation",
+      "title": "Thermal & Acoustic Insulation",
+      "shortTitle": "Insulation",
+      "description": "External insulation (EWI), internal insulation and acoustic insulation. Reduce your heating bills and improve your comfort.",
+      "icon": "🏛️",
+      "features": [
+        "External wall insulation (EWI)",
+        "Internal wall insulation (IWI)",
+        "Loft insulation (loose-fill and batt)",
+        "Acoustic insulation between dwellings",
+        "Ground floor insulation on crawl space",
+        "Eligible for MaPrimeRénov' and CEE grants"
+      ],
+      "longDescription": "In Alsace, harsh winters and increasingly hot summers make thermal insulation essential. A poorly insulated house loses up to 30% of its heat through walls, 25% through the roof and 15% through the floor. Aiman Renovation specialises in thermal insulation — whether external (EWI) or internal (IWI) — to significantly reduce your heating bills and improve your daily comfort.\n\nExternal wall insulation (EWI) is the most effective solution for detached houses: it eliminates cold bridges, protects the building structure from freeze-thaw cycles and beautifies the facade at the same time. We install insulation panels of 80 to 200 mm (graphite polystyrene, rock wool or wood fibre for eco-friendly builds), covered with a render finish in your chosen colour.\n\nInternal wall insulation (IWI) is preferred when EWI is not possible (architectural constraints, listed building, co-ownership). We use glass wool, rock wool or polyurethane cavity wall boards, fixed on metal rails with high-performance plasterboard. Loft insulation, carried out by blowing cellulose wadding or loose mineral wool, is the most cost-effective investment: from €1/m², with a return on investment in under 3 years.\n\nWorks eligible for MaPrimeRénov' (up to €75/m² for EWI), Energy Savings Certificates (CEE) and eco-PTZ. Aiman Renovation helps you compile the grant applications to minimise your out-of-pocket costs.",
+      "process": [
+        {
+          "step": "Thermal audit",
+          "detail": "Thermal assessment of the property, identification of priority heat-loss areas, energy savings simulation."
+        },
+        {
+          "step": "Solution selection",
+          "detail": "EWI, IWI or loft insulation: choosing the optimal solution for the building, budget and available grants."
+        },
+        {
+          "step": "Grant applications",
+          "detail": "MaPrimeRénov', CEE and eco-PTZ file preparation. Selection of Acermi-certified materials."
+        },
+        {
+          "step": "Insulation works",
+          "detail": "Insulation panel installation, mechanical fixing and bonding, cold bridge treatment, jointing."
+        },
+        {
+          "step": "Finish and inspection",
+          "detail": "Render or plasterboard finish, insulation continuity check, site cleaning."
+        }
+      ],
+      "whyPro": "Poorly executed insulation can create cold bridges, internal condensation and mould, making the situation worse rather than better. Materials must be Acermi-certified and works carried out by an RGE-qualified (Reconnu Garant de l'Environnement) professional to be eligible for financial grants. Aiman Renovation holds RGE accreditation and guides you from the thermal audit to project completion.",
+      "priceRange": "€80 – €200 / m² for EWI, €30 – €80 / m² for IWI, €20 – €50 / m² for loft insulation"
+    },
+    {
+      "slug": "facade",
+      "title": "Facade Rendering & Renovation",
+      "shortTitle": "Facade",
+      "description": "Facade rendering, render coats, masonry paint and weatherproofing. Restore your building's appearance while protecting it from the elements.",
+      "icon": "🏛️",
+      "features": [
+        "Full facade render and roughcast",
+        "Microporous exterior masonry paint",
+        "Crack and damp treatment",
+        "High-pressure washing and anti-moss treatment",
+        "Balcony and cornice repair",
+        "Certified scaffolding and site safety"
+      ],
+      "longDescription": "The facade is the first impression your home makes. A quality render restores the original appearance of a building while protecting it durably against weather, pollution and UV. In Alsace, the extreme climate (frost in winter, heat in summer, heavy spring rain) demands specific materials and rigorous workmanship.\n\nAiman Renovation carries out complete facade renovations on detached houses and small apartment blocks throughout Haut-Rhin: Saint-Louis, Huningue, Hegenheim, Bartenheim, Blotzheim, Kembs, Rixheim, Habsheim, Mulhouse. Our teams work on all types of surfaces: monocouche render, traditional lime render, pebbledash, cladding, brick or stone.\n\nEvery facade renovation starts with high-pressure washing (150 to 250 bar) to remove ingrained dirt, moss and lichen. Next comes crack repair (filling with fibre-reinforced render, reinforcing mesh on structural cracks), treatment of rising damp and movement joints. The finish render is then applied: scraped, floated, roughcast or sprayed depending on the desired effect, in single or double coat, with a flexible facade coating (RFS) to absorb micro-cracks.\n\nWe strictly follow the requirements of the Architects of Historic Buildings for protected areas and obtain the necessary approvals (prior planning declaration) before any work begins. Our operations are secured with certified scaffolding and neighbour protection sheeting.",
+      "process": [
+        {
+          "step": "Facade diagnosis",
+          "detail": "Assessment of render condition, identification of cracks, detached areas and potential water ingress."
+        },
+        {
+          "step": "Scaffolding erection",
+          "detail": "Safe scaffolding installation, protection of openings and adjacent green spaces."
+        },
+        {
+          "step": "Cleaning and stripping",
+          "detail": "High-pressure washing (150-250 bar), scraping of loose areas, brushing and anti-moss treatment."
+        },
+        {
+          "step": "Repair and preparation",
+          "detail": "Crack filling with fibre-reinforced render, reinforcement mesh on active cracks, joint treatment."
+        },
+        {
+          "step": "Render application",
+          "detail": "Bonding primer, finish render application (scraped, floated or roughcast), colour to your specification."
+        }
+      ],
+      "whyPro": "A poorly executed render can lead to delamination within 2 to 3 years, water ingress into walls and accelerated building deterioration. Erecting scaffolding, choosing renders suited to the substrate and handling structural cracks all require professional expertise. Furthermore, facade works over 20 m² must be declared to the local planning authority. Aiman Renovation handles all formalities and guarantees a result that stands the test of time.",
+      "priceRange": "€30 – €80 / m² for a standard render, €60 – €120 / m² for render with repairs"
     }
   ],
   "contact": {
@@ -1756,8 +1915,7 @@
       "EV Charging Station",
       "Solar Panels",
       "Exterior Maintenance",
-      "Emergency Repairs",
-      "Full renovation"
+      "Emergency Repairs"
     ],
     "catalog_name": "Our renovation services"
   },
@@ -1784,95 +1942,5 @@
     "cta": "Book my free assessment",
     "dismiss": "Maybe later",
     "mention": "Offer valid until end of May 2026"
-  },
-  "carrieres": {
-    "seo_title": "Careers — Join Aiman Renovation | Saint-Louis Alsace",
-    "seo_description": "Aiman Renovation is hiring passionate craftspeople in Saint-Louis and surrounding areas. Mason, painter, electrician, tiler — apply now.",
-    "hero_image_alt": "Aiman Renovation team in uniform — careers Saint-Louis",
-    "badge": "We're hiring",
-    "hero_title_line1": "What if the next hire",
-    "hero_title_line2": "is you?",
-    "hero_subtitle": "Aiman Renovation is growing. We're looking for passionate craftspeople, proud of their trade, who want to build something lasting with a team that takes care of its people.",
-    "hero_cta": "Apply now",
-    "why_title": "Why",
-    "why_title_highlight": "join us",
-    "why_subtitle": "A family business that invests in its teams, tools, and quality of work.",
-    "values": [
-      {
-        "title": "A team that respects you",
-        "description": "No turnover. No unnecessary pressure. We work together, listen to each other, and take care of one another."
-      },
-      {
-        "title": "Beautiful work",
-        "description": "Varied and high-quality projects: full renovations, bathrooms, kitchens, facades, outdoor spaces. Work you can put your heart into."
-      },
-      {
-        "title": "Grow with us",
-        "description": "Funded training, multi-skilling valued, salary that follows your progress. Your skills grow, your pay does too."
-      },
-      {
-        "title": "Pro tools and equipment",
-        "description": "Vehicle, PPE, quality tools, technology (MagicPlan, ProGBat). We invest so you can do good work."
-      }
-    ],
-    "positions_title": "Open positions",
-    "positions_subtitle": "Full-time permanent contracts, based in Saint-Louis (68) — Alsace and Basel area projects.",
-    "positions": [
-      {
-        "title": "Mason / Plasterer (multi-skilled)",
-        "type": "Permanent — Full-time",
-        "description": "Structural work, partitions, plastering, screeds and finishing work on full renovation projects.",
-        "requirements": [
-          "Minimum 2 years experience in renovation",
-          "Driving license required",
-          "Autonomous on small projects",
-          "Careful, rigorous, punctual"
-        ]
-      },
-      {
-        "title": "Building painter",
-        "type": "Permanent — Full-time",
-        "description": "Surface preparation, wall coverings, interior and exterior painting, facade renovation.",
-        "requirements": [
-          "Vocational training or equivalent experience",
-          "Mastery of finishing techniques",
-          "Eye for detail and beautiful work",
-          "Team spirit"
-        ]
-      },
-      {
-        "title": "Qualified electrician",
-        "type": "Permanent — Full-time",
-        "description": "Electrical installation and renovation: panel, sockets, lighting, EV charging stations, home automation, code compliance.",
-        "requirements": [
-          "Up-to-date electrical certifications (B1V, BR, BC)",
-          "Minimum 3 years experience",
-          "Knowledge of NF C 15-100",
-          "Reading plans and schematics"
-        ]
-      },
-      {
-        "title": "Tiler",
-        "type": "Permanent — Full-time",
-        "description": "Tile and ceramic installation for bathrooms, kitchens, floors and terraces. Careful finishing required.",
-        "requirements": [
-          "2 years experience in all formats",
-          "Mastery of cuts and joints",
-          "Aesthetic sense",
-          "Driving license"
-        ]
-      }
-    ],
-    "apply_button": "Apply",
-    "spontaneous_title": "Your trade isn't listed?",
-    "spontaneous_text": "We're always listening for good profiles. Roofer, plumber, carpenter, landscaper... If you like doing your work well, we have something to talk about.",
-    "spontaneous_cta": "Spontaneous application",
-    "contact_title": "A question before applying?",
-    "contact_subtitle": "We're available. Call us, write to us, or come see us.",
-    "contact_email_label": "Email",
-    "contact_phone_label": "Phone",
-    "contact_location_label": "Office",
-    "contact_more": "Contact page",
-    "email_subject": "Job application — Aiman Renovation"
   }
 }
