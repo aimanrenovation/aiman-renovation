@@ -1436,7 +1436,69 @@
     "hero_title_highlight": "PORTFOLIO",
     "hero_subtitle": "Every project is unique. Here is an overview of our transformations in the Basel area and Haut-Rhin. Renovations carried out with rigour, from the first hammer blow to the final touch.",
     "filter_all": "All",
-    "no_results": "No projects in this category yet."
+    "no_results": "No projects in this category yet.",
+    "projects": [
+      {
+        "title": "Contemporary open-plan kitchen",
+        "duration": "4 weeks",
+        "surface": "18 m²",
+        "description": "Complete transformation of a closed kitchen into an open living space. Central island, quartz worktop, recessed LED lighting."
+      },
+      {
+        "title": "Modern master bathroom",
+        "duration": "3 weeks",
+        "surface": "9 m²",
+        "description": "Replacement of a bathtub with a walk-in shower. Wall-hung double vanity, large-format marble-effect tiles, illuminated niche."
+      },
+      {
+        "title": "External wall insulation facade",
+        "duration": "5 weeks",
+        "surface": "180 m²",
+        "description": "External thermal insulation of a 1970s house. 16 cm polystyrene, stone-tone scraped render. Estimated energy savings: 40%."
+      },
+      {
+        "title": "Landscaped garden with terrace",
+        "duration": "3 weeks",
+        "surface": "85 m²",
+        "description": "Creation of a composite wood terrace, interlocking paver pathways, hedge planting, outdoor LED lighting."
+      },
+      {
+        "title": "EV charging station in condominium",
+        "duration": "2 days",
+        "surface": "—",
+        "description": "Installation of a 7.4 kW wallbox in the underground car park of a 24-unit condominium. Cable run from the main distribution board."
+      },
+      {
+        "title": "6 kWp photovoltaic installation",
+        "duration": "3 days",
+        "surface": "32 m² of panels",
+        "description": "Installation of 16 monocrystalline panels on a south-facing roof. Self-consumption with surplus feed-in. Estimated output: 6,500 kWh/year."
+      },
+      {
+        "title": "Full apartment renovation",
+        "duration": "6 weeks",
+        "surface": "72 m²",
+        "description": "Complete painting (walls and ceilings), laminate flooring, electrical upgrade and bathroom replacement. A fully transformed apartment."
+      },
+      {
+        "title": "Electrical compliance upgrade",
+        "duration": "2 weeks",
+        "surface": "110 m²",
+        "description": "Complete replacement of the electrical panel, new wiring, additional sockets and switches, LED lighting throughout the house."
+      },
+      {
+        "title": "House plumbing renovation",
+        "duration": "2 weeks",
+        "surface": "—",
+        "description": "Complete replacement of lead pipes with PEX. Installation of a heat-pump water heater. New water point in the utility room."
+      },
+      {
+        "title": "Living room and kitchen tiling",
+        "duration": "2 weeks",
+        "surface": "45 m²",
+        "description": "Laying of 60x120 polished stoneware tiles in concrete effect. Full substrate preparation, colour-matched grout, cove skirting tiles."
+      }
+    ]
   },
   "notFound": {
     "badge": "Error 404",

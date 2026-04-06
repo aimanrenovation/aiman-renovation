@@ -1436,7 +1436,69 @@
     "hero_title_highlight": "RÉALISATIONS",
     "hero_subtitle": "Chaque projet est unique. Voici un aperçu de nos transformations à Saint-Louis et dans le Haut-Rhin. Des rénovations menées avec exigence, du premier coup de masse à la touche finale.",
     "filter_all": "Tous",
-    "no_results": "Aucune réalisation dans cette catégorie pour le moment."
+    "no_results": "Aucune réalisation dans cette catégorie pour le moment.",
+    "projects": [
+      {
+        "title": "Cuisine ouverte contemporaine",
+        "duration": "4 semaines",
+        "surface": "18 m²",
+        "description": "Transformation complète d'une cuisine fermée en un espace ouvert sur le séjour. Îlot central, plan de travail en quartz, éclairage LED encastré."
+      },
+      {
+        "title": "Salle de bain parentale moderne",
+        "duration": "3 semaines",
+        "surface": "9 m²",
+        "description": "Remplacement d'une baignoire par une douche à l'italienne. Double vasque suspendue, carrelage grand format imitation marbre, niche éclairée."
+      },
+      {
+        "title": "Ravalement façade ITE",
+        "duration": "5 semaines",
+        "surface": "180 m²",
+        "description": "Isolation thermique par l'extérieur d'une maison des années 70. Polystyrène 16 cm, enduit gratté ton pierre. Gain énergétique estimé : 40%."
+      },
+      {
+        "title": "Jardin paysager avec terrasse",
+        "duration": "3 semaines",
+        "surface": "85 m²",
+        "description": "Création d'une terrasse en bois composite, allées en pavés autobloquants, plantation de haies, éclairage extérieur LED."
+      },
+      {
+        "title": "Borne de recharge en copropriété",
+        "duration": "2 jours",
+        "surface": "—",
+        "description": "Installation d'une wallbox 7,4 kW dans le parking souterrain d'une copropriété de 24 lots. Tirage de câble depuis le tableau général."
+      },
+      {
+        "title": "Installation photovoltaïque 6 kWc",
+        "duration": "3 jours",
+        "surface": "32 m² de panneaux",
+        "description": "Pose de 16 panneaux monocristallins sur toiture sud. Autoconsommation avec revente du surplus à EDF OA. Production estimée : 6 500 kWh/an."
+      },
+      {
+        "title": "Rénovation complète appartement",
+        "duration": "6 semaines",
+        "surface": "72 m²",
+        "description": "Peinture complète (murs et plafonds), pose de parquet stratifié, rénovation électrique et remplacement de la salle de bain. Un appartement transformé."
+      },
+      {
+        "title": "Mise aux normes électrique",
+        "duration": "2 semaines",
+        "surface": "110 m²",
+        "description": "Remplacement complet du tableau électrique, passage de nouveaux câbles, ajout de prises et interrupteurs, installation éclairage LED dans toute la maison."
+      },
+      {
+        "title": "Rénovation plomberie maison",
+        "duration": "2 semaines",
+        "surface": "—",
+        "description": "Remplacement complet des canalisations en plomb par du PER. Installation d'un chauffe-eau thermodynamique. Création d'un point d'eau en buanderie."
+      },
+      {
+        "title": "Carrelage salon et cuisine",
+        "duration": "2 semaines",
+        "surface": "45 m²",
+        "description": "Pose de carrelage grès cérame 60x120 imitation béton ciré. Ragréage complet du support, joints fins assortis, plinthes à gorge."
+      }
+    ]
   },
   "notFound": {
     "badge": "Erreur 404",

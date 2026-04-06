@@ -1436,7 +1436,69 @@
     "hero_title_highlight": "REFERENZEN",
     "hero_subtitle": "Jedes Projekt ist einzigartig. Hier ein Einblick in unsere Transformationen in der Region Basel und im Dreiländereck. Renovierungen mit Anspruch, vom ersten Abbruch bis zum letzten Finish.",
     "filter_all": "Alle",
-    "no_results": "Noch keine Projekte in dieser Kategorie."
+    "no_results": "Noch keine Projekte in dieser Kategorie.",
+    "projects": [
+      {
+        "title": "Offene Küche im modernen Stil",
+        "duration": "4 Wochen",
+        "surface": "18 m²",
+        "description": "Kompletter Umbau einer geschlossenen Küche zu einem offenen Wohnbereich. Kochinsel, Quarz-Arbeitsplatte, eingebaute LED-Beleuchtung."
+      },
+      {
+        "title": "Modernes Eltern-Badezimmer",
+        "duration": "3 Wochen",
+        "surface": "9 m²",
+        "description": "Ersatz der Badewanne durch eine bodengleiche Dusche. Doppelwaschtisch, grossformatige Marmor-Optik-Fliesen, beleuchtete Nische."
+      },
+      {
+        "title": "Fassadensanierung mit Wärmedämmung",
+        "duration": "5 Wochen",
+        "surface": "180 m²",
+        "description": "Aussendämmung eines Hauses aus den 70er-Jahren. 16 cm Polystyrol, Kratzputz in Steinfarbe. Geschätzter Energiegewinn: 40%."
+      },
+      {
+        "title": "Gartengestaltung mit Terrasse",
+        "duration": "3 Wochen",
+        "surface": "85 m²",
+        "description": "Erstellung einer WPC-Terrasse, Wege aus Verbundpflaster, Heckenbepflanzung, LED-Aussenbeleuchtung."
+      },
+      {
+        "title": "Ladestation in Mehrfamilienhaus",
+        "duration": "2 Tage",
+        "surface": "—",
+        "description": "Installation einer 7,4 kW Wallbox in der Tiefgarage einer Wohnanlage mit 24 Einheiten. Kabelverlegung vom Hauptverteiler."
+      },
+      {
+        "title": "Photovoltaikanlage 6 kWp",
+        "duration": "3 Tage",
+        "surface": "32 m² Paneele",
+        "description": "Montage von 16 monokristallinen Modulen auf Süddach. Eigenverbrauch mit Überschusseinspeisung. Geschätzte Produktion: 6'500 kWh/Jahr."
+      },
+      {
+        "title": "Komplettrenovierung Wohnung",
+        "duration": "6 Wochen",
+        "surface": "72 m²",
+        "description": "Kompletter Anstrich (Wände und Decken), Verlegung von Laminatparkett, Elektrosanierung und Badezimmerumbau. Eine komplett verwandelte Wohnung."
+      },
+      {
+        "title": "Elektrische Normgerechte Sanierung",
+        "duration": "2 Wochen",
+        "surface": "110 m²",
+        "description": "Kompletttausch des Elektroverteilerkastens, neue Kabelverlegung, zusätzliche Steckdosen und Schalter, LED-Beleuchtung im ganzen Haus."
+      },
+      {
+        "title": "Sanitärsanierung Einfamilienhaus",
+        "duration": "2 Wochen",
+        "surface": "—",
+        "description": "Kompletttausch der Bleileitungen durch PEX. Installation einer Wärmepumpen-Warmwasserbereiter. Neuer Wasseranschluss im Hauswirtschaftsraum."
+      },
+      {
+        "title": "Fliesen Wohn- und Küchenbereich",
+        "duration": "2 Wochen",
+        "surface": "45 m²",
+        "description": "Verlegung von Feinsteinzeug-Fliesen 60x120 in Sichtbeton-Optik. Komplette Untergrundvorbereitung, farblich abgestimmte Fugen, Hohlkehl-Sockelleisten."
+      }
+    ]
   },
   "notFound": {
     "badge": "Fehler 404",

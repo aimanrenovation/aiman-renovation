@@ -6,118 +6,26 @@ import { useTranslations } from "next-intl";
 import { BeforeAfterSlider } from "@/components/sections/before-after-slider";
 import { ScrollReveal } from "@/components/sections/scroll-reveal";
 
-const PROJECTS = [
-  {
-    title: "Cuisine ouverte contemporaine",
-    service: "cuisine",
-    location: "Saint-Louis",
-    duration: "4 semaines",
-    surface: "18 m²",
-    description:
-      "Transformation complète d'une cuisine fermée en un espace ouvert sur le séjour. Îlot central, plan de travail en quartz, éclairage LED encastré.",
-    before: "/images/realisations/cuisine-avant.jpg",
-    after: "/images/realisations/cuisine-apres.jpg",
-  },
-  {
-    title: "Salle de bain parentale moderne",
-    service: "salle-de-bain",
-    location: "Huningue",
-    duration: "3 semaines",
-    surface: "9 m²",
-    description:
-      "Remplacement d'une baignoire par une douche à l'italienne. Double vasque suspendue, carrelage grand format imitation marbre, niche éclairée.",
-    before: "/images/realisations/salle-de-bain-avant.jpg",
-    after: "/images/realisations/salle-de-bain-apres.jpg",
-  },
-  {
-    title: "Ravalement façade ITE",
-    service: "facade-isolation",
-    location: "Hésingue",
-    duration: "5 semaines",
-    surface: "180 m²",
-    description:
-      "Isolation thermique par l'extérieur d'une maison des années 70. Polystyrène 16 cm, enduit gratté ton pierre. Gain énergétique estimé : 40%.",
-    before: "/images/realisations/facade-ite-avant.jpg",
-    after: "/images/realisations/facade-ite-apres.jpg",
-  },
-  {
-    title: "Jardin paysager avec terrasse",
-    service: "paysager",
-    location: "Blotzheim",
-    duration: "3 semaines",
-    surface: "85 m²",
-    description:
-      "Création d'une terrasse en bois composite, allées en pavés autobloquants, plantation de haies, éclairage extérieur LED.",
-    before: "/images/realisations/jardin-avant.jpg",
-    after: "/images/realisations/jardin-apres.jpg",
-  },
-  {
-    title: "Borne de recharge en copropriété",
-    service: "borne-recharge",
-    location: "Saint-Louis",
-    duration: "2 jours",
-    surface: "—",
-    description:
-      "Installation d'une wallbox 7,4 kW dans le parking souterrain d'une copropriété de 24 lots. Tirage de câble depuis le tableau général.",
-    before: "/images/realisations/borne-irve-avant.jpg",
-    after: "/images/realisations/borne-irve-apres.jpg",
-  },
-  {
-    title: "Installation photovoltaïque 6 kWc",
-    service: "panneaux-photovoltaiques",
-    location: "Bartenheim",
-    duration: "3 jours",
-    surface: "32 m² de panneaux",
-    description:
-      "Pose de 16 panneaux monocristallins sur toiture sud. Autoconsommation avec revente du surplus à EDF OA. Production estimée : 6 500 kWh/an.",
-    before: "/images/realisations/panneaux-solaires-avant.jpg",
-    after: "/images/realisations/panneaux-solaires-apres.jpg",
-  },
-  {
-    title: "Rénovation complète appartement",
-    service: "peinture-finitions",
-    location: "Village-Neuf",
-    duration: "6 semaines",
-    surface: "72 m²",
-    description:
-      "Peinture complète (murs et plafonds), pose de parquet stratifié, rénovation électrique et remplacement de la salle de bain. Un appartement transformé.",
-    before: "/images/realisations/peinture-avant.jpg",
-    after: "/images/realisations/peinture-apres.jpg",
-  },
-  {
-    title: "Mise aux normes électrique",
-    service: "electricite",
-    location: "Kembs",
-    duration: "2 semaines",
-    surface: "110 m²",
-    description:
-      "Remplacement complet du tableau électrique, passage de nouveaux câbles, ajout de prises et interrupteurs, installation éclairage LED dans toute la maison.",
-    before: "/images/realisations/electricite-avant.jpg",
-    after: "/images/realisations/electricite-apres.jpg",
-  },
-  {
-    title: "Rénovation plomberie maison",
-    service: "plomberie",
-    location: "Blotzheim",
-    duration: "2 semaines",
-    surface: "—",
-    description:
-      "Remplacement complet des canalisations en plomb par du PER. Installation d'un chauffe-eau thermodynamique. Création d'un point d'eau en buanderie.",
-    before: "/images/realisations/plomberie-avant.jpg",
-    after: "/images/realisations/plomberie-apres.jpg",
-  },
-  {
-    title: "Carrelage salon et cuisine",
-    service: "carrelage",
-    location: "Huningue",
-    duration: "2 semaines",
-    surface: "45 m²",
-    description:
-      "Pose de carrelage grès cérame 60x120 imitation béton ciré. Ragréage complet du support, joints fins assortis, plinthes à gorge.",
-    before: "/images/realisations/carrelage-avant.jpg",
-    after: "/images/realisations/carrelage-apres.jpg",
-  },
+/* Static data that does NOT need translation (images, slugs, locations) */
+const PROJECT_META = [
+  { service: "cuisine", location: "Saint-Louis", before: "/images/realisations/cuisine-avant.jpg", after: "/images/realisations/cuisine-apres.jpg" },
+  { service: "salle-de-bain", location: "Huningue", before: "/images/realisations/salle-de-bain-avant.jpg", after: "/images/realisations/salle-de-bain-apres.jpg" },
+  { service: "facade-isolation", location: "Hésingue", before: "/images/realisations/facade-ite-avant.jpg", after: "/images/realisations/facade-ite-apres.jpg" },
+  { service: "paysager", location: "Blotzheim", before: "/images/realisations/jardin-avant.jpg", after: "/images/realisations/jardin-apres.jpg" },
+  { service: "borne-recharge", location: "Saint-Louis", before: "/images/realisations/borne-irve-avant.jpg", after: "/images/realisations/borne-irve-apres.jpg" },
+  { service: "panneaux-photovoltaiques", location: "Bartenheim", before: "/images/realisations/panneaux-solaires-avant.jpg", after: "/images/realisations/panneaux-solaires-apres.jpg" },
+  { service: "peinture-finitions", location: "Village-Neuf", before: "/images/realisations/peinture-avant.jpg", after: "/images/realisations/peinture-apres.jpg" },
+  { service: "electricite", location: "Kembs", before: "/images/realisations/electricite-avant.jpg", after: "/images/realisations/electricite-apres.jpg" },
+  { service: "plomberie", location: "Blotzheim", before: "/images/realisations/plomberie-avant.jpg", after: "/images/realisations/plomberie-apres.jpg" },
+  { service: "carrelage", location: "Huningue", before: "/images/realisations/carrelage-avant.jpg", after: "/images/realisations/carrelage-apres.jpg" },
 ];
+
+interface TranslatedProject {
+  title: string;
+  duration: string;
+  surface: string;
+  description: string;
+}
 
 interface TranslatedService {
   slug: string;
@@ -129,6 +37,16 @@ export function RealisationsGrid() {
   const tRealisations = useTranslations("realisations");
   const serviceItems = tRoot.raw("service_items") as TranslatedService[];
   const serviceMap = new Map(serviceItems.map((s) => [s.slug, s]));
+
+  const translatedProjects = tRealisations.raw("projects") as TranslatedProject[];
+
+  const PROJECTS = PROJECT_META.map((meta, i) => ({
+    ...meta,
+    title: translatedProjects[i]?.title ?? "",
+    duration: translatedProjects[i]?.duration ?? "",
+    surface: translatedProjects[i]?.surface ?? "",
+    description: translatedProjects[i]?.description ?? "",
+  }));
 
   const FILTER_SERVICES = [
     { slug: "all", label: tRealisations("filter_all") },

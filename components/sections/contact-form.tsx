@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useTranslations } from "next-intl";
 
 export function ContactForm() {
+  const t = useTranslations("contact.form");
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -24,7 +26,7 @@ export function ContactForm() {
         body: JSON.stringify(data),
       });
 
-      if (!res.ok) throw new Error("Erreur serveur");
+      if (!res.ok) throw new Error("Server error");
       setStatus("success");
       form.reset();
     } catch {
@@ -35,60 +37,60 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <h2 className="font-heading text-xl text-white mb-4">
-        ENVOYEZ-NOUS UN MESSAGE
+        {t("title")}
       </h2>
 
       <div className="space-y-1.5">
         <label htmlFor="nom" className="text-sm font-medium text-gray-300">
-          Nom
+          {t("label_name")}
         </label>
         <input
           id="nom"
           name="nom"
           type="text"
           required
-          placeholder="Votre nom"
+          placeholder={t("placeholder_name")}
           className="w-full rounded-lg border border-white/10 bg-[#111111] px-4 py-3 text-white placeholder:text-gray-500 outline-none focus:border-[#E50000] focus:ring-1 focus:ring-[#E50000]/50 transition-colors"
         />
       </div>
 
       <div className="space-y-1.5">
         <label htmlFor="email" className="text-sm font-medium text-gray-300">
-          Email
+          {t("label_email")}
         </label>
         <input
           id="email"
           name="email"
           type="email"
           required
-          placeholder="votre@email.com"
+          placeholder={t("placeholder_email")}
           className="w-full rounded-lg border border-white/10 bg-[#111111] px-4 py-3 text-white placeholder:text-gray-500 outline-none focus:border-[#E50000] focus:ring-1 focus:ring-[#E50000]/50 transition-colors"
         />
       </div>
 
       <div className="space-y-1.5">
         <label htmlFor="telephone" className="text-sm font-medium text-gray-300">
-          T&eacute;l&eacute;phone
+          {t("label_phone")}
         </label>
         <input
           id="telephone"
           name="telephone"
           type="tel"
-          placeholder="06 00 00 00 00"
+          placeholder={t("placeholder_phone")}
           className="w-full rounded-lg border border-white/10 bg-[#111111] px-4 py-3 text-white placeholder:text-gray-500 outline-none focus:border-[#E50000] focus:ring-1 focus:ring-[#E50000]/50 transition-colors"
         />
       </div>
 
       <div className="space-y-1.5">
         <label htmlFor="message" className="text-sm font-medium text-gray-300">
-          Message
+          {t("label_message")}
         </label>
         <textarea
           id="message"
           name="message"
           required
           rows={5}
-          placeholder="D&eacute;crivez votre projet..."
+          placeholder={t("placeholder_message")}
           className="w-full rounded-lg border border-white/10 bg-[#111111] px-4 py-3 text-white placeholder:text-gray-500 outline-none focus:border-[#E50000] focus:ring-1 focus:ring-[#E50000]/50 transition-colors resize-none"
         />
       </div>
@@ -98,18 +100,18 @@ export function ContactForm() {
         disabled={status === "sending"}
         className="w-full rounded-lg bg-[#E50000] hover:bg-[#B80000] text-white font-semibold py-4 text-lg transition-colors disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
       >
-        {status === "sending" ? "Envoi en cours..." : "Envoyer le message"}
+        {status === "sending" ? t("sending") : t("submit")}
       </button>
 
       {status === "success" && (
         <p className="text-green-400 text-sm text-center">
-          Message envoy&eacute; avec succ&egrave;s ! Nous vous r&eacute;pondrons sous 4 jours.
+          {t("success")}
         </p>
       )}
 
       {status === "error" && (
         <p className="text-red-400 text-sm text-center">
-          Une erreur est survenue. Veuillez r&eacute;essayer ou nous appeler directement.
+          {t("error")}
         </p>
       )}
     </form>
