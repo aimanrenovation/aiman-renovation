@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { LinkButton } from "@/components/ui/link-button";
-
-export const metadata: Metadata = {
-  title: "Page non trouvée — Aiman Renovation",
-  description:
-    "La page demandée n'existe pas. Retournez à l'accueil d'Aiman Renovation.",
-};
 
 const VARIANTS = [
   {
@@ -52,7 +48,11 @@ const VARIANTS = [
 ];
 
 export default function NotFound() {
-  const variant = VARIANTS[Math.floor(Math.random() * VARIANTS.length)];
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    setIndex(Math.floor(Math.random() * VARIANTS.length));
+  }, []);
+  const variant = VARIANTS[index];
 
   return (
     <section className="min-h-[calc(100vh-64px)] bg-black flex items-center justify-center px-6 relative overflow-hidden">
