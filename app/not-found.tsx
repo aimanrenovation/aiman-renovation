@@ -48,11 +48,7 @@ const VARIANTS = [
 ];
 
 export default function NotFound() {
-  const [index, setIndex] = useState(0);
-  useEffect(() => {
-    setIndex(Math.floor(Math.random() * VARIANTS.length));
-  }, []);
-  const variant = VARIANTS[index];
+  const [variant] = useState(() => VARIANTS[Math.floor(Math.random() * VARIANTS.length)]);
 
   return (
     <section className="min-h-[calc(100vh-64px)] bg-black flex items-center justify-center px-6 relative overflow-hidden">
