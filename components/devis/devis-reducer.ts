@@ -64,6 +64,7 @@ export const initialDevisState: DevisState = {
   zoneNotes: createEmptyNotes(),
   zonePhotos: createEmptyPhotos(),
   budget: null,
+  magicplanLink: "",
   message: "",
   contact: {
     firstName: "",
@@ -115,6 +116,9 @@ export function devisReducer(
 
     case "SET_MESSAGE":
       return { ...state, message: action.message };
+
+    case "SET_MAGICPLAN_LINK":
+      return { ...state, magicplanLink: action.link };
 
     case "SET_CONTACT":
       return {

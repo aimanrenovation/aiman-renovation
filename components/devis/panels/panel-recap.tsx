@@ -299,8 +299,24 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
           </div>
         </div>
 
-        {/* MagicPlan CTA */}
+        {/* MagicPlan CTA + lien */}
         <MagicPlanSection />
+        <div className="space-y-1.5">
+          <Label htmlFor="magicplan" className="text-white/70 text-sm">
+            Lien MagicPlan (optionnel)
+          </Label>
+          <Input
+            id="magicplan"
+            type="url"
+            placeholder="https://my.magicplan.app/..."
+            value={state.magicplanLink}
+            onChange={(e) =>
+              dispatch({ type: "SET_MAGICPLAN_LINK", link: e.target.value })
+            }
+            className="bg-white/5 border-white/10 text-white placeholder:text-white/30"
+          />
+          <p className="text-gray-500 text-xs">Collez ici le lien de partage MagicPlan</p>
+        </div>
 
         {/* Message */}
         <div className="space-y-2">

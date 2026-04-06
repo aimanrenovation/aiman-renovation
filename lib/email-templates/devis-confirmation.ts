@@ -82,6 +82,11 @@ export function generateDevisEmailHtml({ data, isClientCopy }: GenerateEmailProp
         <p style="color:#333;font-size:15px;">${data.budget} €</p>
         ` : ""}
 
+        ${"magicplanLink" in data && data.magicplanLink ? `
+        <h2 style="font-size:16px;color:#333;margin:24px 0 12px;border-bottom:2px solid #E50000;padding-bottom:8px;">Plan MagicPlan</h2>
+        <p style="font-size:14px;"><a href="${data.magicplanLink}" style="color:#E50000;">${data.magicplanLink}</a></p>
+        ` : ""}
+
         ${data.message ? `
         <h2 style="font-size:16px;color:#333;margin:24px 0 12px;border-bottom:2px solid #E50000;padding-bottom:8px;">Message</h2>
         <p style="color:#555;font-size:14px;line-height:1.6;white-space:pre-wrap;">${data.message}</p>

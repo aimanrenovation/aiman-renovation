@@ -99,9 +99,11 @@ export function PanelTravaux({ state, dispatch, isMobile }: PanelTravauxProps) {
         {/* Upload photos/vidéos */}
         <div className="space-y-2">
           <label className="text-white text-sm font-semibold">
-            Photos / Vidéos (optionnel)
+            Photos / Vidéos
           </label>
-          <p className="text-gray-500 text-xs">Ajoutez des photos pour nous aider à comprendre vos besoins</p>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-2.5">
+            <p className="text-blue-300 text-xs font-medium">Plus vous ajoutez de photos, plus votre devis sera précis et rapide !</p>
+          </div>
 
           <button
             onClick={() => fileInputRef.current?.click()}
