@@ -37,6 +37,7 @@ export interface DevisState {
   zonePhotos: Record<ZoneId, File[]>;
   budget: BudgetRange | null;
   magicplanLink: string;
+  magicplanProjectId: string | null;
   message: string;
   contact: ContactInfo;
   isSubmitting: boolean;
@@ -51,6 +52,7 @@ export type DevisAction =
   | { type: "SET_BUDGET"; budget: BudgetRange | null }
   | { type: "SET_MESSAGE"; message: string }
   | { type: "SET_MAGICPLAN_LINK"; link: string }
+  | { type: "SET_MAGICPLAN_PROJECT"; projectId: string }
   | { type: "SET_CONTACT"; field: keyof ContactInfo; value: string }
   | { type: "SET_ZONE_NOTE"; zone: ZoneId; note: string }
   | { type: "ADD_ZONE_PHOTOS"; zone: ZoneId; files: File[] }
