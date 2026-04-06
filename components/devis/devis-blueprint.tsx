@@ -34,10 +34,23 @@ function getStorageKey(locale: string) {
 
 function loadSavedState(locale: string): DevisState {
   if (typeof window === "undefined") return initialDevisState;
+
+  // Reset if ?reset=1 or if previous state was "success"
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("reset") === "1") {
+    localStorage.removeItem(getStorageKey(locale));
+    return initialDevisState;
+  }
+
   try {
     const saved = localStorage.getItem(getStorageKey(locale));
     if (!saved) return initialDevisState;
     const parsed = JSON.parse(saved);
+    // Never restore a "success" view — start fresh
+    if (parsed.view === "success") {
+      localStorage.removeItem(getStorageKey(locale));
+      return initialDevisState;
+    }
     return {
       ...initialDevisState,
       ...parsed,

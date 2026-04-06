@@ -69,7 +69,7 @@ export function SeasonalPopup() {
 
         {/* CTA */}
         <Link
-          href="/devis"
+          href="/devis?reset=1"
           onClick={dismiss}
           className="block w-full bg-[#E50000] hover:bg-red-700 text-white font-semibold py-3.5 rounded-xl transition-colors text-sm"
         >
