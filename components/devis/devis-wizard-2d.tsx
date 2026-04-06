@@ -19,7 +19,7 @@ import {
   Upload,
   X,
 } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { devisReducer, initialDevisState } from "./devis-reducer";
 import { ZONES_CONFIG, getZoneConfig } from "./devis-zones-config";
 import type { DevisFormState, BudgetRange } from "./devis-types";

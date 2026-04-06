@@ -1,7 +1,7 @@
 "use client";
 
 import { CheckCircle, Phone, ArrowLeft } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { LinkButton } from "@/components/ui/link-button";
 import type { DevisAction } from "../devis-types";
 
