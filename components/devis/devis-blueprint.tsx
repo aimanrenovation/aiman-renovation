@@ -79,7 +79,7 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
 
   if (state.view === "success") {
     return (
-      <div className="relative min-h-[calc(100vh-64px)] w-full bg-[#091428]">
+      <div className="relative h-dvh w-full bg-[#091428]" style={{ paddingTop: 64 }}>
         <BlueprintComponent state={state} dispatch={dispatch} />
         <StepSuccessOverlay dispatch={dispatch} />
       </div>
@@ -90,13 +90,9 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
 
   if (state.view === "recap") {
     return (
-      <div className="relative h-[calc(100vh-64px)] w-full bg-[#091428] overflow-hidden">
-        <BlueprintComponent state={state} dispatch={dispatch} />
-        {/* Overlay flottant */}
-        <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-          <div className="relative w-full max-w-2xl max-h-[90vh] mx-4 overflow-y-auto rounded-2xl shadow-2xl border border-white/10">
-            <PanelRecap state={state} dispatch={dispatch} onSubmit={handleSubmit} />
-          </div>
+      <div className="fixed inset-0 z-20 flex items-center justify-center bg-black/60 backdrop-blur-sm" style={{ paddingTop: 64 }}>
+        <div className="relative w-full max-w-2xl max-h-[85dvh] mx-4 overflow-y-auto overscroll-contain rounded-2xl shadow-2xl border border-white/10 [-webkit-overflow-scrolling:touch]">
+          <PanelRecap state={state} dispatch={dispatch} onSubmit={handleSubmit} />
         </div>
       </div>
     );
@@ -105,9 +101,9 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
   // ─── Global / Zoomed view ───────────────────────────────────────────
 
   return (
-    <div className="flex h-[calc(100vh-64px)] w-full bg-[#091428] overflow-hidden">
-      {/* Plan area — hauteur fixe, pas de scroll */}
-      <div className="relative flex-1 h-full">
+    <div className="flex w-full bg-[#091428] overflow-hidden" style={{ height: "calc(100dvh - 64px)" }}>
+      {/* Plan area */}
+      <div className="relative flex-1 h-full" style={{ touchAction: "manipulation" }}>
         <BlueprintComponent state={state} dispatch={dispatch} />
       </div>
 

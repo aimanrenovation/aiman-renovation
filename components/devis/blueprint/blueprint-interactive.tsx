@@ -80,7 +80,7 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
         viewBox="0 0 2812 1536"
         className="w-full h-full will-change-transform"
         preserveAspectRatio="xMidYMid meet"
-        style={{ maxWidth: "100%", maxHeight: "100%" }}
+        style={{ maxWidth: "100%", maxHeight: "100%", touchAction: "manipulation" }}
       >
         {/* Styles hover SVG */}
         <style>{`

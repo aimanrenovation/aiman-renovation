@@ -169,7 +169,7 @@ export function PanelTravaux({ state, dispatch, isMobile }: PanelTravauxProps) {
   }
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 max-h-[75vh] bg-[#0A0A0A]/95 backdrop-blur-xl border-t border-white/10 rounded-t-2xl">
+    <div className="fixed inset-x-0 bottom-0 z-50 max-h-[75dvh] bg-[#0A0A0A]/95 backdrop-blur-xl border-t border-white/10 rounded-t-2xl overscroll-contain [-webkit-overflow-scrolling:touch]">
       <div className="flex justify-center py-2">
         <div className="w-10 h-1 rounded-full bg-white/30" />
       </div>

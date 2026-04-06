@@ -42,7 +42,7 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
     totalWorks > 0;
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] px-4 py-8">
+    <div className="bg-[#0A0A0A] px-4 py-6">
       <div className="max-w-2xl mx-auto space-y-8">
         {/* Header */}
         <div className="flex items-center justify-between">
