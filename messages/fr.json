@@ -6,7 +6,8 @@
     "about": "À propos",
     "contact": "Contact",
     "faq": "FAQ",
-    "cta": "Devis gratuit"
+    "cta": "Devis gratuit",
+    "carrieres": "Carrières"
   },
   "common": {
     "company_name": "Aiman Renovation",
@@ -1942,5 +1943,95 @@
     "cta": "Réserver mon diagnostic gratuit",
     "dismiss": "Plus tard",
     "mention": "Offre valable jusqu'à fin mai 2026"
+  },
+  "carrieres": {
+    "seo_title": "Recrutement — Rejoignez Aiman Renovation | Saint-Louis 68",
+    "seo_description": "Aiman Renovation recrute des passionnés de la rénovation à Saint-Louis et alentours. Maçon, peintre, électricien, carreleur — postulez dès maintenant.",
+    "hero_image_alt": "Équipe Aiman Renovation en uniforme — recrutement Saint-Louis",
+    "badge": "On recrute",
+    "hero_title_line1": "Et si la prochaine recrue,",
+    "hero_title_line2": "c'était vous ?",
+    "hero_subtitle": "Aiman Renovation grandit. Nous cherchons des artisans passionnés, fiers de leur métier, qui veulent construire quelque chose de durable avec une équipe qui prend soin de ses gens.",
+    "hero_cta": "Postuler maintenant",
+    "why_title": "Pourquoi nous",
+    "why_title_highlight": "rejoindre",
+    "why_subtitle": "Une entreprise familiale qui investit dans ses équipes, ses outils et la qualité du travail.",
+    "values": [
+      {
+        "title": "Une équipe qui vous respecte",
+        "description": "Pas de turnover. Pas de pression inutile. On travaille ensemble, on s'écoute, et on prend soin les uns des autres."
+      },
+      {
+        "title": "Du beau travail",
+        "description": "Des chantiers variés et qualitatifs : rénovation complète, salle de bain, cuisine, façades, extérieurs. De quoi mettre du cœur à l'ouvrage."
+      },
+      {
+        "title": "Évoluer avec nous",
+        "description": "Formations financées, polyvalence valorisée, salaire qui suit votre progression. Vos compétences grandissent, votre paie aussi."
+      },
+      {
+        "title": "Outils et matériel pro",
+        "description": "Véhicule, EPI, outillage de qualité, technologie (MagicPlan, ProGBat). On investit pour que vous travailliez bien."
+      }
+    ],
+    "positions_title": "Postes à pourvoir",
+    "positions_subtitle": "CDI temps plein, basés à Saint-Louis (68) — chantiers Alsace et Bâle.",
+    "positions": [
+      {
+        "title": "Maçon / Plâtrier polyvalent",
+        "type": "CDI — Temps plein",
+        "description": "Réalisation de gros œuvre, cloisons, enduits, dallages et travaux de finition sur chantiers de rénovation complète.",
+        "requirements": [
+          "Expérience 2 ans minimum en rénovation",
+          "Permis B obligatoire",
+          "Autonomie sur petits chantiers",
+          "Soigneux, rigoureux, ponctuel"
+        ]
+      },
+      {
+        "title": "Peintre en bâtiment",
+        "type": "CDI — Temps plein",
+        "description": "Préparation des supports, pose de revêtements muraux, peinture intérieure et extérieure, ravalements de façades.",
+        "requirements": [
+          "CAP peintre ou expérience équivalente",
+          "Maîtrise des techniques de finition",
+          "Sens du détail et du beau travail",
+          "Esprit d'équipe"
+        ]
+      },
+      {
+        "title": "Électricien qualifié",
+        "type": "CDI — Temps plein",
+        "description": "Installation et rénovation électrique : tableau, prises, éclairage, IRVE (bornes recharge), domotique, mise aux normes.",
+        "requirements": [
+          "Habilitations électriques à jour (B1V, BR, BC)",
+          "Expérience 3 ans minimum",
+          "Connaissance NF C 15-100",
+          "Lecture de plans et schémas"
+        ]
+      },
+      {
+        "title": "Carreleur",
+        "type": "CDI — Temps plein",
+        "description": "Pose de carrelage et faïence pour salles de bain, cuisines, sols et terrasses. Finitions soignées exigées.",
+        "requirements": [
+          "Expérience 2 ans en pose tous formats",
+          "Maîtrise des découpes et joints",
+          "Sens esthétique",
+          "Permis B"
+        ]
+      }
+    ],
+    "apply_button": "Postuler",
+    "spontaneous_title": "Votre métier n'est pas listé ?",
+    "spontaneous_text": "On est toujours à l'écoute des bons profils. Couvreur, plombier, menuisier, paysagiste... Si vous aimez bien faire votre travail, on a quelque chose à se dire.",
+    "spontaneous_cta": "Candidature spontanée",
+    "contact_title": "Une question avant de postuler ?",
+    "contact_subtitle": "On est dispo. Appelez-nous, écrivez-nous ou venez nous voir.",
+    "contact_email_label": "Email",
+    "contact_phone_label": "Téléphone",
+    "contact_location_label": "Bureau",
+    "contact_more": "Page contact",
+    "email_subject": "Candidature — Aiman Renovation"
   }
 }

@@ -10,11 +10,11 @@ export interface Service {
   whyPro: string;
   priceRange: string;
   /** Titre SEO optimisé (50-60 chars), mot-clé + localisation */
-  seoTitle: string;
+  seoTitle?: string;
   /** Description SEO (150-160 chars), incitation au clic */
-  seoDescription: string;
+  seoDescription?: string;
   /** Slugs des services liés pour le maillage interne */
-  relatedSlugs: string[];
+  relatedSlugs?: string[];
 }
 
 export const PHOTO_MAP: Record<string, string> = {

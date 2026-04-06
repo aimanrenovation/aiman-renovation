@@ -104,7 +104,7 @@ export default async function ServicePage({ params }: Props) {
   const priceRange = translated?.priceRange ?? service.priceRange;
 
   const relatedServices = SERVICES.filter(
-    (s) => service.relatedSlugs.includes(s.slug)
+    (s) => (service.relatedSlugs ?? []).includes(s.slug)
   ).slice(0, 3);
 
   // JSON-LD Service — données statiques, aucune entrée utilisateur
