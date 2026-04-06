@@ -113,7 +113,7 @@ export function AddressAutocomplete({ value, onChange }: AddressAutocompleteProp
       </div>
 
       {isOpen && results.length > 0 && (
-        <div className="absolute z-50 w-full mt-1 bg-[#111] border border-white/10 rounded-xl shadow-2xl overflow-hidden max-h-[200px] overflow-y-auto">
+        <div data-lenis-prevent className="absolute z-50 w-full mt-1 bg-[#111] border border-white/10 rounded-xl shadow-2xl overflow-hidden max-h-[200px] overflow-y-auto">
           {results.map((r, i) => (
             <button
               key={i}

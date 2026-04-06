@@ -126,7 +126,7 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
   if (state.view === "recap") {
     return (
       <div className="fixed inset-0 z-20 flex items-center justify-center bg-black/60 backdrop-blur-sm" style={{ paddingTop: 64 }}>
-        <div className="relative w-full max-w-2xl max-h-[85dvh] mx-4 overflow-y-auto overscroll-contain rounded-2xl shadow-2xl border border-white/10 [-webkit-overflow-scrolling:touch]">
+        <div data-lenis-prevent className="relative w-full max-w-2xl max-h-[85dvh] mx-4 overflow-y-auto overscroll-contain rounded-2xl shadow-2xl border border-white/10 [-webkit-overflow-scrolling:touch]">
           <PanelRecap state={state} dispatch={dispatch} onSubmit={handleSubmit} />
         </div>
       </div>

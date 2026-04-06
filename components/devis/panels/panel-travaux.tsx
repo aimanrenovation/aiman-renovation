@@ -60,7 +60,7 @@ export function PanelTravaux({ state, dispatch, isMobile }: PanelTravauxProps) {
       </div>
 
       {/* Contenu scrollable */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div data-lenis-prevent className="flex-1 overflow-y-auto p-4 space-y-4">
         {/* Liste des travaux */}
         <div className="space-y-2">
           {zone.workItems.map((item) => {
