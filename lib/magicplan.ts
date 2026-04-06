@@ -2,8 +2,8 @@ const MAGICPLAN_BASE_URL = "https://cloud.magicplan.app/api/v2";
 
 function getHeaders() {
   return {
-    customer: process.env.MAGICPLAN_CUSTOMER_ID!,
-    key: process.env.MAGICPLAN_API_KEY!,
+    customer: (process.env.MAGICPLAN_CUSTOMER_ID || "").trim(),
+    key: (process.env.MAGICPLAN_API_KEY || "").trim(),
     "Content-Type": "application/json",
   };
 }
@@ -46,5 +46,5 @@ export function getMagicPlanDeepLink(projectId: string): string {
 }
 
 export function verifyWebhookKey(key: string): boolean {
-  return key === process.env.MAGICPLAN_API_KEY;
+  return key.trim() === (process.env.MAGICPLAN_API_KEY || "").trim();
 }

@@ -4,13 +4,13 @@ const s3 = new S3Client({
   region: "fr-par",
   endpoint: "https://s3.fr-par.scw.cloud",
   credentials: {
-    accessKeyId: process.env.SCW_ACCESS_KEY!,
-    secretAccessKey: process.env.SCW_SECRET_KEY!,
+    accessKeyId: (process.env.SCW_ACCESS_KEY || "").trim(),
+    secretAccessKey: (process.env.SCW_SECRET_KEY || "").trim(),
   },
   forcePathStyle: true,
 });
 
-const BUCKET = process.env.SCW_BUCKET!;
+const BUCKET = (process.env.SCW_BUCKET || "").trim();
 
 export async function uploadToS3(params: {
   key: string;
