@@ -90,9 +90,14 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
 
   if (state.view === "recap") {
     return (
-      <div className="relative min-h-[calc(100vh-64px)] w-full bg-[#091428]">
+      <div className="relative h-[calc(100vh-64px)] w-full bg-[#091428] overflow-hidden">
         <BlueprintComponent state={state} dispatch={dispatch} />
-        <PanelRecap state={state} dispatch={dispatch} onSubmit={handleSubmit} />
+        {/* Overlay flottant */}
+        <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div className="relative w-full max-w-2xl max-h-[90vh] mx-4 overflow-y-auto rounded-2xl shadow-2xl border border-white/10">
+            <PanelRecap state={state} dispatch={dispatch} onSubmit={handleSubmit} />
+          </div>
+        </div>
       </div>
     );
   }
