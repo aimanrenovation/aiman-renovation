@@ -26,9 +26,18 @@
     "email_subject": "Enquiry — Renovation Project",
     "email_body": "Hello,\n\nI have a renovation project and I'd like to discuss it with you.\n\nType of work: \nSite address: \nEstimated budget: \n\nPlease get back to me.\n\nKind regards,\n",
     "zones": [
-      "Basel", "Riehen", "Allschwil", "Binningen",
-      "Lörrach", "Weil am Rhein", "Saint-Louis", "Huningue",
-      "Hésingue", "Village-Neuf", "Blotzheim", "Bartenheim"
+      "Basel",
+      "Riehen",
+      "Allschwil",
+      "Binningen",
+      "Lörrach",
+      "Weil am Rhein",
+      "Saint-Louis",
+      "Huningue",
+      "Hésingue",
+      "Village-Neuf",
+      "Blotzheim",
+      "Bartenheim"
     ],
     "zones_and_beyond": "and beyond",
     "zones_subtitle": "Basel area and southern Alsace — we work across the French-Swiss-German border.",
@@ -46,12 +55,30 @@
       "cta_devis": "Free quote",
       "cta_realisations": "Our portfolio",
       "scroll_texts": [
-        { "text": "Your home", "highlight": "deserves better" },
-        { "text": "Our craftsmen", "highlight": "take over" },
-        { "text": "19 years", "highlight": "of experience" },
-        { "text": "Every detail", "highlight": "matters" },
-        { "text": "From floor", "highlight": "to ceiling" },
-        { "text": "We renovate your dreams", "highlight": "to the last detail" }
+        {
+          "text": "Your home",
+          "highlight": "deserves better"
+        },
+        {
+          "text": "Our craftsmen",
+          "highlight": "take over"
+        },
+        {
+          "text": "19 years",
+          "highlight": "of experience"
+        },
+        {
+          "text": "Every detail",
+          "highlight": "matters"
+        },
+        {
+          "text": "From floor",
+          "highlight": "to ceiling"
+        },
+        {
+          "text": "We renovate your dreams",
+          "highlight": "to the last detail"
+        }
       ]
     },
     "savoir_faire": {
@@ -139,12 +166,30 @@
       "title": "WHY CHOOSE",
       "title_highlight": "US",
       "arguments": [
-        { "title": "10-year guarantee", "desc": "All our work is covered by a ten-year structural guarantee and professional liability insurance." },
-        { "title": "Free quote within 4 days", "desc": "On-site survey included, detailed and transparent quote. No obligation." },
-        { "title": "Local craftsman", "desc": "Based in Saint-Louis near Basel, we know the area and the local suppliers." },
-        { "title": "19 years of experience", "desc": "Proven expertise across all renovation trades." },
-        { "title": "Grants guidance", "desc": "MaPrimeRénov', CEE, éco-PTZ — we help you with the paperwork for French renovation grants." },
-        { "title": "Clean worksite", "desc": "Protection, waste removal, thorough cleaning. You get your home back ready to live in." }
+        {
+          "title": "10-year guarantee",
+          "desc": "All our work is covered by a ten-year structural guarantee and professional liability insurance."
+        },
+        {
+          "title": "Free quote within 4 days",
+          "desc": "On-site survey included, detailed and transparent quote. No obligation."
+        },
+        {
+          "title": "Local craftsman",
+          "desc": "Based in Saint-Louis near Basel, we know the area and the local suppliers."
+        },
+        {
+          "title": "19 years of experience",
+          "desc": "Proven expertise across all renovation trades."
+        },
+        {
+          "title": "Grants guidance",
+          "desc": "MaPrimeRénov', CEE, éco-PTZ — we help you with the paperwork for French renovation grants."
+        },
+        {
+          "title": "Clean worksite",
+          "desc": "Protection, waste removal, thorough cleaning. You get your home back ready to live in."
+        }
       ]
     },
     "cta_banner": {
@@ -163,39 +208,113 @@
     "story_title": "OUR",
     "story_title_highlight": "STORY",
     "story_texts": [
-      { "text": "Once upon a time", "highlight": "a boy who dreamt", "story": "While the others played outside, he was drawing houses. He didn't know it yet, but that school notebook was going to change his life." },
-      { "text": "At 20,", "highlight": "he entered the arena", "story": "Cement under his nails, aching back, 12 hours a day. Nobody gave him anything for free. Every wall built, every pipe welded — he learnt everything the hard way." },
-      { "text": "Life brought him", "highlight": "to his knees", "story": "There were days when everything fell apart. Lost contracts, closed doors, rain that wouldn't stop. But a man who falls is not a man who's finished. He's a man who's learning." },
-      { "text": "He got back up", "highlight": "and he led", "story": "Team leader. The one you call when things get complicated. 19 years in the field, hundreds of projects, and one certainty: he was ready." },
-      { "text": "He wore his colours", "highlight": "on his heart", "story": "Aiman Renovation. Not just a name on a jacket. A promise. One single point of contact, every trade, zero compromise on quality." },
-      { "text": "Today, he opens", "highlight": "the doors to his dream", "story": "In the heart of the Three Borders region, the boy who drew houses now builds them for real. And he has just one motto: to renovate your dreams to the last detail." }
+      {
+        "text": "Once upon a time",
+        "highlight": "a boy who dreamt",
+        "story": "While the others played outside, he was drawing houses. He didn't know it yet, but that school notebook was going to change his life."
+      },
+      {
+        "text": "At 20,",
+        "highlight": "he entered the arena",
+        "story": "Cement under his nails, aching back, 12 hours a day. Nobody gave him anything for free. Every wall built, every pipe welded — he learnt everything the hard way."
+      },
+      {
+        "text": "Life brought him",
+        "highlight": "to his knees",
+        "story": "There were days when everything fell apart. Lost contracts, closed doors, rain that wouldn't stop. But a man who falls is not a man who's finished. He's a man who's learning."
+      },
+      {
+        "text": "He got back up",
+        "highlight": "and he led",
+        "story": "Team leader. The one you call when things get complicated. 19 years in the field, hundreds of projects, and one certainty: he was ready."
+      },
+      {
+        "text": "He wore his colours",
+        "highlight": "on his heart",
+        "story": "Aiman Renovation. Not just a name on a jacket. A promise. One single point of contact, every trade, zero compromise on quality."
+      },
+      {
+        "text": "Today, he opens",
+        "highlight": "the doors to his dream",
+        "story": "In the heart of the Three Borders region, the boy who drew houses now builds them for real. And he has just one motto: to renovate your dreams to the last detail."
+      }
     ],
     "process_title": "OUR",
     "process_title_highlight": "PROCESS",
     "steps": [
-      { "number": "01", "title": "First contact", "desc": "You call us or fill in the online form. We discuss your project, your wishes and your budget." },
-      { "number": "02", "title": "Site survey", "desc": "We visit your property to take measurements and assess the existing condition. Free and no obligation." },
-      { "number": "03", "title": "Detailed quote", "desc": "Within 4 days you receive a full quote: work item by item, materials, timeline and total cost." },
-      { "number": "04", "title": "Carrying out the work", "desc": "Our craftsmen work according to the schedule. Aiman supervises every project. Regular progress photos." },
-      { "number": "05", "title": "Handover", "desc": "Joint inspection, point by point. Our 10-year guarantee protects you for a decade." }
+      {
+        "number": "01",
+        "title": "First contact",
+        "desc": "You call us or fill in the online form. We discuss your project, your wishes and your budget."
+      },
+      {
+        "number": "02",
+        "title": "Site survey",
+        "desc": "We visit your property to take measurements and assess the existing condition. Free and no obligation."
+      },
+      {
+        "number": "03",
+        "title": "Detailed quote",
+        "desc": "Within 4 days you receive a full quote: work item by item, materials, timeline and total cost."
+      },
+      {
+        "number": "04",
+        "title": "Carrying out the work",
+        "desc": "Our craftsmen work according to the schedule. Aiman supervises every project. Regular progress photos."
+      },
+      {
+        "number": "05",
+        "title": "Handover",
+        "desc": "Joint inspection, point by point. Our 10-year guarantee protects you for a decade."
+      }
     ],
     "engagements_title": "OUR",
     "engagements_title_highlight": "COMMITMENTS",
     "engagements": [
-      { "title": "Uncompromising quality", "desc": "Selected materials, meticulous execution in accordance with best practice." },
-      { "title": "Deadlines respected", "desc": "The quote schedule is our roadmap. No unpleasant surprises." },
-      { "title": "Clean worksite", "desc": "Protection from day one, thorough cleaning at the end of the project." },
-      { "title": "Total transparency", "desc": "One single point of contact, WhatsApp photos, available Monday to Saturday." },
-      { "title": "Listening and advice", "desc": "If a simpler or more cost-effective solution exists, we'll suggest it." },
-      { "title": "Guaranteed peace of mind", "desc": "10-year guarantee, professional liability insurance. Your investment is protected." }
+      {
+        "title": "Uncompromising quality",
+        "desc": "Selected materials, meticulous execution in accordance with best practice."
+      },
+      {
+        "title": "Deadlines respected",
+        "desc": "The quote schedule is our roadmap. No unpleasant surprises."
+      },
+      {
+        "title": "Clean worksite",
+        "desc": "Protection from day one, thorough cleaning at the end of the project."
+      },
+      {
+        "title": "Total transparency",
+        "desc": "One single point of contact, WhatsApp photos, available Monday to Saturday."
+      },
+      {
+        "title": "Listening and advice",
+        "desc": "If a simpler or more cost-effective solution exists, we'll suggest it."
+      },
+      {
+        "title": "Guaranteed peace of mind",
+        "desc": "10-year guarantee, professional liability insurance. Your investment is protected."
+      }
     ],
     "certifications_title": "CERTIFICATIONS &",
     "certifications_title_highlight": "INSURANCE",
     "certifications": [
-      { "title": "10-year guarantee", "desc": "10 years of cover on the structural integrity of the work." },
-      { "title": "Professional liability", "desc": "Third-party damage covered during works." },
-      { "title": "IRVE certification", "desc": "Electric vehicle charging point installation." },
-      { "title": "Electrical qualifications", "desc": "B1V, B2V, BR, BC — low voltage interventions." }
+      {
+        "title": "10-year guarantee",
+        "desc": "10 years of cover on the structural integrity of the work."
+      },
+      {
+        "title": "Professional liability",
+        "desc": "Third-party damage covered during works."
+      },
+      {
+        "title": "IRVE certification",
+        "desc": "Electric vehicle charging point installation."
+      },
+      {
+        "title": "Electrical qualifications",
+        "desc": "B1V, B2V, BR, BC — low voltage interventions."
+      }
     ]
   },
   "services": {
@@ -242,11 +361,26 @@
       ],
       "longDescription": "The kitchen is the heart of your home — the place where you cook, share and come together. At Aiman Renovation, we design kitchens that combine aesthetics with practicality, tailored to your lifestyle and budget. Whether you want an open-plan kitchen, a central island, or simply to modernise your cabinet fronts and worktop, we support you from start to finish.\n\nOur teams master every trade required: plumbing, electrical work, tiling, joinery, painting. We coordinate the entire project to deliver a turnkey result, so you don't have to manage multiple tradespeople. Every kitchen is designed to measure, taking into account the existing layout, natural light and your daily habits.\n\nWe work with well-known suppliers for the quality of their materials: quartz, granite or high-resistance laminate worktops, ceramic or glass splashbacks, durable tap fittings. The result: a kitchen that stands the test of time and adds value to your property.",
       "process": [
-        { "step": "Taking measurements", "detail": "Site survey to record exact dimensions and identify constraints (water supply, electrical, ventilation)." },
-        { "step": "Project design", "detail": "2D/3D layout plan, choice of materials, colours and fixtures together with you." },
-        { "step": "Removing the old kitchen", "detail": "Careful dismantling, waste removal and preparation of walls and floors." },
-        { "step": "Technical work", "detail": "Plumbing refurbishment, electrical upgrade to standard, tiling and splashback installation." },
-        { "step": "Installation and finishing", "detail": "Cabinet assembly, worktop fitting, connections, painting and final clean." }
+        {
+          "step": "Taking measurements",
+          "detail": "Site survey to record exact dimensions and identify constraints (water supply, electrical, ventilation)."
+        },
+        {
+          "step": "Project design",
+          "detail": "2D/3D layout plan, choice of materials, colours and fixtures together with you."
+        },
+        {
+          "step": "Removing the old kitchen",
+          "detail": "Careful dismantling, waste removal and preparation of walls and floors."
+        },
+        {
+          "step": "Technical work",
+          "detail": "Plumbing refurbishment, electrical upgrade to standard, tiling and splashback installation."
+        },
+        {
+          "step": "Installation and finishing",
+          "detail": "Cabinet assembly, worktop fitting, connections, painting and final clean."
+        }
       ],
       "whyPro": "A kitchen renovation involves plumbing, electrical work, tiling and joinery — all trades that require precise expertise. A faulty seal under the sink, an under-sized electrical circuit or a poorly fitted worktop can lead to costly problems. Hiring a professional means work that meets standards, smooth coordination between trades and a result that lives up to your expectations. Plus, our 10-year guarantee protects you.",
       "priceRange": "€8,000 – €25,000 depending on the area and materials chosen"
@@ -266,11 +400,26 @@
       ],
       "longDescription": "Your bathroom should be a wellness space — functional and pleasant every day. Whether you want to replace an ageing bathtub with a walk-in shower, modernise the tiling or completely rethink the layout, Aiman Renovation offers bespoke solutions tailored to your space and budget.\n\nWaterproofing is at the heart of our concerns: we use under-tile waterproofing systems (SPEC) compliant with current French building standards (DTU), guaranteeing a leak-free bathroom for years to come. Our plumbers carry out connections with care, using durable materials (PEX, multilayer).\n\nFrom wall-mounted basins to double vanity units, large-format tiles to mosaics, we help you choose the fixtures and finishes that match your taste. We also install accessibility solutions (grab bars, level-access showers) for people with reduced mobility.",
       "process": [
-        { "step": "Assessment and survey", "detail": "Inspection of existing plumbing, waterproofing check, precise room measurements." },
-        { "step": "Choosing fixtures", "detail": "Selection of sanitary ware, tap fittings, tiles and accessories according to your wishes and budget." },
-        { "step": "Removal and preparation", "detail": "Removal of old fixtures, stripping walls and floors, checking substrates." },
-        { "step": "Plumbing and waterproofing", "detail": "Hot/cold water network overhaul and drainage, waterproofing system installation (SPEC)." },
-        { "step": "Tiling and finishing", "detail": "Wall and floor tiling, sanitary ware installation, silicone joints, painting and ventilation." }
+        {
+          "step": "Assessment and survey",
+          "detail": "Inspection of existing plumbing, waterproofing check, precise room measurements."
+        },
+        {
+          "step": "Choosing fixtures",
+          "detail": "Selection of sanitary ware, tap fittings, tiles and accessories according to your wishes and budget."
+        },
+        {
+          "step": "Removal and preparation",
+          "detail": "Removal of old fixtures, stripping walls and floors, checking substrates."
+        },
+        {
+          "step": "Plumbing and waterproofing",
+          "detail": "Hot/cold water network overhaul and drainage, waterproofing system installation (SPEC)."
+        },
+        {
+          "step": "Tiling and finishing",
+          "detail": "Wall and floor tiling, sanitary ware installation, silicone joints, painting and ventilation."
+        }
       ],
       "whyPro": "The bathroom is the most technically demanding room in your home. Poor waterproofing can lead to leaks, mould and serious structural damage. Plumbing must be flawless to avoid leaks. Our craftsmen master DTU standards and under-tile waterproofing techniques. With Aiman Renovation, you benefit from a 10-year guarantee and complete peace of mind.",
       "priceRange": "€6,000 – €18,000 depending on the layout and fixtures"
@@ -290,11 +439,26 @@
       ],
       "longDescription": "An outdated or non-compliant electrical installation poses a major safety risk. In Alsace, many older properties need upgrading to meet NF C 15-100 regulations. Aiman Renovation handles the complete or partial renovation of your electrical system, from the consumer unit to the sockets and lighting.\n\nWe carry out a full diagnosis of your existing installation, identify non-compliance issues and propose a tailored renovation plan. Consumer unit replacement, new wiring runs, additional sockets and switches, high-performance LED lighting — every intervention is carried out in compliance with current standards.\n\nWe also offer home automation solutions to control your lighting, roller shutters and heating from your smartphone. A smarter, more energy-efficient and more comfortable home.",
       "process": [
-        { "step": "Electrical diagnosis", "detail": "Full inspection of the existing installation, identification of non-compliance issues and risks." },
-        { "step": "Renovation plan", "detail": "Detailed electrical schematic with positioning of light points, sockets and dedicated circuits." },
-        { "step": "Wiring work", "detail": "Running conduits and cables, recessed or surface-mounted depending on the configuration." },
-        { "step": "Consumer unit installation", "detail": "Fitting the new consumer unit with differential circuit breakers and surge protection." },
-        { "step": "Testing and commissioning", "detail": "Compliance tests, earth verification, commissioning and handover of the electrical schematic." }
+        {
+          "step": "Electrical diagnosis",
+          "detail": "Full inspection of the existing installation, identification of non-compliance issues and risks."
+        },
+        {
+          "step": "Renovation plan",
+          "detail": "Detailed electrical schematic with positioning of light points, sockets and dedicated circuits."
+        },
+        {
+          "step": "Wiring work",
+          "detail": "Running conduits and cables, recessed or surface-mounted depending on the configuration."
+        },
+        {
+          "step": "Consumer unit installation",
+          "detail": "Fitting the new consumer unit with differential circuit breakers and surge protection."
+        },
+        {
+          "step": "Testing and commissioning",
+          "detail": "Compliance tests, earth verification, commissioning and handover of the electrical schematic."
+        }
       ],
       "whyPro": "Electricity does not forgive approximation. A poorly done installation can cause short circuits, fires or electrocution. The NF C 15-100 standard imposes strict rules that only a qualified professional can apply correctly. Furthermore, a compliance certificate (Consuel) is mandatory for major renovations. Entrust your electrical work to Aiman Renovation for a safe and compliant installation.",
       "priceRange": "€3,000 – €12,000 depending on the scope of the renovation (flat or house)"
@@ -314,11 +478,26 @@
       ],
       "longDescription": "Plumbing is the invisible backbone of your home. Old lead or galvanised steel pipes can affect your water quality and cause insidious leaks. Aiman Renovation steps in to renovate, replace or create your supply and drainage networks using modern, durable materials.\n\nWe replace old pipes with PEX or multilayer, install thermodynamic or conventional water heaters, and create new water points wherever you need them: utility room, extra WC, summer kitchen. Every intervention is designed to optimise your comfort while reducing your water consumption.\n\nIn co-ownerships and individual houses alike, we work on risers, sub-meters and public network connections. Our local knowledge of the Haut-Rhin area allows us to work efficiently with the local water utilities.",
       "process": [
-        { "step": "Plumbing diagnosis", "detail": "Visual inspection and pressure test to assess the condition of the existing network." },
-        { "step": "Technical proposal", "detail": "Detailed quote with choice of materials (PEX, multilayer, copper) and network plan." },
-        { "step": "Removal and replacement", "detail": "Removal of old pipes, installation of the new network with zone isolation valves." },
-        { "step": "Connections", "detail": "Connecting sanitary fixtures, water heater, washing machine and dishwasher." },
-        { "step": "Commissioning and testing", "detail": "Pressure leak tests, flow rate verification and confirmation of no leaks." }
+        {
+          "step": "Plumbing diagnosis",
+          "detail": "Visual inspection and pressure test to assess the condition of the existing network."
+        },
+        {
+          "step": "Technical proposal",
+          "detail": "Detailed quote with choice of materials (PEX, multilayer, copper) and network plan."
+        },
+        {
+          "step": "Removal and replacement",
+          "detail": "Removal of old pipes, installation of the new network with zone isolation valves."
+        },
+        {
+          "step": "Connections",
+          "detail": "Connecting sanitary fixtures, water heater, washing machine and dishwasher."
+        },
+        {
+          "step": "Commissioning and testing",
+          "detail": "Pressure leak tests, flow rate verification and confirmation of no leaks."
+        }
       ],
       "whyPro": "A water leak can cause considerable damage in just a few hours: damaged ceilings, mould, short circuits. Plumbing connections require mastery of soldering, crimping techniques and sanitary standards. Choosing Aiman Renovation means a reliable network, clean water and coverage under our 10-year guarantee in the event of a claim.",
       "priceRange": "€2,000 – €10,000 depending on the number of water points and complexity"
@@ -338,11 +517,26 @@
       ],
       "longDescription": "The floor is the first thing you notice when you walk into a room. Well-laid tiles, warm parquet or contemporary polished concrete instantly transform the atmosphere of your interior. Aiman Renovation masters the laying of every type of floor covering, from large-format tiles to solid parquet and premium vinyl.\n\nEvery project starts with meticulous substrate preparation: screeding, levelling, damp treatment where necessary. It's this invisible step that guarantees a perfect, long-lasting result. We then lay the covering of your choice with particular attention to cuts, joints and threshold finishes.\n\nFor outdoor areas, we create porcelain stoneware terraces, natural stone pathways and non-slip pool surrounds. Our experienced tilers work in flats in central Saint-Louis as well as houses in the surrounding villages of the Basel area.",
       "process": [
-        { "step": "Substrate assessment", "detail": "Checking flatness, moisture levels and solidity of the existing floor." },
-        { "step": "Substrate preparation", "detail": "Screeding, bonding primer, flowing screed if necessary for a perfectly level surface." },
-        { "step": "Layout planning", "detail": "Defining the laying direction, joint size and pattern (straight, diagonal, staggered)." },
-        { "step": "Laying the covering", "detail": "Glued or floating installation depending on the material, precise cuts around obstacles." },
-        { "step": "Grouting and finishing", "detail": "Colour-matched grout, skirting boards, threshold strips, deep cleaning." }
+        {
+          "step": "Substrate assessment",
+          "detail": "Checking flatness, moisture levels and solidity of the existing floor."
+        },
+        {
+          "step": "Substrate preparation",
+          "detail": "Screeding, bonding primer, flowing screed if necessary for a perfectly level surface."
+        },
+        {
+          "step": "Layout planning",
+          "detail": "Defining the laying direction, joint size and pattern (straight, diagonal, staggered)."
+        },
+        {
+          "step": "Laying the covering",
+          "detail": "Glued or floating installation depending on the material, precise cuts around obstacles."
+        },
+        {
+          "step": "Grouting and finishing",
+          "detail": "Colour-matched grout, skirting boards, threshold strips, deep cleaning."
+        }
       ],
       "whyPro": "Poorly laid tiles crack, sound hollow and come loose within a few years. Substrate preparation, adhesive choice and expansion joint compliance are technical steps that require genuine expertise. Our tilers have years of experience and use professional tools (diamond tile cutter, laser level) for a flawless, guaranteed result.",
       "priceRange": "€40 – €120 / m² including installation, depending on the type of covering"
@@ -362,11 +556,26 @@
       ],
       "longDescription": "In Alsace, harsh winters make thermal insulation essential. A poorly insulated facade means up to 25% heat loss and soaring heating bills. Aiman Renovation specialises in facade renovation and thermal insulation, whether external (EWI) or internal.\n\nExternal wall insulation (EWI) is the most effective solution: it eliminates thermal bridges, protects the building structure from the elements and beautifies the facade at the same time. We install insulation boards (polystyrene, mineral wool or wood fibre) covered with a finishing render in the colour of your choice.\n\nFor co-ownerships, we carry out complete facade renovations including crack repair, rising damp treatment and the application of breathable renders suited to Alsatian architecture. Our projects comply with local regulations and the requirements of heritage architects where necessary.",
       "process": [
-        { "step": "Facade diagnosis", "detail": "Inspection of the facade condition, identification of cracks, water ingress and thermal bridges." },
-        { "step": "Scaffolding erection", "detail": "Secure scaffolding installation with perimeter protection (nets, sheeting)." },
-        { "step": "Wall preparation", "detail": "High-pressure cleaning, crack repair, anti-moss and damp treatment." },
-        { "step": "Insulation installation", "detail": "Mechanical fixing and bonding of insulation boards, installation of starter and corner profiles." },
-        { "step": "Finishing and render", "detail": "Application of finishing render (scraped, floated or textured), painting, site clean-up." }
+        {
+          "step": "Facade diagnosis",
+          "detail": "Inspection of the facade condition, identification of cracks, water ingress and thermal bridges."
+        },
+        {
+          "step": "Scaffolding erection",
+          "detail": "Secure scaffolding installation with perimeter protection (nets, sheeting)."
+        },
+        {
+          "step": "Wall preparation",
+          "detail": "High-pressure cleaning, crack repair, anti-moss and damp treatment."
+        },
+        {
+          "step": "Insulation installation",
+          "detail": "Mechanical fixing and bonding of insulation boards, installation of starter and corner profiles."
+        },
+        {
+          "step": "Finishing and render",
+          "detail": "Application of finishing render (scraped, floated or textured), painting, site clean-up."
+        }
       ],
       "whyPro": "Insulation and facade renovation are technical works that affect the long-term durability of your building. Poorly installed external insulation can lead to water ingress, delamination and loss of thermal efficiency. These works are eligible for MaPrimeRénov' and CEE grants, but only when carried out by a qualified RGE professional. Aiman Renovation assists you with the grant applications to reduce your out-of-pocket cost.",
       "priceRange": "€80 – €200 / m² for full EWI, €30 – €80 / m² for a standard facade renovation"
@@ -386,11 +595,26 @@
       ],
       "longDescription": "Your outdoor space is the first impression people get of your home. Well-designed landscaping adds value to your property, extends your living space and provides a pleasant setting all year round. Aiman Renovation designs and creates gardens, terraces and outdoor spaces suited to the Alsatian climate and your personal taste.\n\nComposite decking, pedestal-mounted slabs or natural stone terraces, block-paved pathways, retaining walls, aluminium or timber fencing — we master all materials and techniques. We also integrate outdoor lighting (recessed spots, bollards, LED string lights) so you can enjoy your garden in the evening.\n\nOur designs take account of the terrain (slope, drainage, soil type), aspect and your budget. We plant local species resistant to frost and install automatic irrigation systems where needed. From a freshly sown lawn to flowering borders, your outdoor space comes to life.",
       "process": [
-        { "step": "Site survey", "detail": "Soil analysis, slope assessment, natural drainage and sun exposure evaluation." },
-        { "step": "Landscape plan", "detail": "Project design including terrace, pathway, planting and lighting layout." },
-        { "step": "Earthworks", "detail": "Excavation, levelling, geotextile installation and foundation preparation." },
-        { "step": "Construction", "detail": "Building the terrace, pathways, retaining walls, fencing and gates." },
-        { "step": "Planting and finishing", "detail": "Planting, turfing, lighting installation and clean-up." }
+        {
+          "step": "Site survey",
+          "detail": "Soil analysis, slope assessment, natural drainage and sun exposure evaluation."
+        },
+        {
+          "step": "Landscape plan",
+          "detail": "Project design including terrace, pathway, planting and lighting layout."
+        },
+        {
+          "step": "Earthworks",
+          "detail": "Excavation, levelling, geotextile installation and foundation preparation."
+        },
+        {
+          "step": "Construction",
+          "detail": "Building the terrace, pathways, retaining walls, fencing and gates."
+        },
+        {
+          "step": "Planting and finishing",
+          "detail": "Planting, turfing, lighting installation and clean-up."
+        }
       ],
       "whyPro": "Poorly designed outdoor works deteriorate quickly: a terrace that lifts with frost, a pathway that sinks, standing water. Mastery of earthworks, drainage and foundations is essential for a lasting result. Our teams understand the specific challenges of the Alsatian climate (frost, heavy rain) and select appropriate materials. 10-year guarantee included on landscape masonry works.",
       "priceRange": "€5,000 – €30,000 depending on the area and landscaping requirements"
@@ -410,11 +634,26 @@
       ],
       "longDescription": "Painting is much more than a coat of paint: it's the art of enhancing your spaces. Paint applied properly, on a perfectly prepared surface, radically transforms the atmosphere of a room. Aiman Renovation carries out all your interior and exterior painting work with artisan care.\n\nWe always start with surface preparation: filling cracks, sanding, cleaning, applying a bonding primer. This step accounts for 70% of the work time and makes all the difference between an amateur result and a professional finish. We use paints from recognised brands (Tollens, Sikkens, Zolpan) in matt, satin or gloss finishes according to the desired effect.\n\nDecorative renders (tadelakt, stucco, polished concrete walls), designer wallpaper, textured effects — we also create bespoke finishes to give your interior character. For exteriors, we apply microporous paints that let walls breathe while protecting them from the elements.",
       "process": [
-        { "step": "Site protection", "detail": "Covering floors and furniture, masking tape on frames and skirting boards." },
-        { "step": "Surface preparation", "detail": "Filling, sanding, cleaning, primer application. Treatment of stains and mould." },
-        { "step": "Undercoat application", "detail": "First bonding coat to even out the surface and optimise the finish coat adhesion." },
-        { "step": "Finish coats", "detail": "Application of 2 coats of paint with a uniform result, no streaks or drips." },
-        { "step": "Touch-ups and cleaning", "detail": "Inspection under raking light, touch-ups if needed, removal of coverings and clean-up." }
+        {
+          "step": "Site protection",
+          "detail": "Covering floors and furniture, masking tape on frames and skirting boards."
+        },
+        {
+          "step": "Surface preparation",
+          "detail": "Filling, sanding, cleaning, primer application. Treatment of stains and mould."
+        },
+        {
+          "step": "Undercoat application",
+          "detail": "First bonding coat to even out the surface and optimise the finish coat adhesion."
+        },
+        {
+          "step": "Finish coats",
+          "detail": "Application of 2 coats of paint with a uniform result, no streaks or drips."
+        },
+        {
+          "step": "Touch-ups and cleaning",
+          "detail": "Inspection under raking light, touch-ups if needed, removal of coverings and clean-up."
+        }
       ],
       "whyPro": "A successful paint job relies 70% on surface preparation. Without proper sanding, filling and the right primer, paint blisters, peels and yellows prematurely. Our professional painters master preparation techniques, choose the right products for each surface (plaster, wood, metal, cement) and apply paint with professional tools for a flawless finish.",
       "priceRange": "€20 – €45 / m² walls and ceilings, preparation and 2 coats included"
@@ -434,11 +673,26 @@
       ],
       "longDescription": "Electric vehicles are becoming mainstream, and with them comes the need for reliable home charging solutions. Aiman Renovation holds the IRVE certification (Electric Vehicle Charging Infrastructure) and installs charging points in individual homes and shared residential buildings in the Haut-Rhin area.\n\nWe install wallboxes from 7.4 kW to 22 kW depending on your meter capacity and charging needs. In a private home, installation is generally straightforward: cable run from the consumer unit, charger mounted in the garage or outdoors (IP54). In shared buildings, we handle the technical study, general meeting presentation and individual connection.\n\nIRVE certification is mandatory for the installation of chargers above 3.7 kW and is a condition for accessing financial grants. With Aiman Renovation, you benefit from a certified installer, guaranteed equipment and full support in obtaining the French tax credit (up to €300) and the ADVENIR grant for shared buildings.",
       "process": [
-        { "step": "Feasibility study", "detail": "Checking meter capacity, distance from consumer unit to charger, selecting the right charger type." },
-        { "step": "Quote and grants", "detail": "Detailed pricing with grant simulation (tax credit, ADVENIR grant)." },
-        { "step": "Electrical installation", "detail": "Running a dedicated line from the consumer unit, fitting the appropriate circuit breaker and differential." },
-        { "step": "Charger installation", "detail": "Wall or post mounting, electrical connection, configuration and charge test." },
-        { "step": "Commissioning", "detail": "Charger configuration (power, schedules), handover of the IRVE certificate and user guide." }
+        {
+          "step": "Feasibility study",
+          "detail": "Checking meter capacity, distance from consumer unit to charger, selecting the right charger type."
+        },
+        {
+          "step": "Quote and grants",
+          "detail": "Detailed pricing with grant simulation (tax credit, ADVENIR grant)."
+        },
+        {
+          "step": "Electrical installation",
+          "detail": "Running a dedicated line from the consumer unit, fitting the appropriate circuit breaker and differential."
+        },
+        {
+          "step": "Charger installation",
+          "detail": "Wall or post mounting, electrical connection, configuration and charge test."
+        },
+        {
+          "step": "Commissioning",
+          "detail": "Charger configuration (power, schedules), handover of the IRVE certificate and user guide."
+        }
       ],
       "whyPro": "Installing a charging point involves high-power electrics and requires mandatory IRVE certification above 3.7 kW. Inadequate wiring can cause overheating, a tripped breaker or worse, a fire. IRVE certification is also a condition for accessing the tax credit and ADVENIR grant. Take no risks: use a certified installer.",
       "priceRange": "€1,200 – €2,500 installed (before grants), €900 – €1,800 after tax credit"
@@ -458,11 +712,26 @@
       ],
       "longDescription": "The Haut-Rhin region enjoys favourable sunshine for solar energy production, with over 1,700 hours of sun per year. Installing solar panels on your roof means producing your own electricity, reducing your bills and contributing to the energy transition. Aiman Renovation supports you throughout this process, from the feasibility study to commissioning.\n\nWe install the latest generation monocrystalline panels, offering optimal efficiency even in cloudy weather. With self-consumption and surplus sold back to EDF OA, you recoup your investment in 8 to 12 years while increasing your property value. For a typical 100 m² house, a 3 kWp installation (8 panels) covers 30 to 50% of your annual consumption.\n\nGrants are numerous and cumulative: self-consumption bonus (up to €1,500 for 3 kWp), EDF OA purchase obligation at a guaranteed rate for 20 years, reduced VAT at 10% for installations under 3 kWp. We handle the complete paperwork and manage the administrative steps (town hall, Enedis, EDF OA).",
       "process": [
-        { "step": "Solar study", "detail": "Analysis of your roof orientation and pitch, production calculation and financial simulation." },
-        { "step": "Administrative procedures", "detail": "Prior declaration to the town hall, Enedis connection request, EDF OA contract." },
-        { "step": "Panel installation", "detail": "Fitting mounting rails, installing panels and micro-inverters on the roof." },
-        { "step": "Electrical connection", "detail": "Wiring, AC/DC junction box installation, connection to the consumer unit and Linky meter." },
-        { "step": "Commissioning", "detail": "Production test, monitoring activation, handover of the complete technical file." }
+        {
+          "step": "Solar study",
+          "detail": "Analysis of your roof orientation and pitch, production calculation and financial simulation."
+        },
+        {
+          "step": "Administrative procedures",
+          "detail": "Prior declaration to the town hall, Enedis connection request, EDF OA contract."
+        },
+        {
+          "step": "Panel installation",
+          "detail": "Fitting mounting rails, installing panels and micro-inverters on the roof."
+        },
+        {
+          "step": "Electrical connection",
+          "detail": "Wiring, AC/DC junction box installation, connection to the consumer unit and Linky meter."
+        },
+        {
+          "step": "Commissioning",
+          "detail": "Production test, monitoring activation, handover of the complete technical file."
+        }
       ],
       "whyPro": "Solar panel installation involves rooftop work (fall risk) and high-voltage electrical connections. Non-compliant installation can cause roof leaks, fire risk or sub-optimal production. To qualify for grants (self-consumption bonus, reduced VAT), the installation must be carried out by a qualified RGE professional. Aiman Renovation manages the entire project for you.",
       "priceRange": "€7,000 – €15,000 for 3 to 6 kWp (before self-consumption bonus of €1,000 to €2,500)"
@@ -483,11 +752,26 @@
       ],
       "longDescription": "A beautiful garden needs maintaining. But between work, family and daily life, who has time to mow every week, trim the hedges twice a year and clean the terrace before summer? Aiman Renovation takes care of the complete maintenance of your outdoor spaces so you can enjoy them without lifting a finger.\n\nWe offer one-off interventions — mowing, hedge trimming, brush clearing, leaf collection, anti-moss treatment — but above all, annual contracts. You choose the frequency (weekly, fortnightly or monthly), we schedule the visits and you don't have to think about it any more.\n\nWe also have professional hot and cold high-pressure cleaning equipment. Terraces, pathways, facades, roofs — we restore all your property's outdoor surfaces to their former glory. Hot-water cleaning is particularly effective against moss, lichen and ingrained grease stains.\n\nOur contracts include a seasonal review: in spring, we prepare (scarifying, weeding, fertilising); in summer, we maintain; in autumn, we protect (leaf collection, trimming, mulching); in winter, we monitor. It's turnkey peace of mind.",
       "process": [
-        { "step": "Assessment visit", "detail": "We evaluate your grounds: area, vegetation type, current condition, specific needs." },
-        { "step": "Bespoke proposal", "detail": "Detailed quote with a tailored maintenance programme: visit frequency, services included, monthly or annual rate." },
-        { "step": "Visit scheduling", "detail": "A visit calendar is set according to the seasons. You are notified in advance of each intervention." },
-        { "step": "Regular interventions", "detail": "Our teams work according to the schedule: mowing, trimming, cleaning, seasonal treatments." },
-        { "step": "Review and adjustment", "detail": "An annual review to adjust services according to your garden's evolution and your needs." }
+        {
+          "step": "Assessment visit",
+          "detail": "We evaluate your grounds: area, vegetation type, current condition, specific needs."
+        },
+        {
+          "step": "Bespoke proposal",
+          "detail": "Detailed quote with a tailored maintenance programme: visit frequency, services included, monthly or annual rate."
+        },
+        {
+          "step": "Visit scheduling",
+          "detail": "A visit calendar is set according to the seasons. You are notified in advance of each intervention."
+        },
+        {
+          "step": "Regular interventions",
+          "detail": "Our teams work according to the schedule: mowing, trimming, cleaning, seasonal treatments."
+        },
+        {
+          "step": "Review and adjustment",
+          "detail": "An annual review to adjust services according to your garden's evolution and your needs."
+        }
       ],
       "whyPro": "Regular professional maintenance preserves your property's value and the health of your plants. A poorly trimmed hedge becomes invasive, an unscarified lawn suffocates, an untreated terrace becomes slippery and dangerous. Our teams know the local Alsatian species and adapt care to the seasons. With a contract, you're guaranteed constant monitoring without having to think about it.",
       "priceRange": "From €80 / one-off intervention, annual contract from €150 / month"
@@ -508,11 +792,26 @@
       ],
       "longDescription": "A water leak at 10 pm, a short circuit on a Sunday, water damage threatening your flat — emergencies don't wait, and neither do we. Aiman Renovation responds 24/7 to secure your home before the damage worsens.\n\nOur service covers all emergencies: plumbing (pipe, tap, cistern, water heater leaks, water damage), electrical (tripped breaker, burnt socket, power outage, short circuit), high-pressure drain unblocking, and anything else requiring rapid intervention. We step in to stop the damage, secure the installations and provide a quote for restoration.\n\nFor our existing clients, we also provide after-sales service on projects we've completed. A problem with an installation we fitted? We come back, diagnose and repair. That's what long-term trust looks like.",
       "process": [
-        { "step": "Emergency call", "detail": "You call us, we assess the situation by phone and give you the first steps to take while waiting." },
-        { "step": "Rapid response", "detail": "A technician attends as quickly as possible to secure and stop the damage." },
-        { "step": "On-site diagnosis", "detail": "Precise identification of the cause: leak, short circuit, water ingress. Photos and report." },
-        { "step": "Emergency repair", "detail": "Immediate repair if possible, or temporary safety measures with a quote for permanent restoration." },
-        { "step": "Follow-up and restoration", "detail": "Scheduling of restoration work if needed. Support with insurance claims." }
+        {
+          "step": "Emergency call",
+          "detail": "You call us, we assess the situation by phone and give you the first steps to take while waiting."
+        },
+        {
+          "step": "Rapid response",
+          "detail": "A technician attends as quickly as possible to secure and stop the damage."
+        },
+        {
+          "step": "On-site diagnosis",
+          "detail": "Precise identification of the cause: leak, short circuit, water ingress. Photos and report."
+        },
+        {
+          "step": "Emergency repair",
+          "detail": "Immediate repair if possible, or temporary safety measures with a quote for permanent restoration."
+        },
+        {
+          "step": "Follow-up and restoration",
+          "detail": "Scheduling of restoration work if needed. Support with insurance claims."
+        }
       ],
       "whyPro": "In an emergency, every minute counts. An untreated leak can cause thousands of euros of damage in just a few hours. A faulty electrical circuit poses a fire risk. Using a qualified professional guarantees a safe, compliant and documented intervention for your insurance. Our local knowledge of Saint-Louis and the Basel area allows us to respond quickly.",
       "priceRange": "Call-out + diagnosis: from €90, repair on quote"
@@ -836,21 +1135,37 @@
         "category": "Devis",
         "question": "How do I get a quote?",
         "answer": "Fill in our online form or call us on 06 33 49 69 25. We will send you a detailed quote within 4 days after the site survey.",
-        "relatedServices": [{ "label": "Request a quote", "href": "/devis" }]
+        "relatedServices": [
+          {
+            "label": "Request a quote",
+            "href": "/devis"
+          }
+        ]
       },
       {
         "category": "Devis",
         "question": "Is the quote free?",
         "answer": "Yes, all our quotes are free and without obligation. The on-site survey is included — it allows us to assess your project precisely and provide an accurate estimate.",
-        "relatedServices": [{ "label": "Request a free quote", "href": "/devis" }]
+        "relatedServices": [
+          {
+            "label": "Request a free quote",
+            "href": "/devis"
+          }
+        ]
       },
       {
         "category": "Devis",
         "question": "What does your quote include?",
         "answer": "Our quote details every item of work: labour, materials, supplies, estimated timescales and payment terms. No surprises: the quoted price is the final price, unless you request changes during the project.",
         "relatedServices": [
-          { "label": "See our services", "href": "/services" },
-          { "label": "Request a quote", "href": "/devis" }
+          {
+            "label": "See our services",
+            "href": "/services"
+          },
+          {
+            "label": "Request a quote",
+            "href": "/devis"
+          }
         ]
       },
       {
@@ -858,8 +1173,14 @@
         "question": "How long will it take to receive my quote?",
         "answer": "We commit to sending your quote within 4 days of the site survey. For complex projects (facade, solar panels), allow 5 to 7 working days.",
         "relatedServices": [
-          { "label": "Request a quote", "href": "/devis" },
-          { "label": "Facade renovation", "href": "/services/ravalement-facade" }
+          {
+            "label": "Request a quote",
+            "href": "/devis"
+          },
+          {
+            "label": "Facade renovation",
+            "href": "/services/ravalement-facade"
+          }
         ]
       },
       {
@@ -867,8 +1188,14 @@
         "question": "What is your service area?",
         "answer": "We work in the Basel tri-border area: Basel, Riehen, Allschwil, Binningen (Switzerland), Lörrach, Weil am Rhein (Germany), Saint-Louis, Huningue, Hésingue, Village-Neuf, Blotzheim, Bartenheim (France), and beyond on request.",
         "relatedServices": [
-          { "label": "See our services", "href": "/services" },
-          { "label": "Contact us", "href": "/contact" }
+          {
+            "label": "See our services",
+            "href": "/services"
+          },
+          {
+            "label": "Contact us",
+            "href": "/contact"
+          }
         ]
       },
       {
@@ -876,9 +1203,18 @@
         "question": "How long does the work take?",
         "answer": "It depends on the project. As a guide: bathroom 2–3 weeks, kitchen 3–4 weeks, painting a flat 1–2 weeks, facade/EWI 3–6 weeks. The precise schedule is included in the quote.",
         "relatedServices": [
-          { "label": "Bathroom renovation", "href": "/services/salle-de-bain" },
-          { "label": "Kitchen renovation", "href": "/services/cuisine" },
-          { "label": "Facade renovation", "href": "/services/ravalement-facade" }
+          {
+            "label": "Bathroom renovation",
+            "href": "/services/salle-de-bain"
+          },
+          {
+            "label": "Kitchen renovation",
+            "href": "/services/cuisine"
+          },
+          {
+            "label": "Facade renovation",
+            "href": "/services/ravalement-facade"
+          }
         ]
       },
       {
@@ -886,9 +1222,18 @@
         "question": "Do you work in shared buildings?",
         "answer": "Yes: facade renovation, insulation, common area refurbishment, collective EV charging installation. We coordinate with the property management company and comply with the building regulations.",
         "relatedServices": [
-          { "label": "Facade renovation", "href": "/services/ravalement-facade" },
-          { "label": "Thermal insulation (EWI)", "href": "/services/isolation" },
-          { "label": "EV charging points", "href": "/services/bornes-irve" }
+          {
+            "label": "Facade renovation",
+            "href": "/services/ravalement-facade"
+          },
+          {
+            "label": "Thermal insulation (EWI)",
+            "href": "/services/isolation"
+          },
+          {
+            "label": "EV charging points",
+            "href": "/services/bornes-irve"
+          }
         ]
       },
       {
@@ -896,8 +1241,14 @@
         "question": "Can I stay in my home during the work?",
         "answer": "In most cases, yes. We organise the site by zones to minimise disruption. For a full renovation (kitchen + bathroom simultaneously), we can advise on temporary accommodation.",
         "relatedServices": [
-          { "label": "Kitchen renovation", "href": "/services/cuisine" },
-          { "label": "Bathroom renovation", "href": "/services/salle-de-bain" }
+          {
+            "label": "Kitchen renovation",
+            "href": "/services/cuisine"
+          },
+          {
+            "label": "Bathroom renovation",
+            "href": "/services/salle-de-bain"
+          }
         ]
       },
       {
@@ -905,8 +1256,14 @@
         "question": "How does a typical project run?",
         "answer": "After signing the quote: 1) Planning and ordering materials, 2) Site protection and strip-out, 3) Technical work (plumbing, electrical), 4) Finishing (tiling, painting), 5) Handover with you. A single point of contact keeps you informed at every stage.",
         "relatedServices": [
-          { "label": "See our services", "href": "/services" },
-          { "label": "Request a quote", "href": "/devis" }
+          {
+            "label": "See our services",
+            "href": "/services"
+          },
+          {
+            "label": "Request a quote",
+            "href": "/devis"
+          }
         ]
       },
       {
@@ -923,15 +1280,26 @@
         "category": "Déroulement",
         "question": "Will I have a dedicated contact person?",
         "answer": "Yes, Aiman personally supervises every project. You have a direct number and can follow the progress of your work in real time. We send regular progress photos by email or WhatsApp.",
-        "relatedServices": [{ "label": "Contact us", "href": "/contact" }]
+        "relatedServices": [
+          {
+            "label": "Contact us",
+            "href": "/contact"
+          }
+        ]
       },
       {
         "category": "Garanties",
         "question": "What guarantees do you offer?",
         "answer": "We are covered by professional liability insurance and a 10-year structural guarantee. Specifically: completion guarantee (1 year), equipment guarantee (2 years) and structural guarantee covering major works and waterproofing (10 years).",
         "relatedServices": [
-          { "label": "See our services", "href": "/services" },
-          { "label": "Contact us", "href": "/contact" }
+          {
+            "label": "See our services",
+            "href": "/services"
+          },
+          {
+            "label": "Contact us",
+            "href": "/contact"
+          }
         ]
       },
       {
@@ -939,8 +1307,14 @@
         "question": "Are you IRVE certified?",
         "answer": "Yes, we hold the IRVE certification (Electric Vehicle Charging Infrastructure), which is mandatory for installing charging points above 3.7 kW. This certification enables you to benefit from the French tax credit and the ADVENIR grant.",
         "relatedServices": [
-          { "label": "EV charging points", "href": "/services/bornes-irve" },
-          { "label": "Request a quote", "href": "/devis" }
+          {
+            "label": "EV charging points",
+            "href": "/services/bornes-irve"
+          },
+          {
+            "label": "Request a quote",
+            "href": "/devis"
+          }
         ]
       },
       {
@@ -953,9 +1327,18 @@
         "question": "What is MaPrimeRénov'?",
         "answer": "MaPrimeRénov' is a French government grant to fund energy renovation work: insulation, heating, ventilation, solar panels. The amount depends on your income and the type of work. It can cover up to 90% of the cost for modest households. We help you put together the application.",
         "relatedServices": [
-          { "label": "Thermal insulation (EWI)", "href": "/services/isolation" },
-          { "label": "Solar panels", "href": "/services/panneaux-solaires" },
-          { "label": "Request a quote", "href": "/devis" }
+          {
+            "label": "Thermal insulation (EWI)",
+            "href": "/services/isolation"
+          },
+          {
+            "label": "Solar panels",
+            "href": "/services/panneaux-solaires"
+          },
+          {
+            "label": "Request a quote",
+            "href": "/devis"
+          }
         ]
       },
       {
@@ -963,8 +1346,14 @@
         "question": "What are CEE (Energy Savings Certificates)?",
         "answer": "CEEs are grants paid by energy suppliers (EDF, Engie, TotalEnergies) to encourage energy-saving work. Wall insulation, window replacement, thermodynamic water heater installation: these grants can be combined with MaPrimeRénov' and can amount to several thousand euros.",
         "relatedServices": [
-          { "label": "Thermal insulation (EWI)", "href": "/services/isolation" },
-          { "label": "Request a quote", "href": "/devis" }
+          {
+            "label": "Thermal insulation (EWI)",
+            "href": "/services/isolation"
+          },
+          {
+            "label": "Request a quote",
+            "href": "/devis"
+          }
         ]
       },
       {
@@ -972,8 +1361,14 @@
         "question": "Can I get an éco-PTZ?",
         "answer": "The éco-prêt à taux zéro (éco-PTZ) is a French interest-free loan for energy renovation work, up to €50,000. It is available regardless of income, through your bank. It can be combined with MaPrimeRénov' and CEE grants.",
         "relatedServices": [
-          { "label": "Thermal insulation (EWI)", "href": "/services/isolation" },
-          { "label": "Solar panels", "href": "/services/panneaux-solaires" }
+          {
+            "label": "Thermal insulation (EWI)",
+            "href": "/services/isolation"
+          },
+          {
+            "label": "Solar panels",
+            "href": "/services/panneaux-solaires"
+          }
         ]
       },
       {
@@ -981,8 +1376,14 @@
         "question": "Is VAT reduced on my work?",
         "answer": "Yes, for properties over 2 years old in France: 10% VAT for standard renovation work (painting, tiling, plumbing), 5.5% VAT for energy renovation work (insulation, solar panels under 3 kWp). The reduced VAT is applied automatically on our quote.",
         "relatedServices": [
-          { "label": "See our services", "href": "/services" },
-          { "label": "Request a quote", "href": "/devis" }
+          {
+            "label": "See our services",
+            "href": "/services"
+          },
+          {
+            "label": "Request a quote",
+            "href": "/devis"
+          }
         ]
       },
       {
@@ -990,23 +1391,40 @@
         "question": "Can you help me with grant applications?",
         "answer": "Absolutely. We guide you through every step: simulating the grants you're entitled to, preparing MaPrimeRénov' and CEE applications, requesting an éco-PTZ from your bank. Our goal is to minimise your out-of-pocket cost.",
         "relatedServices": [
-          { "label": "Contact us", "href": "/contact" },
-          { "label": "Request a quote", "href": "/devis" }
+          {
+            "label": "Contact us",
+            "href": "/contact"
+          },
+          {
+            "label": "Request a quote",
+            "href": "/devis"
+          }
         ]
       },
       {
         "category": "Paiement",
         "question": "What are the payment terms?",
         "answer": "30% deposit on signing the quote, then staged payments according to progress (typically at the halfway point), and the balance on handover. We accept bank transfers and cheques.",
-        "relatedServices": [{ "label": "Request a quote", "href": "/devis" }]
+        "relatedServices": [
+          {
+            "label": "Request a quote",
+            "href": "/devis"
+          }
+        ]
       },
       {
         "category": "Paiement",
         "question": "Can I spread the payments?",
         "answer": "Yes, payment is naturally staged according to project progress. For major projects, we can adapt the payment schedule to your situation. The éco-PTZ (interest-free loan) is also an option for spreading the cost without charges.",
         "relatedServices": [
-          { "label": "Contact us", "href": "/contact" },
-          { "label": "Request a quote", "href": "/devis" }
+          {
+            "label": "Contact us",
+            "href": "/contact"
+          },
+          {
+            "label": "Request a quote",
+            "href": "/devis"
+          }
         ]
       }
     ]
@@ -1016,19 +1434,45 @@
     "seo_description": "Discover our completed renovation projects in the Basel area and Haut-Rhin: kitchen, bathroom, facades, landscaping. Before/after photos.",
     "hero_title": "OUR",
     "hero_title_highlight": "PORTFOLIO",
-    "hero_subtitle": "Every project is unique. Here is an overview of our transformations in the Basel area and Haut-Rhin. Renovations carried out with rigour, from the first hammer blow to the final touch."
+    "hero_subtitle": "Every project is unique. Here is an overview of our transformations in the Basel area and Haut-Rhin. Renovations carried out with rigour, from the first hammer blow to the final touch.",
+    "filter_all": "All",
+    "no_results": "No projects in this category yet."
   },
   "notFound": {
     "badge": "Error 404",
     "variants": [
-      { "title": "Oops, load-bearing wall!", "subtitle": "Even the best plans sometimes have a wall in the wrong place." },
-      { "title": "Area under renovation", "subtitle": "This page is being demolished... or never existed." },
-      { "title": "Out of level!", "subtitle": "We checked with the laser — this page isn't plumb." },
-      { "title": "Door without a lock", "subtitle": "The key may exist, but the door isn't there." },
-      { "title": "Foundations not found", "subtitle": "Can't build this page — the foundations are missing." },
-      { "title": "Botched paint job", "subtitle": "We repainted the URL but the page disappeared under the coat." },
-      { "title": "Missing tile", "subtitle": "There's a tile missing from the plan — this page doesn't exist." },
-      { "title": "Site closed", "subtitle": "This project is finished... or never started." }
+      {
+        "title": "Oops, load-bearing wall!",
+        "subtitle": "Even the best plans sometimes have a wall in the wrong place."
+      },
+      {
+        "title": "Area under renovation",
+        "subtitle": "This page is being demolished... or never existed."
+      },
+      {
+        "title": "Out of level!",
+        "subtitle": "We checked with the laser — this page isn't plumb."
+      },
+      {
+        "title": "Door without a lock",
+        "subtitle": "The key may exist, but the door isn't there."
+      },
+      {
+        "title": "Foundations not found",
+        "subtitle": "Can't build this page — the foundations are missing."
+      },
+      {
+        "title": "Botched paint job",
+        "subtitle": "We repainted the URL but the page disappeared under the coat."
+      },
+      {
+        "title": "Missing tile",
+        "subtitle": "There's a tile missing from the plan — this page doesn't exist."
+      },
+      {
+        "title": "Site closed",
+        "subtitle": "This project is finished... or never started."
+      }
     ],
     "back_home": "Back to home",
     "request_devis": "Request a quote",
@@ -1203,7 +1647,8 @@
       "Solar Panels",
       "Exterior Maintenance",
       "Emergency Repairs"
-    ]
+    ],
+    "catalog_name": "Our renovation services"
   },
   "email": {
     "devis_client_title": "Your quote request has been sent",

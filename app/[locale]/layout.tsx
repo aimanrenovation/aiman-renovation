@@ -54,12 +54,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const serviceNames = ts.raw("service_names") as string[];
 
-  const catalogName =
-    isFr
-      ? "Nos services de rénovation"
-      : locale === "de"
-      ? "Unsere Renovierungsleistungen"
-      : "Our renovation services";
+  const catalogName = ts("catalog_name");
 
   const organizationJsonLd = {
     "@context": "https://schema.org",

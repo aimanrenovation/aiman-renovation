@@ -4,13 +4,19 @@ import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { COMPANY } from "@/lib/constants";
-import { SERVICES } from "@/lib/services";
+
+interface TranslatedService {
+  slug: string;
+  shortTitle: string;
+}
 
 export function Footer() {
   const t = useTranslations();
   const tFooter = useTranslations("footer");
   const tNav = useTranslations("nav");
   const tCommon = useTranslations("common");
+  const tServices = useTranslations();
+  const serviceItems = tServices.raw("service_items") as TranslatedService[];
 
   return (
     <footer className="bg-[#111111] border-t border-white/10">
@@ -28,7 +34,7 @@ export function Footer() {
           <div>
             <h4 className="font-heading text-sm uppercase tracking-wider text-white mb-4">{tFooter("services_title")}</h4>
             <ul className="space-y-2">
-              {SERVICES.map((s) => (
+              {serviceItems.map((s) => (
                 <li key={s.slug}>
                   <Link href={`/services/${s.slug}`} className="text-sm text-gray-400 hover:text-white transition-colors">{s.shortTitle}</Link>
                 </li>

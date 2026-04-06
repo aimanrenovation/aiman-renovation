@@ -26,9 +26,18 @@
     "email_subject": "Anfrage — Renovierungsprojekt",
     "email_body": "Guten Tag,\n\nIch habe ein Renovierungsprojekt und möchte es gerne mit Ihnen besprechen.\n\nArt der Arbeiten: \nAdresse der Baustelle: \nGeschätztes Budget: \n\nBitte kontaktieren Sie mich.\n\nMit freundlichen Grüssen,\n",
     "zones": [
-      "Basel", "Riehen", "Allschwil", "Binningen",
-      "Lörrach", "Weil am Rhein", "Saint-Louis", "Huningue",
-      "Hésingue", "Village-Neuf", "Blotzheim", "Bartenheim"
+      "Basel",
+      "Riehen",
+      "Allschwil",
+      "Binningen",
+      "Lörrach",
+      "Weil am Rhein",
+      "Saint-Louis",
+      "Huningue",
+      "Hésingue",
+      "Village-Neuf",
+      "Blotzheim",
+      "Bartenheim"
     ],
     "zones_and_beyond": "und Umgebung",
     "zones_subtitle": "Basel und Umgebung — wir arbeiten grenzüberschreitend in Frankreich und der Schweiz.",
@@ -46,12 +55,30 @@
       "cta_devis": "Kostenlose Offerte",
       "cta_realisations": "Unsere Referenzen",
       "scroll_texts": [
-        { "text": "Ihr Zuhause", "highlight": "verdient mehr" },
-        { "text": "Unsere Handwerker", "highlight": "übernehmen" },
-        { "text": "19 Jahre", "highlight": "Erfahrung" },
-        { "text": "Jedes Detail", "highlight": "zählt" },
-        { "text": "Vom Boden", "highlight": "bis zur Decke" },
-        { "text": "Wir renovieren bis", "highlight": "Ihre Träume wahr werden" }
+        {
+          "text": "Ihr Zuhause",
+          "highlight": "verdient mehr"
+        },
+        {
+          "text": "Unsere Handwerker",
+          "highlight": "übernehmen"
+        },
+        {
+          "text": "19 Jahre",
+          "highlight": "Erfahrung"
+        },
+        {
+          "text": "Jedes Detail",
+          "highlight": "zählt"
+        },
+        {
+          "text": "Vom Boden",
+          "highlight": "bis zur Decke"
+        },
+        {
+          "text": "Wir renovieren bis",
+          "highlight": "Ihre Träume wahr werden"
+        }
       ]
     },
     "savoir_faire": {
@@ -139,12 +166,30 @@
       "title": "WARUM",
       "title_highlight": "UNS WÄHLEN",
       "arguments": [
-        { "title": "10-Jahres-Garantie", "desc": "Alle unsere Arbeiten sind durch eine Haftpflicht- und Zehnjahresgarantie abgedeckt." },
-        { "title": "Kostenlose Offerte innert 4 Tagen", "desc": "Technische Besichtigung inklusive, detaillierte und transparente Offerte. Unverbindlich." },
-        { "title": "Lokaler Handwerker", "desc": "Mit Sitz in Saint-Louis kennen wir die Region und die lokalen Lieferanten im Dreiländereck." },
-        { "title": "19 Jahre Erfahrung", "desc": "Bewährtes Know-how in allen Gewerken der Renovierung." },
-        { "title": "Begleitung bei Fördermitteln", "desc": "MaPrimeRénov', CEE, éco-PTZ — wir helfen Ihnen bei der Antragstellung." },
-        { "title": "Saubere Baustelle", "desc": "Schutzabdeckung, Entsorgung, Reinigung. Sie erhalten eine bezugsfertige Wohnung zurück." }
+        {
+          "title": "10-Jahres-Garantie",
+          "desc": "Alle unsere Arbeiten sind durch eine Haftpflicht- und Zehnjahresgarantie abgedeckt."
+        },
+        {
+          "title": "Kostenlose Offerte innert 4 Tagen",
+          "desc": "Technische Besichtigung inklusive, detaillierte und transparente Offerte. Unverbindlich."
+        },
+        {
+          "title": "Lokaler Handwerker",
+          "desc": "Mit Sitz in Saint-Louis kennen wir die Region und die lokalen Lieferanten im Dreiländereck."
+        },
+        {
+          "title": "19 Jahre Erfahrung",
+          "desc": "Bewährtes Know-how in allen Gewerken der Renovierung."
+        },
+        {
+          "title": "Begleitung bei Fördermitteln",
+          "desc": "MaPrimeRénov', CEE, éco-PTZ — wir helfen Ihnen bei der Antragstellung."
+        },
+        {
+          "title": "Saubere Baustelle",
+          "desc": "Schutzabdeckung, Entsorgung, Reinigung. Sie erhalten eine bezugsfertige Wohnung zurück."
+        }
       ]
     },
     "cta_banner": {
@@ -163,39 +208,113 @@
     "story_title": "UNSERE",
     "story_title_highlight": "GESCHICHTE",
     "story_texts": [
-      { "text": "Es war einmal", "highlight": "ein Junge, der träumte", "story": "Während die anderen draussen spielten, zeichnete er Häuser. Er wusste es noch nicht, aber dieses Schulheft sollte sein Leben verändern." },
-      { "text": "Mit 20 Jahren", "highlight": "betrat er die Arena", "story": "Zement unter den Nägeln, der Rücken in Flammen, 12 Stunden am Tag. Niemand hat ihm etwas geschenkt. Jede gemauerte Wand, jedes geschweisste Rohr — er hat alles auf die harte Tour gelernt." },
-      { "text": "Das Leben hat ihn", "highlight": "in die Knie gezwungen", "story": "Es gab Tage, an denen alles zusammenbrach. Verlorene Aufträge, geschlossene Türen, Regen, der nicht aufhörte. Aber ein Mann, der fällt, ist kein gescheiterter Mann. Es ist ein Mann, der lernt." },
-      { "text": "Er stand wieder auf", "highlight": "und hat geführt", "story": "Teamleiter. Der Mann, den man ruft, wenn es kompliziert wird. 19 Jahre auf der Baustelle, Hunderte von Projekten, und eine Gewissheit: Er war bereit." },
-      { "text": "Er trug seine Farben", "highlight": "auf dem Herzen", "story": "Aiman Renovation. Nicht nur ein Name auf einer Jacke. Ein Versprechen. Ein einziger Ansprechpartner, alle Gewerke, null Kompromisse bei der Qualität." },
-      { "text": "Heute öffnet er", "highlight": "die Türen seines Traums", "story": "Im Herzen des Dreiländerecks baut der Junge, der Häuser zeichnete, sie jetzt in echt. Und er hat nur ein Motto: renovieren, bis Ihre Träume wahr werden." }
+      {
+        "text": "Es war einmal",
+        "highlight": "ein Junge, der träumte",
+        "story": "Während die anderen draussen spielten, zeichnete er Häuser. Er wusste es noch nicht, aber dieses Schulheft sollte sein Leben verändern."
+      },
+      {
+        "text": "Mit 20 Jahren",
+        "highlight": "betrat er die Arena",
+        "story": "Zement unter den Nägeln, der Rücken in Flammen, 12 Stunden am Tag. Niemand hat ihm etwas geschenkt. Jede gemauerte Wand, jedes geschweisste Rohr — er hat alles auf die harte Tour gelernt."
+      },
+      {
+        "text": "Das Leben hat ihn",
+        "highlight": "in die Knie gezwungen",
+        "story": "Es gab Tage, an denen alles zusammenbrach. Verlorene Aufträge, geschlossene Türen, Regen, der nicht aufhörte. Aber ein Mann, der fällt, ist kein gescheiterter Mann. Es ist ein Mann, der lernt."
+      },
+      {
+        "text": "Er stand wieder auf",
+        "highlight": "und hat geführt",
+        "story": "Teamleiter. Der Mann, den man ruft, wenn es kompliziert wird. 19 Jahre auf der Baustelle, Hunderte von Projekten, und eine Gewissheit: Er war bereit."
+      },
+      {
+        "text": "Er trug seine Farben",
+        "highlight": "auf dem Herzen",
+        "story": "Aiman Renovation. Nicht nur ein Name auf einer Jacke. Ein Versprechen. Ein einziger Ansprechpartner, alle Gewerke, null Kompromisse bei der Qualität."
+      },
+      {
+        "text": "Heute öffnet er",
+        "highlight": "die Türen seines Traums",
+        "story": "Im Herzen des Dreiländerecks baut der Junge, der Häuser zeichnete, sie jetzt in echt. Und er hat nur ein Motto: renovieren, bis Ihre Träume wahr werden."
+      }
     ],
     "process_title": "UNSER",
     "process_title_highlight": "ABLAUF",
     "steps": [
-      { "number": "01", "title": "Erstkontakt", "desc": "Sie rufen uns an oder füllen das Online-Formular aus. Wir besprechen Ihr Projekt, Ihre Wünsche und Ihr Budget." },
-      { "number": "02", "title": "Technische Besichtigung", "desc": "Wir kommen zu Ihnen, um Masse zu nehmen und den Ist-Zustand zu beurteilen. Kostenlos und unverbindlich." },
-      { "number": "03", "title": "Detaillierte Offerte", "desc": "Innert 4 Tagen erhalten Sie eine komplette Offerte: Arbeiten Posten für Posten, Materialien, Zeitplan und Gesamtbetrag." },
-      { "number": "04", "title": "Ausführung", "desc": "Unsere Handwerker arbeiten nach Zeitplan. Aiman überwacht jede Baustelle persönlich. Regelmässige Fortschrittsfotos." },
-      { "number": "05", "title": "Abnahme", "desc": "Gemeinsame Abnahmebesichtigung, Punkt für Punkt. Unsere 10-Jahres-Garantie schützt Sie." }
+      {
+        "number": "01",
+        "title": "Erstkontakt",
+        "desc": "Sie rufen uns an oder füllen das Online-Formular aus. Wir besprechen Ihr Projekt, Ihre Wünsche und Ihr Budget."
+      },
+      {
+        "number": "02",
+        "title": "Technische Besichtigung",
+        "desc": "Wir kommen zu Ihnen, um Masse zu nehmen und den Ist-Zustand zu beurteilen. Kostenlos und unverbindlich."
+      },
+      {
+        "number": "03",
+        "title": "Detaillierte Offerte",
+        "desc": "Innert 4 Tagen erhalten Sie eine komplette Offerte: Arbeiten Posten für Posten, Materialien, Zeitplan und Gesamtbetrag."
+      },
+      {
+        "number": "04",
+        "title": "Ausführung",
+        "desc": "Unsere Handwerker arbeiten nach Zeitplan. Aiman überwacht jede Baustelle persönlich. Regelmässige Fortschrittsfotos."
+      },
+      {
+        "number": "05",
+        "title": "Abnahme",
+        "desc": "Gemeinsame Abnahmebesichtigung, Punkt für Punkt. Unsere 10-Jahres-Garantie schützt Sie."
+      }
     ],
     "engagements_title": "UNSERE",
     "engagements_title_highlight": "VERSPRECHEN",
     "engagements": [
-      { "title": "Qualität ohne Kompromisse", "desc": "Ausgewählte Materialien, sorgfältige Ausführung nach den Regeln der Kunst." },
-      { "title": "Termintreue", "desc": "Der Zeitplan der Offerte ist unser Fahrplan. Keine bösen Überraschungen." },
-      { "title": "Saubere Baustelle", "desc": "Schutz ab dem ersten Tag, gründliche Reinigung am Ende der Arbeiten." },
-      { "title": "Volle Transparenz", "desc": "Ein einziger Ansprechpartner, WhatsApp-Fotos, erreichbar Montag bis Samstag." },
-      { "title": "Beratung und Begleitung", "desc": "Wenn es eine einfachere oder günstigere Lösung gibt, schlagen wir sie Ihnen vor." },
-      { "title": "Garantierte Sicherheit", "desc": "10-Jahres-Garantie, Berufshaftpflicht. Ihre Investition ist geschützt." }
+      {
+        "title": "Qualität ohne Kompromisse",
+        "desc": "Ausgewählte Materialien, sorgfältige Ausführung nach den Regeln der Kunst."
+      },
+      {
+        "title": "Termintreue",
+        "desc": "Der Zeitplan der Offerte ist unser Fahrplan. Keine bösen Überraschungen."
+      },
+      {
+        "title": "Saubere Baustelle",
+        "desc": "Schutz ab dem ersten Tag, gründliche Reinigung am Ende der Arbeiten."
+      },
+      {
+        "title": "Volle Transparenz",
+        "desc": "Ein einziger Ansprechpartner, WhatsApp-Fotos, erreichbar Montag bis Samstag."
+      },
+      {
+        "title": "Beratung und Begleitung",
+        "desc": "Wenn es eine einfachere oder günstigere Lösung gibt, schlagen wir sie Ihnen vor."
+      },
+      {
+        "title": "Garantierte Sicherheit",
+        "desc": "10-Jahres-Garantie, Berufshaftpflicht. Ihre Investition ist geschützt."
+      }
     ],
     "certifications_title": "ZERTIFIZIERUNGEN &",
     "certifications_title_highlight": "VERSICHERUNGEN",
     "certifications": [
-      { "title": "10-Jahres-Garantie", "desc": "10 Jahre Deckung auf die Bausubstanz." },
-      { "title": "Berufshaftpflicht", "desc": "Schäden an Dritten während der Arbeiten abgedeckt." },
-      { "title": "IRVE-Zertifizierung", "desc": "Installation von Ladestationen für Elektrofahrzeuge." },
-      { "title": "Elektro-Berechtigungen", "desc": "B1V, B2V, BR, BC — Niederspannungsarbeiten." }
+      {
+        "title": "10-Jahres-Garantie",
+        "desc": "10 Jahre Deckung auf die Bausubstanz."
+      },
+      {
+        "title": "Berufshaftpflicht",
+        "desc": "Schäden an Dritten während der Arbeiten abgedeckt."
+      },
+      {
+        "title": "IRVE-Zertifizierung",
+        "desc": "Installation von Ladestationen für Elektrofahrzeuge."
+      },
+      {
+        "title": "Elektro-Berechtigungen",
+        "desc": "B1V, B2V, BR, BC — Niederspannungsarbeiten."
+      }
     ]
   },
   "services": {
@@ -242,11 +361,26 @@
       ],
       "longDescription": "Die Küche ist das Herz Ihres Zuhauses — der Ort, an dem man kocht, teilt und zusammenkommt. Bei Aiman Renovation gestalten wir Küchen, die Ästhetik und Funktionalität vereinen, angepasst an Ihren Lebensstil und Ihr Budget. Ob Sie eine offene Küche zum Wohnzimmer, eine Kochinsel oder einfach neue Fronten und eine neue Arbeitsfläche wünschen — wir begleiten Sie von A bis Z.\n\nUnsere Teams beherrschen alle nötigen Gewerke: Sanitär, Elektrik, Fliesen, Schreinerei, Malerarbeiten. Wir koordinieren die gesamte Baustelle, damit Sie ein schlüsselfertiges Ergebnis erhalten, ohne sich um mehrere Handwerker kümmern zu müssen. Jede Küche wird massgeschneidert geplant, unter Berücksichtigung der bestehenden Raumaufteilung, der Lichtverhältnisse und Ihrer Gewohnheiten.\n\nWir arbeiten mit anerkannten Lieferanten für hochwertige Materialien: Arbeitsflächen aus Quarz, Granit oder hochbelastbarem Schichtstoff, Rückwände aus Fayence oder Glas, langlebige Armaturen. Das Ergebnis: eine Küche, die lange hält und Ihre Immobilie aufwertet.",
       "process": [
-        { "step": "Aufmass", "detail": "Technische Besichtigung zur exakten Massaufnahme und Identifikation der Gegebenheiten (Wasseranschlüsse, Elektrik, Belüftung)." },
-        { "step": "Projektplanung", "detail": "Raumplanung in 2D/3D, gemeinsame Auswahl von Materialien, Farben und Ausstattung." },
-        { "step": "Demontage der alten Küche", "detail": "Sorgfältige Demontage, Schuttentsorgung und Vorbereitung von Wänden und Böden." },
-        { "step": "Technische Arbeiten", "detail": "Erneuerung der Sanitärinstallationen, Elektrik nach Norm, Fliesen und Küchenrückwand." },
-        { "step": "Montage und Endarbeiten", "detail": "Möbelmontage, Arbeitsfläche, Anschlüsse, Malerarbeiten und Endreinigung." }
+        {
+          "step": "Aufmass",
+          "detail": "Technische Besichtigung zur exakten Massaufnahme und Identifikation der Gegebenheiten (Wasseranschlüsse, Elektrik, Belüftung)."
+        },
+        {
+          "step": "Projektplanung",
+          "detail": "Raumplanung in 2D/3D, gemeinsame Auswahl von Materialien, Farben und Ausstattung."
+        },
+        {
+          "step": "Demontage der alten Küche",
+          "detail": "Sorgfältige Demontage, Schuttentsorgung und Vorbereitung von Wänden und Böden."
+        },
+        {
+          "step": "Technische Arbeiten",
+          "detail": "Erneuerung der Sanitärinstallationen, Elektrik nach Norm, Fliesen und Küchenrückwand."
+        },
+        {
+          "step": "Montage und Endarbeiten",
+          "detail": "Möbelmontage, Arbeitsfläche, Anschlüsse, Malerarbeiten und Endreinigung."
+        }
       ],
       "whyPro": "Eine Küchenrenovierung umfasst Sanitär, Elektrik, Fliesen und Schreinerei — alles Gewerke, die präzises Fachwissen erfordern. Ein Dichtigkeitsmangel unter der Spüle, ein unterdimensionierter Stromkreis oder eine schlecht angepasste Arbeitsfläche können kostspielige Probleme verursachen. Einen Profi zu beauftragen bedeutet: normgerechte Arbeit, reibungslose Koordination der verschiedenen Gewerke und ein Ergebnis, das Ihren Erwartungen entspricht. Dazu schützt Sie unsere 10-Jahres-Garantie.",
       "priceRange": "8 000 € – 25 000 € je nach Fläche und gewählten Materialien"
@@ -266,11 +400,26 @@
       ],
       "longDescription": "Ihr Badezimmer soll ein Wohlfühlort sein, funktional und angenehm im Alltag. Ob es darum geht, eine alte Badewanne durch eine bodengleiche Dusche zu ersetzen, die Fliesen zu erneuern oder den gesamten Grundriss neu zu gestalten — Aiman Renovation bietet Ihnen massgeschneiderte Lösungen, abgestimmt auf Ihren Raum und Ihr Budget.\n\nAbdichtung steht bei uns an erster Stelle: Wir verwenden normgerechte Abdichtungssysteme unter den Fliesen (SPEC), um Ihnen ein Badezimmer ohne Feuchtigkeitsschäden über Jahre hinweg zu garantieren. Unsere Sanitärinstallateure führen die Anschlüsse sorgfältig aus, mit langlebigen Materialien (PER, Mehrschichtrohr).\n\nVom wandhängenden Waschtisch bis zum Doppelwaschtisch-Möbel, von Grossformatfliesen bis zu Mosaiken — wir helfen Ihnen bei der Auswahl von Ausstattung und Oberflächen nach Ihrem Geschmack. Wir installieren auch barrierefreie Lösungen (Haltegriffe, bodengleiche Dusche) für Menschen mit eingeschränkter Mobilität.",
       "process": [
-        { "step": "Bestandsaufnahme", "detail": "Überprüfung der bestehenden Sanitärinstallation, Kontrolle der Abdichtung, genaue Vermessung des Raumes." },
-        { "step": "Auswahl der Ausstattung", "detail": "Auswahl von Sanitärobjekten, Armaturen, Fliesen und Zubehör nach Ihren Wünschen und Budget." },
-        { "step": "Demontage und Vorbereitung", "detail": "Entfernung der alten Ausstattung, Freilegen von Wänden und Böden, Überprüfung der Untergründe." },
-        { "step": "Sanitär und Abdichtung", "detail": "Neuverlegung des Warm-/Kaltwassernetzes und der Abflüsse, Einbau des Abdichtungssystems (SPEC)." },
-        { "step": "Verlegung und Endarbeiten", "detail": "Wand- und Bodenfliesen, Installation der Sanitärobjekte, Silikonfugen, Malerarbeiten und Belüftung." }
+        {
+          "step": "Bestandsaufnahme",
+          "detail": "Überprüfung der bestehenden Sanitärinstallation, Kontrolle der Abdichtung, genaue Vermessung des Raumes."
+        },
+        {
+          "step": "Auswahl der Ausstattung",
+          "detail": "Auswahl von Sanitärobjekten, Armaturen, Fliesen und Zubehör nach Ihren Wünschen und Budget."
+        },
+        {
+          "step": "Demontage und Vorbereitung",
+          "detail": "Entfernung der alten Ausstattung, Freilegen von Wänden und Böden, Überprüfung der Untergründe."
+        },
+        {
+          "step": "Sanitär und Abdichtung",
+          "detail": "Neuverlegung des Warm-/Kaltwassernetzes und der Abflüsse, Einbau des Abdichtungssystems (SPEC)."
+        },
+        {
+          "step": "Verlegung und Endarbeiten",
+          "detail": "Wand- und Bodenfliesen, Installation der Sanitärobjekte, Silikonfugen, Malerarbeiten und Belüftung."
+        }
       ],
       "whyPro": "Das Badezimmer ist der technisch anspruchsvollste Raum Ihrer Wohnung. Eine mangelhafte Abdichtung kann zu Feuchtigkeitsschäden, Schimmel und schweren Bauschäden führen. Die Sanitärinstallation muss einwandfrei sein, um Lecks zu vermeiden. Unsere Handwerker beherrschen die Normen und Abdichtungstechniken. Mit Aiman Renovation profitieren Sie von einer 10-Jahres-Garantie und völliger Sorglosigkeit.",
       "priceRange": "6 000 € – 18 000 € je nach Konfiguration und Ausstattung"
@@ -290,11 +439,26 @@
       ],
       "longDescription": "Eine veraltete oder nicht normgerechte Elektroinstallation stellt ein erhebliches Sicherheitsrisiko dar. Im Elsass benötigen viele ältere Wohnungen eine Erneuerung nach der Norm NF C 15-100. Aiman Renovation übernimmt die komplette oder teilweise Renovierung Ihrer Elektroinstallation, vom Sicherungskasten bis zu den Steckdosen und der Beleuchtung.\n\nWir führen eine Diagnose Ihrer bestehenden Installation durch, identifizieren Nichtkonformitäten und erstellen einen angepassten Sanierungsplan. Austausch des Sicherungskastens, Verlegung neuer Kabel, Hinzufügen von Steckdosen und Schaltern, Installation einer leistungsstarken LED-Beleuchtung — jede Massnahme erfolgt normgerecht.\n\nWir bieten auch Smart-Home-Lösungen an, um Beleuchtung, Rollläden und Heizung über Ihr Smartphone zu steuern. Ein intelligenteres, sparsameres und komfortableres Zuhause.",
       "process": [
-        { "step": "Elektrodiagnose", "detail": "Komplette Überprüfung der bestehenden Installation, Identifikation von Nichtkonformitäten und Risiken." },
-        { "step": "Sanierungsplan", "detail": "Detaillierter Elektroplan mit Positionierung von Lichtpunkten, Steckdosen und dedizierten Stromkreisen." },
-        { "step": "Verkabelungsarbeiten", "detail": "Verlegung von Leerrohren und Kabeln, Unterputz- oder Aufputzmontage je nach Gegebenheit." },
-        { "step": "Installation des Sicherungskastens", "detail": "Montage des neuen Sicherungskastens mit FI-Schutzschaltern und Überspannungsschutz." },
-        { "step": "Prüfung und Inbetriebnahme", "detail": "Konformitätstests, Erdungsprüfung, Inbetriebnahme und Übergabe des Elektroschemas." }
+        {
+          "step": "Elektrodiagnose",
+          "detail": "Komplette Überprüfung der bestehenden Installation, Identifikation von Nichtkonformitäten und Risiken."
+        },
+        {
+          "step": "Sanierungsplan",
+          "detail": "Detaillierter Elektroplan mit Positionierung von Lichtpunkten, Steckdosen und dedizierten Stromkreisen."
+        },
+        {
+          "step": "Verkabelungsarbeiten",
+          "detail": "Verlegung von Leerrohren und Kabeln, Unterputz- oder Aufputzmontage je nach Gegebenheit."
+        },
+        {
+          "step": "Installation des Sicherungskastens",
+          "detail": "Montage des neuen Sicherungskastens mit FI-Schutzschaltern und Überspannungsschutz."
+        },
+        {
+          "step": "Prüfung und Inbetriebnahme",
+          "detail": "Konformitätstests, Erdungsprüfung, Inbetriebnahme und Übergabe des Elektroschemas."
+        }
       ],
       "whyPro": "Bei Elektrik gibt es keinen Spielraum für Fehler. Eine schlecht ausgeführte Installation kann Kurzschlüsse, Brände oder Stromschläge verursachen. Die Norm NF C 15-100 schreibt strenge Regeln vor, die nur ein qualifizierter Fachmann korrekt umsetzen kann. Zudem ist eine Konformitätsbescheinigung (Consuel) für umfangreiche Renovierungen obligatorisch. Vertrauen Sie Ihre Elektroarbeiten Aiman Renovation an — für eine sichere und normgerechte Installation.",
       "priceRange": "3 000 € – 12 000 € je nach Umfang der Renovierung (Wohnung oder Haus)"
@@ -314,11 +478,26 @@
       ],
       "longDescription": "Die Sanitärinstallation ist das unsichtbare Rückgrat Ihres Zuhauses. Veraltete Rohrleitungen aus Blei oder verzinktem Stahl können die Wasserqualität beeinträchtigen und schleichende Lecks verursachen. Aiman Renovation renoviert, ersetzt oder erneuert Ihre Zu- und Abwasserleitungen mit modernen und langlebigen Materialien.\n\nWir ersetzen alte Leitungen durch PER oder Mehrschichtrohr, installieren Warmwasserbereiter (Wärmepumpe oder klassisch) und schaffen neue Wasseranschlüsse dort, wo Sie sie brauchen: Waschküche, zusätzliches WC, Sommerküche. Jede Massnahme ist darauf ausgelegt, Ihren Komfort zu optimieren und gleichzeitig den Wasserverbrauch zu senken.\n\nSowohl in Eigentümergemeinschaften als auch in Einfamilienhäusern arbeiten wir an Steigleitungen, Unterzählern und Anschlüssen ans öffentliche Netz. Unsere Ortskenntnis in der Region ermöglicht uns eine effiziente Zusammenarbeit mit den lokalen Wasserversorgern.",
       "process": [
-        { "step": "Sanitärdiagnose", "detail": "Sichtprüfung und Drucktest zur Beurteilung des bestehenden Leitungsnetzes." },
-        { "step": "Technischer Vorschlag", "detail": "Detaillierte Offerte mit Materialauswahl (PER, Mehrschichtrohr, Kupfer) und Leitungsplan." },
-        { "step": "Demontage und Austausch", "detail": "Entfernung der alten Leitungen, Verlegung des neuen Netzes mit zonenweisen Absperrhähnen." },
-        { "step": "Anschlüsse", "detail": "Anschluss von Sanitärobjekten, Warmwasserbereiter, Waschmaschine und Geschirrspüler." },
-        { "step": "Inbetriebnahme und Kontrolle", "detail": "Dichtigkeitstests unter Druck, Überprüfung der Durchflussmengen und Leckfreiheit." }
+        {
+          "step": "Sanitärdiagnose",
+          "detail": "Sichtprüfung und Drucktest zur Beurteilung des bestehenden Leitungsnetzes."
+        },
+        {
+          "step": "Technischer Vorschlag",
+          "detail": "Detaillierte Offerte mit Materialauswahl (PER, Mehrschichtrohr, Kupfer) und Leitungsplan."
+        },
+        {
+          "step": "Demontage und Austausch",
+          "detail": "Entfernung der alten Leitungen, Verlegung des neuen Netzes mit zonenweisen Absperrhähnen."
+        },
+        {
+          "step": "Anschlüsse",
+          "detail": "Anschluss von Sanitärobjekten, Warmwasserbereiter, Waschmaschine und Geschirrspüler."
+        },
+        {
+          "step": "Inbetriebnahme und Kontrolle",
+          "detail": "Dichtigkeitstests unter Druck, Überprüfung der Durchflussmengen und Leckfreiheit."
+        }
       ],
       "whyPro": "Ein Wasserleck kann innerhalb weniger Stunden erhebliche Schäden verursachen: beschädigte Decken, Schimmel, Kurzschlüsse. Sanitäranschlüsse erfordern die Beherrschung von Schweisstechniken, Pressfittings und Hygienenormen. Aiman Renovation zu beauftragen bedeutet: ein zuverlässiges Leitungsnetz, einwandfreies Wasser und Deckung durch unsere 10-Jahres-Garantie im Schadensfall.",
       "priceRange": "2 000 € – 10 000 € je nach Anzahl der Wasseranschlüsse und Komplexität"
@@ -338,11 +517,26 @@
       ],
       "longDescription": "Der Boden ist das Erste, was man beim Betreten eines Raumes bemerkt. Sorgfältig verlegte Fliesen, ein warmes Parkett oder moderner Sichtbeton verändern die Atmosphäre Ihres Interieurs sofort. Aiman Renovation beherrscht die Verlegung aller Arten von Bodenbelägen, von Grossformatfliesen über Massivparkett bis hin zu hochwertigem Vinyl.\n\nJede Baustelle beginnt mit einer sorgfältigen Untergrundvorbereitung: Ausgleich, Nivellierung, Feuchtigkeitsbehandlung falls nötig. Dieser unsichtbare Schritt garantiert ein perfektes und dauerhaftes Ergebnis. Anschliessend verlegen wir den Belag Ihrer Wahl mit besonderer Sorgfalt bei Zuschnitten, Fugen und Schwellenabschlüssen.\n\nFür den Aussenbereich realisieren wir Terrassen aus Feinsteinzeug, Wege aus Naturstein und rutschfeste Poolumrandungen. Unsere erfahrenen Fliesenleger sind sowohl in Wohnungen als auch in Häusern in der gesamten Region tätig.",
       "process": [
-        { "step": "Untergrundprüfung", "detail": "Kontrolle der Ebenheit, des Feuchtigkeitsgehalts und der Tragfähigkeit des bestehenden Bodens." },
-        { "step": "Untergrundvorbereitung", "detail": "Ausgleichsmasse, Haftgrundierung, Fliessestrich falls nötig für einen perfekt ebenen Boden." },
-        { "step": "Verlegeplanung", "detail": "Festlegung der Verlegerichtung, Fugengrösse und des Musters (gerade, diagonal, versetzt)." },
-        { "step": "Verlegung des Belags", "detail": "Verklebung oder schwimmende Verlegung je nach Material, präzise Zuschnitte um Hindernisse." },
-        { "step": "Verfugung und Endarbeiten", "detail": "Farblich abgestimmte Fugen, Sockelleisten, Schwellenprofile, gründliche Reinigung." }
+        {
+          "step": "Untergrundprüfung",
+          "detail": "Kontrolle der Ebenheit, des Feuchtigkeitsgehalts und der Tragfähigkeit des bestehenden Bodens."
+        },
+        {
+          "step": "Untergrundvorbereitung",
+          "detail": "Ausgleichsmasse, Haftgrundierung, Fliessestrich falls nötig für einen perfekt ebenen Boden."
+        },
+        {
+          "step": "Verlegeplanung",
+          "detail": "Festlegung der Verlegerichtung, Fugengrösse und des Musters (gerade, diagonal, versetzt)."
+        },
+        {
+          "step": "Verlegung des Belags",
+          "detail": "Verklebung oder schwimmende Verlegung je nach Material, präzise Zuschnitte um Hindernisse."
+        },
+        {
+          "step": "Verfugung und Endarbeiten",
+          "detail": "Farblich abgestimmte Fugen, Sockelleisten, Schwellenprofile, gründliche Reinigung."
+        }
       ],
       "whyPro": "Schlecht verlegte Fliesen reissen, klingen hohl und lösen sich nach wenigen Jahren. Die Untergrundvorbereitung, die Wahl des Klebers und die Beachtung der Dehnungsfugen sind technische Schritte, die echtes Fachwissen erfordern. Unsere Fliesenleger verfügen über jahrelange Erfahrung und verwenden professionelles Werkzeug (Diamant-Fliesenschneider, Laser-Niveau) für ein einwandfreies und garantiertes Ergebnis.",
       "priceRange": "40 € – 120 € / m² inklusive Verlegung, je nach Art des Belags"
@@ -362,11 +556,26 @@
       ],
       "longDescription": "Im Elsass und der Region Basel machen die strengen Winter eine Wärmedämmung unverzichtbar. Eine schlecht gedämmte Fassade bedeutet bis zu 25% Wärmeverlust und steigende Heizkosten. Aiman Renovation ist spezialisiert auf Fassadensanierung und Wärmedämmung, ob von aussen (WDVS) oder von innen.\n\nDie Aussendämmung (WDVS) ist die leistungsstärkste Lösung: Sie beseitigt Wärmebrücken, schützt die Bausubstanz vor Witterungseinflüssen und verschönert gleichzeitig die Fassade. Wir montieren Dämmplatten (Polystyrol, Steinwolle oder Holzfaser), die mit einem Oberputz in der Farbe Ihrer Wahl versehen werden.\n\nFür Eigentümergemeinschaften führen wir komplette Fassadensanierungen durch, einschliesslich Rissreparatur, Feuchtigkeitsbehandlung und Auftragen von diffusionsoffenen Putzen, die zum elsässischen Baubestand passen. Unsere Baustellen erfüllen die lokalen Vorschriften.",
       "process": [
-        { "step": "Fassadendiagnose", "detail": "Inspektion des Fassadenzustands, Identifikation von Rissen, Undichtigkeiten und Wärmebrücken." },
-        { "step": "Gerüstaufbau", "detail": "Sichere Montage des Gerüsts mit Absicherung der Umgebung (Netze, Planen)." },
-        { "step": "Wandvorbereitung", "detail": "Hochdruckreinigung, Rissreparatur, Anti-Moos- und Feuchtigkeitsbehandlung." },
-        { "step": "Verlegung der Dämmung", "detail": "Mechanische Befestigung und Verklebung der Dämmplatten, Montage der Start- und Eckprofile." },
-        { "step": "Endbeschichtung und Putz", "detail": "Auftragen des Oberputzes (gefilzt, geglättet oder gerieben), Anstrich, Baustellenreinigung." }
+        {
+          "step": "Fassadendiagnose",
+          "detail": "Inspektion des Fassadenzustands, Identifikation von Rissen, Undichtigkeiten und Wärmebrücken."
+        },
+        {
+          "step": "Gerüstaufbau",
+          "detail": "Sichere Montage des Gerüsts mit Absicherung der Umgebung (Netze, Planen)."
+        },
+        {
+          "step": "Wandvorbereitung",
+          "detail": "Hochdruckreinigung, Rissreparatur, Anti-Moos- und Feuchtigkeitsbehandlung."
+        },
+        {
+          "step": "Verlegung der Dämmung",
+          "detail": "Mechanische Befestigung und Verklebung der Dämmplatten, Montage der Start- und Eckprofile."
+        },
+        {
+          "step": "Endbeschichtung und Putz",
+          "detail": "Auftragen des Oberputzes (gefilzt, geglättet oder gerieben), Anstrich, Baustellenreinigung."
+        }
       ],
       "whyPro": "Dämmung und Fassadensanierung sind technisch anspruchsvolle Arbeiten, die die Langlebigkeit Ihres Gebäudes betreffen. Ein schlecht verlegtes WDVS kann zu Undichtigkeiten, Ablösungen und Verlust der Dämmwirkung führen. Diese Arbeiten sind förderfähig (MaPrimeRénov', CEE), aber nur wenn sie von einem qualifizierten Fachbetrieb (RGE) ausgeführt werden. Aiman Renovation begleitet Sie bei der Antragstellung, um Ihren Eigenanteil zu reduzieren.",
       "priceRange": "80 € – 200 € / m² für ein komplettes WDVS, 30 € – 80 € / m² für eine einfache Fassadensanierung"
@@ -386,11 +595,26 @@
       ],
       "longDescription": "Ihr Aussenbereich ist der erste Eindruck Ihres Hauses. Eine durchdachte Gartengestaltung wertet Ihre Immobilie auf, erweitert Ihren Lebensraum und bietet Ihnen das ganze Jahr über ein angenehmes Umfeld. Aiman Renovation plant und realisiert Gärten, Terrassen und Aussenbereiche, angepasst an das Klima der Region und Ihre Wünsche.\n\nTerrasse aus WPC, auf Stelzlagern oder aus Naturstein, Wege aus Verbundpflaster, Stützmauern, Zäune aus Aluminium oder Holz — wir beherrschen alle Materialien und Techniken. Wir integrieren auch Aussenbeleuchtung (Einbaustrahler, Pollerleuchten, LED-Lichterketten), damit Sie Ihren Garten auch abends geniessen können.\n\nUnsere Realisierungen berücksichtigen das Gelände (Gefälle, Entwässerung, Bodenbeschaffenheit), die Ausrichtung und Ihr Budget. Wir pflanzen frostbeständige heimische Arten und installieren bei Bedarf automatische Bewässerungssysteme. Vom frisch gesäten Rasen bis zu blühenden Beeten — Ihr Aussenbereich wird lebendig.",
       "process": [
-        { "step": "Geländeanalyse", "detail": "Bodenanalyse, Gefälle, natürliche Entwässerung und Sonneneinstrahlung." },
-        { "step": "Gestaltungsplan", "detail": "Projektplanung mit Positionierung von Terrasse, Wegen, Bepflanzung und Beleuchtung." },
-        { "step": "Erdarbeiten", "detail": "Aushub, Nivellierung, Verlegung von Geotextil und Fundamentvorbereitung." },
-        { "step": "Bau", "detail": "Realisierung der Terrasse, Wege, Mauern, Zäune und Tore." },
-        { "step": "Bepflanzung und Endarbeiten", "detail": "Pflanzung, Rasenanlage, Installation der Beleuchtung und Reinigung." }
+        {
+          "step": "Geländeanalyse",
+          "detail": "Bodenanalyse, Gefälle, natürliche Entwässerung und Sonneneinstrahlung."
+        },
+        {
+          "step": "Gestaltungsplan",
+          "detail": "Projektplanung mit Positionierung von Terrasse, Wegen, Bepflanzung und Beleuchtung."
+        },
+        {
+          "step": "Erdarbeiten",
+          "detail": "Aushub, Nivellierung, Verlegung von Geotextil und Fundamentvorbereitung."
+        },
+        {
+          "step": "Bau",
+          "detail": "Realisierung der Terrasse, Wege, Mauern, Zäune und Tore."
+        },
+        {
+          "step": "Bepflanzung und Endarbeiten",
+          "detail": "Pflanzung, Rasenanlage, Installation der Beleuchtung und Reinigung."
+        }
       ],
       "whyPro": "Eine schlecht geplante Aussenanlage verfällt schnell: Terrasse, die sich durch Frost hebt, absackende Wege, Wasserstau. Die Beherrschung von Erdarbeiten, Entwässerung und Fundamenten ist für ein dauerhaftes Ergebnis unerlässlich. Unsere Teams kennen die klimatischen Besonderheiten der Region (Frost, starke Niederschläge) und wählen geeignete Materialien. 10-Jahres-Garantie auf Mauerwerksarbeiten inklusive.",
       "priceRange": "5 000 € – 30 000 € je nach Fläche und gewünschter Gestaltung"
@@ -410,11 +634,26 @@
       ],
       "longDescription": "Malerarbeiten sind weit mehr als ein Anstrich: Es ist die Kunst, Ihre Räume zu veredeln. Eine fachgerecht aufgetragene Farbe auf einem perfekt vorbereiteten Untergrund verwandelt die Atmosphäre eines Raumes grundlegend. Aiman Renovation führt alle Innen- und Aussenmalerarbeiten mit handwerklicher Sorgfalt aus.\n\nWir beginnen stets mit der Untergrundvorbereitung: Spachteln von Rissen, Schleifen, Reinigen, Auftragen einer Haftgrundierung. Dieser Schritt macht 70% der Arbeitszeit aus und unterscheidet ein Amateurergebnis von einem professionellen Finish. Wir verwenden Markenfarben (Tollens, Sikkens, Zolpan) in den Ausführungen matt, seidenmatt oder glänzend je nach gewünschtem Effekt.\n\nDekorputze (Tadelakt, Stucco, Sichtbeton an der Wand), Designtapeten, Struktureffekte — wir realisieren auch kreative Oberflächen, um Ihrem Interieur Charakter zu verleihen. Für den Aussenbereich verwenden wir diffusionsoffene Farben, die die Wände atmen lassen und gleichzeitig vor Witterung schützen.",
       "process": [
-        { "step": "Schutz der Baustelle", "detail": "Abdecken von Böden und Möbeln, Abkleben von Rahmen und Sockelleisten." },
-        { "step": "Untergrundvorbereitung", "detail": "Spachteln, Schleifen, Reinigen, Grundierung. Behandlung von Flecken und Schimmel." },
-        { "step": "Auftragen der Grundierung", "detail": "Erste Haftschicht zur Vereinheitlichung des Untergrunds und optimalen Haltbarkeit des Endanstrichs." },
-        { "step": "Endanstrich", "detail": "Auftragen von 2 Schichten Farbe mit gleichmässigem Finish, ohne Streifen oder Nasen." },
-        { "step": "Nachbesserungen und Reinigung", "detail": "Kontrolle bei Streiflicht, Nachbesserungen wenn nötig, Entfernung der Abdeckungen und Reinigung." }
+        {
+          "step": "Schutz der Baustelle",
+          "detail": "Abdecken von Böden und Möbeln, Abkleben von Rahmen und Sockelleisten."
+        },
+        {
+          "step": "Untergrundvorbereitung",
+          "detail": "Spachteln, Schleifen, Reinigen, Grundierung. Behandlung von Flecken und Schimmel."
+        },
+        {
+          "step": "Auftragen der Grundierung",
+          "detail": "Erste Haftschicht zur Vereinheitlichung des Untergrunds und optimalen Haltbarkeit des Endanstrichs."
+        },
+        {
+          "step": "Endanstrich",
+          "detail": "Auftragen von 2 Schichten Farbe mit gleichmässigem Finish, ohne Streifen oder Nasen."
+        },
+        {
+          "step": "Nachbesserungen und Reinigung",
+          "detail": "Kontrolle bei Streiflicht, Nachbesserungen wenn nötig, Entfernung der Abdeckungen und Reinigung."
+        }
       ],
       "whyPro": "Erfolgreiche Malerarbeit basiert zu 70% auf der Untergrundvorbereitung. Ohne Schleifen, Spachteln und geeignete Grundierung blättert die Farbe, bildet Blasen und vergilbt vorzeitig. Unsere professionellen Maler beherrschen die Vorbereitungstechniken, wählen die richtigen Produkte für jeden Untergrund (Gips, Holz, Metall, Beton) und tragen die Farbe mit professionellem Werkzeug auf — für ein einwandfreies Ergebnis.",
       "priceRange": "20 € – 45 € / m² Wände und Decken, Vorbereitung und 2 Anstriche inklusive"
@@ -434,11 +673,26 @@
       ],
       "longDescription": "Das Elektroauto setzt sich durch — und damit der Bedarf an zuverlässigen Ladelösungen zu Hause. Aiman Renovation verfügt über die IRVE-Zertifizierung (Ladeinfrastruktur für Elektrofahrzeuge) und installiert Ladestationen in Einfamilienhäusern wie auch in Eigentümergemeinschaften in der Region.\n\nWir installieren Wallboxen von 7,4 kW bis 22 kW, je nach Leistung Ihres Zählers und Ihrem Ladebedarf. In Einfamilienhäusern ist die Installation meist unkompliziert: Kabelverlegung vom Sicherungskasten, Montage der Wallbox in der Garage oder im Aussenbereich (IP54). In Eigentümergemeinschaften übernehmen wir die technische Studie, die Abstimmung in der Eigentümerversammlung und den individuellen Anschluss.\n\nDie IRVE-Zertifizierung ist für die Installation von Ladestationen über 3,7 kW obligatorisch und Voraussetzung für den Zugang zu Förderungen. Mit Aiman Renovation profitieren Sie von einem zertifizierten Installateur, garantiertem Material und umfassender Begleitung bei der Beantragung von Steuergutschrift (bis 300 €) und ADVENIR-Prämie in Eigentümergemeinschaften.",
       "process": [
-        { "step": "Machbarkeitsstudie", "detail": "Prüfung der Zählerleistung, Entfernung Sicherungskasten-Ladestation, Auswahl des passenden Ladestationstyps." },
-        { "step": "Offerte und Förderungen", "detail": "Detailliertes Angebot mit Simulation der Förderungen (Steuergutschrift, ADVENIR-Prämie)." },
-        { "step": "Elektroinstallation", "detail": "Verlegung einer dedizierten Leitung vom Sicherungskasten, Einbau des angepassten FI-Schutzschalters." },
-        { "step": "Montage der Ladestation", "detail": "Wandmontage oder Standsäule, Elektroanschluss, Konfiguration und Ladetest." },
-        { "step": "Inbetriebnahme", "detail": "Konfiguration der Ladestation (Leistung, Zeitpläne), Übergabe der IRVE-Bescheinigung und Bedienungsanleitung." }
+        {
+          "step": "Machbarkeitsstudie",
+          "detail": "Prüfung der Zählerleistung, Entfernung Sicherungskasten-Ladestation, Auswahl des passenden Ladestationstyps."
+        },
+        {
+          "step": "Offerte und Förderungen",
+          "detail": "Detailliertes Angebot mit Simulation der Förderungen (Steuergutschrift, ADVENIR-Prämie)."
+        },
+        {
+          "step": "Elektroinstallation",
+          "detail": "Verlegung einer dedizierten Leitung vom Sicherungskasten, Einbau des angepassten FI-Schutzschalters."
+        },
+        {
+          "step": "Montage der Ladestation",
+          "detail": "Wandmontage oder Standsäule, Elektroanschluss, Konfiguration und Ladetest."
+        },
+        {
+          "step": "Inbetriebnahme",
+          "detail": "Konfiguration der Ladestation (Leistung, Zeitpläne), Übergabe der IRVE-Bescheinigung und Bedienungsanleitung."
+        }
       ],
       "whyPro": "Die Installation einer Ladestation betrifft Hochleistungselektrik und erfordert eine obligatorische IRVE-Zertifizierung ab 3,7 kW. Eine ungeeignete Verkabelung kann Überhitzung, ausgelöste Sicherungen oder schlimmstenfalls einen Brand verursachen. Die IRVE-Zertifizierung ist auch Voraussetzung für die Steuergutschrift und die ADVENIR-Prämie. Gehen Sie kein Risiko ein: Beauftragen Sie einen zertifizierten Installateur.",
       "priceRange": "1 200 € – 2 500 € inklusive Montage (vor Förderungen), 900 € – 1 800 € nach Steuergutschrift"
@@ -458,11 +712,26 @@
       ],
       "longDescription": "Die Region profitiert von günstiger Sonneneinstrahlung für die Solarenergieproduktion, mit über 1 700 Sonnenstunden pro Jahr. Solarmodule auf Ihrem Dach zu installieren bedeutet: eigenen Strom produzieren, Rechnungen senken und zur Energiewende beitragen. Aiman Renovation begleitet Sie dabei, von der Machbarkeitsstudie bis zur Inbetriebnahme.\n\nWir installieren monokristalline Solarmodule der neuesten Generation, die auch bei bewölktem Himmel optimale Erträge liefern. Im Eigenverbrauch mit Einspeisung des Überschusses amortisiert sich Ihre Anlage in 8 bis 12 Jahren und steigert gleichzeitig den Wert Ihrer Immobilie. Für ein typisches Haus von 100 m² deckt eine 3-kWp-Anlage (8 Module) 30 bis 50% Ihres Jahresverbrauchs.\n\nDie Förderungen sind zahlreich und kumulierbar: Eigenverbrauchsprämie (bis 1 500 € für 3 kWp), garantierter Einspeisevergütungstarif über 20 Jahre, reduzierte MwSt. von 10% für Anlagen unter 3 kWp. Wir stellen Ihren kompletten Antrag zusammen und erledigen die Verwaltungsformalitäten.",
       "process": [
-        { "step": "Solarstudie", "detail": "Analyse der Ausrichtung und Neigung Ihres Daches, Ertragsberechnung und Wirtschaftlichkeitssimulation." },
-        { "step": "Verwaltungsformalitäten", "detail": "Bauvoranzeige bei der Gemeinde, Netzanschlussantrag, Einspeisevertrag." },
-        { "step": "Montage der Module", "detail": "Befestigung der Montageschienen, Installation der Module und Mikrowechselrichter auf dem Dach." },
-        { "step": "Elektroanschluss", "detail": "Verkabelung, AC/DC-Anschlusskasten, Anschluss an Sicherungskasten und Zähler." },
-        { "step": "Inbetriebnahme", "detail": "Produktionstest, Einrichtung des Monitorings, Übergabe der kompletten technischen Unterlagen." }
+        {
+          "step": "Solarstudie",
+          "detail": "Analyse der Ausrichtung und Neigung Ihres Daches, Ertragsberechnung und Wirtschaftlichkeitssimulation."
+        },
+        {
+          "step": "Verwaltungsformalitäten",
+          "detail": "Bauvoranzeige bei der Gemeinde, Netzanschlussantrag, Einspeisevertrag."
+        },
+        {
+          "step": "Montage der Module",
+          "detail": "Befestigung der Montageschienen, Installation der Module und Mikrowechselrichter auf dem Dach."
+        },
+        {
+          "step": "Elektroanschluss",
+          "detail": "Verkabelung, AC/DC-Anschlusskasten, Anschluss an Sicherungskasten und Zähler."
+        },
+        {
+          "step": "Inbetriebnahme",
+          "detail": "Produktionstest, Einrichtung des Monitorings, Übergabe der kompletten technischen Unterlagen."
+        }
       ],
       "whyPro": "Die Installation von Solarmodulen erfordert Arbeiten auf dem Dach (Absturzgefahr) und Hochspannungsanschlüsse. Eine nicht normgerechte Montage kann Dachdurchfeuchtungen, Brandgefahr oder Minderleistung verursachen. Für den Zugang zu Förderungen (Eigenverbrauchsprämie, reduzierte MwSt.) muss die Installation von einem qualifizierten Fachbetrieb (RGE) durchgeführt werden. Aiman Renovation übernimmt das gesamte Projekt für Sie.",
       "priceRange": "7 000 € – 15 000 € für 3 bis 6 kWp (vor Eigenverbrauchsprämie von 1 000 € bis 2 500 €)"
@@ -483,11 +752,26 @@
       ],
       "longDescription": "Ein schöner Garten will gepflegt sein. Aber zwischen Arbeit, Familie und Alltag — wer hat schon die Zeit, jede Woche zu mähen, zweimal im Jahr die Hecke zu schneiden und die Terrasse vor dem Sommer zu reinigen? Aiman Renovation übernimmt die komplette Pflege Ihrer Aussenbereiche, damit Sie sie geniessen können, ohne einen Finger zu rühren.\n\nWir bieten Einzeleinsätze — Rasenmähen, Heckenschnitt, Rodung, Laubbeseitigung, Anti-Moos-Behandlung — aber vor allem Jahresabonnements. Sie wählen die Frequenz (wöchentlich, zweiwöchentlich oder monatlich), wir planen die Einsätze und Sie müssen nicht mehr daran denken.\n\nWir verfügen auch über professionelle Hochdruckreinigungsgeräte mit Heiss- und Kaltwasser. Terrassen, Wege, Fassaden, Dächer — wir geben allen Aussenflächen Ihrer Immobilie ein neues Gesicht. Die Heisswasserreinigung ist besonders wirksam gegen Moose, Flechten und eingebrannte Fettflecken.\n\nUnsere Abonnements umfassen eine saisonale Bestandsaufnahme: Im Frühling bereiten wir vor (Vertikutieren, Unkrautbeseitigung, Düngung); im Sommer pflegen wir; im Herbst schützen wir (Laubbeseitigung, Rückschnitt, Mulchen); im Winter überwachen wir. Das ist Sorglosigkeit, schlüsselfertig.",
       "process": [
-        { "step": "Bewertungsbesuch", "detail": "Wir beurteilen Ihr Grundstück: Fläche, Vegetationstyp, aktueller Zustand, spezifische Bedürfnisse." },
-        { "step": "Massgeschneidertes Angebot", "detail": "Detaillierte Offerte mit angepasstem Pflegeprogramm: Einsatzfrequenz, enthaltene Leistungen, monatlicher oder jährlicher Tarif." },
-        { "step": "Einsatzplanung", "detail": "Ein Einsatzkalender wird saisonabhängig erstellt. Sie werden vorab über jede Intervention informiert." },
-        { "step": "Regelmässige Einsätze", "detail": "Unsere Teams kommen planmässig: Mähen, Schneiden, Reinigen, saisonale Behandlungen." },
-        { "step": "Bilanz und Anpassung", "detail": "Ein jährlicher Rückblick zur Anpassung der Leistungen an die Entwicklung Ihres Gartens und Ihre Bedürfnisse." }
+        {
+          "step": "Bewertungsbesuch",
+          "detail": "Wir beurteilen Ihr Grundstück: Fläche, Vegetationstyp, aktueller Zustand, spezifische Bedürfnisse."
+        },
+        {
+          "step": "Massgeschneidertes Angebot",
+          "detail": "Detaillierte Offerte mit angepasstem Pflegeprogramm: Einsatzfrequenz, enthaltene Leistungen, monatlicher oder jährlicher Tarif."
+        },
+        {
+          "step": "Einsatzplanung",
+          "detail": "Ein Einsatzkalender wird saisonabhängig erstellt. Sie werden vorab über jede Intervention informiert."
+        },
+        {
+          "step": "Regelmässige Einsätze",
+          "detail": "Unsere Teams kommen planmässig: Mähen, Schneiden, Reinigen, saisonale Behandlungen."
+        },
+        {
+          "step": "Bilanz und Anpassung",
+          "detail": "Ein jährlicher Rückblick zur Anpassung der Leistungen an die Entwicklung Ihres Gartens und Ihre Bedürfnisse."
+        }
       ],
       "whyPro": "Regelmässige professionelle Pflege erhält den Wert Ihrer Immobilie und die Gesundheit Ihrer Pflanzen. Eine schlecht geschnittene Hecke wuchert, ein nicht vertikutierter Rasen erstickt, eine unbehandelte Terrasse wird rutschig und gefährlich. Unsere Teams kennen die regionalen Pflanzenarten und passen die Pflege an die Jahreszeiten an. Mit einem Abonnement haben Sie die Garantie einer konstanten Betreuung, ohne daran denken zu müssen.",
       "priceRange": "Ab 80 € / Einzeleinsatz, Jahresabonnement ab 150 € / Monat"
@@ -508,11 +792,26 @@
       ],
       "longDescription": "Ein Wasserleck um 22 Uhr, ein Kurzschluss am Sonntag, ein Wasserschaden, der Ihre Wohnung bedroht — Notfälle warten nicht und wir auch nicht. Aiman Renovation ist 24/7 im Einsatz, um Ihre Wohnung zu sichern, bevor die Schäden grösser werden.\n\nUnser Service deckt alle Notfälle ab: Sanitär (Rohrleitungsleck, Wasserhahn, Spülkasten, Warmwasserbereiter, Wasserschaden), Elektrik (ausgelöster Sicherungsautomat, verschmorte Steckdose, Stromausfall, Kurzschluss), Hochdruck-Rohrreinigung und alles, was eine schnelle Intervention erfordert. Wir greifen ein, um den Schaden zu stoppen, die Installation zu sichern und Ihnen eine Offerte für die Instandsetzung vorzulegen.\n\nFür unsere bestehenden Kunden bieten wir auch Kundendienst für die von uns ausgeführten Arbeiten. Ein Problem mit einer Installation, die wir eingebaut haben? Wir kommen wieder, diagnostizieren und reparieren. Das ist Vertrauen auf lange Sicht.",
       "process": [
-        { "step": "Notruf", "detail": "Sie rufen uns an, wir beurteilen die Situation telefonisch und geben Ihnen erste Handlungsanweisungen." },
-        { "step": "Schneller Einsatz", "detail": "Ein Techniker kommt schnellstmöglich, um zu sichern und den Schaden zu stoppen." },
-        { "step": "Diagnose vor Ort", "detail": "Genaue Identifikation der Ursache: Leck, Kurzschluss, Undichtigkeit. Fotos und Bericht." },
-        { "step": "Notfall-Reparatur", "detail": "Sofortige Reparatur wenn möglich, oder temporäre Sicherung mit Offerte für die endgültige Instandsetzung." },
-        { "step": "Nachbetreuung und Instandsetzung", "detail": "Planung der Instandsetzungsarbeiten falls nötig. Begleitung bei der Versicherungsmeldung." }
+        {
+          "step": "Notruf",
+          "detail": "Sie rufen uns an, wir beurteilen die Situation telefonisch und geben Ihnen erste Handlungsanweisungen."
+        },
+        {
+          "step": "Schneller Einsatz",
+          "detail": "Ein Techniker kommt schnellstmöglich, um zu sichern und den Schaden zu stoppen."
+        },
+        {
+          "step": "Diagnose vor Ort",
+          "detail": "Genaue Identifikation der Ursache: Leck, Kurzschluss, Undichtigkeit. Fotos und Bericht."
+        },
+        {
+          "step": "Notfall-Reparatur",
+          "detail": "Sofortige Reparatur wenn möglich, oder temporäre Sicherung mit Offerte für die endgültige Instandsetzung."
+        },
+        {
+          "step": "Nachbetreuung und Instandsetzung",
+          "detail": "Planung der Instandsetzungsarbeiten falls nötig. Begleitung bei der Versicherungsmeldung."
+        }
       ],
       "whyPro": "Im Notfall zählt jede Minute. Ein unbehandeltes Leck kann innerhalb weniger Stunden Schäden von Tausenden Euro verursachen. Ein defekter Stromkreis birgt Brandgefahr. Einen qualifizierten Fachmann zu rufen garantiert einen sicheren, normgerechten und für Ihre Versicherung dokumentierten Einsatz. Unsere Ortskenntnis in der Region ermöglicht schnelles Eingreifen.",
       "priceRange": "Anfahrt + Diagnose: ab 90 €, Reparatur auf Offerte"
@@ -836,21 +1135,37 @@
         "category": "Devis",
         "question": "Wie erhalte ich eine Offerte?",
         "answer": "Füllen Sie unser Online-Formular aus oder rufen Sie uns an unter 06 33 49 69 25. Wir senden Ihnen innert 4 Tagen nach technischer Besichtigung eine detaillierte Offerte.",
-        "relatedServices": [{ "label": "Offerte anfordern", "href": "/devis" }]
+        "relatedServices": [
+          {
+            "label": "Offerte anfordern",
+            "href": "/devis"
+          }
+        ]
       },
       {
         "category": "Devis",
         "question": "Ist die Offerte kostenlos?",
         "answer": "Ja, alle unsere Offerten sind kostenlos und unverbindlich. Die technische Besichtigung vor Ort ist inbegriffen und ermöglicht es uns, Ihr Projekt genau zu bewerten und Ihnen ein präzises Angebot zu erstellen.",
-        "relatedServices": [{ "label": "Kostenlose Offerte anfordern", "href": "/devis" }]
+        "relatedServices": [
+          {
+            "label": "Kostenlose Offerte anfordern",
+            "href": "/devis"
+          }
+        ]
       },
       {
         "category": "Devis",
         "question": "Was beinhaltet Ihre Offerte?",
         "answer": "Unsere Offerte listet jeden Arbeitsposten detailliert auf: Arbeitskosten, Materialien, Lieferungen, voraussichtliche Termine und Zahlungsbedingungen. Keine bösen Überraschungen: Der angegebene Preis ist der Endpreis, ausser bei Änderungen Ihrerseits während der Arbeiten.",
         "relatedServices": [
-          { "label": "Unsere Leistungen ansehen", "href": "/services" },
-          { "label": "Offerte anfordern", "href": "/devis" }
+          {
+            "label": "Unsere Leistungen ansehen",
+            "href": "/services"
+          },
+          {
+            "label": "Offerte anfordern",
+            "href": "/devis"
+          }
         ]
       },
       {
@@ -858,8 +1173,14 @@
         "question": "Wie schnell erhalte ich meine Offerte?",
         "answer": "Wir verpflichten uns, Ihnen Ihre Offerte innert 4 Tagen nach der technischen Besichtigung zuzusenden. Bei komplexen Projekten (Fassade, Photovoltaik) rechnen Sie mit 5 bis 7 Werktagen.",
         "relatedServices": [
-          { "label": "Offerte anfordern", "href": "/devis" },
-          { "label": "Fassadensanierung", "href": "/services/ravalement-facade" }
+          {
+            "label": "Offerte anfordern",
+            "href": "/devis"
+          },
+          {
+            "label": "Fassadensanierung",
+            "href": "/services/ravalement-facade"
+          }
         ]
       },
       {
@@ -867,8 +1188,14 @@
         "question": "Was ist Ihr Einsatzgebiet?",
         "answer": "Wir arbeiten grenzüberschreitend in der ganzen Region Basel: Basel, Riehen, Allschwil, Binningen, Lörrach, Weil am Rhein, Saint-Louis, Huningue, Hésingue, Village-Neuf, Blotzheim, Bartenheim und darüber hinaus auf Anfrage.",
         "relatedServices": [
-          { "label": "Unsere Leistungen ansehen", "href": "/services" },
-          { "label": "Kontaktieren Sie uns", "href": "/contact" }
+          {
+            "label": "Unsere Leistungen ansehen",
+            "href": "/services"
+          },
+          {
+            "label": "Kontaktieren Sie uns",
+            "href": "/contact"
+          }
         ]
       },
       {
@@ -876,9 +1203,18 @@
         "question": "Wie lange dauern die Arbeiten?",
         "answer": "Das hängt vom Projekt ab. Richtwerte: Badezimmer 2-3 Wochen, Küche 3-4 Wochen, Malerarbeiten einer Wohnung 1-2 Wochen, Fassade/WDVS 3-6 Wochen. Der genaue Zeitplan steht in der Offerte.",
         "relatedServices": [
-          { "label": "Badezimmer-Renovierung", "href": "/services/salle-de-bain" },
-          { "label": "Küchenrenovierung", "href": "/services/cuisine" },
-          { "label": "Fassadensanierung", "href": "/services/ravalement-facade" }
+          {
+            "label": "Badezimmer-Renovierung",
+            "href": "/services/salle-de-bain"
+          },
+          {
+            "label": "Küchenrenovierung",
+            "href": "/services/cuisine"
+          },
+          {
+            "label": "Fassadensanierung",
+            "href": "/services/ravalement-facade"
+          }
         ]
       },
       {
@@ -886,9 +1222,18 @@
         "question": "Arbeiten Sie auch in Eigentümergemeinschaften?",
         "answer": "Ja: Fassadensanierung, Dämmung, Renovation der Gemeinschaftsbereiche, Installation von Ladestationen für Gemeinschaften. Wir arbeiten in Abstimmung mit der Hausverwaltung und beachten die Gemeinschaftsordnung.",
         "relatedServices": [
-          { "label": "Fassadensanierung", "href": "/services/ravalement-facade" },
-          { "label": "Wärmedämmung (WDVS)", "href": "/services/isolation" },
-          { "label": "Ladestationen IRVE", "href": "/services/bornes-irve" }
+          {
+            "label": "Fassadensanierung",
+            "href": "/services/ravalement-facade"
+          },
+          {
+            "label": "Wärmedämmung (WDVS)",
+            "href": "/services/isolation"
+          },
+          {
+            "label": "Ladestationen IRVE",
+            "href": "/services/bornes-irve"
+          }
         ]
       },
       {
@@ -896,8 +1241,14 @@
         "question": "Kann ich während der Arbeiten in meiner Wohnung bleiben?",
         "answer": "In den meisten Fällen ja. Wir organisieren die Baustelle in Zonen, um Beeinträchtigungen zu minimieren. Bei einer Komplettrenovierung (Küche + Badezimmer gleichzeitig) können wir Ihnen eine vorübergehende Unterkunft empfehlen.",
         "relatedServices": [
-          { "label": "Küchenrenovierung", "href": "/services/cuisine" },
-          { "label": "Badezimmer-Renovierung", "href": "/services/salle-de-bain" }
+          {
+            "label": "Küchenrenovierung",
+            "href": "/services/cuisine"
+          },
+          {
+            "label": "Badezimmer-Renovierung",
+            "href": "/services/salle-de-bain"
+          }
         ]
       },
       {
@@ -905,8 +1256,14 @@
         "question": "Wie läuft eine typische Baustelle ab?",
         "answer": "Nach Unterschrift der Offerte: 1) Planung und Materialbestellung, 2) Schutz der Baustelle und Abbruch, 3) Technische Arbeiten (Sanitär, Elektrik), 4) Endarbeiten (Fliesen, Malerarbeiten), 5) Abnahme gemeinsam mit Ihnen. Ein einziger Ansprechpartner hält Sie bei jedem Schritt auf dem Laufenden.",
         "relatedServices": [
-          { "label": "Unsere Leistungen ansehen", "href": "/services" },
-          { "label": "Offerte anfordern", "href": "/devis" }
+          {
+            "label": "Unsere Leistungen ansehen",
+            "href": "/services"
+          },
+          {
+            "label": "Offerte anfordern",
+            "href": "/devis"
+          }
         ]
       },
       {
@@ -923,15 +1280,26 @@
         "category": "Déroulement",
         "question": "Habe ich einen festen Ansprechpartner?",
         "answer": "Ja, Aiman überwacht jede Baustelle persönlich. Sie haben eine Direktnummer und können den Fortschritt Ihrer Arbeiten in Echtzeit verfolgen. Wir senden regelmässig Fortschrittsfotos per E-Mail oder WhatsApp.",
-        "relatedServices": [{ "label": "Kontaktieren Sie uns", "href": "/contact" }]
+        "relatedServices": [
+          {
+            "label": "Kontaktieren Sie uns",
+            "href": "/contact"
+          }
+        ]
       },
       {
         "category": "Garanties",
         "question": "Welche Garantien bieten Sie?",
         "answer": "Wir sind durch eine Berufshaftpflichtversicherung und eine 10-Jahres-Garantie abgedeckt. Konkret: Mängelbeseitigungsgarantie (1 Jahr), Gewährleistung auf Ausstattung (2 Jahre) und 10-Jahres-Garantie auf Bausubstanz und Dichtigkeit.",
         "relatedServices": [
-          { "label": "Unsere Leistungen ansehen", "href": "/services" },
-          { "label": "Kontaktieren Sie uns", "href": "/contact" }
+          {
+            "label": "Unsere Leistungen ansehen",
+            "href": "/services"
+          },
+          {
+            "label": "Kontaktieren Sie uns",
+            "href": "/contact"
+          }
         ]
       },
       {
@@ -939,8 +1307,14 @@
         "question": "Sind Sie IRVE-zertifiziert?",
         "answer": "Ja, wir verfügen über die IRVE-Zertifizierung (Ladeinfrastruktur für Elektrofahrzeuge), die für die Installation von Ladestationen über 3,7 kW obligatorisch ist. Diese Zertifizierung ermöglicht Ihnen den Zugang zu Steuergutschrift und ADVENIR-Prämie.",
         "relatedServices": [
-          { "label": "Ladestationen IRVE", "href": "/services/bornes-irve" },
-          { "label": "Offerte anfordern", "href": "/devis" }
+          {
+            "label": "Ladestationen IRVE",
+            "href": "/services/bornes-irve"
+          },
+          {
+            "label": "Offerte anfordern",
+            "href": "/devis"
+          }
         ]
       },
       {
@@ -953,9 +1327,18 @@
         "question": "Was ist MaPrimeRénov'?",
         "answer": "MaPrimeRénov' ist eine staatliche Förderung in Frankreich für energetische Sanierungsarbeiten: Dämmung, Heizung, Lüftung, Solaranlagen. Die Höhe hängt von Ihrem Einkommen und der Art der Arbeiten ab und kann bis zu 90% der Kosten für einkommensschwache Haushalte abdecken. Wir helfen Ihnen bei der Antragstellung.",
         "relatedServices": [
-          { "label": "Wärmedämmung (WDVS)", "href": "/services/isolation" },
-          { "label": "Solaranlagen", "href": "/services/panneaux-solaires" },
-          { "label": "Offerte anfordern", "href": "/devis" }
+          {
+            "label": "Wärmedämmung (WDVS)",
+            "href": "/services/isolation"
+          },
+          {
+            "label": "Solaranlagen",
+            "href": "/services/panneaux-solaires"
+          },
+          {
+            "label": "Offerte anfordern",
+            "href": "/devis"
+          }
         ]
       },
       {
@@ -963,8 +1346,14 @@
         "question": "Was sind CEE (Energiesparzertifikate)?",
         "answer": "CEE sind Prämien der Energieversorger (EDF, Engie, TotalEnergies) zur Förderung von Energiesparmassnahmen. Wanddämmung, Fensteraustausch, Installation eines Wärmepumpen-Warmwasserbereiters: Diese Prämien sind mit MaPrimeRénov' kumulierbar und können mehrere Tausend Euro betragen.",
         "relatedServices": [
-          { "label": "Wärmedämmung (WDVS)", "href": "/services/isolation" },
-          { "label": "Offerte anfordern", "href": "/devis" }
+          {
+            "label": "Wärmedämmung (WDVS)",
+            "href": "/services/isolation"
+          },
+          {
+            "label": "Offerte anfordern",
+            "href": "/devis"
+          }
         ]
       },
       {
@@ -972,8 +1361,14 @@
         "question": "Kann ich den éco-PTZ nutzen?",
         "answer": "Der éco-PTZ (zinsfreies Darlehen) ermöglicht die Finanzierung Ihrer energetischen Sanierung ohne Zinsen, bis zu 50 000 €. Er ist ohne Einkommensbedingung über Ihre Bank zugänglich und mit MaPrimeRénov' und CEE kumulierbar.",
         "relatedServices": [
-          { "label": "Wärmedämmung (WDVS)", "href": "/services/isolation" },
-          { "label": "Solaranlagen", "href": "/services/panneaux-solaires" }
+          {
+            "label": "Wärmedämmung (WDVS)",
+            "href": "/services/isolation"
+          },
+          {
+            "label": "Solaranlagen",
+            "href": "/services/panneaux-solaires"
+          }
         ]
       },
       {
@@ -981,8 +1376,14 @@
         "question": "Gilt eine reduzierte MwSt. auf meine Arbeiten?",
         "answer": "Ja, für Wohnungen älter als 2 Jahre: 10% MwSt. für klassische Renovierungsarbeiten (Malerarbeiten, Fliesen, Sanitär), 5,5% MwSt. für energetische Sanierungsarbeiten (Dämmung, Solaranlagen unter 3 kWp). Die reduzierte MwSt. wird automatisch auf unserer Offerte angewendet.",
         "relatedServices": [
-          { "label": "Unsere Leistungen ansehen", "href": "/services" },
-          { "label": "Offerte anfordern", "href": "/devis" }
+          {
+            "label": "Unsere Leistungen ansehen",
+            "href": "/services"
+          },
+          {
+            "label": "Offerte anfordern",
+            "href": "/devis"
+          }
         ]
       },
       {
@@ -990,23 +1391,40 @@
         "question": "Können Sie mir bei den Förderanträgen helfen?",
         "answer": "Selbstverständlich. Wir begleiten Sie bei allen Schritten: Simulation der Förderungen, auf die Sie Anspruch haben, Zusammenstellung der Anträge für MaPrimeRénov' und CEE, Beantragung des éco-PTZ bei Ihrer Bank. Unser Ziel ist es, Ihren Eigenanteil so gering wie möglich zu halten.",
         "relatedServices": [
-          { "label": "Kontaktieren Sie uns", "href": "/contact" },
-          { "label": "Offerte anfordern", "href": "/devis" }
+          {
+            "label": "Kontaktieren Sie uns",
+            "href": "/contact"
+          },
+          {
+            "label": "Offerte anfordern",
+            "href": "/devis"
+          }
         ]
       },
       {
         "category": "Paiement",
         "question": "Welche Zahlungsbedingungen gelten?",
         "answer": "Anzahlung von 30% bei Unterschrift der Offerte, dann gestaffelte Zahlungen nach Baufortschritt (in der Regel zur Hälfte), und Restzahlung bei der Abnahme. Wir akzeptieren Banküberweisung und Schecks.",
-        "relatedServices": [{ "label": "Offerte anfordern", "href": "/devis" }]
+        "relatedServices": [
+          {
+            "label": "Offerte anfordern",
+            "href": "/devis"
+          }
+        ]
       },
       {
         "category": "Paiement",
         "question": "Kann ich in Raten zahlen?",
         "answer": "Ja, die Zahlung ist naturgemäss nach Baufortschritt gestaffelt. Bei grossen Projekten können wir den Zahlungsplan an Ihre Situation anpassen. Der éco-PTZ (zinsfreies Darlehen) ist ebenfalls eine Möglichkeit, die Finanzierung ohne zusätzliche Kosten zu verteilen.",
         "relatedServices": [
-          { "label": "Kontaktieren Sie uns", "href": "/contact" },
-          { "label": "Offerte anfordern", "href": "/devis" }
+          {
+            "label": "Kontaktieren Sie uns",
+            "href": "/contact"
+          },
+          {
+            "label": "Offerte anfordern",
+            "href": "/devis"
+          }
         ]
       }
     ]
@@ -1016,19 +1434,45 @@
     "seo_description": "Entdecken Sie unsere abgeschlossenen Renovierungsprojekte in der Region Basel und im Dreiländereck: Küche, Badezimmer, Fassaden, Gartengestaltung. Vorher/Nachher-Fotos.",
     "hero_title": "UNSERE",
     "hero_title_highlight": "REFERENZEN",
-    "hero_subtitle": "Jedes Projekt ist einzigartig. Hier ein Einblick in unsere Transformationen in der Region Basel und im Dreiländereck. Renovierungen mit Anspruch, vom ersten Abbruch bis zum letzten Finish."
+    "hero_subtitle": "Jedes Projekt ist einzigartig. Hier ein Einblick in unsere Transformationen in der Region Basel und im Dreiländereck. Renovierungen mit Anspruch, vom ersten Abbruch bis zum letzten Finish.",
+    "filter_all": "Alle",
+    "no_results": "Noch keine Projekte in dieser Kategorie."
   },
   "notFound": {
     "badge": "Fehler 404",
     "variants": [
-      { "title": "Hoppla, tragende Wand!", "subtitle": "Auch die besten Pläne haben manchmal eine Wand am falschen Ort." },
-      { "title": "Baustellenbereich", "subtitle": "Diese Seite wird gerade abgerissen... oder hat nie existiert." },
-      { "title": "Nicht im Lot!", "subtitle": "Wir haben mit dem Laser geprüft — diese Seite ist nicht gerade." },
-      { "title": "Tür ohne Schloss", "subtitle": "Der Schlüssel existiert vielleicht, aber die Tür ist nicht da." },
-      { "title": "Fundament nicht gefunden", "subtitle": "Unmöglich, diese Seite zu bauen — das Fundament fehlt." },
-      { "title": "Anstrich daneben", "subtitle": "Wir haben die URL neu gestrichen, aber die Seite ist unter der Schicht verschwunden." },
-      { "title": "Fehlende Fliese", "subtitle": "Im Plan fehlt eine Fliese — diese Seite existiert nicht." },
-      { "title": "Baustelle geschlossen", "subtitle": "Diese Baustelle ist beendet... oder hat nie begonnen." }
+      {
+        "title": "Hoppla, tragende Wand!",
+        "subtitle": "Auch die besten Pläne haben manchmal eine Wand am falschen Ort."
+      },
+      {
+        "title": "Baustellenbereich",
+        "subtitle": "Diese Seite wird gerade abgerissen... oder hat nie existiert."
+      },
+      {
+        "title": "Nicht im Lot!",
+        "subtitle": "Wir haben mit dem Laser geprüft — diese Seite ist nicht gerade."
+      },
+      {
+        "title": "Tür ohne Schloss",
+        "subtitle": "Der Schlüssel existiert vielleicht, aber die Tür ist nicht da."
+      },
+      {
+        "title": "Fundament nicht gefunden",
+        "subtitle": "Unmöglich, diese Seite zu bauen — das Fundament fehlt."
+      },
+      {
+        "title": "Anstrich daneben",
+        "subtitle": "Wir haben die URL neu gestrichen, aber die Seite ist unter der Schicht verschwunden."
+      },
+      {
+        "title": "Fehlende Fliese",
+        "subtitle": "Im Plan fehlt eine Fliese — diese Seite existiert nicht."
+      },
+      {
+        "title": "Baustelle geschlossen",
+        "subtitle": "Diese Baustelle ist beendet... oder hat nie begonnen."
+      }
     ],
     "back_home": "Zurück zur Startseite",
     "request_devis": "Offerte anfordern",
@@ -1203,7 +1647,8 @@
       "Photovoltaikanlagen",
       "Außenpflege",
       "Notfalldienst & Reparatur"
-    ]
+    ],
+    "catalog_name": "Unsere Renovierungsleistungen"
   },
   "email": {
     "devis_client_title": "Ihre Offerte-Anfrage wurde erfolgreich gesendet",

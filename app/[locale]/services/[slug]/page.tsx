@@ -15,14 +15,35 @@ export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
 }
 
+interface TranslatedService {
+  slug: string;
+  title: string;
+  shortTitle: string;
+  description: string;
+  features: string[];
+  longDescription: string;
+  process: { step: string; detail: string }[];
+  whyPro: string;
+  priceRange: string;
+}
+
+async function getTranslatedService(locale: string, slug: string): Promise<TranslatedService | undefined> {
+  const tRoot = await getTranslations({ locale });
+  const items = tRoot.raw("service_items") as TranslatedService[];
+  return items.find((s) => s.slug === slug);
+}
+
 export async function generateMetadata({ params }: Props) {
   const { slug, locale } = await params;
   const service = SERVICES.find((s) => s.slug === slug);
   if (!service) return {};
   const t = await getTranslations({ locale, namespace: "services" });
+  const translated = await getTranslatedService(locale, slug);
+  const title = translated?.title ?? service.title;
+  const description = translated?.description ?? service.description;
   return {
-    title: `${service.title} ${t("service_meta_suffix")}`,
-    description: `${service.description} ${t("service_meta_desc_suffix")}`,
+    title: `${title} ${t("service_meta_suffix")}`,
+    description: `${description} ${t("service_meta_desc_suffix")}`,
     alternates: getAlternates(`/services/${slug}`),
   };
 }
@@ -34,13 +55,21 @@ export default async function ServicePage({ params }: Props) {
   if (!service) notFound();
 
   const t = await getTranslations({ locale, namespace: "services" });
+  const translated = await getTranslatedService(locale, slug);
+  const title = translated?.title ?? service.title;
+  const description = translated?.description ?? service.description;
+  const features = translated?.features ?? service.features;
+  const longDescription = translated?.longDescription ?? service.longDescription;
+  const process = translated?.process ?? service.process;
+  const whyPro = translated?.whyPro ?? service.whyPro;
+  const priceRange = translated?.priceRange ?? service.priceRange;
 
   // Static JSON-LD schema - no user input, safe to inline
   const serviceJsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
-    name: service.title,
-    description: service.description,
+    name: title,
+    description: description,
     provider: {
       "@type": "HomeAndConstructionBusiness",
       "@id": "https://aiman-renovation.fr/#organization",
@@ -75,7 +104,7 @@ export default async function ServicePage({ params }: Props) {
           <>
             <Image
               src={photo}
-              alt={`${service.title} — Aiman Renovation Saint-Louis 68`}
+              alt={`${title} — Aiman Renovation Saint-Louis 68`}
               fill
               priority
               className="object-cover"
@@ -99,10 +128,10 @@ export default async function ServicePage({ params }: Props) {
             />
           )}
           <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl leading-none tracking-tight">
-            {service.title.toUpperCase()}
+            {title.toUpperCase()}
           </h1>
           <p className="mt-6 text-gray-300 text-lg md:text-xl max-w-2xl leading-relaxed">
-            {service.description}
+            {description}
           </p>
           <div className="mt-8">
             <LinkButton
@@ -128,7 +157,7 @@ export default async function ServicePage({ params }: Props) {
                 </h2>
               </div>
               <div className="md:col-span-8 space-y-5 text-gray-400 text-lg leading-relaxed">
-                {service.longDescription.split("\n\n").map((paragraph, i) => (
+                {longDescription.split("\n\n").map((paragraph, i) => (
                   <p key={i}>{paragraph}</p>
                 ))}
               </div>
@@ -142,7 +171,7 @@ export default async function ServicePage({ params }: Props) {
         <section className="relative z-10 h-[40vh] md:h-[50vh] overflow-hidden">
           <Image
             src={photo}
-            alt={`Travaux ${service.title.toLowerCase()} en cours — artisan Haut-Rhin`}
+            alt={`Travaux ${title.toLowerCase()} en cours — artisan Haut-Rhin`}
             fill
             className="object-cover"
           />
@@ -165,7 +194,7 @@ export default async function ServicePage({ params }: Props) {
               <span className="text-[#E50000]">{t("features_title_highlight")}</span>
             </h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {service.features.map((feature) => (
+              {features.map((feature) => (
                 <li
                   key={feature}
                   className="flex items-center gap-4 bg-[#111111] rounded-xl p-5 border border-white/5 hover:border-[#E50000]/20 transition-colors"
@@ -201,7 +230,7 @@ export default async function ServicePage({ params }: Props) {
               {t("process_title")} <span className="text-[#E50000]">{t("process_title_highlight")}</span>
             </h2>
             <div className="space-y-6">
-              {service.process.map((step, i) => (
+              {process.map((step, i) => (
                 <div
                   key={i}
                   className="flex items-start gap-6 bg-black/60 backdrop-blur-sm border border-white/5 rounded-xl p-6 md:p-8 hover:border-[#E50000]/20 transition-colors"
@@ -237,7 +266,7 @@ export default async function ServicePage({ params }: Props) {
                   {t("why_pro_title")}{" "}
                   <span className="text-[#E50000]">{t("why_pro_highlight")}</span>
                 </h2>
-                <p className="text-gray-400 leading-relaxed">{service.whyPro}</p>
+                <p className="text-gray-400 leading-relaxed">{whyPro}</p>
               </div>
 
               <div className="bg-[#111111] border border-[#E50000]/20 rounded-xl p-8 md:p-10 flex flex-col justify-between">
@@ -247,7 +276,7 @@ export default async function ServicePage({ params }: Props) {
                     {t("budget_title")} <span className="text-[#E50000]">{t("budget_highlight")}</span>
                   </h2>
                   <p className="text-2xl md:text-3xl font-heading text-white mb-4">
-                    {service.priceRange}
+                    {priceRange}
                   </p>
                   <p className="text-gray-500 text-sm leading-relaxed">
                     {t("budget_disclaimer")}

@@ -10,9 +10,19 @@ import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
+interface TranslatedService {
+  slug: string;
+  title: string;
+  shortTitle: string;
+  description: string;
+}
+
 export function ServicesPageContent() {
   const t = useTranslations("services");
   const tc = useTranslations("common");
+  const tRoot = useTranslations();
+  const serviceItems = tRoot.raw("service_items") as TranslatedService[];
+  const serviceMap = new Map(serviceItems.map((s) => [s.slug, s]));
 
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -115,7 +125,7 @@ export function ServicesPageContent() {
               <div data-img className="absolute inset-0">
                 <Image
                   src={PHOTO_MAP[service.slug] || ""}
-                  alt={service.title}
+                  alt={serviceMap.get(service.slug)?.title ?? service.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -136,10 +146,10 @@ export function ServicesPageContent() {
               >
                 <div className="w-10 h-0.5 bg-[#E50000] mb-4" />
                 <h2 className="font-heading text-2xl md:text-3xl text-white group-hover:text-[#E50000] transition-colors leading-tight">
-                  {service.title.toUpperCase()}
+                  {(serviceMap.get(service.slug)?.title ?? service.title).toUpperCase()}
                 </h2>
                 <p className="mt-2 text-gray-300 text-sm md:text-base leading-relaxed max-w-lg line-clamp-2">
-                  {service.description}
+                  {serviceMap.get(service.slug)?.description ?? service.description}
                 </p>
                 <div className="mt-4 flex items-center gap-2">
                   <span className="text-[#E50000] text-sm font-medium uppercase tracking-wider">{tc("discover")}</span>

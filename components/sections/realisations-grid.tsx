@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SERVICES } from "@/lib/services";
+import { useTranslations } from "next-intl";
 import { BeforeAfterSlider } from "@/components/sections/before-after-slider";
 import { ScrollReveal } from "@/components/sections/scroll-reveal";
 
@@ -118,12 +119,22 @@ const PROJECTS = [
   },
 ];
 
-const FILTER_SERVICES = [
-  { slug: "all", label: "Tous" },
-  ...SERVICES.map((s) => ({ slug: s.slug, label: s.shortTitle })),
-];
+interface TranslatedService {
+  slug: string;
+  shortTitle: string;
+}
 
 export function RealisationsGrid() {
+  const tRoot = useTranslations();
+  const tRealisations = useTranslations("realisations");
+  const serviceItems = tRoot.raw("service_items") as TranslatedService[];
+  const serviceMap = new Map(serviceItems.map((s) => [s.slug, s]));
+
+  const FILTER_SERVICES = [
+    { slug: "all", label: tRealisations("filter_all") },
+    ...SERVICES.map((s) => ({ slug: s.slug, label: serviceMap.get(s.slug)?.shortTitle ?? s.shortTitle })),
+  ];
+
   const [activeFilter, setActiveFilter] = useState("all");
 
   const filtered = activeFilter === "all"
@@ -182,7 +193,7 @@ export function RealisationsGrid() {
       </div>
 
       {filtered.length === 0 && (
-        <p className="text-center text-gray-500 py-12">Aucune réalisation dans cette catégorie pour le moment.</p>
+        <p className="text-center text-gray-500 py-12">{tRealisations("no_results")}</p>
       )}
     </>
   );

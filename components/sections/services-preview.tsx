@@ -10,11 +10,21 @@ import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
+interface TranslatedService {
+  slug: string;
+  title: string;
+  shortTitle: string;
+  description: string;
+}
+
 const HERO_SERVICES = ["cuisine", "facade-isolation", "paysager"];
 
 export function ServicesPreview() {
   const t = useTranslations("home.services_preview");
   const tc = useTranslations("common");
+  const tRoot = useTranslations();
+  const serviceItems = tRoot.raw("service_items") as TranslatedService[];
+  const serviceMap = new Map(serviceItems.map((s) => [s.slug, s]));
 
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -82,7 +92,7 @@ export function ServicesPreview() {
             <div data-img className="absolute right-0 top-0 bottom-0 w-1/2 opacity-0 hidden md:block">
               <Image
                 src={PHOTO_MAP[service.slug] || ""}
-                alt={service.title}
+                alt={serviceMap.get(service.slug)?.title ?? service.title}
                 fill
                 className="object-cover opacity-30"
               />
@@ -92,10 +102,10 @@ export function ServicesPreview() {
             <div className="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center py-16 md:py-24 relative">
               <div>
                 <div data-line className="w-12 h-0.5 bg-[#E50000] mb-6 origin-left" style={{ transform: "scaleX(0)" }} />
-                <h3 data-title className="font-heading text-3xl md:text-4xl text-white leading-tight">{service.title.toUpperCase()}</h3>
+                <h3 data-title className="font-heading text-3xl md:text-4xl text-white leading-tight">{(serviceMap.get(service.slug)?.title ?? service.title).toUpperCase()}</h3>
               </div>
               <div data-desc>
-                <p className="text-gray-400 text-lg leading-relaxed mb-4">{service.description}</p>
+                <p className="text-gray-400 text-lg leading-relaxed mb-4">{serviceMap.get(service.slug)?.description ?? service.description}</p>
                 <span className="text-[#E50000] text-sm font-medium uppercase tracking-wider">{tc("discover_arrow")}</span>
               </div>
             </div>
@@ -115,13 +125,13 @@ export function ServicesPreview() {
                 <div className="w-14 h-14 rounded-lg overflow-hidden shrink-0 opacity-60 group-hover:opacity-100 transition-opacity">
                   <Image
                     src={PHOTO_MAP[service.slug] || ""}
-                    alt={service.shortTitle}
+                    alt={serviceMap.get(service.slug)?.shortTitle ?? service.shortTitle}
                     width={56}
                     height={56}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <span className="text-white text-base group-hover:text-[#E50000] transition-colors flex-1">{service.title}</span>
+                <span className="text-white text-base group-hover:text-[#E50000] transition-colors flex-1">{serviceMap.get(service.slug)?.title ?? service.title}</span>
                 <span className="text-gray-600 group-hover:text-[#E50000] transition-colors">→</span>
               </Link>
             ))}
