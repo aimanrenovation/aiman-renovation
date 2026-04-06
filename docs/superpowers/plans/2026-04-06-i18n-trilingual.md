@@ -2,690 +2,1070 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Make aiman-renovation.fr fully accessible in French, German, and English with locale-prefixed routing, auto-detection, and translated blueprints.
+**Goal:** Make aiman-renovation.fr fully accessible in French, German (Swiss), and English with locale-prefixed routing (`/de/`, `/en/`), auto-detection, translated blueprints, and Swiss cities in zone d'intervention.
 
-**Architecture:** App Router `[locale]` dynamic segment wrapping all pages. Dictionary JSON files loaded server-side via `getDictionary(locale)`. Middleware detects browser language and redirects. No external i18n library.
+**Architecture:** `next-intl` with App Router `[locale]` dynamic segment. `localePrefix: 'as-needed'` keeps FR at root (`/services`), DE/EN get prefixes (`/de/services`, `/en/services`). Middleware handles locale detection via cookie → Accept-Language → default FR. Translation JSON files in `messages/`.
 
-**Tech Stack:** Next.js 16 App Router, TypeScript, Tailwind CSS 4, GSAP
+**Tech Stack:** Next.js 16 App Router, next-intl, TypeScript, Tailwind CSS 4, GSAP, shadcn/ui
+
+**Important:** Check AGENTS.md — Next.js 16 may have breaking changes. Read `node_modules/next/dist/docs/` before writing code. Use `proxy.ts` if Next.js 16 requires it instead of `middleware.ts`.
 
 ---
 
-### Task 1: i18n Infrastructure — Config, Dictionary, Types
+## File Structure
+
+```
+messages/
+  fr.json                          ← Source de vérité (~400 clés)
+  de.json                          ← Allemand suisse (Hochdeutsch)
+  en.json                          ← Anglais britannique
+i18n/
+  routing.ts                       ← Config locales, pathnames, localePrefix
+  request.ts                       ← getRequestConfig pour Server Components
+  navigation.ts                    ← Link, redirect, usePathname locale-aware
+middleware.ts                      ← createMiddleware de next-intl
+app/
+  [locale]/                        ← Nouveau wrapper
+    layout.tsx                     ← Locale-aware (lang attr, metadata, JSON-LD, hreflang)
+    page.tsx                       ← Homepage
+    services/page.tsx
+    services/[slug]/page.tsx
+    a-propos/page.tsx
+    contact/page.tsx
+    devis/page.tsx
+    faq/page.tsx
+    realisations/page.tsx
+    cgv/page.tsx
+    mentions-legales/page.tsx
+    politique-confidentialite/page.tsx
+    not-found.tsx
+  api/                             ← INCHANGÉ (hors [locale])
+    contact/route.ts
+    devis/route.ts
+  sitemap.ts                       ← Multilingue (3 locales × toutes les pages)
+  robots.ts                        ← Inchangé
+components/
+  layout/navbar.tsx                ← + LanguageSwitcher
+  layout/footer.tsx                ← Traduit via useTranslations
+  layout/language-switcher.tsx     ← NOUVEAU — drapeaux FR/DE/EN
+```
+
+---
+
+### Task 1: Install next-intl & Create Config
 
 **Files:**
-- Create: `lib/i18n/config.ts`
-- Create: `lib/i18n/get-dictionary.ts`
-- Create: `lib/i18n/dictionaries/fr.json`
-- Create: `lib/i18n/dictionaries/de.json`
-- Create: `lib/i18n/dictionaries/en.json`
+- Modify: `package.json` (add next-intl)
+- Create: `i18n/routing.ts`
+- Create: `i18n/request.ts`
+- Create: `i18n/navigation.ts`
+- Modify: `next.config.ts`
 
-- [ ] **Step 1: Create i18n config**
+- [ ] **Step 1: Install next-intl**
 
-```typescript
-// lib/i18n/config.ts
-export const locales = ["fr", "de", "en"] as const;
-export type Locale = (typeof locales)[number];
-export const defaultLocale: Locale = "fr";
-
-export function isValidLocale(locale: string): locale is Locale {
-  return locales.includes(locale as Locale);
-}
+```bash
+cd /Users/Aiman/aiman-renovation && npm install next-intl
 ```
 
-- [ ] **Step 2: Create dictionary loader**
+- [ ] **Step 2: Create routing config**
 
 ```typescript
-// lib/i18n/get-dictionary.ts
-import type { Locale } from "./config";
+// i18n/routing.ts
+import { defineRouting } from "next-intl/routing";
 
-const dictionaries = {
-  fr: () => import("./dictionaries/fr.json").then((m) => m.default),
-  de: () => import("./dictionaries/de.json").then((m) => m.default),
-  en: () => import("./dictionaries/en.json").then((m) => m.default),
-};
-
-export type Dictionary = Awaited<ReturnType<(typeof dictionaries)["fr"]>>;
-
-export async function getDictionary(locale: Locale): Promise<Dictionary> {
-  return dictionaries[locale]();
-}
+export const routing = defineRouting({
+  locales: ["fr", "de", "en"],
+  defaultLocale: "fr",
+  localePrefix: "as-needed",
+});
 ```
 
-- [ ] **Step 3: Create FR dictionary (source of truth)**
+- [ ] **Step 3: Create request config**
 
-Create `lib/i18n/dictionaries/fr.json` with ALL translatable strings extracted from the codebase. Organized by section:
+```typescript
+// i18n/request.ts
+import { getRequestConfig } from "next-intl/server";
+import { routing } from "./routing";
 
-```json
-{
-  "nav": {
-    "home": "Accueil",
-    "services": "Nos services",
-    "realisations": "Réalisations",
-    "about": "À propos",
-    "contact": "Contact",
-    "devis": "Devis gratuit",
-    "faq": "FAQ"
-  },
-  "home": {
-    "hero_title": "CHAQUE COUP DE ROULEAU COMPTE",
-    "hero_subtitle": "Rénovation intérieure et extérieure à Saint-Louis et environs",
-    "hero_cta": "Demander un devis",
-    "hero_cta_secondary": "Découvrir nos services",
-    ...all homepage sections
-  },
-  "services": { ...all service page strings },
-  "devis": {
-    "click_room": "Cliquez sur une pièce pour commencer",
-    "touch_room": "Touchez une pièce",
-    "touch_subtitle": "Puis cochez les travaux à réaliser",
-    "select_zones": "Sélectionnez les zones de votre maison à rénover",
-    "send_quote": "Envoyer mon devis",
-    "works_count": "travaux",
-    "back_to_plan": "Retour au plan",
-    "validate_back": "Valider et retour au plan",
-    "works_selected": "travaux sélectionnés",
-    "check_works": "Cochez les travaux à réaliser",
-    "describe_needs": "Décrivez vos besoins pour cette pièce",
-    "describe_placeholder": "Ex: fuite sous l'évier, carrelage fissuré, souhaite une douche italienne...",
-    "photos_title": "Photos / Vidéos",
-    "photos_encourage": "Plus vous ajoutez de photos, plus votre devis sera précis et rapide !",
-    "photos_add": "Ajouter des photos ou vidéos",
-    "summary": "Récapitulatif",
-    "budget_title": "Budget estimé",
-    "message_label": "Message (optionnel)",
-    "message_placeholder": "Décrivez votre projet, vos contraintes, vos envies...",
-    "contact_title": "Vos coordonnées",
-    "firstname": "Prénom",
-    "lastname": "Nom",
-    "phone": "Téléphone",
-    "email": "Email",
-    "address": "Adresse du chantier",
-    "address_placeholder": "Tapez votre adresse...",
-    "address_hint": "Suggestions automatiques — France, Allemagne, Suisse",
-    "magicplan_title": "Devis plus précis avec MagicPlan",
-    "magicplan_desc": "Scannez vos pièces en 5 min avec l'app gratuite MagicPlan.",
-    "magicplan_guide": "Voir le guide MagicPlan →",
-    "magicplan_link_label": "Lien MagicPlan (optionnel)",
-    "magicplan_link_placeholder": "https://my.magicplan.app/...",
-    "magicplan_link_hint": "Collez ici le lien de partage MagicPlan",
-    "send_button": "Envoyer mon devis",
-    "sending": "Envoi en cours...",
-    "back": "Retour",
-    "success_title": "Demande envoyée !",
-    "success_message": "Nous avons bien reçu votre demande de devis. Un email de confirmation vous a été envoyé. Nous vous recontactons sous 24h.",
-    "success_new": "Nouveau devis",
-    "success_home": "Retour à l'accueil",
-    "success_call": "Appeler maintenant"
-  },
-  "devis_zones": {
-    "cuisine": "Cuisine",
-    "sdb": "Salle de bain",
-    "wc": "WC",
-    "garage": "Garage",
-    "vestibule": "Vestibule / Entrée",
-    "salon": "Salon",
-    "sam": "Salle à manger",
-    "chambre1": "Chambre 1 parentale",
-    "chambre2": "Chambre 2",
-    "terrasse": "Terrasse",
-    "jardin": "Jardin",
-    "haie": "Haie / Clôture",
-    "facades": "Façades",
-    "toiture": "Toiture"
-  },
-  "devis_works": {
-    "entretien-jardin": "Entretien de jardin",
-    "sol": "Sol",
-    "murs-credence": "Murs / Crédence",
-    "plomberie-evier": "Plomberie / Évier",
-    "electricite": "Électricité",
-    ...all work items
-  },
-  "devis_magicplan": {
-    "wizard_step1_title": "Téléchargez l'app",
-    "wizard_step1_subtitle": "Gratuit — 2 minutes",
-    "wizard_step1_instruction": "Installez MagicPlan sur votre téléphone. C'est gratuit, pas besoin de compte.",
-    "wizard_step1_tip": "Déjà installé ? Passez à l'étape suivante.",
-    "wizard_download": "Télécharger MagicPlan",
-    ...all 5 wizard steps
-    "wizard_next": "Suivant →",
-    "wizard_prev": "← Précédent",
-    "wizard_skip": "Passer",
-    "wizard_done": "Continuer mon devis",
-    "wizard_step_of": "Étape {current} sur {total}"
-  },
-  "contact": { ...contact page strings },
-  "about": { ...about page strings },
-  "realisations": { ...realisations strings },
-  "faq": { ...faq strings },
-  "not_found": {
-    "error": "Erreur 404",
-    "help": "Besoin d'aide ?",
-    "home_btn": "Retour à l'accueil",
-    "devis_btn": "Demander un devis",
-    "variant1_title": "Oups, mur porteur !",
-    "variant1_subtitle": "Même les meilleurs plans ont parfois un mur au mauvais endroit.",
-    ...all 8 variants
-  },
-  "footer": { ...footer strings },
-  "common": {
-    "back": "Retour",
-    "next": "Suivant",
-    "send": "Envoyer",
-    "close": "Fermer",
-    "loading": "Chargement..."
-  },
-  "seo": {
-    "home_title": "Aiman Renovation — Rénovation intérieure et extérieure à Saint-Louis (68300)",
-    "home_description": "Entreprise de rénovation à Saint-Louis...",
-    ...all page metadata
+export default getRequestConfig(async ({ requestLocale }) => {
+  let locale = await requestLocale;
+  if (!locale || !routing.locales.includes(locale as any)) {
+    locale = routing.defaultLocale;
   }
-}
+  return {
+    locale,
+    messages: (await import(`../messages/${locale}.json`)).default,
+  };
+});
 ```
 
-- [ ] **Step 4: Create DE dictionary**
+- [ ] **Step 4: Create navigation helpers**
 
-Translate ALL keys from fr.json to German (Hochdeutsch with Swiss terms where relevant — "Offerte" not "Kostenvoranschlag", etc.).
+```typescript
+// i18n/navigation.ts
+import { createNavigation } from "next-intl/navigation";
+import { routing } from "./routing";
 
-- [ ] **Step 5: Create EN dictionary**
+export const { Link, redirect, usePathname, useRouter, getPathname } =
+  createNavigation(routing);
+```
 
-Translate ALL keys from fr.json to British English.
+- [ ] **Step 5: Update next.config.ts**
+
+```typescript
+// next.config.ts
+import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
+
+const nextConfig: NextConfig = {};
+
+export default withNextIntl(nextConfig);
+```
 
 - [ ] **Step 6: Commit**
 
 ```bash
-git add lib/i18n/
-git commit -m "feat(i18n): add dictionary infrastructure with FR/DE/EN translations"
+git add package.json package-lock.json i18n/ next.config.ts
+git commit -m "feat(i18n): install next-intl and create config"
 ```
 
 ---
 
-### Task 2: Middleware — Locale Detection & Redirect
+### Task 2: Create Middleware
 
 **Files:**
-- Create: `middleware.ts` (project root)
+- Create: `middleware.ts`
+
+NOTE: Next.js 16 may use `proxy.ts` instead of `middleware.ts`. Check `node_modules/next/dist/docs/` first. If proxy.ts is required, adapt the middleware code to proxy.ts format. next-intl's `createMiddleware` should work in both.
 
 - [ ] **Step 1: Create middleware**
 
 ```typescript
 // middleware.ts
-import { NextRequest, NextResponse } from "next/server";
-import { locales, defaultLocale, isValidLocale } from "@/lib/i18n/config";
+import createMiddleware from "next-intl/middleware";
+import { routing } from "./i18n/routing";
 
-const PUBLIC_FILE = /\.(.*)$/;
-
-function getPreferredLocale(request: NextRequest): string {
-  // 1. Check cookie
-  const cookieLocale = request.cookies.get("locale")?.value;
-  if (cookieLocale && isValidLocale(cookieLocale)) return cookieLocale;
-
-  // 2. Check Accept-Language header
-  const acceptLang = request.headers.get("Accept-Language") || "";
-  for (const locale of locales) {
-    if (acceptLang.toLowerCase().includes(locale)) return locale;
-  }
-
-  return defaultLocale;
-}
-
-export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-
-  // Skip public files, api routes, _next
-  if (
-    pathname.startsWith("/api") ||
-    pathname.startsWith("/_next") ||
-    pathname.startsWith("/images") ||
-    PUBLIC_FILE.test(pathname)
-  ) {
-    return NextResponse.next();
-  }
-
-  // Check if pathname starts with a locale
-  const pathnameLocale = locales.find(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  );
-
-  if (pathnameLocale) {
-    // Valid locale prefix — set cookie and continue
-    const response = NextResponse.next();
-    response.cookies.set("locale", pathnameLocale, { path: "/", maxAge: 60 * 60 * 24 * 365 });
-    return response;
-  }
-
-  // No locale prefix — detect and redirect if not FR
-  const preferred = getPreferredLocale(request);
-
-  if (preferred === defaultLocale) {
-    // FR is default, no prefix needed — just set cookie
-    const response = NextResponse.next();
-    response.cookies.set("locale", defaultLocale, { path: "/", maxAge: 60 * 60 * 24 * 365 });
-    return response;
-  }
-
-  // Redirect to locale-prefixed URL
-  const url = request.nextUrl.clone();
-  url.pathname = `/${preferred}${pathname}`;
-  const response = NextResponse.redirect(url);
-  response.cookies.set("locale", preferred, { path: "/", maxAge: 60 * 60 * 24 * 365 });
-  return response;
-}
+export default createMiddleware(routing);
 
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|images|favicon.ico|icon.png|robots.txt|sitemap.xml).*)"],
+  matcher: ["/((?!api|_next|.*\\..*).*)"],
 };
+```
+
+- [ ] **Step 2: Test locally**
+
+```bash
+cd /Users/Aiman/aiman-renovation && npm run dev
+```
+
+Visit `http://localhost:3000` — should still work (FR default, no prefix).
+Visit `http://localhost:3000/de` — should show empty page (no [locale] layout yet).
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add middleware.ts
+git commit -m "feat(i18n): add locale detection middleware"
+```
+
+---
+
+### Task 3: Create French Translation File (messages/fr.json)
+
+**Files:**
+- Create: `messages/fr.json`
+
+Extract ALL hardcoded French strings from the codebase into a structured JSON. This is the source of truth.
+
+- [ ] **Step 1: Create messages/fr.json**
+
+Extract strings from these sources:
+- `lib/constants.ts` → `nav.*`, `common.*`
+- `app/page.tsx` → `home.*`
+- `app/a-propos/page.tsx` → `about.*`
+- `app/services/page.tsx` → `services.*`
+- `lib/services.ts` → `services.items.*` (12 services × title, shortTitle, description, features[], longDescription, process[], whyPro, priceRange)
+- `app/contact/page.tsx` → `contact.*`
+- `app/devis/page.tsx` → `devis.*`
+- `components/devis/devis-zones-config.ts` → `devis.zones.*`, `devis.works.*`
+- `components/devis/panels/panel-recap.tsx` → `devis.recap.*`
+- `components/devis/panels/panel-travaux.tsx` → `devis.panel.*`
+- `lib/faq.ts` → `faq.*` (29 items × category, question, answer)
+- `app/not-found.tsx` → `notFound.*` (8 variants)
+- `components/layout/footer.tsx` → `footer.*`
+- `app/cgv/page.tsx` → `cgv.*`
+- `app/mentions-legales/page.tsx` → `legal.*`
+- `app/politique-confidentialite/page.tsx` → `privacy.*`
+- `app/realisations/page.tsx` → `realisations.*`
+- `lib/email-templates/devis-confirmation.ts` → `email.*`
+- `app/layout.tsx` → `seo.*` (metadata titles, descriptions per page)
+
+Structure:
+
+```json
+{
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "realisations": "Réalisations",
+    "about": "À propos",
+    "contact": "Contact",
+    "cta": "Devis gratuit"
+  },
+  "common": {
+    "slogan": "Nous rénovons jusqu'au bout de vos rêves !",
+    "phone": "06 33 49 69 25",
+    "email": "contact@aiman-renovation.fr",
+    "city": "Saint-Louis et environs",
+    "back": "Retour",
+    "next": "Suivant",
+    "send": "Envoyer"
+  },
+  "home": {
+    "rouleau_text": "Chaque coup de rouleau,\nchaque joint posé,\nchaque câble tiré —\nc'est notre signature.",
+    "result_text": "LE RÉSULTAT PARLE DE LUI-MÊME",
+    "zone_title": "ZONE D'INTERVENTION",
+    "zone_subtitle": "Saint-Louis et sud du Haut-Rhin, à la frontière suisse et allemande.",
+    "zone_beyond": "et au-delà",
+    "zones": ["Saint-Louis", "Huningue", "Hésingue", "Village-Neuf", "Blotzheim", "Bartenheim", "Kembs", "Sierentz", "Leymen", "Hagenthal", "Rosenau", "Hégenheim"]
+  },
+  "devis": {
+    "zones": {
+      "cuisine": "Cuisine",
+      "sdb": "Salle de bain",
+      "wc": "WC",
+      "garage": "Garage",
+      "vestibule": "Vestibule",
+      "salon": "Salon",
+      "sam": "Salle à manger",
+      "chambre1": "Chambre 1",
+      "chambre2": "Chambre 2",
+      "terrasse": "Terrasse",
+      "jardin": "Jardin",
+      "haie": "Haie",
+      "facades": "Façades",
+      "toiture": "Toiture"
+    },
+    "works": { "...extracted from ZONES_CONFIG workItems..." }
+  },
+  "seo": {
+    "home_title": "Rénovation Maison Saint-Louis 68300 | Devis Gratuit — Aiman Renovation",
+    "home_description": "Artisan rénovation à Saint-Louis (68300) : cuisine, salle de bain, façades, isolation, peinture, carrelage. 19 ans d'expérience en Haut-Rhin. Devis gratuit sous 4 jours."
+  },
+  "footer": {
+    "services_title": "Services",
+    "nav_title": "Navigation",
+    "contact_title": "Contact",
+    "copyright": "© {year} Aiman Renovation. Tous droits réservés.",
+    "legal": "Mentions légales",
+    "cgv": "CGV",
+    "privacy": "Confidentialité"
+  },
+  "notFound": {
+    "badge": "Erreur 404",
+    "back_home": "Retour à l'accueil",
+    "ask_quote": "Demander un devis",
+    "need_help": "Besoin d'aide ?",
+    "variants": [
+      { "title": "Oups, mur porteur !", "subtitle": "Même les meilleurs plans ont parfois un mur au mauvais endroit." },
+      "... 7 more variants ..."
+    ]
+  }
+}
+```
+
+**IMPORTANT:** Read EVERY page file to extract ALL strings. Don't miss any. The `about` page alone has ~50+ strings (story texts, process steps, engagements, certifications). The FAQ has 29 items. Services has 12 items with rich content.
+
+- [ ] **Step 2: Commit**
+
+```bash
+git add messages/fr.json
+git commit -m "feat(i18n): extract French translation strings (~400 keys)"
+```
+
+---
+
+### Task 4: Create German Translation File (messages/de.json)
+
+**Files:**
+- Create: `messages/de.json`
+
+- [ ] **Step 1: Translate fr.json → de.json**
+
+Translation guidelines:
+- **Hochdeutsch standard** with Swiss terms where relevant ("Offerte" instead of "Kostenvoranschlag")
+- **Currency:** € (on facture en euros, pas CHF)
+- **Zone d'intervention DE:** Include Swiss cities: Basel, Riehen, Allschwil, Binningen, Lörrach, Weil am Rhein + French cities: Saint-Louis, Huningue, etc.
+- **SEO keywords:** "Renovation Basel", "Handwerker Basel Region", "Küche renovieren", "Badezimmer renovieren Basel", "Fassade renovieren"
+- **Metadata titles** optimized for German search: "Hausrenovierung Basel Region | Kostenlose Offerte — Aiman Renovation"
+- **Schema areaServed** extended: Basel, Riehen, Allschwil, Binningen, Lörrach, Weil am Rhein
+
+Key translations:
+```json
+{
+  "nav": {
+    "home": "Startseite",
+    "services": "Leistungen",
+    "realisations": "Referenzen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "cta": "Kostenlose Offerte"
+  },
+  "home": {
+    "zone_title": "EINSATZGEBIET",
+    "zone_subtitle": "Basel und Umgebung — wir arbeiten grenzüberschreitend in Frankreich und der Schweiz.",
+    "zones": ["Basel", "Riehen", "Allschwil", "Binningen", "Lörrach", "Weil am Rhein", "Saint-Louis", "Huningue", "Hésingue", "Village-Neuf", "Blotzheim", "Bartenheim"]
+  },
+  "seo": {
+    "home_title": "Hausrenovierung Basel Region | Kostenlose Offerte — Aiman Renovation",
+    "home_description": "Renovierungshandwerker in der Region Basel: Küche, Bad, Fassade, Dämmung, Malerarbeiten, Fliesen. 19 Jahre Erfahrung. Kostenlose Offerte innerhalb von 4 Tagen."
+  }
+}
 ```
 
 - [ ] **Step 2: Commit**
 
 ```bash
-git add middleware.ts
-git commit -m "feat(i18n): add locale detection middleware with cookie persistence"
+git add messages/de.json
+git commit -m "feat(i18n): add German (Swiss) translations with Basel-area zones"
 ```
 
 ---
 
-### Task 3: App Router Restructure — [locale] Dynamic Segment
+### Task 5: Create English Translation File (messages/en.json)
+
+**Files:**
+- Create: `messages/en.json`
+
+- [ ] **Step 1: Translate fr.json → en.json**
+
+Translation guidelines:
+- **British English** (clientèle UK/expat en Suisse)
+- **Zone d'intervention EN:** Include Swiss cities too: Basel, Riehen, Allschwil + French cities
+- **SEO keywords:** "Home renovation Basel area", "Renovation contractor Saint-Louis", "Kitchen renovation Basel"
+- **Metadata titles:** "Home Renovation Basel Area | Free Quote — Aiman Renovation"
+
+Key translations:
+```json
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "realisations": "Portfolio",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Free quote"
+  },
+  "home": {
+    "zone_title": "SERVICE AREA",
+    "zone_subtitle": "Basel area and southern Alsace — we work across the French-Swiss-German border.",
+    "zones": ["Basel", "Riehen", "Allschwil", "Binningen", "Lörrach", "Weil am Rhein", "Saint-Louis", "Huningue", "Hésingue", "Village-Neuf", "Blotzheim", "Bartenheim"]
+  }
+}
+```
+
+- [ ] **Step 2: Commit**
+
+```bash
+git add messages/en.json
+git commit -m "feat(i18n): add English translations with tri-border zones"
+```
+
+---
+
+### Task 6: Restructure App Router — Move Pages to [locale]/
 
 **Files:**
 - Create: `app/[locale]/layout.tsx`
-- Create: `app/[locale]/page.tsx`
-- Create: `app/[locale]/not-found.tsx`
-- Move all existing page routes into `app/[locale]/`
-- Modify: `app/layout.tsx` (root layout stays minimal)
+- Move: ALL page files from `app/X/page.tsx` to `app/[locale]/X/page.tsx`
+- Move: `app/not-found.tsx` → `app/[locale]/not-found.tsx`
+- Keep: `app/api/` stays at root (NOT inside [locale])
+- Keep: `app/sitemap.ts` stays at root
+- Keep: `app/robots.ts` stays at root
+- Modify: `app/layout.tsx` (strip to bare minimum — just html/body/fonts, no Navbar/Footer)
+- Keep: `app/globals.css` at root
 
-- [ ] **Step 1: Create `app/[locale]/layout.tsx`**
+- [ ] **Step 1: Create app/[locale]/layout.tsx**
 
-This is the locale-aware layout that loads the dictionary and passes it via context. It replaces the current `app/layout.tsx` content (which becomes a thin shell).
+This is the main locale-aware layout. It wraps children with `NextIntlClientProvider`, sets `<html lang>`, renders Navbar/Footer, JSON-LD, and hreflang.
 
 ```typescript
 // app/[locale]/layout.tsx
-import type { Locale } from "@/lib/i18n/config";
-import { locales, defaultLocale, isValidLocale } from "@/lib/i18n/config";
-import { getDictionary } from "@/lib/i18n/get-dictionary";
-import { DictionaryProvider } from "@/lib/i18n/dictionary-context";
+import { notFound } from "next/navigation";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import SmoothScrollProvider from "@/components/3d/providers/SmoothScrollProvider";
 
-export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
-
-export default async function LocaleLayout({
-  children,
-  params,
-}: {
+type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
-}) {
-  const { locale: rawLocale } = await params;
-  const locale: Locale = isValidLocale(rawLocale) ? rawLocale : defaultLocale;
-  const dict = await getDictionary(locale);
+};
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function LocaleLayout({ children, params }: Props) {
+  const { locale } = await params;
+  if (!routing.locales.includes(locale as any)) notFound();
+  setRequestLocale(locale);
+  const messages = await getMessages();
 
   return (
-    <DictionaryProvider dictionary={dict} locale={locale}>
-      <Navbar />
-      <main className="flex-1">{children}</main>
-      <Footer />
-    </DictionaryProvider>
+    <NextIntlClientProvider messages={messages}>
+      <SmoothScrollProvider>
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </SmoothScrollProvider>
+    </NextIntlClientProvider>
   );
 }
 ```
 
-- [ ] **Step 2: Create DictionaryProvider context**
+- [ ] **Step 2: Simplify app/layout.tsx to bare root**
 
 ```typescript
-// lib/i18n/dictionary-context.tsx
+// app/layout.tsx — Root layout (locale-agnostic)
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
+import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const archivoBlack = localFont({
+  src: "./fonts/ArchivoBlack-Regular.ttf",
+  variable: "--font-archivo",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  icons: { icon: "/favicon.png", apple: "/apple-touch-icon.png" },
+  metadataBase: new URL("https://aiman-renovation.fr"),
+  manifest: "/manifest.webmanifest",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html className={`${inter.variable} ${archivoBlack.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-black text-white font-sans">
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
+NOTE: Remove `lang="fr"` from html tag — the `[locale]/layout.tsx` will set it dynamically. Actually, `next-intl` handles the lang attribute via the locale. If the root layout needs `lang`, add it dynamically in the locale layout using a `<script>` or handle via next-intl's built-in support.
+
+- [ ] **Step 3: Move all pages into [locale]/**
+
+Move each file:
+```bash
+cd /Users/Aiman/aiman-renovation/app
+mkdir -p "[locale]"
+# Move page files (NOT api, NOT sitemap, NOT robots, NOT globals.css, NOT layout.tsx, NOT fonts/)
+mv page.tsx "[locale]/"
+mv a-propos "[locale]/"
+mv services "[locale]/"
+mv contact "[locale]/"
+mv devis "[locale]/"
+mv faq "[locale]/"
+mv realisations "[locale]/"
+mv cgv "[locale]/"
+mv mentions-legales "[locale]/"
+mv politique-confidentialite "[locale]/"
+mv not-found.tsx "[locale]/"
+```
+
+Verify structure:
+```bash
+find app -name "page.tsx" -o -name "layout.tsx" -o -name "route.ts" | sort
+```
+
+Expected:
+```
+app/[locale]/a-propos/page.tsx
+app/[locale]/cgv/page.tsx
+app/[locale]/contact/page.tsx
+app/[locale]/devis/page.tsx
+app/[locale]/faq/page.tsx
+app/[locale]/layout.tsx
+app/[locale]/mentions-legales/page.tsx
+app/[locale]/not-found.tsx
+app/[locale]/page.tsx
+app/[locale]/politique-confidentialite/page.tsx
+app/[locale]/realisations/page.tsx
+app/[locale]/services/[slug]/page.tsx
+app/[locale]/services/page.tsx
+app/api/contact/route.ts
+app/api/devis/route.ts
+app/layout.tsx
+```
+
+- [ ] **Step 4: Test build**
+
+```bash
+cd /Users/Aiman/aiman-renovation && npm run build
+```
+
+Fix any import path issues. All `@/` imports should still work since we only moved within `app/`.
+
+- [ ] **Step 5: Commit**
+
+```bash
+git add -A
+git commit -m "feat(i18n): restructure app router with [locale] segment"
+```
+
+---
+
+### Task 7: Update Pages to Use Translations
+
+**Files:**
+- Modify: `app/[locale]/page.tsx` (homepage)
+- Modify: `app/[locale]/a-propos/page.tsx`
+- Modify: `app/[locale]/services/page.tsx`
+- Modify: `app/[locale]/services/[slug]/page.tsx`
+- Modify: `app/[locale]/contact/page.tsx`
+- Modify: `app/[locale]/faq/page.tsx`
+- Modify: `app/[locale]/realisations/page.tsx`
+- Modify: `app/[locale]/devis/page.tsx`
+- Modify: `app/[locale]/cgv/page.tsx`
+- Modify: `app/[locale]/mentions-legales/page.tsx`
+- Modify: `app/[locale]/politique-confidentialite/page.tsx`
+- Modify: `app/[locale]/not-found.tsx`
+
+For each page, the pattern is:
+
+**Server Components** (most pages):
+```typescript
+import { useTranslations } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+
+export default function SomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = useTranslations("namespace");
+  // Replace hardcoded strings with t("key")
+}
+```
+
+**Client Components** (devis, not-found, etc.):
+```typescript
 "use client";
+import { useTranslations } from "next-intl";
 
-import { createContext, useContext } from "react";
-import type { Dictionary } from "./get-dictionary";
-import type { Locale } from "./config";
-
-interface DictionaryContextValue {
-  dict: Dictionary;
-  locale: Locale;
-}
-
-const DictionaryContext = createContext<DictionaryContextValue | null>(null);
-
-export function DictionaryProvider({
-  children,
-  dictionary,
-  locale,
-}: {
-  children: React.ReactNode;
-  dictionary: Dictionary;
-  locale: Locale;
-}) {
-  return (
-    <DictionaryContext.Provider value={{ dict: dictionary, locale }}>
-      {children}
-    </DictionaryContext.Provider>
-  );
-}
-
-export function useDictionary() {
-  const ctx = useContext(DictionaryContext);
-  if (!ctx) throw new Error("useDictionary must be used within DictionaryProvider");
-  return ctx;
+export default function SomePage() {
+  const t = useTranslations("namespace");
+  // Replace hardcoded strings with t("key")
 }
 ```
 
-- [ ] **Step 3: Move all pages into `app/[locale]/`**
+- [ ] **Step 1: Update homepage (app/[locale]/page.tsx)**
 
-Move every route from `app/` to `app/[locale]/`:
-- `app/page.tsx` → `app/[locale]/page.tsx`
-- `app/services/` → `app/[locale]/services/`
-- `app/devis/` → `app/[locale]/devis/`
-- `app/contact/` → `app/[locale]/contact/`
-- `app/a-propos/` → `app/[locale]/a-propos/`
-- `app/realisations/` → `app/[locale]/realisations/`
-- `app/faq/` → `app/[locale]/faq/`
-- `app/cgv/` → `app/[locale]/cgv/`
-- `app/mentions-legales/` → `app/[locale]/mentions-legales/`
-- `app/politique-confidentialite/` → `app/[locale]/politique-confidentialite/`
-- `app/not-found.tsx` → `app/[locale]/not-found.tsx`
+Replace hardcoded ZONES array and French strings with `useTranslations("home")`:
+- `t("rouleau_text")` for paint roller section
+- `t("result_text")` for result banner
+- `t("zone_title")`, `t("zone_subtitle")`, `t("zone_beyond")`
+- `t.raw("zones")` for zone list (returns array)
 
-Keep `app/layout.tsx` as root shell (html/body/fonts only, no Navbar/Footer).
+- [ ] **Step 2: Update not-found (app/[locale]/not-found.tsx)**
 
-- [ ] **Step 4: Update root `app/layout.tsx` to be a thin shell**
+Replace VARIANTS array with `t.raw("notFound.variants")`. Replace all button labels.
 
-Remove Navbar, Footer, JSON-LD from root layout. Keep only html, body, fonts. The locale layout handles the rest.
+- [ ] **Step 3: Update all remaining pages**
 
-- [ ] **Step 5: Verify build passes**
+For each page, replace French hardcoded strings with `t("key")` calls. Each page uses its own namespace:
+- `about` page → `useTranslations("about")`
+- `services` page → `useTranslations("services")`
+- `contact` page → `useTranslations("contact")`
+- `faq` page → `useTranslations("faq")`
+- etc.
 
-```bash
-npx tsc --noEmit
-```
-
-- [ ] **Step 6: Commit**
-
-```bash
-git add app/
-git commit -m "feat(i18n): restructure app router with [locale] dynamic segment"
-```
-
----
-
-### Task 4: Blueprint Images — Copy & Configure Per Locale
-
-**Files:**
-- Copy: blueprint images to `public/images/`
-- Modify: `components/devis/blueprint/blueprint-interactive.tsx`
-
-- [ ] **Step 1: Copy and rename blueprint images**
-
-```bash
-cp "public/images/blueprint-plan.jpeg" "public/images/blueprint-plan-fr.jpeg"
-cp "$HOME/Downloads/blueprint allemand.jpg" "public/images/blueprint-plan-de.jpeg"
-cp "$HOME/Downloads/blueprint anglais.jpg" "public/images/blueprint-plan-en.jpeg"
-```
-
-- [ ] **Step 2: Update blueprint component to use locale**
-
-In `blueprint-interactive.tsx`, use `useDictionary()` to get locale and load the right image:
+**IMPORTANT:** For pages that export `generateMetadata`, make it locale-aware:
 
 ```typescript
-const { locale } = useDictionary();
-// In the SVG:
-<image href={`/images/blueprint-plan-${locale}.jpeg`} x="0" y="0" width="2814" height="1536" />
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "seo" });
+  return {
+    title: t("services_title"),
+    description: t("services_description"),
+    alternates: {
+      canonical: `https://aiman-renovation.fr/${locale === "fr" ? "" : locale + "/"}services`,
+      languages: {
+        fr: "https://aiman-renovation.fr/services",
+        de: "https://aiman-renovation.fr/de/services",
+        en: "https://aiman-renovation.fr/en/services",
+      },
+    },
+  };
+}
 ```
-
-Also update the viewBox to `0 0 2814 1536` (DE/EN images are 2814px wide).
-
-- [ ] **Step 3: Commit**
-
-```bash
-git add public/images/ components/devis/blueprint/
-git commit -m "feat(i18n): locale-specific blueprint images FR/DE/EN"
-```
-
----
-
-### Task 5: Language Selector — Navbar with Split Flags
-
-**Files:**
-- Create: `components/ui/language-selector.tsx`
-- Create: `components/ui/flags.tsx`
-- Modify: `components/layout/navbar.tsx`
-
-- [ ] **Step 1: Create SVG flag components**
-
-`components/ui/flags.tsx` — FR tricolore, DE/CH split diagonal, Union Jack. All as inline SVG, ~20x14px.
-
-- [ ] **Step 2: Create language selector dropdown**
-
-`components/ui/language-selector.tsx` — Shows current flag, dropdown with 3 options. On click, sets cookie and redirects to same page with new locale prefix.
-
-- [ ] **Step 3: Add selector to navbar**
-
-Insert `<LanguageSelector />` in the navbar before the CTA button.
 
 - [ ] **Step 4: Commit**
 
 ```bash
-git add components/ui/flags.tsx components/ui/language-selector.tsx components/layout/navbar.tsx
-git commit -m "feat(i18n): language selector with DE/CH split flag and Union Jack"
+git add app/
+git commit -m "feat(i18n): translate all pages with next-intl"
 ```
 
 ---
 
-### Task 6: Translate Layout Components — Navbar & Footer
+### Task 8: Update Navbar with Language Switcher
 
 **Files:**
 - Modify: `components/layout/navbar.tsx`
+- Create: `components/layout/language-switcher.tsx`
+
+- [ ] **Step 1: Create LanguageSwitcher component**
+
+```typescript
+// components/layout/language-switcher.tsx
+"use client";
+
+import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
+import { useState, useRef, useEffect } from "react";
+
+const FLAGS: Record<string, { label: string; flag: React.ReactNode }> = {
+  fr: {
+    label: "Français",
+    flag: (
+      <svg width="20" height="14" viewBox="0 0 20 14">
+        <rect width="7" height="14" fill="#002B7F" />
+        <rect x="7" width="6" height="14" fill="#FFF" />
+        <rect x="13" width="7" height="14" fill="#CE1126" />
+      </svg>
+    ),
+  },
+  de: {
+    label: "Deutsch",
+    flag: (
+      <svg width="20" height="14" viewBox="0 0 20 14">
+        {/* Split diagonal: Germany top-left, Switzerland bottom-right */}
+        <defs>
+          <clipPath id="de-top"><polygon points="0,0 20,0 0,14" /></clipPath>
+          <clipPath id="de-bot"><polygon points="20,0 20,14 0,14" /></clipPath>
+        </defs>
+        <g clipPath="url(#de-top)">
+          <rect width="20" height="5" fill="#000" />
+          <rect y="5" width="20" height="4" fill="#DD0000" />
+          <rect y="9" width="20" height="5" fill="#FFCC00" />
+        </g>
+        <g clipPath="url(#de-bot)">
+          <rect width="20" height="14" fill="#FF0000" />
+          <rect x="8" y="3" width="4" height="8" fill="#FFF" />
+          <rect x="6" y="5" width="8" height="4" fill="#FFF" />
+        </g>
+        <line x1="0" y1="14" x2="20" y2="0" stroke="#FFF" strokeWidth="0.5" />
+      </svg>
+    ),
+  },
+  en: {
+    label: "English",
+    flag: (
+      <svg width="20" height="14" viewBox="0 0 60 30">
+        <rect width="60" height="30" fill="#012169" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="2" />
+        <path d="M30,0 V30 M0,15 H60" stroke="#fff" strokeWidth="10" />
+        <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" strokeWidth="6" />
+      </svg>
+    ),
+  },
+};
+
+export function LanguageSwitcher() {
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const switchLocale = (newLocale: string) => {
+    router.replace(pathname, { locale: newLocale });
+    setOpen(false);
+  };
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-1.5 px-2 py-1 rounded-md hover:bg-white/10 transition-colors"
+        aria-label="Change language"
+      >
+        {FLAGS[locale].flag}
+        <svg width="10" height="6" viewBox="0 0 10 6" className={`transition-transform ${open ? "rotate-180" : ""}`}>
+          <path d="M1 1L5 5L9 1" stroke="white" strokeWidth="1.5" fill="none" />
+        </svg>
+      </button>
+      {open && (
+        <div className="absolute top-full right-0 mt-2 bg-black/95 backdrop-blur-md border border-white/10 rounded-lg overflow-hidden min-w-[140px]">
+          {routing.locales.map((l) => (
+            <button
+              key={l}
+              onClick={() => switchLocale(l)}
+              className={`flex items-center gap-2 w-full px-3 py-2 text-sm transition-colors ${
+                l === locale ? "text-white bg-white/10" : "text-white/70 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              {FLAGS[l].flag}
+              <span>{FLAGS[l].label}</span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+```
+
+- [ ] **Step 2: Update navbar.tsx**
+
+Replace `next/navigation` imports with `@/i18n/navigation`. Add `useTranslations`. Add `<LanguageSwitcher />` next to CTA button (desktop) and in mobile menu.
+
+```typescript
+// Key changes in navbar.tsx:
+import { Link, usePathname } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "./language-switcher";
+
+// In the component:
+const t = useTranslations("nav");
+// Replace NAV_LINKS with translated links:
+const navLinks = [
+  { href: "/", label: t("home") },
+  { href: "/services", label: t("services") },
+  { href: "/realisations", label: t("realisations") },
+  { href: "/a-propos", label: t("about") },
+  { href: "/contact", label: t("contact") },
+];
+// CTA: t("cta")
+// Add <LanguageSwitcher /> between nav links and CTA on desktop
+```
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add components/layout/
+git commit -m "feat(i18n): add language switcher with flag dropdowns"
+```
+
+---
+
+### Task 9: Update Footer
+
+**Files:**
 - Modify: `components/layout/footer.tsx`
-- Modify: `lib/constants.ts`
 
-- [ ] **Step 1: Replace hardcoded nav labels with dictionary keys**
+- [ ] **Step 1: Replace hardcoded strings**
 
-Use `useDictionary()` in navbar and footer. Replace all hardcoded French strings with `dict.nav.*`, `dict.footer.*`, `dict.common.*`.
+Use `useTranslations("footer")` for:
+- Section titles ("Services", "Navigation", "Contact")
+- "et environs" → `t("area")`
+- "Tous droits réservés" → `t("copyright", { year: new Date().getFullYear() })`
+- "Mentions légales", "CGV", "Confidentialité" → `t("legal")`, `t("cgv")`, `t("privacy")`
+- "FAQ" → `t("faq")`
 
-- [ ] **Step 2: Update constants.ts**
-
-Make `NAV_LINKS` use translation keys instead of hardcoded labels.
-
-- [ ] **Step 3: Commit**
-
-```bash
-git add components/layout/ lib/constants.ts
-git commit -m "feat(i18n): translate navbar and footer"
-```
-
----
-
-### Task 7: Translate Homepage
-
-**Files:**
-- Modify: `app/[locale]/page.tsx`
-- Modify: all `components/sections/*.tsx` used on homepage
-
-- [ ] **Step 1: Pass dictionary to homepage sections**
-
-Each section component receives `dict` or uses `useDictionary()` and reads from `dict.home.*`.
-
-- [ ] **Step 2: Replace all hardcoded French strings in section components**
-
-Hero, why-choose-us, cta-banner, counter, services-preview, realisations-grid, testimonials, scroll-video, savoir-faire, before-after-slider, trust-bar, scroll-reveal.
-
-- [ ] **Step 3: Commit**
-
-```bash
-git add app/[locale]/page.tsx components/sections/
-git commit -m "feat(i18n): translate homepage and all sections"
-```
-
----
-
-### Task 8: Translate Devis — Full Quote Flow
-
-**Files:**
-- Modify: `components/devis/blueprint/blueprint-interactive.tsx`
-- Modify: `components/devis/devis-blueprint.tsx`
-- Modify: `components/devis/panels/panel-travaux.tsx`
-- Modify: `components/devis/panels/panel-recap.tsx` (including MagicPlan wizard)
-- Modify: `components/devis/panels/address-autocomplete.tsx`
-- Modify: `components/devis/steps/step-success.tsx`
-- Modify: `components/devis/devis-zones-config.ts`
-- Modify: `lib/email-templates/devis-confirmation.ts`
-- Modify: `app/api/devis/route.ts`
-
-- [ ] **Step 1: Translate blueprint-interactive.tsx**
-
-Replace all inline French: zone labels on hover, instructions ("Cliquez sur une pièce"), "Retour au plan", "Touchez une pièce", button text.
-
-- [ ] **Step 2: Translate panel-travaux.tsx**
-
-Replace: header text, "travaux sélectionnés", "Cochez les travaux", photo encouragement, upload button, validate button. Zone labels and work item labels come from `dict.devis_zones` and `dict.devis_works`.
-
-- [ ] **Step 3: Translate panel-recap.tsx + MagicPlan wizard**
-
-Replace: summary title, budget, message label, contact labels, address placeholder, MagicPlan CTA + all 5 wizard steps, submit button, error text.
-
-- [ ] **Step 4: Translate step-success.tsx**
-
-Replace: success title, message, buttons.
-
-- [ ] **Step 5: Translate email template**
-
-`lib/email-templates/devis-confirmation.ts` — receive locale, use appropriate language for subject line, headers, footer. The email to Aiman stays in French; the client copy uses their locale.
-
-- [ ] **Step 6: Update API route to accept locale**
-
-`app/api/devis/route.ts` — read locale from formData, pass to email template.
-
-- [ ] **Step 7: Commit**
-
-```bash
-git add components/devis/ lib/email-templates/ app/api/devis/
-git commit -m "feat(i18n): translate full devis flow including MagicPlan wizard and emails"
-```
-
----
-
-### Task 9: Translate Remaining Pages
-
-**Files:**
-- Modify: `app/[locale]/services/page.tsx`
-- Modify: `app/[locale]/services/[slug]/page.tsx`
-- Modify: `app/[locale]/contact/page.tsx`
-- Modify: `app/[locale]/a-propos/page.tsx`
-- Modify: `app/[locale]/realisations/page.tsx`
-- Modify: `app/[locale]/faq/page.tsx`
-- Modify: `app/[locale]/cgv/page.tsx`
-- Modify: `app/[locale]/mentions-legales/page.tsx`
-- Modify: `app/[locale]/politique-confidentialite/page.tsx`
-- Modify: `lib/services.ts`
-- Modify: `lib/faq.ts`
-
-- [ ] **Step 1: Translate services pages**
-
-Service titles, descriptions, features, process steps — all from dictionary. `lib/services.ts` uses translation keys.
-
-- [ ] **Step 2: Translate contact page**
-
-Form labels, business hours, CTA text.
-
-- [ ] **Step 3: Translate about page**
-
-Story, steps, engagements, certifications.
-
-- [ ] **Step 4: Translate remaining pages**
-
-Realisations, FAQ, CGV, mentions légales, politique de confidentialité.
-
-- [ ] **Step 5: Commit**
-
-```bash
-git add app/[locale]/ lib/services.ts lib/faq.ts
-git commit -m "feat(i18n): translate all remaining pages (services, contact, about, legal)"
-```
-
----
-
-### Task 10: Translate 404 Page
-
-**Files:**
-- Modify: `app/[locale]/not-found.tsx`
-
-- [ ] **Step 1: Translate all 8 variants**
-
-Each variant's title and subtitle comes from `dict.not_found.variant{N}_title` / `dict.not_found.variant{N}_subtitle`. Buttons and help text also from dictionary.
+Replace `next/link` with `@/i18n/navigation` `Link`.
 
 - [ ] **Step 2: Commit**
 
 ```bash
-git add app/[locale]/not-found.tsx
-git commit -m "feat(i18n): translate 404 page (8 variants × 3 languages)"
+git add components/layout/footer.tsx
+git commit -m "feat(i18n): translate footer"
 ```
 
 ---
 
-### Task 11: SEO — Metadata, hreflang, JSON-LD, Sitemap
+### Task 10: Update Devis Blueprint for i18n
 
 **Files:**
-- Modify: `app/[locale]/layout.tsx` — hreflang tags + JSON-LD per locale
-- Modify: each `app/[locale]/*/page.tsx` — metadata from dictionary
-- Modify: `app/sitemap.xml/route.ts` or `app/sitemap.ts`
+- Modify: `components/devis/devis-zones-config.ts`
+- Modify: `components/devis/blueprint/blueprint-interactive.tsx`
+- Modify: `components/devis/devis-blueprint.tsx`
+- Modify: `components/devis/panels/panel-travaux.tsx`
+- Modify: `components/devis/panels/panel-recap.tsx`
+- Modify: `app/api/devis/route.ts`
+- Modify: `lib/email-templates/devis-confirmation.ts`
 
-- [ ] **Step 1: Add hreflang alternate links**
+- [ ] **Step 1: Make ZONES_CONFIG translation-key based**
 
-In the locale layout, add `<link rel="alternate" hreflang="fr" href="...">` etc for each locale.
+Instead of hardcoded French labels, use translation keys:
+```typescript
+// devis-zones-config.ts
+// Change label: "Cuisine" → labelKey: "cuisine"
+// Change workItems label: "Sol" → labelKey: "sol"
+```
 
-- [ ] **Step 2: Translate metadata per page**
+Then in components, use `t(`zones.${zone.labelKey}`)` and `t(`works.${workItem.labelKey}`)`.
 
-Each page's `generateMetadata()` reads from `dict.seo.*`.
+- [ ] **Step 2: Update blueprint-interactive.tsx**
 
-- [ ] **Step 3: Update JSON-LD schema with locale**
+Add `useTranslations("devis")` and pass translated zone labels to SVG text elements.
 
-Service names, slogan, description in the current locale.
+Load locale-specific blueprint image:
+```typescript
+const locale = useLocale();
+const blueprintSrc = locale === "fr"
+  ? "/images/blueprint-plan.jpeg"
+  : `/images/blueprint-plan-${locale}.jpeg`;
+```
 
-- [ ] **Step 4: Generate multilingual sitemap**
+NOTE: Blueprint images for DE and EN need to exist at:
+- `public/images/blueprint-plan-de.jpeg`
+- `public/images/blueprint-plan-en.jpeg`
 
-Each page × 3 locales in the sitemap with `hreflang` annotations.
+Copy from `~/Downloads/` as specified in spec:
+```bash
+cp ~/Downloads/blueprint\ allemand.jpg public/images/blueprint-plan-de.jpeg
+cp ~/Downloads/blueprint\ anglais.jpg public/images/blueprint-plan-en.jpeg
+```
 
-- [ ] **Step 5: Commit**
+If those files don't exist yet, use the FR image as placeholder for all locales.
+
+- [ ] **Step 3: Update panel-travaux.tsx**
+
+Replace hardcoded work item labels with `t(`works.${item.labelKey}`)`.
+
+- [ ] **Step 4: Update panel-recap.tsx**
+
+Translate all labels: budget, contact fields, MagicPlan wizard steps, submit button.
+
+- [ ] **Step 5: Update API route for locale**
+
+In `app/api/devis/route.ts`, read a `locale` field from FormData:
+```typescript
+const locale = formData.get("locale") as string || "fr";
+```
+
+Pass it to the email template function.
+
+- [ ] **Step 6: Update email template**
+
+Make `devis-confirmation.ts` accept a locale param and use translated strings for the client email. Aiman's copy stays in French.
+
+- [ ] **Step 7: Update localStorage key**
+
+In `devis-blueprint.tsx`, prefix localStorage key with locale:
+```typescript
+const storageKey = `devis-state-${locale}`;
+```
+
+- [ ] **Step 8: Commit**
 
 ```bash
-git add app/
-git commit -m "feat(i18n): SEO — hreflang, translated metadata, multilingual sitemap"
+git add components/devis/ app/api/devis/ lib/email-templates/
+git commit -m "feat(i18n): translate devis blueprint, panels, and emails"
 ```
 
 ---
 
-### Task 12: Final Integration — Build, Test, Deploy
+### Task 11: Update Sitemap & JSON-LD
 
 **Files:**
-- All
+- Modify: `app/sitemap.ts`
+- Modify: `app/[locale]/layout.tsx` (JSON-LD + hreflang)
 
-- [ ] **Step 1: Run TypeScript check**
+- [ ] **Step 1: Multilingue sitemap**
 
-```bash
-npx tsc --noEmit
+```typescript
+// app/sitemap.ts
+import type { MetadataRoute } from "next";
+import { SERVICES } from "@/lib/services";
+
+const BASE = "https://aiman-renovation.fr";
+const LOCALES = ["fr", "de", "en"] as const;
+
+function localizedUrl(path: string, locale: string) {
+  return locale === "fr" ? `${BASE}${path}` : `${BASE}/${locale}${path}`;
+}
+
+function localizedEntry(path: string, priority: number, changeFrequency: MetadataRoute.Sitemap[0]["changeFrequency"]) {
+  return LOCALES.map((locale) => ({
+    url: localizedUrl(path, locale),
+    lastModified: new Date(),
+    changeFrequency,
+    priority,
+    alternates: {
+      languages: Object.fromEntries(LOCALES.map((l) => [l, localizedUrl(path, l)])),
+    },
+  }));
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    ...localizedEntry("/", 1, "weekly"),
+    ...localizedEntry("/services", 0.9, "monthly"),
+    ...SERVICES.flatMap((s) => localizedEntry(`/services/${s.slug}`, 0.8, "monthly")),
+    ...localizedEntry("/realisations", 0.8, "weekly"),
+    ...localizedEntry("/a-propos", 0.6, "monthly"),
+    ...localizedEntry("/devis", 0.9, "monthly"),
+    ...localizedEntry("/contact", 0.7, "monthly"),
+    ...localizedEntry("/faq", 0.6, "monthly"),
+    ...localizedEntry("/cgv", 0.3, "yearly"),
+  ];
+}
 ```
 
-- [ ] **Step 2: Run build**
+- [ ] **Step 2: Locale-aware JSON-LD**
 
-```bash
-npx next build
+In `app/[locale]/layout.tsx`, generate JSON-LD with:
+- `inLanguage` set to current locale
+- `areaServed` extended for DE: add Basel, Riehen, Allschwil, Binningen, Lörrach, Weil am Rhein
+- Service names translated
+- Slogan translated
+
+```typescript
+import { getTranslations } from "next-intl/server";
+
+// In LocaleLayout:
+const t = await getTranslations({ locale, namespace: "schema" });
+const areaServed = locale === "de" || locale === "en"
+  ? [
+      { "@type": "City", name: "Basel", sameAs: "https://en.wikipedia.org/wiki/Basel" },
+      { "@type": "City", name: "Riehen" },
+      { "@type": "City", name: "Allschwil" },
+      { "@type": "City", name: "Binningen" },
+      { "@type": "City", name: "Lörrach" },
+      { "@type": "City", name: "Weil am Rhein" },
+      { "@type": "City", name: "Saint-Louis" },
+      { "@type": "City", name: "Huningue" },
+      // ... more cities
+    ]
+  : [
+      { "@type": "City", name: "Saint-Louis", sameAs: "https://fr.wikipedia.org/wiki/Saint-Louis_(Haut-Rhin)" },
+      // ... existing French cities
+    ];
 ```
 
-- [ ] **Step 3: Test locale routing manually**
+- [ ] **Step 3: Add hreflang to metadata**
 
-- Visit `/` → FR content
-- Visit `/de/` → DE content
-- Visit `/en/` → EN content
-- Visit `/de/devis` → German blueprint + translated form
-- Change language via selector → cookie set, redirect works
-- Submit devis in DE → email in German
-
-- [ ] **Step 4: Deploy**
-
-```bash
-git push && npx vercel deploy --prod
+In each page's `generateMetadata`, add `alternates.languages`:
+```typescript
+alternates: {
+  languages: {
+    fr: "https://aiman-renovation.fr/services",
+    de: "https://aiman-renovation.fr/de/services",
+    en: "https://aiman-renovation.fr/en/services",
+    "x-default": "https://aiman-renovation.fr/services",
+  },
+},
 ```
 
-- [ ] **Step 5: Verify in production**
+- [ ] **Step 4: Commit**
 
-Test all 3 locales on aiman-renovation.fr.
+```bash
+git add app/sitemap.ts app/[locale]/layout.tsx
+git commit -m "feat(i18n): multilingue sitemap, JSON-LD with Swiss cities, hreflang"
+```
+
+---
+
+### Task 12: Update Link Imports Across Components
+
+**Files:**
+- Modify: ALL components that use `next/link` → use `@/i18n/navigation` `Link`
+- Modify: ALL components that use `next/navigation` `usePathname` → use `@/i18n/navigation`
+
+- [ ] **Step 1: Find all next/link imports**
+
+```bash
+cd /Users/Aiman/aiman-renovation && grep -rn "from \"next/link\"" components/ app/[locale]/ --include="*.tsx" --include="*.ts"
+```
+
+Replace each with:
+```typescript
+import { Link } from "@/i18n/navigation";
+```
+
+- [ ] **Step 2: Find all next/navigation usePathname**
+
+```bash
+grep -rn "from \"next/navigation\"" components/ --include="*.tsx" --include="*.ts"
+```
+
+Replace `usePathname` and `useRouter` from `next/navigation` with `@/i18n/navigation` equivalents (in client components only).
+
+**EXCEPTION:** Keep `next/navigation` for `notFound()` function — it's a Next.js built-in, not a routing helper.
+
+- [ ] **Step 3: Test build**
+
+```bash
+npm run build
+```
+
+Fix any remaining import errors.
+
+- [ ] **Step 4: Commit**
+
+```bash
+git add -A
+git commit -m "feat(i18n): replace next/link with locale-aware Link everywhere"
+```
+
+---
+
+### Task 13: Final Testing & Deploy
+
+- [ ] **Step 1: Test all 3 locales locally**
+
+```bash
+npm run dev
+```
+
+Test checklist:
+- [ ] `http://localhost:3000` → FR homepage, no prefix
+- [ ] `http://localhost:3000/de` → DE homepage
+- [ ] `http://localhost:3000/en` → EN homepage
+- [ ] `http://localhost:3000/services` → FR services
+- [ ] `http://localhost:3000/de/services` → DE services
+- [ ] `http://localhost:3000/devis` → FR devis with FR blueprint
+- [ ] `http://localhost:3000/de/devis` → DE devis with DE blueprint
+- [ ] Language switcher works and preserves current page
+- [ ] 404 page shows translated content
+- [ ] All nav links work in each locale
+- [ ] Footer links work in each locale
+- [ ] View source: hreflang tags present
+- [ ] View source: JSON-LD has correct `inLanguage`
+- [ ] DE zone d'intervention includes Basel, Riehen, Allschwil, Binningen
+- [ ] EN zone d'intervention includes Basel area + French cities
+
+- [ ] **Step 2: Build and check for errors**
+
+```bash
+npm run build
+```
+
+- [ ] **Step 3: Push to deploy**
+
+```bash
+git push
+```
+
+Vercel auto-deploys from push.
+
+- [ ] **Step 4: Test production URLs**
+
+- `https://aiman-renovation.fr` → FR
+- `https://aiman-renovation.fr/de` → DE
+- `https://aiman-renovation.fr/en` → EN
+- `https://aiman-renovation.fr/sitemap.xml` → all 3 locales × all pages

@@ -29,27 +29,42 @@ app/
   api/               ← hors locale (inchangé)
 ```
 
-### Middleware (proxy.ts ou middleware.ts)
-1. Lit le cookie `locale` — si présent, utilise cette locale
-2. Sinon, détecte `Accept-Language` header du navigateur
-3. Redirige vers la bonne locale si différent de FR
-4. Set le cookie `locale` pour les visites suivantes
+### Middleware (next-intl)
+```typescript
+import createMiddleware from 'next-intl/middleware';
+import { routing } from './i18n/routing';
 
-## Système de traduction
+export default createMiddleware(routing);
+
+export const config = {
+  matcher: ['/((?!api|_next|.*\\..*).*)']
+};
+```
+- Lit le cookie `NEXT_LOCALE` — si présent, utilise cette locale
+- Sinon, détecte `Accept-Language` header du navigateur
+- `localePrefix: 'as-needed'` → pas de /fr/ pour le français
+- Set le cookie pour les visites suivantes
+
+## Système de traduction — next-intl
+
+### Librairie : `next-intl`
+- Standard pour Next.js App Router, support natif Server Components + Client Components
+- Middleware intégré (détection locale, redirects, cookie)
+- Tree-shaking des traductions non utilisées
+- `localePrefix: 'as-needed'` → FR sans préfixe, DE/EN avec préfixe
 
 ### Fichiers
 ```
-lib/i18n/
-  config.ts              ← locales: ['fr','de','en'], defaultLocale: 'fr'
-  get-dictionary.ts      ← import dynamique du bon JSON
-  dictionaries/
-    fr.json              ← ~300 clés
-    de.json
-    en.json
+messages/
+  fr.json              ← source de vérité (~300 clés)
+  de.json
+  en.json
+i18n/
+  routing.ts           ← config locales + defaultLocale + pathnames
+  request.ts           ← getRequestConfig pour Server Components
+  navigation.ts        ← Link, redirect, usePathname locale-aware
+middleware.ts          ← createMiddleware de next-intl
 ```
-
-### Pas de librairie externe
-Simple `getDictionary(locale)` qui retourne un objet typé. Zero dépendance.
 
 ### Organisation des clés
 ```json
