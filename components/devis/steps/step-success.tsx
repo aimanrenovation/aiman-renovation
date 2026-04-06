@@ -5,6 +5,7 @@ import { CheckCircle, Phone, ArrowLeft, Smartphone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { LinkButton } from "@/components/ui/link-button";
 import type { DevisAction } from "../devis-types";
+import QRCodeLib from "qrcode";
 
 interface StepSuccessProps {
   dispatch: React.Dispatch<DevisAction>;
@@ -17,19 +18,11 @@ function QRCodeCanvas({ value, size = 160 }: { value: string; size?: number }) {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
 
-    // Placeholder — will be replaced by qrcode library in Task 10
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, size, size);
-    ctx.fillStyle = "#000000";
-    ctx.font = "10px monospace";
-    ctx.textAlign = "center";
-
-    const lines = value.match(/.{1,20}/g) || [value];
-    lines.forEach((line, i) => {
-      ctx.fillText(line, size / 2, size / 2 - (lines.length * 6) + i * 14);
+    QRCodeLib.toCanvas(canvas, value, {
+      width: size,
+      margin: 2,
+      color: { dark: "#000000", light: "#ffffff" },
     });
   }, [value, size]);
 
