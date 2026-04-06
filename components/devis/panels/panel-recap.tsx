@@ -111,6 +111,30 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
           </div>
         </div>
 
+        {/* MagicPlan CTA */}
+        <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-blue-500/30 rounded-xl p-5 space-y-3">
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+              <svg viewBox="0 0 24 24" className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z" /><path d="M8 2v16M16 6v16" />
+              </svg>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold text-sm">Devis plus précis avec MagicPlan</h4>
+              <p className="text-gray-400 text-xs mt-1">
+                Scannez vos pièces en 5 min avec l'app gratuite MagicPlan. On reçoit les mesures exactes pour un devis au plus juste.
+              </p>
+            </div>
+          </div>
+          <a
+            href="/devis/magicplan"
+            target="_blank"
+            className="block w-full text-center bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 text-sm font-medium py-2.5 rounded-lg border border-blue-500/30 transition-colors"
+          >
+            Voir le guide MagicPlan →
+          </a>
+        </div>
+
         {/* Message */}
         <div className="space-y-2">
           <Label htmlFor="message" className="text-white font-medium">
