@@ -129,6 +129,7 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
           <a
             href="/devis/magicplan"
             target="_blank"
+            rel="noopener noreferrer"
             className="block w-full text-center bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 text-sm font-medium py-2.5 rounded-lg border border-blue-500/30 transition-colors"
           >
             Voir le guide MagicPlan →

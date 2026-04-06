@@ -27,9 +27,36 @@ function countTotalWorks(state: DevisState): number {
 
 // ─── Component ──────────────────────────────────────────────────────────────
 
+const STORAGE_KEY = "devis-state";
+
+function loadSavedState(): DevisState {
+  if (typeof window === "undefined") return initialDevisState;
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (!saved) return initialDevisState;
+    const parsed = JSON.parse(saved);
+    // Restaurer avec les valeurs par défaut pour les champs non sérialisables
+    return {
+      ...initialDevisState,
+      ...parsed,
+      zonePhotos: initialDevisState.zonePhotos, // File objects ne se sérialisent pas
+      isSubmitting: false,
+      error: null,
+    };
+  } catch {
+    return initialDevisState;
+  }
+}
+
 export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
-  const [state, dispatch] = useReducer(devisReducer, initialDevisState);
+  const [state, dispatch] = useReducer(devisReducer, initialDevisState, loadSavedState);
   const [isMobile, setIsMobile] = useState(false);
+
+  // Persist state to localStorage
+  useEffect(() => {
+    const { zonePhotos, isSubmitting, error, ...toSave } = state;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
+  }, [state]);
 
   // Track viewport width
   useEffect(() => {

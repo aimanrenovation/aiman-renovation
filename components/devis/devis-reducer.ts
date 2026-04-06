@@ -132,6 +132,7 @@ export function devisReducer(
       return { ...state, error: action.error, isSubmitting: false };
 
     case "RESET":
+      if (typeof window !== "undefined") localStorage.removeItem("devis-state");
       return initialDevisState;
 
     default:
