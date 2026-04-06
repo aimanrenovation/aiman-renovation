@@ -1,17 +1,28 @@
 "use client";
 
-import Link from "next/link";
+import { Link, usePathname } from "@/i18n/navigation";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import { NAV_LINKS, CTA_LINK } from "@/lib/constants";
+import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "./language-switcher";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const pathname = usePathname();
+  const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navLinks = [
+    { href: "/" as const, label: t("home") },
+    { href: "/services" as const, label: t("services") },
+    { href: "/realisations" as const, label: t("realisations") },
+    { href: "/a-propos" as const, label: t("about") },
+    { href: "/contact" as const, label: t("contact") },
+  ];
+
+  const ctaLink = { href: "/devis" as const, label: t("cta") };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -39,7 +50,7 @@ export function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => {
+          {navLinks.map((link) => {
             const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return (
               <Link
@@ -56,8 +67,9 @@ export function Navbar() {
               </Link>
             );
           })}
-          <Link href={CTA_LINK.href} className={cn(buttonVariants(), "bg-red hover:bg-red-dark text-white rounded-md px-6")}>
-            {CTA_LINK.label}
+          <LanguageSwitcher />
+          <Link href={ctaLink.href} className={cn(buttonVariants(), "bg-red hover:bg-red-dark text-white rounded-md px-6")}>
+            {ctaLink.label}
           </Link>
         </div>
 
@@ -71,7 +83,7 @@ export function Navbar() {
       {mobileOpen && (
         <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-white/10 mt-3">
           <div className="flex flex-col px-6 py-4 gap-4">
-            {NAV_LINKS.map((link) => {
+            {navLinks.map((link) => {
               const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
               return (
                 <Link
@@ -89,8 +101,11 @@ export function Navbar() {
                 </Link>
               );
             })}
-            <Link href={CTA_LINK.href} onClick={() => setMobileOpen(false)} className={cn(buttonVariants(), "bg-red hover:bg-red-dark text-white w-full mt-2")}>
-              {CTA_LINK.label}
+            <div className="py-2">
+              <LanguageSwitcher />
+            </div>
+            <Link href={ctaLink.href} onClick={() => setMobileOpen(false)} className={cn(buttonVariants(), "bg-red hover:bg-red-dark text-white w-full mt-2")}>
+              {ctaLink.label}
             </Link>
           </div>
         </div>
