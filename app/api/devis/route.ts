@@ -9,10 +9,11 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData();
     const dataStr = formData.get("data") as string;
     if (!dataStr) {
-      return NextResponse.json({ error: "Données manquantes" }, { status: 400 });
+      return NextResponse.json({ error: "Donnees manquantes" }, { status: 400 });
     }
 
     const data: Omit<DevisState, "zonePhotos"> = JSON.parse(dataStr);
+    const locale = (formData.get("locale") as string) || "fr";
 
     // Validation basique
     if (!data.contact.firstName || !data.contact.phone || !data.contact.email) {
@@ -23,16 +24,17 @@ export async function POST(request: NextRequest) {
       (works) => works && works.length > 0
     );
     if (!hasWork) {
-      return NextResponse.json({ error: "Veuillez sélectionner au moins un travail" }, { status: 400 });
+      return NextResponse.json({ error: "Veuillez selectionner au moins un travail" }, { status: 400 });
     }
 
-    // Récupérer les photos du FormData
+    // Recuperer les photos du FormData
     const attachments: { filename: string; content: Buffer }[] = [];
     for (const [key, value] of formData.entries()) {
       if (key.startsWith("photo_") && value instanceof File) {
         const zoneId = key.replace("photo_", "");
         const zone = ZONES_CONFIG.find((z) => z.id === zoneId);
-        const zoneName = zone?.label ?? zoneId;
+        // Use French label for filenames (always readable by Aiman)
+        const zoneName = zone?.labelKey ?? zoneId;
         const bytes = await value.arrayBuffer();
         attachments.push({
           filename: `${zoneName} - ${value.name}`,
@@ -49,23 +51,28 @@ export async function POST(request: NextRequest) {
       (sum, works) => sum + (works ? works.length : 0),
       0
     );
-    const zonesShort = zonesWithWorks.map((z) => z.label).join(", ");
+    // Zone names in email subject always in French for Aiman
+    const zonesShort = zonesWithWorks.map((z) => z.labelKey).join(", ");
 
-    // Email à Aiman Renovation (avec photos)
+    // Email a Aiman Renovation (avec photos) — always French
     await resend.emails.send({
       from: DEVIS_FROM_EMAIL,
       to: DEVIS_RECIPIENT_EMAIL,
       subject: `Nouvelle demande de devis — ${data.contact.firstName} ${data.contact.lastName} — ${zonesWithWorks.length} zone(s), ${totalWorks} travaux — ${zonesShort}`,
-      html: generateDevisEmailHtml({ data: data as DevisState, isClientCopy: false }),
+      html: generateDevisEmailHtml({ data: data as DevisState, isClientCopy: false, locale: "fr" }),
       attachments: attachments.length > 0 ? attachments : undefined,
     });
 
-    // Email de confirmation au client (sans photos)
+    // Email de confirmation au client (sans photos) — in client's locale
     await resend.emails.send({
       from: DEVIS_FROM_EMAIL,
       to: data.contact.email,
-      subject: "Votre demande de devis — Aiman Renovation",
-      html: generateDevisEmailHtml({ data: data as DevisState, isClientCopy: true }),
+      subject: locale === "de"
+        ? "Ihre Offerte-Anfrage — Aiman Renovation"
+        : locale === "en"
+          ? "Your quote request — Aiman Renovation"
+          : "Votre demande de devis — Aiman Renovation",
+      html: generateDevisEmailHtml({ data: data as DevisState, isClientCopy: true, locale }),
     });
 
     return NextResponse.json({ success: true });

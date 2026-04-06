@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { ChevronLeft, Send, Loader2, X, Download, Camera, Ruler, Share2, CheckCircle } from "lucide-react";
 import { ZONES_CONFIG } from "../devis-zones-config";
 import { AddressAutocomplete } from "./address-autocomplete";
@@ -25,79 +26,46 @@ const BUDGET_OPTIONS: BudgetRange[] = [
   "> 50000",
 ];
 
-const WIZARD_STEPS = [
-  {
-    icon: Download,
-    title: "Téléchargez l'app",
-    subtitle: "Gratuit — 2 minutes",
-    instruction: "Installez MagicPlan sur votre téléphone. C'est gratuit, pas besoin de compte.",
-    visual: "📱",
-    action: {
-      label: "Télécharger MagicPlan",
-      onClick: () => {
-        const ua = navigator.userAgent || "";
-        const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-        const isAndroid = /Android/.test(ua);
-        if (isIOS) {
-          window.open("https://apps.apple.com/app/magicplan/id427424432", "_blank");
-        } else if (isAndroid) {
-          window.open("https://play.google.com/store/apps/details?id=com.sensopia.magicplan", "_blank");
-        } else {
-          window.open("https://www.magicplan.app", "_blank");
-        }
-      },
-    },
-    tip: "Déjà installé ? Passez à l'étape suivante.",
-  },
-  {
-    icon: Camera,
-    title: "Ouvrez et créez un projet",
-    subtitle: "30 secondes",
-    instruction: "Ouvrez MagicPlan, appuyez sur le gros bouton \"+\", puis choisissez \"Nouveau projet\". Donnez un nom (ex: \"Ma maison\").",
-    visual: "➕",
-    tip: "Choisissez le mode \"Scanner\" pour la détection automatique des murs.",
-  },
-  {
-    icon: Ruler,
-    title: "Scannez votre première pièce",
-    subtitle: "2 minutes par pièce",
-    instruction: "Placez-vous au centre de la pièce. Pointez le téléphone vers un coin et suivez les instructions à l'écran. Tournez lentement vers chaque coin.",
-    visual: "🔄",
-    tips: [
-      "Tenez le téléphone à hauteur de poitrine",
-      "Allez lentement, coin par coin",
-      "Les portes et fenêtres sont détectées automatiquement",
-      "Répétez pour chaque pièce à rénover",
-    ],
-  },
-  {
-    icon: CheckCircle,
-    title: "Vérifiez le résultat",
-    subtitle: "1 minute",
-    instruction: "MagicPlan génère un plan 2D avec les mesures. Tapez sur une cote pour la corriger si besoin.",
-    visual: "✅",
-    tip: "Pas besoin que ce soit parfait — on affinera ensemble.",
-  },
-  {
-    icon: Share2,
-    title: "Envoyez-nous le plan",
-    subtitle: "30 secondes",
-    instruction: "Appuyez sur \"Partager\" dans MagicPlan, puis choisissez \"PDF\" ou \"Lien\". Copiez le lien et collez-le dans le message de votre devis ci-dessous.",
-    visual: "📤",
-    tips: [
-      "Option 1 : Collez le lien dans le champ \"Message\" du devis",
-      "Option 2 : Envoyez le PDF par email à contact@aiman-renovation.fr",
-    ],
-  },
-];
+const WIZARD_ICONS = [Download, Camera, Ruler, CheckCircle, Share2];
+const WIZARD_VISUALS = ["📱", "➕", "🔄", "✅", "📤"];
 
 function MagicPlanSection() {
+  const t = useTranslations("devis.panel_recap");
+  const tWiz = useTranslations("devis.magicplan_wizard");
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState(0);
 
-  const current = WIZARD_STEPS[step];
-  const Icon = current.icon;
-  const isLast = step === WIZARD_STEPS.length - 1;
+  const stepsCount = 5;
+  const Icon = WIZARD_ICONS[step];
+  const isLast = step === stepsCount - 1;
+
+  const stepTitle = tWiz(`steps.${step}.title`);
+  const stepSubtitle = tWiz(`steps.${step}.subtitle`);
+  const stepInstruction = tWiz(`steps.${step}.instruction`);
+
+  // Check if step has action_label (only step 0)
+  const hasAction = step === 0;
+  const actionLabel = hasAction ? tWiz(`steps.${step}.action_label`) : "";
+
+  const handleDownload = () => {
+    const ua = navigator.userAgent || "";
+    const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const isAndroid = /Android/.test(ua);
+    if (isIOS) {
+      window.open("https://apps.apple.com/app/magicplan/id427424432", "_blank");
+    } else if (isAndroid) {
+      window.open("https://play.google.com/store/apps/details?id=com.sensopia.magicplan", "_blank");
+    } else {
+      window.open("https://www.magicplan.app", "_blank");
+    }
+  };
+
+  // Steps with tips arrays: 2 and 4 (0-indexed)
+  const hasTipsArray = step === 2 || step === 4;
+  const tipsCount = step === 2 ? 4 : step === 4 ? 2 : 0;
+
+  // Steps with single tip: 0, 1, 3
+  const hasSingleTip = step === 0 || step === 1 || step === 3;
 
   return (
     <>
@@ -107,9 +75,9 @@ function MagicPlanSection() {
             <Ruler className="w-5 h-5 text-blue-400" />
           </div>
           <div>
-            <h4 className="text-white font-semibold text-sm">Devis plus précis avec MagicPlan</h4>
+            <h4 className="text-white font-semibold text-sm">{t("magicplan_title")}</h4>
             <p className="text-gray-400 text-xs mt-1">
-              Scannez vos pièces en 5 min avec l'app gratuite MagicPlan.
+              {t("magicplan_subtitle")}
             </p>
           </div>
         </div>
@@ -117,7 +85,7 @@ function MagicPlanSection() {
           onClick={() => { setStep(0); setIsOpen(true); }}
           className="block w-full text-center bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 text-sm font-medium py-2.5 rounded-lg border border-blue-500/30 transition-colors"
         >
-          Voir le guide MagicPlan →
+          {t("magicplan_guide_button")}
         </button>
       </div>
 
@@ -128,14 +96,14 @@ function MagicPlanSection() {
             <div className="h-1.5 bg-white/5">
               <div
                 className="h-full bg-blue-500 transition-all duration-500 ease-out"
-                style={{ width: `${((step + 1) / WIZARD_STEPS.length) * 100}%` }}
+                style={{ width: `${((step + 1) / stepsCount) * 100}%` }}
               />
             </div>
 
             {/* Header */}
             <div className="flex items-center justify-between px-5 pt-4">
               <span className="text-xs text-gray-500 font-medium">
-                Étape {step + 1} sur {WIZARD_STEPS.length}
+                {tWiz("step_label", { current: step + 1, total: stepsCount })}
               </span>
               <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-white transition-colors p-1">
                 <X className="w-5 h-5" />
@@ -146,43 +114,43 @@ function MagicPlanSection() {
             <div className="px-5 py-6 text-center space-y-5">
               {/* Visual */}
               <div className="w-20 h-20 rounded-2xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center mx-auto text-4xl">
-                {current.visual}
+                {WIZARD_VISUALS[step]}
               </div>
 
               {/* Title */}
               <div>
-                <h3 className="text-white text-lg font-bold">{current.title}</h3>
-                <p className="text-blue-400 text-xs font-medium mt-1">{current.subtitle}</p>
+                <h3 className="text-white text-lg font-bold">{stepTitle}</h3>
+                <p className="text-blue-400 text-xs font-medium mt-1">{stepSubtitle}</p>
               </div>
 
               {/* Instruction */}
               <p className="text-gray-300 text-sm leading-relaxed">
-                {current.instruction}
+                {stepInstruction}
               </p>
 
-              {/* Tips */}
-              {current.tips && (
+              {/* Tips (array) */}
+              {hasTipsArray && (
                 <div className="bg-white/5 rounded-xl p-4 space-y-2 text-left">
-                  {current.tips.map((tip, i) => (
+                  {Array.from({ length: tipsCount }, (_, i) => (
                     <div key={i} className="flex items-start gap-2 text-xs text-gray-400">
                       <CheckCircle className="w-3.5 h-3.5 text-blue-400 mt-0.5 flex-shrink-0" />
-                      <span>{tip}</span>
+                      <span>{tWiz(`steps.${step}.tips.${i}`)}</span>
                     </div>
                   ))}
                 </div>
               )}
 
-              {current.tip && !current.tips && (
-                <p className="text-gray-500 text-xs italic">{current.tip}</p>
+              {hasSingleTip && (
+                <p className="text-gray-500 text-xs italic">{tWiz(`steps.${step}.tip`)}</p>
               )}
 
-              {/* Action button */}
-              {current.action && (
+              {/* Action button (step 0 only) */}
+              {hasAction && (
                 <button
-                  onClick={current.action.onClick}
+                  onClick={handleDownload}
                   className="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-6 py-3 rounded-xl transition-colors w-full"
                 >
-                  {current.action.label}
+                  {actionLabel}
                 </button>
               )}
             </div>
@@ -194,14 +162,14 @@ function MagicPlanSection() {
                   onClick={() => setStep(step - 1)}
                   className="flex-1 bg-white/5 hover:bg-white/10 text-white text-sm font-medium py-3 rounded-xl transition-colors"
                 >
-                  ← Précédent
+                  {tWiz("previous")}
                 </button>
               ) : (
                 <button
                   onClick={() => setIsOpen(false)}
                   className="flex-1 bg-white/5 hover:bg-white/10 text-gray-400 text-sm font-medium py-3 rounded-xl transition-colors"
                 >
-                  Passer
+                  {tWiz("skip")}
                 </button>
               )}
               <button
@@ -210,7 +178,7 @@ function MagicPlanSection() {
                   isLast ? "bg-[#E50000] hover:bg-red-700" : "bg-blue-500 hover:bg-blue-600"
                 }`}
               >
-                {isLast ? "Continuer mon devis" : "Suivant →"}
+                {isLast ? tWiz("finish") : tWiz("next")}
               </button>
             </div>
           </div>
@@ -221,6 +189,9 @@ function MagicPlanSection() {
 }
 
 export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
+  const t = useTranslations("devis.panel_recap");
+  const tZones = useTranslations("devis.zones");
+
   const zonesWithWorks = ZONES_CONFIG.filter(
     (z) => state.selectedWorks[z.id] && state.selectedWorks[z.id].length > 0
   );
@@ -247,11 +218,11 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
             className="flex items-center gap-1 text-white/60 hover:text-white transition-colors"
           >
             <ChevronLeft className="w-5 h-5" />
-            <span>Retour</span>
+            <span>{t("back")}</span>
           </button>
-          <h2 className="text-xl font-semibold text-white">Récapitulatif</h2>
+          <h2 className="text-xl font-semibold text-white">{t("title")}</h2>
           <span className="text-sm text-white/50">
-            {totalWorks} travaux / {zonesWithWorks.length} zones
+            {t("works_zones", { works: totalWorks, zones: zonesWithWorks.length })}
           </span>
         </div>
 
@@ -262,18 +233,21 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
               key={zone.id}
               className="bg-[#111] rounded-xl border border-white/10 p-4"
             >
-              <h3 className="text-white font-medium mb-2">{zone.label}</h3>
+              <h3 className="text-white font-medium mb-2">{tZones(`${zone.labelKey}.label`)}</h3>
               <div className="flex flex-wrap gap-2">
                 {state.selectedWorks[zone.id].map((workId) => {
                   const workItem = zone.workItems.find(
                     (w) => w.id === workId
                   );
+                  const workLabel = workItem
+                    ? tZones(`${zone.labelKey}.workItems.${workItem.labelKey}`)
+                    : workId;
                   return (
                     <Badge
                       key={workId}
                       className="bg-[#E50000] text-white hover:bg-[#E50000]/80 border-none"
                     >
-                      {workItem?.label ?? workId}
+                      {workLabel}
                     </Badge>
                   );
                 })}
@@ -284,7 +258,7 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
 
         {/* Budget */}
         <div className="space-y-3">
-          <h3 className="text-white font-medium">Budget estimé</h3>
+          <h3 className="text-white font-medium">{t("budget_title")}</h3>
           <div className="flex flex-wrap gap-2">
             {BUDGET_OPTIONS.map((option) => (
               <button
@@ -311,29 +285,29 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
         <MagicPlanSection />
         <div className="space-y-1.5">
           <Label htmlFor="magicplan" className="text-white/70 text-sm">
-            Lien MagicPlan (optionnel)
+            {t("magicplan_link_label")}
           </Label>
           <Input
             id="magicplan"
             type="url"
-            placeholder="https://my.magicplan.app/..."
+            placeholder={t("magicplan_link_placeholder")}
             value={state.magicplanLink}
             onChange={(e) =>
               dispatch({ type: "SET_MAGICPLAN_LINK", link: e.target.value })
             }
             className="bg-white/5 border-white/10 text-white placeholder:text-white/30"
           />
-          <p className="text-gray-500 text-xs">Collez ici le lien de partage MagicPlan</p>
+          <p className="text-gray-500 text-xs">{t("magicplan_link_hint")}</p>
         </div>
 
         {/* Message */}
         <div className="space-y-2">
           <Label htmlFor="message" className="text-white font-medium">
-            Message (optionnel)
+            {t("message_label")}
           </Label>
           <Textarea
             id="message"
-            placeholder="Décrivez votre projet, vos contraintes, vos envies..."
+            placeholder={t("message_placeholder")}
             value={state.message}
             onChange={(e) =>
               dispatch({ type: "SET_MESSAGE", message: e.target.value })
@@ -344,12 +318,12 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
 
         {/* Contact */}
         <div className="space-y-4">
-          <h3 className="text-white font-medium">Vos coordonnées</h3>
+          <h3 className="text-white font-medium">{t("contact_title")}</h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1.5">
               <Label htmlFor="firstName" className="text-white/70 text-sm">
-                Prénom *
+                {t("label_firstname")}
               </Label>
               <Input
                 id="firstName"
@@ -367,7 +341,7 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
 
             <div className="space-y-1.5">
               <Label htmlFor="lastName" className="text-white/70 text-sm">
-                Nom
+                {t("label_lastname")}
               </Label>
               <Input
                 id="lastName"
@@ -386,7 +360,7 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
 
           <div className="space-y-1.5">
             <Label htmlFor="phone" className="text-white/70 text-sm">
-              Téléphone *
+              {t("label_phone")}
             </Label>
             <Input
               id="phone"
@@ -405,7 +379,7 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
 
           <div className="space-y-1.5">
             <Label htmlFor="email" className="text-white/70 text-sm">
-              Email *
+              {t("label_email")}
             </Label>
             <Input
               id="email"
@@ -424,7 +398,7 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
 
           <div className="space-y-1.5">
             <Label htmlFor="address" className="text-white/70 text-sm">
-              Adresse du chantier *
+              {t("label_address")}
             </Label>
             <AddressAutocomplete
               value={state.contact.address}
@@ -436,7 +410,7 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
                 })
               }
             />
-            <p className="text-gray-500 text-xs">Suggestions automatiques — France, Allemagne, Suisse</p>
+            <p className="text-gray-500 text-xs">{t("address_hint")}</p>
           </div>
         </div>
 
@@ -456,12 +430,12 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
           {state.isSubmitting ? (
             <>
               <Loader2 className="w-5 h-5 animate-spin mr-2" />
-              Envoi en cours...
+              {t("submit_sending")}
             </>
           ) : (
             <>
               <Send className="w-5 h-5 mr-2" />
-              Envoyer mon devis
+              {t("submit_button")}
             </>
           )}
         </Button>

@@ -5,12 +5,12 @@ export type ZoneId =
 
 export interface WorkItem {
   id: string;
-  label: string;
+  labelKey: string;
 }
 
 export interface ZoneConfig {
   id: ZoneId;
-  label: string;
+  labelKey: string;
   category: "interieur" | "exterieur";
   workItems: WorkItem[];
   bounds: { x: number; y: number; w: number; h: number };

@@ -39,7 +39,7 @@ export function ZoneLabel3D({ zoneId, isSelected, visible }: ZoneLabel3DProps) {
             : "bg-white/90 text-black shadow-md"
         }`}
       >
-        {zone.label}
+        {zone.labelKey}
       </div>
     </Html>
   );

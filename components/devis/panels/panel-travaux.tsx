@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import { CheckCircle, Circle, ChevronLeft, Camera, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,6 +16,8 @@ interface PanelTravauxProps {
 
 export function PanelTravaux({ state, dispatch, isMobile }: PanelTravauxProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const t = useTranslations("devis.panel_travaux");
+  const tZones = useTranslations("devis.zones");
 
   if (!state.activeZone) return null;
   const zone = getZoneConfig(state.activeZone);
@@ -23,6 +26,8 @@ export function PanelTravaux({ state, dispatch, isMobile }: PanelTravauxProps) {
   const selectedWorks = state.selectedWorks[zone.id] || [];
   const note = state.zoneNotes[zone.id] || "";
   const photos = state.zonePhotos[zone.id] || [];
+
+  const zoneLabel = tZones(`${zone.labelKey}.label`);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -45,11 +50,11 @@ export function PanelTravaux({ state, dispatch, isMobile }: PanelTravauxProps) {
           <ChevronLeft className="w-5 h-5" />
         </Button>
         <div>
-          <h2 className="text-lg font-bold text-white">{zone.label}</h2>
+          <h2 className="text-lg font-bold text-white">{zoneLabel}</h2>
           <p className="text-sm text-gray-400">
             {selectedWorks.length > 0
-              ? `${selectedWorks.length} travaux sélectionnés`
-              : "Cochez les travaux à réaliser"}
+              ? t("works_selected", { count: selectedWorks.length })
+              : t("check_works")}
           </p>
         </div>
       </div>
@@ -60,6 +65,7 @@ export function PanelTravaux({ state, dispatch, isMobile }: PanelTravauxProps) {
         <div className="space-y-2">
           {zone.workItems.map((item) => {
             const isSelected = selectedWorks.includes(item.id);
+            const workLabel = tZones(`${zone.labelKey}.workItems.${item.labelKey}`);
             return (
               <button
                 key={item.id}
@@ -76,7 +82,7 @@ export function PanelTravaux({ state, dispatch, isMobile }: PanelTravauxProps) {
                   <Circle className="w-5 h-5 text-gray-500 flex-shrink-0" />
                 )}
                 <span className={`text-sm font-medium ${isSelected ? "text-[#E50000]" : "text-white"}`}>
-                  {item.label}
+                  {workLabel}
                 </span>
               </button>
             );
@@ -86,23 +92,23 @@ export function PanelTravaux({ state, dispatch, isMobile }: PanelTravauxProps) {
         {/* Description libre */}
         <div className="space-y-2">
           <label className="text-white text-sm font-semibold">
-            Décrivez vos besoins pour cette pièce
+            {t("describe_needs")}
           </label>
           <Textarea
             value={note}
             onChange={(e) => dispatch({ type: "SET_ZONE_NOTE", zone: zone.id, note: e.target.value })}
-            placeholder="Ex: fuite sous l'évier, carrelage fissuré, souhaite une douche italienne..."
+            placeholder={t("describe_placeholder")}
             className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 min-h-[80px]"
           />
         </div>
 
-        {/* Upload photos/vidéos */}
+        {/* Upload photos/videos */}
         <div className="space-y-2">
           <label className="text-white text-sm font-semibold">
-            Photos / Vidéos
+            {t("photos_label")}
           </label>
           <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-2.5">
-            <p className="text-blue-300 text-xs font-medium">Plus vous ajoutez de photos, plus votre devis sera précis et rapide !</p>
+            <p className="text-blue-300 text-xs font-medium">{t("photos_hint")}</p>
           </div>
 
           <button
@@ -110,7 +116,7 @@ export function PanelTravaux({ state, dispatch, isMobile }: PanelTravauxProps) {
             className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-dashed border-white/20 text-gray-400 hover:border-[#4A9EFF]/50 hover:text-[#4A9EFF] transition-all"
           >
             <Camera className="w-5 h-5" />
-            <span className="text-sm">Ajouter des photos ou vidéos</span>
+            <span className="text-sm">{t("add_photos")}</span>
           </button>
           <input
             ref={fileInputRef}
@@ -127,7 +133,7 @@ export function PanelTravaux({ state, dispatch, isMobile }: PanelTravauxProps) {
                 <div key={i} className="relative group">
                   {file.type.startsWith("video/") ? (
                     <div className="w-full aspect-square bg-white/5 rounded-lg flex items-center justify-center text-xs text-gray-400">
-                      Vidéo
+                      {t("video_label")}
                     </div>
                   ) : (
                     // eslint-disable-next-line @next/next/no-img-element
@@ -156,7 +162,7 @@ export function PanelTravaux({ state, dispatch, isMobile }: PanelTravauxProps) {
           onClick={() => dispatch({ type: "ZOOM_OUT" })}
           className="w-full bg-[#E50000] hover:bg-red-700 text-white"
         >
-          Valider et retour au plan
+          {t("validate_button")}
         </Button>
       </div>
     </div>

@@ -139,7 +139,7 @@ export function DevisWizard2D() {
                           <Circle className="w-5 h-5 text-gray-500" />
                         )}
                         <span className={`font-medium ${isSelected ? "text-[#E50000]" : "text-white"}`}>
-                          {zone.label}
+                          {zone.labelKey}
                         </span>
                       </div>
                     </button>
@@ -158,7 +158,7 @@ export function DevisWizard2D() {
                 if (!zoneConfig) return null;
                 return (
                   <div key={zoneId} className="space-y-2">
-                    <h3 className="text-white font-semibold">{zoneConfig.label}</h3>
+                    <h3 className="text-white font-semibold">{zoneConfig.labelKey}</h3>
                     <div className="grid grid-cols-1 gap-2">
                       {zoneConfig.problems.map((problem) => {
                         const isSelected = state.problems[zoneId].includes(problem.id);
@@ -193,7 +193,7 @@ export function DevisWizard2D() {
                 if (!zoneConfig) return null;
                 return (
                   <div key={zoneId} className="space-y-2">
-                    <h3 className="text-white font-semibold">{zoneConfig.label}</h3>
+                    <h3 className="text-white font-semibold">{zoneConfig.labelKey}</h3>
                     <div className="grid grid-cols-1 gap-2">
                       {zoneConfig.renovationOptions.map((option) => {
                         const isSelected = state.renovationOptions[zoneId].includes(option.id);
@@ -308,7 +308,7 @@ export function DevisWizard2D() {
                 if (!zoneConfig) return null;
                 return (
                   <div key={zoneId} className="bg-white/5 rounded-xl p-4 space-y-2">
-                    <h3 className="text-white font-semibold">{zoneConfig.label}</h3>
+                    <h3 className="text-white font-semibold">{zoneConfig.labelKey}</h3>
                     {state.problems[zoneId].length > 0 && (
                       <div>
                         <p className="text-gray-400 text-xs uppercase">Problemes</p>

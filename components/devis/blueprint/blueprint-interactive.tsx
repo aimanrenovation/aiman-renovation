@@ -2,6 +2,7 @@
 
 import { useRef, useCallback, useEffect, useState } from "react";
 import { gsap } from "gsap";
+import { useTranslations, useLocale } from "next-intl";
 import { ZONES_CONFIG } from "../devis-zones-config";
 import type { ZoneId, DevisState, DevisAction } from "../devis-types";
 
@@ -10,7 +11,7 @@ interface BlueprintInteractiveProps {
   dispatch: React.Dispatch<DevisAction>;
 }
 
-// Coordonnées calibrées manuellement dans le navigateur via /devis/calibrate
+// Coordonnees calibrees manuellement dans le navigateur via /devis/calibrate
 const ZONES: Record<ZoneId, { x: number; y: number; w: number; h: number }> = {
   cuisine:   { x:   460, y:   210, w:   822, h:   450 },
   sdb:       { x:  1302, y:   213, w:   338, h:   275 },
@@ -31,6 +32,12 @@ const ZONES: Record<ZoneId, { x: number; y: number; w: number; h: number }> = {
 export function BlueprintInteractive({ state, dispatch }: BlueprintInteractiveProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const t = useTranslations("devis");
+  const tZones = useTranslations("devis.zones");
+  const locale = useLocale();
+
+  // Locale-specific blueprint image (fallback to default for fr)
+  const blueprintSrc = `/images/blueprint-plan${locale === "fr" ? "" : `-${locale}`}.jpeg`;
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -74,7 +81,7 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
 
   return (
     <div className="relative w-full h-full overflow-hidden bg-[#091428] flex items-center justify-center">
-      {/* SVG avec image en fond + zones cliquables — même viewBox = alignement parfait */}
+      {/* SVG avec image en fond + zones cliquables */}
       <svg
         ref={svgRef}
         viewBox="0 0 2812 1536"
@@ -94,14 +101,15 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
         `}</style>
 
         {/* Image de fond */}
-        <image href="/images/blueprint-plan.jpeg" x="0" y="0" width="2812" height="1536" />
+        <image href={blueprintSrc} x="0" y="0" width="2812" height="1536" />
 
-        {/* Zones intérieures */}
+        {/* Zones interieures */}
         {ZONES_CONFIG.filter(z => z.category === "interieur").map((zone) => {
           const z = ZONES[zone.id];
           if (!z) return null;
           const hasWorks = (state.selectedWorks[zone.id]?.length ?? 0) > 0;
           const isActive = state.activeZone === zone.id;
+          const zoneLabel = tZones(`${zone.labelKey}.label`);
 
           return (
             <g key={zone.id} onClick={() => handleZoneClick(zone.id)} className="zone-btn" style={{ cursor: "pointer" }}>
@@ -113,7 +121,7 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
                 rx={4}
                 className="zone-rect"
               />
-              {/* Nom de la pièce au hover */}
+              {/* Nom de la piece au hover */}
               <text
                 x={z.x + z.w / 2} y={z.y + z.h / 2}
                 textAnchor="middle" dominantBaseline="middle"
@@ -121,7 +129,7 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
                 className="zone-label"
                 style={{ pointerEvents: "none" }}
               >
-                {zone.label}
+                {zoneLabel}
               </text>
               {/* Badge compteur */}
               {hasWorks && (
@@ -141,11 +149,12 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
           );
         })}
 
-        {/* Zones extérieures */}
+        {/* Zones exterieures */}
         {ZONES_CONFIG.filter(z => z.category === "exterieur").map((zone) => {
           const z = ZONES[zone.id];
           if (!z) return null;
           const hasWorks = (state.selectedWorks[zone.id]?.length ?? 0) > 0;
+          const zoneLabel = tZones(`${zone.labelKey}.label`);
 
           return (
             <g key={zone.id} onClick={() => handleZoneClick(zone.id)} className="zone-ext-btn" style={{ cursor: "pointer" }}>
@@ -163,7 +172,7 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
                 className="zone-label"
                 style={{ pointerEvents: "none" }}
               >
-                {zone.label}
+                {zoneLabel}
               </text>
               {hasWorks && (
                 <>
@@ -189,15 +198,15 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
           <div className="flex flex-col items-center gap-3 pb-4 sm:pb-6">
             {totalWorks === 0 ? (
               <div className="pointer-events-auto bg-black/70 backdrop-blur-sm rounded-2xl px-5 py-2.5 sm:px-6 sm:py-3 text-center animate-pulse">
-                <p className="text-white font-semibold text-base sm:text-lg">{isMobile ? "Touchez une pièce" : "Cliquez sur une pièce pour commencer"}</p>
-                <p className="text-gray-400 text-xs sm:text-sm mt-1">{isMobile ? "Puis cochez les travaux à réaliser" : "Sélectionnez les zones de votre maison à rénover"}</p>
+                <p className="text-white font-semibold text-base sm:text-lg">{isMobile ? t("blueprint.touch_room") : t("blueprint.click_room")}</p>
+                <p className="text-gray-400 text-xs sm:text-sm mt-1">{isMobile ? t("blueprint.select_zones_touch") : t("blueprint.select_zones_click")}</p>
               </div>
             ) : (
               <button
                 onClick={() => dispatch({ type: "SHOW_RECAP" })}
                 className="pointer-events-auto rounded-2xl bg-[#E50000] px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold text-white shadow-lg shadow-red-500/20 transition-all hover:bg-red-700 active:scale-95"
               >
-                Envoyer mon devis ({totalWorks} travaux)
+                {t("blueprint.send_devis", { count: totalWorks })}
               </button>
             )}
           </div>
@@ -210,7 +219,7 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
           onClick={() => dispatch({ type: "ZOOM_OUT" })}
           className="absolute top-4 left-4 z-20 bg-black/80 backdrop-blur-sm text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-sm font-medium hover:bg-black/95 transition-all shadow-lg"
         >
-          ← Retour au plan
+          {t("blueprint.back_to_plan")}
         </button>
       )}
     </div>

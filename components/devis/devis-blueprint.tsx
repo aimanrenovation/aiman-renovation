@@ -1,13 +1,14 @@
 "use client";
 
 import { useReducer, useState, useEffect, useCallback } from "react";
+import { useTranslations, useLocale } from "next-intl";
 import type { DevisState, DevisAction } from "./devis-types";
 import { devisReducer, initialDevisState } from "./devis-reducer";
 import { PanelTravaux } from "./panels/panel-travaux";
 import { PanelRecap } from "./panels/panel-recap";
 import { StepSuccessOverlay } from "./steps/step-success";
 
-// ─── Props ──────────────────────────────────────────────────────────────────
+// --- Props ---
 
 interface DevisBlueprintProps {
   BlueprintComponent: React.ComponentType<{
@@ -16,7 +17,7 @@ interface DevisBlueprintProps {
   }>;
 }
 
-// ─── Helpers ────────────────────────────────────────────────────────────────
+// --- Helpers ---
 
 function countTotalWorks(state: DevisState): number {
   return Object.values(state.selectedWorks).reduce(
@@ -25,21 +26,22 @@ function countTotalWorks(state: DevisState): number {
   );
 }
 
-// ─── Component ──────────────────────────────────────────────────────────────
+// --- Component ---
 
-const STORAGE_KEY = "devis-state";
+function getStorageKey(locale: string) {
+  return `devis-state-${locale}`;
+}
 
-function loadSavedState(): DevisState {
+function loadSavedState(locale: string): DevisState {
   if (typeof window === "undefined") return initialDevisState;
   try {
-    const saved = localStorage.getItem(STORAGE_KEY);
+    const saved = localStorage.getItem(getStorageKey(locale));
     if (!saved) return initialDevisState;
     const parsed = JSON.parse(saved);
-    // Restaurer avec les valeurs par défaut pour les champs non sérialisables
     return {
       ...initialDevisState,
       ...parsed,
-      zonePhotos: initialDevisState.zonePhotos, // File objects ne se sérialisent pas
+      zonePhotos: initialDevisState.zonePhotos,
       isSubmitting: false,
       error: null,
     };
@@ -49,14 +51,20 @@ function loadSavedState(): DevisState {
 }
 
 export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
-  const [state, dispatch] = useReducer(devisReducer, initialDevisState, loadSavedState);
+  const locale = useLocale();
+  const t = useTranslations("devis.panel_recap");
+  const [state, dispatch] = useReducer(
+    devisReducer,
+    initialDevisState,
+    () => loadSavedState(locale),
+  );
   const [isMobile, setIsMobile] = useState(false);
 
-  // Persist state to localStorage
+  // Persist state to localStorage (locale-specific)
   useEffect(() => {
     const { zonePhotos, isSubmitting, error, ...toSave } = state;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
-  }, [state]);
+    localStorage.setItem(getStorageKey(locale), JSON.stringify(toSave));
+  }, [state, locale]);
 
   // Track viewport width
   useEffect(() => {
@@ -72,9 +80,10 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
     try {
       const formData = new FormData();
 
-      // State sans les photos (pas sérialisable)
+      // State sans les photos (pas serialisable)
       const { zonePhotos, ...stateWithoutPhotos } = state;
       formData.append("data", JSON.stringify(stateWithoutPhotos));
+      formData.append("locale", locale);
 
       // Ajouter les photos avec le format zone__filename
       for (const [zoneId, files] of Object.entries(zonePhotos)) {
@@ -87,7 +96,7 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
         method: "POST",
         body: formData,
       });
-      if (!res.ok) throw new Error("Erreur serveur");
+      if (!res.ok) throw new Error(t("error_server"));
       dispatch({ type: "SET_SUCCESS" });
     } catch (err) {
       dispatch({
@@ -95,14 +104,14 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
         error:
           err instanceof Error
             ? err.message
-            : "Une erreur est survenue. Veuillez reessayer.",
+            : t("error_generic"),
       });
     }
-  }, [state]);
+  }, [state, locale, t]);
 
   const totalWorks = countTotalWorks(state);
 
-  // ─── Success view ───────────────────────────────────────────────────
+  // --- Success view ---
 
   if (state.view === "success") {
     return (
@@ -112,7 +121,7 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
     );
   }
 
-  // ─── Recap view ─────────────────────────────────────────────────────
+  // --- Recap view ---
 
   if (state.view === "recap") {
     return (
@@ -124,7 +133,7 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
     );
   }
 
-  // ─── Global / Zoomed view ───────────────────────────────────────────
+  // --- Global / Zoomed view ---
 
   return (
     <div className="flex w-full bg-[#091428] overflow-hidden" style={{ height: "calc(100dvh - 64px)" }}>
