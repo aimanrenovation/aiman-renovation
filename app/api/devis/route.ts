@@ -6,32 +6,42 @@ import { ZONES_CONFIG } from "@/components/devis/devis-zones-config";
 
 export async function POST(request: NextRequest) {
   try {
-    const data: DevisState = await request.json();
-
-    // Validation basique
-    if (
-      !data.contact.firstName ||
-      !data.contact.phone ||
-      !data.contact.email
-    ) {
-      return NextResponse.json(
-        { error: "Champs obligatoires manquants" },
-        { status: 400 }
-      );
+    const formData = await request.formData();
+    const dataStr = formData.get("data") as string;
+    if (!dataStr) {
+      return NextResponse.json({ error: "Données manquantes" }, { status: 400 });
     }
 
-    // Au moins 1 travail sélectionné
+    const data: Omit<DevisState, "zonePhotos"> = JSON.parse(dataStr);
+
+    // Validation basique
+    if (!data.contact.firstName || !data.contact.phone || !data.contact.email) {
+      return NextResponse.json({ error: "Champs obligatoires manquants" }, { status: 400 });
+    }
+
     const hasWork = Object.values(data.selectedWorks).some(
       (works) => works && works.length > 0
     );
     if (!hasWork) {
-      return NextResponse.json(
-        { error: "Veuillez sélectionner au moins un travail" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Veuillez sélectionner au moins un travail" }, { status: 400 });
     }
 
-    // Compter zones et travaux pour le subject
+    // Récupérer les photos du FormData
+    const attachments: { filename: string; content: Buffer }[] = [];
+    for (const [key, value] of formData.entries()) {
+      if (key.startsWith("photo_") && value instanceof File) {
+        const zoneId = key.replace("photo_", "");
+        const zone = ZONES_CONFIG.find((z) => z.id === zoneId);
+        const zoneName = zone?.label ?? zoneId;
+        const bytes = await value.arrayBuffer();
+        attachments.push({
+          filename: `${zoneName} - ${value.name}`,
+          content: Buffer.from(bytes),
+        });
+      }
+    }
+
+    // Compter zones et travaux
     const zonesWithWorks = ZONES_CONFIG.filter(
       (z) => data.selectedWorks[z.id] && data.selectedWorks[z.id].length > 0
     );
@@ -41,20 +51,21 @@ export async function POST(request: NextRequest) {
     );
     const zonesShort = zonesWithWorks.map((z) => z.label).join(", ");
 
-    // Email a Aiman Renovation
+    // Email à Aiman Renovation (avec photos)
     await resend.emails.send({
       from: DEVIS_FROM_EMAIL,
       to: DEVIS_RECIPIENT_EMAIL,
       subject: `Nouvelle demande de devis — ${data.contact.firstName} ${data.contact.lastName} — ${zonesWithWorks.length} zone(s), ${totalWorks} travaux — ${zonesShort}`,
-      html: generateDevisEmailHtml({ data, isClientCopy: false }),
+      html: generateDevisEmailHtml({ data: data as DevisState, isClientCopy: false }),
+      attachments: attachments.length > 0 ? attachments : undefined,
     });
 
-    // Email de confirmation au client
+    // Email de confirmation au client (sans photos)
     await resend.emails.send({
       from: DEVIS_FROM_EMAIL,
       to: data.contact.email,
       subject: "Votre demande de devis — Aiman Renovation",
-      html: generateDevisEmailHtml({ data, isClientCopy: true }),
+      html: generateDevisEmailHtml({ data: data as DevisState, isClientCopy: true }),
     });
 
     return NextResponse.json({ success: true });

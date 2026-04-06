@@ -43,10 +43,22 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
   const handleSubmit = useCallback(async () => {
     dispatch({ type: "SET_SUBMITTING", isSubmitting: true });
     try {
+      const formData = new FormData();
+
+      // State sans les photos (pas sérialisable)
+      const { zonePhotos, ...stateWithoutPhotos } = state;
+      formData.append("data", JSON.stringify(stateWithoutPhotos));
+
+      // Ajouter les photos avec le format zone__filename
+      for (const [zoneId, files] of Object.entries(zonePhotos)) {
+        for (const file of files) {
+          formData.append(`photo_${zoneId}`, file, file.name);
+        }
+      }
+
       const res = await fetch("/api/devis", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(state),
+        body: formData,
       });
       if (!res.ok) throw new Error("Erreur serveur");
       dispatch({ type: "SET_SUCCESS" });
