@@ -11,8 +11,8 @@ interface StepSuccessProps {
 
 export function StepSuccessOverlay({ dispatch }: StepSuccessProps) {
   return (
-    <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
-      <div className="pointer-events-auto bg-black/90 backdrop-blur-md rounded-3xl p-10 w-full max-w-md mx-4 shadow-2xl border border-white/10 text-center">
+    <div className="w-full max-w-md mx-4">
+      <div className="bg-[#111] rounded-3xl p-10 shadow-2xl border border-white/10 text-center">
         <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
           <CheckCircle className="w-10 h-10 text-green-500" />
         </div>

@@ -79,8 +79,7 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
 
   if (state.view === "success") {
     return (
-      <div className="relative h-dvh w-full bg-[#091428]" style={{ paddingTop: 64 }}>
-        <BlueprintComponent state={state} dispatch={dispatch} />
+      <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/80 backdrop-blur-sm" style={{ paddingTop: 64 }}>
         <StepSuccessOverlay dispatch={dispatch} />
       </div>
     );
