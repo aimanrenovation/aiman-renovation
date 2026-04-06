@@ -10,45 +10,22 @@ interface BlueprintInteractiveProps {
   dispatch: React.Dispatch<DevisAction>;
 }
 
-// Coordonnées en PIXELS du viewBox SVG (2812x1536)
-// Mesurées depuis le screenshot réel avec conversion screen→SVG
-// Coordonnées PIXELS image source (2812x1536) — détectées par analyse de pixels
-// Murs extérieurs: L=453 T=201 B=1081 R_gar=2317 R_bot=2197
-// Cloisons: cui→sdb=920 sdb_wc=450 sdbwc→gar=1250
-// Corridor: top=648 bot=665
-// Salon→SAM=629 SAM→Ch1=776 Ch1→Ch2=1279
-// Corrigé après analyse visuelle debug toutes zones visibles
-// Cuisine = tout le haut-gauche avec le carrelage
-// SDB = petite pièce "SDB" en haut à droite de la cuisine (avec douche+baignoire)
-// WC = sous la SDB (avec cuvette)
-// Garage = grande pièce droite en haut (voiture)
-// Salon = bas-gauche (TV+canapé) — LARGE, inclut l'espace jusqu'au mur SAM
-// SAM = table à manger au centre-gauche
-// Ch1 = "Chambre 1 Parentale" grande pièce centre-bas
-// Ch2 = "Chambre 2" droite-bas
-// SCAN PIXEL AUTOMATIQUE sur l'image source 2812x1536
-// Murs épais bleus détectés par analyse PIL (is_blue b>120 r<120)
-// Ext gauche: x=441  Ext droite haut: x=1660  Ext droite bas: x=2207
-// Ext haut: y=192  Ext bas: y=1089
-// Cuisine→SDB: x=747  SDB/WC→Garage: x=1298
-// SDB→WC horiz: y=503  Corridor: y=647→680
-// Salon→SAM: x=629  Ch1→Ch2: x=1700
-// Vérifié visuellement sur blueprint-final-check.jpeg
+// Coordonnées calibrées manuellement dans le navigateur via /devis/calibrate
 const ZONES: Record<ZoneId, { x: number; y: number; w: number; h: number }> = {
-  cuisine:   { x:   455, y:   205, w:   605, h:   433 },
-  sdb:       { x:  1060, y:   205, w:   230, h:   285 },
-  wc:        { x:  1060, y:   490, w:   230, h:   148 },
-  garage:    { x:  1290, y:   205, w:   355, h:   465 },
-  vestibule: { x:   455, y:   638, w:   835, h:    32 },
-  salon:     { x:   455, y:   670, w:   305, h:   410 },
-  sam:       { x:   760, y:   670, w:   200, h:   410 },
-  chambre1:  { x:   960, y:   670, w:   680, h:   410 },
-  chambre2:  { x:  1640, y:   670, w:   555, h:   410 },
-  terrasse:  { x:   455, y:  1080, w:   505, h:   120 },
-  jardin:    { x:    80, y:  1210, w:  2650, h:   250 },
-  haie:      { x:    10, y:    10, w:   120, h:  1516 },
-  facades:   { x:  2220, y:   205, w:   120, h:   875 },
-  toiture:   { x:   455, y:    80, w:  1190, h:   115 },
+  cuisine:   { x:   460, y:   210, w:   822, h:   450 },
+  sdb:       { x:  1302, y:   213, w:   338, h:   275 },
+  wc:        { x:  1303, y:   497, w:   339, h:   156 },
+  garage:    { x:  1668, y:   202, w:   650, h:   440 },
+  vestibule: { x:  1300, y:   665, w:   890, h:   141 },
+  salon:     { x:   460, y:   665, w:   404, h:   394 },
+  sam:       { x:   871, y:   664, w:   407, h:   401 },
+  chambre1:  { x:  1302, y:   812, w:   496, h:   443 },
+  chambre2:  { x:  1803, y:   810, w:   379, h:   441 },
+  terrasse:  { x:   432, y:  1101, w:   837, h:   262 },
+  jardin:    { x:  1272, y:  1295, w:   945, h:   154 },
+  haie:      { x:    88, y:   362, w:   214, h:   939 },
+  facades:   { x:  2224, y:   669, w:   174, h:   604 },
+  toiture:   { x:   434, y:    85, w:  1911, h:    94 },
 };
 
 export function BlueprintInteractive({ state, dispatch }: BlueprintInteractiveProps) {
