@@ -39,7 +39,8 @@ export async function createMagicPlanProject(params: {
     throw new Error(`MagicPlan API error ${res.status}: ${text}`);
   }
 
-  return res.json();
+  const json = await res.json();
+  return json.data;
 }
 
 export function getMagicPlanDeepLink(projectId: string): string {
