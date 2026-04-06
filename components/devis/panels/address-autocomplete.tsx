@@ -9,10 +9,29 @@ interface AddressAutocompleteProps {
   onChange: (value: string) => void;
 }
 
+interface NominatimAddress {
+  house_number?: string;
+  road?: string;
+  hamlet?: string;
+  village?: string;
+  town?: string;
+  city?: string;
+  postcode?: string;
+  country?: string;
+}
+
 interface NominatimResult {
   display_name: string;
   lat: string;
   lon: string;
+  address: NominatimAddress;
+}
+
+function formatAddress(addr: NominatimAddress): string {
+  const street = [addr.house_number, addr.road].filter(Boolean).join(" ");
+  const city = addr.city || addr.town || addr.village || addr.hamlet || "";
+  const parts = [street, [addr.postcode, city].filter(Boolean).join(" ")].filter(Boolean);
+  return parts.join(", ");
 }
 
 export function AddressAutocomplete({ value, onChange }: AddressAutocompleteProps) {
@@ -48,7 +67,7 @@ export function AddressAutocomplete({ value, onChange }: AddressAutocompleteProp
     setIsLoading(true);
     try {
       const res = await fetch(
-        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(q)}&countrycodes=fr,de,ch&limit=5&addressdetails=1`,
+        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(q)}&countrycodes=fr,de,ch&limit=5&addressdetails=1&type=address`,
         { headers: { "Accept-Language": "fr" } }
       );
       const data: NominatimResult[] = await res.json();
@@ -70,8 +89,9 @@ export function AddressAutocomplete({ value, onChange }: AddressAutocompleteProp
   };
 
   const handleSelect = (result: NominatimResult) => {
-    setQuery(result.display_name);
-    onChange(result.display_name);
+    const formatted = formatAddress(result.address) || result.display_name;
+    setQuery(formatted);
+    onChange(formatted);
     setIsOpen(false);
     setResults([]);
   };
@@ -101,7 +121,7 @@ export function AddressAutocomplete({ value, onChange }: AddressAutocompleteProp
               className="w-full text-left px-4 py-3 text-sm text-white hover:bg-white/10 transition-colors border-b border-white/5 last:border-0 flex items-start gap-2"
             >
               <MapPin className="w-4 h-4 text-[#E50000] flex-shrink-0 mt-0.5" />
-              <span className="line-clamp-2">{r.display_name}</span>
+              <span className="line-clamp-2">{formatAddress(r.address) || r.display_name}</span>
             </button>
           ))}
         </div>
