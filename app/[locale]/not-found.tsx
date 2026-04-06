@@ -1,61 +1,35 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { LinkButton } from "@/components/ui/link-button";
+import { useTranslations } from "next-intl";
 
-const VARIANTS = [
-  {
-    image: "/images/element-marteau.jpg",
-    title: "Oups, mur porteur !",
-    subtitle: "Même les meilleurs plans ont parfois un mur au mauvais endroit.",
-  },
-  {
-    image: "/images/element-casque.jpg",
-    title: "Zone en travaux",
-    subtitle: "Cette page est en cours de démolition... ou n'a jamais existé.",
-  },
-  {
-    image: "/images/element-niveau.jpg",
-    title: "Hors niveau !",
-    subtitle: "On a vérifié au laser — cette page n'est pas d'aplomb.",
-  },
-  {
-    image: "/images/element-cle.jpg",
-    title: "Porte sans serrure",
-    subtitle: "La clé existe peut-être, mais la porte n'est pas là.",
-  },
-  {
-    image: "/images/element-truelle.jpg",
-    title: "Fondations introuvables",
-    subtitle: "Impossible de construire cette page — les fondations manquent.",
-  },
-  {
-    image: "/images/element-rouleau.jpg",
-    title: "Coup de peinture raté",
-    subtitle: "On a repeint l'URL mais la page a disparu sous la couche.",
-  },
-  {
-    image: "/images/element-carrelage.jpg",
-    title: "Carreau manquant",
-    subtitle: "Il manque un carreau dans le plan — cette page n'existe pas.",
-  },
-  {
-    image: "/images/ambiance-chantier.jpg",
-    title: "Chantier fermé",
-    subtitle: "Ce chantier est terminé... ou n'a jamais commencé.",
-  },
+const VARIANT_IMAGES = [
+  "/images/element-marteau.jpg",
+  "/images/element-casque.jpg",
+  "/images/element-niveau.jpg",
+  "/images/element-cle.jpg",
+  "/images/element-truelle.jpg",
+  "/images/element-rouleau.jpg",
+  "/images/element-carrelage.jpg",
+  "/images/ambiance-chantier.jpg",
 ];
 
 export default function NotFound() {
-  const [variant] = useState(() => VARIANTS[Math.floor(Math.random() * VARIANTS.length)]);
+  const t = useTranslations("notFound");
+  const variants = t.raw("variants") as { title: string; subtitle: string }[];
+
+  const [variantIdx] = useState(() => Math.floor(Math.random() * variants.length));
+  const variant = variants[variantIdx];
+  const image = VARIANT_IMAGES[variantIdx] || VARIANT_IMAGES[0];
 
   return (
     <section className="min-h-[calc(100vh-64px)] bg-black flex items-center justify-center px-6 relative overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src={variant.image}
+          src={image}
           alt=""
           fill
           className="object-cover opacity-15"
@@ -73,14 +47,14 @@ export default function NotFound() {
         <div className="inline-flex items-center gap-2 bg-[#E50000]/10 border border-[#E50000]/20 rounded-full px-4 py-1.5 mb-8">
           <div className="w-2 h-2 rounded-full bg-[#E50000] animate-pulse" />
           <span className="text-[#E50000] text-xs font-semibold tracking-widest uppercase">
-            Erreur 404
+            {t("badge")}
           </span>
         </div>
 
         {/* Image card */}
         <div className="relative w-48 h-48 mx-auto mb-8 rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
           <Image
-            src={variant.image}
+            src={image}
             alt=""
             fill
             className="object-cover"
@@ -107,24 +81,24 @@ export default function NotFound() {
             href="/"
             className="bg-[#E50000] text-white hover:bg-[#B80000] px-8 h-12 text-base font-semibold rounded-xl w-full sm:w-auto"
           >
-            Retour à l&apos;accueil
+            {t("back_home")}
           </LinkButton>
           <LinkButton
             href="/devis"
             variant="outline"
             className="text-white border-white/20 hover:bg-white/10 px-8 h-12 text-base rounded-xl w-full sm:w-auto"
           >
-            Demander un devis
+            {t("request_devis")}
           </LinkButton>
         </div>
 
         {/* Liens rapides */}
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
           {[
-            { href: "/services", label: "Nos services" },
-            { href: "/realisations", label: "Réalisations" },
-            { href: "/contact", label: "Contact" },
-            { href: "/a-propos", label: "À propos" },
+            { href: "/services", label: t("quick_links.services") },
+            { href: "/realisations", label: t("quick_links.realisations") },
+            { href: "/contact", label: t("quick_links.contact") },
+            { href: "/a-propos", label: t("quick_links.about") },
           ].map((link) => (
             <LinkButton
               key={link.href}
@@ -139,7 +113,7 @@ export default function NotFound() {
 
         {/* Contact */}
         <div className="mt-12 pt-8 border-t border-white/5">
-          <p className="text-white/20 text-xs mb-3">Besoin d&apos;aide ?</p>
+          <p className="text-white/20 text-xs mb-3">{t("need_help")}</p>
           <div className="flex items-center justify-center gap-4 text-sm">
             <LinkButton
               href="tel:0633496925"

@@ -4,19 +4,23 @@ import { useRef, useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ARGUMENTS = [
-  { title: "Garantie décennale", desc: "Tous nos travaux couverts par une assurance décennale et RC professionnelle.", img: "/images/element-casque.jpg" },
-  { title: "Devis gratuit sous 4 jours", desc: "Visite technique incluse, devis détaillé et transparent. Sans engagement.", img: "/images/element-niveau.jpg" },
-  { title: "Artisan local", desc: "Basés à Saint-Louis, nous connaissons le terrain et les fournisseurs locaux.", img: "/images/ambiance-alsace.jpg" },
-  { title: "19 ans d'expérience", desc: "Un savoir-faire éprouvé sur tous les corps de métier de la rénovation.", img: "/images/element-marteau.jpg" },
-  { title: "Accompagnement aides", desc: "MaPrimeRénov', CEE, éco-PTZ — nous montons vos dossiers.", img: "/images/element-cle.jpg" },
-  { title: "Chantier propre", desc: "Protection, évacuation, nettoyage. Vous récupérez un logement prêt à vivre.", img: "/images/ambiance-resultat.jpg" },
+const ARG_IMAGES = [
+  "/images/element-casque.jpg",
+  "/images/element-niveau.jpg",
+  "/images/ambiance-alsace.jpg",
+  "/images/element-marteau.jpg",
+  "/images/element-cle.jpg",
+  "/images/ambiance-resultat.jpg",
 ];
 
 export function WhyChooseUs() {
+  const t = useTranslations("sections.why_choose_us");
+  const args = t.raw("arguments") as { title: string; desc: string }[];
+
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const rowsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -51,10 +55,10 @@ export function WhyChooseUs() {
     <section ref={sectionRef} className="relative z-10 bg-[#0A0A0A] py-20 md:py-32">
       <div className="max-w-5xl mx-auto px-6">
         <h2 ref={titleRef} className="font-heading text-2xl sm:text-3xl md:text-5xl mb-10 md:mb-16" style={{ clipPath: "inset(0 100% 0 0)" }}>
-          POURQUOI NOUS <span className="text-[#E50000]">CHOISIR</span>
+          {t("title")} <span className="text-[#E50000]">{t("title_highlight")}</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {ARGUMENTS.map((arg, i) => (
+          {args.map((arg: { title: string; desc: string }, i: number) => (
             <div
               key={arg.title}
               ref={(el) => { rowsRef.current[i] = el; }}
@@ -62,7 +66,7 @@ export function WhyChooseUs() {
             >
               {/* Image de fond subtile */}
               <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Image src={arg.img} alt="" fill className="object-cover" />
+                <Image src={ARG_IMAGES[i] || ARG_IMAGES[0]} alt="" fill className="object-cover" />
               </div>
               <div className="relative p-8">
                 <h3 className="text-white font-heading text-lg mb-2">{arg.title}</h3>

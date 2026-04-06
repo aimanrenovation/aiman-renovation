@@ -6,46 +6,39 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { COMPANY } from "@/lib/constants";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const STORY_TEXTS = [
-  { text: "Il était une fois", highlight: "un gamin qui rêvait", story: "Pendant que les autres jouaient dehors, lui dessinait des maisons. Il ne le savait pas encore, mais ce cahier d'écolier allait changer sa vie.", startPct: 0, endPct: 12 },
-  { text: "À 20 ans,", highlight: "il entre dans l'arène", story: "Le ciment sous les ongles, le dos en feu, 12 heures par jour. Personne ne lui a fait de cadeau. Chaque mur monté, chaque tuyau soudé — il a tout appris à la dure.", startPct: 12, endPct: 25 },
-  { text: "La vie l'a mis", highlight: "à genoux", story: "Il y a eu des jours où tout s'effondrait. Des chantiers perdus, des portes fermées, la pluie qui ne s'arrêtait pas. Mais un homme qui tombe n'est pas un homme fini. C'est un homme qui apprend.", startPct: 25, endPct: 40 },
-  { text: "Il s'est relevé", highlight: "et il a mené", story: "Chef d'équipe. Celui qu'on appelle quand c'est compliqué. 19 ans de terrain, des centaines de chantiers, et une certitude : il était prêt.", startPct: 40, endPct: 55 },
-  { text: "Il a porté ses couleurs", highlight: "sur son cœur", story: "Aiman Renovation. Pas juste un nom sur une veste. Une promesse. Un seul interlocuteur, tous les métiers, zéro compromis sur la qualité.", startPct: 55, endPct: 72 },
-  { text: "Aujourd'hui, il ouvre", highlight: "les portes de son rêve", story: "Au cœur du Trois Pays, le gamin qui dessinait des maisons les construit maintenant pour de vrai. Et il n'a qu'une devise : rénover jusqu'au bout de vos rêves.", startPct: 72, endPct: 100 },
+const ENGAGEMENT_ICONS = ["quality", "calendar", "clean", "chat", "handshake", "shield"];
+const ENGAGEMENT_IMAGES = [
+  "/images/engage-qualite.jpg",
+  "/images/engage-delais.jpg",
+  "/images/engage-propre.jpg",
+  "/images/engage-communication.jpg",
+  "/images/engage-ecoute.jpg",
+  "/images/engage-garantie.jpg",
 ];
-
-const STEPS = [
-  { number: "01", title: "Premier contact", desc: "Vous nous appelez ou remplissez le formulaire en ligne. Nous échangeons sur votre projet, vos envies et votre budget.", image: "/images/process-contact.jpg" },
-  { number: "02", title: "Visite technique", desc: "Nous nous déplaçons chez vous pour prendre les mesures et évaluer l'état existant. Gratuit et sans engagement.", image: "/images/process-visite.jpg" },
-  { number: "03", title: "Devis détaillé", desc: "Sous 4 jours, vous recevez un devis complet : travaux poste par poste, matériaux, planning et montant total.", image: "/images/process-devis.jpg" },
-  { number: "04", title: "Réalisation", desc: "Nos artisans interviennent selon le planning. Aiman supervise chaque chantier. Photos d'avancement régulières.", image: "/images/process-travaux.jpg" },
-  { number: "05", title: "Réception", desc: "Visite de réception ensemble, point par point. Notre garantie décennale vous protège pendant 10 ans.", image: "/images/process-reception.jpg" },
+const STEP_IMAGES = [
+  "/images/process-contact.jpg",
+  "/images/process-visite.jpg",
+  "/images/process-devis.jpg",
+  "/images/process-travaux.jpg",
+  "/images/process-reception.jpg",
 ];
-
-const ENGAGEMENTS = [
-  { icon: "quality", title: "Qualité sans compromis", desc: "Matériaux sélectionnés, exécution soignée dans les règles de l'art.", image: "/images/engage-qualite.jpg" },
-  { icon: "calendar", title: "Respect des délais", desc: "Le planning du devis est notre feuille de route. Aucune mauvaise surprise.", image: "/images/engage-delais.jpg" },
-  { icon: "clean", title: "Chantier propre", desc: "Protection dès le premier jour, nettoyage complet en fin de chantier.", image: "/images/engage-propre.jpg" },
-  { icon: "chat", title: "Transparence totale", desc: "Un interlocuteur unique, photos WhatsApp, disponible du lundi au samedi.", image: "/images/engage-communication.jpg" },
-  { icon: "handshake", title: "Écoute et conseil", desc: "Si une solution plus simple ou moins coûteuse existe, on vous la propose.", image: "/images/engage-ecoute.jpg" },
-  { icon: "shield", title: "Sérénité garantie", desc: "Garantie décennale, RC professionnelle. Votre investissement est protégé.", image: "/images/engage-garantie.jpg" },
+const CERT_IMAGES = [
+  "/images/cert-decennale.jpg",
+  "/images/cert-rc.jpg",
+  "/images/cert-irve.jpg",
+  "/images/cert-elec.jpg",
 ];
-
-const CERTIFICATIONS = [
-  { title: "Garantie décennale", desc: "10 ans de couverture sur la solidité de l'ouvrage.", image: "/images/cert-decennale.jpg" },
-  { title: "RC Professionnelle", desc: "Dommages aux tiers couverts pendant les travaux.", image: "/images/cert-rc.jpg" },
-  { title: "Certification IRVE", desc: "Installation bornes de recharge véhicules électriques.", image: "/images/cert-irve.jpg" },
-  { title: "Habilitations électriques", desc: "B1V, B2V, BR, BC — interventions basse tension.", image: "/images/cert-elec.jpg" },
-];
-
-const ZONES = [
-  "Saint-Louis", "Huningue", "Hésingue", "Village-Neuf",
-  "Blotzheim", "Bartenheim", "Kembs", "Sierentz",
-  "Leymen", "Hagenthal", "Rosenau", "Hégenheim",
+const STORY_PCTS = [
+  { startPct: 0, endPct: 12 },
+  { startPct: 12, endPct: 25 },
+  { startPct: 25, endPct: 40 },
+  { startPct: 40, endPct: 55 },
+  { startPct: 55, endPct: 72 },
+  { startPct: 72, endPct: 100 },
 ];
 
 function EngagementIcon({ name }: { name: string }) {
@@ -67,6 +60,15 @@ function EngagementIcon({ name }: { name: string }) {
 const PARCOURS_FRAMES = 80;
 
 export default function AProposPage() {
+  const t = useTranslations("about");
+  const tc = useTranslations("common");
+
+  const storyTexts = t.raw("story_texts") as { text: string; highlight: string; story: string }[];
+  const steps = t.raw("steps") as { number: string; title: string; desc: string }[];
+  const engagements = t.raw("engagements") as { title: string; desc: string }[];
+  const certifications = t.raw("certifications") as { title: string; desc: string }[];
+  const zones = tc.raw("zones") as string[];
+
   const heroTitleRef = useRef<HTMLHeadingElement>(null);
   const storyContainerRef = useRef<HTMLElement>(null);
   const storyCanvasRef = useRef<HTMLCanvasElement>(null);
@@ -138,7 +140,7 @@ export default function AProposPage() {
     return () => { window.removeEventListener("resize", resize); gsapCtx.revert(); };
   }, [framePath]);
 
-  /* Textes synchronisés parcours (mobile + desktop) */
+  /* Textes synchronises parcours (mobile + desktop) */
   useEffect(() => {
     const container = storyContainerRef.current;
     if (!container) return;
@@ -146,14 +148,14 @@ export default function AProposPage() {
     const ctx = gsap.context(() => {
       storyTextsRef.current.forEach((el, i) => {
         if (!el) return;
-        const cfg = STORY_TEXTS[i];
+        const cfg = STORY_PCTS[i];
         const fadeDuration = 5;
         gsap.fromTo(el,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.5,
             scrollTrigger: { trigger: container, start: `${cfg.startPct}% top`, end: `${cfg.startPct + fadeDuration}% top`, scrub: 0.5 } }
         );
-        if (i < STORY_TEXTS.length - 1) {
+        if (i < storyTexts.length - 1) {
           gsap.to(el, {
             opacity: 0, y: -10,
             scrollTrigger: { trigger: container, start: `${cfg.endPct - fadeDuration}% top`, end: `${cfg.endPct}% top`, scrub: 0.5 },
@@ -163,6 +165,7 @@ export default function AProposPage() {
     }, container);
 
     return () => ctx.revert();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [framePath]);
 
   useEffect(() => {
@@ -226,7 +229,7 @@ export default function AProposPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/ambiance-alsace.jpg"
-            alt="Aiman Renovation — À propos"
+            alt="Aiman Renovation — A propos"
             fill
             className="object-cover"
             priority
@@ -239,15 +242,15 @@ export default function AProposPage() {
             className="font-heading text-4xl sm:text-5xl md:text-7xl leading-none"
             style={{ clipPath: "inset(0 100% 0 0)" }}
           >
-            À <span className="text-[#E50000]">PROPOS</span>
+            {t("hero_title_prefix")} <span className="text-[#E50000]">{t("hero_title_highlight")}</span>
           </h1>
           <p className="mt-4 text-gray-300 text-lg md:text-xl max-w-xl">
-            {COMPANY.experience} ans d&apos;expérience. Un seul objectif : rénover jusqu&apos;au bout de vos rêves.
+            {t("hero_subtitle", { experience: COMPANY.experience })}
           </p>
         </div>
       </section>
 
-      {/* Notre histoire — vidéo scroll-driven du parcours */}
+      {/* Notre histoire — video scroll-driven du parcours */}
       <section ref={storyContainerRef} className="relative z-10 bg-black" style={{ height: "500vh" }}>
         <div className="sticky top-0 h-screen overflow-hidden">
           <canvas ref={storyCanvasRef} className="absolute inset-0" />
@@ -262,13 +265,13 @@ export default function AProposPage() {
                 className="font-heading text-3xl md:text-5xl"
                 style={{ clipPath: "inset(0 100% 0 0)" }}
               >
-                NOTRE <span className="text-[#E50000]">HISTOIRE</span>
+                {t("story_title")} <span className="text-[#E50000]">{t("story_title_highlight")}</span>
               </h2>
             </div>
           </div>
 
-          {/* Textes synchronisés au scroll */}
-          {STORY_TEXTS.map((cfg, i) => (
+          {/* Textes synchronises au scroll */}
+          {storyTexts.map((cfg, i) => (
             <div
               key={i}
               ref={(el) => { storyTextsRef.current[i] = el; }}
@@ -296,11 +299,11 @@ export default function AProposPage() {
       <section className="relative z-10 bg-[#0A0A0A] py-20 md:py-32">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="font-heading text-3xl md:text-5xl text-center mb-20">
-            NOTRE <span className="text-[#E50000]">PROCESSUS</span>
+            {t("process_title")} <span className="text-[#E50000]">{t("process_title_highlight")}</span>
           </h2>
 
           <div className="space-y-24">
-            {STEPS.map((step, i) => (
+            {steps.map((step, i) => (
               <div
                 key={step.number}
                 ref={(el) => { stepRefs.current[i] = el; }}
@@ -312,7 +315,7 @@ export default function AProposPage() {
                 {/* Image */}
                 <div className="w-full md:w-1/2 relative aspect-video rounded-2xl overflow-hidden">
                   <Image
-                    src={step.image}
+                    src={STEP_IMAGES[i] || STEP_IMAGES[0]}
                     alt={step.title}
                     fill
                     className="object-cover"
@@ -339,10 +342,10 @@ export default function AProposPage() {
       <section className="relative z-10 bg-black py-20 md:py-32">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="font-heading text-3xl md:text-5xl text-center mb-16">
-            NOS <span className="text-[#E50000]">ENGAGEMENTS</span>
+            {t("engagements_title")} <span className="text-[#E50000]">{t("engagements_title_highlight")}</span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ENGAGEMENTS.map((e, i) => (
+            {engagements.map((e, i) => (
               <div
                 key={e.title}
                 ref={(el) => { engagementRefs.current[i] = el; }}
@@ -352,7 +355,7 @@ export default function AProposPage() {
                 {/* Image */}
                 <div className="relative h-44 overflow-hidden">
                   <Image
-                    src={e.image}
+                    src={ENGAGEMENT_IMAGES[i] || ENGAGEMENT_IMAGES[0]}
                     alt={e.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -363,7 +366,7 @@ export default function AProposPage() {
                 <div className="p-6 pt-2">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-9 h-9 rounded-full bg-[#E50000]/10 flex items-center justify-center text-[#E50000] shrink-0 group-hover:bg-[#E50000]/20 transition-colors">
-                      <EngagementIcon name={e.icon} />
+                      <EngagementIcon name={ENGAGEMENT_ICONS[i] || "quality"} />
                     </div>
                     <h3 className="font-heading text-lg text-white">{e.title}</h3>
                   </div>
@@ -379,10 +382,10 @@ export default function AProposPage() {
       <section className="relative z-10 bg-[#0A0A0A] py-20 md:py-32">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="font-heading text-3xl md:text-5xl text-center mb-16">
-            CERTIFICATIONS & <span className="text-[#E50000]">ASSURANCES</span>
+            {t("certifications_title")} <span className="text-[#E50000]">{t("certifications_title_highlight")}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {CERTIFICATIONS.map((cert, i) => (
+            {certifications.map((cert, i) => (
               <div
                 key={cert.title}
                 ref={(el) => { certRefs.current[i] = el; }}
@@ -391,7 +394,7 @@ export default function AProposPage() {
               >
                 {/* Image fond */}
                 <Image
-                  src={cert.image}
+                  src={CERT_IMAGES[i] || CERT_IMAGES[0]}
                   alt={cert.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -424,19 +427,19 @@ export default function AProposPage() {
         </div>
         <div className="relative py-20 md:py-32 max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-heading text-3xl md:text-5xl mb-4">
-            ZONE D&apos;<span className="text-[#E50000]">INTERVENTION</span>
+            {tc("zone_title")}<span className="text-[#E50000]">{tc("zone_title_highlight")}</span>
           </h2>
           <p className="text-gray-400 mb-12">
-            Saint-Louis et sud du Haut-Rhin, à la frontière suisse et allemande.
+            {tc("zones_subtitle")}
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            {ZONES.map((zone) => (
+            {zones.map((zone: string) => (
               <span key={zone} className="px-5 py-2.5 rounded-full border border-white/20 text-gray-300 text-sm hover:border-[#E50000]/40 hover:text-white transition-all backdrop-blur-sm">
                 {zone}
               </span>
             ))}
             <span className="px-5 py-2.5 rounded-full border border-[#E50000]/30 text-[#E50000] text-sm backdrop-blur-sm">
-              et au-delà
+              {tc("zones_and_beyond")}
             </span>
           </div>
         </div>

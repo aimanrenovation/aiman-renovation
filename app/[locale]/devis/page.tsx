@@ -1,17 +1,23 @@
-import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { DevisPageContent } from "@/components/devis/devis-page-content";
 
-export const metadata: Metadata = {
-  title: "Devis Gratuit Rénovation — Saint-Louis et Haut-Rhin",
-  description:
-    "Demandez votre devis gratuit en ligne pour vos travaux de rénovation à Saint-Louis et dans le Haut-Rhin. Réponse sous 4 jours, sans engagement.",
-  openGraph: {
-    title: "Devis Gratuit Rénovation — Saint-Louis et Haut-Rhin",
-    description:
-      "Demandez votre devis gratuit en ligne pour vos travaux de rénovation à Saint-Louis et dans le Haut-Rhin. Réponse sous 4 jours, sans engagement.",
-  },
-};
+type Props = { params: Promise<{ locale: string }> };
 
-export default function DevisPage() {
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "devis" });
+  return {
+    title: t("seo_title"),
+    description: t("seo_description"),
+    openGraph: {
+      title: t("seo_title"),
+      description: t("seo_description"),
+    },
+  };
+}
+
+export default async function DevisPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return <DevisPageContent />;
 }

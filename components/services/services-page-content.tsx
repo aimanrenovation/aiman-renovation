@@ -6,10 +6,14 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SERVICES, PHOTO_MAP } from "@/lib/services";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function ServicesPageContent() {
+  const t = useTranslations("services");
+  const tc = useTranslations("common");
+
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const cardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -74,7 +78,7 @@ export function ServicesPageContent() {
         <div className="absolute inset-0">
           <Image
             src="/images/ambiance-resultat.jpg"
-            alt="Nos services de rénovation"
+            alt="Nos services de renovation"
             fill
             className="object-cover"
             priority
@@ -87,10 +91,10 @@ export function ServicesPageContent() {
             className="font-heading text-4xl sm:text-5xl md:text-7xl leading-none"
             style={{ clipPath: "inset(0 100% 0 0)" }}
           >
-            NOS <span className="text-[#E50000]">SERVICES</span>
+            {t("hero_title")} <span className="text-[#E50000]">{t("hero_title_highlight")}</span>
           </h1>
           <p ref={subtitleRef} className="mt-4 text-gray-300 text-lg md:text-xl max-w-xl" style={{ opacity: 0 }}>
-            Du sol au plafond, de l&apos;intérieur à l&apos;extérieur — nous maîtrisons tous les corps de métier.
+            {t("hero_subtitle")}
           </p>
         </div>
       </section>
@@ -138,7 +142,7 @@ export function ServicesPageContent() {
                   {service.description}
                 </p>
                 <div className="mt-4 flex items-center gap-2">
-                  <span className="text-[#E50000] text-sm font-medium uppercase tracking-wider">Découvrir</span>
+                  <span className="text-[#E50000] text-sm font-medium uppercase tracking-wider">{tc("discover")}</span>
                   <span className="text-[#E50000] group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </div>

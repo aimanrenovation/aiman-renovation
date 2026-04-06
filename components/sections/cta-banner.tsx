@@ -5,10 +5,13 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LinkButton } from "@/components/ui/link-button";
 import { COMPANY } from "@/lib/constants";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function CtaBanner() {
+  const t = useTranslations("sections.cta_banner");
+
   const titleRef = useRef<HTMLHeadingElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -37,14 +40,14 @@ export function CtaBanner() {
     >
       <div className="max-w-3xl mx-auto px-6 text-center">
         <h2 ref={titleRef} className="font-heading text-3xl sm:text-4xl md:text-6xl text-white mb-6 leading-tight">
-          UN PROJET EN TÊTE ?
+          {t("title")}
         </h2>
-        <p className="text-white/60 text-lg mb-10">Devis gratuit sous 4 jours, sans engagement.</p>
+        <p className="text-white/60 text-lg mb-10">{t("subtitle")}</p>
         <LinkButton href="/devis" size="lg" className="bg-white text-black hover:bg-gray-200 px-12 py-6 rounded-md font-semibold">
-          Demander un devis
+          {t("button")}
         </LinkButton>
         <p className="mt-6 text-white/30 text-sm">
-          ou appelez le{" "}
+          {t("call_prefix")}{" "}
           <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="text-white/50 hover:text-white transition-colors">
             {COMPANY.phone}
           </a>

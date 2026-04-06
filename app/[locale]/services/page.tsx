@@ -1,12 +1,19 @@
-import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ServicesPageContent } from "@/components/services/services-page-content";
 
-export const metadata: Metadata = {
-  title: "Nos Services de Rénovation à Saint-Louis (68)",
-  description:
-    "Cuisine, salle de bain, électricité, plomberie, carrelage, façades, isolation, peinture, bornes de recharge, photovoltaïque. Artisan qualifié Haut-Rhin.",
-};
+type Props = { params: Promise<{ locale: string }> };
 
-export default function ServicesPage() {
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "services" });
+  return {
+    title: t("seo_title"),
+    description: t("seo_description"),
+  };
+}
+
+export default async function ServicesPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return <ServicesPageContent />;
 }

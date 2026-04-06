@@ -1,26 +1,33 @@
-import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { RealisationsGrid } from "@/components/sections/realisations-grid";
 import { CtaBanner } from "@/components/sections/cta-banner";
 
-export const metadata: Metadata = {
-  title: "Nos Réalisations — Projets de Rénovation Haut-Rhin",
-  description:
-    "Découvrez nos projets de rénovation terminés à Saint-Louis et dans le Haut-Rhin : cuisine, salle de bain, façades, aménagement. Photos avant/après.",
-};
+type Props = { params: Promise<{ locale: string }> };
 
-export default function RealisationsPage() {
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "realisations" });
+  return {
+    title: t("seo_title"),
+    description: t("seo_description"),
+  };
+}
+
+export default async function RealisationsPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "realisations" });
+
   return (
     <>
       <section className="relative z-10 pt-32 pb-10 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-6">
             <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl">
-              NOS <span className="text-[#E50000]">RÉALISATIONS</span>
+              {t("hero_title")} <span className="text-[#E50000]">{t("hero_title_highlight")}</span>
             </h1>
             <p className="mt-4 text-gray-400 text-lg max-w-2xl mx-auto">
-              Chaque projet est unique. Voici un aperçu de nos transformations à
-              Saint-Louis et dans le Haut-Rhin. Des rénovations menées avec
-              exigence, du premier coup de masse à la touche finale.
+              {t("hero_subtitle")}
             </p>
           </div>
         </div>

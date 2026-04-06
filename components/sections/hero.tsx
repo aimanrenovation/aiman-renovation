@@ -4,19 +4,25 @@ import { useRef, useEffect, useState, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LinkButton } from "@/components/ui/link-button";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SCROLL_TEXTS = [
-  { text: "Votre habitat", highlight: "mérite mieux", side: "left" as const, startPct: 2, endPct: 14 },
-  { text: "Nos artisans", highlight: "prennent le relais", side: "right" as const, startPct: 14, endPct: 28 },
-  { text: "19 ans", highlight: "d'expérience", side: "left" as const, startPct: 28, endPct: 45 },
-  { text: "Chaque détail", highlight: "compte", side: "right" as const, startPct: 45, endPct: 62 },
-  { text: "Du sol", highlight: "au plafond", side: "left" as const, startPct: 62, endPct: 78 },
-  { text: "Nous rénovons jusqu'au bout", highlight: "de vos rêves", side: "center" as const, startPct: 78, endPct: 100 },
-];
+const SIDES = ["left", "right", "left", "right", "left", "center"] as const;
+const START_PCTS = [2, 14, 28, 45, 62, 78];
+const END_PCTS = [14, 28, 45, 62, 78, 100];
 
 export function Hero() {
+  const t = useTranslations("home.hero");
+
+  const scrollTexts = (t.raw("scroll_texts") as { text: string; highlight: string }[]).map((item, i) => ({
+    text: item.text,
+    highlight: item.highlight,
+    side: SIDES[i] || "center",
+    startPct: START_PCTS[i] || 0,
+    endPct: END_PCTS[i] || 100,
+  }));
+
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
@@ -31,7 +37,7 @@ export function Hero() {
     }
   }, []);
 
-  /* Précharger les frames */
+  /* Precharger les frames */
   const preloadFrames = useCallback(() => {
     let loaded = 0;
     const images: HTMLImageElement[] = [];
@@ -124,7 +130,7 @@ export function Hero() {
 
       textsRef.current.forEach((el, i) => {
         if (!el) return;
-        const cfg = SCROLL_TEXTS[i];
+        const cfg = scrollTexts[i];
         const fromX = cfg.side === "left" ? -80 : cfg.side === "right" ? 80 : 0;
         const fadeDuration = 4;
 
@@ -136,7 +142,7 @@ export function Hero() {
           }
         );
 
-        if (i < SCROLL_TEXTS.length - 1) {
+        if (i < scrollTexts.length - 1) {
           gsap.to(el, {
             opacity: 0,
             x: cfg.side === "left" ? -40 : cfg.side === "right" ? 40 : 0,
@@ -148,6 +154,7 @@ export function Hero() {
     }, container);
 
     return () => ctx.revert();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -175,10 +182,10 @@ export function Hero() {
             <div className="w-8 h-0.5 bg-[#CE1126]" />
           </div>
           <h1 data-anim className="font-heading text-3xl sm:text-4xl md:text-6xl leading-none tracking-tight">
-            RÉNOVATION <span className="text-[#E50000]">SUR MESURE</span>
+            {t("title")} <span className="text-[#E50000]">{t("title_highlight")}</span>
           </h1>
           <p data-anim className="mt-4 md:mt-5 text-base md:text-lg text-white/70 max-w-md mx-auto font-light">
-            Scrollez pour découvrir notre savoir-faire
+            {t("scroll_hint")}
           </p>
           <div data-anim className="absolute bottom-10 animate-bounce">
             <div className="w-5 h-9 border border-white/30 rounded-full flex justify-center pt-2">
@@ -187,7 +194,7 @@ export function Hero() {
           </div>
         </div>
 
-        {SCROLL_TEXTS.map((cfg, i) => (
+        {scrollTexts.map((cfg, i) => (
           <div
             key={i}
             ref={(el) => { textsRef.current[i] = el; }}
@@ -215,10 +222,10 @@ export function Hero() {
         <div className="absolute bottom-16 left-0 right-0 z-10 flex justify-center">
           <div className="flex flex-col sm:flex-row items-center gap-3 opacity-0" id="hero-cta">
             <LinkButton href="/devis" size="lg" className="bg-[#E50000] hover:bg-[#B80000] text-white px-8 py-4 md:py-5 rounded-md">
-              Devis gratuit
+              {t("cta_devis")}
             </LinkButton>
             <LinkButton href="/realisations" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 px-8 py-4 md:py-5 rounded-md">
-              Nos réalisations
+              {t("cta_realisations")}
             </LinkButton>
           </div>
         </div>

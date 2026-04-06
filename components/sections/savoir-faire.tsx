@@ -5,16 +5,20 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { COMPANY } from "@/lib/constants";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const STATS = [
-  { value: COMPANY.projects, prefix: "+", suffix: "", label: "projets" },
-  { value: COMPANY.experience, prefix: "", suffix: " ans", label: "d'expérience" },
-  { value: 10, prefix: "", suffix: "", label: "services" },
-];
-
 export function SavoirFaire() {
+  const t = useTranslations("home.savoir_faire");
+
+  const lines = t.raw("lines") as string[];
+  const STATS = [
+    { value: COMPANY.projects, prefix: "+", suffix: "", label: t("stats.projects") },
+    { value: COMPANY.experience, prefix: "", suffix: " ans", label: t("stats.experience") },
+    { value: 10, prefix: "", suffix: "", label: t("stats.services") },
+  ];
+
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const linesRef = useRef<(HTMLParagraphElement | null)[]>([]);
@@ -73,14 +77,10 @@ export function SavoirFaire() {
           {/* Texte */}
           <div>
             <h2 ref={titleRef} className="font-heading text-3xl md:text-5xl leading-tight mb-10" style={{ clipPath: "inset(0 100% 0 0)" }}>
-              NOTRE <span className="text-[#E50000]">SAVOIR-FAIRE</span>
+              {t("title")} <span className="text-[#E50000]">{t("title_highlight")}</span>
             </h2>
             <div className="space-y-5 mb-12">
-              {[
-                `${COMPANY.experience} ans d'expérience. Plomberie, électricité, carrelage, peinture, isolation, aménagement extérieur.`,
-                "Un interlocuteur unique qui coordonne tous les corps de métier pour un résultat clé en main.",
-                "Nous accompagnons particuliers, copropriétés et professionnels à Saint-Louis et dans tout le Haut-Rhin.",
-              ].map((line, i) => (
+              {lines.map((line: string, i: number) => (
                 <p key={i} ref={(el) => { linesRef.current[i] = el; }} className="text-lg text-gray-400 leading-relaxed">
                   {line}
                 </p>

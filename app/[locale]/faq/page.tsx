@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { COMPANY } from "@/lib/constants";
-import { FAQ_ITEMS } from "@/lib/faq";
 import {
   Accordion,
   AccordionContent,
@@ -11,40 +10,53 @@ import {
 } from "@/components/ui/accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
 
-export const metadata: Metadata = {
-  title: "FAQ Rénovation — Questions Fréquentes",
-  description:
-    "Réponses à vos questions sur la rénovation : devis gratuit, délais, garanties, aides financières. Artisan Saint-Louis, Haut-Rhin.",
-};
+type Props = { params: Promise<{ locale: string }> };
 
-// Static FAQ schema - no user input, safe to inline
-const faqJsonLd = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQ_ITEMS.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: { "@type": "Answer", text: item.answer },
-  })),
-});
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "faq" });
+  return {
+    title: t("seo_title"),
+    description: t("seo_description"),
+  };
+}
 
-export default function FaqPage() {
-  const categories = [...new Set(FAQ_ITEMS.map((f) => f.category))];
+export default async function FaqPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "faq" });
+
+  const faqItems = t.raw("items") as {
+    category: string;
+    question: string;
+    answer: string;
+    relatedServices?: { label: string; href: string }[];
+  }[];
+
+  const categories = [...new Set(faqItems.map((f) => f.category))];
+
+  // Static FAQ schema from translation files - safe to inline
+  const faqJsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  });
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: faqJsonLd }}
-      />
+      {/* eslint-disable-next-line react/no-danger -- Static FAQ schema from translation files, no user input */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
 
       {/* Hero */}
       <section className="relative h-[40vh] flex items-end pb-12 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/images/ambiance-contact.jpg"
-            alt="Questions fréquentes"
+            alt="Questions frequentes"
             fill
             className="object-cover"
             priority
@@ -53,10 +65,10 @@ export default function FaqPage() {
         </div>
         <div className="relative max-w-4xl mx-auto px-6 w-full">
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl leading-none">
-            QUESTIONS <span className="text-[#E50000]">FRÉQUENTES</span>
+            {t("hero_title")} <span className="text-[#E50000]">{t("hero_title_highlight")}</span>
           </h1>
           <p className="mt-3 text-gray-300 text-lg max-w-xl">
-            Tout ce que vous devez savoir avant de lancer votre projet.
+            {t("hero_subtitle")}
           </p>
         </div>
       </section>
@@ -73,7 +85,7 @@ export default function FaqPage() {
                 </h2>
               </div>
               <Accordion className="space-y-3">
-                {FAQ_ITEMS.filter((f) => f.category === category).map(
+                {faqItems.filter((f) => f.category === category).map(
                   (item, i) => (
                     <AccordionItem
                       key={i}
@@ -108,18 +120,18 @@ export default function FaqPage() {
 
           <div className="mt-16 bg-[#111111] border border-white/5 rounded-2xl p-8 text-center">
             <p className="text-gray-400 mb-4">
-              Vous ne trouvez pas la réponse à votre question ?
+              {t("no_answer")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href={`tel:${COMPANY.mobile.replace(/\s/g, "")}`}
                 className="text-[#E50000] hover:underline font-semibold"
               >
-                Appelez le {COMPANY.mobile}
+                {t("call_prefix")} {COMPANY.mobile}
               </a>
               <span className="text-gray-600 hidden sm:inline">|</span>
               <Link href="/contact" className="text-[#E50000] hover:underline font-semibold">
-                Contactez-nous
+                {t("contact_us")}
               </Link>
             </div>
           </div>

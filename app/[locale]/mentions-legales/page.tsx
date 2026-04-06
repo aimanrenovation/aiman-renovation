@@ -1,76 +1,64 @@
-import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { COMPANY } from "@/lib/constants";
 
-export const metadata: Metadata = {
-  title: "Mentions légales",
-  description: `Mentions légales du site ${COMPANY.website}`,
-};
+type Props = { params: Promise<{ locale: string }> };
 
-export default function MentionsLegalesPage() {
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "legal" });
+  return {
+    title: t("seo_title"),
+    description: `${t("seo_title")} — ${COMPANY.website}`,
+  };
+}
+
+export default async function MentionsLegalesPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "legal" });
+
   return (
     <section className="pt-32 pb-20 bg-black min-h-screen">
       <div className="max-w-3xl mx-auto px-6 prose prose-invert prose-sm">
         <h1 className="font-heading text-4xl mb-8">
-          MENTIONS <span className="text-[#E50000]">LÉGALES</span>
+          {t("page_title")} <span className="text-[#E50000]">{t("page_title_highlight")}</span>
         </h1>
 
-        <h2>Éditeur du site</h2>
+        <h2>{t("editor_title")}</h2>
         <p>
           <strong>{COMPANY.name}</strong><br />
-          Forme juridique : {COMPANY.legalForm}<br />
-          Adresse : {COMPANY.address}, {COMPANY.zip} {COMPANY.city}<br />
-          Téléphone : {COMPANY.phone}<br />
-          Email : {COMPANY.email}<br />
-          Directeur de la publication : Aiman, gérant
+          {t("editor_legal_form")} {COMPANY.legalForm}<br />
+          {t("editor_address")} {COMPANY.address}, {COMPANY.zip} {COMPANY.city}<br />
+          {t("editor_phone")} {COMPANY.phone}<br />
+          {t("editor_email")} {COMPANY.email}<br />
+          {t("editor_director")}
         </p>
 
-        <h2>Hébergement</h2>
-        <p>
-          Ce site est hébergé par Vercel Inc., 440 N Barranca Ave #4133,
-          Covina, CA 91723, États-Unis.
-        </p>
+        <h2>{t("hosting_title")}</h2>
+        <p>{t("hosting_text")}</p>
 
-        <h2>Propriété intellectuelle</h2>
-        <p>
-          L&apos;ensemble du contenu de ce site (textes, images, logos, vidéos)
-          est la propriété exclusive d&apos;{COMPANY.name} ou de ses
-          partenaires. Toute reproduction, même partielle, est interdite sans
-          autorisation écrite préalable.
-        </p>
+        <h2>{t("ip_title")}</h2>
+        <p>{t("ip_text", { company: COMPANY.name })}</p>
 
-        <h2>Données personnelles</h2>
+        <h2>{t("data_title")}</h2>
         <p>
-          Les données personnelles collectées via le formulaire de devis sont
-          utilisées uniquement pour répondre à votre demande. Elles ne sont ni
-          vendues ni transmises à des tiers. Conformément au RGPD, vous
-          disposez d&apos;un droit d&apos;accès, de rectification et de
-          suppression de vos données. Contactez-nous à{" "}
+          {t("data_text")}{" "}
           <a href={`mailto:${COMPANY.email}`} className="text-[#E50000]">
             {COMPANY.email}
           </a>
           .
         </p>
 
-        <h2>Cookies</h2>
-        <p>
-          Ce site utilise des cookies techniques nécessaires à son
-          fonctionnement. Aucun cookie publicitaire ou de suivi n&apos;est
-          utilisé.
-        </p>
+        <h2>{t("cookies_title")}</h2>
+        <p>{t("cookies_text")}</p>
 
-        <h2>Responsabilité</h2>
-        <p>
-          {COMPANY.name} s&apos;efforce d&apos;assurer l&apos;exactitude des
-          informations présentes sur ce site. Toutefois, elle ne peut garantir
-          que les informations soient complètes, précises ou à jour.
-          {COMPANY.name} décline toute responsabilité en cas d&apos;erreur ou
-          d&apos;omission.
-        </p>
+        <h2>{t("liability_title")}</h2>
+        <p>{t("liability_text", { company: COMPANY.name })}</p>
 
-        <h2>Crédits</h2>
+        <h2>{t("credits_title")}</h2>
         <p>
-          Conception et développement : {COMPANY.name}<br />
-          Images : générées par intelligence artificielle
+          {t("credits_design")} {COMPANY.name}<br />
+          {t("credits_images")}
         </p>
       </div>
     </section>

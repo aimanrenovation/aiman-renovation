@@ -6,12 +6,16 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SERVICES, PHOTO_MAP } from "@/lib/services";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const HERO_SERVICES = ["cuisine", "facade-isolation", "paysager"];
 
 export function ServicesPreview() {
+  const t = useTranslations("home.services_preview");
+  const tc = useTranslations("common");
+
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const heroBlocksRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -22,7 +26,7 @@ export function ServicesPreview() {
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      // Titre — même reveal clipPath que "Notre savoir-faire"
+      // Titre — meme reveal clipPath que "Notre savoir-faire"
       if (titleRef.current) {
         gsap.fromTo(titleRef.current,
           { clipPath: "inset(0 100% 0 0)" },
@@ -63,7 +67,7 @@ export function ServicesPreview() {
     <section ref={sectionRef} className="relative z-10 bg-black">
       <div className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 ref={titleRef} className="font-heading text-3xl md:text-5xl" style={{ clipPath: "inset(0 100% 0 0)" }}>NOS <span className="text-[#E50000]">SERVICES</span></h2>
+          <h2 ref={titleRef} className="font-heading text-3xl md:text-5xl" style={{ clipPath: "inset(0 100% 0 0)" }}>{t("title")} <span className="text-[#E50000]">{t("title_highlight")}</span></h2>
         </div>
       </div>
 
@@ -92,7 +96,7 @@ export function ServicesPreview() {
               </div>
               <div data-desc>
                 <p className="text-gray-400 text-lg leading-relaxed mb-4">{service.description}</p>
-                <span className="text-[#E50000] text-sm font-medium uppercase tracking-wider">Découvrir →</span>
+                <span className="text-[#E50000] text-sm font-medium uppercase tracking-wider">{tc("discover_arrow")}</span>
               </div>
             </div>
           </div>
@@ -102,7 +106,7 @@ export function ServicesPreview() {
       {/* Autres services avec photos miniatures */}
       <div className="border-t border-white/5 py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <h3 className="font-heading text-xl text-gray-500 mb-12 uppercase tracking-wider">Tous nos services</h3>
+          <h3 className="font-heading text-xl text-gray-500 mb-12 uppercase tracking-wider">{tc("all_our_services")}</h3>
           <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
             {otherServices.map((service) => (
               <Link key={service.slug} href={`/services/${service.slug}`}

@@ -1,15 +1,26 @@
-import type { Metadata } from "next";
 import Image from "next/image";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { COMPANY } from "@/lib/constants";
 import { LinkButton } from "@/components/ui/link-button";
 import { ContactForm } from "@/components/sections/contact-form";
 
-export const metadata: Metadata = {
-  title: "Contact — Rénovation Saint-Louis",
-  description: "Contactez Aiman Renovation au 03 56 89 44 03 ou par email. Devis gratuit sous 4 jours pour vos travaux de rénovation à Saint-Louis et Haut-Rhin.",
-};
+type Props = { params: Promise<{ locale: string }> };
 
-export default function ContactPage() {
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" });
+  return {
+    title: t("seo_title"),
+    description: t("seo_description"),
+  };
+}
+
+export default async function ContactPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "contact" });
+  const tc = await getTranslations({ locale, namespace: "common" });
+
   return (
     <>
       {/* Hero */}
@@ -26,10 +37,10 @@ export default function ContactPage() {
         </div>
         <div className="relative max-w-5xl mx-auto px-6 w-full">
           <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl leading-none">
-            <span className="text-[#E50000]">PARLONS</span> DE VOTRE PROJET
+            <span className="text-[#E50000]">{t("hero_title_highlight")}</span> {t("hero_title")}
           </h1>
           <p className="mt-4 text-gray-300 text-lg max-w-xl">
-            Premier échange toujours sans engagement.
+            {t("hero_subtitle")}
           </p>
         </div>
       </section>
@@ -39,9 +50,9 @@ export default function ContactPage() {
         <div className="max-w-5xl mx-auto px-6 py-6">
           <div className="grid grid-cols-3 gap-4 text-center">
             {[
-              { icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>, text: "Devis gratuit" },
-              { icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>, text: "Réponse sous 4 jours" },
-              { icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>, text: "Sans engagement" },
+              { icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>, text: t("reassurance_devis") },
+              { icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>, text: t("reassurance_response") },
+              { icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg>, text: t("reassurance_engagement") },
             ].map((item) => (
               <div key={item.text} className="flex items-center justify-center gap-2 text-gray-400">
                 <span className="text-[#E50000]">{item.icon}</span>
@@ -75,13 +86,13 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-white text-lg font-semibold group-hover:text-[#E50000] transition-colors">{COMPANY.mobile}</p>
-                    <p className="text-gray-500 text-sm">Mobile / WhatsApp</p>
+                    <p className="text-gray-500 text-sm">{t("mobile_whatsapp")}</p>
                   </div>
                 </div>
               </a>
 
               {/* WhatsApp */}
-              <a href={`https://wa.me/${COMPANY.mobile.replace(/\s/g, "").replace(/^0/, "33")}?text=${encodeURIComponent("Bonjour, j'ai un projet de rénovation et j'aimerais en discuter avec vous.")}`} target="_blank" rel="noopener noreferrer" className="group block bg-[#111111] border border-white/5 rounded-2xl p-6 hover:border-[#25D366]/30 transition-all">
+              <a href={`https://wa.me/${COMPANY.mobile.replace(/\s/g, "").replace(/^0/, "33")}?text=${encodeURIComponent(tc("whatsapp_message"))}`} target="_blank" rel="noopener noreferrer" className="group block bg-[#111111] border border-white/5 rounded-2xl p-6 hover:border-[#25D366]/30 transition-all">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-[#25D366]/10 flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366]/20 transition-colors">
                     <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
@@ -89,14 +100,14 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-white text-lg font-semibold group-hover:text-[#25D366] transition-colors">WhatsApp</p>
-                    <p className="text-gray-500 text-sm">Réponse rapide</p>
+                    <p className="text-white text-lg font-semibold group-hover:text-[#25D366] transition-colors">{t("whatsapp")}</p>
+                    <p className="text-gray-500 text-sm">{t("whatsapp_subtitle")}</p>
                   </div>
                 </div>
               </a>
 
-              {/* Email pré-rempli */}
-              <a href={`mailto:${COMPANY.email}?subject=${encodeURIComponent("Demande de renseignements — Projet de rénovation")}&body=${encodeURIComponent("Bonjour,\n\nJ'ai un projet de rénovation et j'aimerais en discuter avec vous.\n\nType de travaux : \nAdresse du chantier : \nBudget estimé : \n\nMerci de me recontacter.\n\nCordialement,\n")}`} className="group block bg-[#111111] border border-white/5 rounded-2xl p-6 hover:border-[#E50000]/30 transition-all">
+              {/* Email */}
+              <a href={`mailto:${COMPANY.email}?subject=${encodeURIComponent(tc("email_subject"))}&body=${encodeURIComponent(tc("email_body"))}`} className="group block bg-[#111111] border border-white/5 rounded-2xl p-6 hover:border-[#E50000]/30 transition-all">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-[#E50000]/10 flex items-center justify-center text-[#E50000] group-hover:bg-[#E50000]/20 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -105,7 +116,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-white text-lg font-semibold group-hover:text-[#E50000] transition-colors">{COMPANY.email}</p>
-                    <p className="text-gray-500 text-sm">Email pré-rempli</p>
+                    <p className="text-gray-500 text-sm">{t("email_prefilled")}</p>
                   </div>
                 </div>
               </a>
@@ -118,20 +129,20 @@ export default function ContactPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
                   </div>
-                  <h2 className="font-heading text-lg text-white">HORAIRES</h2>
+                  <h2 className="font-heading text-lg text-white">{t("hours_title")}</h2>
                 </div>
                 <ul className="space-y-2 text-sm">
                   <li className="flex justify-between">
-                    <span className="text-gray-400">Lundi – Vendredi</span>
-                    <span className="text-white font-medium">8h – 18h</span>
+                    <span className="text-gray-400">{t("hours_weekdays")}</span>
+                    <span className="text-white font-medium">{t("hours_weekdays_value")}</span>
                   </li>
                   <li className="flex justify-between">
-                    <span className="text-gray-400">Samedi</span>
-                    <span className="text-white font-medium">Sur rendez-vous</span>
+                    <span className="text-gray-400">{t("hours_saturday")}</span>
+                    <span className="text-white font-medium">{t("hours_saturday_value")}</span>
                   </li>
                   <li className="flex justify-between">
-                    <span className="text-gray-400">Dimanche</span>
-                    <span className="text-gray-600">Fermé</span>
+                    <span className="text-gray-400">{t("hours_sunday")}</span>
+                    <span className="text-gray-600">{t("hours_sunday_value")}</span>
                   </li>
                 </ul>
               </div>
@@ -142,7 +153,7 @@ export default function ContactPage() {
                 size="lg"
                 className="bg-[#E50000] hover:bg-[#B80000] text-white w-full py-5 rounded-2xl"
               >
-                Demander un devis gratuit
+                {t("cta_devis")}
               </LinkButton>
             </div>
           </div>

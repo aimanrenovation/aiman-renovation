@@ -1,34 +1,39 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SERVICES, PHOTO_MAP, ICON_MAP } from "@/lib/services";
 import { COMPANY } from "@/lib/constants";
 import { LinkButton } from "@/components/ui/link-button";
 import { ScrollReveal } from "@/components/sections/scroll-reveal";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+export async function generateMetadata({ params }: Props) {
+  const { slug, locale } = await params;
   const service = SERVICES.find((s) => s.slug === slug);
   if (!service) return {};
+  const t = await getTranslations({ locale, namespace: "services" });
   return {
-    title: `${service.title} à Saint-Louis (68) — Devis Gratuit`,
-    description: `${service.description} Artisan qualifié à Saint-Louis et Haut-Rhin. Devis gratuit sous 4 jours.`,
+    title: `${service.title} ${t("service_meta_suffix")}`,
+    description: `${service.description} ${t("service_meta_desc_suffix")}`,
   };
 }
 
 export default async function ServicePage({ params }: Props) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  setRequestLocale(locale);
   const service = SERVICES.find((s) => s.slug === slug);
   if (!service) notFound();
 
+  const t = await getTranslations({ locale, namespace: "services" });
+
+  // Static JSON-LD schema - no user input, safe to inline
   const serviceJsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
@@ -57,8 +62,12 @@ export default async function ServicePage({ params }: Props) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serviceJsonLd }} />
-      {/* ─── Hero full-bleed avec photo ─── */}
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: serviceJsonLd }}
+      />
+      {/* Hero full-bleed avec photo */}
       <section className="relative min-h-[85vh] flex items-end overflow-hidden">
         {photo && (
           <>
@@ -99,13 +108,13 @@ export default async function ServicePage({ params }: Props) {
               size="lg"
               className="bg-[#E50000] hover:bg-[#B80000] text-white px-8 py-4"
             >
-              Demander un devis gratuit
+              {t("cta_hero_button")}
             </LinkButton>
           </div>
         </div>
       </section>
 
-      {/* ─── Description longue ─── */}
+      {/* Description longue */}
       <ScrollReveal direction="up">
         <section className="relative z-10 bg-[#0A0A0A] py-24 md:py-32">
           <div className="max-w-5xl mx-auto px-6">
@@ -113,7 +122,7 @@ export default async function ServicePage({ params }: Props) {
               <div className="md:col-span-4">
                 <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
                 <h2 className="font-heading text-2xl md:text-3xl leading-tight">
-                  EN <span className="text-[#E50000]">DÉTAIL</span>
+                  {t("detail_title")} <span className="text-[#E50000]">{t("detail_title_highlight")}</span>
                 </h2>
               </div>
               <div className="md:col-span-8 space-y-5 text-gray-400 text-lg leading-relaxed">
@@ -126,7 +135,7 @@ export default async function ServicePage({ params }: Props) {
         </section>
       </ScrollReveal>
 
-      {/* ─── Bandeau photo plein écran ─── */}
+      {/* Bandeau photo plein ecran */}
       {photo && (
         <section className="relative z-10 h-[40vh] md:h-[50vh] overflow-hidden">
           <Image
@@ -138,20 +147,20 @@ export default async function ServicePage({ params }: Props) {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60" />
           <div className="relative z-10 h-full flex items-center justify-center px-6 text-center">
             <p className="font-heading text-2xl md:text-4xl text-white">
-              LA QUALITÉ <span className="text-[#E50000]">SANS COMPROMIS</span>
+              {t("quality_text")} <span className="text-[#E50000]">{t("quality_highlight")}</span>
             </p>
           </div>
         </section>
       )}
 
-      {/* ─── Ce que nous réalisons ─── */}
+      {/* Ce que nous realisons */}
       <ScrollReveal direction="up" delay={0.05}>
         <section className="relative z-10 bg-black py-24 md:py-32">
           <div className="max-w-5xl mx-auto px-6">
             <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
             <h2 className="font-heading text-2xl md:text-3xl mb-12">
-              CE QUE NOUS{" "}
-              <span className="text-[#E50000]">RÉALISONS</span>
+              {t("features_title")}{" "}
+              <span className="text-[#E50000]">{t("features_title_highlight")}</span>
             </h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {service.features.map((feature) => (
@@ -170,10 +179,9 @@ export default async function ServicePage({ params }: Props) {
         </section>
       </ScrollReveal>
 
-      {/* ─── Processus étape par étape ─── */}
+      {/* Processus etape par etape */}
       <ScrollReveal direction="up">
         <section className="relative z-10 bg-[#0A0A0A] py-24 md:py-32 overflow-hidden">
-          {/* Photo en fond subtile */}
           {photo && (
             <>
               <Image
@@ -188,7 +196,7 @@ export default async function ServicePage({ params }: Props) {
           <div className="relative z-10 max-w-5xl mx-auto px-6">
             <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
             <h2 className="font-heading text-2xl md:text-3xl mb-12">
-              NOTRE <span className="text-[#E50000]">PROCESSUS</span>
+              {t("process_title")} <span className="text-[#E50000]">{t("process_title_highlight")}</span>
             </h2>
             <div className="space-y-6">
               {service.process.map((step, i) => (
@@ -216,35 +224,31 @@ export default async function ServicePage({ params }: Props) {
         </section>
       </ScrollReveal>
 
-      {/* ─── Pourquoi un pro + Budget côte à côte ─── */}
+      {/* Pourquoi un pro + Budget */}
       <ScrollReveal direction="up" delay={0.05}>
         <section className="relative z-10 bg-black py-24 md:py-32">
           <div className="max-w-5xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Pourquoi un pro */}
               <div className="bg-[#111111] border border-white/5 rounded-xl p-8 md:p-10">
                 <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
                 <h2 className="font-heading text-xl md:text-2xl mb-6">
-                  POURQUOI UN{" "}
-                  <span className="text-[#E50000]">PRO</span>
+                  {t("why_pro_title")}{" "}
+                  <span className="text-[#E50000]">{t("why_pro_highlight")}</span>
                 </h2>
                 <p className="text-gray-400 leading-relaxed">{service.whyPro}</p>
               </div>
 
-              {/* Budget indicatif */}
               <div className="bg-[#111111] border border-[#E50000]/20 rounded-xl p-8 md:p-10 flex flex-col justify-between">
                 <div>
                   <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
                   <h2 className="font-heading text-xl md:text-2xl mb-6">
-                    BUDGET <span className="text-[#E50000]">INDICATIF</span>
+                    {t("budget_title")} <span className="text-[#E50000]">{t("budget_highlight")}</span>
                   </h2>
                   <p className="text-2xl md:text-3xl font-heading text-white mb-4">
                     {service.priceRange}
                   </p>
                   <p className="text-gray-500 text-sm leading-relaxed">
-                    Prix indicatifs TTC pour la région de Saint-Louis et le Haut-Rhin.
-                    Chaque projet est unique — le devis détaillé après visite technique
-                    est le seul document engageant.
+                    {t("budget_disclaimer")}
                   </p>
                 </div>
               </div>
@@ -253,7 +257,7 @@ export default async function ServicePage({ params }: Props) {
         </section>
       </ScrollReveal>
 
-      {/* ─── CTA final plein écran ─── */}
+      {/* CTA final */}
       <section className="relative z-10 overflow-hidden">
         {photo && (
           <>
@@ -269,12 +273,11 @@ export default async function ServicePage({ params }: Props) {
         <div className="relative z-10 py-24 md:py-32 max-w-5xl mx-auto px-6">
           <div className="max-w-xl">
             <h2 className="font-heading text-3xl md:text-5xl mb-6 leading-tight">
-              INTÉRESSÉ PAR<br />
-              CE <span className="text-[#E50000]">SERVICE</span> ?
+              {t("cta_title_line1")}<br />
+              {t("cta_title_line2")} <span className="text-[#E50000]">{t("cta_title_highlight")}</span> ?
             </h2>
             <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-              Décrivez votre projet et recevez un devis gratuit sous 4 jours.
-              Sans engagement.
+              {t("cta_subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <LinkButton
@@ -282,7 +285,7 @@ export default async function ServicePage({ params }: Props) {
                 size="lg"
                 className="bg-[#E50000] hover:bg-[#B80000] text-white px-8 py-4"
               >
-                Demander un devis
+                {t("cta_button")}
               </LinkButton>
               <a
                 href={`tel:${COMPANY.mobile.replace(/\s/g, "")}`}
