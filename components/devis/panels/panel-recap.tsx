@@ -5,7 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { ChevronLeft, Send, Loader2 } from "lucide-react";
+import { useState } from "react";
+import { ChevronLeft, Send, Loader2, X, Download, Camera, Ruler, Share2, CheckCircle } from "lucide-react";
 import { ZONES_CONFIG } from "../devis-zones-config";
 import { AddressAutocomplete } from "./address-autocomplete";
 import type { DevisState, DevisAction, BudgetRange } from "../devis-types";
@@ -23,6 +24,113 @@ const BUDGET_OPTIONS: BudgetRange[] = [
   "30000-50000",
   "> 50000",
 ];
+
+const MAGIC_STEPS = [
+  { title: "Téléchargez MagicPlan", icon: Download, content: "L'application est gratuite et disponible sur iPhone et Android.", hasAction: true },
+  { title: "Scannez chaque pièce", icon: Camera, content: "Créez un nouveau projet, puis scannez chaque pièce. Pointez votre téléphone vers les coins — MagicPlan détecte les murs automatiquement.", tips: ["Tenez le téléphone à hauteur de poitrine", "Tournez lentement, coin par coin"] },
+  { title: "Vérifiez les mesures", icon: Ruler, content: "Vérifiez le plan 2D généré. Corrigez les mesures si besoin en tapant sur les cotes." },
+  { title: "Partagez-nous le plan", icon: Share2, content: "Exportez votre plan (bouton Partager), puis mentionnez-le dans le message du devis ou envoyez-le à contact@aiman-renovation.fr." },
+];
+
+function MagicPlanSection() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeStep, setActiveStep] = useState(0);
+
+  return (
+    <>
+      <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-blue-500/30 rounded-xl p-5 space-y-3">
+        <div className="flex items-start gap-3">
+          <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+            <Ruler className="w-5 h-5 text-blue-400" />
+          </div>
+          <div>
+            <h4 className="text-white font-semibold text-sm">Devis plus précis avec MagicPlan</h4>
+            <p className="text-gray-400 text-xs mt-1">
+              Scannez vos pièces en 5 min avec l'app gratuite MagicPlan.
+            </p>
+          </div>
+        </div>
+        <button
+          onClick={() => setIsOpen(true)}
+          className="block w-full text-center bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 text-sm font-medium py-2.5 rounded-lg border border-blue-500/30 transition-colors"
+        >
+          Voir le guide MagicPlan →
+        </button>
+      </div>
+
+      {isOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4" onClick={() => setIsOpen(false)}>
+          <div className="bg-[#111] border border-white/10 rounded-2xl w-full max-w-lg max-h-[80dvh] overflow-y-auto overscroll-contain" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between p-4 border-b border-white/10 sticky top-0 bg-[#111] z-10">
+              <h3 className="text-white font-semibold">Guide MagicPlan</h3>
+              <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-white transition-colors p-1">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="p-4 space-y-3">
+              {MAGIC_STEPS.map((step, i) => {
+                const Icon = step.icon;
+                const open = activeStep === i;
+                const done = activeStep > i;
+                return (
+                  <div key={i} className={`rounded-xl border transition-all ${open ? "bg-white/5 border-blue-500/40" : done ? "border-green-500/30" : "border-white/10"}`}>
+                    <button onClick={() => setActiveStep(i)} className="w-full flex items-center gap-3 p-3 text-left">
+                      <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 ${done ? "bg-green-500/20" : open ? "bg-blue-500/20" : "bg-white/5"}`}>
+                        {done ? <CheckCircle className="w-4 h-4 text-green-400" /> : <Icon className={`w-4 h-4 ${open ? "text-blue-400" : "text-gray-500"}`} />}
+                      </div>
+                      <div>
+                        <span className="text-[10px] text-gray-500 font-medium">Étape {i + 1}</span>
+                        <h4 className={`text-sm font-semibold ${done ? "text-green-300" : "text-white"}`}>{step.title}</h4>
+                      </div>
+                    </button>
+                    {open && (
+                      <div className="px-3 pb-3 space-y-2">
+                        <p className="text-gray-400 text-xs leading-relaxed pl-12">{step.content}</p>
+                        {step.tips && (
+                          <div className="pl-12 space-y-1">
+                            {step.tips.map((tip, j) => (
+                              <div key={j} className="flex items-start gap-1.5 text-xs text-gray-500">
+                                <CheckCircle className="w-3 h-3 text-blue-400 mt-0.5 flex-shrink-0" />
+                                <span>{tip}</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                        {step.hasAction && (
+                          <div className="pl-12">
+                            <button
+                              onClick={() => {
+                                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+                                window.open(isIOS ? "https://apps.apple.com/app/magicplan/id427424432" : "https://play.google.com/store/apps/details?id=com.sensopia.magicplan", "_blank");
+                              }}
+                              className="bg-blue-500 hover:bg-blue-600 text-white text-xs font-medium px-4 py-2 rounded-lg transition-colors"
+                            >
+                              Télécharger MagicPlan
+                            </button>
+                          </div>
+                        )}
+                        {i < MAGIC_STEPS.length - 1 && (
+                          <div className="pl-12">
+                            <button onClick={() => setActiveStep(i + 1)} className="text-blue-400 text-xs font-medium hover:text-blue-300">Suivant →</button>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="p-4 border-t border-white/10">
+              <button onClick={() => setIsOpen(false)} className="w-full bg-[#E50000] hover:bg-red-700 text-white text-sm font-semibold py-2.5 rounded-lg transition-colors">
+                Fermer et continuer mon devis
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
 
 export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
   const zonesWithWorks = ZONES_CONFIG.filter(
@@ -112,29 +220,7 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
         </div>
 
         {/* MagicPlan CTA */}
-        <div className="bg-gradient-to-br from-blue-500/10 to-blue-600/5 border border-blue-500/30 rounded-xl p-5 space-y-3">
-          <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-              <svg viewBox="0 0 24 24" className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z" /><path d="M8 2v16M16 6v16" />
-              </svg>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold text-sm">Devis plus précis avec MagicPlan</h4>
-              <p className="text-gray-400 text-xs mt-1">
-                Scannez vos pièces en 5 min avec l'app gratuite MagicPlan. On reçoit les mesures exactes pour un devis au plus juste.
-              </p>
-            </div>
-          </div>
-          <a
-            href="/devis/magicplan"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full text-center bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 text-sm font-medium py-2.5 rounded-lg border border-blue-500/30 transition-colors"
-          >
-            Voir le guide MagicPlan →
-          </a>
-        </div>
+        <MagicPlanSection />
 
         {/* Message */}
         <div className="space-y-2">
