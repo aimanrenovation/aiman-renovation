@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import {
@@ -32,6 +32,16 @@ function ApplyModal({
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (!open) return;
+    const original = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = original;
+    };
+  }, [open]);
+
   if (!open) return null;
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -55,8 +65,15 @@ function ApplyModal({
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
-      <div className="bg-[#111] border border-white/10 rounded-2xl w-full max-w-2xl my-8 shadow-2xl">
+    <div
+      data-lenis-prevent
+      className="fixed inset-0 z-50 flex items-start sm:items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto overscroll-contain"
+      onClick={onClose}
+    >
+      <div
+        className="bg-[#111] border border-white/10 rounded-2xl w-full max-w-2xl my-8 shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
           <h2 className="text-white font-bold text-lg">{t("title")}</h2>
