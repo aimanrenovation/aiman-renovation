@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useCallback, useEffect } from "react";
+import { useRef, useCallback, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ZONES_CONFIG } from "../devis-zones-config";
 import type { ZoneId, DevisState, DevisAction } from "../devis-types";
@@ -30,6 +30,14 @@ const ZONES: Record<ZoneId, { x: number; y: number; w: number; h: number }> = {
 
 export function BlueprintInteractive({ state, dispatch }: BlueprintInteractiveProps) {
   const svgRef = useRef<SVGSVGElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const handleZoneClick = useCallback((zoneId: ZoneId) => {
     if (state.view !== "global") return;
@@ -76,10 +84,11 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
       >
         {/* Styles hover SVG */}
         <style>{`
-          .zone-label { opacity: 0; transition: opacity 0.3s; filter: drop-shadow(0 0 10px rgba(74,158,255,0.8)); }
-          .zone-rect { transition: all 0.3s; }
+          .zone-label { opacity: ${isMobile ? 1 : 0}; transition: opacity 0.3s; filter: drop-shadow(0 0 10px rgba(74,158,255,0.8)); }
+          .zone-rect { transition: all 0.3s; ${isMobile ? "fill: rgba(74,158,255,0.08); stroke: rgba(74,158,255,0.3); stroke-width: 3;" : ""} }
           .zone-btn:hover .zone-label { opacity: 1; }
           .zone-btn:hover .zone-rect { fill: rgba(74,158,255,0.15); stroke: rgba(74,158,255,0.6); stroke-width: 4; }
+          .zone-ext-btn .zone-rect { ${isMobile ? "fill: rgba(26,122,58,0.08); stroke: rgba(26,122,58,0.3); stroke-width: 2;" : ""} }
           .zone-ext-btn:hover .zone-rect { fill: rgba(26,122,58,0.12); stroke: rgba(26,122,58,0.5); stroke-width: 3; }
           .zone-ext-btn:hover .zone-label { opacity: 1; }
         `}</style>
@@ -180,8 +189,8 @@ export function BlueprintInteractive({ state, dispatch }: BlueprintInteractivePr
           <div className="flex flex-col items-center gap-3 pb-4 sm:pb-6">
             {totalWorks === 0 ? (
               <div className="pointer-events-auto bg-black/70 backdrop-blur-sm rounded-2xl px-5 py-2.5 sm:px-6 sm:py-3 text-center animate-pulse">
-                <p className="text-white font-semibold text-base sm:text-lg">Cliquez sur une pièce pour commencer</p>
-                <p className="text-gray-400 text-xs sm:text-sm mt-1">Sélectionnez les zones de votre maison à rénover</p>
+                <p className="text-white font-semibold text-base sm:text-lg">{isMobile ? "Touchez une pièce" : "Cliquez sur une pièce pour commencer"}</p>
+                <p className="text-gray-400 text-xs sm:text-sm mt-1">{isMobile ? "Puis cochez les travaux à réaliser" : "Sélectionnez les zones de votre maison à rénover"}</p>
               </div>
             ) : (
               <button
