@@ -29,6 +29,8 @@ export async function POST(request: NextRequest) {
     const params = await parseBody(request);
 
     const key = params.get("key") || "";
+    const envKey = process.env.MAGICPLAN_API_KEY || "";
+    console.log(`Webhook received: key=${key.substring(0, 8)}... envKey=${envKey.substring(0, 8)}... match=${key === envKey}`);
     if (!key || !verifyWebhookKey(key)) {
       return new NextResponse(
         '<?xml version="1.0" encoding="UTF-8"?><response><status>1</status><message>Invalid key</message></response>',
