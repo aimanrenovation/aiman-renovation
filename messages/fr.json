@@ -504,84 +504,6 @@
       "priceRange": "2 000 € – 10 000 € selon le nombre de points d'eau et la complexité"
     },
     {
-      "slug": "carrelage",
-      "title": "Carrelage et revêtement de sol",
-      "shortTitle": "Carrelage",
-      "description": "Pose de carrelage, parquet, vinyle ou béton ciré. Un sol neuf transforme une pièce entière.",
-      "icon": "🏗️",
-      "features": [
-        "Carrelage intérieur/extérieur",
-        "Parquet massif et stratifié",
-        "Vinyle et PVC",
-        "Béton ciré",
-        "Ragréage et préparation"
-      ],
-      "longDescription": "Le sol est le premier élément que l'on remarque en entrant dans une pièce. Un carrelage bien posé, un parquet chaleureux ou un béton ciré contemporain transforment instantanément l'atmosphère de votre intérieur. Aiman Renovation maîtrise la pose de tous types de revêtements de sol, du carrelage grand format au parquet massif en passant par le vinyle haut de gamme.\n\nChaque chantier commence par une préparation minutieuse du support : ragréage, mise à niveau, traitement de l'humidité si nécessaire. C'est cette étape invisible qui garantit un résultat parfait et durable. Nous posons ensuite le revêtement de votre choix avec une attention particulière aux coupes, aux joints et aux finitions de seuil.\n\nPour l'extérieur, nous réalisons des terrasses en grès cérame, des allées en pierre naturelle et des plages de piscine antidérapantes. Nos carreleurs d'expérience interviennent aussi bien dans les appartements du centre de Saint-Louis que dans les maisons des villages environnants.",
-      "process": [
-        {
-          "step": "Évaluation du support",
-          "detail": "Contrôle de la planéité, du taux d'humidité et de la solidité du sol existant."
-        },
-        {
-          "step": "Préparation du support",
-          "detail": "Ragréage, primaire d'accrochage, chape fluide si nécessaire pour obtenir un sol parfaitement plan."
-        },
-        {
-          "step": "Choix du calepinage",
-          "detail": "Définition du sens de pose, de la taille des joints et du motif (droit, diagonal, décalé)."
-        },
-        {
-          "step": "Pose du revêtement",
-          "detail": "Collage ou pose flottante selon le matériau, découpes précises autour des obstacles."
-        },
-        {
-          "step": "Jointage et finitions",
-          "detail": "Joints de couleur assortie, plinthes, barres de seuil, nettoyage en profondeur."
-        }
-      ],
-      "whyPro": "Un carrelage mal posé se fissure, sonne creux et se décolle en quelques années. La préparation du support, le choix de la colle et le respect des joints de dilatation sont des étapes techniques qui nécessitent un vrai savoir-faire. Nos carreleurs cumulent des années d'expérience et utilisent des outils professionnels (coupe-carreaux diamant, niveau laser) pour un résultat impeccable et garanti.",
-      "priceRange": "40 € – 120 € / m² pose comprise, selon le type de revêtement"
-    },
-    {
-      "slug": "facade-isolation",
-      "title": "Façades et isolation",
-      "shortTitle": "Façades",
-      "description": "Ravalement de façade, isolation thermique par l'extérieur (ITE) ou l'intérieur (ITI). Améliorez le confort et réduisez vos factures.",
-      "icon": "🏛️",
-      "features": [
-        "Ravalement de façade",
-        "ITE",
-        "ITI",
-        "Enduit et crépi",
-        "Peinture extérieure"
-      ],
-      "longDescription": "En Alsace, les hivers rigoureux rendent l'isolation thermique indispensable. Une façade mal isolée, c'est jusqu'à 25% de déperditions de chaleur et des factures de chauffage qui s'envolent. Aiman Renovation est spécialisé dans le ravalement de façade et l'isolation thermique, que ce soit par l'extérieur (ITE) ou par l'intérieur (ITI).\n\nL'isolation thermique par l'extérieur (ITE) est la solution la plus performante : elle supprime les ponts thermiques, protège la structure du bâtiment contre les intempéries et embellit la façade en même temps. Nous posons des panneaux isolants (polystyrène, laine de roche ou fibre de bois) recouverts d'un enduit de finition dans le coloris de votre choix.\n\nPour les copropriétés, nous réalisons des ravalements complets incluant la réparation des fissures, le traitement des remontées d'humidité et l'application d'enduits respirants adaptés au bâti alsacien. Nos chantiers respectent les réglementations locales et les prescriptions des Architectes des Bâtiments de France quand c'est nécessaire.",
-      "process": [
-        {
-          "step": "Diagnostic façade",
-          "detail": "Inspection de l'état de la façade, identification des fissures, des infiltrations et des ponts thermiques."
-        },
-        {
-          "step": "Montage de l'échafaudage",
-          "detail": "Installation sécurisée de l'échafaudage avec protection des abords (filets, bâches)."
-        },
-        {
-          "step": "Préparation des murs",
-          "detail": "Nettoyage haute pression, réparation des fissures, traitement anti-mousse et anti-humidité."
-        },
-        {
-          "step": "Pose de l'isolant",
-          "detail": "Fixation mécanique et collage des panneaux isolants, pose des profilés de départ et d'angle."
-        },
-        {
-          "step": "Finition et enduit",
-          "detail": "Application de l'enduit de finition (gratté, taloché ou ribbé), peinture, nettoyage du chantier."
-        }
-      ],
-      "whyPro": "L'isolation et le ravalement de façade sont des travaux techniques qui engagent la durabilité de votre bâtiment. Une ITE mal posée peut entraîner des infiltrations, des décollements et une perte d'efficacité thermique. Ces travaux sont éligibles à MaPrimeRénov' et aux CEE, mais uniquement si réalisés par un professionnel qualifié RGE. Aiman Renovation vous accompagne dans le montage des dossiers d'aides pour réduire votre reste à charge.",
-      "priceRange": "80 € – 200 € / m² pour une ITE complète, 30 € – 80 € / m² pour un ravalement simple"
-    },
-    {
       "slug": "paysager",
       "title": "Aménagement paysager",
       "shortTitle": "Paysager",
@@ -619,45 +541,6 @@
       ],
       "whyPro": "Un aménagement extérieur mal conçu se détériore rapidement : terrasse qui se soulève avec le gel, allée qui s'affaisse, stagnation d'eau. La maîtrise du terrassement, du drainage et des fondations est essentielle pour un résultat durable. Nos équipes connaissent les contraintes spécifiques du climat alsacien (gel, pluies abondantes) et sélectionnent des matériaux adaptés. Garantie décennale incluse sur les ouvrages de maçonnerie paysagère.",
       "priceRange": "5 000 € – 30 000 € selon la surface et les aménagements souhaités"
-    },
-    {
-      "slug": "peinture-finitions",
-      "title": "Peinture et finitions",
-      "shortTitle": "Peinture",
-      "description": "Peinture intérieure et extérieure, enduits décoratifs, papier peint. La touche finale qui fait toute la différence.",
-      "icon": "🎨",
-      "features": [
-        "Peinture intérieure",
-        "Peinture extérieure",
-        "Enduits décoratifs",
-        "Papier peint",
-        "Préparation des supports"
-      ],
-      "longDescription": "La peinture est bien plus qu'un coup de rouleau : c'est l'art de sublimer vos espaces. Une peinture appliquée dans les règles de l'art, sur un support parfaitement préparé, transforme radicalement l'ambiance d'une pièce. Aiman Renovation réalise tous vos travaux de peinture intérieure et extérieure avec un soin artisanal.\n\nNous commençons toujours par la préparation des supports : rebouchage des fissures, ponçage, lessivage, application d'un primaire d'accrochage. Cette étape représente 70% du temps de travail et fait toute la différence entre un résultat amateur et un rendu professionnel. Nous utilisons des peintures de marques reconnues (Tollens, Sikkens, Zolpan) avec des finitions mat, satiné ou brillant selon l'effet recherché.\n\nEnduits décoratifs (tadelakt, stuc, béton ciré mural), papier peint design, effets de matière — nous réalisons également des finitions créatives pour donner du caractère à votre intérieur. Pour l'extérieur, nous appliquons des peintures microporeuses qui laissent respirer les murs tout en les protégeant des intempéries.",
-      "process": [
-        {
-          "step": "Protection du chantier",
-          "detail": "Bâchage des sols et meubles, pose de ruban de masquage sur les encadrements et plinthes."
-        },
-        {
-          "step": "Préparation des supports",
-          "detail": "Rebouchage, ponçage, lessivage, application du primaire. Traitement des taches et moisissures."
-        },
-        {
-          "step": "Application de la sous-couche",
-          "detail": "Première couche d'accroche pour uniformiser le support et optimiser la tenue de la finition."
-        },
-        {
-          "step": "Couches de finition",
-          "detail": "Application de 2 couches de peinture avec un rendu uniforme, sans traces ni coulures."
-        },
-        {
-          "step": "Retouches et nettoyage",
-          "detail": "Vérification sous éclairage rasant, retouches si nécessaire, retrait des protections et nettoyage."
-        }
-      ],
-      "whyPro": "Un travail de peinture réussi repose à 70% sur la préparation du support. Sans ponçage, sans rebouchage et sans primaire adaptés, la peinture cloque, s'écaille et jaunit prématurément. Nos peintres professionnels maîtrisent les techniques de préparation, choisissent les produits adaptés à chaque support (plâtre, bois, métal, ciment) et appliquent la peinture avec des outils professionnels pour un rendu impeccable.",
-      "priceRange": "20 € – 45 € / m² murs et plafonds, préparation et 2 couches comprises"
     },
     {
       "slug": "borne-recharge",
@@ -1981,73 +1864,133 @@
         "title": "Cuisiniste / Poseur de cuisine",
         "type": "CDI — Temps plein",
         "description": "Pose et installation de cuisines équipées sur mesure : meubles, plans de travail, électroménager, raccordements.",
-        "requirements": ["Expérience en pose de cuisines", "Précision et sens du détail", "Permis B", "Autonomie"]
+        "requirements": [
+          "Expérience en pose de cuisines",
+          "Précision et sens du détail",
+          "Permis B",
+          "Autonomie"
+        ]
       },
       {
         "title": "Spécialiste salle de bain",
         "type": "CDI — Temps plein",
         "description": "Rénovation complète de salles de bain : douche italienne, plomberie, carrelage, faïence, sanitaires.",
-        "requirements": ["Polyvalence carrelage / plomberie", "2 ans d'expérience minimum", "Étanchéité maîtrisée", "Permis B"]
+        "requirements": [
+          "Polyvalence carrelage / plomberie",
+          "2 ans d'expérience minimum",
+          "Étanchéité maîtrisée",
+          "Permis B"
+        ]
       },
       {
         "title": "Électricien qualifié",
         "type": "CDI — Temps plein",
         "description": "Installation et rénovation électrique : tableau, prises, éclairage, mise aux normes, domotique.",
-        "requirements": ["Habilitations B1V, BR, BC à jour", "3 ans d'expérience", "Connaissance NF C 15-100", "Lecture de plans"]
+        "requirements": [
+          "Habilitations B1V, BR, BC à jour",
+          "3 ans d'expérience",
+          "Connaissance NF C 15-100",
+          "Lecture de plans"
+        ]
       },
       {
         "title": "Plombier chauffagiste",
         "type": "CDI — Temps plein",
         "description": "Installation, dépannage et rénovation de plomberie, chauffage et sanitaires. Particuliers et petits collectifs.",
-        "requirements": ["CAP plomberie ou équivalent", "Expérience 2 ans minimum", "Soudure cuivre / PER", "Permis B"]
+        "requirements": [
+          "CAP plomberie ou équivalent",
+          "Expérience 2 ans minimum",
+          "Soudure cuivre / PER",
+          "Permis B"
+        ]
       },
       {
         "title": "Carreleur",
         "type": "CDI — Temps plein",
         "description": "Pose de carrelage et faïence pour salles de bain, cuisines, sols et terrasses. Finitions soignées exigées.",
-        "requirements": ["Expérience 2 ans tous formats", "Maîtrise des découpes et joints", "Sens esthétique", "Permis B"]
+        "requirements": [
+          "Expérience 2 ans tous formats",
+          "Maîtrise des découpes et joints",
+          "Sens esthétique",
+          "Permis B"
+        ]
       },
       {
         "title": "Façadier / Spécialiste isolation",
         "type": "CDI — Temps plein",
         "description": "Ravalement de façades, isolation thermique par l'extérieur (ITE), enduits décoratifs, traitements anti-mousse.",
-        "requirements": ["Expérience ITE (RGE souhaité)", "Travail en hauteur (échafaudage)", "Permis B", "Esprit d'équipe"]
+        "requirements": [
+          "Expérience ITE (RGE souhaité)",
+          "Travail en hauteur (échafaudage)",
+          "Permis B",
+          "Esprit d'équipe"
+        ]
       },
       {
         "title": "Paysagiste / Jardinier",
         "type": "CDI — Temps plein",
         "description": "Création et entretien de jardins, terrasses, allées, plantations, engazonnement, arrosage, éclairage extérieur.",
-        "requirements": ["CAPA travaux paysagers ou expérience", "Maîtrise des engins (tondeuse, débroussailleuse)", "Permis B obligatoire", "Sens créatif"]
+        "requirements": [
+          "CAPA travaux paysagers ou expérience",
+          "Maîtrise des engins (tondeuse, débroussailleuse)",
+          "Permis B obligatoire",
+          "Sens créatif"
+        ]
       },
       {
         "title": "Peintre en bâtiment",
         "type": "CDI — Temps plein",
         "description": "Préparation des supports, pose de revêtements muraux, peinture intérieure et extérieure, finitions soignées.",
-        "requirements": ["CAP peintre ou équivalent", "Maîtrise techniques de finition", "Sens du détail", "Esprit d'équipe"]
+        "requirements": [
+          "CAP peintre ou équivalent",
+          "Maîtrise techniques de finition",
+          "Sens du détail",
+          "Esprit d'équipe"
+        ]
       },
       {
         "title": "Installateur IRVE (bornes de recharge)",
         "type": "CDI — Temps plein",
         "description": "Installation de bornes de recharge pour véhicules électriques, raccordements, mise en service, maintenance.",
-        "requirements": ["Habilitation IRVE niveau 1 minimum", "Habilitations électriques", "2 ans d'expérience électricité", "Permis B"]
+        "requirements": [
+          "Habilitation IRVE niveau 1 minimum",
+          "Habilitations électriques",
+          "2 ans d'expérience électricité",
+          "Permis B"
+        ]
       },
       {
         "title": "Installateur photovoltaïque",
         "type": "CDI — Temps plein",
         "description": "Installation de panneaux solaires en toiture, raccordement électrique, mise en service, accompagnement client.",
-        "requirements": ["QualiPV souhaité", "Travail en hauteur", "Habilitations électriques", "Permis B"]
+        "requirements": [
+          "QualiPV souhaité",
+          "Travail en hauteur",
+          "Habilitations électriques",
+          "Permis B"
+        ]
       },
       {
         "title": "Agent d'entretien extérieur",
         "type": "CDI — Temps plein",
         "description": "Entretien régulier de jardins, espaces verts, taille de haies, nettoyage de terrasses, désherbage écologique.",
-        "requirements": ["Expérience entretien espaces verts", "Maîtrise outils thermiques", "Permis B obligatoire", "Autonomie et fiabilité"]
+        "requirements": [
+          "Expérience entretien espaces verts",
+          "Maîtrise outils thermiques",
+          "Permis B obligatoire",
+          "Autonomie et fiabilité"
+        ]
       },
       {
         "title": "Technicien dépannage / Multi-services",
         "type": "CDI — Temps plein",
         "description": "Interventions de dépannage urgent : plomberie, électricité, serrurerie, petites réparations chez les particuliers.",
-        "requirements": ["Polyvalence multi-corps d'état", "Sens du service client", "Disponibilité (astreintes possibles)", "Permis B"]
+        "requirements": [
+          "Polyvalence multi-corps d'état",
+          "Sens du service client",
+          "Disponibilité (astreintes possibles)",
+          "Permis B"
+        ]
       }
     ],
     "apply_button": "Postuler",

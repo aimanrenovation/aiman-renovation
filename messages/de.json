@@ -504,84 +504,6 @@
       "priceRange": "2 000 € – 10 000 € je nach Anzahl der Wasseranschlüsse und Komplexität"
     },
     {
-      "slug": "carrelage",
-      "title": "Fliesen und Bodenbeläge",
-      "shortTitle": "Fliesen",
-      "description": "Verlegung von Fliesen, Parkett, Vinyl oder Sichtbeton. Ein neuer Boden verwandelt einen ganzen Raum.",
-      "icon": "🏗️",
-      "features": [
-        "Fliesen innen/aussen",
-        "Massiv- und Laminatparkett",
-        "Vinyl und PVC",
-        "Sichtbeton",
-        "Ausgleich und Untergrundvorbereitung"
-      ],
-      "longDescription": "Der Boden ist das Erste, was man beim Betreten eines Raumes bemerkt. Sorgfältig verlegte Fliesen, ein warmes Parkett oder moderner Sichtbeton verändern die Atmosphäre Ihres Interieurs sofort. Aiman Renovation beherrscht die Verlegung aller Arten von Bodenbelägen, von Grossformatfliesen über Massivparkett bis hin zu hochwertigem Vinyl.\n\nJede Baustelle beginnt mit einer sorgfältigen Untergrundvorbereitung: Ausgleich, Nivellierung, Feuchtigkeitsbehandlung falls nötig. Dieser unsichtbare Schritt garantiert ein perfektes und dauerhaftes Ergebnis. Anschliessend verlegen wir den Belag Ihrer Wahl mit besonderer Sorgfalt bei Zuschnitten, Fugen und Schwellenabschlüssen.\n\nFür den Aussenbereich realisieren wir Terrassen aus Feinsteinzeug, Wege aus Naturstein und rutschfeste Poolumrandungen. Unsere erfahrenen Fliesenleger sind sowohl in Wohnungen als auch in Häusern in der gesamten Region tätig.",
-      "process": [
-        {
-          "step": "Untergrundprüfung",
-          "detail": "Kontrolle der Ebenheit, des Feuchtigkeitsgehalts und der Tragfähigkeit des bestehenden Bodens."
-        },
-        {
-          "step": "Untergrundvorbereitung",
-          "detail": "Ausgleichsmasse, Haftgrundierung, Fliessestrich falls nötig für einen perfekt ebenen Boden."
-        },
-        {
-          "step": "Verlegeplanung",
-          "detail": "Festlegung der Verlegerichtung, Fugengrösse und des Musters (gerade, diagonal, versetzt)."
-        },
-        {
-          "step": "Verlegung des Belags",
-          "detail": "Verklebung oder schwimmende Verlegung je nach Material, präzise Zuschnitte um Hindernisse."
-        },
-        {
-          "step": "Verfugung und Endarbeiten",
-          "detail": "Farblich abgestimmte Fugen, Sockelleisten, Schwellenprofile, gründliche Reinigung."
-        }
-      ],
-      "whyPro": "Schlecht verlegte Fliesen reissen, klingen hohl und lösen sich nach wenigen Jahren. Die Untergrundvorbereitung, die Wahl des Klebers und die Beachtung der Dehnungsfugen sind technische Schritte, die echtes Fachwissen erfordern. Unsere Fliesenleger verfügen über jahrelange Erfahrung und verwenden professionelles Werkzeug (Diamant-Fliesenschneider, Laser-Niveau) für ein einwandfreies und garantiertes Ergebnis.",
-      "priceRange": "40 € – 120 € / m² inklusive Verlegung, je nach Art des Belags"
-    },
-    {
-      "slug": "facade-isolation",
-      "title": "Fassaden und Dämmung",
-      "shortTitle": "Fassaden",
-      "description": "Fassadensanierung, Wärmedämmung aussen (WDVS) oder innen. Verbessern Sie den Komfort und senken Sie Ihre Heizkosten.",
-      "icon": "🏛️",
-      "features": [
-        "Fassadensanierung",
-        "WDVS (Aussendämmung)",
-        "Innendämmung",
-        "Putz und Verputz",
-        "Aussenanstrich"
-      ],
-      "longDescription": "Im Elsass und der Region Basel machen die strengen Winter eine Wärmedämmung unverzichtbar. Eine schlecht gedämmte Fassade bedeutet bis zu 25% Wärmeverlust und steigende Heizkosten. Aiman Renovation ist spezialisiert auf Fassadensanierung und Wärmedämmung, ob von aussen (WDVS) oder von innen.\n\nDie Aussendämmung (WDVS) ist die leistungsstärkste Lösung: Sie beseitigt Wärmebrücken, schützt die Bausubstanz vor Witterungseinflüssen und verschönert gleichzeitig die Fassade. Wir montieren Dämmplatten (Polystyrol, Steinwolle oder Holzfaser), die mit einem Oberputz in der Farbe Ihrer Wahl versehen werden.\n\nFür Eigentümergemeinschaften führen wir komplette Fassadensanierungen durch, einschliesslich Rissreparatur, Feuchtigkeitsbehandlung und Auftragen von diffusionsoffenen Putzen, die zum elsässischen Baubestand passen. Unsere Baustellen erfüllen die lokalen Vorschriften.",
-      "process": [
-        {
-          "step": "Fassadendiagnose",
-          "detail": "Inspektion des Fassadenzustands, Identifikation von Rissen, Undichtigkeiten und Wärmebrücken."
-        },
-        {
-          "step": "Gerüstaufbau",
-          "detail": "Sichere Montage des Gerüsts mit Absicherung der Umgebung (Netze, Planen)."
-        },
-        {
-          "step": "Wandvorbereitung",
-          "detail": "Hochdruckreinigung, Rissreparatur, Anti-Moos- und Feuchtigkeitsbehandlung."
-        },
-        {
-          "step": "Verlegung der Dämmung",
-          "detail": "Mechanische Befestigung und Verklebung der Dämmplatten, Montage der Start- und Eckprofile."
-        },
-        {
-          "step": "Endbeschichtung und Putz",
-          "detail": "Auftragen des Oberputzes (gefilzt, geglättet oder gerieben), Anstrich, Baustellenreinigung."
-        }
-      ],
-      "whyPro": "Dämmung und Fassadensanierung sind technisch anspruchsvolle Arbeiten, die die Langlebigkeit Ihres Gebäudes betreffen. Ein schlecht verlegtes WDVS kann zu Undichtigkeiten, Ablösungen und Verlust der Dämmwirkung führen. Diese Arbeiten sind förderfähig (MaPrimeRénov', CEE), aber nur wenn sie von einem qualifizierten Fachbetrieb (RGE) ausgeführt werden. Aiman Renovation begleitet Sie bei der Antragstellung, um Ihren Eigenanteil zu reduzieren.",
-      "priceRange": "80 € – 200 € / m² für ein komplettes WDVS, 30 € – 80 € / m² für eine einfache Fassadensanierung"
-    },
-    {
       "slug": "paysager",
       "title": "Gartengestaltung",
       "shortTitle": "Garten",
@@ -619,45 +541,6 @@
       ],
       "whyPro": "Eine schlecht geplante Aussenanlage verfällt schnell: Terrasse, die sich durch Frost hebt, absackende Wege, Wasserstau. Die Beherrschung von Erdarbeiten, Entwässerung und Fundamenten ist für ein dauerhaftes Ergebnis unerlässlich. Unsere Teams kennen die klimatischen Besonderheiten der Region (Frost, starke Niederschläge) und wählen geeignete Materialien. 10-Jahres-Garantie auf Mauerwerksarbeiten inklusive.",
       "priceRange": "5 000 € – 30 000 € je nach Fläche und gewünschter Gestaltung"
-    },
-    {
-      "slug": "peinture-finitions",
-      "title": "Malerarbeiten und Endarbeiten",
-      "shortTitle": "Malerarbeiten",
-      "description": "Innen- und Aussenanstrich, Dekorputze, Tapeten. Der letzte Schliff, der den Unterschied macht.",
-      "icon": "🎨",
-      "features": [
-        "Innenanstrich",
-        "Aussenanstrich",
-        "Dekorputze",
-        "Tapeten",
-        "Untergrundvorbereitung"
-      ],
-      "longDescription": "Malerarbeiten sind weit mehr als ein Anstrich: Es ist die Kunst, Ihre Räume zu veredeln. Eine fachgerecht aufgetragene Farbe auf einem perfekt vorbereiteten Untergrund verwandelt die Atmosphäre eines Raumes grundlegend. Aiman Renovation führt alle Innen- und Aussenmalerarbeiten mit handwerklicher Sorgfalt aus.\n\nWir beginnen stets mit der Untergrundvorbereitung: Spachteln von Rissen, Schleifen, Reinigen, Auftragen einer Haftgrundierung. Dieser Schritt macht 70% der Arbeitszeit aus und unterscheidet ein Amateurergebnis von einem professionellen Finish. Wir verwenden Markenfarben (Tollens, Sikkens, Zolpan) in den Ausführungen matt, seidenmatt oder glänzend je nach gewünschtem Effekt.\n\nDekorputze (Tadelakt, Stucco, Sichtbeton an der Wand), Designtapeten, Struktureffekte — wir realisieren auch kreative Oberflächen, um Ihrem Interieur Charakter zu verleihen. Für den Aussenbereich verwenden wir diffusionsoffene Farben, die die Wände atmen lassen und gleichzeitig vor Witterung schützen.",
-      "process": [
-        {
-          "step": "Schutz der Baustelle",
-          "detail": "Abdecken von Böden und Möbeln, Abkleben von Rahmen und Sockelleisten."
-        },
-        {
-          "step": "Untergrundvorbereitung",
-          "detail": "Spachteln, Schleifen, Reinigen, Grundierung. Behandlung von Flecken und Schimmel."
-        },
-        {
-          "step": "Auftragen der Grundierung",
-          "detail": "Erste Haftschicht zur Vereinheitlichung des Untergrunds und optimalen Haltbarkeit des Endanstrichs."
-        },
-        {
-          "step": "Endanstrich",
-          "detail": "Auftragen von 2 Schichten Farbe mit gleichmässigem Finish, ohne Streifen oder Nasen."
-        },
-        {
-          "step": "Nachbesserungen und Reinigung",
-          "detail": "Kontrolle bei Streiflicht, Nachbesserungen wenn nötig, Entfernung der Abdeckungen und Reinigung."
-        }
-      ],
-      "whyPro": "Erfolgreiche Malerarbeit basiert zu 70% auf der Untergrundvorbereitung. Ohne Schleifen, Spachteln und geeignete Grundierung blättert die Farbe, bildet Blasen und vergilbt vorzeitig. Unsere professionellen Maler beherrschen die Vorbereitungstechniken, wählen die richtigen Produkte für jeden Untergrund (Gips, Holz, Metall, Beton) und tragen die Farbe mit professionellem Werkzeug auf — für ein einwandfreies Ergebnis.",
-      "priceRange": "20 € – 45 € / m² Wände und Decken, Vorbereitung und 2 Anstriche inklusive"
     },
     {
       "slug": "borne-recharge",
@@ -1981,73 +1864,133 @@
         "title": "Küchenmonteur",
         "type": "Festanstellung — Vollzeit",
         "description": "Installation maßgeschneiderter Einbauküchen: Möbel, Arbeitsplatten, Elektrogeräte, Anschlüsse.",
-        "requirements": ["Erfahrung in Küchenmontage", "Präzision und Detailgenauigkeit", "Führerschein Klasse B", "Selbstständig"]
+        "requirements": [
+          "Erfahrung in Küchenmontage",
+          "Präzision und Detailgenauigkeit",
+          "Führerschein Klasse B",
+          "Selbstständig"
+        ]
       },
       {
         "title": "Badezimmer-Spezialist",
         "type": "Festanstellung — Vollzeit",
         "description": "Komplettsanierung von Badezimmern: italienische Dusche, Sanitär, Fliesen, Sanitärinstallationen.",
-        "requirements": ["Vielseitigkeit Fliesen / Sanitär", "Mindestens 2 Jahre Erfahrung", "Abdichtung beherrscht", "Führerschein Klasse B"]
+        "requirements": [
+          "Vielseitigkeit Fliesen / Sanitär",
+          "Mindestens 2 Jahre Erfahrung",
+          "Abdichtung beherrscht",
+          "Führerschein Klasse B"
+        ]
       },
       {
         "title": "Qualifizierter Elektriker",
         "type": "Festanstellung — Vollzeit",
         "description": "Elektroinstallation und -sanierung: Schaltschrank, Steckdosen, Beleuchtung, Normgerechte Anpassung, Hausautomation.",
-        "requirements": ["B1V, BR, BC Zertifikate aktuell", "3 Jahre Erfahrung", "Kenntnisse NF C 15-100", "Pläne lesen"]
+        "requirements": [
+          "B1V, BR, BC Zertifikate aktuell",
+          "3 Jahre Erfahrung",
+          "Kenntnisse NF C 15-100",
+          "Pläne lesen"
+        ]
       },
       {
         "title": "Sanitär- und Heizungsinstallateur",
         "type": "Festanstellung — Vollzeit",
         "description": "Installation, Reparatur und Sanierung von Sanitär, Heizung und Sanitäranlagen. Privat und kleine Mehrfamilienhäuser.",
-        "requirements": ["Berufsausbildung Sanitär", "Mindestens 2 Jahre Erfahrung", "Kupfer- / PER-Lötung", "Führerschein Klasse B"]
+        "requirements": [
+          "Berufsausbildung Sanitär",
+          "Mindestens 2 Jahre Erfahrung",
+          "Kupfer- / PER-Lötung",
+          "Führerschein Klasse B"
+        ]
       },
       {
         "title": "Fliesenleger",
         "type": "Festanstellung — Vollzeit",
         "description": "Verlegen von Fliesen für Bäder, Küchen, Böden und Terrassen. Sorgfältige Arbeit erforderlich.",
-        "requirements": ["2 Jahre Erfahrung alle Formate", "Beherrschung Schnitte und Fugen", "Ästhetisches Gespür", "Führerschein Klasse B"]
+        "requirements": [
+          "2 Jahre Erfahrung alle Formate",
+          "Beherrschung Schnitte und Fugen",
+          "Ästhetisches Gespür",
+          "Führerschein Klasse B"
+        ]
       },
       {
         "title": "Fassaden- / Dämmungsspezialist",
         "type": "Festanstellung — Vollzeit",
         "description": "Fassadenrenovierung, Wärmedämmung von außen (WDVS), dekorative Putze, Anti-Moos-Behandlungen.",
-        "requirements": ["WDVS-Erfahrung", "Höhenarbeit (Gerüst)", "Führerschein Klasse B", "Teamgeist"]
+        "requirements": [
+          "WDVS-Erfahrung",
+          "Höhenarbeit (Gerüst)",
+          "Führerschein Klasse B",
+          "Teamgeist"
+        ]
       },
       {
         "title": "Landschaftsgärtner",
         "type": "Festanstellung — Vollzeit",
         "description": "Gestaltung und Pflege von Gärten, Terrassen, Wegen, Bepflanzung, Rasen, Bewässerung, Außenbeleuchtung.",
-        "requirements": ["Berufsausbildung Garten- und Landschaftsbau oder Erfahrung", "Beherrschung von Geräten", "Führerschein Klasse B erforderlich", "Kreativität"]
+        "requirements": [
+          "Berufsausbildung Garten- und Landschaftsbau oder Erfahrung",
+          "Beherrschung von Geräten",
+          "Führerschein Klasse B erforderlich",
+          "Kreativität"
+        ]
       },
       {
         "title": "Maler",
         "type": "Festanstellung — Vollzeit",
         "description": "Untergrundvorbereitung, Wandbeläge, Innen- und Außenanstriche, sorgfältige Endbearbeitung.",
-        "requirements": ["Berufsausbildung oder gleichwertig", "Beherrschung Endbearbeitungstechniken", "Sinn für Details", "Teamgeist"]
+        "requirements": [
+          "Berufsausbildung oder gleichwertig",
+          "Beherrschung Endbearbeitungstechniken",
+          "Sinn für Details",
+          "Teamgeist"
+        ]
       },
       {
         "title": "Ladestationen-Installateur",
         "type": "Festanstellung — Vollzeit",
         "description": "Installation von Ladestationen für Elektrofahrzeuge, Anschlüsse, Inbetriebnahme, Wartung.",
-        "requirements": ["IRVE-Zertifizierung Stufe 1", "Elektro-Zertifikate", "2 Jahre Elektroerfahrung", "Führerschein Klasse B"]
+        "requirements": [
+          "IRVE-Zertifizierung Stufe 1",
+          "Elektro-Zertifikate",
+          "2 Jahre Elektroerfahrung",
+          "Führerschein Klasse B"
+        ]
       },
       {
         "title": "Photovoltaik-Installateur",
         "type": "Festanstellung — Vollzeit",
         "description": "Installation von Solarmodulen auf Dächern, elektrische Anschlüsse, Inbetriebnahme, Kundenbetreuung.",
-        "requirements": ["QualiPV erwünscht", "Höhenarbeit", "Elektro-Zertifikate", "Führerschein Klasse B"]
+        "requirements": [
+          "QualiPV erwünscht",
+          "Höhenarbeit",
+          "Elektro-Zertifikate",
+          "Führerschein Klasse B"
+        ]
       },
       {
         "title": "Außenpflegemitarbeiter",
         "type": "Festanstellung — Vollzeit",
         "description": "Regelmäßige Pflege von Gärten, Grünflächen, Heckenschnitt, Terrassenreinigung, ökologische Unkrautbekämpfung.",
-        "requirements": ["Erfahrung in Grünflächenpflege", "Beherrschung Geräte", "Führerschein Klasse B erforderlich", "Selbstständig und zuverlässig"]
+        "requirements": [
+          "Erfahrung in Grünflächenpflege",
+          "Beherrschung Geräte",
+          "Führerschein Klasse B erforderlich",
+          "Selbstständig und zuverlässig"
+        ]
       },
       {
         "title": "Notdienst-Techniker",
         "type": "Festanstellung — Vollzeit",
         "description": "Notfalleinsätze: Sanitär, Elektrik, Schlüsseldienst, kleine Reparaturen bei Privatpersonen.",
-        "requirements": ["Vielseitigkeit aller Gewerke", "Kundenservice-Sinn", "Verfügbarkeit (Bereitschaft)", "Führerschein Klasse B"]
+        "requirements": [
+          "Vielseitigkeit aller Gewerke",
+          "Kundenservice-Sinn",
+          "Verfügbarkeit (Bereitschaft)",
+          "Führerschein Klasse B"
+        ]
       }
     ],
     "apply_button": "Bewerben",

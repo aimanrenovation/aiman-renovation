@@ -504,84 +504,6 @@
       "priceRange": "€2,000 – €10,000 depending on the number of water points and complexity"
     },
     {
-      "slug": "carrelage",
-      "title": "Tiling and flooring",
-      "shortTitle": "Tiling",
-      "description": "Tiling, parquet, vinyl or polished concrete. A new floor transforms an entire room.",
-      "icon": "🏗️",
-      "features": [
-        "Indoor/outdoor tiling",
-        "Solid and engineered parquet",
-        "Vinyl and PVC",
-        "Polished concrete",
-        "Screeding and preparation"
-      ],
-      "longDescription": "The floor is the first thing you notice when you walk into a room. Well-laid tiles, warm parquet or contemporary polished concrete instantly transform the atmosphere of your interior. Aiman Renovation masters the laying of every type of floor covering, from large-format tiles to solid parquet and premium vinyl.\n\nEvery project starts with meticulous substrate preparation: screeding, levelling, damp treatment where necessary. It's this invisible step that guarantees a perfect, long-lasting result. We then lay the covering of your choice with particular attention to cuts, joints and threshold finishes.\n\nFor outdoor areas, we create porcelain stoneware terraces, natural stone pathways and non-slip pool surrounds. Our experienced tilers work in flats in central Saint-Louis as well as houses in the surrounding villages of the Basel area.",
-      "process": [
-        {
-          "step": "Substrate assessment",
-          "detail": "Checking flatness, moisture levels and solidity of the existing floor."
-        },
-        {
-          "step": "Substrate preparation",
-          "detail": "Screeding, bonding primer, flowing screed if necessary for a perfectly level surface."
-        },
-        {
-          "step": "Layout planning",
-          "detail": "Defining the laying direction, joint size and pattern (straight, diagonal, staggered)."
-        },
-        {
-          "step": "Laying the covering",
-          "detail": "Glued or floating installation depending on the material, precise cuts around obstacles."
-        },
-        {
-          "step": "Grouting and finishing",
-          "detail": "Colour-matched grout, skirting boards, threshold strips, deep cleaning."
-        }
-      ],
-      "whyPro": "Poorly laid tiles crack, sound hollow and come loose within a few years. Substrate preparation, adhesive choice and expansion joint compliance are technical steps that require genuine expertise. Our tilers have years of experience and use professional tools (diamond tile cutter, laser level) for a flawless, guaranteed result.",
-      "priceRange": "€40 – €120 / m² including installation, depending on the type of covering"
-    },
-    {
-      "slug": "facade-isolation",
-      "title": "Facades and insulation",
-      "shortTitle": "Facades",
-      "description": "Facade renovation, external wall insulation (EWI) or internal insulation. Improve comfort and reduce your energy bills.",
-      "icon": "🏛️",
-      "features": [
-        "Facade renovation",
-        "External wall insulation (EWI)",
-        "Internal wall insulation",
-        "Render and plaster",
-        "Exterior painting"
-      ],
-      "longDescription": "In Alsace, harsh winters make thermal insulation essential. A poorly insulated facade means up to 25% heat loss and soaring heating bills. Aiman Renovation specialises in facade renovation and thermal insulation, whether external (EWI) or internal.\n\nExternal wall insulation (EWI) is the most effective solution: it eliminates thermal bridges, protects the building structure from the elements and beautifies the facade at the same time. We install insulation boards (polystyrene, mineral wool or wood fibre) covered with a finishing render in the colour of your choice.\n\nFor co-ownerships, we carry out complete facade renovations including crack repair, rising damp treatment and the application of breathable renders suited to Alsatian architecture. Our projects comply with local regulations and the requirements of heritage architects where necessary.",
-      "process": [
-        {
-          "step": "Facade diagnosis",
-          "detail": "Inspection of the facade condition, identification of cracks, water ingress and thermal bridges."
-        },
-        {
-          "step": "Scaffolding erection",
-          "detail": "Secure scaffolding installation with perimeter protection (nets, sheeting)."
-        },
-        {
-          "step": "Wall preparation",
-          "detail": "High-pressure cleaning, crack repair, anti-moss and damp treatment."
-        },
-        {
-          "step": "Insulation installation",
-          "detail": "Mechanical fixing and bonding of insulation boards, installation of starter and corner profiles."
-        },
-        {
-          "step": "Finishing and render",
-          "detail": "Application of finishing render (scraped, floated or textured), painting, site clean-up."
-        }
-      ],
-      "whyPro": "Insulation and facade renovation are technical works that affect the long-term durability of your building. Poorly installed external insulation can lead to water ingress, delamination and loss of thermal efficiency. These works are eligible for MaPrimeRénov' and CEE grants, but only when carried out by a qualified RGE professional. Aiman Renovation assists you with the grant applications to reduce your out-of-pocket cost.",
-      "priceRange": "€80 – €200 / m² for full EWI, €30 – €80 / m² for a standard facade renovation"
-    },
-    {
       "slug": "paysager",
       "title": "Landscaping",
       "shortTitle": "Landscaping",
@@ -619,45 +541,6 @@
       ],
       "whyPro": "Poorly designed outdoor works deteriorate quickly: a terrace that lifts with frost, a pathway that sinks, standing water. Mastery of earthworks, drainage and foundations is essential for a lasting result. Our teams understand the specific challenges of the Alsatian climate (frost, heavy rain) and select appropriate materials. 10-year guarantee included on landscape masonry works.",
       "priceRange": "€5,000 – €30,000 depending on the area and landscaping requirements"
-    },
-    {
-      "slug": "peinture-finitions",
-      "title": "Painting and finishing",
-      "shortTitle": "Painting",
-      "description": "Interior and exterior painting, decorative renders, wallpaper. The final touch that makes all the difference.",
-      "icon": "🎨",
-      "features": [
-        "Interior painting",
-        "Exterior painting",
-        "Decorative renders",
-        "Wallpaper",
-        "Surface preparation"
-      ],
-      "longDescription": "Painting is much more than a coat of paint: it's the art of enhancing your spaces. Paint applied properly, on a perfectly prepared surface, radically transforms the atmosphere of a room. Aiman Renovation carries out all your interior and exterior painting work with artisan care.\n\nWe always start with surface preparation: filling cracks, sanding, cleaning, applying a bonding primer. This step accounts for 70% of the work time and makes all the difference between an amateur result and a professional finish. We use paints from recognised brands (Tollens, Sikkens, Zolpan) in matt, satin or gloss finishes according to the desired effect.\n\nDecorative renders (tadelakt, stucco, polished concrete walls), designer wallpaper, textured effects — we also create bespoke finishes to give your interior character. For exteriors, we apply microporous paints that let walls breathe while protecting them from the elements.",
-      "process": [
-        {
-          "step": "Site protection",
-          "detail": "Covering floors and furniture, masking tape on frames and skirting boards."
-        },
-        {
-          "step": "Surface preparation",
-          "detail": "Filling, sanding, cleaning, primer application. Treatment of stains and mould."
-        },
-        {
-          "step": "Undercoat application",
-          "detail": "First bonding coat to even out the surface and optimise the finish coat adhesion."
-        },
-        {
-          "step": "Finish coats",
-          "detail": "Application of 2 coats of paint with a uniform result, no streaks or drips."
-        },
-        {
-          "step": "Touch-ups and cleaning",
-          "detail": "Inspection under raking light, touch-ups if needed, removal of coverings and clean-up."
-        }
-      ],
-      "whyPro": "A successful paint job relies 70% on surface preparation. Without proper sanding, filling and the right primer, paint blisters, peels and yellows prematurely. Our professional painters master preparation techniques, choose the right products for each surface (plaster, wood, metal, cement) and apply paint with professional tools for a flawless finish.",
-      "priceRange": "€20 – €45 / m² walls and ceilings, preparation and 2 coats included"
     },
     {
       "slug": "borne-recharge",
@@ -1981,73 +1864,133 @@
         "title": "Kitchen installer",
         "type": "Permanent — Full-time",
         "description": "Installation of custom fitted kitchens: cabinets, countertops, appliances, connections.",
-        "requirements": ["Kitchen installation experience", "Precision and attention to detail", "Driving license", "Autonomous"]
+        "requirements": [
+          "Kitchen installation experience",
+          "Precision and attention to detail",
+          "Driving license",
+          "Autonomous"
+        ]
       },
       {
         "title": "Bathroom specialist",
         "type": "Permanent — Full-time",
         "description": "Complete bathroom renovation: walk-in showers, plumbing, tiling, sanitary installations.",
-        "requirements": ["Versatility tiling / plumbing", "2+ years experience", "Waterproofing mastery", "Driving license"]
+        "requirements": [
+          "Versatility tiling / plumbing",
+          "2+ years experience",
+          "Waterproofing mastery",
+          "Driving license"
+        ]
       },
       {
         "title": "Qualified electrician",
         "type": "Permanent — Full-time",
         "description": "Electrical installation and renovation: panel, sockets, lighting, code compliance, home automation.",
-        "requirements": ["B1V, BR, BC certifications up-to-date", "3 years experience", "NF C 15-100 knowledge", "Reading plans"]
+        "requirements": [
+          "B1V, BR, BC certifications up-to-date",
+          "3 years experience",
+          "NF C 15-100 knowledge",
+          "Reading plans"
+        ]
       },
       {
         "title": "Plumber / Heating engineer",
         "type": "Permanent — Full-time",
         "description": "Installation, repair and renovation of plumbing, heating and sanitary systems. Residential and small collective.",
-        "requirements": ["Plumbing qualification", "2+ years experience", "Copper / PER soldering", "Driving license"]
+        "requirements": [
+          "Plumbing qualification",
+          "2+ years experience",
+          "Copper / PER soldering",
+          "Driving license"
+        ]
       },
       {
         "title": "Tiler",
         "type": "Permanent — Full-time",
         "description": "Tile and ceramic installation for bathrooms, kitchens, floors and terraces. Careful finishing required.",
-        "requirements": ["2 years experience all formats", "Mastery of cuts and joints", "Aesthetic sense", "Driving license"]
+        "requirements": [
+          "2 years experience all formats",
+          "Mastery of cuts and joints",
+          "Aesthetic sense",
+          "Driving license"
+        ]
       },
       {
         "title": "Facade / Insulation specialist",
         "type": "Permanent — Full-time",
         "description": "Facade renovation, external thermal insulation (ETI), decorative coatings, anti-moss treatments.",
-        "requirements": ["ETI experience", "Working at heights (scaffolding)", "Driving license", "Team spirit"]
+        "requirements": [
+          "ETI experience",
+          "Working at heights (scaffolding)",
+          "Driving license",
+          "Team spirit"
+        ]
       },
       {
         "title": "Landscape gardener",
         "type": "Permanent — Full-time",
         "description": "Garden creation and maintenance, terraces, paths, planting, lawn, irrigation, outdoor lighting.",
-        "requirements": ["Landscaping qualification or experience", "Equipment mastery", "Driving license required", "Creative mind"]
+        "requirements": [
+          "Landscaping qualification or experience",
+          "Equipment mastery",
+          "Driving license required",
+          "Creative mind"
+        ]
       },
       {
         "title": "Building painter",
         "type": "Permanent — Full-time",
         "description": "Surface preparation, wall coverings, interior and exterior painting, careful finishing.",
-        "requirements": ["Painter qualification", "Mastery of finishing techniques", "Eye for detail", "Team spirit"]
+        "requirements": [
+          "Painter qualification",
+          "Mastery of finishing techniques",
+          "Eye for detail",
+          "Team spirit"
+        ]
       },
       {
         "title": "EV charging station installer",
         "type": "Permanent — Full-time",
         "description": "Installation of EV charging stations, connections, commissioning, maintenance.",
-        "requirements": ["IRVE level 1 certification", "Electrical certifications", "2 years electrical experience", "Driving license"]
+        "requirements": [
+          "IRVE level 1 certification",
+          "Electrical certifications",
+          "2 years electrical experience",
+          "Driving license"
+        ]
       },
       {
         "title": "Solar panel installer",
         "type": "Permanent — Full-time",
         "description": "Solar panel installation on roofs, electrical connections, commissioning, customer support.",
-        "requirements": ["QualiPV preferred", "Working at heights", "Electrical certifications", "Driving license"]
+        "requirements": [
+          "QualiPV preferred",
+          "Working at heights",
+          "Electrical certifications",
+          "Driving license"
+        ]
       },
       {
         "title": "Outdoor maintenance technician",
         "type": "Permanent — Full-time",
         "description": "Regular garden maintenance, green spaces, hedge trimming, terrace cleaning, ecological weeding.",
-        "requirements": ["Green space maintenance experience", "Equipment mastery", "Driving license required", "Autonomous and reliable"]
+        "requirements": [
+          "Green space maintenance experience",
+          "Equipment mastery",
+          "Driving license required",
+          "Autonomous and reliable"
+        ]
       },
       {
         "title": "Emergency repair technician",
         "type": "Permanent — Full-time",
         "description": "Emergency interventions: plumbing, electrical, locksmith, small repairs for individuals.",
-        "requirements": ["Multi-trade versatility", "Customer service mindset", "Availability (on-call possible)", "Driving license"]
+        "requirements": [
+          "Multi-trade versatility",
+          "Customer service mindset",
+          "Availability (on-call possible)",
+          "Driving license"
+        ]
       }
     ],
     "apply_button": "Apply",
