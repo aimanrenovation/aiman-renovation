@@ -97,6 +97,11 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
         body: formData,
       });
       if (!res.ok) throw new Error(t("error_server"));
+
+      const result = await res.json();
+      if (result.magicplanProjectId) {
+        dispatch({ type: "SET_MAGICPLAN_PROJECT", projectId: result.magicplanProjectId });
+      }
       dispatch({ type: "SET_SUCCESS" });
     } catch (err) {
       dispatch({
@@ -116,7 +121,7 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
   if (state.view === "success") {
     return (
       <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/80 backdrop-blur-sm" style={{ paddingTop: 64 }}>
-        <StepSuccessOverlay dispatch={dispatch} />
+        <StepSuccessOverlay dispatch={dispatch} magicplanProjectId={state.magicplanProjectId} />
       </div>
     );
   }
