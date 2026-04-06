@@ -3,11 +3,32 @@ import { verifyWebhookKey } from "@/lib/magicplan";
 import { uploadToS3 } from "@/lib/s3";
 import { resend, DEVIS_FROM_EMAIL, DEVIS_RECIPIENT_EMAIL } from "@/lib/email";
 
+async function parseBody(request: NextRequest): Promise<Map<string, string>> {
+  const contentType = request.headers.get("content-type") || "";
+  const params = new Map<string, string>();
+
+  if (contentType.includes("multipart/form-data")) {
+    const formData = await request.formData();
+    for (const [k, v] of formData.entries()) {
+      if (typeof v === "string") params.set(k, v);
+    }
+  } else {
+    // application/x-www-form-urlencoded or other
+    const text = await request.text();
+    const urlParams = new URLSearchParams(text);
+    for (const [k, v] of urlParams.entries()) {
+      params.set(k, v);
+    }
+  }
+
+  return params;
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const formData = await request.formData();
+    const params = await parseBody(request);
 
-    const key = formData.get("key") as string;
+    const key = params.get("key") || "";
     if (!key || !verifyWebhookKey(key)) {
       return new NextResponse(
         '<?xml version="1.0" encoding="UTF-8"?><response><status>1</status><message>Invalid key</message></response>',
@@ -15,30 +36,30 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const projectId = formData.get("project_id") as string;
-    const planId = formData.get("planid") as string;
-    const title = formData.get("title") as string;
-    const email = formData.get("email") as string;
-    const externalRefId = formData.get("listing") as string;
+    const projectId = params.get("project_id") || "";
+    const planId = params.get("planid") || "";
+    const title = params.get("title") || "";
+    const email = params.get("email") || "";
+    const externalRefId = params.get("listing") || "";
 
     const fileUrls: { type: string; url: string }[] = [];
 
-    const pdf = formData.get("pdf") as string;
+    const pdf = params.get("pdf");
     if (pdf) fileUrls.push({ type: "pdf", url: pdf });
 
     for (let i = 0; ; i++) {
-      const jpg = formData.get(`jpg${i}`) as string;
+      const jpg = params.get(`jpg${i}`);
       if (!jpg) break;
       fileUrls.push({ type: `floor-${i}.jpg`, url: jpg });
     }
 
     for (let i = 0; ; i++) {
-      const svg = formData.get(`svg${i}`) as string;
+      const svg = params.get(`svg${i}`);
       if (!svg) break;
       fileUrls.push({ type: `floor-${i}.svg`, url: svg });
     }
 
-    const xml = formData.get("xml") as string;
+    const xml = params.get("xml");
     if (xml) fileUrls.push({ type: "plan.xml", url: xml });
 
     const s3Prefix = `magicplan/${externalRefId || projectId}`;
