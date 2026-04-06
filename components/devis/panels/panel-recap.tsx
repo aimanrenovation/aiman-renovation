@@ -35,8 +35,16 @@ const WIZARD_STEPS = [
     action: {
       label: "Télécharger MagicPlan",
       onClick: () => {
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-        window.open(isIOS ? "https://apps.apple.com/app/magicplan/id427424432" : "https://play.google.com/store/apps/details?id=com.sensopia.magicplan", "_blank");
+        const ua = navigator.userAgent || "";
+        const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+        const isAndroid = /Android/.test(ua);
+        if (isIOS) {
+          window.open("https://apps.apple.com/app/magicplan/id427424432", "_blank");
+        } else if (isAndroid) {
+          window.open("https://play.google.com/store/apps/details?id=com.sensopia.magicplan", "_blank");
+        } else {
+          window.open("https://www.magicplan.app", "_blank");
+        }
       },
     },
     tip: "Déjà installé ? Passez à l'étape suivante.",
