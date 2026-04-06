@@ -900,7 +900,8 @@
       "submit_sending": "Envoi en cours...",
       "submit_button": "Envoyer mon devis",
       "error_server": "Erreur serveur",
-      "error_generic": "Une erreur est survenue. Veuillez reessayer."
+      "error_generic": "Une erreur est survenue. Veuillez reessayer.",
+      "magicplan_auto_info": "Après envoi, vous pourrez scanner votre logement avec MagicPlan pour un devis plus précis."
     },
     "magicplan_wizard": {
       "step_label": "Étape {current} sur {total}",
@@ -955,7 +956,11 @@
       "message": "Merci pour votre confiance. Nous avons bien recu votre demande de devis et vous recontactons sous 24h.",
       "email_sent": "Un email de confirmation a ete envoye a votre adresse.",
       "back_home": "Retour a l'accueil",
-      "call_now": "Appeler maintenant"
+      "call_now": "Appeler maintenant",
+      "magicplan_title": "Scannez votre logement avec MagicPlan",
+      "magicplan_subtitle": "Un projet MagicPlan a été créé pour vous. Scannez vos pièces pour nous aider à établir un devis précis.",
+      "magicplan_open": "Ouvrir MagicPlan",
+      "magicplan_hint": "Scannez le QR code depuis votre téléphone ou cliquez sur le bouton ci-dessus."
     },
     "zones": {
       "cuisine": {

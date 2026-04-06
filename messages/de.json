@@ -900,7 +900,8 @@
       "submit_sending": "Wird gesendet...",
       "submit_button": "Offerte absenden",
       "error_server": "Serverfehler",
-      "error_generic": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+      "error_generic": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+      "magicplan_auto_info": "Nach dem Absenden können Sie Ihre Wohnung mit MagicPlan scannen, um ein genaueres Angebot zu erhalten."
     },
     "magicplan_wizard": {
       "step_label": "Schritt {current} von {total}",
@@ -955,7 +956,11 @@
       "message": "Vielen Dank für Ihr Vertrauen. Wir haben Ihre Offerte-Anfrage erhalten und melden uns innert 24 Stunden bei Ihnen.",
       "email_sent": "Eine Bestätigungs-E-Mail wurde an Ihre Adresse gesendet.",
       "back_home": "Zurück zur Startseite",
-      "call_now": "Jetzt anrufen"
+      "call_now": "Jetzt anrufen",
+      "magicplan_title": "Scannen Sie Ihre Wohnung mit MagicPlan",
+      "magicplan_subtitle": "Ein MagicPlan-Projekt wurde für Sie erstellt. Scannen Sie Ihre Räume, damit wir Ihnen ein genaues Angebot erstellen können.",
+      "magicplan_open": "MagicPlan öffnen",
+      "magicplan_hint": "Scannen Sie den QR-Code mit Ihrem Telefon oder klicken Sie auf die Schaltfläche oben."
     },
     "zones": {
       "cuisine": {
