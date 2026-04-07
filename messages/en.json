@@ -2043,5 +2043,635 @@
     "cta_title_highlight": "SATISFIED CLIENTS",
     "cta_subtitle": "Free quote within 4 days. Local craftsman, ten-year warranty.",
     "cta_button": "Request a free quote"
-  }
-}
+  },
+  "ville_de_items": [
+    {
+      "slug": "weil-am-rhein",
+      "name": "Weil am Rhein",
+      "hero": {
+        "h1": "Renovation in Weil am Rhein — French Craftsman at the Border",
+        "subtitle": "Your renovation specialist in the Three-Countries Corner — just 3 km from Saint-Louis"
+      },
+      "intro": "Weil am Rhein is located just 3 km from Saint-Louis, in the heart of the Three-Countries Corner (Dreiländereck). Aiman Renovation serves the whole city for kitchen, bathroom, tiling, painting and facade renovation. Fast response times, free quote in euros, French quality standards.",
+      "cta": "Request a quote for Weil am Rhein",
+      "intro_de_short": "Renovierung in Weil am Rhein — 3 km von Saint-Louis, alle Gewerke.",
+      "warumAiman": ""
+    },
+    {
+      "slug": "loerrach",
+      "name": "Lörrach",
+      "hero": {
+        "h1": "Renovation in Lörrach — French Craftsman, 10 km Away",
+        "subtitle": "Your renovation partner in the Lörrach district capital — quality from France"
+      },
+      "intro": "Lörrach, the main city of the Lörrach district, is just 15 minutes from Saint-Louis. Aiman Renovation provides full renovation services: kitchens, bathrooms, flooring, painting, insulation, facades. Free quote in euros, no hidden costs.",
+      "cta": "Request a quote for Lörrach",
+      "intro_de_short": "Renovierung in Lörrach — 10 km ab Saint-Louis, alle Leistungen.",
+      "warumAiman": ""
+    },
+    {
+      "slug": "grenzach-wyhlen",
+      "name": "Grenzach-Wyhlen",
+      "hero": {
+        "h1": "Renovation in Grenzach-Wyhlen — Cross-Border Craftsman",
+        "subtitle": "Rhine-side renovation specialist — professional, reliable, competitive"
+      },
+      "intro": "Grenzach-Wyhlen, a residential community on the Rhine, is 10 km from Saint-Louis. Aiman Renovation handles kitchen, bathroom, flooring, painting and facade work. Fully coordinated project management, free quote in euros.",
+      "cta": "Request a quote for Grenzach-Wyhlen",
+      "intro_de_short": "Renovierung in Grenzach-Wyhlen — 10 km ab Saint-Louis.",
+      "warumAiman": ""
+    },
+    {
+      "slug": "binzen",
+      "name": "Binzen",
+      "hero": {
+        "h1": "Renovation in Binzen — French Craftsman in Markgräflerland",
+        "subtitle": "Half-timbered houses, wine estates and modern renovation — 8 km from Saint-Louis"
+      },
+      "intro": "Binzen is a picturesque wine village in the Markgräflerland, 8 km from Saint-Louis. Aiman Renovation specialises in renovating half-timbered farmhouses, modernising kitchens and bathrooms, and restoring facades. Free quote in euros.",
+      "cta": "Request a quote for Binzen",
+      "intro_de_short": "Renovierung in Binzen, Markgräflerland — Fachwerk, Küche, Bad.",
+      "warumAiman": ""
+    },
+    {
+      "slug": "eimeldingen",
+      "name": "Eimeldingen",
+      "hero": {
+        "h1": "Renovation in Eimeldingen — French Craftsman at 7 km",
+        "subtitle": "Your renovation partner in this Lörrach district village"
+      },
+      "intro": "Eimeldingen is a quiet rural village 7 km from Saint-Louis with many single-family homes from the 1960s–1990s. Aiman Renovation renovates kitchens, bathrooms, floors and facades. Fast, professional, competitive pricing in euros.",
+      "cta": "Request a quote for Eimeldingen",
+      "intro_de_short": "Renovierung in Eimeldingen — 7 km ab Saint-Louis, faire Preise.",
+      "warumAiman": ""
+    },
+    {
+      "slug": "kandern",
+      "name": "Kandern",
+      "hero": {
+        "h1": "Renovation in Kandern — French Cross-Border Craftsman",
+        "subtitle": "Historic old town, Rosenfels Park — renovation with heritage sensitivity"
+      },
+      "intro": "Kandern, a charming historic town in the Markgräflerland 18 km from Saint-Louis. Known for its Rosenfels Park and stone-built old town. Aiman Renovation handles interior and exterior renovation with respect for historic buildings. Free quote in euros.",
+      "cta": "Request a quote for Kandern",
+      "intro_de_short": "Renovierung in Kandern — Historische Altstadt, Markgräflerland.",
+      "warumAiman": ""
+    }
+  ],
+  "ville_fr_items": [
+    {
+      "slug": "saint-louis",
+      "seoTitle": "Renovation Saint-Louis (68300) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Saint-Louis 68300, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Saint-Louis (68300) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Saint-Louis — 0 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Saint-Louis (68300) is a base town, 2 min from Basel, EuroAirport, Rhine port, République district. Aiman Renovation operates in Saint-Louis and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Saint-Louis means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 0 km away — we serve Saint-Louis regularly and know the area well.",
+      "projectsSection": "In Saint-Louis, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Huningue",
+        "Hégenheim",
+        "Village-Neuf",
+        "Hésingue",
+        "Blotzheim"
+      ]
+    },
+    {
+      "slug": "huningue",
+      "seoTitle": "Renovation Huningue (68330) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Huningue 68330, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Huningue (68330) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Huningue — 2 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Huningue (68330) is a Swiss border, Parc des Eaux Vives, 19th-century Vauban citadel architecture, train station district. Aiman Renovation operates in Huningue and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Huningue means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 2 km away — we serve Huningue regularly and know the area well.",
+      "projectsSection": "In Huningue, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Saint-Louis",
+        "Village-Neuf",
+        "Rosenau",
+        "Kembs",
+        "Hégenheim"
+      ]
+    },
+    {
+      "slug": "village-neuf",
+      "seoTitle": "Renovation Village-Neuf (68128) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Village-Neuf 68128, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Village-Neuf (68128) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Village-Neuf — 3 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Village-Neuf (68128) is a Rhine riverside, Grand Canal d'Alsace, recent residential estates. Aiman Renovation operates in Village-Neuf and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Village-Neuf means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 3 km away — we serve Village-Neuf regularly and know the area well.",
+      "projectsSection": "In Village-Neuf, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Huningue",
+        "Saint-Louis",
+        "Rosenau",
+        "Ottmarsheim",
+        "Kembs"
+      ]
+    },
+    {
+      "slug": "hesingue",
+      "seoTitle": "Renovation Hésingue (68220) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Hésingue 68220, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Hésingue (68220) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Hésingue — 4 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Hésingue (68220) is a affluent residential, EuroAirport proximity, upscale housing estates. Aiman Renovation operates in Hésingue and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Hésingue means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 4 km away — we serve Hésingue regularly and know the area well.",
+      "projectsSection": "In Hésingue, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Saint-Louis",
+        "Blotzheim",
+        "Hégenheim",
+        "Bartenheim",
+        "Buschwiller"
+      ]
+    },
+    {
+      "slug": "hegenheim",
+      "seoTitle": "Renovation Hégenheim (68220) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Hégenheim 68220, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Hégenheim (68220) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Hégenheim — 4 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Hégenheim (68220) is a direct Swiss border, half-timbered Alsatian houses, mixed residential. Aiman Renovation operates in Hégenheim and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Hégenheim means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 4 km away — we serve Hégenheim regularly and know the area well.",
+      "projectsSection": "In Hégenheim, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Saint-Louis",
+        "Hésingue",
+        "Buschwiller",
+        "Blotzheim",
+        "Folgensbourg"
+      ]
+    },
+    {
+      "slug": "bartenheim",
+      "seoTitle": "Renovation Bartenheim (68870) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Bartenheim 68870, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Bartenheim (68870) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Bartenheim — 6 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Bartenheim (68870) is a Sundgau commune, TER train station Mulhouse-Basel line, expanding housing estates. Aiman Renovation operates in Bartenheim and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Bartenheim means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 6 km away — we serve Bartenheim regularly and know the area well.",
+      "projectsSection": "In Bartenheim, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Sierentz",
+        "Hésingue",
+        "Blotzheim",
+        "Saint-Louis",
+        "Michelbach-le-Bas"
+      ]
+    },
+    {
+      "slug": "blotzheim",
+      "seoTitle": "Renovation Blotzheim (68730) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Blotzheim 68730, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Blotzheim (68730) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Blotzheim — 5 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Blotzheim (68730) is a adjacent to EuroAirport Bâle-Mulhouse, dense rental market, airport economy. Aiman Renovation operates in Blotzheim and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Blotzheim means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 5 km away — we serve Blotzheim regularly and know the area well.",
+      "projectsSection": "In Blotzheim, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Saint-Louis",
+        "Hésingue",
+        "Bartenheim",
+        "Michelbach-le-Bas",
+        "Hégenheim"
+      ]
+    },
+    {
+      "slug": "kembs",
+      "seoTitle": "Renovation Kembs (68680) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Kembs 68680, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Kembs (68680) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Kembs — 8 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Kembs (68680) is a historic Rhine lock heritage, Grand Canal d'Alsace, traditional fishermen's houses. Aiman Renovation operates in Kembs and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Kembs means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 8 km away — we serve Kembs regularly and know the area well.",
+      "projectsSection": "In Kembs, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Sierentz",
+        "Village-Neuf",
+        "Huningue",
+        "Ottmarsheim",
+        "Bartenheim"
+      ]
+    },
+    {
+      "slug": "sierentz",
+      "seoTitle": "Renovation Sierentz (68510) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Sierentz 68510, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Sierentz (68510) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Sierentz — 10 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Sierentz (68510) is a canton chief town, 19th-century church, growing rural residential area. Aiman Renovation operates in Sierentz and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Sierentz means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 10 km away — we serve Sierentz regularly and know the area well.",
+      "projectsSection": "In Sierentz, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Bartenheim",
+        "Kembs",
+        "Habsheim",
+        "Blotzheim",
+        "Ottmarsheim"
+      ]
+    },
+    {
+      "slug": "rixheim",
+      "seoTitle": "Renovation Rixheim (68170) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Rixheim 68170, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Rixheim (68170) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Rixheim — 18 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Rixheim (68170) is a Wallpaper Museum (unique in Europe), Teutonic Commandery 13th century, Mulhouse suburb. Aiman Renovation operates in Rixheim and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Rixheim means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 18 km away — we serve Rixheim regularly and know the area well.",
+      "projectsSection": "In Rixheim, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Mulhouse",
+        "Habsheim",
+        "Riedisheim",
+        "Sierentz",
+        "Ottmarsheim"
+      ]
+    },
+    {
+      "slug": "habsheim",
+      "seoTitle": "Renovation Habsheim (68440) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Habsheim 68440, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Habsheim (68440) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Habsheim — 15 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Habsheim (68440) is a residential south of Mulhouse, ULM airfield, 1970-1990 housing stock. Aiman Renovation operates in Habsheim and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Habsheim means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 15 km away — we serve Habsheim regularly and know the area well.",
+      "projectsSection": "In Habsheim, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Sierentz",
+        "Rixheim",
+        "Mulhouse",
+        "Riedisheim",
+        "Kembs"
+      ]
+    },
+    {
+      "slug": "riedisheim",
+      "seoTitle": "Renovation Riedisheim (68400) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Riedisheim 68400, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Riedisheim (68400) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Riedisheim — 18 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Riedisheim (68400) is a direct Mulhouse suburb, Alfred Wallach Park, dense urban residential. Aiman Renovation operates in Riedisheim and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Riedisheim means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 18 km away — we serve Riedisheim regularly and know the area well.",
+      "projectsSection": "In Riedisheim, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Mulhouse",
+        "Rixheim",
+        "Habsheim",
+        "Ottmarsheim",
+        "Sierentz"
+      ]
+    },
+    {
+      "slug": "mulhouse",
+      "seoTitle": "Renovation Mulhouse (68100) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Mulhouse 68100, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Mulhouse (68100) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Mulhouse — 20 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Mulhouse (68100) is a 2nd city of Alsace, Cité de l'Automobile, Art Nouveau Drouot district, Nouveau Bassin urban renewal. Aiman Renovation operates in Mulhouse and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Mulhouse means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 20 km away — we serve Mulhouse regularly and know the area well.",
+      "projectsSection": "In Mulhouse, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Riedisheim",
+        "Rixheim",
+        "Habsheim",
+        "Illzach",
+        "Wittenheim"
+      ]
+    },
+    {
+      "slug": "ottmarsheim",
+      "seoTitle": "Renovation Ottmarsheim (68490) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Ottmarsheim 68490, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Ottmarsheim (68490) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Ottmarsheim — 12 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Ottmarsheim (68490) is a 11th-century octagonal abbey (listed monument), Rhine hydroelectric plant, Rhine village heritage. Aiman Renovation operates in Ottmarsheim and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Ottmarsheim means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 12 km away — we serve Ottmarsheim regularly and know the area well.",
+      "projectsSection": "In Ottmarsheim, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Kembs",
+        "Village-Neuf",
+        "Rixheim",
+        "Sierentz",
+        "Habsheim"
+      ]
+    },
+    {
+      "slug": "rosenau",
+      "seoTitle": "Renovation Rosenau (68128) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Rosenau 68128, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Rosenau (68128) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Rosenau — 5 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Rosenau (68128) is a rural Rhine riverside, protected natural zones, traditional Alsatian country houses. Aiman Renovation operates in Rosenau and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Rosenau means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 5 km away — we serve Rosenau regularly and know the area well.",
+      "projectsSection": "In Rosenau, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Village-Neuf",
+        "Huningue",
+        "Saint-Louis",
+        "Kembs",
+        "Ottmarsheim"
+      ]
+    },
+    {
+      "slug": "buschwiller",
+      "seoTitle": "Renovation Buschwiller (68220) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Buschwiller 68220, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Buschwiller (68220) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Buschwiller — 4 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Buschwiller (68220) is a hilltop village with panoramic view of Basel and the Rhine. Aiman Renovation operates in Buschwiller and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Buschwiller means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 4 km away — we serve Buschwiller regularly and know the area well.",
+      "projectsSection": "In Buschwiller, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Saint-Louis",
+        "Hégenheim",
+        "Hésingue",
+        "Folgensbourg",
+        "Hagenthal-le-Bas"
+      ]
+    },
+    {
+      "slug": "folgensbourg",
+      "seoTitle": "Renovation Folgensbourg (68220) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Folgensbourg 68220, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Folgensbourg (68220) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Folgensbourg — 7 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Folgensbourg (68220) is a Sundgau winemaking village, rural character, Alsatian farmhouses. Aiman Renovation operates in Folgensbourg and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Folgensbourg means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 7 km away — we serve Folgensbourg regularly and know the area well.",
+      "projectsSection": "In Folgensbourg, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Hégenheim",
+        "Buschwiller",
+        "Hagenthal-le-Bas",
+        "Wentzwiller",
+        "Saint-Louis"
+      ]
+    },
+    {
+      "slug": "hagenthal-le-bas",
+      "seoTitle": "Renovation Hagenthal-le-Bas (68220) | AIMAN Craftsman Haut-R",
+      "seoDescription": "Renovation contractor in Hagenthal-le-Bas 68220, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Hagenthal-le-Bas (68220) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Hagenthal-le-Bas — 6 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Hagenthal-le-Bas (68220) is a Birsig valley, Swiss border, typical Sundgau bocage landscape. Aiman Renovation operates in Hagenthal-le-Bas and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Hagenthal-le-Bas means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 6 km away — we serve Hagenthal-le-Bas regularly and know the area well.",
+      "projectsSection": "In Hagenthal-le-Bas, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Buschwiller",
+        "Folgensbourg",
+        "Hégenheim",
+        "Leymen",
+        "Wentzwiller"
+      ]
+    },
+    {
+      "slug": "leymen",
+      "seoTitle": "Renovation Leymen (68220) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Leymen 68220, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Leymen (68220) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Leymen — 10 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Leymen (68220) is a Landskron medieval castle 12th century, wooded Swiss border village. Aiman Renovation operates in Leymen and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Leymen means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 10 km away — we serve Leymen regularly and know the area well.",
+      "projectsSection": "In Leymen, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Hagenthal-le-Bas",
+        "Wentzwiller",
+        "Folgensbourg",
+        "Hégenheim",
+        "Buschwiller"
+      ]
+    },
+    {
+      "slug": "wentzwiller",
+      "seoTitle": "Renovation Wentzwiller (68220) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Wentzwiller 68220, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Wentzwiller (68220) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Wentzwiller — 9 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Wentzwiller (68220) is a rural Sundgau, preserved half-timbered houses, Alsatian village character. Aiman Renovation operates in Wentzwiller and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Wentzwiller means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 9 km away — we serve Wentzwiller regularly and know the area well.",
+      "projectsSection": "In Wentzwiller, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Leymen",
+        "Hagenthal-le-Bas",
+        "Folgensbourg",
+        "Michelbach-le-Bas",
+        "Bartenheim"
+      ]
+    },
+    {
+      "slug": "michelbach-le-bas",
+      "seoTitle": "Renovation Michelbach-le-Bas (68730) | AIMAN Craftsman Haut-",
+      "seoDescription": "Renovation contractor in Michelbach-le-Bas 68730, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Michelbach-le-Bas (68730) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Michelbach-le-Bas — 8 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Michelbach-le-Bas (68730) is a residential village between Saint-Louis and Bartenheim, 1990s-2000s housing estates. Aiman Renovation operates in Michelbach-le-Bas and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Michelbach-le-Bas means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 8 km away — we serve Michelbach-le-Bas regularly and know the area well.",
+      "projectsSection": "In Michelbach-le-Bas, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Bartenheim",
+        "Blotzheim",
+        "Hésingue",
+        "Wentzwiller",
+        "Sierentz"
+      ]
+    },
+    {
+      "slug": "ferrette",
+      "seoTitle": "Renovation Ferrette (68480) | AIMAN Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Ferrette 68480, Upper Rhine. Kitchen, bathroom, tiling, painting. Free quote within 48h. Expert craftsman.",
+      "hero": {
+        "h1": "Renovation in Ferrette (68480) | AIMAN RENOVATION",
+        "subtitle": "Your trusted renovation contractor in Ferrette — 20 km from our Saint-Louis base, Upper Rhine"
+      },
+      "intro": "Ferrette (68480) is a historic capital of Sundgau, 12th-century castle ruins, medieval old town, half-timbered houses. Aiman Renovation operates in Ferrette and the surrounding communes with qualified craftsmen and 19 years of experience. We handle all types of renovation work: kitchen, bathroom, tiling, painting, insulation, electrical and plumbing. Free quote within 48 hours, all work covered by ten-year guarantee.",
+      "whyLocal": "Choosing a local craftsman for your renovation in Ferrette means faster response times, lower travel costs, and a professional who knows the local building stock and materials. Our base in Saint-Louis is 20 km away — we serve Ferrette regularly and know the area well.",
+      "projectsSection": "In Ferrette, we carry out full interior renovations, bathroom refits, kitchen installations, and exterior work including facades and terraces. Our teams work cleanly and deliver on time. Contact us for a free, no-obligation quote.",
+      "communesAlentours": [
+        "Leymen",
+        "Folgensbourg",
+        "Wentzwiller",
+        "Hagenthal-le-Bas",
+        "Rosenau"
+      ]
+    }
+  ],
+  "article_items": [
+    {
+      "slug": "prix-renovation-salle-de-bain-saint-louis",
+      "title": "Bathroom renovation cost in Saint-Louis: complete 2026 guide",
+      "seoTitle": "Bathroom Renovation Cost Saint-Louis 68300 | 2026 Guide",
+      "seoDescription": "Bathroom renovation prices in Saint-Louis 68300. 2026 ranges, available grants, craftsman advice. Free quote from AIMAN RENOVATION.",
+      "excerpt": "How much does a bathroom renovation cost in 2026 in Saint-Louis? Detailed prices by trade, materials and tips for budgeting your project.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Bathroom renovation cost in Saint-Louis in 2026\n\nBathroom renovation is one of the most popular projects in the Haut-Rhin. Costs range widely depending on the existing state and chosen materials. In Saint-Louis, Huningue or Hégenheim, here is what you need to know.\n\n## Price ranges for a full renovation\n\nA complete bathroom renovation in Saint-Louis 68300 typically costs between **€5,000 and €15,000** for a 4 to 8 m² room. This includes:\n\n- Strip-out and waste removal\n- Plumbing (water supply and drain replacement)\n- Electrical work to NF C 15-100 standard\n- Floor and wall tiling (DTU 52.1)\n- Walk-in shower or bathtub installation\n- Fittings (Grohe, Hansgrohe or equivalent)\n- Vanity unit, mirror, accessories\n- Moisture-resistant paint or render\n\n## Key cost breakdown\n\n### Plumbing: €800 to €2,500\nMany homes in the Saint-Louis area from the 1960s–1980s still have lead or cast-iron pipes that must be replaced. Budget **€1,200 to €1,800** for a full bathroom plumbing refit, with supplies from Cedeo or Point P.\n\n### Tiling: €40 to €90/m² installed\nFor standard 60x60 tiles laid to DTU 52.1: **€50 to €70/m²**. Large formats (80x80 or 120x60) reach €70–90/m².\n\n### Walk-in shower: €1,500 to €3,500\nVery popular in the Saint-Louis area. Price includes the low-profile shower tray, waterproofing membrane, floor drain and wall finish.\n\n### Electrics NF C 15-100: €500 to €1,200\nThe bathroom is a high-risk electrical zone. A dedicated 30 mA RCD is mandatory. Non-compliance can void your insurance.\n\n## Available grants in 2026\n\n- **MaPrimeAdapt'**: up to 70% of works cost (max €22,000) for adapted bathrooms\n- **Tax credit** for home adaptation (elderly/disabled)\n- **Anah grant** subject to income\n\nNeed a quote for your bathroom in Saint-Louis or the Haut-Rhin? Contact AIMAN RENOVATION — reply within 48h, free no-obligation quote."
+    },
+    {
+      "slug": "cout-cuisine-equipee-alsace",
+      "title": "Fitted kitchen cost in Alsace: detailed 2026 prices",
+      "seoTitle": "Fitted Kitchen Cost Alsace Haut-Rhin 2026 | AIMAN RENOVATION",
+      "seoDescription": "Kitchen renovation prices in Alsace in 2026. From €8,000 to €25,000 depending on materials. Cost breakdown, craftsman advice, free quote Saint-Louis 68.",
+      "excerpt": "What budget do you need for a fitted kitchen in Alsace? AIMAN RENOVATION breaks down all costs: units, worktops, plumbing and electrics.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Fitted kitchen cost in Alsace in 2026\n\nInstalling or renovating a fitted kitchen is one of the most profitable investments for your home. In Alsace, prices vary according to size, materials and complexity.\n\n## Overall price ranges\n\n- **Entry-level**: €8,000–12,000 (flat-pack units, laminate worktop, standard tiling)\n- **Mid-range**: €12,000–18,000 (semi-custom units, quartz or granite worktop, glass splashback)\n- **High-end**: €18,000–25,000+ (bespoke units, natural stone worktop, integrated appliances)\n\n## Cost breakdown\n\n### Kitchen units: €3,000–12,000\nQuality hinges and drawer systems (Blum, Hettich) make the difference in longevity.\n\n### Worktop: €400–2,500\n- HPL laminate: €80–150/ml\n- Quartz composite (Silestone, Dekton): €200–450/ml\n- Natural granite: €250–500/ml\n- Solid wood (oak, beech): €180–350/ml\n\n### Splashback: €60–200/m²\nCeramic tiles (DTU 52.1): €60–80/m²; toughened lacquered glass: €120–180/m².\n\n### Kitchen plumbing: €600–1,800\nGrohe or Hansgrohe taps sourced from Cedeo or Point P.\n\n### Electrics NF C 15-100: €800–2,000\nEach appliance above 2 kW must have its own circuit breaker. Schneider Electric, Legrand or Hager equipment from Rexel.\n\n### Floor tiling: €45–90/m² installed\nR11 anti-slip ceramic or full-body porcelain stoneware.\n\nNeed a quote for your kitchen in Alsace? Contact AIMAN RENOVATION — Saint-Louis, Mulhouse, Huningue and the whole Haut-Rhin. Free quote within 48h."
+    },
+    {
+      "slug": "renovation-appartement-bale-demarches",
+      "title": "Renovating an apartment in Basel: guide for French cross-border workers",
+      "seoTitle": "Apartment Renovation Basel | French Craftsman Saint-Louis 68",
+      "seoDescription": "Live in Basel and looking for a French craftsman to renovate your home? AIMAN RENOVATION explains the steps, advantages and prices. Free quote.",
+      "excerpt": "Do you live in Basel and want to renovate your apartment using a French craftsman? Complete guide to procedures, regulations and advantages.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Using a French craftsman to renovate in Basel\n\nMany cross-border workers and French expats living in Basel prefer to use a French craftsman for renovation work. Common language, euro invoicing, French ten-year guarantees — the advantages are multiple.\n\n## Legal obligations\n\n- **Prior notification** to SECO for work exceeding 8 days per calendar year\n- Compliance with Swiss minimum wages (CCT canton Basel-Stadt)\n- Valid civil liability and ten-year guarantee insurance\n\n## Most requested works in Basel\n\nBasel apartments (Altbauten in Gundeldingen, Bachletten, St. Alban) have specific configurations:\n\n- Walk-in shower installation, tiling, Grohe fittings\n- Open-plan kitchen: wall removal, modern fitted kitchen\n- Parquet: sanding, varnishing or replacement with oiled oak\n- Painting: Tollens, Sikkens or mineral paints\n- Electrical upgrade\n\n## Advantages of a Saint-Louis-based French craftsman\n\n- **5 minutes from Basel** via the Huningue bridge\n- **Ten-year French guarantee** (10 years structural cover)\n- **Competitive prices**: bathroom renovation €5,000–12,000 vs CHF 8,000–18,000 from a local firm\n\n## Practical tips\n\n- Get **written authorisation from your landlord** before starting\n- Arrange a **written inventory** before and after works\n- Always request a **detailed invoice** in euros with French VAT\n- Verify the craftsman has **active ten-year insurance**\n\nLive in Basel, Allschwil or Riehen? Contact AIMAN RENOVATION in Saint-Louis. Free quote, reply within 48h."
+    },
+    {
+      "slug": "artisan-frontalier-france-suisse-avantages",
+      "title": "French craftsman in the tri-border area: advantages for Swiss and German clients",
+      "seoTitle": "Cross-Border Craftsman France Switzerland Germany | Saint-Louis 68",
+      "seoDescription": "Why choose a French craftsman for works in Basel, Lörrach or Huningue? AIMAN RENOVATION explains all the advantages. Free quote.",
+      "excerpt": "Based in Saint-Louis, AIMAN RENOVATION covers the tri-border area. Concrete advantages for Swiss and German clients explained.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Why a French craftsman is an asset in the tri-border area\n\nThe France-Switzerland-Germany tri-border area is one of Europe's most economically active. Choosing a French craftsman based in Saint-Louis offers concrete advantages.\n\n## Advantage 1: Proximity\n\n- **5 minutes from Basel** via the Huningue bridge\n- **15 minutes from Lörrach** via the A35 motorway\n- **10 minutes from Weil am Rhein**\n\n## Advantage 2: French legal guarantees\n\n- **Ten-year guarantee** (10 years) on structural works\n- **One-year completion guarantee** on all reported defects\n- **Two-year guarantee** on separable equipment\n- **Professional liability** covering material damage\n\n## Advantage 3: Transparent and competitive prices\n\nOur rates are **20–35% lower** than Basel or Lörrach construction firms. Detailed quotes with 10% VAT.\n\n## Advantage 4: Language and culture\n\nOur teams speak French, Arabic and English. We are familiar with Swiss and German building specifics.\n\n## Our works in the tri-border area\n\n- Full apartment renovations in Basel, Allschwil, Binningen\n- Bathrooms and kitchens in Lörrach, Weil am Rhein\n- Painting and flooring in Huningue, Village-Neuf, Hégenheim\n- Electrical and plumbing in the Haut-Rhin\n\nContact AIMAN RENOVATION for a free quote. We cover the entire France / Switzerland / Germany triangle."
+    },
+    {
+      "slug": "isolation-thermique-haut-rhin-primes-2026",
+      "title": "Thermal insulation Haut-Rhin: 2026 grants and subsidies explained",
+      "seoTitle": "Thermal Insulation Haut-Rhin 68 | 2026 Grants | AIMAN RENOVATION",
+      "seoDescription": "All 2026 grants to insulate your home in the Haut-Rhin. MaPrimeRénov', CEE, éco-PTZ. Prices and RGE craftsman advice. Free quote Saint-Louis 68.",
+      "excerpt": "MaPrimeRénov', CEE, éco-PTZ: which grants are available for insulating your home in the Haut-Rhin in 2026? Complete guide with prices and eligibility.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Thermal insulation in the Haut-Rhin: all 2026 grants\n\nThe Haut-Rhin has a continental climate with harsh winters, making thermal insulation particularly strategic. In 2026, grants can cover up to 70% of insulation works depending on income.\n\n## MaPrimeRénov' 2026\n\n**By-action scheme** (single type of work): loft, wall, floor insulation, double-flow VMC.\n\n**Comprehensive scheme** (deep renovation): minimum 2 DPE energy class gain, mandatory Mon Accompagnateur Rénov' (MAR), ceiling up to €70,000.\n\nAmounts by income band:\n- Very modest households: **€75/m²** loft and wall insulation\n- Modest households: **€50/m²**\n\n## Energy Savings Certificates (CEE)\n\nCumulative with MaPrimeRénov':\n- Loft insulation: €250–600/home\n- Wall insulation: €1,500–4,000\n- Air-to-water heat pump: €500–2,000\n\n## Zero-rate eco-loan (éco-PTZ)\n\n€50,000 max, interest-free, up to 20 years, no income requirement, cumulative with other grants.\n\n## Insulation prices in the Haut-Rhin\n\n### Loft insulation (blown or rolls)\n- Blown mineral wool or cellulose: €25–40/m²\n- Rolls: €20–35/m²\n- Target thermal resistance: R ≥ 7 m².K/W\n\n### External wall insulation (EWI)\n- ETICS system (render on insulation): €80–160/m²\n- Cladding: €100–200/m²\n\n### Internal wall insulation\n- Plasterboard + mineral wool: €45–80/m²\n- Rigid insulation board: €60–100/m²\n\n## RGE-certified craftsman required\n\nTo access MaPrimeRénov' and CEE, works must be carried out by an **RGE-certified craftsman**. AIMAN RENOVATION partners with qualified RGE craftsmen in the Haut-Rhin and handles all grant paperwork.\n\nContact AIMAN RENOVATION for your insulation project in Saint-Louis, Mulhouse or Bartenheim. Free quote, grant application support included."
+    },
+    {
+      "slug": "renover-maison-ancienne-saint-louis",
+      "title": "Renovating an old house in Saint-Louis 68: step-by-step guide",
+      "seoTitle": "Old House Renovation Saint-Louis 68300 | Complete Guide",
+      "seoDescription": "How to renovate an old house in Saint-Louis 68? Diagnostics, work sequence, budget and pitfalls to avoid. AIMAN RENOVATION craftsman guide.",
+      "excerpt": "Renovating an old house in the Haut-Rhin requires method and experience. AIMAN RENOVATION guides you: diagnostics, work sequence and budget.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Renovating an old house in Saint-Louis: where to start?\n\nHouses in Saint-Louis, Huningue, Hégenheim or Bartenheim built before 1975 share common features: thick stone walls, timber frames, ageing electrical and plumbing systems, sometimes asbestos or lead. A successful renovation starts with a thorough survey.\n\n## Step 1: Pre-works surveys\n\n- **EPC (Energy Performance Certificate)**: recommended to target priority works\n- **Asbestos survey**: mandatory for houses built before July 1997\n- **Lead survey (CREP)**: mandatory if built before 1949 with children present\n- **Electrical survey**: recommended if installation is over 15 years old\n- **Roof structure inspection**: to detect woodworm and damp\n\n## Step 2: The correct work sequence\n\n- **Structure**: foundations, damp walls treatment\n- **Roof**: repair before any interior works\n- **Insulation and windows**: double glazing, wall insulation\n- **Electrical and plumbing**: NF C 15-100 compliance\n- **Partitions**: creation or removal\n- **Finishes**: tiling, flooring, painting last\n\nNever start decoration if structural works are not completed.\n\n## Alsatian-specific issues\n\n### Damp treatment\nInjection treatment: €200–400/ml wall. Moisture-resistant renders: €10–25/m².\n\n### Stone wall insulation\nInternal insulation with rock wool lining: €60–100/m².\n\n### Roof structure and covering\nWoodworm curative treatment: €30–60/m². Alsatian flat tile re-roofing: €60–120/m².\n\n## Overall budget for 100 m² in Saint-Louis\n\n- Light renovation (surfaces only): €40,000–70,000\n- Mid-level (+ electrics, plumbing, partial insulation): €70,000–120,000\n- Full renovation (structure, insulation, roof): €120,000–200,000\n\nAIMAN RENOVATION offers a free technical visit and a detailed quote within 48h."
+    },
+    {
+      "slug": "carrelage-ou-parquet-guide-alsace",
+      "title": "Tiles or parquet: guide to choosing the right flooring in Alsace",
+      "seoTitle": "Tiles or Parquet Alsace Haut-Rhin | Guide & Prices 2026",
+      "seoDescription": "Tiles or parquet for your home in Alsace? Full comparison: durability, price, maintenance, DTU standards. Craftsman advice from AIMAN RENOVATION.",
+      "excerpt": "Tiles or parquet: how to choose the right floor covering for your Alsace home? Durability, price, maintenance comparison and 2026 trends.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Tiles or parquet: the great flooring debate\n\nThis question comes up in every renovation project in the Haut-Rhin. AIMAN RENOVATION guides you to make the right choice for each room.\n\n## Tiles\n\n### Strengths\n- **Durability**: 30–50 years when correctly laid to DTU 52.1\n- **Hygiene**: waterproof and easy to clean\n- **Water resistance**: essential for bathrooms and kitchens\n- **Wide choice**: porcelain stoneware, ceramic, reconstituted marble, cement tiles\n\n### Alsace prices (2026)\n- Rectified 60x60 porcelain stoneware: €15–45/m² supply\n- Installation + levelling + grouting: €40–65/m²\n- **Total installed**: €55–110/m²\n\n## Parquet\n\n### Strengths\n- **Warmth and comfort**: superior acoustic insulation\n- **Property value**: solid wood parquet increases perceived value\n- **Longevity**: solid parquet can be sanded and re-oiled multiple times\n- **Design trend**: highly popular in Mulhouse lofts\n\n### Alsace prices (2026)\n- Solid parquet (oak, walnut): €50–150/m² supply + €35–60/m² installation\n- Engineered parquet: €30–80/m² + €30–50/m² installation\n- High-end laminate: €20–45/m² + €25–40/m²\n- Oiled oak parquet (Boen, Kahrs): €60–100/m² installed\n\n## Room-by-room guide\n\n- **Bathroom**: Tiles mandatory (waterproofing)\n- **Kitchen**: Tiles recommended or protected engineered parquet\n- **Living room**: Parquet or large-format tiles\n- **Bedroom**: Parquet ideal\n- **Hallway**: Tiles (dirt resistance)\n- **Stairs**: Solid parquet or R11 anti-slip tiles\n\n## DTU standards\n\nInstallation must follow DTU 52.1 (tiles) and DTU 51.1/51.2 (parquet): flatness tolerance 5 mm under a 2 m straightedge.\n\nContact AIMAN RENOVATION in Saint-Louis for personalised advice and a free quote."
+    },
+    {
+      "slug": "peinture-interieure-mulhouse-tendances",
+      "title": "Interior painting in Mulhouse: 2026 trends and craftsman prices",
+      "seoTitle": "Interior Painting Mulhouse Haut-Rhin 2026 | Trends & Prices",
+      "seoDescription": "Interior painting trends 2026 in Mulhouse and the Haut-Rhin. Popular colours, brands (Tollens, Sikkens), craftsman prices and application advice. Free quote.",
+      "excerpt": "What colours and finishes for your interior painting in 2026? Mulhouse and Haut-Rhin trends, Tollens, Sikkens, Zolpan brands, craftsman prices and advice.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Interior painting 2026: trends in Mulhouse and Alsace\n\nPainting is the quickest and most affordable way to transform an interior. In 2026, trends move towards textured finishes, muted tones and materials that make a difference.\n\n## 2026 colour trends\n\n### Earthy and natural tones\nSoft terracotta, pale ochre, warm sand, sage green — very popular in Mulhouse's Haussmann-style apartments and in contemporary homes in Bartenheim.\n\nRecommended professional brands: **Tollens** (\"Collection\" range), **Sikkens** (\"Alphatex SF\"), **Zolpan** (\"Zoltech\"). Far better coverage than DIY store brands.\n\n### Deep and dark tones\nMatt black or anthracite in bookcases and TV alcoves. Very present in the lofts of Mulhouse's Rebberg district.\n\n### Two-tone and dado rails\nA painted dado (bottom 90–120 cm of wall) in bottle green or petrol blue, with shell white above — timeless and sophisticated.\n\n## Finishes\n\n- **Matt**: hides imperfections, ideal for bedrooms and living rooms\n- **Velvet/eggshell**: good compromise aesthetics/washability\n- **Satin**: easy to clean, recommended for hallways and kitchens\n- **Gloss**: reserved for doors, windows and joinery\n\n## Interior painting prices in the Haut-Rhin (2026)\n\n- **Standard wall painting** (two coats): **€20–35/m²**\n- **With skim and repair**: €30–45/m²\n- **Wallpaper hanging**: €25–50/m²\n- **Moisture-resistant paint** (kitchen, bathroom): €30–50/m²\n- **Door painting** (both sides): €80–150\n- **Ceiling**: €15–30/m²\n\nBudget for a 70 m² three-room apartment fully repainted in Mulhouse: **€2,500–4,500**.\n\nContact AIMAN RENOVATION for a free quote in Mulhouse, Saint-Louis or the Haut-Rhin."
+    },
+    {
+      "slug": "electricite-normes-nf-c-15-100",
+      "title": "Electrics: everything you need to know about NF C 15-100 for renovation",
+      "seoTitle": "NF C 15-100 Standard Electrical Renovation | Craftsman Haut-Rhin 68",
+      "seoDescription": "Everything you need to know about the NF C 15-100 standard to renovate your home's electrics. Qualified electrician Haut-Rhin 68300.",
+      "excerpt": "The NF C 15-100 standard is essential for any electrical renovation. Protection zones, mandatory circuits, consumer unit... Complete guide.",
+      "author": "AIMAN RENOVATION",
+      "content": "## The NF C 15-100 standard: the French residential electrical reference\n\nEvery electrical installation in a new or renovated home must comply with NF C 15-100 in France. AIMAN RENOVATION explains the key points for your Haut-Rhin renovation.\n\n## The consumer unit\n\nThe main distribution board must include:\n\n- A **main circuit breaker** rated to subscribed power (30A, 45A or 60A)\n- A **30 mA RCD** (type A or AC)\n- **Miniature circuit breakers (MCBs)** per circuit\n\nFor a 50–100 m² apartment, NF C 15-100 requires at minimum:\n- 2 lighting circuits\n- 4 socket circuits\n- 1 dedicated washing machine circuit\n- 1 dedicated oven/hob circuit\n- 1 dedicated dishwasher circuit\n- 1–2 bathroom circuits\n\n## Bathroom protection zones\n\n- **Zone 0**: inside the bathtub — no electrical equipment\n- **Zone 1**: up to 2.25 m above bath rim — SELV equipment only\n- **Zone 2**: 60 cm around Zone 1 — special shaver sockets only\n- **Outside zones**: beyond 60 cm — normal sockets and switches allowed\n\n## Cable sizes\n\n- Lighting: 1.5 mm² cable — 10A MCB\n- Sockets: 2.5 mm² cable — 16 or 20A MCB\n- Dedicated circuits (oven, washer): 4 or 6 mm² cable — 32A MCB\n- Bathroom equipotential bonding: 2.5 mm² green-yellow cable\n\n## Common non-compliance in the Haut-Rhin\n\n- Ungrounded sockets (pre-1970 installations)\n- Old fuse board with screw fuses\n- Undersized cables\n- No dedicated circuits for large appliances\n\nFull compliance upgrade for a 70 m² apartment in Saint-Louis: **€3,500–8,000**.\n\n## EV charging point (IRVE)\n\nEV charger installation (IRVE-certified): €800–2,500 supply and fit. Schneider Electric, Hager or Legrand equipment from Rexel.\n\nContact AIMAN RENOVATION for a free diagnostic and quote within 48h."
+    },
+    {
+      "slug": "plomberie-renovation-signes-refaire",
+      "title": "Plumbing in renovation: 7 signs your pipes need replacing",
+      "seoTitle": "Replace Plumbing Renovation Haut-Rhin | 7 Signs | Craftsman 68",
+      "seoDescription": "When should you replace your home's plumbing? 7 tell-tale signs. AIMAN RENOVATION plumber, Saint-Louis 68300. Free quote.",
+      "excerpt": "Are your pipes nearing the end of their life? 7 concrete signs that it's time to renovate the plumbing in your Haut-Rhin home.",
+      "author": "AIMAN RENOVATION",
+      "content": "## 7 signs your plumbing needs renovation\n\nPlumbing is often the forgotten element of renovations. But ageing pipes can cause costly water damage. In Saint-Louis, Huningue or Bartenheim, here are the 7 signs it's time to act.\n\n## Sign 1: Discoloured or metallic-tasting water\n\nYellowish water or a rust taste indicates corroded galvanised steel or lead pipes. Many Haut-Rhin homes from the 1950s–70s still have lead pipes. Replacement with **PEX-aluminium multilayer** or **copper** is essential.\n\n## Sign 2: Low water pressure\n\n- Limescale build-up in pipes (Alsace has hard water)\n- Heavily corroded steel pipes\n- An undetected leak in walls or under the slab\n\n## Sign 3: Persistent damp patches\n\nDamp stains, flaking paint, recurring mould — signs of an undetected micro-leak. A hydraulic pressure test locates it.\n\n## Sign 4: Lead pipes\n\nBanned since 1995. Lead poisoning is a public health hazard, especially for children. Replacement is **urgent**.\n\n## Sign 5: Water heater over 10 years old\n\nLifespan: 10–15 years. Replace with a heat pump water heater (COP > 3) to cut energy use by 60–70%. Supplies from Cedeo or Point P.\n\n## Sign 6: Constantly replacing tap washers\n\nToo-high pressure (> 3.5 bar) or aggressive water. Pressure reducer (€150–300) and Grohe or Hansgrohe taps.\n\n## Sign 7: Full renovation in progress\n\nIf renovating kitchen or bathroom, it's the ideal time to check and replace pipes hidden in walls.\n\n## Plumbing renovation prices in the Haut-Rhin\n\n- Full pipe replacement in 50–70 m² apartment: **€2,500–5,000**\n- 200L electric water heater replacement: **€800–1,500**\n- Heat pump water heater: €2,500–4,000\n- Single tap replacement: **€150–400**\n\nContact AIMAN RENOVATION for a free plumbing diagnostic in Saint-Louis or the Haut-Rhin."
+    },
+    {
+      "slug": "ravalement-facade-haut-rhin-prix",
+      "title": "Facade renovation in the Haut-Rhin: 2026 prices and regulations",
+      "seoTitle": "Facade Renovation Haut-Rhin Prices 2026 | Craftsman Saint-Louis 68",
+      "seoDescription": "Facade renovation prices in the Haut-Rhin in 2026. Regulations, materials, available grants. AIMAN RENOVATION craftsman Saint-Louis 68300.",
+      "excerpt": "Prices and regulations for facade renovation in the Haut-Rhin. Render, cladding, facade paint: comparison of solutions and 2026 costs.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Facade renovation in the Haut-Rhin: what you need to know in 2026\n\nFacade renovation has a major aesthetic and energy impact. In the Haut-Rhin, Alsatian climate (freeze-thaw cycles, heavy rain) demands appropriate materials.\n\n## Regulations\n\n- **No planning permission needed** for facade works that don't alter the exterior appearance\n- **Prior declaration** required in ABF zones or conservation areas\n- Alsatian characteristic facades (half-timbering, red sandstone) may require Listed Building consent\n- In co-ownerships: general meeting approval required\n\n## Renovation techniques\n\n### Facade paint\n- **Acrylic** (Tollens \"Tollcolor\", Sikkens \"Rubbol\"): €25–50/m², lifespan 8–12 years\n- **Siloxane**: more resistant to algae, €40–70/m², lifespan 15–20 years\n- **Mineral** (lime, silicate): for old stone or brick buildings, €50–90/m²\n\n### Render\n- **Monocouche**: €45–80/m²\n- **Fine float finish**: €35–60/m²\n- **Roughcast**: €40–70/m² (popular in Alsace)\n\n### EWI combined\nEWI with render on insulation: €80–160/m², reduces heating bills by 20–30%.\n\n## Prices in the Haut-Rhin\n\n- 80 m² facade (siloxane paint): €3,500–6,000\n- 100 m² facade (monocouche render + paint): €6,000–10,000\n- 100 m² facade (EWI + render): €10,000–18,000 (after grants: €6,000–12,000)\n- Scaffolding: €8–15/m² of facade\n\n## Available grants\n\n- **MaPrimeRénov'** with simultaneous insulation\n- **CEE** for wall thermal insulation\n- **Éco-PTZ** for financing\n\nContact AIMAN RENOVATION for a facade renovation quote in Saint-Louis, Bartenheim, Hégenheim or the Haut-Rhin. Response within 48h."
+    },
+    {
+      "slug": "renovation-energetique-aides-2026",
+      "title": "Energy renovation: all available grants in 2026",
+      "seoTitle": "Energy Renovation Grants 2026 Haut-Rhin | MaPrimeRénov' CEE",
+      "seoDescription": "Complete guide to energy renovation grants in 2026: MaPrimeRénov', CEE, éco-PTZ, MaPrimeAdapt'. Qualified craftsman Haut-Rhin 68300. Free quote.",
+      "excerpt": "MaPrimeRénov', CEE, éco-PTZ, reduced VAT: the complete guide to energy renovation grants available in 2026 for Haut-Rhin homeowners.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Energy renovation grants in 2026: complete guide\n\nFor homeowners in the Haut-Rhin wishing to improve their home's energy rating, here are all the available and stackable schemes in 2026.\n\n## MaPrimeRénov' 2026\n\n**By-action scheme**: insulation (loft, walls, floors), double-flow VMC, heating (heat pump, biomass boiler, solar thermal).\n\n**Comprehensive scheme**: minimum 2 energy class DPE gain, mandatory Mon Accompagnateur Rénov' (MAR), ceiling up to €70,000.\n\nAmounts by income band:\n- Very modest: **€75/m²** loft/wall insulation, **€5,000** heat pump\n- Modest: **€50/m²**\n\n## Energy Savings Certificates (CEE)\n\n- Loft insulation: €250–600/home\n- Wall insulation: €1,500–4,000\n- Air-to-water heat pump: €500–2,000\n- Biomass boiler: €500–1,500\n- \"Heat Bonus\" scheme: up to **€4,000** for modest households\n\n## Zero-rate eco-loan (éco-PTZ)\n\n€50,000 max, interest-free, up to 20 years, no income requirement, stackable with all grants.\n\n## Reduced VAT\n\n- **5.5%** for energy performance improvement works\n- **10%** for other renovation works\n- RGE craftsman invoices at the reduced rate directly\n\n## MaPrimeAdapt'\n\nUp to **70%** of works cost for modest households, ceiling **€22,000**, for home adaptation for elderly/disabled.\n\n## Concrete example: 100 m² F-rated house in Saint-Louis\n\n- Loft + wall insulation + heat pump: total works €18,500\n- Estimated grants (modest household): €12,950\n- **Estimated out-of-pocket: €5,550**\n\nAIMAN RENOVATION handles the grant application and coordinates RGE craftsmen. Contact us for a free assessment."
+    },
+    {
+      "slug": "salle-de-bain-pmr-seniors-guide",
+      "title": "Accessible bathroom for seniors and disabled: complete adaptation guide",
+      "seoTitle": "Accessible Bathroom Seniors Disabled Haut-Rhin | Grants 2026",
+      "seoDescription": "How to adapt a bathroom for disabled access or seniors in the Haut-Rhin? Equipment, standards, prices and MaPrimeAdapt' grants. AIMAN RENOVATION guide.",
+      "excerpt": "Adapting a bathroom for independent living: walk-in shower, grab rails, shower seat, accessibility standards. Complete guide and available grants.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Adapting a bathroom for seniors and disabled people\n\nAdapting the bathroom is often the first project considered to ensure safe daily living for an elderly relative or disabled person in the Haut-Rhin.\n\n## Essential accessible bathroom features\n\n### Walk-in shower\n- Ultra-low shower tray or wet room with max 2 cm threshold\n- Minimum recommended size: 90x90 cm (accessibility standard: 120x80 cm)\n- Mandatory anti-slip floor finish: **R11 minimum**\n- Price: €1,500–3,500 depending on size and finish\n\n### Grab rails\n- Horizontal rail along shower: fitted at 85–90 cm height\n- L-shaped or fold-down rail next to WC\n- Vertical rail at shower entrance\n- Minimum load capacity: 120 kg\n- Brands: **Hewi**, **Pellet** (Delabie), **Geberit** — €150–600 per rail installed\n\n### Shower seat\n- **Wall-mounted folding seat**: €200–500 installed, height 46–48 cm\n- **Portable shower stool**: €40–150\n\n### Accessible taps\n- Thermostatic mixer (Grohe Eurosmart, Hansgrohe Metropol): prevents scalding\n- Handheld shower on 1.75 m+ hose\n- Tap accessible from inside and outside the shower\n\n## Financial grants\n\n### MaPrimeAdapt' 2026\n- **Up to 70%** of works cost for modest households\n- Ceiling: **€22,000**\n- Conditions: aged 70+ or assessed dependency level GIR 1–6, or registered disability\n\n### Other grants\n- Action Logement \"Habiter Facile\": up to €5,000\n- Haut-Rhin Departmental Council: grants for elderly home adaptation\n\n## Prices in the Haut-Rhin\n\n- **Bath-to-shower conversion**: €3,500–6,500\n- **Full accessible bathroom renovation**: €6,000–12,000\n- After MaPrimeAdapt' (modest household): **out-of-pocket €1,000–3,500**\n\nAIMAN RENOVATION handles your MaPrimeAdapt' application free of charge. Contact us in Saint-Louis, Mulhouse or the Haut-Rhin."
+    },
+    {
+      "slug": "renovation-loft-mulhouse-idees",
+      "title": "Loft renovation in Mulhouse: ideas and trends for industrial-chic spaces",
+      "seoTitle": "Loft Renovation Mulhouse Haut-Rhin | Ideas & Trends 2026",
+      "seoDescription": "Ideas and inspiration for renovating a loft in Mulhouse in 2026. Industrial style, raw materials, open plan. AIMAN RENOVATION craftsman, free quote.",
+      "excerpt": "Renovating a loft in Mulhouse: polished concrete, metal, wood, open plan. All the 2026 ideas and trends to transform an industrial space into a contemporary home.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Renovating a loft in Mulhouse: 2026 trends\n\nMulhouse has many former industrial spaces converted into lofts in the Fonderie, Cité de l'auto and Rebberg districts. These spaces offer exceptional volumes and unique character.\n\n## What defines a loft and its challenges\n\n- **Large volumes**: high ceilings (3.5–5 m), open surfaces of 80–200 m²\n- **Exposed structures**: steel beams, concrete pillars, bare brick\n- **Light**: large industrial bay windows, shed roofs\n- **No partition walls**: everything must be created to define spaces\n\n## Trend 1: Polished concrete\n\n- Floor polished concrete: €80–150/m² installed\n- Wall polished concrete: €60–120/m²\n- Professional application essential to avoid bubbles and delamination\n\n## Trend 2: Metal and steel\n\n- Interior steel-framed glazed partitions: €800–2,500/ml\n- Central spine metal staircase to mezzanine: €4,000–10,000\n- Sliding metal doors: €600–1,500 installed\n- Steel balustrade: €300–700/ml\n\n## Trend 3: Solid wood for balance\n\n- Oiled solid oak parquet 22 mm: €80–130/m² installed\n- Interior wall cladding (Douglas fir or oak): €50–100/m²\n- Exposed timber mezzanine: €5,000–12,000\n\n## Trend 4: Structured open plan\n\n- Kitchen island as room divider\n- Change of floor covering to define zones\n- Raised platform for bedroom or lounge area\n\n## Trend 5: Industrial palette 2026\n\n- Anthracite grey (RAL 7016) for metalwork\n- Shell white for walls (maximise light)\n- Matt black taps (Grohe Colours, Hansgrohe Matt Black)\n- Copper and brass for light fittings and accessories\n\n## Budget for a 100 m² loft in Mulhouse\n\n- Light renovation (paint, parquet, kitchen): €25,000–50,000\n- Full renovation (concrete, glazing, electrical, plumbing, mezzanine): €60,000–120,000\n\nHave a loft to renovate in Mulhouse? Contact AIMAN RENOVATION for a free technical visit. Quote within 48h."
+    },
+    {
+      "slug": "choisir-artisan-renovation-10-criteres",
+      "title": "How to choose your renovation craftsman: 10 essential criteria",
+      "seoTitle": "Choose Renovation Craftsman Haut-Rhin | 10 Criteria | Saint-Louis 68",
+      "seoDescription": "10 criteria for choosing the right renovation craftsman in the Haut-Rhin. Guarantees, insurance, references, quotes. Expert advice from AIMAN RENOVATION.",
+      "excerpt": "Choosing the right renovation craftsman is the most important decision for your project. AIMAN RENOVATION gives you 10 key criteria to avoid bad surprises.",
+      "author": "AIMAN RENOVATION",
+      "content": "## 10 criteria for choosing the right renovation craftsman in the Haut-Rhin\n\nA poor choice can lead to substandard work, budget overruns, or worse — a craftsman who disappears. Here are the 10 criteria to check before signing.\n\n## Criterion 1: Official registration\n\nEvery legal craftsman must be registered. Check on **societe.com** or the official French business directory.\n\n## Criterion 2: Ten-year guarantee (Décennale)\n\n10 years of structural damage cover. Request the **valid certificate**. Recognised insurers: Allianz, AXA, Generali, MAAF Pro.\n\n## Criterion 3: Professional liability insurance\n\nCovers damage caused during works. Ask for a separate attestation.\n\n## Criterion 4: Qualifications and labels\n\n- **RGE**: mandatory for energy efficiency grants\n- **Qualibat**: construction company qualification\n- **IRVE**: for EV charging points\n\n## Criterion 5: References\n\nAsk for photos of similar completed projects and former client contact details to call directly.\n\n## Criterion 6: Clear and detailed quote\n\nA good quote specifies: exact description, quantities (m², ml, units), unit and total price excl./incl. tax, material brands and references, timescales.\n\nBeware of vague lump-sum quotes without detail.\n\n## Criterion 7: Local presence\n\nA craftsman 5 km away will be more responsive. Our teams know local suppliers Point P, Cedeo and Rexel.\n\n## Criterion 8: Communication\n\nAssess responsiveness before signing. A slow communicator before the job will be slow during it too.\n\n## Criterion 9: Deposit rules\n\n- Maximum **30%** deposit on signing for projects under 3 months\n- Never full payment before works are complete\n- Balance on completion, after inspection\n\n50%+ deposit upfront is a red flag.\n\n## Criterion 10: After-sales service\n\nThe craftsman must fix all notified defects within 1 year of completion.\n\n## Why AIMAN RENOVATION?\n\nAIMAN RENOVATION ticks all these boxes: registered, Allianz ten-year insurance, professional liability, detailed quotes, local craftsmen in Saint-Louis 68300. Free quote within 48h."
+    }
+  ]}

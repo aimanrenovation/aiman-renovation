@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SERVICES } from "@/lib/services";
+import { ARTICLES } from "@/lib/articles";
 
 const BASE = "https://aiman-renovation.fr";
 const LOCALES = ["fr", "de", "en"] as const;
@@ -35,5 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localizedEntry("/cgv", 0.3, "yearly"),
     ...localizedEntry("/mentions-legales", 0.3, "yearly"),
     ...localizedEntry("/politique-confidentialite", 0.3, "yearly"),
+    ...localizedEntry("/blog", 0.8, "weekly"),
+    ...ARTICLES.flatMap((a) => localizedEntry(`/blog/${a.slug}`, 0.7, "monthly")),
   ];
 }

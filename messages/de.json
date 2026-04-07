@@ -2043,5 +2043,635 @@
     "cta_title_highlight": "ZUFRIEDENEN KUNDEN",
     "cta_subtitle": "Kostenloses Angebot in 4 Tagen. Lokaler Handwerker, 10 Jahre Garantie.",
     "cta_button": "Kostenloses Angebot anfordern"
-  }
-}
+  },
+  "ville_de_items": [
+    {
+      "slug": "weil-am-rhein",
+      "name": "Weil am Rhein",
+      "hero": {
+        "h1": "Renovierung in Weil am Rhein — Handwerker aus Frankreich",
+        "subtitle": "Ihr französischer Renovierungsspezialist im Dreiländereck — direkt an der Grenze"
+      },
+      "warumAiman": "Als französischer Handwerksbetrieb aus dem benachbarten Saint-Louis bringen wir Ihnen echte Vorteile: Unsere Preise liegen deutlich unter dem regionalen deutschen Handwerkertarif, ohne dabei Kompromisse bei der Qualität einzugehen. Wir sind RGE-zertifiziert (Reconnu Garant de l'Environnement) und verfügen über eine solide Erfahrung in der Renovierung von Einfamilienhäusern, Eigentumswohnungen und Gewerbeflächen.\n\nIm Dreiländereck Weil am Rhein ist es uns ein besonderes Anliegen, grenzüberschreitende Qualität zu liefern. Alle Materialen entsprechen den europäischen Normen. Unsere Garantie gilt auch für deutsche Auftraggeber — Abnahmeprotokoll und schriftliche Gewährleistung inklusive.",
+      "cta": "Kostenvoranschlag für Weil am Rhein anfragen",
+      "intro": "Weil am Rhein liegt im Herzen des Dreiländerecks, wo Deutschland, Frankreich und die Schweiz zusammentreffen — nur 3 Kilometer von Saint-Louis entfernt. Diese einzigartige geografische Lage macht die Stadt zu einem idealen Einsatzgebiet für Aiman Renovation. Wir kennen den lokalen Immobilienmarkt, die Besonderheiten der Gebäude und die Anforderungen der Bewohner dieser grenznahen Region sehr genau.\n\nWeil am Rhein ist eine wachsende Stadt mit modernen Wohnquartieren, die durch die Nähe zu international renommierten Unternehmen wie Novartis und Roche geprägt wird. Das weltbekannte Vitra Design Museum setzt architektonische Maßstäbe — und unsere Renovierungsarbeiten folgen demselben Anspruch: Qualität, Ästhetik und Langlebigkeit.\n\nOb Sie Ihre Küche modernisieren, Ihr Badezimmer renovieren, neue Bodenbeläge verlegen oder die Fassade Ihres Hauses erneuern möchten — Aiman Renovation bietet Ihnen erstklassige Handwerkskunst zu fairen, transparenten Preisen in Euro. Unsere kurze Anfahrt von nur 5 Minuten bedeutet für Sie: Reaktionsschnelligkeit, Pünktlichkeit und minimale Reisekosten. Wir arbeiten nach französischen Qualitätsstandards und halten dabei die deutschen DIN-Normen ein. Unser Kostenvoranschlag ist kostenlos und unverbindlich.",
+      "intro_de_short": "Weil am Rhein se trouve à seulement 3 km de Saint-Louis — une proximité idéale pour Aiman Renovation. Nous intervenons rapidement dans cette ville du triangle des trois pays pour tous vos travaux : cuisine, salle de bain, carrelage, peinture, façade. Devis gratuit en euros, qualité française garantie."
+    },
+    {
+      "slug": "loerrach",
+      "name": "Lörrach",
+      "hero": {
+        "h1": "Renovierung in Lörrach — Handwerker aus Frankreich",
+        "subtitle": "Ihr Renovierungspartner in der Kreisstadt Lörrach — professionell, fair und grenzüberschreitend"
+      },
+      "warumAiman": "Lörrach bénéficie d'une dynamique économique forte liée au Dreiländereck. Les propriétaires y sont exigeants, et c'est précisément pourquoi Aiman Renovation s'y impose : qualité française, réactivité, prix compétitifs par rapport aux artisans locaux allemands. Devis gratuit, intervention sous 2 semaines.",
+      "cta": "Kostenvoranschlag für Lörrach anfragen",
+      "intro": "Lörrach ist die lebendige Kreisstadt des gleichnamigen Landkreises und mit rund 48.000 Einwohnern das wirtschaftliche und kulturelle Zentrum des südlichen Schwarzwalds. Die historische Altstadt mit ihren charakteristischen Fachwerkhäusern, die imposante Burgruine Rötteln und das vielseitige Stadtleben machen Lörrach zu einem attraktiven Wohnort — direkt am Dreiländereck, nur 10 Kilometer von Saint-Louis entfernt.\n\nIn Lörrach treffen historische Bausubstanz und moderne Wohnarchitektur aufeinander. Altbauten im Stadteil Stetten, sanierungsbedürftige Gründerzeitgebäude in der Innenstadt oder neuerrichtete Mehrfamilienhäuser im Norden der Stadt — Aiman Renovation verfügt über Erfahrung in allen Gebäudetypen. Wir renovieren Küchen und Bäder, verlegen Bodenbeläge, streichen Innen- und Außenwände und erneuern Fassaden nach höchsten Standards.\n\nAls Handwerksbetrieb aus dem benachbarten Elsass verstehen wir die regionalen Besonderheiten. Unsere Teams sprechen Deutsch und Französisch, kennen den lokalen Immobilienmarkt und bieten Ihnen transparente Kostenvoranschläge in Euro — ohne versteckte Zusatzkosten.",
+      "intro_de_short": "Lörrach, capitale du Landkreis éponyme, est à 10 km de Saint-Louis. Aiman Renovation y intervient pour des rénovations complètes : cuisine, salle de bain, sols, façade, peinture. Fort de sa connaissance du bâti alsacien et rhénan, notre artisan vous garantit un travail soigné au meilleur prix."
+    },
+    {
+      "slug": "grenzach-wyhlen",
+      "name": "Grenzach-Wyhlen",
+      "hero": {
+        "h1": "Renovierung in Grenzach-Wyhlen — Artisan aus Frankreich",
+        "subtitle": "Ihr Renovierungsspezialist am Rheinufer — Qualität made in France, direkt vor Ihrer Tür"
+      },
+      "warumAiman": "Die Gemeinde Grenzach-Wyhlen zieht wohlhabende Familien an, die Wert auf Qualität legen. Aiman Renovation bietet genau das: hochwertige Renovierungsarbeiten nach französischen und europäischen Standards, zu Preisen, die deutlich unter dem lokalen Handwerkermarkt liegen. Wir bringen unsere eigenen Materialien mit, koordinieren alle Gewerke und garantieren termingerechte Fertigstellung.",
+      "cta": "Kostenvoranschlag für Grenzach-Wyhlen anfragen",
+      "intro": "Grenzach-Wyhlen ist eine attraktive Doppelgemeinde am südlichen Rheinufer, eingebettet zwischen Basel und Rheinfelden. Mit rund 14.000 Einwohnern gilt die Gemeinde als begehrter Wohnort für Pendler, die im pharmazeutischen Großraum Basel arbeiten — insbesondere bei DSM Nutritional Products, einem der größten lokalen Arbeitgeber. Die Rheinlage, die ruhige Atmosphäre und die gute Infrastruktur machen Grenzach-Wyhlen zu einem Ort, an dem Eigenheimbesitzer hohe Ansprüche an Renovierungsarbeiten stellen.\n\nDie zwei historischen Ortsteile Grenzach und Wyhlen haben sich zu einer einheitlichen Gemeinde mit gemischtem Immobilienbestand zusammengeschlossen: von Altbauten aus der Gründerzeit bis hin zu modernen Einfamilienhäusern aus den 1970er bis 2000er Jahren, die heute oft einer Renovierung bedürfen. Aiman Renovation kennt diese Gebäudetypologien sehr gut und bietet maßgeschneiderte Lösungen für Küchen-, Bad-, Boden- und Fassadenrenovierungen.\n\nMit einer Anfahrt von nur 10 Minuten ab Saint-Louis sind wir schnell vor Ort — pünktlich, zuverlässig und professionell. Unser Kostenvoranschlag ist kostenlos und in Euro ausgestellt.",
+      "intro_de_short": "Grenzach-Wyhlen, commune résidentielle au bord du Rhin à 10 km de Saint-Louis. Aiman Renovation y rénove cuisine, salle de bain, sols et façades. Réactivité, prix compétitifs face aux artisans allemands, qualité française. Devis gratuit en euros."
+    },
+    {
+      "slug": "binzen",
+      "name": "Binzen",
+      "hero": {
+        "h1": "Renovierung in Binzen — Handwerker aus dem Elsass",
+        "subtitle": "Fachwerk, Weingüter und moderne Sanierung — Ihr Renovierungspartner im Markgräflerland"
+      },
+      "warumAiman": "Ein Weindorf wie Binzen erfordert Handwerker, die die lokale Bauweise respektieren. Aiman Renovation bringt dieses Feingefühl mit — wir arbeiten behutsam an historischen Gebäuden und modern an Neubauten. Faire Preise, kurze Anfahrt, verlässliche Arbeit.",
+      "cta": "Kostenvoranschlag für Binzen anfragen",
+      "intro": "Binzen ist ein idyllisches Weindorf im Herzen des Markgräflerlandes, eingebettet in sanfte Hügel und Weinberge nahe der deutsch-französischen Grenze. Das Dorf mit rund 3.000 Einwohnern besticht durch seinen gewachsenen Ortskern mit historischen Fachwerkhäusern, alten Hofgütern und einer typisch badischen Bauweise, die von Generationen gepflegt wurde.\n\nDie Besonderheit von Binzen liegt in seiner Bausubstanz: Fachwerkhäuser erfordern spezifisches Handwerkswissen — den richtigen Umgang mit Holzkonstruktionen, traditionellen Putztechniken und historischen Materialien. Aiman Renovation verfügt genau über dieses Wissen. Wir sanieren Fachwerk behutsam und fachgerecht, renovieren Küchen und Bäder in bestehenden Gebäuden und streichen Innen- sowie Außenflächen mit langlebigen Produkten.\n\nDank unserer Lage in Saint-Louis, nur 8 Kilometer entfernt, sind wir schnell in Binzen — und das zu Preisen, die deutlich unter dem lokalen Handwerkertarif liegen. Wir erstellen Ihnen einen kostenlosen Kostenvoranschlag in Euro direkt vor Ort.",
+      "intro_de_short": "Binzen, village viticole du Markgräflerland à 8 km de Saint-Louis. Maisons à colombages, fermes, habitat pavillonnaire — Aiman Renovation maîtrise tous les types de bâti. Rénovation intérieure et extérieure, devis gratuit en euros."
+    },
+    {
+      "slug": "eimeldingen",
+      "name": "Eimeldingen",
+      "hero": {
+        "h1": "Renovierung in Eimeldingen — Handwerker aus Saint-Louis",
+        "subtitle": "Ihr Renovierungspartner im ländlichen Landkreis Lörrach — nah, zuverlässig, fair"
+      },
+      "warumAiman": "Kleine Dörfer wie Eimeldingen werden von vielen Handwerkern nicht angefahren — wir schon. Aiman Renovation kommt zu Ihnen nach Eimeldingen, erstellt einen kostenlosen Kostenvoranschlag und führt alle Renovierungsarbeiten zuverlässig aus. Faire Preise in Euro, kurze Wartezeiten.",
+      "cta": "Kostenvoranschlag für Eimeldingen anfragen",
+      "intro": "Eimeldingen ist ein ruhiges ländliches Dorf im Landkreis Lörrach, geprägt von Weinbau, Obstgärten und einer dichten Bebauung mit Einfamilienhäusern. Mit rund 2.000 Einwohnern genießt Eimeldingen eine geschützte, grüne Lage zwischen Weil am Rhein und Grenzach — ideal für Familien, die das Landleben schätzen, aber die städtische Infrastruktur von Basel und Lörrach trotzdem schnell erreichen möchten.\n\nDie meisten Gebäude in Eimeldingen stammen aus den 1960er bis 1990er Jahren und stehen heute vor typischen Renovierungsherausforderungen: veraltete Bäder, funktionsuntaugliche Küchen, abgenutzte Böden und Fassaden, die dringend eine Auffrischung benötigen. Aiman Renovation ist in genau dieser Nische tätig: Vollständige Renovierungen für Bestandsimmobilien, die energetisch und ästhetisch auf den neuesten Stand gebracht werden sollen.\n\nVon Saint-Louis sind es nur 7 Kilometer nach Eimeldingen — wir sind schnell vor Ort, arbeiten ordentlich und sauber und hinterlassen eine fertige Baustelle, nicht das Chaos. Alle Leistungen sind kostenlos und in Euro kalkulierbar.",
+      "intro_de_short": "Eimeldingen, village paisible à 7 km de Saint-Louis. Maisons individuelles des années 60-90, salles de bain vieillissantes, cuisines démodées, façades à rénover — Aiman Renovation intervient pour tout. Devis gratuit, prix en euros."
+    },
+    {
+      "slug": "kandern",
+      "name": "Kandern",
+      "hero": {
+        "h1": "Renovierung in Kandern — Handwerker aus Frankreich",
+        "subtitle": "Historische Altstadt, Rosenfels-Park und erstklassige Renovierung — Ihr Partner im Markgräflerland"
+      },
+      "warumAiman": "Historische Gebäude in Kandern erfordern Präzision und Erfahrung. Aiman Renovation bringt beides mit: Wir renovieren sowohl historische Altbauten als auch moderne Häuser mit dem gleichen Anspruch an Qualität. Kostenloser Kostenvoranschlag, faire Preise, kurze Anfahrt aus dem Elsass.",
+      "cta": "Kostenvoranschlag für Kandern anfragen",
+      "intro": "Kandern ist eine der charmantesten Kleinstädte des Markgräflerlandes — bekannt für ihre historische Altstadt mit Steingebäuden aus mehreren Jahrhunderten, den weitläufigen Rosenfels-Park mit seiner romantischen Burgruine und eine lebendige Weinbau- und Töpfereikultur. Mit rund 8.000 Einwohnern hat Kandern einen ausgeprägten touristischen Charakter, zieht aber auch viele Familien an, die das ruhige Leben am Rande des Schwarzwaldes schätzen.\n\nDie Gebäude in Kandern sind vielfältig: Historische Altstadthäuser aus Naturstein und Fachwerk, Herrenhäuser aus dem 18. und 19. Jahrhundert sowie moderne Einfamilienhäuser in den Ortsrandlagen. Für jeden Gebäudetyp hat Aiman Renovation die passende Lösung — von der behutsamen Sanierung historischer Bausubstanz bis zur zeitgemäßen Modernisierung von Küche und Bad.\n\nKandern liegt 18 Kilometer von Saint-Louis entfernt — eine Fahrzeit von etwa 20 Minuten. Wir bieten Ihnen unsere Fachkompetenz, faire Preise und einen kostenlosen Kostenvoranschlag direkt vor Ort. Die Qualität unserer Arbeit ist durch unsere Erfahrung im elsässischen Grenzgebiet bewährt.",
+      "intro_de_short": "Kandern, petite ville historique à 18 km de Saint-Louis. Maisons en pierre, colombages, vieille ville charmante — Aiman Renovation y intervient pour rénovations intérieures et extérieures. Devis gratuit, prix compétitifs en euros."
+    }
+  ],
+  "ville_fr_items": [
+    {
+      "slug": "saint-louis",
+      "seoTitle": "Renovierung Saint-Louis (68300) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Saint-Louis 68300, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Saint-Louis (68300) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Saint-Louis — 0 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Saint-Louis (68300) ist base town, 2 min from Basel, EuroAirport, Rhine port, République district. Aiman Renovation ist in Saint-Louis und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Saint-Louis zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 0 km entfernt — wir arbeiten regelmäßig in Saint-Louis.",
+      "projectsSection": "In Saint-Louis führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Huningue",
+        "Hégenheim",
+        "Village-Neuf",
+        "Hésingue",
+        "Blotzheim"
+      ]
+    },
+    {
+      "slug": "huningue",
+      "seoTitle": "Renovierung Huningue (68330) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Huningue 68330, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Huningue (68330) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Huningue — 2 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Huningue (68330) ist Swiss border, Parc des Eaux Vives, 19th-century Vauban citadel architecture, train station district. Aiman Renovation ist in Huningue und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Huningue zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 2 km entfernt — wir arbeiten regelmäßig in Huningue.",
+      "projectsSection": "In Huningue führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Saint-Louis",
+        "Village-Neuf",
+        "Rosenau",
+        "Kembs",
+        "Hégenheim"
+      ]
+    },
+    {
+      "slug": "village-neuf",
+      "seoTitle": "Renovierung Village-Neuf (68128) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Village-Neuf 68128, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Village-Neuf (68128) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Village-Neuf — 3 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Village-Neuf (68128) ist Rhine riverside, Grand Canal d'Alsace, recent residential estates. Aiman Renovation ist in Village-Neuf und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Village-Neuf zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 3 km entfernt — wir arbeiten regelmäßig in Village-Neuf.",
+      "projectsSection": "In Village-Neuf führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Huningue",
+        "Saint-Louis",
+        "Rosenau",
+        "Ottmarsheim",
+        "Kembs"
+      ]
+    },
+    {
+      "slug": "hesingue",
+      "seoTitle": "Renovierung Hésingue (68220) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Hésingue 68220, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Hésingue (68220) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Hésingue — 4 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Hésingue (68220) ist affluent residential, EuroAirport proximity, upscale housing estates. Aiman Renovation ist in Hésingue und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Hésingue zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 4 km entfernt — wir arbeiten regelmäßig in Hésingue.",
+      "projectsSection": "In Hésingue führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Saint-Louis",
+        "Blotzheim",
+        "Hégenheim",
+        "Bartenheim",
+        "Buschwiller"
+      ]
+    },
+    {
+      "slug": "hegenheim",
+      "seoTitle": "Renovierung Hégenheim (68220) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Hégenheim 68220, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Hégenheim (68220) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Hégenheim — 4 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Hégenheim (68220) ist direct Swiss border, half-timbered Alsatian houses, mixed residential. Aiman Renovation ist in Hégenheim und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Hégenheim zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 4 km entfernt — wir arbeiten regelmäßig in Hégenheim.",
+      "projectsSection": "In Hégenheim führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Saint-Louis",
+        "Hésingue",
+        "Buschwiller",
+        "Blotzheim",
+        "Folgensbourg"
+      ]
+    },
+    {
+      "slug": "bartenheim",
+      "seoTitle": "Renovierung Bartenheim (68870) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Bartenheim 68870, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Bartenheim (68870) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Bartenheim — 6 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Bartenheim (68870) ist Sundgau commune, TER train station Mulhouse-Basel line, expanding housing estates. Aiman Renovation ist in Bartenheim und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Bartenheim zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 6 km entfernt — wir arbeiten regelmäßig in Bartenheim.",
+      "projectsSection": "In Bartenheim führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Sierentz",
+        "Hésingue",
+        "Blotzheim",
+        "Saint-Louis",
+        "Michelbach-le-Bas"
+      ]
+    },
+    {
+      "slug": "blotzheim",
+      "seoTitle": "Renovierung Blotzheim (68730) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Blotzheim 68730, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Blotzheim (68730) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Blotzheim — 5 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Blotzheim (68730) ist adjacent to EuroAirport Bâle-Mulhouse, dense rental market, airport economy. Aiman Renovation ist in Blotzheim und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Blotzheim zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 5 km entfernt — wir arbeiten regelmäßig in Blotzheim.",
+      "projectsSection": "In Blotzheim führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Saint-Louis",
+        "Hésingue",
+        "Bartenheim",
+        "Michelbach-le-Bas",
+        "Hégenheim"
+      ]
+    },
+    {
+      "slug": "kembs",
+      "seoTitle": "Renovierung Kembs (68680) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Kembs 68680, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Kembs (68680) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Kembs — 8 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Kembs (68680) ist historic Rhine lock heritage, Grand Canal d'Alsace, traditional fishermen's houses. Aiman Renovation ist in Kembs und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Kembs zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 8 km entfernt — wir arbeiten regelmäßig in Kembs.",
+      "projectsSection": "In Kembs führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Sierentz",
+        "Village-Neuf",
+        "Huningue",
+        "Ottmarsheim",
+        "Bartenheim"
+      ]
+    },
+    {
+      "slug": "sierentz",
+      "seoTitle": "Renovierung Sierentz (68510) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Sierentz 68510, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Sierentz (68510) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Sierentz — 10 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Sierentz (68510) ist canton chief town, 19th-century church, growing rural residential area. Aiman Renovation ist in Sierentz und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Sierentz zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 10 km entfernt — wir arbeiten regelmäßig in Sierentz.",
+      "projectsSection": "In Sierentz führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Bartenheim",
+        "Kembs",
+        "Habsheim",
+        "Blotzheim",
+        "Ottmarsheim"
+      ]
+    },
+    {
+      "slug": "rixheim",
+      "seoTitle": "Renovierung Rixheim (68170) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Rixheim 68170, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Rixheim (68170) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Rixheim — 18 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Rixheim (68170) ist Wallpaper Museum (unique in Europe), Teutonic Commandery 13th century, Mulhouse suburb. Aiman Renovation ist in Rixheim und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Rixheim zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 18 km entfernt — wir arbeiten regelmäßig in Rixheim.",
+      "projectsSection": "In Rixheim führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Mulhouse",
+        "Habsheim",
+        "Riedisheim",
+        "Sierentz",
+        "Ottmarsheim"
+      ]
+    },
+    {
+      "slug": "habsheim",
+      "seoTitle": "Renovierung Habsheim (68440) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Habsheim 68440, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Habsheim (68440) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Habsheim — 15 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Habsheim (68440) ist residential south of Mulhouse, ULM airfield, 1970-1990 housing stock. Aiman Renovation ist in Habsheim und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Habsheim zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 15 km entfernt — wir arbeiten regelmäßig in Habsheim.",
+      "projectsSection": "In Habsheim führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Sierentz",
+        "Rixheim",
+        "Mulhouse",
+        "Riedisheim",
+        "Kembs"
+      ]
+    },
+    {
+      "slug": "riedisheim",
+      "seoTitle": "Renovierung Riedisheim (68400) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Riedisheim 68400, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Riedisheim (68400) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Riedisheim — 18 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Riedisheim (68400) ist direct Mulhouse suburb, Alfred Wallach Park, dense urban residential. Aiman Renovation ist in Riedisheim und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Riedisheim zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 18 km entfernt — wir arbeiten regelmäßig in Riedisheim.",
+      "projectsSection": "In Riedisheim führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Mulhouse",
+        "Rixheim",
+        "Habsheim",
+        "Ottmarsheim",
+        "Sierentz"
+      ]
+    },
+    {
+      "slug": "mulhouse",
+      "seoTitle": "Renovierung Mulhouse (68100) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Mulhouse 68100, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Mulhouse (68100) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Mulhouse — 20 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Mulhouse (68100) ist 2nd city of Alsace, Cité de l'Automobile, Art Nouveau Drouot district, Nouveau Bassin urban renewal. Aiman Renovation ist in Mulhouse und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Mulhouse zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 20 km entfernt — wir arbeiten regelmäßig in Mulhouse.",
+      "projectsSection": "In Mulhouse führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Riedisheim",
+        "Rixheim",
+        "Habsheim",
+        "Illzach",
+        "Wittenheim"
+      ]
+    },
+    {
+      "slug": "ottmarsheim",
+      "seoTitle": "Renovierung Ottmarsheim (68490) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Ottmarsheim 68490, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Ottmarsheim (68490) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Ottmarsheim — 12 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Ottmarsheim (68490) ist 11th-century octagonal abbey (listed monument), Rhine hydroelectric plant, Rhine village heritage. Aiman Renovation ist in Ottmarsheim und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Ottmarsheim zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 12 km entfernt — wir arbeiten regelmäßig in Ottmarsheim.",
+      "projectsSection": "In Ottmarsheim führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Kembs",
+        "Village-Neuf",
+        "Rixheim",
+        "Sierentz",
+        "Habsheim"
+      ]
+    },
+    {
+      "slug": "rosenau",
+      "seoTitle": "Renovierung Rosenau (68128) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Rosenau 68128, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Rosenau (68128) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Rosenau — 5 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Rosenau (68128) ist rural Rhine riverside, protected natural zones, traditional Alsatian country houses. Aiman Renovation ist in Rosenau und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Rosenau zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 5 km entfernt — wir arbeiten regelmäßig in Rosenau.",
+      "projectsSection": "In Rosenau führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Village-Neuf",
+        "Huningue",
+        "Saint-Louis",
+        "Kembs",
+        "Ottmarsheim"
+      ]
+    },
+    {
+      "slug": "buschwiller",
+      "seoTitle": "Renovierung Buschwiller (68220) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Buschwiller 68220, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Buschwiller (68220) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Buschwiller — 4 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Buschwiller (68220) ist hilltop village with panoramic view of Basel and the Rhine. Aiman Renovation ist in Buschwiller und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Buschwiller zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 4 km entfernt — wir arbeiten regelmäßig in Buschwiller.",
+      "projectsSection": "In Buschwiller führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Saint-Louis",
+        "Hégenheim",
+        "Hésingue",
+        "Folgensbourg",
+        "Hagenthal-le-Bas"
+      ]
+    },
+    {
+      "slug": "folgensbourg",
+      "seoTitle": "Renovierung Folgensbourg (68220) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Folgensbourg 68220, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Folgensbourg (68220) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Folgensbourg — 7 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Folgensbourg (68220) ist Sundgau winemaking village, rural character, Alsatian farmhouses. Aiman Renovation ist in Folgensbourg und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Folgensbourg zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 7 km entfernt — wir arbeiten regelmäßig in Folgensbourg.",
+      "projectsSection": "In Folgensbourg führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Hégenheim",
+        "Buschwiller",
+        "Hagenthal-le-Bas",
+        "Wentzwiller",
+        "Saint-Louis"
+      ]
+    },
+    {
+      "slug": "hagenthal-le-bas",
+      "seoTitle": "Renovierung Hagenthal-le-Bas (68220) | Handwerker AIMAN Elsa",
+      "seoDescription": "Renovierungsarbeiten in Hagenthal-le-Bas 68220, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Hagenthal-le-Bas (68220) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Hagenthal-le-Bas — 6 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Hagenthal-le-Bas (68220) ist Birsig valley, Swiss border, typical Sundgau bocage landscape. Aiman Renovation ist in Hagenthal-le-Bas und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Hagenthal-le-Bas zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 6 km entfernt — wir arbeiten regelmäßig in Hagenthal-le-Bas.",
+      "projectsSection": "In Hagenthal-le-Bas führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Buschwiller",
+        "Folgensbourg",
+        "Hégenheim",
+        "Leymen",
+        "Wentzwiller"
+      ]
+    },
+    {
+      "slug": "leymen",
+      "seoTitle": "Renovierung Leymen (68220) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Leymen 68220, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Leymen (68220) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Leymen — 10 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Leymen (68220) ist Landskron medieval castle 12th century, wooded Swiss border village. Aiman Renovation ist in Leymen und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Leymen zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 10 km entfernt — wir arbeiten regelmäßig in Leymen.",
+      "projectsSection": "In Leymen führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Hagenthal-le-Bas",
+        "Wentzwiller",
+        "Folgensbourg",
+        "Hégenheim",
+        "Buschwiller"
+      ]
+    },
+    {
+      "slug": "wentzwiller",
+      "seoTitle": "Renovierung Wentzwiller (68220) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Wentzwiller 68220, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Wentzwiller (68220) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Wentzwiller — 9 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Wentzwiller (68220) ist rural Sundgau, preserved half-timbered houses, Alsatian village character. Aiman Renovation ist in Wentzwiller und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Wentzwiller zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 9 km entfernt — wir arbeiten regelmäßig in Wentzwiller.",
+      "projectsSection": "In Wentzwiller führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Leymen",
+        "Hagenthal-le-Bas",
+        "Folgensbourg",
+        "Michelbach-le-Bas",
+        "Bartenheim"
+      ]
+    },
+    {
+      "slug": "michelbach-le-bas",
+      "seoTitle": "Renovierung Michelbach-le-Bas (68730) | Handwerker AIMAN Els",
+      "seoDescription": "Renovierungsarbeiten in Michelbach-le-Bas 68730, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Michelbach-le-Bas (68730) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Michelbach-le-Bas — 8 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Michelbach-le-Bas (68730) ist residential village between Saint-Louis and Bartenheim, 1990s-2000s housing estates. Aiman Renovation ist in Michelbach-le-Bas und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Michelbach-le-Bas zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 8 km entfernt — wir arbeiten regelmäßig in Michelbach-le-Bas.",
+      "projectsSection": "In Michelbach-le-Bas führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Bartenheim",
+        "Blotzheim",
+        "Hésingue",
+        "Wentzwiller",
+        "Sierentz"
+      ]
+    },
+    {
+      "slug": "ferrette",
+      "seoTitle": "Renovierung Ferrette (68480) | Handwerker AIMAN Elsass",
+      "seoDescription": "Renovierungsarbeiten in Ferrette 68480, Oberrhein. Küche, Bad, Fliesen, Malerarbeiten. Kostenloser Kostenvoranschlag. Qualifizierter Handwerker.",
+      "hero": {
+        "h1": "Renovierung in Ferrette (68480) | AIMAN RENOVATION",
+        "subtitle": "Ihr Handwerksbetrieb für Renovierungen in Ferrette — 20 km von Saint-Louis, Oberrhein"
+      },
+      "intro": "Ferrette (68480) ist historic capital of Sundgau, 12th-century castle ruins, medieval old town, half-timbered houses. Aiman Renovation ist in Ferrette und den umliegenden Gemeinden tätig — mit qualifizierten Handwerkern und 19 Jahren Erfahrung. Wir übernehmen alle Arten von Renovierungsarbeiten: Küche, Bad, Fliesen, Malerarbeiten, Dämmung, Elektro und Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden, alle Arbeiten mit zehnjähriger Garantie.",
+      "whyLocal": "Einen lokalen Handwerker für Ihre Renovierung in Ferrette zu wählen bedeutet kürzere Reaktionszeiten, geringere Fahrtkosten und einen Fachmann, der den lokalen Gebäudebestand kennt. Unser Standort in Saint-Louis ist 20 km entfernt — wir arbeiten regelmäßig in Ferrette.",
+      "projectsSection": "In Ferrette führen wir komplette Innenrenovierungen, Badrenovierungen, Kücheninstallationen und Außenarbeiten durch. Unsere Teams arbeiten sauber und halten die vereinbarten Termine ein. Kontaktieren Sie uns für einen unverbindlichen Kostenvoranschlag.",
+      "communesAlentours": [
+        "Leymen",
+        "Folgensbourg",
+        "Wentzwiller",
+        "Hagenthal-le-Bas",
+        "Rosenau"
+      ]
+    }
+  ],
+  "article_items": [
+    {
+      "slug": "prix-renovation-salle-de-bain-saint-louis",
+      "title": "Kosten Badsanierung Saint-Louis: vollständiger Leitfaden 2026",
+      "seoTitle": "Badsanierung Kosten Saint-Louis 68300 | Leitfaden 2026",
+      "seoDescription": "Preise für eine Badsanierung in Saint-Louis 68300. Kostenrahmen 2026, verfügbare Förderungen, Handwerkerberatung. Kostenloses Angebot.",
+      "excerpt": "Was kostet eine Badsanierung 2026 in Saint-Louis? Detaillierte Preise nach Gewerk, Materialien und Tipps zur Budgetplanung.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Kosten einer Badsanierung in Saint-Louis 2026\n\nDie Badsanierung gehört zu den gefragtesten Projekten im Haut-Rhin. Die Kosten variieren stark je nach Ausgangszustand und gewählten Materialien.\n\n## Gesamtkosten einer vollständigen Sanierung\n\nEine vollständige Badsanierung in Saint-Louis 68300 kostet in der Regel zwischen **5.000 € und 15.000 €** für 4 bis 8 m². Darin enthalten:\n\n- Rückbau und Entsorgung\n- Sanitärinstallation (Wasser- und Abwasserleitungen)\n- Elektroinstallation nach NF C 15-100\n- Boden- und Wandfliesen (Verlegung nach DTU 52.1)\n- Bodengleiche Dusche oder Badewanne\n- Armaturen (Grohe, Hansgrohe)\n- Waschtischmöbel, Spiegel, Zubehör\n- Feuchtraumfarbe\n\n## Einzelne Kostenposten\n\n### Sanitär: 800 € bis 2.500 €\nViele Häuser aus den 1960er–1980er Jahren haben noch Blei- oder Gusseisenrohre. Kosten für vollständige Neuinstallation: **1.200 bis 1.800 €**, Materialien von Cedeo oder Point P inklusive.\n\n### Fliesen: 40 bis 90 €/m² verlegt\n60x60-Fliesen nach DTU 52.1: **50 bis 70 €/m²**. Großformate (80x80 oder 120x60): 70–90 €/m².\n\n### Bodengleiche Dusche: 1.500 bis 3.500 €\nSehr gefragt in Mulhouse, Bartenheim und der gesamten Agglomeration Saint-Louis.\n\n### Elektroinstallation NF C 15-100: 500 bis 1.200 €\nEigener 30-mA-FI-Schutzschalter im Bad ist Pflicht.\n\n## Verfügbare Förderungen 2026\n\n- **MaPrimeAdapt'**: bis zu 70 % der Kosten (max. 22.000 €) für barrierefreie Sanierungen\n- **Steuerliche Förderung** für Wohnanpassung (Senioren/Behinderung)\n- **Anah-Zuschuss** nach Einkommensgrenze\n\nBenötigen Sie ein Angebot für Ihr Bad in Saint-Louis oder im Haut-Rhin? Kontaktieren Sie AIMAN RENOVATION — Antwort innerhalb von 48h, kostenloses Angebot."
+    },
+    {
+      "slug": "cout-cuisine-equipee-alsace",
+      "title": "Kosten einer Einbauküche im Elsass: detaillierte Preise 2026",
+      "seoTitle": "Einbauküche Kosten Elsass Haut-Rhin 2026 | AIMAN RENOVATION",
+      "seoDescription": "Küchenrenovierungspreise im Elsass 2026. Von 8.000 bis 25.000 € je nach Material. Kostenaufstellung, Handwerkerberatung, kostenloses Angebot Saint-Louis 68.",
+      "excerpt": "Welches Budget braucht man für eine Einbauküche im Elsass? AIMAN RENOVATION schlüsselt alle Kosten auf: Möbel, Arbeitsplatte, Sanitär und Elektro.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Kosten einer Einbauküche im Elsass 2026\n\nEine Küchenrenovierung gehört zu den rentabelsten Investitionen. Im Haut-Rhin variieren die Preise je nach Größe, Materialien und Komplexität.\n\n## Gesamtkostenrahmen\n\n- **Einsteiger**: 8.000–12.000 € (Standardmöbel, Laminat-Arbeitsplatte, Standardfliesen)\n- **Mittleres Segment**: 12.000–18.000 € (Halbmaß-Möbel, Quarz- oder Granitarbeitsplatte)\n- **Hochwertig**: 18.000–25.000 € und mehr (Maßmöbel, Natursteinarbeitsplatte)\n\n## Kostenaufstellung\n\n### Küchenmöbel: 3.000–12.000 €\nQualität der Scharniere und Schubladensysteme (Blum, Hettich) entscheidend für Langlebigkeit.\n\n### Arbeitsplatte: 400–2.500 €\n- HPL-Laminat: 80–150 €/ml\n- Quarz-Komposit (Silestone, Dekton): 200–450 €/ml\n- Naturstein (Granit): 250–500 €/ml\n- Massivholz (Eiche, Buche): 180–350 €/ml\n\n### Küchenrückwand: 60–200 €/m²\nKeramikfliesen: 60–80 €/m². Lackiertes Sicherheitsglas: 120–180 €/m².\n\n### Sanitär: 600–1.800 €\nGrohe oder Hansgrohe Armaturen. Material von Cedeo oder Point P.\n\n### Elektroinstallation NF C 15-100: 800–2.000 €\nJedes Gerät über 2 kW braucht einen eigenen Sicherungskreis. Material: Schneider Electric, Legrand oder Hager (Rexel).\n\n### Bodenfliesen: 45–90 €/m² verlegt\nR11 rutschhemmende Fliesen oder Feinsteinzeug.\n\nBenötigen Sie ein Angebot für Ihre Küche im Elsass? AIMAN RENOVATION — Saint-Louis, Mulhouse, Huningue und der gesamte Haut-Rhin. Kostenloses Angebot innerhalb von 48h."
+    },
+    {
+      "slug": "renovation-appartement-bale-demarches",
+      "title": "Wohnungsrenovierung in Basel: Leitfaden für französische Grenzgänger",
+      "seoTitle": "Wohnungsrenovierung Basel | Französischer Handwerker Saint-Louis 68",
+      "seoDescription": "Leben in Basel und suchen Sie einen französischen Handwerker für Ihre Renovierung? AIMAN RENOVATION erklärt Vorgehensweise, Vorteile und Preise. Kostenloses Angebot.",
+      "excerpt": "Sie wohnen in Basel und möchten Ihre Wohnung mit einem französischen Handwerker renovieren? Vollständiger Leitfaden zu Verfahren, Vorschriften und Vorteilen.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Einen französischen Handwerker für Renovierungen in Basel nutzen\n\nViele Grenzgänger und Franzosen in Basel bevorzugen für Renovierungsarbeiten einen französischen Handwerker. Gemeinsame Sprache, Euro-Rechnungen, französische Zehn-Jahres-Garantien — die Vorteile sind vielfältig.\n\n## Rechtliche Voraussetzungen\n\n- **Voranmeldung** beim SECO für Leistungen über 8 Tage pro Jahr\n- Einhaltung der **Schweizer Mindestlöhne** (GAV Kanton Basel-Stadt)\n- Gültige Haftpflicht- und Zehn-Jahres-Garantie-Versicherung\n- Rechnungsstellung in Euro oder CHF nach Vereinbarung\n\n## Beliebteste Arbeiten in Basel\n\nBasler Altbauwohnungen (Gundeldingen, Bachletten, St. Alban) haben spezifische Merkmale:\n\n- **Badsanierung**: bodengleiche Dusche, Fliesen, Grohe-Armaturen\n- **Offene Küche**: Wanddurchbruch, moderne Einbauküche\n- **Parkett**: Schleifen, Versiegeln oder Ersetzen durch geölte Eiche\n- **Malerarbeiten**: Tollens, Sikkens oder Mineralfarben\n- **Elektrik**: Modernisierung veralteter Installationen\n\n## Vorteile eines Handwerkers aus Saint-Louis\n\n### Nähe\nSaint-Louis ist 5 Minuten von Basel entfernt (Brücke Huningue).\n\n### Französische Garantien\n**Zehn-Jahres-Garantie** (10 Jahre) auf Bauarbeiten. Haftpflicht für Schäden während des Baus.\n\n### Wettbewerbsfähige Preise\nBadsanierung: 5.000–12.000 € bei AIMAN RENOVATION vs. 8.000–18.000 CHF bei einem lokalen Unternehmen.\n\n## Praktische Tipps\n\n- **Genehmigung Ihrer Verwaltung** vor Beginn einholen (Mieterpflicht)\n- **Schriftliches Protokoll** vor und nach den Arbeiten\n- **Detaillierte Rechnung** in Euro mit französischer MwSt.\n- **Aktive Zehn-Jahres-Versicherung** des Handwerkers prüfen\n\nSie wohnen in Basel, Allschwil oder Riehen? Kontaktieren Sie AIMAN RENOVATION in Saint-Louis. Kostenloses Angebot, Antwort in 48h."
+    },
+    {
+      "slug": "artisan-frontalier-france-suisse-avantages",
+      "title": "Französischer Handwerker im Dreiländereck: Vorteile für Schweizer und Deutsche",
+      "seoTitle": "Grenzhandwerker Frankreich Schweiz Deutschland | Saint-Louis 68",
+      "seoDescription": "Warum einen französischen Handwerker für Arbeiten in Basel, Lörrach oder Huningue wählen? AIMAN RENOVATION erklärt alle Vorteile. Kostenloses Angebot.",
+      "excerpt": "AIMAN RENOVATION ist im Dreiländereck Frankreich/Schweiz/Deutschland tätig. Konkrete Vorteile für Kunden aus Basel, Lörrach und Umgebung.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Warum ein französischer Handwerker im Dreiländereck ein Vorteil ist\n\nDas Dreiländereck Saint-Louis–Basel–Lörrach ist eines der wirtschaftlich aktivsten Europas. Ein in Saint-Louis ansässiger französischer Handwerker bietet konkrete Vorteile.\n\n## Vorteil 1: Geografische Nähe\n\n- **5 Minuten von Basel** (Brücke Huningue)\n- **15 Minuten von Lörrach** (Autobahn A35)\n- **10 Minuten von Weil am Rhein**\n\nBei Notfällen können unsere Teams in unter 20 Minuten vor Ort sein.\n\n## Vorteil 2: Französische Garantien\n\n- **Zehn-Jahres-Garantie** auf Rohbauarbeiten\n- **Abnahmegarantie** (1 Jahr) auf alle gemeldeten Mängel\n- **Zweijährige Garantie** auf abnehmbare Ausstattung\n- **Berufshaftpflicht** für Sachschäden\n\n## Vorteil 3: Transparente und wettbewerbsfähige Preise\n\nUnsere Preise sind **20–35 % günstiger** als Basler oder Löracher Baufirmen. Detaillierte Kostenvoranschläge mit 10 % MwSt.\n\n## Vorteil 4: Sprache und Kultur\n\nUnsere Teams sprechen Französisch, Arabisch und Englisch. Wir kennen die Besonderheiten von Schweizer und deutschen Wohngebäuden.\n\n## Unsere Leistungen im Dreiländereck\n\n- Vollständige Wohnungsrenovierungen in Basel, Allschwil, Binningen\n- Bad und Küche in Lörrach, Weil am Rhein\n- Malerei und Bodenbeläge in Huningue, Village-Neuf, Hégenheim\n- Elektrik und Sanitär im Haut-Rhin\n\nKontaktieren Sie AIMAN RENOVATION für ein kostenloses Angebot. Wir arbeiten im gesamten Dreiländereck Frankreich / Schweiz / Deutschland."
+    },
+    {
+      "slug": "isolation-thermique-haut-rhin-primes-2026",
+      "title": "Wärmedämmung Haut-Rhin: Prämien und Förderungen 2026",
+      "seoTitle": "Wärmedämmung Haut-Rhin 68 | Förderungen 2026 | AIMAN RENOVATION",
+      "seoDescription": "Alle 2026-Förderungen für die Dämmung Ihres Hauses im Haut-Rhin. MaPrimeRénov', CEE, Öko-PTZ. Preise und Beratung durch RGE-Handwerker. Kostenloses Angebot.",
+      "excerpt": "MaPrimeRénov', CEE, Öko-PTZ: Welche Förderungen gibt es für die Dämmung Ihres Hauses im Haut-Rhin 2026? Vollständiger Leitfaden mit Preisen.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Wärmedämmung im Haut-Rhin: alle Förderungen 2026\n\nDas Haut-Rhin hat ein kontinentales Klima mit strengen Wintern. Förderungen können 2026 bis zu 70 % der Dämmkosten abdecken.\n\n## MaPrimeRénov' 2026\n\n**Einzelmaßnahmen**: Dach-, Wand-, Bodendämmung, Doppelfluss-Lüftungsanlage.\n\n**Umfassende Sanierung**: Mindestgewinn von 2 Energieklassen (DPE), Mon Accompagnateur Rénov' (MAR) erforderlich, Förderdeckel bis 70.000 €.\n\nBeträge nach Einkommen:\n- Sehr bescheidene Haushalte: **75 €/m²** Dach- und Wanddämmung\n- Bescheidene Haushalte: **50 €/m²**\n\n## Energiesparzertifikate (CEE)\n\nKumulierbar mit MaPrimeRénov':\n- Dachbodendämmung: 250–600 €/Wohneinheit\n- Wanddämmung: 1.500–4.000 €\n- Luft-Wasser-Wärmepumpe: 500–2.000 €\n\n## Öko-Nullzinskredit (Éco-PTZ)\n\n50.000 € max., zinsfrei, bis 20 Jahre, keine Einkommensbedingung, kumulierbar.\n\n## Preise für Dämmarbeiten im Haut-Rhin\n\n### Dachbodendämmung\n- Einblasverfahren (Mineralwolle oder Zellulose): 25–40 €/m²\n- Rollenware: 20–35 €/m²\n- Ziel-Wärmedurchgangswiderstand: R ≥ 7 m².K/W\n\n### Außenwanddämmung (WDVS)\n- ETICS-System: 80–160 €/m²\n- Verkleidung: 100–200 €/m²\n\n### Innenwanddämmung\n- Gipskarton + Mineralwolle: 45–80 €/m²\n- Hartschaum-Doppelverkleidung: 60–100 €/m²\n\n## RGE-zertifizierter Handwerker erforderlich\n\nFür MaPrimeRénov' und CEE müssen Arbeiten von einem **RGE-zertifizierten Handwerker** ausgeführt werden. AIMAN RENOVATION arbeitet mit qualifizierten RGE-Partnern im Haut-Rhin zusammen und übernimmt den Förderantrag.\n\nKontaktieren Sie AIMAN RENOVATION für Ihr Dämmungsprojekt in Saint-Louis, Mulhouse oder Bartenheim. Kostenloses Angebot inklusive Förderantrag."
+    },
+    {
+      "slug": "renover-maison-ancienne-saint-louis",
+      "title": "Altbausanierung in Saint-Louis 68: Schritt-für-Schritt-Leitfaden",
+      "seoTitle": "Altbausanierung Saint-Louis 68300 | Vollständiger Leitfaden",
+      "seoDescription": "Wie renoviert man ein altes Haus in Saint-Louis 68? Diagnose, Arbeitsreihenfolge, Budget und Fallstricke. Leitfaden von AIMAN RENOVATION.",
+      "excerpt": "Die Sanierung eines Altbaus im Haut-Rhin erfordert Methode und Erfahrung. AIMAN RENOVATION führt Sie durch: Diagnose, Arbeitsreihenfolge und Budget.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Altbausanierung in Saint-Louis: Wo beginnen?\n\nHäuser in Saint-Louis, Huningue, Hégenheim oder Bartenheim, die vor 1975 gebaut wurden, haben gemeinsame Merkmale: dicke Bruchsteinwände, Holzdachstühle, veraltete Elektrik und Sanitär.\n\n## Schritt 1: Voruntersuchungen\n\n- **Energieausweis (DPE)**: empfohlen, um Prioritäten festzulegen\n- **Asbestgutachten**: Pflicht für Häuser vor Juli 1997\n- **Bleiprüfung (CREP)**: Pflicht bei Baujahr vor 1949 mit Kindern\n- **Elektroinspektion**: empfohlen bei Installation über 15 Jahren\n- **Dachstuhlinspektion**: Holzschädlinge und Feuchtigkeit\n\n## Schritt 2: Richtige Arbeitsreihenfolge\n\n- **Rohbau**: Fundamente, feuchte Wände behandeln\n- **Dach**: Sanierung vor allen Innenarbeiten\n- **Dämmung und Fenster**: Doppelverglasung, Wanddämmung\n- **Elektrik und Sanitär**: NF C 15-100-Konformität\n- **Trennwände**: Anlegen oder Entfernen\n- **Bodenbeläge**: Fliesen, Parkett, Anstrich zuletzt\n\n## Elsässische Besonderheiten\n\n### Feuchtigkeit\nInjektionsbehandlung: 200–400 €/ml Wand. Sanierputze: 10–25 €/m².\n\n### Steinmauern\nInnendämmung mit Steinwolle: 60–100 €/m².\n\n### Dachstuhl und Dachdeckung\nKurative Behandlung gegen Holzschädlinge: 30–60 €/m². Neueindeckung (Elsässer Flachziegel): 60–120 €/m².\n\n## Gesamtbudget für 100 m² in Saint-Louis\n\n- Leichte Sanierung (Oberflächen, Farbe, Parkett, Sanitär): 40.000–70.000 €\n- Mittlere Sanierung (+ Elektrik, Sanitär, Teildämmung): 70.000–120.000 €\n- Vollsanierung (Struktur, Dämmung, Dach): 120.000–200.000 €\n\nAIMAN RENOVATION bietet einen kostenlosen technischen Besuch und ein detailliertes Angebot innerhalb von 48h."
+    },
+    {
+      "slug": "carrelage-ou-parquet-guide-alsace",
+      "title": "Fliesen oder Parkett: Entscheidungshilfe für das Elsass",
+      "seoTitle": "Fliesen oder Parkett Elsass Haut-Rhin | Ratgeber & Preise 2026",
+      "seoDescription": "Fliesen oder Parkett für Ihr Haus im Elsass? Vollständiger Vergleich: Haltbarkeit, Preis, Pflege, DTU-Normen. Handwerkerberatung AIMAN RENOVATION.",
+      "excerpt": "Fliesen oder Parkett: Wie wählen Sie den richtigen Bodenbelag für Ihre Wohnung im Elsass? Vergleich Haltbarkeit, Preis, Pflege und Trends 2026.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Fliesen oder Parkett: die große Bodenbelagsdebatte\n\nDiese Frage stellt sich bei jedem Sanierungsprojekt im Haut-Rhin. AIMAN RENOVATION hilft Ihnen, je nach Nutzung und Budget die richtige Wahl zu treffen.\n\n## Fliesen\n\n### Vorteile\n- **Langlebigkeit**: 30–50 Jahre bei korrekter Verlegung nach DTU 52.1\n- **Hygiene**: wasserdicht und leicht zu reinigen\n- **Wasserfestigkeit**: unverzichtbar in Bad und Küche\n- **Große Auswahl**: Feinsteinzeug, Keramik, Zementfliesen\n\n### Preise im Elsass (2026)\n- Rektifiziertes Feinsteinzeug 60x60: 15–45 €/m² Material\n- Verlegung + Nivellierung + Verfugung: 40–65 €/m²\n- **Gesamt verlegt**: 55–110 €/m²\n\n## Parkett\n\n### Vorteile\n- **Wärme und Behaglichkeit**: überlegener Trittschall\n- **Wertsteigerung**: Massivparkett erhöht den wahrgenommenen Wert\n- **Haltbarkeit**: mehrfach schleifbar und neu zu ölen\n- **Trenddesign**: sehr gefragt in Mulhouse-Lofts\n\n### Preise im Elsass (2026)\n- Massivparkett (Eiche, Nussbaum): 50–150 €/m² Material + 35–60 €/m² Verlegung\n- Mehrschichtparkett: 30–80 €/m² + 30–50 €/m²\n- Hochwertiges Laminat: 20–45 €/m² + 25–40 €/m²\n- Geöltes Eichenparkett (Boen, Kahrs): 60–100 €/m² verlegt\n\n## Raumauswahl\n\n- **Bad**: Fliesen zwingend erforderlich\n- **Küche**: Fliesen empfohlen\n- **Wohnzimmer**: Parkett oder großformatige Fliesen\n- **Schlafzimmer**: Parkett ideal\n- **Eingang**: Fliesen (schmutzunempfindlich)\n- **Treppe**: Massivparkett oder rutschhemmende Fliesen R11\n\nKontaktieren Sie AIMAN RENOVATION für eine persönliche Beratung und ein kostenloses Angebot."
+    },
+    {
+      "slug": "peinture-interieure-mulhouse-tendances",
+      "title": "Innenmalerei in Mulhouse: Trends 2026 und Handwerkerpreise",
+      "seoTitle": "Innenmalerei Mulhouse Haut-Rhin 2026 | Trends & Preise",
+      "seoDescription": "Trends Innenmalerei 2026 in Mulhouse und im Haut-Rhin. Farben, Marken Tollens, Sikkens, Handwerkerpreise. Kostenloses Angebot.",
+      "excerpt": "Welche Farben und Oberflächen für Ihre Innenraummalerei 2026? Trends in Mulhouse und Haut-Rhin, Marken Tollens, Sikkens, Zolpan, Handwerkerpreise.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Innenmalerei 2026: Trends in Mulhouse und im Elsass\n\nMalerarbeiten sind der schnellste und wirtschaftlichste Weg, einen Innenraum zu verwandeln. 2026 setzen sich strukturierte Oberflächen und gedämpfte Töne durch.\n\n## Farbtrends 2026\n\n### Erdige und natürliche Töne\nWeiche Terrakotta, blasses Ocker, warmer Sand, Salbeigrün — sehr beliebt in Mulhouses Gründerzeitwohnungen und zeitgenössischen Häusern in Bartenheim.\n\nEmpfohlene Marken: **Tollens** (\"Collection\"-Reihe), **Sikkens** (\"Alphatex SF\"), **Zolpan** (\"Zoltech\"). Bessere Deckkraft als Baumarktmarken.\n\n### Dunkle Töne\nMatt-Schwarz oder Anthrazit in Bibliotheken und TV-Nischen. In den Lofts des Rebberg-Viertels in Mulhouse sehr präsent.\n\n### Zweifarbig und Lambris\nLambris in Flaschengrün oder Petrolblau, obere Wandhälfte in Eierschalenweiss — zeitlos und elegant.\n\n## Oberflächen\n\n- **Matt**: verbirgt Unebenheiten, ideal für Schlaf- und Wohnzimmer\n- **Seidenglanz**: gutes Kompromiss Ästhetik/Reinigbarkeit\n- **Satin**: leicht abwischbar, für Flure und Küchen\n- **Hochglanz**: für Türen, Fenster und Holzwerk\n\n## Preise Innenmalerei im Haut-Rhin (2026)\n\n- **Standard-Wandanstrich** (zwei Schichten): **20–35 €/m²**\n- **Mit Spachteln**: 30–45 €/m²\n- **Tapezieren**: 25–50 €/m²\n- **Feuchtraumfarbe**: 30–50 €/m²\n- **Tür streichen** (beide Seiten): 80–150 €\n- **Decke**: 15–30 €/m²\n\nBudget für eine 70 m² 3-Zimmer-Wohnung in Mulhouse neu gestrichen: **2.500–4.500 €**.\n\nUnsere Maler verwenden ausschließlich Tollens, Sikkens oder Zolpan für optimale Deckung in zwei Schichten.\n\nKontaktieren Sie AIMAN RENOVATION für ein kostenloses Angebot in Mulhouse, Saint-Louis oder im Haut-Rhin."
+    },
+    {
+      "slug": "electricite-normes-nf-c-15-100",
+      "title": "Elektroinstallation: alles zur Norm NF C 15-100 bei der Renovierung",
+      "seoTitle": "Norm NF C 15-100 Elektrorenovierung | Handwerker Haut-Rhin 68",
+      "seoDescription": "Alles Wichtige zur Norm NF C 15-100 für die Renovierung der Elektroinstallation Ihres Hauses. Qualifizierter Elektriker Haut-Rhin 68300.",
+      "excerpt": "Die Norm NF C 15-100 ist für jede Elektrorenovierung unverzichtbar. Schutzabstände im Bad, Pflichtkreise, Verteilerkasten... Vollständiger Leitfaden.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Die Norm NF C 15-100: das Referenzwerk für Hauselektrik in Frankreich\n\nJede Elektroinstallation in einem neuen oder renovierten Haus muss in Frankreich die Norm NF C 15-100 einhalten. AIMAN RENOVATION erklärt die wichtigsten Punkte für Ihre Renovierung im Haut-Rhin.\n\n## Der Verteilerkasten\n\nDer Hauptverteiler muss enthalten:\n\n- **Hauptschutzschalter** nach abonnierter Leistung (30A, 45A oder 60A)\n- **30-mA-FI-Schutzschalter** (Typ A oder AC)\n- **Leitungsschutzschalter** je Stromkreis\n\nFür eine Wohnung 50–100 m²:\n- 2 Beleuchtungskreise\n- 4 Steckdosenkreise\n- 1 Waschmaschinen-Sonderkreis\n- 1 Herd/Backofen-Sonderkreis\n- 1 Geschirrspüler-Sonderkreis\n- 1–2 Badkreise\n\n## Schutzbereiche im Bad\n\n- **Bereich 0**: Inneres der Badewanne — kein Elektrogerät\n- **Bereich 1**: bis 2,25 m über Badewannenrand — nur SELV-Geräte\n- **Bereich 2**: 60 cm um Bereich 1 — nur spezielle Rasiersteckdosen\n- **Außerhalb**: jenseits 60 cm — normale Steckdosen und Schalter\n\n## Kabelquerschnitte\n\n- Beleuchtung: 1,5 mm² — 10A-Sicherung\n- Steckdosen: 2,5 mm² — 16 oder 20A\n- Sonderkreise (Herd, Waschmaschine): 4 oder 6 mm² — 32A\n- Schutzleiter Bad: grün-gelbes Kabel 2,5 mm²\n\n## Häufige Nichtkonformitäten im Haut-Rhin\n\n- Steckdosen ohne Schutzleiter (vor 1970)\n- Veralteter Verteilerkasten mit Schraubsicherungen\n- Unterdimensionierte Kabel\n- Fehlende Sonderkreise\n\nVollständige Nachrüstung einer 70-m²-Wohnung in Saint-Louis: **3.500–8.000 €**.\n\n## Elektroladestation (IRVE)\n\nInstallation Wallbox (IRVE-zertifiziert): 800–2.500 € mit Material und Montage. Marken: Schneider Electric, Hager, Legrand (Rexel).\n\nKontaktieren Sie AIMAN RENOVATION für eine kostenlose Diagnose und ein Angebot innerhalb von 48h."
+    },
+    {
+      "slug": "plomberie-renovation-signes-refaire",
+      "title": "Sanitär bei der Renovierung: 7 Zeichen, dass die Rohre ersetzt werden müssen",
+      "seoTitle": "Rohre Erneuern Renovierung Haut-Rhin | 7 Zeichen | Handwerker 68",
+      "seoDescription": "Wann sollte man die Rohrleitungen seines Hauses erneuern? 7 eindeutige Zeichen. Klempner AIMAN RENOVATION, Saint-Louis 68300. Kostenloses Angebot.",
+      "excerpt": "Sind Ihre Rohre am Ende ihrer Lebensdauer? 7 konkrete Zeichen, die darauf hinweisen, dass die Sanitärinstallation Ihres Hauses im Haut-Rhin erneuert werden muss.",
+      "author": "AIMAN RENOVATION",
+      "content": "## 7 Zeichen, dass Ihre Sanitäranlage saniert werden muss\n\nSanitärinstallationen werden bei Renovierungen oft vergessen. Aber veraltete Rohre können teure Wasserschäden verursachen. In Saint-Louis, Huningue oder Bartenheim — hier die 7 Zeichen.\n\n## Zeichen 1: Verfärbtes oder metallisch schmeckendes Wasser\n\nGelbliches Wasser oder Rostgeschmack = korrodierte Stahl- oder Bleirohre. Viele Häuser im Haut-Rhin aus den 1950er–1970er Jahren haben noch Bleirohre. Ersatz durch **PEX-Aluminium-Mehrschichtrohre** oder **Kupfer** ist dringend.\n\n## Zeichen 2: Unzureichender Wasserdruck\n\n- Kalkablagerungen in Rohren (hartes Wasser im Elsass)\n- Stark korrodierte Stahlrohre\n- Unentdecktes Leck in Wand oder unter der Bodenplatte\n\n## Zeichen 3: Anhaltende Feuchtigkeitsspuren\n\nFeuchte Flecken, Farbe die abblättert, wiederkehrender Schimmel — Zeichen eines oft unentdeckten Mikrolecks.\n\n## Zeichen 4: Bleirohre vorhanden\n\nSeit 1995 verboten. Bleivergiftung (Saturnismus) gefährdet besonders Kinder. Ersatz **dringend und vorrangig**.\n\n## Zeichen 5: Warmwasserbereiter über 10 Jahre alt\n\nLebensdauer: 10–15 Jahre. Ersatz durch Wärmepumpen-Warmwasserbereiter (COP > 3): Energieeinsparung 60–70 %. Material von Cedeo oder Point P.\n\n## Zeichen 6: Ständig wechselnde Dichtungen\n\nZu hoher Druck (> 3,5 bar) oder aggressives Wasser. Druckminderer (150–300 €) und Grohe- oder Hansgrohe-Armaturen.\n\n## Zeichen 7: Laufende Gesamtrenovierung\n\nWenn Küche oder Bad renoviert werden, ist jetzt der ideale Zeitpunkt, versteckte Rohre zu erneuern.\n\n## Preise für Sanitärsanierung im Haut-Rhin\n\n- Rohrersatz Wohnung 50–70 m²: **2.500–5.000 €**\n- Warmwasserbereiter 200L: **800–1.500 €**\n- Wärmepumpen-Warmwasserbereiter: 2.500–4.000 €\n- Einzelner Armaturentausch: **150–400 €**\n\nKontaktieren Sie AIMAN RENOVATION für eine kostenlose Sanitärdiagnose in Saint-Louis oder im Haut-Rhin."
+    },
+    {
+      "slug": "ravalement-facade-haut-rhin-prix",
+      "title": "Fassadenrenovierung im Haut-Rhin: Preise und Vorschriften 2026",
+      "seoTitle": "Fassadenrenovierung Haut-Rhin Preise 2026 | Handwerker Saint-Louis 68",
+      "seoDescription": "Preise für Fassadenrenovierung im Haut-Rhin 2026. Vorschriften, Materialien, verfügbare Förderungen. Handwerker AIMAN RENOVATION Saint-Louis 68300.",
+      "excerpt": "Preise und Vorschriften für die Fassadenrenovierung im Haut-Rhin. Verputz, Verkleidung, Fassadenanstrich: Vergleich der Lösungen und Kosten 2026.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Fassadenrenovierung im Haut-Rhin: was Sie 2026 wissen müssen\n\nEine Fassadenrenovierung hat große ästhetische und energetische Auswirkungen. Im Haut-Rhin erfordert das elsässische Klima (Frost-Tau-Wechsel, starke Niederschläge) geeignete Materialien.\n\n## Vorschriften\n\n- **Keine Baugenehmigung** nötig, wenn das Außenerscheinungsbild nicht verändert wird\n- **Baugenehmigungsantrag** in ABF-Zonen oder Denkmalschutzgebieten\n- Charakteristische elsässische Fassaden (Fachwerk, roter Sandstein) können ABF-Zustimmung erfordern\n- In Wohnungseigentümergemeinschaften: Beschluss der Eigentümerversammlung erforderlich\n\n## Renovierungsmethoden\n\n### Fassadenanstrich\n- **Acryl** (Tollens \"Tollcolor\", Sikkens \"Rubbol\"): 25–50 €/m², Lebensdauer 8–12 Jahre\n- **Siloxan**: algenresistenter, 40–70 €/m², Lebensdauer 15–20 Jahre\n- **Mineral** (Kalk, Silikat): für alte Stein- oder Ziegelgebäude, 50–90 €/m²\n\n### Fassadenputz\n- **Einlagenputz**: 45–80 €/m²\n- **Feinputz**: 35–60 €/m²\n- **Rauputz**: 40–70 €/m² (sehr beliebt im Elsass)\n\n### WDVS kombiniert\nWDVS mit Putz auf Dämmstoff: 80–160 €/m², reduziert Heizkosten um 20–30 %.\n\n## Preise im Haut-Rhin\n\n- 80 m² Fassade (Siloxananstrich): 3.500–6.000 €\n- 100 m² Fassade (Einlagenputz + Anstrich): 6.000–10.000 €\n- 100 m² Fassade (WDVS + Putz): 10.000–18.000 € (nach Förderung: 6.000–12.000 €)\n- Gerüst: 8–15 €/m² Fassade\n\n## Verfügbare Förderungen\n\n- **MaPrimeRénov'** bei gleichzeitiger Dämmung\n- **CEE** für Wandwärmedämmung\n- **Öko-PTZ** zur Finanzierung\n\nKontaktieren Sie AIMAN RENOVATION für eine Fassadenrenovierung in Saint-Louis, Bartenheim, Hégenheim oder im Haut-Rhin. Antwort innerhalb 48h."
+    },
+    {
+      "slug": "renovation-energetique-aides-2026",
+      "title": "Energetische Renovierung: alle verfügbaren Förderungen 2026",
+      "seoTitle": "Energetische Renovierung Förderungen 2026 Haut-Rhin | MaPrimeRénov'",
+      "seoDescription": "Vollständiger Leitfaden zu Förderungen für energetische Renovierung 2026: MaPrimeRénov', CEE, Öko-PTZ. Qualifizierter Handwerker Haut-Rhin 68300.",
+      "excerpt": "MaPrimeRénov', CEE, Öko-PTZ, reduzierte MwSt.: der vollständige Leitfaden zu Förderungen für energetische Renovierungen 2026 für Eigentümer im Haut-Rhin.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Förderungen für energetische Renovierung 2026: vollständiger Leitfaden\n\nFür Eigentümer im Haut-Rhin, die die Energieklasse ihres Hauses verbessern möchten — alle verfügbaren und kombinierbaren Förderprogramme 2026.\n\n## MaPrimeRénov' 2026\n\n**Einzelmaßnahmen**: Dämmung (Dach, Wände, Böden), Doppelfluss-Lüftung, Heizung (Wärmepumpe, Biomasse, Solar).\n\n**Umfassende Sanierung**: Mindestgewinn 2 Energieklassen (DPE), Mon Accompagnateur Rénov' (MAR) Pflicht, Förderdeckel bis 70.000 €.\n\nBeträge nach Einkommensklasse:\n- Sehr bescheiden: **75 €/m²** Dach-/Wanddämmung, **5.000 €** Wärmepumpenpauschal\n- Bescheiden: **50 €/m²**\n\n## Energiesparzertifikate (CEE)\n\nKumulierbar mit MaPrimeRénov':\n- Dachbodendämmung: 250–600 €/Wohneinheit\n- Wanddämmung: 1.500–4.000 €\n- Luft-Wasser-Wärmepumpe: 500–2.000 €\n- Biomassekessel: 500–1.500 €\n- \"Heizbonus\": bis **4.000 €** für bescheidene Haushalte\n\n## Öko-Nullzinskredit\n\n50.000 € max., zinsfrei, bis 20 Jahre, keine Einkommensvoraussetzung, kumulierbar.\n\n## Reduzierte MwSt.\n\n- **5,5 %** für Energieeffizienzmaßnahmen\n- **10 %** für andere Renovierungsarbeiten\n- RGE-Handwerker fakturiert direkt zum reduzierten Satz\n\n## MaPrimeAdapt'\n\nBis zu **70 %** der Kosten für bescheidene Haushalte, Deckel **22.000 €**, für Wohnanpassung Senioren/Behinderung.\n\n## Konkretes Beispiel: 100 m² F-klassifiziertes Haus in Saint-Louis\n\n- Dach- + Wanddämmung + Wärmepumpe: Gesamtkosten 18.500 €\n- Geschätzte Förderungen (bescheidener Haushalt): 12.950 €\n- **Geschätzter Eigenanteil: 5.550 €**\n\nAIMAN RENOVATION begleitet Sie beim Förderantrag und koordiniert RGE-Handwerker. Kontaktieren Sie uns für eine kostenlose Bewertung."
+    },
+    {
+      "slug": "salle-de-bain-pmr-seniors-guide",
+      "title": "Barrierefreies Bad für Senioren und Behinderte: vollständiger Leitfaden",
+      "seoTitle": "Barrierefreies Bad Senioren Haut-Rhin | Umbau & Förderungen 2026",
+      "seoDescription": "Wie richtet man ein barrierefreies Bad für Senioren oder Behinderte im Haut-Rhin ein? Ausstattung, Normen, Preise und Förderungen. Leitfaden AIMAN RENOVATION.",
+      "excerpt": "Badezimmer für selbstständiges Wohnen anpassen: bodengleiche Dusche, Haltegriffe, Duschsitz, Barrierefreiheitsnormen. Vollständiger Leitfaden.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Barrierefreies Bad für Senioren und Behinderte anpassen\n\nDie Anpassung des Badezimmers ist oft das erste Projekt für ein sicheres Zuhause im Haut-Rhin.\n\n## Wesentliche Ausstattung\n\n### Bodengleiche Dusche\n- Extraflacher Duschtrog oder Nass-in-Nass, max. 2 cm Schwelle\n- Mindestgröße empfohlen: 90x90 cm (Barrierefreinorm: 120x80 cm)\n- Rutschhemmender Belag: **mindestens R11**\n- Preis: 1.500–3.500 €\n\n### Haltegriffe\n- Horizontaler Griff an der Dusche: auf 85–90 cm Höhe\n- L-Griff oder Klappgriff neben der WC-Anlage\n- Vertikaler Griff am Duscheingang\n- Mindesttraglast: 120 kg\n- Marken: **Hewi**, **Pellet** (Delabie), **Geberit** — 150–600 € je Griff montiert\n\n### Duschsitz\n- **Wandmontierter Klappsitz**: 200–500 € montiert, Höhe 46–48 cm\n- **Tragbarer Duschstuhl**: 40–150 €\n\n### Barrierefreie Armaturen\n- Thermostatmischer (Grohe Eurosmart, Hansgrohe Metropol): verhindert Verbrühungen\n- Handbrause mit Schlauch min. 1,75 m\n- Armatur von innen UND außen zugänglich\n\n## Finanzielle Förderungen\n\n### MaPrimeAdapt' 2026\n- **Bis zu 70 %** der Kosten für bescheidene Haushalte\n- Obergrenze: **22.000 €**\n- Bedingungen: 70 Jahre oder älter, Pflegegrad GIR 1–6 oder anerkannte Behinderung\n\n### Weitere Förderungen\n- Action Logement \"Habiter Facile\": bis 5.000 €\n- Département Haut-Rhin: Zuschüsse für Seniorenumbauten\n\n## Preise im Haut-Rhin\n\n- **Badewanne zu Dusche umbauen**: 3.500–6.500 €\n- **Vollständige barrierefreie Badsanierung**: 6.000–12.000 €\n- Nach MaPrimeAdapt' (bescheidener Haushalt): **Eigenanteil 1.000–3.500 €**\n\nAIMAN RENOVATION übernimmt kostenlos die Antragstellung für MaPrimeAdapt'. Kontaktieren Sie uns in Saint-Louis, Mulhouse oder im Haut-Rhin."
+    },
+    {
+      "slug": "renovation-loft-mulhouse-idees",
+      "title": "Loft-Renovierung in Mulhouse: Ideen und Trends für Industrial-Chic-Räume",
+      "seoTitle": "Loft-Renovierung Mulhouse Haut-Rhin | Ideen & Trends 2026",
+      "seoDescription": "Ideen und Inspirationen für die Renovierung eines Lofts in Mulhouse 2026. Industriestil, Rohstoffe, offener Grundriss. Handwerker AIMAN RENOVATION.",
+      "excerpt": "Loft-Renovierung in Mulhouse: Sichtbeton, Metall, Holz, offener Grundriss. Alle Ideen und Trends 2026 für die Umwandlung eines Industrieraums.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Loft-Renovierung in Mulhouse: Trends 2026\n\nMulhouse hat viele ehemalige Industrieräume, die zu Lofts umgewandelt wurden — in den Vierteln Fonderie, Cité de l'auto und Rebberg. Diese Räume bieten außergewöhnliche Volumina und einzigartigen Charakter.\n\n## Besonderheiten eines Lofts\n\n- **Große Raumhöhen**: 3,5–5 m, offene Flächen von 80–200 m²\n- **Sichtbare Strukturen**: Stahlträger, Betonpfeiler, unverputzte Ziegel\n- **Viel Licht**: große Industriefenster, Oberlichter\n- **Keine Trennwände**: alles muss neu strukturiert werden\n\n## Trend 1: Sichtbeton\n\n- Sichtbetonboden: 80–150 €/m² verlegt\n- Sichtbetonwand: 60–120 €/m²\n- Professionelle Auftragung unbedingt erforderlich\n\n## Trend 2: Metall und Stahl\n\n- Stahl-Glas-Innenwände: 800–2.500 €/ml\n- Zentraler Stahltreppenlauf zur Empore: 4.000–10.000 €\n- Schiebetüren aus Metall: 600–1.500 € montiert\n- Stahlgeländer: 300–700 €/ml\n\n## Trend 3: Massivholz für Wärme\n\n- Geöltes Eichenparkett 22 mm: 80–130 €/m² verlegt\n- Holzwandverkleidung (Douglasie oder Eiche): 50–100 €/m²\n- Holzempore mit sichtbarer Struktur: 5.000–12.000 €\n\n## Trend 4: Strukturierter offener Grundriss\n\n- Kücheninsel als Raumteiler\n- Bodenwechsel zur Raumabgrenzung\n- Podest für Schlafbereich oder Loungeecke\n\n## Trend 5: Industrielle Farbpalette 2026\n\n- Anthrazit (RAL 7016) für Metallstrukturen\n- Eierschalenweiß für Wände (Helligkeit maximieren)\n- Mattschwarz für Armaturen (Grohe Colours, Hansgrohe Matt Black)\n- Kupfer und Messing für Leuchten und Zubehör\n\n## Budget für ein 100 m² Loft in Mulhouse\n\n- Leichte Renovierung (Farbe, Parkett, Küche): 25.000–50.000 €\n- Vollsanierung (Beton, Glaswände, Elektrik, Sanitär, Empore): 60.000–120.000 €\n\nSie haben ein Loft in Mulhouse zu renovieren? Kontaktieren Sie AIMAN RENOVATION für einen kostenlosen technischen Besuch. Angebot innerhalb von 48h."
+    },
+    {
+      "slug": "choisir-artisan-renovation-10-criteres",
+      "title": "Wie wählt man seinen Renovierungshandwerker: 10 wesentliche Kriterien",
+      "seoTitle": "Renovierungshandwerker Haut-Rhin Wählen | 10 Kriterien | Saint-Louis 68",
+      "seoDescription": "10 Kriterien für die Wahl des richtigen Renovierungshandwerkers im Haut-Rhin. Garantien, Versicherungen, Referenzen, Kostenvoranschläge. AIMAN RENOVATION.",
+      "excerpt": "Die Wahl des richtigen Handwerkers ist die wichtigste Entscheidung für Ihr Renovierungsprojekt. AIMAN RENOVATION gibt Ihnen die 10 Schlüsselkriterien.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Die 10 Kriterien für die Wahl des richtigen Renovierungshandwerkers im Haut-Rhin\n\nEine schlechte Wahl kann zu schlechten Arbeiten, Budgetüberschreitungen oder einem verschwundenen Handwerker führen. Hier die 10 Kriterien, die Sie vor der Unterschrift prüfen müssen.\n\n## Kriterium 1: Handwerkseintragung\n\nJeder legale Handwerker muss eingetragen sein. Prüfen Sie auf **societe.com** oder dem offiziellen Unternehmensverzeichnis.\n\n## Kriterium 2: Zehn-Jahres-Garantie (Décennale)\n\n10 Jahre Versicherungsschutz für Bauschäden. Fordern Sie das **gültige Zertifikat** an. Anerkannte Versicherer: Allianz, AXA, Generali, MAAF Pro.\n\n## Kriterium 3: Berufshaftpflicht\n\nDeckt Schäden während des Baus ab. Separate Bescheinigung anfordern.\n\n## Kriterium 4: Zertifizierungen\n\n- **RGE**: Pflicht für Energieförderungen\n- **Qualibat**: Bauunternehmen-Qualifizierung\n- **IRVE**: für Elektroladepunkte\n\n## Kriterium 5: Referenzen\n\nFotos ähnlicher Projekte und Kontaktdaten früherer Kunden für direkte Rückfragen anfordern.\n\n## Kriterium 6: Klarer Kostenvoranschlag\n\nEin guter Kostenvoranschlag enthält: genaue Leistungsbeschreibung, Mengen, Einzel- und Gesamtpreise netto/brutto, Materialmarken und -referenzen, Zeitplan.\n\n## Kriterium 7: Lokale Präsenz\n\nEin Handwerker 5 km entfernt ist reaktionsfähiger. Unsere Teams kennen lokale Lieferanten Point P, Cedeo und Rexel.\n\n## Kriterium 8: Kommunikation\n\nReaktionsfähigkeit vor der Unterschrift beurteilen. Wer vor dem Auftrag langsam antwortet, ist es auch während der Arbeit.\n\n## Kriterium 9: Anzahlungsregelung\n\n- Maximal **30 %** bei Vertragsabschluss für Projekte unter 3 Monaten\n- Keine Vollzahlung vor Abschluss der Arbeiten\n- Restzahlung bei Abnahme nach Prüfung\n\n50 % oder mehr im Voraus ist ein Warnsignal.\n\n## Kriterium 10: Gewährleistung und Kundendienst\n\nDer Handwerker muss alle gemeldeten Mängel innerhalb von 1 Jahr nach Abnahme beheben.\n\n## Warum AIMAN RENOVATION?\n\nAIMAN RENOVATION erfüllt alle diese Kriterien: eingetragen, Allianz Zehn-Jahres-Versicherung, Berufshaftpflicht, detaillierte Kostenvoranschläge, lokale Handwerker in Saint-Louis 68300. Kostenloses Angebot innerhalb von 48h."
+    }
+  ]}
