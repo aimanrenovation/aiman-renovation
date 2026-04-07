@@ -1,0 +1,66 @@
+#!/bin/bash
+# Pre-commit hook: bloque toute fuite de secrets (cles API, tokens, passwords)
+# Installation: git config core.hooksPath .githooks
+
+# Patterns de secrets a detecter
+PATTERNS=(
+  'AIza[0-9A-Za-z_-]{35}'                    # Google API keys (Gemini, Maps, etc.)
+  'sk-[a-zA-Z0-9]{32,}'                      # OpenAI / Anthropic keys
+  'ghp_[a-zA-Z0-9]{36}'                      # GitHub personal access tokens
+  'gho_[a-zA-Z0-9]{36}'                      # GitHub OAuth tokens
+  'xox[baprs]-[0-9a-zA-Z-]{10,}'             # Slack tokens
+  'AKIA[0-9A-Z]{16}'                         # AWS access keys
+  'ya29\.[0-9A-Za-z_-]+'                     # Google OAuth tokens
+  'SG\.[a-zA-Z0-9_-]{22}\.[a-zA-Z0-9_-]{43}' # SendGrid
+  '[a-f0-9]{32}-us[0-9]+'                    # Mailchimp
+  'xapp-[0-9A-Za-z-]+'                       # Slack app tokens
+)
+
+# Fichiers staged
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM)
+
+if [ -z "$STAGED_FILES" ]; then
+  exit 0
+fi
+
+FOUND=0
+
+for file in $STAGED_FILES; do
+  # Ignorer les binaires, node_modules, .git
+  if [[ "$file" == *"node_modules"* ]] || [[ "$file" == *".git/"* ]]; then
+    continue
+  fi
+  # Ignorer .env.local explicitement (mais .env* est deja dans .gitignore)
+  if [[ "$file" == *".env"* ]]; then
+    continue
+  fi
+
+  if [ ! -f "$file" ]; then
+    continue
+  fi
+
+  for pattern in "${PATTERNS[@]}"; do
+    if grep -EIn "$pattern" "$file" > /dev/null 2>&1; then
+      echo "❌ SECRET DETECTE dans $file:"
+      grep -EIn "$pattern" "$file" | head -3
+      echo ""
+      FOUND=1
+    fi
+  done
+done
+
+if [ $FOUND -eq 1 ]; then
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "COMMIT BLOQUE : secret(s) detecte(s) dans les fichiers staged."
+  echo ""
+  echo "Pour corriger :"
+  echo "  1. Remplacer la cle par une variable d'environnement"
+  echo "  2. Mettre la vraie cle dans .env.local (ignore par git)"
+  echo "  3. Retenter le commit"
+  echo ""
+  echo "Si c'est un faux positif, utiliser: git commit --no-verify"
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  exit 1
+fi
+
+exit 0

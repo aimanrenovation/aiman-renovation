@@ -1,8 +1,26 @@
 #!/bin/bash
 # Script de generation d'images via Google Gemini Imagen 4.0
-# Usage: bash generate-images.sh
+# Usage: GEMINI_API_KEY=xxx bash generate-images.sh
+# Ou: source .env.local puis bash generate-images.sh
 
-API_KEY="AIzaSyDU03WY7x_SsU6ZgJFfuxM6jeegUgRznJw"
+# Charger .env.local si present (securise, jamais committe)
+if [ -f ".env.local" ]; then
+  set -a
+  source .env.local
+  set +a
+fi
+
+# Verifier que la cle est presente
+if [ -z "${GEMINI_API_KEY}" ]; then
+  echo "ERREUR: GEMINI_API_KEY non definie."
+  echo "  Option 1: Exporter la variable: export GEMINI_API_KEY=AIza..."
+  echo "  Option 2: Creer .env.local avec: GEMINI_API_KEY=AIza..."
+  echo ""
+  echo "Obtenir une cle: https://aistudio.google.com/apikey"
+  exit 1
+fi
+
+API_KEY="${GEMINI_API_KEY}"
 MODEL="imagen-4.0-generate-001"
 OUTPUT_DIR="/Users/Aiman/aiman-renovation/public/images"
 API_URL="https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateImages?key=${API_KEY}"
