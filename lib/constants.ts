@@ -14,10 +14,10 @@ export const COMPANY = {
   founded: 2024,
   website: "https://aiman-renovation.fr",
   social: {
-    facebook: "https://www.facebook.com/aimanrenovation",
-    instagram: "https://www.instagram.com/aimanrenovation",
-    linkedin: "https://www.linkedin.com/company/aiman-renovation",
-    tiktok: "https://www.tiktok.com/@aimanrenovation",
+    facebook: "https://www.facebook.com/AimanRenovation/",
+    instagram: "https://www.instagram.com/aiman_renovation/",
+    linkedin: "https://www.linkedin.com/company/aiman-renovation-68",
+    tiktok: "https://www.tiktok.com/@aiman.renovation",
   },
 } as const;
 
