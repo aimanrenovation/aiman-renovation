@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { resend } from "@/lib/email";
+import { notifyJarvis } from "@/lib/jarvis-notify";
 
 const FROM_EMAIL = "contact@aiman-renovation.fr";
 const TO_EMAIL = process.env.DEVIS_RECIPIENT_EMAIL || "contact@aiman-renovation.fr";
@@ -31,6 +32,15 @@ export async function POST(request: NextRequest) {
           <p style="color:#999;font-size:12px">Envoyé depuis aiman-renovation.fr</p>
         </div>
       `,
+    });
+
+    // Notify Jarvis (non-blocking)
+    await notifyJarvis({
+      type: "contact_received",
+      name: nom,
+      email,
+      phone: telephone || "",
+      message,
     });
 
     return NextResponse.json({ success: true });

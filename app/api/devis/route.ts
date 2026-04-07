@@ -4,6 +4,7 @@ import { generateDevisEmailHtml } from "@/lib/email-templates/devis-confirmation
 import type { DevisState } from "@/components/devis/devis-types";
 import { ZONES_CONFIG } from "@/components/devis/devis-zones-config";
 import { createMagicPlanProject, getMagicPlanDeepLink } from "@/lib/magicplan";
+import { notifyJarvis } from "@/lib/jarvis-notify";
 
 export async function POST(request: NextRequest) {
   try {
@@ -92,6 +93,19 @@ export async function POST(request: NextRequest) {
     } catch (err) {
       console.error("MagicPlan project creation failed (non-blocking):", err);
     }
+
+    // Notify Jarvis (non-blocking)
+    await notifyJarvis({
+      type: "devis_received",
+      client: `${data.contact.firstName} ${data.contact.lastName}`,
+      phone: data.contact.phone,
+      email: data.contact.email,
+      address: data.contact.address,
+      works_count: totalWorks,
+      zones_count: zonesWithWorks.length,
+      zones: zonesShort,
+      budget: data.budget ?? "N/A",
+    });
 
     return NextResponse.json({
       success: true,

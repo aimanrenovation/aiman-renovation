@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { verifyWebhookKey } from "@/lib/magicplan";
 import { uploadToS3 } from "@/lib/s3";
 import { resend, DEVIS_FROM_EMAIL, DEVIS_RECIPIENT_EMAIL } from "@/lib/email";
+import { notifyJarvis } from "@/lib/jarvis-notify";
 
 function getField(formData: FormData, key: string): string {
   const val = formData.get(key);
@@ -114,24 +115,14 @@ export async function POST(request: NextRequest) {
       `,
     });
 
-    const jarvisUrl = process.env.JARVIS_WEBHOOK_URL;
-    if (jarvisUrl) {
-      try {
-        await fetch(jarvisUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            type: "magicplan_received",
-            client: title,
-            reference: externalRefId,
-            pdfUrl: pdfFile?.url,
-            filesCount: uploadedFiles.length,
-          }),
-        });
-      } catch (err) {
-        console.error("Failed to notify Jarvis:", err);
-      }
-    }
+    // Notify Jarvis (non-blocking)
+    await notifyJarvis({
+      type: "magicplan_received",
+      client: title || "Sans titre",
+      reference: externalRefId,
+      pdfUrl: pdfFile?.url,
+      filesCount: uploadedFiles.length,
+    });
 
     return new NextResponse(
       '<?xml version="1.0" encoding="UTF-8"?><response><status>0</status><message>OK</message></response>',

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { resend, DEVIS_FROM_EMAIL, DEVIS_RECIPIENT_EMAIL } from "@/lib/email";
 import { uploadToS3 } from "@/lib/s3";
+import { notifyJarvis } from "@/lib/jarvis-notify";
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
 const ALLOWED_TYPES = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
@@ -117,6 +118,16 @@ export async function POST(request: NextRequest) {
         <p>Nous prenons le temps d'étudier votre profil et reviendrons vers vous très prochainement.</p>
         <p>À bientôt,<br/>L'équipe Aiman Renovation</p>
       `,
+    });
+
+    // Notify Jarvis (non-blocking)
+    await notifyJarvis({
+      type: "candidature_received",
+      candidate: `${firstName} ${lastName}`,
+      email,
+      phone,
+      position,
+      experience,
     });
 
     return NextResponse.json({ success: true });
