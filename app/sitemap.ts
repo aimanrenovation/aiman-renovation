@@ -50,5 +50,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...VILLES_CH.flatMap((v) =>
       localizedEntry(`/renovierung-schweiz/${v.slug}`, 0.8, "monthly")
     ),
+    ...VILLES_FR.flatMap((v) =>
+      localizedEntry(`/renovation/${v.slug}`, 0.7, "monthly")
+    ),
   ];
 }
