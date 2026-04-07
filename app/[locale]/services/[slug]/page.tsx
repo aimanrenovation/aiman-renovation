@@ -7,6 +7,8 @@ import { COMPANY } from "@/lib/constants";
 import { LinkButton } from "@/components/ui/link-button";
 import { ScrollReveal } from "@/components/sections/scroll-reveal";
 import { getAlternates } from "@/lib/i18n-helpers";
+import { JsonLd } from "@/components/seo/json-ld";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 interface Props {
   params: Promise<{ slug: string; locale: string }>;
@@ -108,7 +110,7 @@ export default async function ServicePage({ params }: Props) {
   ).slice(0, 3);
 
   // JSON-LD Service — données statiques, aucune entrée utilisateur
-  const serviceJsonLd = JSON.stringify({
+  const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: title,
@@ -134,71 +136,21 @@ export default async function ServicePage({ params }: Props) {
         description: priceRange,
       },
     },
-  });
+  };
 
-  // BreadcrumbList — navigation hiérarchique pour Google
-  const breadcrumbJsonLd = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Accueil",
-        item: "https://aiman-renovation.fr/",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Services",
-        item: "https://aiman-renovation.fr/services",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: title,
-        item: `https://aiman-renovation.fr/services/${slug}`,
-      },
-    ],
-  });
+  const breadcrumbItems = [
+    { name: "Accueil", url: "/" },
+    { name: "Services", url: "/services" },
+    { name: title, url: `/services/${slug}` },
+  ];
 
   const photo = PHOTO_MAP[service.slug];
   const icon = ICON_MAP[service.slug];
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: serviceJsonLd }}
-      />
-      <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }}
-      />
-
-      {/* Breadcrumb visuel */}
-      <nav
-        aria-label="Fil d'Ariane"
-        className="relative z-20 bg-black border-b border-white/5 px-6 py-3"
-      >
-        <ol className="max-w-6xl mx-auto flex items-center gap-2 text-sm text-gray-500">
-          <li>
-            <Link href="/" className="hover:text-white transition-colors">
-              Accueil
-            </Link>
-          </li>
-          <li aria-hidden="true" className="text-gray-700">/</li>
-          <li>
-            <Link href="/services" className="hover:text-white transition-colors">
-              Services
-            </Link>
-          </li>
-          <li aria-hidden="true" className="text-gray-700">/</li>
-          <li className="text-white font-medium truncate">{title}</li>
-        </ol>
-      </nav>
+      <JsonLd data={serviceSchema} />
+      <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero full-bleed avec photo */}
       <section className="relative min-h-[85vh] flex items-end overflow-hidden">

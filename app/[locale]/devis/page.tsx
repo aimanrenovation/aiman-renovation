@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { DevisPageContent } from "@/components/devis/devis-page-content";
 import { getAlternates } from "@/lib/i18n-helpers";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -35,5 +36,15 @@ export async function generateMetadata({ params }: Props) {
 export default async function DevisPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <DevisPageContent />;
+  return (
+    <>
+      <Breadcrumb
+        items={[
+          { name: "Accueil", url: "/" },
+          { name: "Devis gratuit", url: "/devis" },
+        ]}
+      />
+      <DevisPageContent />
+    </>
+  );
 }

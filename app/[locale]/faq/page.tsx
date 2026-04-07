@@ -10,6 +10,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { JsonLd } from "@/components/seo/json-ld";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -55,8 +57,7 @@ export default async function FaqPage({ params }: Props) {
 
   const categories = [...new Set(faqItems.map((f) => f.category))];
 
-  // Static FAQ schema from translation files - safe to inline
-  const faqJsonLd = JSON.stringify({
+  const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: faqItems.map((item) => ({
@@ -64,12 +65,17 @@ export default async function FaqPage({ params }: Props) {
       name: item.question,
       acceptedAnswer: { "@type": "Answer", text: item.answer },
     })),
-  });
+  };
 
   return (
     <>
-      {/* eslint-disable-next-line react/no-danger -- Static FAQ schema from translation files, no user input */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+      <JsonLd data={faqSchema} />
+      <Breadcrumb
+        items={[
+          { name: "Accueil", url: "/" },
+          { name: "FAQ", url: "/faq" },
+        ]}
+      />
 
       {/* Hero */}
       <section className="relative h-[40vh] flex items-end pb-12 overflow-hidden">

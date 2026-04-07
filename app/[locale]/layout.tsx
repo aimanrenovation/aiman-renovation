@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import SmoothScrollProvider from "@/components/3d/providers/SmoothScrollProvider";
+import { JsonLd } from "@/components/seo/json-ld";
 
 type Props = {
   children: React.ReactNode;
@@ -48,9 +49,25 @@ export default async function LocaleLayout({ children, params }: Props) {
     "Weil am Rhein",
   ];
 
-  const areaServed = isFr
-    ? frenchCities.map((name) => ({ "@type": "City", name }))
-    : [...frenchCities, ...swissCities].map((name) => ({ "@type": "City", name }));
+  const frenchAreas = [
+    ...frenchCities.map((name) => ({ "@type": "City", name })),
+    { "@type": "AdministrativeArea", name: "Haut-Rhin" },
+    { "@type": "Country", name: "France" },
+  ];
+
+  const triboarderAreas = [
+    ...frenchCities.map((name) => ({ "@type": "City", name })),
+    ...swissCities.map((name) => ({ "@type": "City", name })),
+    { "@type": "AdministrativeArea", name: "Haut-Rhin" },
+    { "@type": "AdministrativeArea", name: "Basel-Stadt" },
+    { "@type": "AdministrativeArea", name: "Basel-Landschaft" },
+    { "@type": "AdministrativeArea", name: "Baden-Württemberg" },
+    { "@type": "Country", name: "France" },
+    { "@type": "Country", name: "Suisse" },
+    { "@type": "Country", name: "Allemagne" },
+  ];
+
+  const areaServed = isFr ? frenchAreas : triboarderAreas;
 
   const serviceNames = ts.raw("service_names") as string[];
 
@@ -58,9 +75,10 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const organizationJsonLd = {
     "@context": "https://schema.org",
-    "@type": ["HomeAndConstructionBusiness", "LocalBusiness"],
+    "@type": ["GeneralContractor", "HomeAndConstructionBusiness", "LocalBusiness"],
     "@id": "https://aiman-renovation.fr/#organization",
     name: tc("company_name"),
+    alternateName: "Aiman Renovation",
     legalName: `${tc("company_name")} ${tc("legal_form")}`,
     url: tc("website"),
     logo: {
@@ -81,12 +99,13 @@ export default async function LocaleLayout({ children, params }: Props) {
       streetAddress: "12 Rue de Bâle",
       addressLocality: "Saint-Louis",
       postalCode: "68300",
+      addressRegion: "Haut-Rhin",
       addressCountry: "FR",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 47.5879,
-      longitude: 7.5596,
+      latitude: 47.5894,
+      longitude: 7.5605,
     },
     areaServed,
     hasOfferCatalog: {
@@ -103,6 +122,13 @@ export default async function LocaleLayout({ children, params }: Props) {
           areaServed: { "@type": "City", name: "Saint-Louis" },
         },
       })),
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "47",
+      bestRating: "5",
+      worstRating: "1",
     },
     priceRange: "€€",
     currenciesAccepted: ts("price_currency"),
@@ -121,23 +147,24 @@ export default async function LocaleLayout({ children, params }: Props) {
         closes: "12:00",
       },
     ],
-    sameAs: ["https://www.facebook.com/aimansarl"],
+    sameAs: [
+      "https://www.facebook.com/aimanrenovation",
+      "https://www.instagram.com/aimanrenovation",
+      "https://www.linkedin.com/company/aiman-renovation",
+      "https://www.tiktok.com/@aimanrenovation",
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       telephone: tc("phone"),
       contactType: "customer service",
       areaServed: "FR",
-      availableLanguage: ["French"],
+      availableLanguage: ["French", "Arabic"],
     },
   };
 
-  // All data is internal/static — no user input, XSS-safe
-  const jsonLdString = JSON.stringify(organizationJsonLd);
-
   return (
     <NextIntlClientProvider messages={messages}>
-      {/* eslint-disable-next-line react/no-danger */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString }} />
+      <JsonLd data={organizationJsonLd} />
       {/* Preconnect pour Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -4,6 +4,7 @@ import { COMPANY } from "@/lib/constants";
 import { LinkButton } from "@/components/ui/link-button";
 import { ContactForm } from "@/components/sections/contact-form";
 import { getAlternates } from "@/lib/i18n-helpers";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -43,6 +44,12 @@ export default async function ContactPage({ params }: Props) {
 
   return (
     <>
+      <Breadcrumb
+        items={[
+          { name: "Accueil", url: "/" },
+          { name: "Contact", url: "/contact" },
+        ]}
+      />
       {/* Hero */}
       <section className="relative h-[50vh] flex items-end pb-16 overflow-hidden">
         <div className="absolute inset-0">

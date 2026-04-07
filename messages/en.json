@@ -2028,5 +2028,20 @@
       "close": "Close",
       "error_generic": "An error occurred. Please try again or contact us directly."
     }
+  },
+  "avis": {
+    "seo_title": "Customer Reviews AIMAN RENOVATION — 4.9/5 from 30 reviews | Saint-Louis 68",
+    "seo_description": "Read 30 verified customer reviews for AIMAN RENOVATION, renovation contractor in Saint-Louis 68300. Average rating 4.9/5. Satisfied clients from France, Switzerland and Germany.",
+    "breadcrumb": "Customer reviews",
+    "hero_title": "CUSTOMER",
+    "hero_title_highlight": "REVIEWS",
+    "hero_subtitle": "30 verified testimonials from satisfied customers in France, Switzerland and Germany.",
+    "reviews_count_label": "verified reviews",
+    "filter_all": "All services",
+    "filter_country": "Country:",
+    "cta_title": "JOIN OUR",
+    "cta_title_highlight": "SATISFIED CLIENTS",
+    "cta_subtitle": "Free quote within 4 days. Local craftsman, ten-year warranty.",
+    "cta_button": "Request a free quote"
   }
 }

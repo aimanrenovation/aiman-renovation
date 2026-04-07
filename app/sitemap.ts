@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localizedEntry("/services", 0.9, "monthly"),
     ...SERVICES.flatMap((s) => localizedEntry(`/services/${s.slug}`, 0.8, "monthly")),
     ...localizedEntry("/realisations", 0.8, "weekly"),
+    ...localizedEntry("/avis", 0.7, "weekly"),
     ...localizedEntry("/a-propos", 0.6, "monthly"),
     ...localizedEntry("/devis", 0.9, "monthly"),
     ...localizedEntry("/contact", 0.7, "monthly"),
