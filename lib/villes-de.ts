@@ -200,4 +200,172 @@ export const VILLES_DE: VilleDE[] = [
     seoDescriptionFR:
       "Artisan français pour rénovation à Kandern. Bâtiments anciens, cuisine, salle de bain, façade, pierre. À 18 km de Saint-Louis. Devis gratuit en euros.",
   },
+  {
+    slug: "rheinfelden-baden",
+    name: "Rheinfelden (Baden)",
+    nameFr: "Rheinfelden (Bade)",
+    bundesland: "Baden-Württemberg",
+    kreis: "Lörrach",
+    population: 33000,
+    distance: 25,
+    featuredImage: "/images/villes/rheinfelden-baden.webp",
+    specificitesDE: [
+      "Drittgrößte Stadt im Landkreis Lörrach",
+      "Direkt am Rhein gelegen — Grenzstadt zur Schweizer Schwesterstadt",
+      "Industriegeschichte mit Aluminiumindustrie und Wasserkraftwerk",
+      "Vielfältiger Wohnbestand: Reihenhäuser, Wohnblöcke, Einfamilienhäuser",
+      "Wachsende Wohnnachfrage durch Pendler nach Basel",
+      "Energetische Sanierungen mit KfW-Förderung sehr verbreitet",
+    ],
+    specificitesFR: [
+      "Troisième ville du Landkreis Lörrach",
+      "Sur le Rhin, ville frontière jumelée à Rheinfelden Suisse",
+      "Histoire industrielle (aluminium, hydroélectricité)",
+      "Parc immobilier varié — maisons mitoyennes, immeubles, individuelles",
+      "Demande croissante des pendulaires bâlois",
+      "Rénovations énergétiques avec aide KfW fréquentes",
+    ],
+    seoTitleDE:
+      "Renovierung Rheinfelden (Baden) | AIMAN — Französische Handwerker",
+    seoDescriptionDE:
+      "Renovierungen in Rheinfelden (Baden): Bad, Küche, energetische Sanierung, Fassade. Französische Qualität aus Saint-Louis — 25 km. Kostenlose Offerte.",
+    seoTitleFR:
+      "Rénovation Rheinfelden Baden | Artisan français Saint-Louis",
+    seoDescriptionFR:
+      "Rénovation à Rheinfelden (Bade) : salle de bains, cuisine, isolation, façade. Artisan français à 25 km. Devis gratuit en 48h.",
+  },
+  {
+    slug: "schopfheim",
+    name: "Schopfheim",
+    nameFr: "Schopfheim",
+    bundesland: "Baden-Württemberg",
+    kreis: "Lörrach",
+    population: 19500,
+    distance: 30,
+    featuredImage: "/images/villes/schopfheim.webp",
+    specificitesDE: [
+      "Mittelzentrum im Wiesental",
+      "Historische Altstadt mit gut erhaltenen Fachwerkhäusern",
+      "Wohngebiete aus den 1960-1980er Jahren mit Renovierungsbedarf",
+      "Tor zum Schwarzwald und Wandertourismus",
+      "Pendlerstadt für Basel und Lörrach",
+      "Gemischte Bevölkerung Familien und Senioren",
+    ],
+    specificitesFR: [
+      "Centre régional du Wiesental",
+      "Vieille ville historique avec maisons à colombages",
+      "Quartiers résidentiels 1960-1980 à rénover",
+      "Porte de la Forêt-Noire — tourisme",
+      "Ville-dortoir pour Bâle et Lörrach",
+      "Population familles + seniors",
+    ],
+    seoTitleDE:
+      "Renovierung Schopfheim | AIMAN RENOVATION — Wiesental Baden",
+    seoDescriptionDE:
+      "Renovierung in Schopfheim (Wiesental): Fachwerk, Bad, Küche, Wärmedämmung. Französische Handwerker aus Saint-Louis — 30 km. Offerte in 48h.",
+    seoTitleFR:
+      "Rénovation Schopfheim (Wiesental) | Artisan français Alsace",
+    seoDescriptionFR:
+      "Rénovation à Schopfheim : colombages, salle de bain, cuisine, isolation. Artisan français du tri-frontière. Devis gratuit en 48h.",
+  },
+  {
+    slug: "steinen",
+    name: "Steinen",
+    nameFr: "Steinen",
+    bundesland: "Baden-Württemberg",
+    kreis: "Lörrach",
+    population: 10000,
+    distance: 22,
+    featuredImage: "/images/villes/steinen.webp",
+    specificitesDE: [
+      "Gemeinde im unteren Wiesental — direkt zwischen Lörrach und Schopfheim",
+      "Charakteristische Reihenhäuser und Mehrfamilienhäuser der 1960-1970er",
+      "Hoher Anteil Pendler nach Basel und Lörrach",
+      "Erschwingliche Wohnpreise im Vergleich zur Schweiz",
+      "Gut angebundene Lage an der B317",
+      "Wachsendes Interesse an Sanierungen und Anbauten",
+    ],
+    specificitesFR: [
+      "Commune du bas Wiesental, entre Lörrach et Schopfheim",
+      "Maisons mitoyennes et collectifs 1960-1970",
+      "Forte proportion de pendulaires Bâle/Lörrach",
+      "Prix immobiliers abordables vs Suisse",
+      "Bonne desserte par la B317",
+      "Demande croissante en rénovation et extensions",
+    ],
+    seoTitleDE:
+      "Renovierung Steinen (Wiesental) | AIMAN RENOVATION Frankreich",
+    seoDescriptionDE:
+      "Renovierung in Steinen: Reihenhäuser, Bad, Küche, Anbauten. Französische Qualität aus Saint-Louis — 22 km. Kostenlose Offerte.",
+    seoTitleFR:
+      "Rénovation Steinen (Wiesental) | Artisan français Saint-Louis",
+    seoDescriptionFR:
+      "Rénovation à Steinen : maisons mitoyennes, salle de bain, cuisine, extensions. Artisan français à 22 km. Devis gratuit.",
+  },
+  {
+    slug: "maulburg",
+    name: "Maulburg",
+    nameFr: "Maulburg",
+    bundesland: "Baden-Württemberg",
+    kreis: "Lörrach",
+    population: 4000,
+    distance: 26,
+    featuredImage: "/images/villes/maulburg.webp",
+    specificitesDE: [
+      "Kleingemeinde im Wiesental",
+      "Mehrheitlich Einfamilien- und Reihenhäuser",
+      "Industrietradition (Brauerei, Maschinenbau)",
+      "Wachstum durch Pendlerbewegung",
+      "Sehr ruhige Wohnlage für Familien",
+    ],
+    specificitesFR: [
+      "Petite commune du Wiesental",
+      "Maisons individuelles et mitoyennes en majorité",
+      "Tradition industrielle (brasserie, mécanique)",
+      "Croissance liée aux pendulaires",
+      "Cadre résidentiel calme pour familles",
+    ],
+    seoTitleDE:
+      "Renovierung Maulburg | AIMAN RENOVATION — Wiesental Baden",
+    seoDescriptionDE:
+      "Renovierungen in Maulburg: Einfamilienhäuser, Bad, Küche, Wärmedämmung. Französische Handwerker — 26 km. Kostenlose Offerte in 48h.",
+    seoTitleFR:
+      "Rénovation Maulburg (Wiesental) | Artisan français Alsace",
+    seoDescriptionFR:
+      "Rénovation à Maulburg : maisons individuelles, salle de bain, cuisine, isolation. Artisan français à 26 km. Devis gratuit en 48h.",
+  },
+  {
+    slug: "wehr",
+    name: "Wehr",
+    nameFr: "Wehr",
+    bundesland: "Baden-Württemberg",
+    kreis: "Lörrach",
+    population: 13000,
+    distance: 35,
+    featuredImage: "/images/villes/wehr.webp",
+    specificitesDE: [
+      "Stadt im Hotzenwald, am Rand des Schwarzwalds",
+      "Historische Altstadt mit traditionellen Häusern",
+      "Vielfältiger Wohnbestand mit Altbauten und 1970er-Jahre-Häusern",
+      "Tor zum Naturpark Südschwarzwald",
+      "Geringere Immobilienpreise als in der Region Basel",
+      "Familien suchen ruhiges Wohnen im Grünen",
+    ],
+    specificitesFR: [
+      "Ville dans le Hotzenwald, en lisière de Forêt-Noire",
+      "Vieille ville historique aux maisons traditionnelles",
+      "Parc immobilier varié, anciens et années 1970",
+      "Porte du parc naturel du sud de la Forêt-Noire",
+      "Prix immobiliers plus bas que la région bâloise",
+      "Familles cherchant calme et nature",
+    ],
+    seoTitleDE:
+      "Renovierung Wehr (Hotzenwald) | AIMAN RENOVATION Frankreich",
+    seoDescriptionDE:
+      "Renovierungen in Wehr: Altbauten, Bad, Küche, Fassade, Sanierung. Französische Qualität aus Saint-Louis — 35 km. Offerte in 48h.",
+    seoTitleFR:
+      "Rénovation Wehr (Hotzenwald) | Artisan français Saint-Louis",
+    seoDescriptionFR:
+      "Rénovation à Wehr : anciens bâtiments, salle de bain, cuisine, façade. Artisan français à 35 km. Devis gratuit.",
+  },
 ];
