@@ -8,6 +8,9 @@ import { ServicesPreview } from "@/components/sections/services-preview";
 import { TestimonialsCarousel } from "@/components/sections/testimonials-carousel";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { TestimonialCard } from "@/components/testimonial-card";
+import { getFeaturedTestimonials, getAverageRating } from "@/lib/testimonials";
+import { Link } from "@/i18n/navigation";
 import { LinkButton } from "@/components/ui/link-button";
 import { SeasonalPopup } from "@/components/seasonal-popup";
 
@@ -97,6 +100,36 @@ export default async function HomePage({ params }: Props) {
 
       <TestimonialsCarousel />
       <WhyChooseUs />
+
+      {/* Section avis clients — 6 meilleurs témoignages */}
+      <section className="relative z-10 bg-zinc-50 py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-zinc-900 mb-3">
+              ILS NOUS FONT{" "}
+              <span className="text-[#E50000]">CONFIANCE</span>
+            </h2>
+            <div className="flex items-center justify-center gap-2 text-zinc-500 text-sm">
+              <span className="text-zinc-900 font-semibold text-lg">{getAverageRating().toFixed(1)}/5</span>
+              <span>·</span>
+              <span>30 avis vérifiés</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {getFeaturedTestimonials(6).map((testimonial) => (
+              <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/avis"
+              className="inline-flex items-center gap-2 text-zinc-600 hover:text-zinc-900 text-sm font-medium border border-zinc-300 hover:border-zinc-500 px-6 py-3 rounded-xl transition-all"
+            >
+              Voir tous les avis →
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Zone d'intervention avec photo Alsace */}
       <section className="relative z-10 overflow-hidden">
