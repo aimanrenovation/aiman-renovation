@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({ subsets: ["latin"], display: "swap", preload: true, variable: "--font-inter" });
 
 const archivoBlack = localFont({
   src: "./fonts/ArchivoBlack-Regular.ttf",

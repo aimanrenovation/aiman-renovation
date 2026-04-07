@@ -105,6 +105,9 @@ export function SavoirFaire() {
               alt="Casque de chantier Aiman Renovation"
               width={500}
               height={500}
+              quality={85}
+              loading="lazy"
+              sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, 448px"
               className="w-48 sm:w-64 md:w-full md:max-w-md h-auto rounded-2xl"
             />
           </div>

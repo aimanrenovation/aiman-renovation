@@ -94,6 +94,9 @@ export function ServicesPreview() {
                 src={PHOTO_MAP[service.slug] || ""}
                 alt={serviceMap.get(service.slug)?.title ?? service.title}
                 fill
+                quality={85}
+                loading="lazy"
+                sizes="50vw"
                 className="object-cover opacity-30"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
@@ -128,6 +131,9 @@ export function ServicesPreview() {
                     alt={serviceMap.get(service.slug)?.shortTitle ?? service.shortTitle}
                     width={56}
                     height={56}
+                    quality={85}
+                    loading="lazy"
+                    sizes="56px"
                     className="w-full h-full object-cover"
                   />
                 </div>

@@ -66,7 +66,7 @@ export function WhyChooseUs() {
             >
               {/* Image de fond subtile */}
               <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Image src={ARG_IMAGES[i] || ARG_IMAGES[0]} alt="" fill className="object-cover" />
+                <Image src={ARG_IMAGES[i] || ARG_IMAGES[0]} alt="" fill quality={75} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
               </div>
               <div className="relative p-8">
                 <h3 className="text-white font-heading text-lg mb-2">{arg.title}</h3>

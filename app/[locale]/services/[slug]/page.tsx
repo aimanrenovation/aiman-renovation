@@ -209,6 +209,8 @@ export default async function ServicePage({ params }: Props) {
               alt={`${title} — Aiman Renovation Saint-Louis 68`}
               fill
               priority
+              quality={85}
+              sizes="100vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
@@ -226,6 +228,9 @@ export default async function ServicePage({ params }: Props) {
               alt=""
               width={80}
               height={80}
+              priority
+              quality={85}
+              sizes="80px"
               className="w-16 h-16 md:w-20 md:h-20 mb-6 drop-shadow-2xl"
             />
           )}
@@ -275,6 +280,9 @@ export default async function ServicePage({ params }: Props) {
             src={photo}
             alt={`Travaux ${title.toLowerCase()} en cours — artisan Haut-Rhin`}
             fill
+            quality={85}
+            loading="lazy"
+            sizes="100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60" />
@@ -321,6 +329,9 @@ export default async function ServicePage({ params }: Props) {
                 src={photo}
                 alt=""
                 fill
+                quality={50}
+                loading="lazy"
+                sizes="100vw"
                 className="object-cover opacity-[0.04]"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-transparent to-[#0A0A0A]" />
@@ -439,6 +450,9 @@ export default async function ServicePage({ params }: Props) {
                           src={relPhoto}
                           alt={related.title}
                           fill
+                          quality={85}
+                          loading="lazy"
+                          sizes="(max-width: 768px) 100vw, 33vw"
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
                         />
                       )}
@@ -468,6 +482,9 @@ export default async function ServicePage({ params }: Props) {
               src={photo}
               alt=""
               fill
+              quality={85}
+              loading="lazy"
+              sizes="100vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/70" />

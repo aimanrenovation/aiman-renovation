@@ -46,6 +46,7 @@ function HeroMobile() {
           alt="Aiman Renovation"
           fill
           priority={i === 0}
+          quality={85}
           sizes="100vw"
           className={`object-cover transition-opacity duration-1000 ${
             i === currentImg ? "opacity-100" : "opacity-0"

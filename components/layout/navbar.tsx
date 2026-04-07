@@ -46,7 +46,7 @@ export function Navbar() {
           }}
           className="flex items-center"
         >
-          <Image src="/logo/logo-white.png" alt="Aiman Renovation" width={140} height={44} className="h-auto" priority />
+          <Image src="/logo/logo-white.png" alt="Aiman Renovation" width={140} height={44} priority quality={90} sizes="140px" className="h-auto" />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">

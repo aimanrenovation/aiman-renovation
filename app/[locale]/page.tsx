@@ -64,7 +64,7 @@ export default async function HomePage({ params }: Props) {
       <section className="relative z-10 bg-black py-20 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/3 flex justify-center">
-            <Image src="/images/element-rouleau.jpg" alt={t("paint_roller.alt")} width={300} height={300} className="w-48 md:w-64 h-auto" />
+            <Image src="/images/element-rouleau.jpg" alt={t("paint_roller.alt")} width={300} height={300} quality={85} loading="lazy" sizes="(max-width: 768px) 192px, 256px" className="w-48 md:w-64 h-auto" />
           </div>
           <div className="md:w-2/3 text-center md:text-left">
             <p className="font-heading text-2xl md:text-3xl text-white leading-snug">
@@ -85,6 +85,9 @@ export default async function HomePage({ params }: Props) {
           src="/images/ambiance-resultat.jpg"
           alt={t("result_banner.alt")}
           fill
+          quality={85}
+          loading="lazy"
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60" />
@@ -101,7 +104,7 @@ export default async function HomePage({ params }: Props) {
       {/* Zone d'intervention avec photo Alsace */}
       <section className="relative z-10 overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/ambiance-alsace.jpg" alt="Paysage alsacien — zone intervention rénovation Saint-Louis Haut-Rhin" fill className="object-cover" />
+          <Image src="/images/ambiance-alsace.jpg" alt="Paysage alsacien — zone intervention rénovation Saint-Louis Haut-Rhin" fill quality={85} loading="lazy" sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-black/80" />
         </div>
         <div className="relative py-20 md:py-32 max-w-4xl mx-auto px-6 text-center">
