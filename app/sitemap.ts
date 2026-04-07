@@ -50,6 +50,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...VILLES_CH.flatMap((v) =>
       localizedEntry(`/renovierung-schweiz/${v.slug}`, 0.8, "monthly")
     ),
+    // Canton hub pages — high priority for Swiss SEO
+    ...localizedEntry("/renovierung-schweiz/kanton/basel-stadt", 0.85, "monthly"),
+    ...localizedEntry("/renovierung-schweiz/kanton/basel-landschaft", 0.85, "monthly"),
+    ...localizedEntry("/renovierung-schweiz/kanton/solothurn", 0.7, "monthly"),
     ...VILLES_FR.flatMap((v) =>
       localizedEntry(`/renovation/${v.slug}`, 0.7, "monthly")
     ),

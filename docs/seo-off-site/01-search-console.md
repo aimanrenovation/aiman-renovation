@@ -45,20 +45,21 @@ https://aiman-renovation.fr/services/sols-carrelage
 https://aiman-renovation.fr/services/renovation-complete
 https://aiman-renovation.fr/services/isolation
 https://aiman-renovation.fr/services/facade
-https://aiman-renovation.fr/services/cuisine
-https://aiman-renovation.fr/services/salle-de-bain
-https://aiman-renovation.fr/services/electricite
-https://aiman-renovation.fr/services/plomberie
-https://aiman-renovation.fr/villes/saint-louis-68
-https://aiman-renovation.fr/villes/mulhouse
-https://aiman-renovation.fr/villes/huningue
-https://aiman-renovation.fr/villes/saint-louis
-https://aiman-renovation.fr/de/staedte/basel
-https://aiman-renovation.fr/de/staedte/weil-am-rhein
+https://aiman-renovation.fr/renovation/saint-louis
+https://aiman-renovation.fr/renovation/mulhouse
+https://aiman-renovation.fr/renovation/huningue
+https://aiman-renovation.fr/renovation/altkirch
+https://aiman-renovation.fr/de/renovierung-schweiz/basel
+https://aiman-renovation.fr/de/renovierung-schweiz/riehen
+https://aiman-renovation.fr/de/renovierung-schweiz/allschwil
+https://aiman-renovation.fr/de/renovierung-deutschland/weil-am-rhein
+https://aiman-renovation.fr/de/renovierung-deutschland/loerrach
 https://aiman-renovation.fr/avis
 https://aiman-renovation.fr/blog
-https://aiman-renovation.fr/realisations
+https://aiman-renovation.fr/blog/renovation-appartement-bale-demarches
 ```
+
+> ✅ **URLs vérifiées live le 07/04/2026** (HTTP 200, contenu allemand sur routes suisses/allemandes, contenu FR sur `/renovation/`).
 
 **Procédure pour chaque URL** :
 1. Coller dans la barre "Inspect any URL"

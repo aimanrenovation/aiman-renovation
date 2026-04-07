@@ -1,0 +1,40 @@
+num,priorite,pays,annuaire,url_inscription,da,cout,statut,date_soumission,url_fiche_live,login_utilise,notes
+1,P1,FR,Pages Jaunes,https://www.pagesjaunes.fr/pro/inscription,86,Gratuit,TODO,,,,
+2,P1,FR,Google Business Profile,https://business.google.com,100,Gratuit,DONE,,https://maps.app.goo.gl/w9Kqrcmj32qPLTfL7,,47 avis déjà en ligne
+3,P1,FR,Bing Places,https://www.bingplaces.com,92,Gratuit,TODO,,,,
+4,P1,FR,Apple Maps Connect,https://mapsconnect.apple.com,90,Gratuit,TODO,,,,iPhone requis pour finaliser
+5,P1,FR,Yelp France,https://biz.yelp.fr,92,Gratuit,TODO,,,,
+7,P2,FR,PagesPro,https://www.pagespro.com,60,Gratuit,TODO,,,,
+8,P2,FR,Hotfrog France,https://www.hotfrog.fr,65,Gratuit,TODO,,,,
+9,P2,FR,Cylex France,https://www.cylex-france.fr,55,Gratuit,TODO,,,,
+10,P3,FR,Kompass,https://fr.kompass.com,78,Payant,SKIP,,,,Évaluer après résultats gratuits
+11,P1,FR,Houzz France,https://www.houzz.fr/pro,88,Gratuit,TODO,,,,Vitrine pro + photos chantiers
+12,P2,FR,Travaux.com,https://pro.travaux.com,70,Lead-based,TODO,,,,Leads payants en option
+13,P2,FR,Habitatpresto,https://www.habitatpresto.com/pros,65,Lead-based,TODO,,,,
+14,P3,FR,MesDépanneurs.fr,https://www.mesdepanneurs.fr,60,Lead-based,TODO,,,,
+15,P3,FR,Quotatis,https://pro.quotatis.fr,62,Lead-based,TODO,,,,
+16,P3,FR,123Devis,https://pro.123devis.com,55,Lead-based,TODO,,,,
+17,P3,FR,Le Bon Artisan,https://www.lebonartisan.fr,50,Gratuit,TODO,,,,
+18,P3,FR,Artisans-Boutique,https://www.artisans-boutique.com,45,Gratuit,TODO,,,,
+19,P3,FR,Annuaire-Mairie,https://www.annuaire-mairie.fr,60,Gratuit,TODO,,,,
+20,P3,FR,Justacote,https://www.justacote.com,58,Gratuit,TODO,,,,
+21,P2,FR,Saint-Louis Agglo,https://www.agglo-saint-louis.fr,45,Gratuit,TODO,,,,Contact direct agglo
+22,P3,FR,Mulhouse Alsace Agglo,https://www.mulhouse-alsace.fr,50,Gratuit,TODO,,,,
+23,P2,FR,CCI Alsace,https://www.alsace-eurometropole.cci.fr,55,Gratuit,TODO,,,,Si membre CCI
+24,P3,FR,CMA Alsace,https://www.cm-alsace.fr,55,Cotisation,TODO,,,,Artisan inscrit RM
+25,P3,FR,L'Alsace.fr,https://www.lalsace.fr/annuaire-pro,60,Gratuit,TODO,,,,
+26,P3,FR,DNA Annuaire,https://www.dna.fr,60,Gratuit,TODO,,,,
+27,P1,CH,local.ch,https://welcome.local.ch/fr,88,Gratuit,TODO,,,,CRUCIAL pour Bâle
+28,P1,CH,search.ch,https://www.search.ch,80,Gratuit,TODO,,,,
+29,P1,CH,Yelp Suisse,https://biz.yelp.ch,92,Gratuit,TODO,,,,
+30,P2,CH,moneyhouse.ch,https://www.moneyhouse.ch,75,Gratuit,TODO,,,,B2B focus
+31,P2,CH,renovero.ch,https://www.renovero.ch,60,Lead-based,TODO,,,,
+32,P1,CH,houzz.ch,https://www.houzz.ch/pro,88,Gratuit,TODO,,,,Réutiliser profil Houzz FR
+33,P3,CH,buildigo.ch,https://www.buildigo.ch,55,Lead-based,TODO,,,,
+34,P3,CH,Renovating.ch,https://www.renovating.ch,50,Gratuit,TODO,,,,
+35,P3,DE,Das Örtliche,https://eintragsservice.dasoertliche.de,80,Payant,SKIP,,,,Évaluer après gratuits
+36,P3,DE,Gelbe Seiten,https://eintrag.gelbeseiten.de,78,Payant,SKIP,,,,Évaluer après gratuits
+37,P1,DE,Yelp Deutschland,https://biz.yelp.de,92,Gratuit,TODO,,,,
+38,P2,DE,MyHammer,https://www.my-hammer.de,65,Lead-based,TODO,,,,
+39,P2,DE,11880.com,https://www.11880.com,60,Gratuit,TODO,,,,
+40,P1,DE,houzz.de,https://www.houzz.de,88,Gratuit,TODO,,,,Réutiliser profil Houzz FR
