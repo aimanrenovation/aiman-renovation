@@ -160,4 +160,14 @@ export const ARTICLES: Article[] = [
     relatedSlugs: ["artisan-frontalier-france-suisse-avantages", "renovation-appartement-bale-demarches"],
     relatedServices: ["renovation-complete", "depannage-urgence"],
   },
+  {
+    slug: "renovierung-basel-guenstig-franzoesische-handwerker",
+    category: "prix",
+    readTime: 9,
+    datePublished: "2026-04-07",
+    dateModified: "2026-04-07",
+    featuredImage: "/images/villes/basel.webp",
+    relatedSlugs: ["artisan-frontalier-france-suisse-avantages", "renovation-appartement-bale-demarches"],
+    relatedServices: ["renovation-complete", "salle-de-bain", "cuisine"],
+  },
 ];

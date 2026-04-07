@@ -44,6 +44,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...VILLES_FR.flatMap((v) =>
       localizedEntry(`/renovation/${v.slug}`, 0.8, "monthly")
     ),
+    // Hub pages — country-level entry points
+    ...localizedEntry("/renovierung-schweiz", 0.9, "weekly"),
+    ...localizedEntry("/renovierung-deutschland", 0.9, "weekly"),
     ...VILLES_DE.flatMap((v) =>
       localizedEntry(`/renovierung-deutschland/${v.slug}`, 0.8, "monthly")
     ),
