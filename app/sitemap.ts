@@ -1,6 +1,9 @@
 import type { MetadataRoute } from "next";
 import { SERVICES } from "@/lib/services";
 import { ARTICLES } from "@/lib/articles";
+import { VILLES_DE } from "@/lib/villes-de";
+import { VILLES_CH } from "@/lib/villes-ch";
+import { VILLES_FR } from "@/lib/villes-fr";
 
 const BASE = "https://aiman-renovation.fr";
 const LOCALES = ["fr", "de", "en"] as const;
@@ -38,5 +41,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localizedEntry("/politique-confidentialite", 0.3, "yearly"),
     ...localizedEntry("/blog", 0.8, "weekly"),
     ...ARTICLES.flatMap((a) => localizedEntry(`/blog/${a.slug}`, 0.7, "monthly")),
+    ...VILLES_FR.flatMap((v) =>
+      localizedEntry(`/renovation/${v.slug}`, 0.8, "monthly")
+    ),
+    ...VILLES_DE.flatMap((v) =>
+      localizedEntry(`/renovierung-deutschland/${v.slug}`, 0.8, "monthly")
+    ),
+    ...VILLES_CH.flatMap((v) =>
+      localizedEntry(`/renovierung-schweiz/${v.slug}`, 0.8, "monthly")
+    ),
   ];
 }

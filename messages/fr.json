@@ -2180,4 +2180,79 @@
       "author": "AIMAN RENOVATION",
       "content": "## Les 10 critères pour bien choisir son artisan rénovation dans le Haut-Rhin\n\nChoisir le bon artisan est la décision la plus importante de votre chantier. Une mauvaise sélection peut mener à des travaux mal réalisés ou un artisan qui disparaît.\n\n## Critère 1 : L'inscription au RCS ou au Répertoire des Métiers\n\nVérifiez sur **societe.com** ou **annuaire-entreprises.data.gouv.fr**.\n\n## Critère 2 : L'assurance décennale\n\n10 ans de couverture sur les dommages structurels. Demandez le **certificat d'assurance décennale** en cours de validité. Assureurs reconnus : Allianz, AXA, Generali, MAAF Pro.\n\n## Critère 3 : La RC professionnelle\n\nCouvre les dommages causés pendant le chantier. Demandez une attestation séparée.\n\n## Critère 4 : Les qualifications\n\n- **RGE** : obligatoire pour les aides énergétiques\n- **Qualibat** : qualification entreprises de construction\n- **IRVE** : pour bornes de recharge\n\n## Critère 5 : Les références\n\nDemandez des photos de chantiers similaires et les coordonnées d'anciens clients.\n\n## Critère 6 : La clarté du devis\n\nUn bon devis détaille : désignation précise, quantités, prix HT/TTC, marques et références des matériaux.\n\n## Critère 7 : La présence locale\n\nUn artisan basé à 5 km sera plus réactif. Nos équipes connaissent les fournisseurs Point P, Cedeo et Rexel.\n\n## Critère 8 : La communication\n\nÉvaluez la réactivité avant de signer. Un artisan qui tarde avant le chantier tardera aussi pendant.\n\n## Critère 9 : La règle des acomptes\n\n- Maximum **30 %** à la signature pour un chantier de moins de 3 mois\n- Jamais de paiement intégral avant la fin\n- Solde à la réception, après vérification\n\n## Critère 10 : La garantie de parfait achèvement\n\nL'artisan doit corriger tous les défauts signalés pendant 1 an après réception.\n\n## Pourquoi AIMAN RENOVATION ?\n\nAIMAN RENOVATION coche tous ces critères : inscrit au RM, assurance décennale Allianz, RC pro, devis détaillés, artisans locaux à Saint-Louis 68300. Devis gratuit sous 48h."
     }
-  ]}
+  ],
+  "ville_de_items": [
+    {
+      "slug": "weil-am-rhein",
+      "name": "Weil am Rhein",
+      "hero": {
+        "h1": "Rénovation à Weil am Rhein — Artisan français frontalier",
+        "subtitle": "Votre spécialiste de la rénovation au Dreiländereck — à 3 km de Saint-Louis"
+      },
+      "intro": "Weil am Rhein se situe à seulement 3 km de Saint-Louis, au cœur du triangle des trois pays. Aiman Renovation intervient dans toute la ville pour vos travaux de rénovation : cuisine, salle de bain, carrelage, peinture intérieure et extérieure, façade. Grâce à notre proximité géographique, nous garantissons une réactivité exceptionnelle — intervention sous 48h en urgence, devis gratuit sous 24h.",
+      "intro_de_short": "Wir renovieren in Weil am Rhein — 3 km von Saint-Louis, schnelle Anfahrt, faire Preise in EUR.",
+      "cta": "Demander un devis pour Weil am Rhein",
+      "warumAiman": ""
+    },
+    {
+      "slug": "loerrach",
+      "name": "Lörrach",
+      "hero": {
+        "h1": "Rénovation à Lörrach — Artisan français à 10 km",
+        "subtitle": "Votre partenaire rénovation dans la ville du Landkreis — qualité française, prix compétitifs"
+      },
+      "intro": "Lörrach, capitale du Landkreis éponyme avec 48 000 habitants, est accessible en 15 minutes depuis Saint-Louis. Aiman Renovation y intervient pour des rénovations complètes ou par corps de métier : cuisine clé en main, réfection de salle de bain, pose de carrelage, peinture, isolation et ravalement de façade. Devis gratuit en euros, sans engagement.",
+      "intro_de_short": "Wir renovieren in Lörrach — 10 km von Saint-Louis, alle Gewerke aus einer Hand.",
+      "cta": "Demander un devis pour Lörrach",
+      "warumAiman": ""
+    },
+    {
+      "slug": "grenzach-wyhlen",
+      "name": "Grenzach-Wyhlen",
+      "hero": {
+        "h1": "Rénovation à Grenzach-Wyhlen — Artisan frontalier",
+        "subtitle": "Spécialiste de la rénovation au bord du Rhin — professionnel, ponctuel, compétitif"
+      },
+      "intro": "Grenzach-Wyhlen, commune résidentielle au bord du Rhin à 10 km de Saint-Louis. Aiman Renovation y intervient pour la rénovation complète de vos espaces intérieurs et extérieurs. Cuisine moderne, salle de bain design, pose de parquet ou carrelage, peinture, ravalement — nous coordonnons tous les corps de métier pour un résultat clé en main.",
+      "intro_de_short": "Renovierungsarbeiten in Grenzach-Wyhlen — 10 km ab Saint-Louis, alle Leistungen.",
+      "cta": "Demander un devis pour Grenzach-Wyhlen",
+      "warumAiman": ""
+    },
+    {
+      "slug": "binzen",
+      "name": "Binzen",
+      "hero": {
+        "h1": "Rénovation à Binzen — Artisan français dans le Markgräflerland",
+        "subtitle": "Spécialiste de la rénovation en village viticole — colombages, intérieurs, façades"
+      },
+      "intro": "Binzen, village viticole du Markgräflerland, est à 8 km de Saint-Louis. Ses maisons à colombages, ses fermes et ses maisons individuelles ont des besoins spécifiques de rénovation. Aiman Renovation maîtrise ces typologies : rénovation douce du bâti ancien, modernisation des cuisines et salles de bain, ravalement soigné. Devis gratuit, prix en euros.",
+      "intro_de_short": "Renovierung in Binzen, Markgräflerland — Fachwerk, Küche, Bad, Fassade.",
+      "cta": "Demander un devis pour Binzen",
+      "warumAiman": ""
+    },
+    {
+      "slug": "eimeldingen",
+      "name": "Eimeldingen",
+      "hero": {
+        "h1": "Rénovation à Eimeldingen — Artisan français à 7 km",
+        "subtitle": "Votre partenaire rénovation dans ce village du Landkreis Lörrach"
+      },
+      "intro": "Eimeldingen, village paisible à 7 km de Saint-Louis, compte de nombreuses maisons individuelles des années 60 à 90 qui nécessitent une remise à niveau. Aiman Renovation y intervient pour rénover cuisines et salles de bain vieillissantes, refaire les sols, remettre à neuf les façades et moderniser l'électricité et la plomberie. Devis gratuit en euros, intervention rapide.",
+      "intro_de_short": "Renovierung in Eimeldingen — 7 km ab Saint-Louis, Einfamilienhäuser, faire Preise.",
+      "cta": "Demander un devis pour Eimeldingen",
+      "warumAiman": ""
+    },
+    {
+      "slug": "kandern",
+      "name": "Kandern",
+      "hero": {
+        "h1": "Rénovation à Kandern — Artisan frontalier français",
+        "subtitle": "Vieille ville historique, Rosenfels-Park — rénovation avec respect du patrimoine"
+      },
+      "intro": "Kandern, petite ville historique du Markgräflerland à 18 km de Saint-Louis, est connue pour son parc de Rosenfels, sa vieille ville en pierres et son vignoble. Ses bâtiments anciens requièrent un savoir-faire particulier — Aiman Renovation l'apporte. Rénovation intérieure et extérieure, respect du bâti ancien, modernisation clé en main. Devis gratuit en euros.",
+      "intro_de_short": "Renovierung in Kandern — Historische Altstadt, Steingebäude, Markgräflerland.",
+      "cta": "Demander un devis pour Kandern",
+      "warumAiman": ""
+    }
+  ]
+}
