@@ -1,3 +1,4 @@
+// build-stamp: 2026-04-08 — force rebuild for Wiesental + Hotzenwald cities
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
