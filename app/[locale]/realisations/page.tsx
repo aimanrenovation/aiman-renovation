@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { RealisationsGrid } from "@/components/sections/realisations-grid";
 import { CtaBanner } from "@/components/sections/cta-banner";
 import { getAlternates } from "@/lib/i18n-helpers";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -40,6 +41,12 @@ export default async function RealisationsPage({ params }: Props) {
 
   return (
     <>
+      <Breadcrumb
+        items={[
+          { name: "Accueil", url: "/" },
+          { name: "Réalisations", url: "/realisations" },
+        ]}
+      />
       <section className="relative z-10 pt-32 pb-10 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-6">
