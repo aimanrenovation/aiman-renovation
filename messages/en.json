@@ -2028,5 +2028,79 @@
       "close": "Close",
       "error_generic": "An error occurred. Please try again or contact us directly."
     }
-  }
+  },
+  "ville_de_items": [
+    {
+      "slug": "weil-am-rhein",
+      "name": "Weil am Rhein",
+      "hero": {
+        "h1": "Renovation in Weil am Rhein — French Craftsman at the Border",
+        "subtitle": "Your renovation specialist in the Three-Countries Corner — just 3 km from Saint-Louis"
+      },
+      "intro": "Weil am Rhein is located just 3 km from Saint-Louis, in the heart of the Three-Countries Corner (Dreiländereck). Aiman Renovation serves the whole city for kitchen, bathroom, tiling, painting and facade renovation. Fast response times, free quote in euros, French quality standards.",
+      "cta": "Request a quote for Weil am Rhein",
+      "intro_de_short": "Renovierung in Weil am Rhein — 3 km von Saint-Louis, alle Gewerke.",
+      "warumAiman": ""
+    },
+    {
+      "slug": "loerrach",
+      "name": "Lörrach",
+      "hero": {
+        "h1": "Renovation in Lörrach — French Craftsman, 10 km Away",
+        "subtitle": "Your renovation partner in the Lörrach district capital — quality from France"
+      },
+      "intro": "Lörrach, the main city of the Lörrach district, is just 15 minutes from Saint-Louis. Aiman Renovation provides full renovation services: kitchens, bathrooms, flooring, painting, insulation, facades. Free quote in euros, no hidden costs.",
+      "cta": "Request a quote for Lörrach",
+      "intro_de_short": "Renovierung in Lörrach — 10 km ab Saint-Louis, alle Leistungen.",
+      "warumAiman": ""
+    },
+    {
+      "slug": "grenzach-wyhlen",
+      "name": "Grenzach-Wyhlen",
+      "hero": {
+        "h1": "Renovation in Grenzach-Wyhlen — Cross-Border Craftsman",
+        "subtitle": "Rhine-side renovation specialist — professional, reliable, competitive"
+      },
+      "intro": "Grenzach-Wyhlen, a residential community on the Rhine, is 10 km from Saint-Louis. Aiman Renovation handles kitchen, bathroom, flooring, painting and facade work. Fully coordinated project management, free quote in euros.",
+      "cta": "Request a quote for Grenzach-Wyhlen",
+      "intro_de_short": "Renovierung in Grenzach-Wyhlen — 10 km ab Saint-Louis.",
+      "warumAiman": ""
+    },
+    {
+      "slug": "binzen",
+      "name": "Binzen",
+      "hero": {
+        "h1": "Renovation in Binzen — French Craftsman in Markgräflerland",
+        "subtitle": "Half-timbered houses, wine estates and modern renovation — 8 km from Saint-Louis"
+      },
+      "intro": "Binzen is a picturesque wine village in the Markgräflerland, 8 km from Saint-Louis. Aiman Renovation specialises in renovating half-timbered farmhouses, modernising kitchens and bathrooms, and restoring facades. Free quote in euros.",
+      "cta": "Request a quote for Binzen",
+      "intro_de_short": "Renovierung in Binzen, Markgräflerland — Fachwerk, Küche, Bad.",
+      "warumAiman": ""
+    },
+    {
+      "slug": "eimeldingen",
+      "name": "Eimeldingen",
+      "hero": {
+        "h1": "Renovation in Eimeldingen — French Craftsman at 7 km",
+        "subtitle": "Your renovation partner in this Lörrach district village"
+      },
+      "intro": "Eimeldingen is a quiet rural village 7 km from Saint-Louis with many single-family homes from the 1960s–1990s. Aiman Renovation renovates kitchens, bathrooms, floors and facades. Fast, professional, competitive pricing in euros.",
+      "cta": "Request a quote for Eimeldingen",
+      "intro_de_short": "Renovierung in Eimeldingen — 7 km ab Saint-Louis, faire Preise.",
+      "warumAiman": ""
+    },
+    {
+      "slug": "kandern",
+      "name": "Kandern",
+      "hero": {
+        "h1": "Renovation in Kandern — French Cross-Border Craftsman",
+        "subtitle": "Historic old town, Rosenfels Park — renovation with heritage sensitivity"
+      },
+      "intro": "Kandern, a charming historic town in the Markgräflerland 18 km from Saint-Louis. Known for its Rosenfels Park and stone-built old town. Aiman Renovation handles interior and exterior renovation with respect for historic buildings. Free quote in euros.",
+      "cta": "Request a quote for Kandern",
+      "intro_de_short": "Renovierung in Kandern — Historische Altstadt, Markgräflerland.",
+      "warumAiman": ""
+    }
+  ]
 }

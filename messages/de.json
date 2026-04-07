@@ -2028,5 +2028,79 @@
       "close": "Schließen",
       "error_generic": "Ein Fehler ist aufgetreten. Versuchen Sie es erneut oder kontaktieren Sie uns direkt."
     }
-  }
+  },
+  "ville_de_items": [
+    {
+      "slug": "weil-am-rhein",
+      "name": "Weil am Rhein",
+      "hero": {
+        "h1": "Renovierung in Weil am Rhein — Handwerker aus Frankreich",
+        "subtitle": "Ihr französischer Renovierungsspezialist im Dreiländereck — direkt an der Grenze"
+      },
+      "warumAiman": "Als französischer Handwerksbetrieb aus dem benachbarten Saint-Louis bringen wir Ihnen echte Vorteile: Unsere Preise liegen deutlich unter dem regionalen deutschen Handwerkertarif, ohne dabei Kompromisse bei der Qualität einzugehen. Wir sind RGE-zertifiziert (Reconnu Garant de l'Environnement) und verfügen über eine solide Erfahrung in der Renovierung von Einfamilienhäusern, Eigentumswohnungen und Gewerbeflächen.\n\nIm Dreiländereck Weil am Rhein ist es uns ein besonderes Anliegen, grenzüberschreitende Qualität zu liefern. Alle Materialen entsprechen den europäischen Normen. Unsere Garantie gilt auch für deutsche Auftraggeber — Abnahmeprotokoll und schriftliche Gewährleistung inklusive.",
+      "cta": "Kostenvoranschlag für Weil am Rhein anfragen",
+      "intro": "Weil am Rhein liegt im Herzen des Dreiländerecks, wo Deutschland, Frankreich und die Schweiz zusammentreffen — nur 3 Kilometer von Saint-Louis entfernt. Diese einzigartige geografische Lage macht die Stadt zu einem idealen Einsatzgebiet für Aiman Renovation. Wir kennen den lokalen Immobilienmarkt, die Besonderheiten der Gebäude und die Anforderungen der Bewohner dieser grenznahen Region sehr genau.\n\nWeil am Rhein ist eine wachsende Stadt mit modernen Wohnquartieren, die durch die Nähe zu international renommierten Unternehmen wie Novartis und Roche geprägt wird. Das weltbekannte Vitra Design Museum setzt architektonische Maßstäbe — und unsere Renovierungsarbeiten folgen demselben Anspruch: Qualität, Ästhetik und Langlebigkeit.\n\nOb Sie Ihre Küche modernisieren, Ihr Badezimmer renovieren, neue Bodenbeläge verlegen oder die Fassade Ihres Hauses erneuern möchten — Aiman Renovation bietet Ihnen erstklassige Handwerkskunst zu fairen, transparenten Preisen in Euro. Unsere kurze Anfahrt von nur 5 Minuten bedeutet für Sie: Reaktionsschnelligkeit, Pünktlichkeit und minimale Reisekosten. Wir arbeiten nach französischen Qualitätsstandards und halten dabei die deutschen DIN-Normen ein. Unser Kostenvoranschlag ist kostenlos und unverbindlich.",
+      "intro_de_short": "Weil am Rhein se trouve à seulement 3 km de Saint-Louis — une proximité idéale pour Aiman Renovation. Nous intervenons rapidement dans cette ville du triangle des trois pays pour tous vos travaux : cuisine, salle de bain, carrelage, peinture, façade. Devis gratuit en euros, qualité française garantie."
+    },
+    {
+      "slug": "loerrach",
+      "name": "Lörrach",
+      "hero": {
+        "h1": "Renovierung in Lörrach — Handwerker aus Frankreich",
+        "subtitle": "Ihr Renovierungspartner in der Kreisstadt Lörrach — professionell, fair und grenzüberschreitend"
+      },
+      "warumAiman": "Lörrach bénéficie d'une dynamique économique forte liée au Dreiländereck. Les propriétaires y sont exigeants, et c'est précisément pourquoi Aiman Renovation s'y impose : qualité française, réactivité, prix compétitifs par rapport aux artisans locaux allemands. Devis gratuit, intervention sous 2 semaines.",
+      "cta": "Kostenvoranschlag für Lörrach anfragen",
+      "intro": "Lörrach ist die lebendige Kreisstadt des gleichnamigen Landkreises und mit rund 48.000 Einwohnern das wirtschaftliche und kulturelle Zentrum des südlichen Schwarzwalds. Die historische Altstadt mit ihren charakteristischen Fachwerkhäusern, die imposante Burgruine Rötteln und das vielseitige Stadtleben machen Lörrach zu einem attraktiven Wohnort — direkt am Dreiländereck, nur 10 Kilometer von Saint-Louis entfernt.\n\nIn Lörrach treffen historische Bausubstanz und moderne Wohnarchitektur aufeinander. Altbauten im Stadteil Stetten, sanierungsbedürftige Gründerzeitgebäude in der Innenstadt oder neuerrichtete Mehrfamilienhäuser im Norden der Stadt — Aiman Renovation verfügt über Erfahrung in allen Gebäudetypen. Wir renovieren Küchen und Bäder, verlegen Bodenbeläge, streichen Innen- und Außenwände und erneuern Fassaden nach höchsten Standards.\n\nAls Handwerksbetrieb aus dem benachbarten Elsass verstehen wir die regionalen Besonderheiten. Unsere Teams sprechen Deutsch und Französisch, kennen den lokalen Immobilienmarkt und bieten Ihnen transparente Kostenvoranschläge in Euro — ohne versteckte Zusatzkosten.",
+      "intro_de_short": "Lörrach, capitale du Landkreis éponyme, est à 10 km de Saint-Louis. Aiman Renovation y intervient pour des rénovations complètes : cuisine, salle de bain, sols, façade, peinture. Fort de sa connaissance du bâti alsacien et rhénan, notre artisan vous garantit un travail soigné au meilleur prix."
+    },
+    {
+      "slug": "grenzach-wyhlen",
+      "name": "Grenzach-Wyhlen",
+      "hero": {
+        "h1": "Renovierung in Grenzach-Wyhlen — Artisan aus Frankreich",
+        "subtitle": "Ihr Renovierungsspezialist am Rheinufer — Qualität made in France, direkt vor Ihrer Tür"
+      },
+      "warumAiman": "Die Gemeinde Grenzach-Wyhlen zieht wohlhabende Familien an, die Wert auf Qualität legen. Aiman Renovation bietet genau das: hochwertige Renovierungsarbeiten nach französischen und europäischen Standards, zu Preisen, die deutlich unter dem lokalen Handwerkermarkt liegen. Wir bringen unsere eigenen Materialien mit, koordinieren alle Gewerke und garantieren termingerechte Fertigstellung.",
+      "cta": "Kostenvoranschlag für Grenzach-Wyhlen anfragen",
+      "intro": "Grenzach-Wyhlen ist eine attraktive Doppelgemeinde am südlichen Rheinufer, eingebettet zwischen Basel und Rheinfelden. Mit rund 14.000 Einwohnern gilt die Gemeinde als begehrter Wohnort für Pendler, die im pharmazeutischen Großraum Basel arbeiten — insbesondere bei DSM Nutritional Products, einem der größten lokalen Arbeitgeber. Die Rheinlage, die ruhige Atmosphäre und die gute Infrastruktur machen Grenzach-Wyhlen zu einem Ort, an dem Eigenheimbesitzer hohe Ansprüche an Renovierungsarbeiten stellen.\n\nDie zwei historischen Ortsteile Grenzach und Wyhlen haben sich zu einer einheitlichen Gemeinde mit gemischtem Immobilienbestand zusammengeschlossen: von Altbauten aus der Gründerzeit bis hin zu modernen Einfamilienhäusern aus den 1970er bis 2000er Jahren, die heute oft einer Renovierung bedürfen. Aiman Renovation kennt diese Gebäudetypologien sehr gut und bietet maßgeschneiderte Lösungen für Küchen-, Bad-, Boden- und Fassadenrenovierungen.\n\nMit einer Anfahrt von nur 10 Minuten ab Saint-Louis sind wir schnell vor Ort — pünktlich, zuverlässig und professionell. Unser Kostenvoranschlag ist kostenlos und in Euro ausgestellt.",
+      "intro_de_short": "Grenzach-Wyhlen, commune résidentielle au bord du Rhin à 10 km de Saint-Louis. Aiman Renovation y rénove cuisine, salle de bain, sols et façades. Réactivité, prix compétitifs face aux artisans allemands, qualité française. Devis gratuit en euros."
+    },
+    {
+      "slug": "binzen",
+      "name": "Binzen",
+      "hero": {
+        "h1": "Renovierung in Binzen — Handwerker aus dem Elsass",
+        "subtitle": "Fachwerk, Weingüter und moderne Sanierung — Ihr Renovierungspartner im Markgräflerland"
+      },
+      "warumAiman": "Ein Weindorf wie Binzen erfordert Handwerker, die die lokale Bauweise respektieren. Aiman Renovation bringt dieses Feingefühl mit — wir arbeiten behutsam an historischen Gebäuden und modern an Neubauten. Faire Preise, kurze Anfahrt, verlässliche Arbeit.",
+      "cta": "Kostenvoranschlag für Binzen anfragen",
+      "intro": "Binzen ist ein idyllisches Weindorf im Herzen des Markgräflerlandes, eingebettet in sanfte Hügel und Weinberge nahe der deutsch-französischen Grenze. Das Dorf mit rund 3.000 Einwohnern besticht durch seinen gewachsenen Ortskern mit historischen Fachwerkhäusern, alten Hofgütern und einer typisch badischen Bauweise, die von Generationen gepflegt wurde.\n\nDie Besonderheit von Binzen liegt in seiner Bausubstanz: Fachwerkhäuser erfordern spezifisches Handwerkswissen — den richtigen Umgang mit Holzkonstruktionen, traditionellen Putztechniken und historischen Materialien. Aiman Renovation verfügt genau über dieses Wissen. Wir sanieren Fachwerk behutsam und fachgerecht, renovieren Küchen und Bäder in bestehenden Gebäuden und streichen Innen- sowie Außenflächen mit langlebigen Produkten.\n\nDank unserer Lage in Saint-Louis, nur 8 Kilometer entfernt, sind wir schnell in Binzen — und das zu Preisen, die deutlich unter dem lokalen Handwerkertarif liegen. Wir erstellen Ihnen einen kostenlosen Kostenvoranschlag in Euro direkt vor Ort.",
+      "intro_de_short": "Binzen, village viticole du Markgräflerland à 8 km de Saint-Louis. Maisons à colombages, fermes, habitat pavillonnaire — Aiman Renovation maîtrise tous les types de bâti. Rénovation intérieure et extérieure, devis gratuit en euros."
+    },
+    {
+      "slug": "eimeldingen",
+      "name": "Eimeldingen",
+      "hero": {
+        "h1": "Renovierung in Eimeldingen — Handwerker aus Saint-Louis",
+        "subtitle": "Ihr Renovierungspartner im ländlichen Landkreis Lörrach — nah, zuverlässig, fair"
+      },
+      "warumAiman": "Kleine Dörfer wie Eimeldingen werden von vielen Handwerkern nicht angefahren — wir schon. Aiman Renovation kommt zu Ihnen nach Eimeldingen, erstellt einen kostenlosen Kostenvoranschlag und führt alle Renovierungsarbeiten zuverlässig aus. Faire Preise in Euro, kurze Wartezeiten.",
+      "cta": "Kostenvoranschlag für Eimeldingen anfragen",
+      "intro": "Eimeldingen ist ein ruhiges ländliches Dorf im Landkreis Lörrach, geprägt von Weinbau, Obstgärten und einer dichten Bebauung mit Einfamilienhäusern. Mit rund 2.000 Einwohnern genießt Eimeldingen eine geschützte, grüne Lage zwischen Weil am Rhein und Grenzach — ideal für Familien, die das Landleben schätzen, aber die städtische Infrastruktur von Basel und Lörrach trotzdem schnell erreichen möchten.\n\nDie meisten Gebäude in Eimeldingen stammen aus den 1960er bis 1990er Jahren und stehen heute vor typischen Renovierungsherausforderungen: veraltete Bäder, funktionsuntaugliche Küchen, abgenutzte Böden und Fassaden, die dringend eine Auffrischung benötigen. Aiman Renovation ist in genau dieser Nische tätig: Vollständige Renovierungen für Bestandsimmobilien, die energetisch und ästhetisch auf den neuesten Stand gebracht werden sollen.\n\nVon Saint-Louis sind es nur 7 Kilometer nach Eimeldingen — wir sind schnell vor Ort, arbeiten ordentlich und sauber und hinterlassen eine fertige Baustelle, nicht das Chaos. Alle Leistungen sind kostenlos und in Euro kalkulierbar.",
+      "intro_de_short": "Eimeldingen, village paisible à 7 km de Saint-Louis. Maisons individuelles des années 60-90, salles de bain vieillissantes, cuisines démodées, façades à rénover — Aiman Renovation intervient pour tout. Devis gratuit, prix en euros."
+    },
+    {
+      "slug": "kandern",
+      "name": "Kandern",
+      "hero": {
+        "h1": "Renovierung in Kandern — Handwerker aus Frankreich",
+        "subtitle": "Historische Altstadt, Rosenfels-Park und erstklassige Renovierung — Ihr Partner im Markgräflerland"
+      },
+      "warumAiman": "Historische Gebäude in Kandern erfordern Präzision und Erfahrung. Aiman Renovation bringt beides mit: Wir renovieren sowohl historische Altbauten als auch moderne Häuser mit dem gleichen Anspruch an Qualität. Kostenloser Kostenvoranschlag, faire Preise, kurze Anfahrt aus dem Elsass.",
+      "cta": "Kostenvoranschlag für Kandern anfragen",
+      "intro": "Kandern ist eine der charmantesten Kleinstädte des Markgräflerlandes — bekannt für ihre historische Altstadt mit Steingebäuden aus mehreren Jahrhunderten, den weitläufigen Rosenfels-Park mit seiner romantischen Burgruine und eine lebendige Weinbau- und Töpfereikultur. Mit rund 8.000 Einwohnern hat Kandern einen ausgeprägten touristischen Charakter, zieht aber auch viele Familien an, die das ruhige Leben am Rande des Schwarzwaldes schätzen.\n\nDie Gebäude in Kandern sind vielfältig: Historische Altstadthäuser aus Naturstein und Fachwerk, Herrenhäuser aus dem 18. und 19. Jahrhundert sowie moderne Einfamilienhäuser in den Ortsrandlagen. Für jeden Gebäudetyp hat Aiman Renovation die passende Lösung — von der behutsamen Sanierung historischer Bausubstanz bis zur zeitgemäßen Modernisierung von Küche und Bad.\n\nKandern liegt 18 Kilometer von Saint-Louis entfernt — eine Fahrzeit von etwa 20 Minuten. Wir bieten Ihnen unsere Fachkompetenz, faire Preise und einen kostenlosen Kostenvoranschlag direkt vor Ort. Die Qualität unserer Arbeit ist durch unsere Erfahrung im elsässischen Grenzgebiet bewährt.",
+      "intro_de_short": "Kandern, petite ville historique à 18 km de Saint-Louis. Maisons en pierre, colombages, vieille ville charmante — Aiman Renovation y intervient pour rénovations intérieures et extérieures. Devis gratuit, prix compétitifs en euros."
+    }
+  ]
 }
