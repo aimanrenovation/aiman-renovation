@@ -1045,7 +1045,8 @@
       "magicplan_title": "Scannez votre logement avec MagicPlan",
       "magicplan_subtitle": "Un projet MagicPlan a été créé pour vous. Scannez vos pièces pour nous aider à établir un devis précis.",
       "magicplan_open": "Ouvrir MagicPlan",
-      "magicplan_hint": "Scannez le QR code depuis votre téléphone ou cliquez sur le bouton ci-dessus."
+      "magicplan_hint": "Scannez le QR code depuis votre téléphone ou cliquez sur le bouton ci-dessus.",
+      "magicplan_no_app": "Pas encore l'application ? Téléchargez-la gratuitement :"
     },
     "zones": {
       "cuisine": {

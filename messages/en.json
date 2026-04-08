@@ -1045,7 +1045,8 @@
       "magicplan_title": "Scan your home with MagicPlan",
       "magicplan_subtitle": "A MagicPlan project has been created for you. Scan your rooms to help us provide an accurate quote.",
       "magicplan_open": "Open MagicPlan",
-      "magicplan_hint": "Scan the QR code from your phone or click the button above."
+      "magicplan_hint": "Scan the QR code from your phone or click the button above.",
+      "magicplan_no_app": "Don't have the app yet? Download it for free:"
     },
     "zones": {
       "cuisine": {

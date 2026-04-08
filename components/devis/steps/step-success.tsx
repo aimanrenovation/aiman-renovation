@@ -67,6 +67,28 @@ export function StepSuccessOverlay({ dispatch, magicplanProjectId }: StepSuccess
             </a>
 
             <p className="text-gray-500 text-xs">{t("magicplan_hint")}</p>
+
+            <div className="pt-2 border-t border-white/10">
+              <p className="text-gray-400 text-xs mb-2">{t("magicplan_no_app")}</p>
+              <div className="flex gap-2">
+                <a
+                  href="https://apps.apple.com/app/magicplan/id427424432"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-white/10 hover:bg-white/20 text-white text-xs py-2.5 rounded-lg text-center transition-colors"
+                >
+                  📱 App Store
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.sensopia.magicplan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-white/10 hover:bg-white/20 text-white text-xs py-2.5 rounded-lg text-center transition-colors"
+                >
+                  🤖 Play Store
+                </a>
+              </div>
+            </div>
           </div>
         )}
 
