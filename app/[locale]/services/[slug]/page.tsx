@@ -168,7 +168,7 @@ export default async function ServicePage({ params }: Props) {
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
           </>
         )}
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pb-20 pt-40">
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pb-12 pt-28 sm:pb-16 sm:pt-32 md:pb-20 md:pt-40">
           <div className="flex items-center gap-2 mb-6">
             <div className="w-6 h-1 rounded-full bg-[#002B7F]" />
             <div className="w-6 h-1 rounded-full bg-white" />

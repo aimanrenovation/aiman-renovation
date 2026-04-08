@@ -98,7 +98,7 @@ export function ServicesPageContent() {
         <div className="relative max-w-6xl mx-auto px-6 w-full">
           <h1
             ref={titleRef}
-            className="font-heading text-4xl sm:text-5xl md:text-7xl leading-none"
+            className="font-heading text-3xl sm:text-5xl md:text-7xl leading-none"
             style={{ clipPath: "inset(0 100% 0 0)" }}
           >
             {t("hero_title")} <span className="text-[#E50000]">{t("hero_title_highlight")}</span>
