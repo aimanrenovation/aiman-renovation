@@ -16,17 +16,21 @@ export interface MagicPlanProject {
 
 export async function createMagicPlanProject(params: {
   name: string;
+  clientEmail: string;
   externalReferenceId: string;
   address?: string;
   city?: string;
   zip?: string;
 }): Promise<MagicPlanProject> {
+  // Pass the CLIENT's email so MagicPlan invites them to the project.
+  // The project stays visible in AIMAN's account (via customer_id headers),
+  // but the client also gets access through their own MagicPlan account.
   const res = await fetch(`${MAGICPLAN_BASE_URL}/projects`, {
     method: "POST",
     headers: getHeaders(),
     body: JSON.stringify({
       name: params.name,
-      email: "contact@aiman-renovation.fr",
+      email: params.clientEmail,
       external_reference_id: params.externalReferenceId,
       address_1: params.address,
       city: params.city,
