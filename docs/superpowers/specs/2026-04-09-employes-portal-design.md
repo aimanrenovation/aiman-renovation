@@ -31,8 +31,15 @@ Mobile-first, offline-tolérant sur le pointage, intégré au design existant (p
   traduction DE/EN pour cette section → routes hors `[locale]`.
 - **Mobile-first** : viewport fixe, tap targets ≥ 44px, bouton caméra natif via
   `<input type="file" accept="image/*" capture="environment">`.
-- **Géolocalisation** : `navigator.geolocation` au pointage (consentement requis,
-  fallback manuel si refusé).
+- **Géolocalisation stricte** : `navigator.geolocation` au pointage avec **vérification
+  distance Haversine** contre `chantiers.lat_chantier/lng_chantier` et rayon
+  `chantiers.radius_m` (default 500m). Flags calculés : `on_site` / `no_geo` /
+  `distance_m`. Hors zone ou refus → event `pointage_off_site` → alerte WhatsApp Jarvis.
+- **Géocoding chantiers** : **Mapbox Geocoding API** (gratuit jusqu'à 100k req/mois,
+  préféré à Google). Fallback : **Nominatim OSM** si quota dépassé. Géocoding fait à
+  la création/maj d'un chantier (pas à chaque pointage).
+- **RGPD** : CGU employés obligatoires. Checkbox consentement (géoloc + traitement
+  données) au **premier login** — bloquant tant que non cochée.
 
 ## Architecture fichiers
 
@@ -104,6 +111,8 @@ middleware.ts                          # Déjà existant pour i18n — ajouter b
 | `hourly_rate_cents` | `integer` | pour calcul paies par Super Comptable |
 | `actif` | `boolean` not null `default true` | |
 | `created_at` | `timestamptz` `default now()` | |
+| `cgu_accepted_at` | `timestamptz` | null tant que CGU non acceptées (bloquant) |
+| `cgu_version` | `text` | version des CGU acceptées (ex: `2026-04-09`) |
 | `updated_at` | `timestamptz` `default now()` | |
 
 ### `employes_sessions`
@@ -131,7 +140,11 @@ Les access tokens JWT (15min) sont **stateless**, seuls les refresh tokens sont 
 | `adresse` | `text` not null | |
 | `ville` | `text` | |
 | `code_postal` | `text` | |
-| `lat` / `lng` | `numeric` | pour validation géoloc pointage |
+| `lat_chantier` | `numeric(10,7)` | géocodé via Mapbox à la création/maj adresse |
+| `lng_chantier` | `numeric(10,7)` | idem |
+| `radius_m` | `integer` not null `default 500` | rayon de tolérance pointage |
+| `geocoded_at` | `timestamptz` | dernier géocoding réussi |
+| `geocoding_source` | `text` | `mapbox` \| `nominatim` \| `manuel` |
 | `date_debut` | `date` | |
 | `date_fin_prevue` | `date` | |
 | `date_fin_reelle` | `date` | |
@@ -166,8 +179,14 @@ Index : `(employe_id, date)`, `(chantier_id, date)`.
 | `heure_debut` | `timestamptz` not null | |
 | `heure_fin` | `timestamptz` | null tant que pointage ouvert |
 | `pause_minutes` | `integer` `default 0` | |
-| `lat_debut` / `lng_debut` | `numeric` | |
-| `lat_fin` / `lng_fin` | `numeric` | |
+| `lat_debut` / `lng_debut` | `numeric(10,7)` | position GPS au start |
+| `lat_fin` / `lng_fin` | `numeric(10,7)` | position GPS au stop |
+| `distance_debut_m` | `integer` | distance Haversine au `chantiers.lat/lng` au start |
+| `distance_fin_m` | `integer` | idem au stop |
+| `on_site_debut` | `boolean` | `true` si `distance_debut_m ≤ radius_m` |
+| `on_site_fin` | `boolean` | idem au stop |
+| `no_geo_debut` | `boolean` `default false` | `true` si refus/erreur géoloc |
+| `no_geo_fin` | `boolean` `default false` | idem stop |
 | `notes` | `text` | |
 | `source` | `text` `default 'app'` | `app` \| `offline_sync` \| `manuel_patron` |
 | `created_at` | `timestamptz` `default now()` | |
@@ -287,7 +306,7 @@ Toutes les mutations renvoient `{ok: true, id}` et **déclenchent `dispatchJarvi
 **Payload** :
 ```json
 {
-  "type": "pointage.start|pointage.stop|rapport.created|photo.uploaded|materiel.requested",
+  "type": "pointage.start|pointage.stop|pointage.off_site|rapport.created|photo.uploaded|materiel.requested",
   "employe_id": "uuid",
   "employe_nom": "Prénom Nom",
   "chantier_id": "uuid",
@@ -300,7 +319,8 @@ Toutes les mutations renvoient `{ok: true, id}` et **déclenchent `dispatchJarvi
 **Signature** : header `X-Jarvis-Signature: sha256=<hmac>` calculé avec `JARVIS_WEBHOOK_SECRET`.
 
 **Dispatch côté Jarvis** (hors scope T7, réalisé par T2) :
-- `pointage.*` → Super Comptable (heures, rentabilité, paie)
+- `pointage.start` / `pointage.stop` → Super Comptable (heures, rentabilité, paie)
+- `pointage.off_site` → **Alerte WhatsApp patron** via Jarvis (employé hors rayon chantier ou sans géoloc) + log Super Comptable
 - `rapport.created` → Planning Agent (adaptation planning temps réel)
 - `photo.uploaded` → CM Directeur Artistique (contenu social auto)
 - `materiel.requested` → Super Comptable (budget) + Acheteur (fournisseurs)
@@ -324,6 +344,16 @@ d'échec dans une table `jarvis_events_failed` si besoin (phase 2).
 - **HTTPS only** (géré par Vercel).
 - **Anti-énumération** : `/reset-password-request` renvoie toujours 200.
 - **Audit log** (phase 2) : table `employes_audit_log` pour actions sensibles.
+- **RGPD** :
+  - CGU employés (`app/(employes)/espace-employes/cgu/page.tsx`) listant : données
+    collectées (identité, pointages, géoloc, photos, rapports), finalités (paie,
+    planning, comptabilité), durée de conservation, droits (accès, rectification,
+    effacement), responsable de traitement (Aiman Rénovation).
+  - **Checkbox consentement bloquante au premier login** : tant que `cgu_accepted_at`
+    est null, l'employé est redirigé vers `/espace-employes/cgu` et ne peut rien faire
+    d'autre. Acceptation → `UPDATE employes SET cgu_accepted_at=now(), cgu_version='2026-04-09'`.
+  - **Re-consentement** si version CGU change (comparaison `cgu_version` en DB vs
+    constante `CGU_CURRENT_VERSION` côté code).
 
 ## Mobile-first
 
@@ -379,8 +409,9 @@ d'échec dans une table `jarvis_events_failed` si besoin (phase 2).
 ```
 DATABASE_URL=                  # Neon Postgres (provisionné via Vercel Marketplace)
 JWT_SECRET=                    # 256 bits random (openssl rand -base64 32)
-JARVIS_WEBHOOK_URL=            # https://webhook.aiman-renovation.fr
-JARVIS_WEBHOOK_SECRET=         # HMAC secret partagé avec T2
+JARVIS_WEBHOOK_URL=             # https://webhook.aiman-renovation.fr
+JARVIS_WEBHOOK_SECRET=          # HMAC secret partagé avec T2
+MAPBOX_TOKEN=                   # Mapbox Geocoding API (free 100k/mois)
 # Déjà présents :
 # S3_ACCESS_KEY / S3_SECRET_KEY / S3_BUCKET (Scaleway)
 # RESEND_API_KEY (pour reset-password email)
@@ -395,8 +426,11 @@ Toutes ajoutées via `vercel env add NOM` interactif (pas de bash inline — rè
 2. **`email` comme login ou `username` dédié ?** → recommandation : **email** (les employés ont presque tous un email, sinon on met un alias `prenom@aiman-renovation.local`).
 3. **Calendrier planning modulable** : **custom grid shadcn** pour le MVP (mois ×
    employés × jours), drag&drop phase 2. FullCalendar = overkill pour ce besoin.
-4. **Géoloc pointage** : juste logguée ou validation contre `chantiers.lat/lng` (rayon 200m) ?
-   → MVP **logguée seulement**, alerte patron si hors zone en phase 2.
+4. ~~**Géoloc pointage** : juste logguée ou validation stricte ?~~
+   → **TRANCHÉ 2026-04-09 par Moniteur Vision** : validation stricte Haversine contre
+   `chantiers.lat_chantier/lng_chantier` avec `radius_m` (default 500m). Event
+   `pointage.off_site` → alerte WhatsApp Jarvis si hors zone ou refus géoloc.
+   Géocoding chantiers via Mapbox (fallback Nominatim OSM).
 5. **Format rapport** : texte libre + checklist préremplie par métier ? → MVP **texte libre
    + checklist `travaux_realises` libre**. Templates par métier en phase 2.
 6. **Offline pointage** : inclus dans Phase 3 MVP ou bonus Phase 3.5 ? → **bonus 3.5**.
