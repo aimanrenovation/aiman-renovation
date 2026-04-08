@@ -48,12 +48,12 @@ Dans le JSON-LD du site, vérifier :
 ### 3. Pages villes Suisse
 Vérifier que les 16 pages villes suisses sont bien indexables et linkées :
 ```
-/de/staedte/basel
-/de/staedte/binningen
-/de/staedte/birsfelden
-/de/staedte/muttenz
-/de/staedte/pratteln
-/de/staedte/reinach-bl
+/de/renovierung-schweiz/basel
+/de/renovierung-schweiz/binningen
+/de/renovierung-schweiz/birsfelden
+/de/renovierung-schweiz/muttenz
+/de/renovierung-schweiz/pratteln
+/de/renovierung-schweiz/reinach-bl
 ... (16 au total)
 ```
 
@@ -103,9 +103,10 @@ Vérifier que les 16 pages villes suisses sont bien indexables et linkées :
 Créer (ou enrichir) ces pages :
 
 ### Pages cibles à compléter
-- [ ] `/de/staedte/basel` — Page hub Bâle (top niveau)
-- [ ] `/de/kantone/basel-stadt` — NOUVEAU — Canton de Bâle-Ville
-- [ ] `/de/kantone/basel-landschaft` — NOUVEAU — Canton de Bâle-Campagne
+- [x] `/de/renovierung-schweiz/basel` — Page hub Bâle (top niveau)
+- [x] `/de/renovierung-schweiz/kanton/basel-stadt` — Canton de Bâle-Ville (DONE phase 3bis)
+- [x] `/de/renovierung-schweiz/kanton/basel-landschaft` — Canton de Bâle-Campagne (DONE phase 3bis)
+- [x] `/de/renovierung-schweiz/kanton/solothurn` — Canton de Soleure (DONE phase 3bis)
 
 ### Mots-clés cibles allemands
 | Mot-clé | Volume mensuel CH | Difficulté |
@@ -168,7 +169,7 @@ Pour accélérer le ranking sur les mots-clés cantonaux suisses :
   - [Badezimmer renovieren Basel]
   - [französische Handwerker Basel]
 - **Budget** : 50 €/mois
-- **Page de destination** : `/de/staedte/basel`
+- **Page de destination** : `/de/renovierung-schweiz/basel`
 
 **Objectif Ads** : drainer du trafic qualifié + signaux d'engagement → boost SEO indirect
 

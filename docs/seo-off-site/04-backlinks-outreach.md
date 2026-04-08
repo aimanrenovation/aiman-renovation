@@ -241,6 +241,154 @@ Aiman El Belazi
 
 ---
 
+## TEMPLATE 6 — Presse suisse / allemande (DE) 🇨🇭🇩🇪
+
+**Cible** : journalistes économie/immobilier de Basler Zeitung, 20 Minuten Basel, bz Basel, Badische Zeitung (Lörrach/Weil am Rhein), Südkurier
+**Comment trouver** : LinkedIn → "BaZ Wirtschaft" / "Badische Zeitung Lörrach Redaktion"
+
+**Betreff** : Themenvorschlag — Französisches Handwerkerunternehmen saniert grenzüberschreitend in Basel und Lörrach
+
+**Body** :
+```
+Sehr geehrte Damen und Herren,
+
+mein Name ist Aiman El Belazi, Inhaber der AIMAN RENOVATION SASU mit
+Sitz in Saint-Louis (F-68300), direkt an der trinationalen Grenze.
+
+Wir sind eines der wenigen französischen Sanierungsunternehmen, das
+aktiv in der Region Basel und im südlichen Baden-Württemberg
+(Lörrach, Weil am Rhein, Rheinfelden) tätig ist. Unser Team ist
+dreisprachig (FR/DE/EN) und deckt alle Gewerke ab: Malerarbeiten,
+Plattenlegerarbeiten, Sanitär, Elektro, Fassade, Komplettsanierung.
+
+Drei mögliche Themen, die Ihre Leserinnen und Leser interessieren
+könnten:
+
+1. **Grenzüberschreitende Sanierung boomt**: Schweizer und deutsche
+   Kunden lassen zunehmend in Frankreich sanieren — französische
+   Preise, alsässische Handwerksqualität, dreisprachiger Service.
+
+2. **Der europäische Handwerkermangel aus Sicht eines Dreiländer-Eck-
+   Unternehmers**: wie wir Fachkräfte aus FR/DE/CH rekrutieren und
+   ausbilden.
+
+3. **Förderprogramme im Vergleich**: MaPrimeRénov' (FR), KfW (DE),
+   kantonale Gebäudeprogramme (CH) — wie wir Kunden je nach Wohnsitz
+   beraten.
+
+Ich biete gerne einen Baustellenbesuch und ein Interview an. Fotos
+und Kundenreferenzen stelle ich zur Verfügung.
+
+Mit freundlichen Grüssen,
+Aiman El Belazi
+Geschäftsführer — AIMAN RENOVATION SASU
++33 6 33 49 69 25
+https://aiman-renovation.fr/de/renovierung-schweiz/basel
+```
+
+**Cibles concrètes** :
+- Basler Zeitung (BaZ) Wirtschaft : redaktion@bazonline.ch
+- 20 Minuten Basel : redaktion.basel@20minuten.ch
+- bz Basel : redaktion@bzbasel.ch
+- Badische Zeitung Lörrach : loerrach.redaktion@badische-zeitung.de
+- Weiler Zeitung : redaktion.weil@verlagshaus-jaumann.de
+- Südkurier Hochrhein : hochrhein.redaktion@suedkurier.de
+
+---
+
+## TEMPLATE 7 — Partenaires Suisse / Baden-Württemberg (DE)
+
+**Cible** : Architekturbüros Basel, Immobilienmakler (Engel & Völkers, Remax CH), Innenarchitekten, Gartenbaufirmen, Liegenschaftsverwaltungen
+**Pourquoi** : ils gèrent le parc immobilier et doivent recommander des artisans de confiance pour leurs clients propriétaires
+
+**Betreff** : Kooperation — gegenseitige Empfehlung für Sanierungsprojekte Basel / Lörrach
+
+**Body** :
+```
+Sehr geehrte Frau / Sehr geehrter Herr [Nachname],
+
+mein Name ist Aiman El Belazi, Inhaber von AIMAN RENOVATION,
+einem französischen Sanierungsunternehmen mit Sitz in Saint-Louis
+(5 Minuten von Basel).
+
+Ich kontaktiere Sie, weil sich unsere Tätigkeiten hervorragend
+ergänzen: Ihre Kunden benötigen regelmässig einen zuverlässigen
+Handwerksbetrieb für Renovierungen — wir übernehmen diese Projekte
+mit einem dreisprachigen Team (FR/DE/EN) und decken alle Gewerke ab.
+
+Mein Vorschlag:
+
+- Gegenseitige Empfehlung, wenn der Bedarf entsteht
+- Gegenseitiger Link auf unseren Websites (Partnerseite)
+- Gemeinsame Referenzprojekte für die Kommunikation
+
+Unsere Website: https://aiman-renovation.fr/de
+Unsere Partnerseite: https://aiman-renovation.fr/partenaires
+
+Gerne stelle ich mich persönlich in Ihrem Büro vor oder wir
+vereinbaren einen 15-minütigen Videocall.
+
+Mit freundlichen Grüssen,
+Aiman El Belazi
++33 6 33 49 69 25
+contact@aiman-renovation.fr
+```
+
+**Cibles concrètes à chercher** :
+- Architekten : Architekten Basel (SIA-Verzeichnis https://www.sia.ch)
+- Immobilienmakler : Engel & Völkers Basel, Remax Basel, Neho Basel
+- Innenarchitekten : VSI.ASAI Regionalgruppe Basel
+- Liegenschaftsverwaltungen : WincasaAG, Privera Basel, H. Graf Immobilien
+- Baden-Württemberg : Immobilien Lörrach, Sparkasse Immobilien Weil am Rhein
+
+---
+
+## TEMPLATE 8 — Annuaires et Verbände DE/CH
+
+**Cible** : chambres de métiers, fédérations artisanales, annuaires pros allemands/suisses
+**Pourquoi** : liens depuis sites `.ch` et `.de` de haute autorité — essentiels pour ranker sur google.ch et google.de
+
+**Betreff** : Eintragung in Handwerksverzeichnis — grenzüberschreitender Betrieb
+
+**Body** :
+```
+Sehr geehrte Damen und Herren,
+
+ich möchte unseren Betrieb in Ihr Verzeichnis eintragen lassen.
+
+Firmendaten:
+Firmenname : AIMAN RENOVATION SASU
+Handelsregister : SIREN 984381564 (Frankreich)
+Adresse : 12 Rue de Bâle, F-68300 Saint-Louis
+Telefon : +33 6 33 49 69 25
+E-Mail : contact@aiman-renovation.fr
+Web : https://aiman-renovation.fr/de
+Tätigkeitsbereich : Komplettsanierung, Malerarbeiten, Plattenlegerarbeiten,
+                    Sanitär, Elektro, Fassade, Dämmung
+Einsatzgebiet : Basel, Binningen, Muttenz, Pratteln, Reinach BL,
+                Lörrach, Weil am Rhein, Rheinfelden, Grenzach-Wyhlen
+Sprachen : Französisch, Deutsch, Englisch
+
+Welche Unterlagen benötigen Sie für die Eintragung?
+
+Mit freundlichen Grüssen,
+Aiman El Belazi
+```
+
+**Cibles concrètes** :
+- **local.ch** : https://www.local.ch (annuaire #1 CH — DA 78)
+- **search.ch** : https://www.search.ch (annuaire #2 CH)
+- **Swiss Handwerker Verzeichnis** : https://www.handwerker.ch
+- **renovero.ch** : plateforme artisans CH
+- **Gewerbeverband Basel-Stadt** : https://www.gewerbe-basel.ch
+- **Handwerkskammer Freiburg** (zone Lörrach) : https://www.hwk-freiburg.de
+- **Das Örtliche DE** : https://www.dasoertliche.de (annuaire local DE)
+- **Gelbe Seiten** : https://www.gelbeseiten.de
+- **MyHammer.de** : plateforme artisans DE (équivalent Houzz)
+- **11880.com** : annuaire DE
+
+---
+
 ## 📊 Tracking outreach
 
 Créer un Google Sheet "Backlinks Outreach 2026" :
