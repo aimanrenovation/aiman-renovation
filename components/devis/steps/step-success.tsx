@@ -1,44 +1,21 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import { CheckCircle, Phone, ArrowLeft, Smartphone } from "lucide-react";
+import { CheckCircle, Phone, ArrowLeft, Smartphone, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { LinkButton } from "@/components/ui/link-button";
 import type { DevisAction } from "../devis-types";
-import QRCodeLib from "qrcode";
 
 interface StepSuccessProps {
   dispatch: React.Dispatch<DevisAction>;
   magicplanProjectId: string | null;
 }
 
-function QRCodeCanvas({ value, size = 160 }: { value: string; size?: number }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    QRCodeLib.toCanvas(canvas, value, {
-      width: size,
-      margin: 2,
-      color: { dark: "#000000", light: "#ffffff" },
-    });
-  }, [value, size]);
-
-  return <canvas ref={canvasRef} width={size} height={size} className="rounded-lg" />;
-}
-
-export function StepSuccessOverlay({ dispatch, magicplanProjectId }: StepSuccessProps) {
+export function StepSuccessOverlay({ dispatch: _dispatch, magicplanProjectId: _magicplanProjectId }: StepSuccessProps) {
   const t = useTranslations("devis.success");
-
-  const deepLink = magicplanProjectId
-    ? `magicplanstd://project/${magicplanProjectId}`
-    : null;
 
   return (
     <div className="w-full max-w-md mx-4">
-      <div className="bg-[#111] rounded-3xl p-10 shadow-2xl border border-white/10 text-center">
+      <div className="bg-[#111] rounded-3xl p-8 sm:p-10 shadow-2xl border border-white/10 text-center">
         <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
           <CheckCircle className="w-10 h-10 text-green-500" />
         </div>
@@ -47,50 +24,52 @@ export function StepSuccessOverlay({ dispatch, magicplanProjectId }: StepSuccess
         <p className="text-gray-300 mb-6">{t("message")}</p>
         <p className="text-gray-400 text-sm mb-8">{t("email_sent")}</p>
 
-        {deepLink && (
-          <div className="bg-blue-500/10 border border-blue-500/30 rounded-2xl p-6 mb-8 space-y-4">
-            <div className="flex items-center justify-center gap-2 text-blue-400">
-              <Smartphone className="w-5 h-5" />
-              <h3 className="font-semibold text-sm">{t("magicplan_title")}</h3>
-            </div>
-            <p className="text-gray-300 text-sm">{t("magicplan_subtitle")}</p>
-
-            <div className="flex justify-center">
-              <QRCodeCanvas value={deepLink} />
-            </div>
-
-            <a
-              href={deepLink}
-              className="block w-full bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold py-3 rounded-xl transition-colors text-center"
-            >
-              {t("magicplan_open")}
-            </a>
-
-            <p className="text-gray-500 text-xs">{t("magicplan_hint")}</p>
-
-            <div className="pt-2 border-t border-white/10">
-              <p className="text-gray-400 text-xs mb-2">{t("magicplan_no_app")}</p>
-              <div className="flex gap-2">
-                <a
-                  href="https://apps.apple.com/app/magicplan/id427424432"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-white/10 hover:bg-white/20 text-white text-xs py-2.5 rounded-lg text-center transition-colors"
-                >
-                  📱 App Store
-                </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.sensopia.magicplan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-white/10 hover:bg-white/20 text-white text-xs py-2.5 rounded-lg text-center transition-colors"
-                >
-                  🤖 Play Store
-                </a>
-              </div>
-            </div>
+        <div className="bg-blue-500/10 border border-blue-500/30 rounded-2xl p-5 sm:p-6 mb-8 text-left">
+          <div className="flex items-center justify-center gap-2 text-blue-400 mb-3">
+            <Smartphone className="w-5 h-5" />
+            <h3 className="font-semibold text-sm">{t("magicplan_title")}</h3>
           </div>
-        )}
+          <p className="text-gray-300 text-sm text-center mb-5">{t("magicplan_subtitle")}</p>
+
+          <ol className="space-y-3 mb-5">
+            <li className="flex gap-3">
+              <span className="shrink-0 w-6 h-6 rounded-full bg-blue-500/30 text-blue-300 text-xs font-bold flex items-center justify-center">1</span>
+              <span className="text-gray-300 text-sm leading-relaxed">{t("magicplan_step1")}</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="shrink-0 w-6 h-6 rounded-full bg-blue-500/30 text-blue-300 text-xs font-bold flex items-center justify-center">2</span>
+              <span className="text-gray-300 text-sm leading-relaxed">{t("magicplan_step2")}</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="shrink-0 w-6 h-6 rounded-full bg-blue-500/30 text-blue-300 text-xs font-bold flex items-center justify-center">3</span>
+              <span className="text-gray-300 text-sm leading-relaxed">
+                {t("magicplan_step3")}{" "}
+                <a href="mailto:contact@aiman-renovation.fr" className="text-blue-400 hover:text-blue-300 underline inline-flex items-center gap-1">
+                  <Mail className="w-3 h-3" />contact@aiman-renovation.fr
+                </a>
+              </span>
+            </li>
+          </ol>
+
+          <div className="flex gap-2">
+            <a
+              href="https://apps.apple.com/app/magicplan/id427424432"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-medium py-3 rounded-lg text-center transition-colors"
+            >
+              📱 App Store
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.sensopia.magicplan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-medium py-3 rounded-lg text-center transition-colors"
+            >
+              🤖 Play Store
+            </a>
+          </div>
+        </div>
 
         <div className="space-y-3">
           <LinkButton

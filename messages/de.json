@@ -1046,7 +1046,10 @@
       "magicplan_subtitle": "Ein MagicPlan-Projekt wurde für Sie erstellt. Scannen Sie Ihre Räume, damit wir Ihnen ein genaues Angebot erstellen können.",
       "magicplan_open": "MagicPlan öffnen",
       "magicplan_hint": "Scannen Sie den QR-Code mit Ihrem Telefon oder klicken Sie auf die Schaltfläche oben.",
-      "magicplan_no_app": "App noch nicht installiert? Kostenlos herunterladen:"
+      "magicplan_no_app": "App noch nicht installiert? Kostenlos herunterladen:",
+      "magicplan_step1": "Laden Sie die kostenlose MagicPlan-App herunter und erstellen Sie schnell ein Konto.",
+      "magicplan_step2": "Scannen Sie mit Ihrem Telefon jeden Raum, in dem Arbeiten durchgeführt werden sollen.",
+      "magicplan_step3": "Exportieren Sie Ihren Plan als PDF und senden Sie ihn an"
     },
     "zones": {
       "cuisine": {

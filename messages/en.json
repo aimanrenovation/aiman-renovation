@@ -1046,7 +1046,10 @@
       "magicplan_subtitle": "A MagicPlan project has been created for you. Scan your rooms to help us provide an accurate quote.",
       "magicplan_open": "Open MagicPlan",
       "magicplan_hint": "Scan the QR code from your phone or click the button above.",
-      "magicplan_no_app": "Don't have the app yet? Download it for free:"
+      "magicplan_no_app": "Don't have the app yet? Download it for free:",
+      "magicplan_step1": "Download the free MagicPlan app and create a quick account.",
+      "magicplan_step2": "Scan each room concerned by the renovation with your phone.",
+      "magicplan_step3": "Export your plan as PDF and send it to"
     },
     "zones": {
       "cuisine": {

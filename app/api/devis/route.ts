@@ -3,7 +3,6 @@ import { resend, DEVIS_FROM_EMAIL, DEVIS_RECIPIENT_EMAIL } from "@/lib/email";
 import { generateDevisEmailHtml } from "@/lib/email-templates/devis-confirmation";
 import type { DevisState } from "@/components/devis/devis-types";
 import { ZONES_CONFIG } from "@/components/devis/devis-zones-config";
-import { createMagicPlanProject, getMagicPlanDeepLink } from "@/lib/magicplan";
 import { notifyJarvis } from "@/lib/jarvis-notify";
 
 export async function POST(request: NextRequest) {
@@ -77,22 +76,13 @@ export async function POST(request: NextRequest) {
       html: generateDevisEmailHtml({ data: data as DevisState, isClientCopy: true, locale }),
     });
 
-    // Create MagicPlan project
-    let magicplanProjectId: string | null = null;
-    let magicplanDeepLink: string | null = null;
-
-    try {
-      const refId = `devis-${Date.now()}`;
-      const project = await createMagicPlanProject({
-        name: `${data.contact.firstName} ${data.contact.lastName}`,
-        externalReferenceId: refId,
-        address: data.contact.address,
-      });
-      magicplanProjectId = project.id;
-      magicplanDeepLink = getMagicPlanDeepLink(project.id);
-    } catch (err) {
-      console.error("MagicPlan project creation failed (non-blocking):", err);
-    }
+    // MagicPlan: server-side project creation removed.
+    // The project was owned by AIMAN's MagicPlan account and could not be opened
+    // by the client (different account). Workflow is now: client downloads the
+    // free MagicPlan app, scans rooms with their own account, and emails the
+    // exported PDF to contact@aiman-renovation.fr.
+    const magicplanProjectId: string | null = null;
+    const magicplanDeepLink: string | null = null;
 
     // Notify Jarvis (non-blocking)
     await notifyJarvis({
