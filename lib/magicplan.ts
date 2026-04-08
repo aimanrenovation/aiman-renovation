@@ -22,16 +22,21 @@ export async function createMagicPlanProject(params: {
   city?: string;
   zip?: string;
 }): Promise<MagicPlanProject> {
-  // Pass the CLIENT's email so MagicPlan invites them to the project.
-  // The project stays visible in AIMAN's account (via customer_id headers),
-  // but the client also gets access through their own MagicPlan account.
+  // IMPORTANT: MagicPlan API v2 requires the `email` field to match an
+  // existing user in the customer account. Passing an external client email
+  // returns HTTP 401. So we always use AIMAN's email to create the project
+  // under his account, and we tag the client via:
+  //   - The project name (includes client email)
+  //   - The external_reference_id (includes client email)
+  // This way Aiman sees the project in his MagicPlan dashboard with clear
+  // client identification, even though the client cannot directly access it.
   const res = await fetch(`${MAGICPLAN_BASE_URL}/projects`, {
     method: "POST",
     headers: getHeaders(),
     body: JSON.stringify({
-      name: params.name,
-      email: params.clientEmail,
-      external_reference_id: params.externalReferenceId,
+      name: `${params.name} — ${params.clientEmail}`,
+      email: "contact@aiman-renovation.fr",
+      external_reference_id: `${params.externalReferenceId}__${params.clientEmail}`,
       address_1: params.address,
       city: params.city,
       zip: params.zip,
