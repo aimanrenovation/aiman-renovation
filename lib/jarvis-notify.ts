@@ -7,6 +7,7 @@ type JarvisNotificationType =
   | "devis_received"
   | "candidature_received"
   | "magicplan_received"
+  | "magicplan_upload_client"
   | "contact_received";
 
 interface JarvisNotification {

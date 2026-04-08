@@ -1,20 +1,93 @@
 "use client";
 
-import { CheckCircle, Phone, ArrowLeft, Smartphone, Mail } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useRef, useState } from "react";
+import { CheckCircle, Phone, ArrowLeft, Smartphone, Mail, Upload, X, Loader2 } from "lucide-react";
+import { useTranslations, useLocale } from "next-intl";
 import { LinkButton } from "@/components/ui/link-button";
 import type { DevisAction } from "../devis-types";
 
 interface StepSuccessProps {
   dispatch: React.Dispatch<DevisAction>;
   magicplanProjectId: string | null;
+  clientEmail: string;
+  clientName: string;
 }
 
-export function StepSuccessOverlay({ dispatch: _dispatch, magicplanProjectId: _magicplanProjectId }: StepSuccessProps) {
+const MAX_FILES = 10;
+const MAX_SIZE = 50 * 1024 * 1024;
+const ACCEPT = "application/pdf,image/*,.xml,.svg";
+
+export function StepSuccessOverlay({
+  dispatch: _dispatch,
+  magicplanProjectId,
+  clientEmail,
+  clientName,
+}: StepSuccessProps) {
   const t = useTranslations("devis.success");
+  const locale = useLocale();
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
+  const [uploading, setUploading] = useState(false);
+  const [uploadStatus, setUploadStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState<string>("");
+
+  function addFiles(files: FileList | null) {
+    if (!files) return;
+    const incoming = Array.from(files);
+    const merged = [...selectedFiles, ...incoming].slice(0, MAX_FILES);
+    setSelectedFiles(merged);
+    setUploadStatus("idle");
+  }
+
+  function removeFile(index: number) {
+    setSelectedFiles((prev) => prev.filter((_, i) => i !== index));
+  }
+
+  async function handleUpload() {
+    if (selectedFiles.length === 0) return;
+
+    // Local size validation
+    for (const f of selectedFiles) {
+      if (f.size > MAX_SIZE) {
+        setUploadStatus("error");
+        setErrorMsg(t("upload_max_size"));
+        return;
+      }
+    }
+
+    setUploading(true);
+    setUploadStatus("idle");
+    setErrorMsg("");
+
+    try {
+      const fd = new FormData();
+      for (const f of selectedFiles) fd.append("files", f, f.name);
+      if (magicplanProjectId) fd.append("magicplanProjectId", magicplanProjectId);
+      fd.append("clientEmail", clientEmail);
+      fd.append("clientName", clientName);
+      fd.append("locale", locale);
+
+      const res = await fetch("/api/devis/magicplan-upload", {
+        method: "POST",
+        body: fd,
+      });
+      if (!res.ok) throw new Error("upload_failed");
+      const json = await res.json();
+      if (!json.success) throw new Error(json.error || "upload_failed");
+
+      setUploadStatus("success");
+      setSelectedFiles([]);
+    } catch (err) {
+      setUploadStatus("error");
+      setErrorMsg(err instanceof Error ? err.message : t("upload_error"));
+    } finally {
+      setUploading(false);
+    }
+  }
 
   return (
-    <div className="w-full max-w-md mx-4">
+    <div data-lenis-prevent className="w-full max-w-md mx-4 max-h-[90dvh] overflow-y-auto overscroll-contain">
       <div className="bg-[#111] rounded-3xl p-8 sm:p-10 shadow-2xl border border-white/10 text-center">
         <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
           <CheckCircle className="w-10 h-10 text-green-500" />
@@ -24,7 +97,7 @@ export function StepSuccessOverlay({ dispatch: _dispatch, magicplanProjectId: _m
         <p className="text-gray-300 mb-6">{t("message")}</p>
         <p className="text-gray-400 text-sm mb-8">{t("email_sent")}</p>
 
-        <div className="bg-blue-500/10 border border-blue-500/30 rounded-2xl p-5 sm:p-6 mb-8 text-left">
+        <div className="bg-blue-500/10 border border-blue-500/30 rounded-2xl p-5 sm:p-6 mb-6 text-left">
           <div className="flex items-center justify-center gap-2 text-blue-400 mb-3">
             <Smartphone className="w-5 h-5" />
             <h3 className="font-semibold text-sm">{t("magicplan_title")}</h3>
@@ -69,6 +142,97 @@ export function StepSuccessOverlay({ dispatch: _dispatch, magicplanProjectId: _m
               🤖 Play Store
             </a>
           </div>
+        </div>
+
+        {/* Direct upload block */}
+        <div className="bg-green-500/10 border border-green-500/30 rounded-2xl p-5 sm:p-6 mb-6 text-left">
+          <div className="flex items-center justify-center gap-2 text-green-400 mb-2">
+            <Upload className="w-5 h-5" />
+            <h3 className="font-semibold text-sm">{t("upload_title")}</h3>
+          </div>
+          <p className="text-gray-300 text-xs text-center mb-4">{t("upload_subtitle")}</p>
+
+          <input
+            ref={inputRef}
+            type="file"
+            multiple
+            accept={ACCEPT}
+            onChange={(e) => addFiles(e.target.files)}
+            className="hidden"
+          />
+
+          <button
+            type="button"
+            onClick={() => inputRef.current?.click()}
+            disabled={uploading || selectedFiles.length >= MAX_FILES}
+            className="w-full bg-white/10 hover:bg-white/20 disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm font-medium py-3 rounded-lg transition-colors mb-3"
+          >
+            {t("upload_choose_files")}
+          </button>
+
+          {selectedFiles.length > 0 && (
+            <div className="mb-3">
+              <p className="text-gray-400 text-xs mb-2">
+                {t("upload_selected")} ({selectedFiles.length}/{MAX_FILES})
+              </p>
+              <ul className="space-y-1.5">
+                {selectedFiles.map((f, i) => (
+                  <li
+                    key={`${f.name}-${i}`}
+                    className="flex items-center justify-between gap-2 bg-white/5 rounded-lg px-3 py-2"
+                  >
+                    <span className="text-gray-200 text-xs truncate flex-1">
+                      {f.name}{" "}
+                      <span className="text-gray-500">({(f.size / 1024).toFixed(0)} KB)</span>
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => removeFile(i)}
+                      disabled={uploading}
+                      className="shrink-0 text-gray-400 hover:text-red-400 disabled:opacity-40"
+                      aria-label={t("upload_remove")}
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <button
+            type="button"
+            onClick={handleUpload}
+            disabled={uploading || selectedFiles.length === 0}
+            className="w-full bg-green-600 hover:bg-green-700 disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2"
+          >
+            {uploading ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                {t("upload_sending")}
+              </>
+            ) : (
+              <>
+                <Upload className="w-4 h-4" />
+                {t("upload_send")}
+              </>
+            )}
+          </button>
+
+          {uploadStatus === "success" && (
+            <p className="mt-3 text-green-400 text-xs text-center flex items-center justify-center gap-1">
+              <CheckCircle className="w-3 h-3" />
+              {t("upload_success")}
+            </p>
+          )}
+          {uploadStatus === "error" && (
+            <p className="mt-3 text-red-400 text-xs text-center">
+              {errorMsg || t("upload_error")}
+            </p>
+          )}
+          <p className="mt-3 text-gray-500 text-[10px] text-center">
+            {t("upload_max_count")} · {t("upload_max_size")}
+          </p>
         </div>
 
         <div className="space-y-3">

@@ -1049,7 +1049,18 @@
       "magicplan_no_app": "Pas encore l'application ? Téléchargez-la gratuitement :",
       "magicplan_step1": "Téléchargez l'application MagicPlan (gratuite) et créez un compte rapide.",
       "magicplan_step2": "Scannez chaque pièce concernée par les travaux avec votre téléphone.",
-      "magicplan_step3": "Exportez votre plan en PDF puis envoyez-le à"
+      "magicplan_step3": "Exportez votre plan en PDF puis envoyez-le à",
+      "upload_title": "Ou envoyez-nous directement vos fichiers",
+      "upload_subtitle": "Téléversez votre PDF, vos images ou vos plans MagicPlan. Aiman les recevra immédiatement.",
+      "upload_choose_files": "Choisir des fichiers",
+      "upload_selected": "Fichiers sélectionnés",
+      "upload_remove": "Retirer",
+      "upload_send": "Envoyer les fichiers",
+      "upload_sending": "Envoi en cours…",
+      "upload_success": "Fichiers envoyés ! Aiman va les traiter.",
+      "upload_error": "Échec de l'envoi. Réessayez ou écrivez-nous.",
+      "upload_max_size": "50 Mo max par fichier",
+      "upload_max_count": "10 fichiers max"
     },
     "zones": {
       "cuisine": {

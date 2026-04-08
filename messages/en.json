@@ -1049,7 +1049,18 @@
       "magicplan_no_app": "Don't have the app yet? Download it for free:",
       "magicplan_step1": "Download the free MagicPlan app and create a quick account.",
       "magicplan_step2": "Scan each room concerned by the renovation with your phone.",
-      "magicplan_step3": "Export your plan as PDF and send it to"
+      "magicplan_step3": "Export your plan as PDF and send it to",
+      "upload_title": "Or send us your files directly",
+      "upload_subtitle": "Upload your PDF, images or MagicPlan files. Aiman will receive them instantly.",
+      "upload_choose_files": "Choose files",
+      "upload_selected": "Selected files",
+      "upload_remove": "Remove",
+      "upload_send": "Send files",
+      "upload_sending": "Sending…",
+      "upload_success": "Files sent! Aiman will process them.",
+      "upload_error": "Upload failed. Please retry or email us.",
+      "upload_max_size": "50 MB max per file",
+      "upload_max_count": "10 files max"
     },
     "zones": {
       "cuisine": {
