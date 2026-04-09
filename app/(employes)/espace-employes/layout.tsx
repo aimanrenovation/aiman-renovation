@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { BottomNav } from "@/components/employes/bottom-nav";
 import { ToastContainer } from "@/components/employes/toast";
 import { PwaRegister } from "@/components/employes/pwa-register";
+import { PwaInstallTuto } from "@/components/employes/pwa-install-tuto";
 import { InactivityGuard } from "@/components/employes/inactivity-guard";
 import { getEmployeSession } from "@/lib/auth/session";
 
@@ -51,6 +52,7 @@ export default async function EmployesLayout({ children }: { children: ReactNode
 
         <ToastContainer />
         <PwaRegister />
+        <PwaInstallTuto />
         <InactivityGuard />
         <BottomNav />
       </div>
