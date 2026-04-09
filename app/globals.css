@@ -122,6 +122,21 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-slide-up {
+  animation: slide-up 0.25s ease-out;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { BottomNav } from "@/components/employes/bottom-nav";
+import { ToastContainer } from "@/components/employes/toast";
 import { getEmployeSession } from "@/lib/auth/session";
 
 export const dynamic = "force-dynamic";
@@ -40,6 +41,7 @@ export default async function EmployesLayout({ children }: { children: ReactNode
 
         <main className="flex-1 px-4 pb-24 pt-4">{children}</main>
 
+        <ToastContainer />
         <BottomNav />
       </div>
     </div>
