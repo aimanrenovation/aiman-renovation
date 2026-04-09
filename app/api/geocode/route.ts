@@ -40,11 +40,13 @@ export async function GET(request: NextRequest) {
     url.searchParams.set("limit", "5");
     url.searchParams.set("language", "fr");
     url.searchParams.set("country", "fr,de,ch,lu");
-    url.searchParams.set("types", "address,street");
+    url.searchParams.set("types", "address");
     url.searchParams.set("autocomplete", "true");
 
     const res = await fetch(url.toString());
     if (!res.ok) {
+      const body = await res.text();
+      console.error("[geocode] Mapbox error", res.status, body.slice(0, 300));
       return NextResponse.json(
         { error: "mapbox_error", status: res.status },
         { status: 502 },
