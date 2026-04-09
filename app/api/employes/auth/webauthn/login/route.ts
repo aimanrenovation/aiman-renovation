@@ -50,7 +50,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "invalid_credentials" }, { status: 401 });
   }
 
-  const expectedChallenge = getChallenge(`auth:${employe.id}`);
+  const expectedChallenge = await getChallenge(`auth:${employe.id}`);
   if (!expectedChallenge) {
     return NextResponse.json({ error: "challenge_expired" }, { status: 400 });
   }
