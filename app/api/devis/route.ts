@@ -5,10 +5,35 @@ import type { DevisState } from "@/components/devis/devis-types";
 import { ZONES_CONFIG } from "@/components/devis/devis-zones-config";
 import { createMagicPlanProject } from "@/lib/magicplan";
 import { notifyJarvis } from "@/lib/jarvis-notify";
+import {
+  validateContactServer,
+  checkRateLimit,
+  getClientIp,
+} from "@/lib/validation/devis-server";
+
+export const runtime = "nodejs";
 
 export async function POST(request: NextRequest) {
   try {
+    // --- Rate limit (per IP, 3/hour) ---
+    const ip = getClientIp(request.headers);
+    const rate = checkRateLimit(ip);
+    if (!rate.allowed) {
+      return NextResponse.json(
+        { error: "rate_limited", code: "rate_limited" },
+        { status: 429 },
+      );
+    }
+
     const formData = await request.formData();
+
+    // --- Honeypot — silent rejection ---
+    const honeypot = formData.get("website");
+    if (typeof honeypot === "string" && honeypot.trim() !== "") {
+      // Pretend success — bots don't get feedback
+      return NextResponse.json({ success: true, magicplanProjectId: null });
+    }
+
     const dataStr = formData.get("data") as string;
     if (!dataStr) {
       return NextResponse.json({ error: "Donnees manquantes" }, { status: 400 });
@@ -17,9 +42,20 @@ export async function POST(request: NextRequest) {
     const data: Omit<DevisState, "zonePhotos"> = JSON.parse(dataStr);
     const locale = (formData.get("locale") as string) || "fr";
 
-    // Validation basique
-    if (!data.contact.firstName || !data.contact.phone || !data.contact.email) {
-      return NextResponse.json({ error: "Champs obligatoires manquants" }, { status: 400 });
+    // --- Strict server-side contact validation ---
+    const contactCheck = await validateContactServer({
+      firstName: data.contact.firstName,
+      lastName: data.contact.lastName,
+      email: data.contact.email,
+      phone: data.contact.phone,
+      address: data.contact.address,
+      addressValidated: data.contact.addressValidated,
+    });
+    if (!contactCheck.ok) {
+      return NextResponse.json(
+        { error: "validation_failed", field: contactCheck.field, code: contactCheck.code },
+        { status: 400 },
+      );
     }
 
     const hasWork = Object.values(data.selectedWorks).some(
