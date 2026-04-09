@@ -1058,7 +1058,13 @@
       "upload_send": "Send files",
       "upload_sending": "Sending…",
       "upload_success": "Files sent! Aiman will process them.",
+      "upload_success_title": "Files sent successfully!",
+      "upload_success_message": "Aiman has received them and will get back to you within 24 hours.",
       "upload_error": "Upload failed. Please retry or email us.",
+      "upload_error_title": "Upload error",
+      "upload_error_call": "Please retry or call us at",
+      "upload_error_email": "Server-side send failure.",
+      "upload_error_count": "Invalid file count.",
       "upload_max_size": "50 MB max per file",
       "upload_max_count": "10 files max"
     },

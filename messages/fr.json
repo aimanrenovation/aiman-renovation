@@ -1058,7 +1058,13 @@
       "upload_send": "Envoyer les fichiers",
       "upload_sending": "Envoi en cours…",
       "upload_success": "Fichiers envoyés ! Aiman va les traiter.",
+      "upload_success_title": "Fichiers envoyés avec succès !",
+      "upload_success_message": "Aiman les a bien reçus et vous recontactera sous 24h.",
       "upload_error": "Échec de l'envoi. Réessayez ou écrivez-nous.",
+      "upload_error_title": "Erreur lors de l'envoi",
+      "upload_error_call": "Réessayez ou contactez-nous au",
+      "upload_error_email": "L'envoi a échoué côté serveur.",
+      "upload_error_count": "Nombre de fichiers invalide.",
       "upload_max_size": "50 Mo max par fichier",
       "upload_max_count": "10 fichiers max"
     },

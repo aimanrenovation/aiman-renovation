@@ -83,10 +83,10 @@ export async function POST(request: NextRequest) {
       )
       .join("");
 
-    await resend.emails.send({
+    const emailResult = await resend.emails.send({
       from: DEVIS_FROM_EMAIL,
       to: DEVIS_RECIPIENT_EMAIL,
-      subject: `MagicPlan upload client — ${clientName} (${clientEmail || "sans email"})`,
+      subject: `[MagicPlan] Upload client — ${clientName} (${clientEmail || "sans email"})`,
       html: `
         <h2>Upload MagicPlan direct du client</h2>
         <p><strong>Client :</strong> ${clientName}</p>
@@ -97,6 +97,40 @@ export async function POST(request: NextRequest) {
         <ul>${filesListHtml}</ul>
       `,
     });
+
+    // Resend SDK does NOT throw on API errors — it returns { data, error }.
+    // If we don't check, the route returns success:true even when the email failed.
+    if (emailResult.error) {
+      const err = emailResult.error as { message?: string; name?: string };
+      console.error("[magicplan-upload] Resend error:", err);
+      // Files are already on S3, so we still notify Jarvis as a fallback channel
+      await notifyJarvis({
+        type: "magicplan_upload_client",
+        client: clientName,
+        email: clientEmail,
+        filesCount: uploaded.length,
+        projectId: magicplanProjectId,
+        emailFailed: true,
+        emailError: err.message || err.name || "unknown",
+      });
+      return NextResponse.json(
+        {
+          success: false,
+          error: "email_failed",
+          detail: err.message || "Email notification failed",
+          filesUploaded: uploaded.length,
+          urls: uploaded.map((u) => u.url),
+        },
+        { status: 502 },
+      );
+    }
+
+    console.log(
+      "[magicplan-upload] Email sent OK, id:",
+      emailResult.data?.id,
+      "files:",
+      uploaded.length,
+    );
 
     await notifyJarvis({
       type: "magicplan_upload_client",

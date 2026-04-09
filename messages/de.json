@@ -1058,7 +1058,13 @@
       "upload_send": "Dateien senden",
       "upload_sending": "Wird gesendet…",
       "upload_success": "Dateien gesendet! Aiman wird sie bearbeiten.",
+      "upload_success_title": "Dateien erfolgreich gesendet!",
+      "upload_success_message": "Aiman hat sie erhalten und meldet sich innert 24 Stunden bei Ihnen.",
       "upload_error": "Senden fehlgeschlagen. Bitte erneut versuchen oder uns schreiben.",
+      "upload_error_title": "Fehler beim Senden",
+      "upload_error_call": "Bitte erneut versuchen oder rufen Sie uns an unter",
+      "upload_error_email": "Serverseitiger Sendefehler.",
+      "upload_error_count": "Ungültige Anzahl von Dateien.",
       "upload_max_size": "Max. 50 MB pro Datei",
       "upload_max_count": "Max. 10 Dateien"
     },
