@@ -7,7 +7,15 @@ import { dispatchJarvisEvent } from "@/lib/jarvis/webhook";
 import { uploadToS3 } from "@/lib/s3";
 
 const MAX_BYTES = 10 * 1024 * 1024; // 10 MB
-const ALLOWED_TYPES = new Set(["image/jpeg", "image/png", "image/webp", "image/heic"]);
+const ALLOWED_TYPES = new Set([
+  "image/jpeg",
+  "image/png",
+  "image/webp",
+  "image/heic",
+  "audio/webm",
+  "audio/ogg",
+  "audio/mp4",
+]);
 
 export const POST = requireAuth(async (request, _ctx, session) => {
   let form: FormData;
