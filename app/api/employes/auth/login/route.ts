@@ -94,6 +94,7 @@ export async function POST(request: Request) {
       email: employe.email,
       role: employe.role,
       cguAccepted: !!employe.cguAcceptedAt,
+      passwordMustChange: employe.passwordMustChange,
     },
     expires_in: ACCESS_TOKEN_TTL_SECONDS,
   });
