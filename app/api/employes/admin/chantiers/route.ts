@@ -5,47 +5,55 @@ import { requireAuth } from "@/lib/auth/middleware";
 import { geocodeChantier } from "@/lib/geo/geocoding";
 
 export const GET = requireAuth(async () => {
-  const rows = await db
-    .select({
-      id: schema.chantiers.id,
-      nom: schema.chantiers.nom,
-      clientNom: schema.chantiers.clientNom,
-      ville: schema.chantiers.ville,
-      statut: schema.chantiers.statut,
-      dateDebut: schema.chantiers.dateDebut,
-      dateFinPrevue: schema.chantiers.dateFinPrevue,
-      budgetPrevuCents: schema.chantiers.budgetPrevuCents,
-      createdAt: schema.chantiers.createdAt,
-      totalMinutes: sql<number>`
-        COALESCE((
-          SELECT SUM(
-            EXTRACT(EPOCH FROM (p.heure_fin - p.heure_debut)) / 60 - p.pause_minutes
-          )::int
-          FROM pointages p WHERE p.chantier_id = ${schema.chantiers.id}
-          AND p.heure_fin IS NOT NULL
-        ), 0)
-      `,
-      coutMoCents: sql<number>`
-        COALESCE((
-          SELECT SUM(
-            (EXTRACT(EPOCH FROM (p.heure_fin - p.heure_debut)) / 3600 - p.pause_minutes / 60.0)
-            * COALESCE(e.hourly_rate_cents, 0)
-          )::int
-          FROM pointages p
-          JOIN employes e ON e.id = p.employe_id
-          WHERE p.chantier_id = ${schema.chantiers.id}
-          AND p.heure_fin IS NOT NULL
-        ), 0)
-      `,
-    })
+  // Fetch chantiers
+  const chantierRows = await db
+    .select()
     .from(schema.chantiers)
     .orderBy(desc(schema.chantiers.createdAt));
 
+  // Fetch hours + costs aggregated per chantier
+  const statsRows = await db
+    .select({
+      chantierId: schema.pointages.chantierId,
+      totalMinutes: sql<number>`
+        COALESCE(SUM(
+          EXTRACT(EPOCH FROM (${schema.pointages.heureFin} - ${schema.pointages.heureDebut})) / 60
+          - ${schema.pointages.pauseMinutes}
+        ), 0)::int
+      `,
+      coutMoCents: sql<number>`
+        COALESCE(SUM(
+          (EXTRACT(EPOCH FROM (${schema.pointages.heureFin} - ${schema.pointages.heureDebut})) / 3600
+           - ${schema.pointages.pauseMinutes} / 60.0)
+          * COALESCE(${schema.employes.hourlyRateCents}, 0)
+        ), 0)::int
+      `,
+    })
+    .from(schema.pointages)
+    .innerJoin(schema.employes, eq(schema.pointages.employeId, schema.employes.id))
+    .groupBy(schema.pointages.chantierId);
+
+  const statsMap = new Map(statsRows.map((s) => [s.chantierId, s]));
+
   return NextResponse.json({
-    chantiers: rows.map((r) => ({
-      ...r,
-      totalHours: Math.round((r.totalMinutes / 60) * 100) / 100,
-    })),
+    chantiers: chantierRows.map((c) => {
+      const stats = statsMap.get(c.id);
+      const totalMinutes = stats?.totalMinutes ?? 0;
+      return {
+        id: c.id,
+        nom: c.nom,
+        clientNom: c.clientNom,
+        ville: c.ville,
+        statut: c.statut,
+        dateDebut: c.dateDebut,
+        dateFinPrevue: c.dateFinPrevue,
+        budgetPrevuCents: c.budgetPrevuCents,
+        createdAt: c.createdAt,
+        totalMinutes,
+        totalHours: Math.round((totalMinutes / 60) * 100) / 100,
+        coutMoCents: stats?.coutMoCents ?? 0,
+      };
+    }),
   });
 }, ["patron"]);
 

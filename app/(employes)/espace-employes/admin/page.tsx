@@ -5,30 +5,41 @@ import { Users, Clock, FileText, Camera } from "lucide-react";
 import { StatCard } from "@/components/employes/admin/stat-card";
 
 interface DashboardData {
-  pointesAujourdhui: number;
-  rapportsEnAttente: number;
-  heuresSemaine: number;
-  pointages: {
+  stats: {
+    pointedToday: number;
+    totalEmployes: number;
+    pendingRapportsCount: number;
+    photosThisWeek: number;
+  };
+  todayPointages: {
     id: string;
-    employeNom: string;
+    employeFirstname: string;
+    employeLastname: string;
     chantierNom: string;
     heureDebut: string;
     heureFin: string | null;
     onSiteDebut: boolean | null;
+    pauseMinutes: number;
   }[];
-  rapports: {
+  pendingRapports: {
     id: string;
-    employeNom: string;
+    employeFirstname: string;
+    employeLastname: string;
     chantierNom: string;
     date: string;
     description: string | null;
   }[];
-  photos: {
+  recentPhotos: {
     id: string;
     s3Key: string;
     caption: string | null;
     chantierNom: string;
     createdAt: string;
+  }[];
+  weeklyHours: {
+    employeFirstname: string;
+    employeLastname: string;
+    totalHours: number;
   }[];
 }
 
@@ -43,7 +54,15 @@ export default function AdminDashboardPage() {
         if (!r.ok) throw new Error("Erreur chargement");
         return r.json();
       })
-      .then(setData)
+      .then((json) => {
+        setData({
+          stats: json.stats ?? { pointedToday: 0, totalEmployes: 0, pendingRapportsCount: 0, photosThisWeek: 0 },
+          todayPointages: json.todayPointages ?? [],
+          pendingRapports: json.pendingRapports ?? [],
+          recentPhotos: json.recentPhotos ?? [],
+          weeklyHours: json.weeklyHours ?? [],
+        });
+      })
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false));
   }, []);
@@ -81,18 +100,18 @@ export default function AdminDashboardPage() {
       <div className="grid gap-4 sm:grid-cols-3">
         <StatCard
           icon={<Users className="h-5 w-5" />}
-          label="Pointes aujourd'hui"
-          value={data.pointesAujourdhui}
+          label="Pointés aujourd'hui"
+          value={`${data.stats?.pointedToday ?? 0}/${data.stats?.totalEmployes ?? 0}`}
         />
         <StatCard
           icon={<FileText className="h-5 w-5" />}
-          label="Rapports en attente"
-          value={data.rapportsEnAttente}
+          label="Rapports récents"
+          value={data.stats?.pendingRapportsCount ?? 0}
         />
         <StatCard
           icon={<Clock className="h-5 w-5" />}
           label="Heures cette semaine"
-          value={`${data.heuresSemaine}h`}
+          value={`${(data.weeklyHours ?? []).reduce((s, w) => s + w.totalHours, 0).toFixed(1)}h`}
         />
       </div>
 
@@ -101,7 +120,7 @@ export default function AdminDashboardPage() {
         <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-400">
           Pointages du jour
         </h2>
-        {data.pointages.length === 0 ? (
+        {(data.todayPointages ?? []).length === 0 ? (
           <div className="rounded-xl border border-gray-700 bg-gray-800/50 p-6 text-center text-sm text-gray-500">
             Aucun pointage aujourd&apos;hui
           </div>
@@ -128,9 +147,9 @@ export default function AdminDashboardPage() {
                 </tr>
               </thead>
               <tbody>
-                {data.pointages.map((p) => (
+                {(data.todayPointages ?? []).map((p) => (
                   <tr key={p.id} className="border-b border-gray-700/50 text-gray-300 last:border-0">
-                    <td className="px-4 py-3 font-medium text-white">{p.employeNom}</td>
+                    <td className="px-4 py-3 font-medium text-white">{`${p.employeFirstname} ${p.employeLastname}`}</td>
                     <td className="px-4 py-3">{p.chantierNom}</td>
                     <td className="px-4 py-3">
                       {p.heureDebut ? new Date(p.heureDebut).toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" }) : "-"}
@@ -164,19 +183,19 @@ export default function AdminDashboardPage() {
         <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-400">
           Rapports recents
         </h2>
-        {data.rapports.length === 0 ? (
+        {(data.pendingRapports ?? []).length === 0 ? (
           <div className="rounded-xl border border-gray-700 bg-gray-800/50 p-6 text-center text-sm text-gray-500">
             Aucun rapport en attente
           </div>
         ) : (
           <div className="flex flex-col gap-2">
-            {data.rapports.map((r) => (
+            {(data.pendingRapports ?? []).map((r) => (
               <div
                 key={r.id}
                 className="flex items-start justify-between rounded-xl border border-gray-700 bg-gray-800/50 p-4"
               >
                 <div>
-                  <div className="text-sm font-medium text-white">{r.employeNom}</div>
+                  <div className="text-sm font-medium text-white">{`${r.employeFirstname} ${r.employeLastname}`}</div>
                   <div className="mt-0.5 text-xs text-gray-400">
                     {r.chantierNom} - {r.date}
                   </div>
@@ -200,14 +219,14 @@ export default function AdminDashboardPage() {
         <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-400">
           Photos recentes
         </h2>
-        {data.photos.length === 0 ? (
+        {(data.recentPhotos ?? []).length === 0 ? (
           <div className="rounded-xl border border-gray-700 bg-gray-800/50 p-6 text-center text-sm text-gray-500">
             <Camera className="mx-auto mb-2 h-8 w-8 text-gray-600" />
             Aucune photo recente
           </div>
         ) : (
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
-            {data.photos.map((photo) => (
+            {(data.recentPhotos ?? []).map((photo) => (
               <div
                 key={photo.id}
                 className="group relative aspect-square overflow-hidden rounded-lg border border-gray-700 bg-gray-800"
