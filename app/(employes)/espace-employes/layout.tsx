@@ -12,6 +12,15 @@ export const metadata = {
 export default async function EmployesLayout({ children }: { children: ReactNode }) {
   const session = await getEmployeSession();
 
+  // Pas de session = login/reset → plein écran sans chrome
+  if (!session) {
+    return (
+      <div className="min-h-dvh font-sans">
+        {children}
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-dvh bg-neutral-50 font-sans text-neutral-900">
       <div className="mx-auto flex min-h-dvh max-w-md flex-col">
@@ -19,21 +28,19 @@ export default async function EmployesLayout({ children }: { children: ReactNode
           <Link href="/espace-employes/dashboard" className="text-sm font-semibold tracking-tight">
             <span className="text-[#E50000]">Aiman</span> · Équipe
           </Link>
-          {session && (
-            <form action="/api/employes/auth/logout" method="post">
-              <button
-                type="submit"
-                className="text-xs font-medium text-neutral-500 underline-offset-2 hover:underline"
-              >
-                Déconnexion
-              </button>
-            </form>
-          )}
+          <form action="/api/employes/auth/logout" method="post">
+            <button
+              type="submit"
+              className="text-xs font-medium text-neutral-500 underline-offset-2 hover:underline"
+            >
+              Déconnexion
+            </button>
+          </form>
         </header>
 
         <main className="flex-1 px-4 pb-24 pt-4">{children}</main>
 
-        {session && <BottomNav />}
+        <BottomNav />
       </div>
     </div>
   );
