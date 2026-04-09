@@ -45,7 +45,7 @@ export async function GET() {
     },
   });
 
-  setChallenge(`reg:${session.sub}`, options.challenge);
+  await setChallenge(`reg:${session.sub}`, options.challenge);
 
   return NextResponse.json(options);
 }

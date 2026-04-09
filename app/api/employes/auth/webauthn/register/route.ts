@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "invalid_body" }, { status: 400 });
   }
 
-  const expectedChallenge = getChallenge(`reg:${session.sub}`);
+  const expectedChallenge = await getChallenge(`reg:${session.sub}`);
   if (!expectedChallenge) {
     return NextResponse.json({ error: "challenge_expired" }, { status: 400 });
   }

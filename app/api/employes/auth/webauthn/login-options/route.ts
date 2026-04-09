@@ -31,7 +31,7 @@ export async function POST(request: Request) {
       userVerification: "preferred",
     });
     // Store with a fake key that won't match anything
-    setChallenge(`auth:__unknown__`, options.challenge);
+    await setChallenge(`auth:__unknown__`, options.challenge);
     return NextResponse.json(options);
   }
 
@@ -46,7 +46,7 @@ export async function POST(request: Request) {
       rpID,
       userVerification: "preferred",
     });
-    setChallenge(`auth:__no_creds__`, options.challenge);
+    await setChallenge(`auth:__no_creds__`, options.challenge);
     return NextResponse.json(options);
   }
 
@@ -59,7 +59,7 @@ export async function POST(request: Request) {
     })),
   });
 
-  setChallenge(`auth:${employe.id}`, options.challenge);
+  await setChallenge(`auth:${employe.id}`, options.challenge);
 
   return NextResponse.json(options);
 }

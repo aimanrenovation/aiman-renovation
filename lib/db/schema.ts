@@ -205,6 +205,13 @@ export const messagesChantier = pgTable("messages_chantier", {
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
 });
 
+// ---- webauthn_challenges (ephemeral, replaces in-memory store for serverless) ----
+export const webauthnChallenges = pgTable("webauthn_challenges", {
+  key: text("key").primaryKey(),
+  challenge: text("challenge").notNull(),
+  expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+});
+
 export type Employe = typeof employes.$inferSelect;
 export type NewEmploye = typeof employes.$inferInsert;
 export type Chantier = typeof chantiers.$inferSelect;

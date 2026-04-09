@@ -22,6 +22,13 @@
       "when": 1775867247483,
       "tag": "0002_messages_chantier",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1775953647483,
+      "tag": "0003_webauthn_challenges",
+      "breakpoints": true
     }
   ]
 }
