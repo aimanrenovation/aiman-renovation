@@ -115,6 +115,7 @@ export function Footer() {
             <Link href="/mentions-legales" className="hover:text-white transition-colors">{tFooter("legal_links.mentions")}</Link>
             <Link href="/cgv" className="hover:text-white transition-colors">{tFooter("legal_links.cgv")}</Link>
             <Link href="/politique-confidentialite" className="hover:text-white transition-colors">{tFooter("legal_links.privacy")}</Link>
+            <a href="/espace-employes/login" className="hover:text-white transition-colors">Espace équipe</a>
           </div>
         </div>
       </div>

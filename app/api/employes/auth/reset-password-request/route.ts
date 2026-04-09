@@ -1,0 +1,65 @@
+import { eq } from "drizzle-orm";
+import { SignJWT } from "jose";
+import { NextResponse } from "next/server";
+import { db, schema } from "@/lib/db/client";
+
+const RESET_TTL_SECONDS = 60 * 60; // 1h
+
+export async function POST(request: Request) {
+  let body: { email?: string };
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ ok: true }); // anti-énumération
+  }
+  const email = body.email?.trim().toLowerCase();
+  if (!email) return NextResponse.json({ ok: true });
+
+  const [employe] = await db
+    .select()
+    .from(schema.employes)
+    .where(eq(schema.employes.email, email))
+    .limit(1);
+
+  // Always 200 to avoid account enumeration.
+  if (!employe || !employe.actif) return NextResponse.json({ ok: true });
+
+  const secret = process.env.JWT_SECRET;
+  if (!secret) return NextResponse.json({ ok: true });
+
+  const token = await new SignJWT({ purpose: "reset" })
+    .setProtectedHeader({ alg: "HS256" })
+    .setSubject(employe.id)
+    .setIssuedAt()
+    .setExpirationTime(`${RESET_TTL_SECONDS}s`)
+    .sign(new TextEncoder().encode(secret));
+
+  const resetUrl = `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://aiman-renovation.fr"}/espace-employes/reset?token=${token}`;
+
+  // Fire-and-forget email via Resend (best effort; do not reveal failure to caller)
+  try {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (apiKey) {
+      await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: "Aiman Rénovation <noreply@aiman-renovation.fr>",
+          to: employe.email,
+          subject: "Réinitialisation de votre mot de passe — Espace équipe",
+          html: `<p>Bonjour ${employe.firstname},</p>
+            <p>Cliquez sur le lien ci-dessous pour choisir un nouveau mot de passe (valable 1h) :</p>
+            <p><a href="${resetUrl}">${resetUrl}</a></p>
+            <p>Si vous n'êtes pas à l'origine de cette demande, ignorez cet email.</p>`,
+        }),
+      });
+    }
+  } catch {
+    // swallow
+  }
+
+  return NextResponse.json({ ok: true });
+}
