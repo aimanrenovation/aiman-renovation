@@ -37,6 +37,7 @@ export async function POST(request: Request) {
   const resetUrl = `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://aiman-renovation.fr"}/espace-employes/reset-password?token=${token}`;
 
   // Send email via Resend
+  let emailStatus = "not_attempted";
   try {
     const apiKey = process.env.RESEND_API_KEY;
     if (apiKey) {
@@ -56,16 +57,21 @@ export async function POST(request: Request) {
             <p>Si vous n'êtes pas à l'origine de cette demande, ignorez cet email.</p>`,
         }),
       });
-      if (!resendRes.ok) {
+      if (resendRes.ok) {
+        emailStatus = "sent";
+      } else {
         const errBody = await resendRes.text().catch(() => "");
+        emailStatus = `resend_error_${resendRes.status}`;
         console.error(`[reset-password] Resend error ${resendRes.status}: ${errBody}`);
       }
     } else {
+      emailStatus = "no_api_key";
       console.error("[reset-password] RESEND_API_KEY not set");
     }
   } catch (err) {
+    emailStatus = "exception";
     console.error("[reset-password] Failed to send email:", err);
   }
 
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true, _debug: emailStatus });
 }
