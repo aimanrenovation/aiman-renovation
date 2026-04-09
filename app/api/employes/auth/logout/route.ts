@@ -5,7 +5,7 @@ import { db, schema } from "@/lib/db/client";
 import { hashRefreshToken } from "@/lib/auth/jwt";
 import { ACCESS_COOKIE, REFRESH_COOKIE } from "@/lib/auth/session";
 
-export async function POST() {
+export async function POST(request: Request) {
   const store = await cookies();
   const refreshToken = store.get(REFRESH_COOKIE)?.value;
 
@@ -22,7 +22,7 @@ export async function POST() {
       );
   }
 
-  const response = NextResponse.redirect(new URL("/espace-employes/login", process.env.WEBAUTHN_ORIGIN || "https://aiman-renovation.fr"));
+  const response = NextResponse.redirect(new URL("/espace-employes/login", request.url));
   response.cookies.delete(ACCESS_COOKIE);
   response.cookies.delete({ name: REFRESH_COOKIE, path: "/api/employes/auth" });
   return response;

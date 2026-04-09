@@ -3,7 +3,7 @@ import { verifyRegistrationResponse } from "@simplewebauthn/server";
 import { db, schema } from "@/lib/db/client";
 import { getEmployeSession } from "@/lib/auth/session";
 import { getChallenge } from "@/lib/auth/webauthn-challenges";
-import { rpID, origin } from "@/lib/auth/webauthn-config";
+import { rpID, expectedOrigins } from "@/lib/auth/webauthn-config";
 import type { RegistrationResponseJSON } from "@simplewebauthn/server";
 
 export async function POST(request: Request) {
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
     verification = await verifyRegistrationResponse({
       response: body.response,
       expectedChallenge,
-      expectedOrigin: origin,
+      expectedOrigin: expectedOrigins,
       expectedRPID: rpID,
       requireUserVerification: false,
     });

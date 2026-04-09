@@ -3,7 +3,7 @@ import { verifyAuthenticationResponse } from "@simplewebauthn/server";
 import { eq } from "drizzle-orm";
 import { db, schema } from "@/lib/db/client";
 import { getChallenge } from "@/lib/auth/webauthn-challenges";
-import { rpID, origin } from "@/lib/auth/webauthn-config";
+import { rpID, expectedOrigins } from "@/lib/auth/webauthn-config";
 import {
   ACCESS_TOKEN_TTL_SECONDS,
   REFRESH_TOKEN_TTL_SECONDS,
@@ -63,7 +63,7 @@ export async function POST(request: Request) {
     verification = await verifyAuthenticationResponse({
       response: authResponse,
       expectedChallenge,
-      expectedOrigin: origin,
+      expectedOrigin: expectedOrigins,
       expectedRPID: rpID,
       requireUserVerification: false,
       credential: {
