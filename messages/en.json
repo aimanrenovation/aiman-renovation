@@ -961,6 +961,28 @@
       "video_label": "Video",
       "validate_button": "Confirm and return to plan"
     },
+    "validation": {
+      "generic": "Invalid field",
+      "name_too_short": "Too short (minimum 2 characters)",
+      "name_too_long": "Too long (maximum 50 characters)",
+      "name_repeated": "Repeated characters",
+      "name_no_vowels": "Invalid name",
+      "name_obvious_test": "Please enter a real name",
+      "email_empty": "Email required",
+      "email_too_long": "Email too long",
+      "email_format": "Invalid email format",
+      "email_disposable": "Disposable address rejected, use a real email",
+      "email_no_mx": "Domain not found, please verify",
+      "phone_empty": "Phone required",
+      "phone_invalid": "Invalid number (FR, CH, DE or LU expected)",
+      "address_empty": "Address required",
+      "address_too_short": "Address too short",
+      "address_no_number": "Street number missing",
+      "address_too_simple": "Address incomplete",
+      "address_not_geocoded": "Please pick an address from the suggestions",
+      "rate_limited": "Too many submissions, try again in 1h",
+      "spam_detected": "Submission rejected"
+    },
     "panel_recap": {
       "back": "Back",
       "title": "Summary",

@@ -101,7 +101,13 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
   }, []);
 
   // Submit handler
-  const handleSubmit = useCallback(async () => {
+  const handleSubmit = useCallback(async (extra: { honeypot: string }) => {
+    // Silent client-side honeypot rejection — bots filled it
+    if (extra.honeypot) {
+      dispatch({ type: "SET_SUCCESS" });
+      return;
+    }
+
     dispatch({ type: "SET_SUBMITTING", isSubmitting: true });
     try {
       const formData = new FormData();
@@ -110,6 +116,7 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
       const { zonePhotos, ...stateWithoutPhotos } = state;
       formData.append("data", JSON.stringify(stateWithoutPhotos));
       formData.append("locale", locale);
+      formData.append("website", extra.honeypot); // honeypot for server
 
       // Ajouter les photos avec le format zone__filename
       for (const [zoneId, files] of Object.entries(zonePhotos)) {

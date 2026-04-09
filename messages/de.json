@@ -961,6 +961,28 @@
       "video_label": "Video",
       "validate_button": "Bestätigen und zurück zum Plan"
     },
+    "validation": {
+      "generic": "Ungültiges Feld",
+      "name_too_short": "Zu kurz (mindestens 2 Zeichen)",
+      "name_too_long": "Zu lang (maximal 50 Zeichen)",
+      "name_repeated": "Wiederholte Zeichen",
+      "name_no_vowels": "Ungültiger Name",
+      "name_obvious_test": "Bitte einen echten Namen eingeben",
+      "email_empty": "E-Mail erforderlich",
+      "email_too_long": "E-Mail zu lang",
+      "email_format": "Ungültiges E-Mail-Format",
+      "email_disposable": "Wegwerf-Adresse abgelehnt, bitte echte E-Mail verwenden",
+      "email_no_mx": "Domain nicht gefunden, bitte überprüfen",
+      "phone_empty": "Telefon erforderlich",
+      "phone_invalid": "Ungültige Nummer (FR, CH, DE oder LU erwartet)",
+      "address_empty": "Adresse erforderlich",
+      "address_too_short": "Adresse zu kurz",
+      "address_no_number": "Hausnummer fehlt",
+      "address_too_simple": "Adresse unvollständig",
+      "address_not_geocoded": "Bitte Adresse aus den Vorschlägen auswählen",
+      "rate_limited": "Zu viele Einsendungen, in 1h erneut versuchen",
+      "spam_detected": "Einsendung abgelehnt"
+    },
     "panel_recap": {
       "back": "Zurück",
       "title": "Zusammenfassung",

@@ -23,6 +23,9 @@ export interface ContactInfo {
   phone: string;
   email: string;
   address: string;
+  addressLat: number | null;
+  addressLng: number | null;
+  addressValidated: boolean;
 }
 
 export type BudgetRange = "< 5000" | "5000-15000" | "15000-30000" | "30000-50000" | "> 50000";
@@ -53,7 +56,9 @@ export type DevisAction =
   | { type: "SET_MESSAGE"; message: string }
   | { type: "SET_MAGICPLAN_LINK"; link: string }
   | { type: "SET_MAGICPLAN_PROJECT"; projectId: string }
-  | { type: "SET_CONTACT"; field: keyof ContactInfo; value: string }
+  | { type: "SET_CONTACT"; field: "firstName" | "lastName" | "phone" | "email" | "address"; value: string }
+  | { type: "SET_ADDRESS_GEO"; address: string; lat: number; lng: number }
+  | { type: "RESET_ADDRESS_GEO" }
   | { type: "SET_ZONE_NOTE"; zone: ZoneId; note: string }
   | { type: "ADD_ZONE_PHOTOS"; zone: ZoneId; files: File[] }
   | { type: "REMOVE_ZONE_PHOTO"; zone: ZoneId; index: number }

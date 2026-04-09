@@ -73,6 +73,9 @@ export const initialDevisState: DevisState = {
     phone: "",
     email: "",
     address: "",
+    addressLat: null,
+    addressLng: null,
+    addressValidated: false,
   },
   isSubmitting: false,
   error: null,
@@ -127,7 +130,37 @@ export function devisReducer(
     case "SET_CONTACT":
       return {
         ...state,
-        contact: { ...state.contact, [action.field]: action.value },
+        contact: {
+          ...state.contact,
+          [action.field]: action.value,
+          // Typing in the address field invalidates the previous geocoding
+          ...(action.field === "address"
+            ? { addressLat: null, addressLng: null, addressValidated: false }
+            : {}),
+        },
+      };
+
+    case "SET_ADDRESS_GEO":
+      return {
+        ...state,
+        contact: {
+          ...state.contact,
+          address: action.address,
+          addressLat: action.lat,
+          addressLng: action.lng,
+          addressValidated: true,
+        },
+      };
+
+    case "RESET_ADDRESS_GEO":
+      return {
+        ...state,
+        contact: {
+          ...state.contact,
+          addressLat: null,
+          addressLng: null,
+          addressValidated: false,
+        },
       };
 
     case "SET_SUBMITTING":

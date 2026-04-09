@@ -961,6 +961,28 @@
       "video_label": "Vidéo",
       "validate_button": "Valider et retour au plan"
     },
+    "validation": {
+      "generic": "Champ invalide",
+      "name_too_short": "Trop court (minimum 2 caractères)",
+      "name_too_long": "Trop long (maximum 50 caractères)",
+      "name_repeated": "Caractères répétés",
+      "name_no_vowels": "Nom invalide",
+      "name_obvious_test": "Veuillez saisir un vrai nom",
+      "email_empty": "Email requis",
+      "email_too_long": "Email trop long",
+      "email_format": "Format d'email invalide",
+      "email_disposable": "Adresse jetable refusée, utilisez un vrai email",
+      "email_no_mx": "Domaine introuvable, vérifiez l'adresse",
+      "phone_empty": "Téléphone requis",
+      "phone_invalid": "Numéro invalide (FR, CH, DE ou LU attendu)",
+      "address_empty": "Adresse requise",
+      "address_too_short": "Adresse trop courte",
+      "address_no_number": "Numéro de rue manquant",
+      "address_too_simple": "Adresse incomplète",
+      "address_not_geocoded": "Sélectionnez une adresse dans la liste de suggestions",
+      "rate_limited": "Trop de soumissions, réessayez dans 1h",
+      "spam_detected": "Soumission rejetée"
+    },
     "panel_recap": {
       "back": "Retour",
       "title": "Récapitulatif",

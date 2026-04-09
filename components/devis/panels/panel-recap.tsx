@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -10,11 +11,17 @@ import { ChevronLeft, Send, Loader2, Ruler } from "lucide-react";
 import { ZONES_CONFIG } from "../devis-zones-config";
 import { AddressAutocomplete } from "./address-autocomplete";
 import type { DevisState, DevisAction, BudgetRange } from "../devis-types";
+import {
+  validateName,
+  validateEmailFormat,
+  validatePhone,
+  validateAddressString,
+} from "@/lib/validation/devis";
 
 interface PanelRecapProps {
   state: DevisState;
   dispatch: React.Dispatch<DevisAction>;
-  onSubmit: () => void;
+  onSubmit: (extra: { honeypot: string }) => void;
 }
 
 const BUDGET_OPTIONS: BudgetRange[] = [
@@ -43,9 +50,28 @@ function MagicPlanSection() {
   );
 }
 
+type FieldName = "firstName" | "lastName" | "phone" | "email" | "address";
+
 export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
   const t = useTranslations("devis.panel_recap");
   const tZones = useTranslations("devis.zones");
+  const tErrors = useTranslations("devis.validation");
+
+  // Honeypot — bots fill, humans don't
+  const [honeypot, setHoneypot] = useState("");
+
+  // Track which fields have been touched (for onBlur validation)
+  const [touched, setTouched] = useState<Record<FieldName, boolean>>({
+    firstName: false,
+    lastName: false,
+    phone: false,
+    email: false,
+    address: false,
+  });
+
+  function markTouched(field: FieldName) {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+  }
 
   const zonesWithWorks = ZONES_CONFIG.filter(
     (z) => state.selectedWorks[z.id] && state.selectedWorks[z.id].length > 0
@@ -56,12 +82,47 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
     0
   );
 
+  // --- Per-field validation results ---
+  const errors = useMemo(() => {
+    const r: Partial<Record<FieldName, string>> = {};
+    const c = state.contact;
+
+    const firstName = validateName(c.firstName);
+    if (!firstName.ok) r.firstName = firstName.code;
+
+    const lastName = validateName(c.lastName);
+    if (!lastName.ok) r.lastName = lastName.code;
+
+    const email = validateEmailFormat(c.email);
+    if (!email.ok) r.email = email.code;
+
+    const phone = validatePhone(c.phone);
+    if (!phone.ok) r.phone = phone.code;
+
+    // Address: must be both format-valid AND geocoded via Mapbox selection
+    const addrFormat = validateAddressString(c.address);
+    if (!addrFormat.ok) {
+      r.address = addrFormat.code;
+    } else if (!c.addressValidated) {
+      r.address = "address_not_geocoded";
+    }
+
+    return r;
+  }, [state.contact]);
+
   const isFormValid =
-    state.contact.firstName.trim() !== "" &&
-    state.contact.phone.trim() !== "" &&
-    state.contact.email.trim() !== "" &&
-    state.contact.address.trim() !== "" &&
-    totalWorks > 0;
+    Object.keys(errors).length === 0 && totalWorks > 0 && honeypot === "";
+
+  function fieldError(field: FieldName): string | null {
+    if (!touched[field]) return null;
+    const code = errors[field];
+    if (!code) return null;
+    try {
+      return tErrors(code);
+    } catch {
+      return tErrors("generic");
+    }
+  }
 
   return (
     <div className="bg-[#0A0A0A] px-4 py-6">
@@ -174,8 +235,13 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
                     value: e.target.value,
                   })
                 }
-                className="bg-white/5 border-white/10 text-white"
+                onBlur={() => markTouched("firstName")}
+                aria-invalid={!!fieldError("firstName")}
+                className={`bg-white/5 text-white ${fieldError("firstName") ? "border-red-500/60" : "border-white/10"}`}
               />
+              {fieldError("firstName") && (
+                <p className="text-red-400 text-xs">{fieldError("firstName")}</p>
+              )}
             </div>
 
             <div className="space-y-1.5">
@@ -192,8 +258,13 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
                     value: e.target.value,
                   })
                 }
-                className="bg-white/5 border-white/10 text-white"
+                onBlur={() => markTouched("lastName")}
+                aria-invalid={!!fieldError("lastName")}
+                className={`bg-white/5 text-white ${fieldError("lastName") ? "border-red-500/60" : "border-white/10"}`}
               />
+              {fieldError("lastName") && (
+                <p className="text-red-400 text-xs">{fieldError("lastName")}</p>
+              )}
             </div>
           </div>
 
@@ -204,6 +275,7 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
             <Input
               id="phone"
               type="tel"
+              autoComplete="tel"
               value={state.contact.phone}
               onChange={(e) =>
                 dispatch({
@@ -212,8 +284,14 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
                   value: e.target.value,
                 })
               }
-              className="bg-white/5 border-white/10 text-white"
+              onBlur={() => markTouched("phone")}
+              aria-invalid={!!fieldError("phone")}
+              className={`bg-white/5 text-white ${fieldError("phone") ? "border-red-500/60" : "border-white/10"}`}
+              placeholder="+33 6 33 49 69 25"
             />
+            {fieldError("phone") && (
+              <p className="text-red-400 text-xs">{fieldError("phone")}</p>
+            )}
           </div>
 
           <div className="space-y-1.5">
@@ -223,6 +301,7 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
             <Input
               id="email"
               type="email"
+              autoComplete="email"
               value={state.contact.email}
               onChange={(e) =>
                 dispatch({
@@ -231,8 +310,13 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
                   value: e.target.value,
                 })
               }
-              className="bg-white/5 border-white/10 text-white"
+              onBlur={() => markTouched("email")}
+              aria-invalid={!!fieldError("email")}
+              className={`bg-white/5 text-white ${fieldError("email") ? "border-red-500/60" : "border-white/10"}`}
             />
+            {fieldError("email") && (
+              <p className="text-red-400 text-xs">{fieldError("email")}</p>
+            )}
           </div>
 
           <div className="space-y-1.5">
@@ -241,15 +325,46 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
             </Label>
             <AddressAutocomplete
               value={state.contact.address}
-              onChange={(val) =>
-                dispatch({
-                  type: "SET_CONTACT",
-                  field: "address",
-                  value: val,
-                })
-              }
+              validated={state.contact.addressValidated}
+              invalid={!!fieldError("address")}
+              onTypingChange={(val) => {
+                dispatch({ type: "SET_CONTACT", field: "address", value: val });
+                if (!touched.address) markTouched("address");
+              }}
+              onSelect={({ address, lat, lng }) => {
+                dispatch({ type: "SET_ADDRESS_GEO", address, lat, lng });
+                markTouched("address");
+              }}
             />
-            <p className="text-gray-500 text-xs">{t("address_hint")}</p>
+            {fieldError("address") ? (
+              <p className="text-red-400 text-xs">{fieldError("address")}</p>
+            ) : (
+              <p className="text-gray-500 text-xs">{t("address_hint")}</p>
+            )}
+          </div>
+
+          {/* Honeypot — hidden from humans, bots fill it. */}
+          <div
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              left: "-9999px",
+              top: "-9999px",
+              width: 0,
+              height: 0,
+              overflow: "hidden",
+            }}
+          >
+            <label htmlFor="website-url">Website</label>
+            <input
+              id="website-url"
+              name="website"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+            />
           </div>
         </div>
 
@@ -262,7 +377,7 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
 
         {/* Submit */}
         <Button
-          onClick={onSubmit}
+          onClick={() => onSubmit({ honeypot })}
           disabled={!isFormValid || state.isSubmitting}
           className="w-full bg-[#E50000] hover:bg-[#E50000]/90 text-white font-semibold py-6 text-base disabled:opacity-40"
         >
