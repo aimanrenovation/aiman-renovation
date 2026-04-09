@@ -24,5 +24,9 @@ export async function requireActiveEmploye() {
     redirect("/espace-employes/cgu");
   }
 
+  if (employe.passwordMustChange) {
+    redirect("/espace-employes/change-password");
+  }
+
   return { session, employe };
 }

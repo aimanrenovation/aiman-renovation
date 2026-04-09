@@ -69,7 +69,7 @@ export function LoginForm() {
       const data = (await res.json()) as {
         ok?: boolean;
         error?: string;
-        employe?: { cguAccepted?: boolean };
+        employe?: { cguAccepted?: boolean; passwordMustChange?: boolean };
       };
       if (!res.ok || !data.ok) {
         if (data.error === "rate_limited") setError("Trop de tentatives. Réessayez dans 15 min.");
@@ -80,7 +80,12 @@ export function LoginForm() {
       try { localStorage.setItem(LAST_EMAIL_KEY, email); } catch { /* ignore */ }
       // Flag for webauthn registration prompt
       try { sessionStorage.setItem("just-logged-in-password", "1"); } catch { /* ignore */ }
-      router.push(data.employe?.cguAccepted ? "/espace-employes/dashboard" : "/espace-employes/cgu");
+      const dest = data.employe?.passwordMustChange
+        ? "/espace-employes/change-password"
+        : data.employe?.cguAccepted
+          ? "/espace-employes/dashboard"
+          : "/espace-employes/cgu";
+      router.push(dest);
       router.refresh();
     } catch {
       setError("Erreur réseau. Vérifiez votre connexion.");

@@ -25,6 +25,7 @@ export const employes = pgTable("employes", {
   role: text("role").notNull().default("employe"), // employe | chef_chantier | patron
   hourlyRateCents: integer("hourly_rate_cents"),
   actif: boolean("actif").notNull().default(true),
+  passwordMustChange: boolean("password_must_change").notNull().default(false),
   cguAcceptedAt: timestamp("cgu_accepted_at", { withTimezone: true }),
   cguVersion: text("cgu_version"),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
