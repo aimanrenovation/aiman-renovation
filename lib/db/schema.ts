@@ -191,6 +191,20 @@ export const webauthnCredentials = pgTable("webauthn_credentials", {
   lastUsedAt: timestamp("last_used_at", { withTimezone: true }),
 });
 
+// ---- messages_chantier ----
+export const messagesChantier = pgTable("messages_chantier", {
+  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  chantierId: uuid("chantier_id")
+    .notNull()
+    .references(() => chantiers.id, { onDelete: "cascade" }),
+  employeId: uuid("employe_id")
+    .notNull()
+    .references(() => employes.id, { onDelete: "cascade" }),
+  contenu: text("contenu").notNull(),
+  lu: boolean("lu").notNull().default(false),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+});
+
 export type Employe = typeof employes.$inferSelect;
 export type NewEmploye = typeof employes.$inferInsert;
 export type Chantier = typeof chantiers.$inferSelect;
