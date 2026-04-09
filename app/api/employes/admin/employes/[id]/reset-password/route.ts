@@ -24,7 +24,7 @@ export const POST = requireAuth(async (_request, ctx) => {
 
   await db
     .update(schema.employes)
-    .set({ passwordHash, updatedAt: new Date() })
+    .set({ passwordHash, passwordMustChange: true, updatedAt: new Date() })
     .where(eq(schema.employes.id, id));
 
   return NextResponse.json({
