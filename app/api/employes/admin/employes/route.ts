@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { desc } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import { db, schema } from "@/lib/db/client";
 import { requireAuth } from "@/lib/auth/middleware";
 import { hashPassword } from "@/lib/auth/password";
@@ -55,22 +55,33 @@ export const POST = requireAuth(async (request) => {
     return NextResponse.json({ error: "invalid_role" }, { status: 400 });
   }
 
-  // Generate a random password
+  const normalizedEmail = email.trim().toLowerCase();
+
+  // Check if a deactivated account with this email exists — reactivate it
+  const [existing] = await db
+    .select({ id: schema.employes.id, actif: schema.employes.actif })
+    .from(schema.employes)
+    .where(eq(schema.employes.email, normalizedEmail))
+    .limit(1);
+
   const plainPassword = randomBytes(8).toString("base64url");
   const passwordHash = await hashPassword(plainPassword);
 
-  try {
-    const [created] = await db
-      .insert(schema.employes)
-      .values({
+  if (existing && !existing.actif) {
+    const [reactivated] = await db
+      .update(schema.employes)
+      .set({
         firstname: firstname.trim(),
         lastname: lastname.trim(),
-        email: email.trim().toLowerCase(),
         phone: phone?.trim() || null,
         role: role || "employe",
         hourlyRateCents: hourlyRateCents ?? null,
         passwordHash,
+        actif: true,
+        passwordMustChange: true,
+        updatedAt: new Date(),
       })
+      .where(eq(schema.employes.id, existing.id))
       .returning({
         id: schema.employes.id,
         firstname: schema.employes.firstname,
@@ -80,12 +91,33 @@ export const POST = requireAuth(async (request) => {
         createdAt: schema.employes.createdAt,
       });
 
-    return NextResponse.json({ employe: created, tempPassword: plainPassword }, { status: 201 });
-  } catch (err: unknown) {
-    const msg = err instanceof Error ? err.message : "";
-    if (msg.includes("unique") || msg.includes("duplicate")) {
-      return NextResponse.json({ error: "email_already_exists" }, { status: 409 });
-    }
-    throw err;
+    return NextResponse.json({ employe: reactivated, tempPassword: plainPassword, reactivated: true }, { status: 201 });
   }
+
+  if (existing) {
+    return NextResponse.json({ error: "email_already_exists" }, { status: 409 });
+  }
+
+  const [created] = await db
+    .insert(schema.employes)
+    .values({
+      firstname: firstname.trim(),
+      lastname: lastname.trim(),
+      email: normalizedEmail,
+      phone: phone?.trim() || null,
+      role: role || "employe",
+      hourlyRateCents: hourlyRateCents ?? null,
+      passwordHash,
+      passwordMustChange: true,
+    })
+    .returning({
+      id: schema.employes.id,
+      firstname: schema.employes.firstname,
+      lastname: schema.employes.lastname,
+      email: schema.employes.email,
+      role: schema.employes.role,
+      createdAt: schema.employes.createdAt,
+    });
+
+  return NextResponse.json({ employe: created, tempPassword: plainPassword }, { status: 201 });
 }, ["patron"]);
