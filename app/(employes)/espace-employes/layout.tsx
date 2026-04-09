@@ -1,13 +1,20 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import type { Metadata } from "next";
 import { BottomNav } from "@/components/employes/bottom-nav";
 import { ToastContainer } from "@/components/employes/toast";
+import { PwaRegister } from "@/components/employes/pwa-register";
 import { getEmployeSession } from "@/lib/auth/session";
 
 export const dynamic = "force-dynamic";
-export const metadata = {
+export const metadata: Metadata = {
   title: "Espace équipe — Aiman Rénovation",
   robots: { index: false, follow: false },
+  manifest: "/employes-manifest.webmanifest",
+  other: {
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+  },
 };
 
 export default async function EmployesLayout({ children }: { children: ReactNode }) {
@@ -42,6 +49,7 @@ export default async function EmployesLayout({ children }: { children: ReactNode
         <main className="flex-1 px-4 pb-24 pt-4">{children}</main>
 
         <ToastContainer />
+        <PwaRegister />
         <BottomNav />
       </div>
     </div>
