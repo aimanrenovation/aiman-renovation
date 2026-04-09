@@ -61,7 +61,7 @@
 
 - GBP : ajouter 16 villes suisses en service area
 - Description allemande GBP
-- Créer page `/de/kantone/basel-stadt`
+- ~~Créer page `/de/kantone/basel-stadt`~~ ✅ DONE Phase 3bis (route réelle : `/de/renovierung-schweiz/kanton/basel-stadt`)
 - Article blog allemand "Renovieren in Basel"
 - Lancer Google Ads campagne CH (50€/mois)
 
