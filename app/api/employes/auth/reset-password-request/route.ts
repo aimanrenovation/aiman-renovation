@@ -34,13 +34,13 @@ export async function POST(request: Request) {
     .setExpirationTime(`${RESET_TTL_SECONDS}s`)
     .sign(new TextEncoder().encode(secret));
 
-  const resetUrl = `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://aiman-renovation.fr"}/espace-employes/reset?token=${token}`;
+  const resetUrl = `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://aiman-renovation.fr"}/espace-employes/reset-password?token=${token}`;
 
-  // Fire-and-forget email via Resend (best effort; do not reveal failure to caller)
+  // Send email via Resend
   try {
     const apiKey = process.env.RESEND_API_KEY;
     if (apiKey) {
-      await fetch("https://api.resend.com/emails", {
+      const resendRes = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${apiKey}`,
@@ -56,9 +56,15 @@ export async function POST(request: Request) {
             <p>Si vous n'êtes pas à l'origine de cette demande, ignorez cet email.</p>`,
         }),
       });
+      if (!resendRes.ok) {
+        const errBody = await resendRes.text().catch(() => "");
+        console.error(`[reset-password] Resend error ${resendRes.status}: ${errBody}`);
+      }
+    } else {
+      console.error("[reset-password] RESEND_API_KEY not set");
     }
-  } catch {
-    // swallow
+  } catch (err) {
+    console.error("[reset-password] Failed to send email:", err);
   }
 
   return NextResponse.json({ ok: true });
