@@ -74,7 +74,9 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-const ZONE_VILLES = [
+import { VILLES_FR } from "@/lib/villes-fr";
+
+const ZONE_VILLES_DISPLAY = [
   "Saint-Louis",
   "Huningue",
   "Village-Neuf",
@@ -366,14 +368,31 @@ export default async function ServicePage({ params }: Props) {
               Nous intervenons à Saint-Louis et dans un rayon de 30 km : agglomération mulhousienne, rives du Rhin, zone transfrontalière Bâle / Lörrach / Saint-Louis.
             </p>
             <ul className="flex flex-wrap gap-3">
-              {ZONE_VILLES.map((ville) => (
-                <li
-                  key={ville}
-                  className="bg-[#111111] border border-white/5 rounded-full px-4 py-2 text-sm text-gray-300"
-                >
-                  {ville}
-                </li>
-              ))}
+              {ZONE_VILLES_DISPLAY.map((ville) => {
+                const villeData = VILLES_FR.find(
+                  (v) => v.name.toLowerCase() === ville.toLowerCase()
+                );
+                if (villeData) {
+                  return (
+                    <li key={ville}>
+                      <Link
+                        href={`/renovation/${villeData.slug}`}
+                        className="inline-block bg-[#111111] border border-white/5 rounded-full px-4 py-2 text-sm text-gray-300 hover:border-[#E50000]/30 hover:text-white transition-colors"
+                      >
+                        {ville}
+                      </Link>
+                    </li>
+                  );
+                }
+                return (
+                  <li
+                    key={ville}
+                    className="bg-[#111111] border border-white/5 rounded-full px-4 py-2 text-sm text-gray-300"
+                  >
+                    {ville}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </section>

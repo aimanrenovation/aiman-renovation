@@ -88,10 +88,11 @@ export function ServicesPageContent() {
         <div className="absolute inset-0">
           <Image
             src="/images/ambiance-resultat.jpg"
-            alt="Nos services de renovation"
+            alt="Nos services de rénovation"
             fill
             className="object-cover"
             priority
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30" />
         </div>
@@ -127,6 +128,8 @@ export function ServicesPageContent() {
                   src={PHOTO_MAP[service.slug] || ""}
                   alt={serviceMap.get(service.slug)?.title ?? service.title}
                   fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>

@@ -58,8 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localizedEntry("/renovierung-schweiz/kanton/basel-stadt", 0.85, "monthly"),
     ...localizedEntry("/renovierung-schweiz/kanton/basel-landschaft", 0.85, "monthly"),
     ...localizedEntry("/renovierung-schweiz/kanton/solothurn", 0.7, "monthly"),
-    ...VILLES_FR.flatMap((v) =>
-      localizedEntry(`/renovation/${v.slug}`, 0.7, "monthly")
-    ),
+    ...localizedEntry("/renovierung-schweiz/kanton/aargau", 0.7, "monthly"),
+    ...localizedEntry("/renovierung-schweiz/kanton/jura", 0.7, "monthly"),
   ];
 }

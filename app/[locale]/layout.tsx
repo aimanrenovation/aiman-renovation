@@ -165,9 +165,6 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <NextIntlClientProvider messages={messages}>
       <JsonLd data={organizationJsonLd} />
-      {/* Preconnect pour Google Fonts */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <SmoothScrollProvider>
         <Navbar />
         <main className="flex-1">{children}</main>

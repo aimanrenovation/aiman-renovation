@@ -43,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={`${inter.variable} ${archivoBlack.variable} h-full antialiased`}>
+    <html lang="fr" className={`${inter.variable} ${archivoBlack.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-black text-white font-sans">
         {children}
       </body>

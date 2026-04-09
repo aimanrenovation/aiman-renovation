@@ -368,4 +368,71 @@ export const VILLES_DE: VilleDE[] = [
     seoDescriptionFR:
       "Rénovation à Wehr : anciens bâtiments, salle de bain, cuisine, façade. Artisan français à 35 km. Devis gratuit.",
   },
+  {
+    slug: "bad-saeckingen",
+    name: "Bad Säckingen",
+    nameFr: "Bad Säckingen",
+    bundesland: "Baden-Württemberg",
+    kreis: "Waldshut",
+    population: 17000,
+    distance: 45,
+    featuredImage: "/images/villes/bad-saeckingen.webp",
+    specificitesDE: [
+      "Kurstadt am Hochrhein — Thermalbad und Gesundheitstourismus",
+      "Längste gedeckte Holzbrücke Europas (Alte Holzbrücke zum Stein AG)",
+      "Trompeter von Säckingen — literarisches Erbe und Stadtidentität",
+      "Historische Altstadt mit gut erhaltenen Barockgebäuden",
+      "Wachsende Wohnnachfrage durch Pendler nach Basel und Zürich",
+      "Vielfältiger Wohnbestand: Altbauten, Gründerzeithäuser, Neubauten",
+    ],
+    specificitesFR: [
+      "Ville thermale sur le Haut-Rhin — thermes et tourisme de santé",
+      "Plus long pont couvert en bois d'Europe (Alte Holzbrücke)",
+      "Vieille ville historique avec bâtiments baroques",
+      "Parc immobilier varié : anciens, Gründerzeit, neufs",
+      "Demande résidentielle croissante des pendulaires bâlois",
+    ],
+    seoTitleDE:
+      "Renovierung Bad Säckingen | AIMAN RENOVATION — Französische Handwerker",
+    seoDescriptionDE:
+      "Renovierungen in Bad Säckingen: Altbauten, Bad, Küche, Fassade. Französische Qualität aus Saint-Louis — 45 km. Kostenlose Offerte in 48h.",
+    seoTitleFR:
+      "Rénovation Bad Säckingen | Artisan français Saint-Louis",
+    seoDescriptionFR:
+      "Rénovation à Bad Säckingen : bâtiments anciens, salle de bain, cuisine, façade. Artisan français à 45 km. Devis gratuit en 48h.",
+  },
+  {
+    slug: "muellheim",
+    name: "Müllheim",
+    nameFr: "Müllheim",
+    bundesland: "Baden-Württemberg",
+    kreis: "Breisgau-Hochschwarzwald",
+    population: 19000,
+    distance: 30,
+    featuredImage: "/images/villes/muellheim.webp",
+    specificitesDE: [
+      "Zentrum des Markgräflerlandes — Weinbau und Lebensqualität",
+      "Historische Altstadt mit Fachwerkhäusern und Marktplatz",
+      "Gutedel-Wein — regionaler Charakter und Weintourismus",
+      "Kaserne und ehemalige Militärflächen in Wohngebiete umgewandelt",
+      "Gute Verkehrsanbindung (A5, Bahnhof Müllheim-Neuenburg)",
+      "Wachsende Wohngemeinde mit Zuzug aus dem Raum Freiburg und Basel",
+    ],
+    specificitesFR: [
+      "Centre du Markgräflerland — vignoble et qualité de vie",
+      "Vieille ville historique avec maisons à colombages",
+      "Vin Gutedel — caractère régional et oenotourisme",
+      "Anciennes casernes reconverties en zones résidentielles",
+      "Bonne desserte (A5, gare Müllheim-Neuenburg)",
+      "Commune résidentielle en croissance, arrivées de Fribourg et Bâle",
+    ],
+    seoTitleDE:
+      "Renovierung Müllheim (Markgräflerland) | AIMAN RENOVATION Frankreich",
+    seoDescriptionDE:
+      "Renovierungen in Müllheim: Fachwerk, Bad, Küche, Fassade, Malerarbeiten. Französische Qualität aus Saint-Louis — 30 km. Offerte in 48h.",
+    seoTitleFR:
+      "Rénovation Müllheim (Markgräflerland) | Artisan français Saint-Louis",
+    seoDescriptionFR:
+      "Rénovation à Müllheim : colombages, salle de bain, cuisine, peinture. Artisan français à 30 km. Devis gratuit en 48h.",
+  },
 ];

@@ -11,7 +11,7 @@ interface Props {
   params: Promise<{ kanton: string; locale: string }>;
 }
 
-type CantonCode = "BS" | "BL" | "SO";
+type CantonCode = "BS" | "BL" | "SO" | "AG" | "JU";
 
 interface CantonMeta {
   code: CantonCode;
@@ -120,6 +120,68 @@ const CANTONS: Record<string, CantonMeta> = {
       "Spezialist für die Region Dorneck (Dornach und Umgebung)",
       "Kompetenz in allen Gewerken — von der Malerarbeit bis zur Komplettsanierung",
       "Offerte zweisprachig und in der Währung Ihrer Wahl",
+    ],
+    featuredImage: "/images/villes/dornach.webp",
+  },
+  aargau: {
+    code: "AG",
+    slug: "aargau",
+    nameDE: "Aargau",
+    nameFR: "Argovie",
+    nameEN: "Aargau",
+    capital: "Aarau",
+    population: 700000,
+    surfaceKm2: 1404,
+    seoTitleDE:
+      "Renovierung Kanton Aargau (Region Fricktal) | AIMAN RENOVATION",
+    seoDescriptionDE:
+      "Renovierung im Kanton Aargau: Region Fricktal, Rheinfelden (CH), Kaiseraugst. Französische Handwerker, Offerte CHF/EUR. Kostenlos in 48h.",
+    seoTitleFR:
+      "Rénovation Canton Argovie (région Fricktal) | AIMAN RENOVATION",
+    seoDescriptionFR:
+      "Rénovation dans le Fricktal (canton d'Argovie) : Rheinfelden, Kaiseraugst. Devis gratuit en 48h, en CHF ou EUR.",
+    introDE:
+      "Der Kanton Aargau grenzt im Nordwesten direkt an das Baselbiet und ist über die Autobahn A3 in weniger als 30 Minuten von Saint-Louis aus erreichbar. Insbesondere die Region Fricktal — mit den Gemeinden Rheinfelden (CH), Kaiseraugst, Möhlin und Stein — weist einen hohen Bestand an Einfamilienhäusern aus den 1970er und 1980er Jahren auf, die heute dringend renoviert werden müssen.\n\nDie Nähe zum Wirtschaftsraum Basel macht das Fricktal zu einem begehrten Wohngebiet für Pendler. Die Immobilienpreise steigen, und damit auch die Bereitschaft der Eigentümer, in hochwertige Renovierungen zu investieren: neue Bäder, moderne Küchen, Wärmedämmung nach Minergie-Standard.\n\nAIMAN RENOVATION bedient die Region Fricktal seit mehreren Jahren und kennt die typischen Bautypen, die kantonalen Förderprogramme und die lokalen Bauvorschriften. Wir bieten Ihnen französische Handwerksqualität zu wettbewerbsfähigen Preisen — mit Offerte in CHF oder EUR.",
+    introFR:
+      "Le canton d'Argovie borde directement le Baselbiet au nord-ouest et se trouve à moins de 30 minutes de Saint-Louis par l'autoroute A3. La région du Fricktal en particulier — avec les communes de Rheinfelden (CH), Kaiseraugst, Möhlin et Stein — possède un parc immobilier important de maisons individuelles des années 1970-1980 nécessitant une rénovation.\n\nLa proximité du bassin économique bâlois fait du Fricktal une zone résidentielle prisée des pendulaires. Les prix immobiliers augmentent, et avec eux la volonté des propriétaires d'investir dans des rénovations de qualité.",
+    highlights: [
+      "Spezialisiert auf die Region Fricktal (Rheinfelden CH, Kaiseraugst, Möhlin)",
+      "Erfahrung mit Einfamilienhäusern der 1970er–1980er Jahre",
+      "Beratung zu kantonalen Energieförderprogrammen (Aargau Energie)",
+      "Schnelle Anfahrt über die A3 — unter 30 Minuten ab Saint-Louis",
+      "Offerte zweisprachig in CHF oder EUR",
+      "Alle Gewerke aus einer Hand: Bad, Küche, Böden, Fassade, Dämmung",
+    ],
+    featuredImage: "/images/villes/basel.webp",
+  },
+  jura: {
+    code: "JU",
+    slug: "jura",
+    nameDE: "Jura",
+    nameFR: "Jura",
+    nameEN: "Jura",
+    capital: "Delémont",
+    population: 73000,
+    surfaceKm2: 839,
+    seoTitleDE:
+      "Renovierung Kanton Jura (Delémont, Porrentruy) | AIMAN RENOVATION",
+    seoDescriptionDE:
+      "Renovierung im Kanton Jura: Delémont und Umgebung. Französische Handwerker, Offerte CHF/EUR. Kostenlos in 48h.",
+    seoTitleFR:
+      "Rénovation Canton du Jura (Delémont, Porrentruy) | AIMAN RENOVATION",
+    seoDescriptionFR:
+      "Rénovation dans le canton du Jura : Delémont, Porrentruy et environs. Devis gratuit en 48h, en CHF ou EUR.",
+    introDE:
+      "Der Kanton Jura ist der jüngste Kanton der Schweiz (gegründet 1979) und liegt im Nordwesten des Landes, direkt erreichbar über die A16 (Transjurane). Von Saint-Louis aus erreichen wir Delémont in etwa 45 Minuten — eine vernünftige Distanz, die wir regelmässig für grössere Renovierungsprojekte zurücklegen.\n\nDer Kanton Jura ist der einzige rein französischsprachige Kanton der Nordwestschweiz. Die Kommunikation mit unseren frankophonen Handwerkern ist daher besonders einfach und reibungslos. Der Immobilienbestand — Bauernhäuser, Stadthäuser in Delémont und Porrentruy, sowie Einfamilienhäuser der Nachkriegszeit — bietet zahlreiche Renovierungsmöglichkeiten.\n\nUnsere Preise liegen deutlich unter denen lokaler Schweizer Betriebe, bei gleichwertiger Qualität und voller Konformität mit den jurassischen Bauvorschriften.",
+    introFR:
+      "Le canton du Jura est le plus jeune canton suisse (fondé en 1979) et se situe au nord-ouest du pays, accessible directement par l'A16 (Transjurane). Depuis Saint-Louis, nous atteignons Delémont en environ 45 minutes — une distance raisonnable que nous parcourons régulièrement pour des projets de rénovation d'envergure.\n\nLe canton du Jura est le seul canton exclusivement francophone du nord-ouest de la Suisse. La communication avec nos artisans francophones est donc particulièrement simple et fluide. Le parc immobilier — fermes, maisons de ville à Delémont et Porrentruy, maisons individuelles d'après-guerre — offre de nombreuses possibilités de rénovation.",
+    highlights: [
+      "Seul canton entièrement francophone de la Suisse du Nord-Ouest — communication fluide",
+      "Delémont en 45 minutes depuis Saint-Louis par l'A16",
+      "Artisans francophones qualifiés pour maisons jurassiennes",
+      "Prix 30–40 % inférieurs aux entreprises suisses locales",
+      "Devis bilingue français/allemand en CHF ou EUR",
+      "Spécialisé fermes jurassiennes, maisons de maître, rénovation complète",
     ],
     featuredImage: "/images/villes/dornach.webp",
   },

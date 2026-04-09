@@ -8,6 +8,7 @@ import { COMPANY } from "@/lib/constants";
 import { LinkButton } from "@/components/ui/link-button";
 import { ScrollReveal } from "@/components/sections/scroll-reveal";
 import { getAlternates } from "@/lib/i18n-helpers";
+import { FAQ_VILLES } from "@/lib/faq-villes";
 
 interface Props {
   params: Promise<{ ville: string; locale: string }>;
@@ -140,7 +141,23 @@ function buildSchemas(v: VilleFR) {
     ],
   });
 
-  return { localBusiness, service, breadcrumb };
+  const faqItems = FAQ_VILLES[v.slug] ?? [];
+  const faqPage = faqItems.length > 0
+    ? JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqItems.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      })
+    : null;
+
+  return { localBusiness, service, breadcrumb, faqPage };
 }
 
 export default async function VillePage({ params }: Props) {
@@ -173,6 +190,14 @@ export default async function VillePage({ params }: Props) {
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: schemas.breadcrumb }}
       />
+      {/* FAQ schema — static data, no user input */}
+      {schemas.faqPage && (
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: schemas.faqPage }}
+        />
+      )}
 
       {/* Breadcrumb visuel */}
       <nav
@@ -203,6 +228,7 @@ export default async function VillePage({ params }: Props) {
           alt={`Rénovation à ${villeData.name} — Aiman Renovation Haut-Rhin`}
           fill
           priority
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
@@ -391,6 +417,88 @@ export default async function VillePage({ params }: Props) {
           </div>
         </section>
       </ScrollReveal>
+
+      {/* FAQ locale */}
+      {(FAQ_VILLES[villeData.slug] ?? []).length > 0 && (
+        <ScrollReveal direction="up">
+          <section className="relative z-10 bg-[#0A0A0A] py-24 md:py-32 border-t border-white/5">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
+              <h2 className="font-heading text-2xl md:text-3xl mb-12">
+                QUESTIONS FRÉQUENTES{" "}
+                <span className="text-[#E50000]">À {villeData.name.toUpperCase()}</span>
+              </h2>
+              <div className="space-y-4">
+                {(FAQ_VILLES[villeData.slug] ?? []).map((faq, i) => (
+                  <details
+                    key={i}
+                    className="group bg-[#111111] border border-white/5 rounded-xl overflow-hidden"
+                  >
+                    <summary className="flex items-center justify-between gap-4 cursor-pointer p-6 text-white font-medium text-base md:text-lg hover:text-[#E50000] transition-colors list-none [&::-webkit-details-marker]:hidden">
+                      <span>{faq.question}</span>
+                      <span className="shrink-0 w-6 h-6 rounded-full bg-[#E50000]/10 flex items-center justify-center text-[#E50000] text-sm transition-transform group-open:rotate-45">
+                        +
+                      </span>
+                    </summary>
+                    <div className="px-6 pb-6 text-gray-400 leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* Villes proches — maillage interne */}
+      {(() => {
+        const nearbyVilles = VILLES_FR.filter(
+          (v) =>
+            v.slug !== villeData.slug &&
+            (villeData.communesAlentours.some(
+              (c) => c.toLowerCase() === v.name.toLowerCase()
+            ) ||
+              v.communesAlentours.some(
+                (c) => c.toLowerCase() === villeData.name.toLowerCase()
+              ))
+        ).slice(0, 6);
+        if (nearbyVilles.length === 0) return null;
+        return (
+          <ScrollReveal direction="up" delay={0.05}>
+            <section className="relative z-10 bg-black py-16 md:py-24 border-t border-white/5">
+              <div className="max-w-5xl mx-auto px-6">
+                <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
+                <h2 className="font-heading text-xl md:text-2xl mb-8">
+                  RÉNOVATION{" "}
+                  <span className="text-[#E50000]">PRÈS DE {villeData.name.toUpperCase()}</span>
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {nearbyVilles.map((v) => (
+                    <Link
+                      key={v.slug}
+                      href={`/renovation/${v.slug}`}
+                      className="group flex items-center gap-3 bg-[#111111] rounded-xl p-4 border border-white/5 hover:border-[#E50000]/30 transition-colors"
+                    >
+                      <div className="shrink-0 w-8 h-8 rounded-full bg-[#E50000]/10 flex items-center justify-center">
+                        <span className="text-[#E50000] text-sm">→</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-300 text-sm font-medium group-hover:text-white transition-colors">
+                          Rénovation à {v.name}
+                        </span>
+                        <span className="block text-gray-600 text-xs">
+                          {v.codePostal} — {v.distance} km
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </ScrollReveal>
+        );
+      })()}
 
       {/* CTA final */}
       <section className="relative z-10 overflow-hidden bg-[#0A0A0A] border-t border-white/5">

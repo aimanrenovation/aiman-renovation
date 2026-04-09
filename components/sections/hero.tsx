@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState, useCallback } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LinkButton } from "@/components/ui/link-button";
@@ -165,8 +166,7 @@ export function Hero() {
         {/* Poster pendant chargement */}
         {!ready && (
           <>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/hero-poster.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+            <Image src="/images/hero-poster.jpg" alt="" fill sizes="100vw" priority className="object-cover" />
             <div className="absolute inset-0 flex items-center justify-center z-30">
               <div className="w-10 h-10 border-2 border-white/20 border-t-white rounded-full animate-spin" />
             </div>

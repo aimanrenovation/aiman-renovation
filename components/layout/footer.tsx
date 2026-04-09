@@ -23,7 +23,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div>
-            <Image src="/logo/logo-white.png" alt="Aiman Renovation" width={120} height={35} />
+            <Image src="/logo/logo-white.png" alt="Aiman Renovation" width={120} height={35} loading="lazy" sizes="120px" />
             <p className="mt-4 text-gray-400 text-sm leading-relaxed">{tCommon("slogan")}</p>
             <div className="flex gap-1 mt-4">
               <div className="w-8 h-1 rounded-full bg-[#002B7F]" />

@@ -2,7 +2,7 @@ export interface VilleCH {
   slug: string;
   name: string; // nom allemand (Basel, Allschwil, ...)
   nameFr: string; // nom français (Bâle, ...)
-  canton: "BS" | "BL" | "SO";
+  canton: "BS" | "BL" | "SO" | "AG" | "JU";
   population?: number;
   distance: number; // km depuis Saint-Louis
   featuredImage: string;
