@@ -1,9 +1,16 @@
-import { ResetPasswordForm } from "@/components/employes/reset-password-form";
 import Image from "next/image";
+import { ResetPasswordForm } from "@/components/employes/reset-password-form";
+import { NewPasswordForm } from "@/components/employes/new-password-form";
 
 export const dynamic = "force-dynamic";
 
-export default function ResetPasswordPage() {
+export default async function ResetPasswordPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ token?: string }>;
+}) {
+  const { token } = await searchParams;
+
   return (
     <div className="relative flex min-h-dvh flex-col items-center justify-center bg-[#111] px-6">
       <Image
@@ -25,12 +32,23 @@ export default function ResetPasswordPage() {
           priority
         />
 
-        <h1 className="mb-2 text-xl font-bold tracking-tight text-white">Mot de passe oublié</h1>
-        <p className="mb-8 text-center text-sm text-neutral-400">
-          Entrez votre email, vous recevrez un lien pour choisir un nouveau mot de passe.
-        </p>
-
-        <ResetPasswordForm />
+        {token ? (
+          <>
+            <h1 className="mb-2 text-xl font-bold tracking-tight text-white">Nouveau mot de passe</h1>
+            <p className="mb-8 text-center text-sm text-neutral-400">
+              Choisissez votre nouveau mot de passe.
+            </p>
+            <NewPasswordForm token={token} />
+          </>
+        ) : (
+          <>
+            <h1 className="mb-2 text-xl font-bold tracking-tight text-white">Mot de passe oublié</h1>
+            <p className="mb-8 text-center text-sm text-neutral-400">
+              Entrez votre email, vous recevrez un lien pour choisir un nouveau mot de passe.
+            </p>
+            <ResetPasswordForm />
+          </>
+        )}
 
         <a
           href="/espace-employes/login"
