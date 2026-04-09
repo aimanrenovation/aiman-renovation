@@ -37,7 +37,6 @@ export async function POST(request: Request) {
   const resetUrl = `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://aiman-renovation.fr"}/espace-employes/reset-password?token=${token}`;
 
   // Send email via Resend
-  let emailStatus = "not_attempted";
   try {
     const apiKey = process.env.RESEND_API_KEY;
     if (apiKey) {
@@ -48,7 +47,7 @@ export async function POST(request: Request) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: process.env.RESEND_FROM_EMAIL ?? "Aiman Rénovation <onboarding@resend.dev>",
+          from: process.env.RESEND_FROM_EMAIL ?? "Aiman Rénovation <noreply@aiman-renovation.fr>",
           to: employe.email,
           subject: "Réinitialisation de votre mot de passe — Espace équipe",
           html: `<p>Bonjour ${employe.firstname},</p>
@@ -57,21 +56,16 @@ export async function POST(request: Request) {
             <p>Si vous n'êtes pas à l'origine de cette demande, ignorez cet email.</p>`,
         }),
       });
-      if (resendRes.ok) {
-        emailStatus = "sent";
-      } else {
+      if (!resendRes.ok) {
         const errBody = await resendRes.text().catch(() => "");
-        emailStatus = `resend_error_${resendRes.status}`;
         console.error(`[reset-password] Resend error ${resendRes.status}: ${errBody}`);
       }
     } else {
-      emailStatus = "no_api_key";
       console.error("[reset-password] RESEND_API_KEY not set");
     }
   } catch (err) {
-    emailStatus = "exception";
     console.error("[reset-password] Failed to send email:", err);
   }
 
-  return NextResponse.json({ ok: true, _debug: emailStatus });
+  return NextResponse.json({ ok: true });
 }
