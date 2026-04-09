@@ -1,0 +1,1 @@
+export const CGU_CURRENT_VERSION = "2026-04-09";
