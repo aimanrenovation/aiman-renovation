@@ -22,7 +22,7 @@ export async function POST() {
       );
   }
 
-  const response = NextResponse.json({ ok: true });
+  const response = NextResponse.redirect(new URL("/espace-employes/login", process.env.WEBAUTHN_ORIGIN || "https://aiman-renovation.fr"));
   response.cookies.delete(ACCESS_COOKIE);
   response.cookies.delete({ name: REFRESH_COOKIE, path: "/api/employes/auth" });
   return response;
