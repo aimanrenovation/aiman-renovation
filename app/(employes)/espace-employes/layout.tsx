@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { BottomNav } from "@/components/employes/bottom-nav";
 import { ToastContainer } from "@/components/employes/toast";
 import { PwaRegister } from "@/components/employes/pwa-register";
+import { InactivityGuard } from "@/components/employes/inactivity-guard";
 import { getEmployeSession } from "@/lib/auth/session";
 
 export const dynamic = "force-dynamic";
@@ -50,6 +51,7 @@ export default async function EmployesLayout({ children }: { children: ReactNode
 
         <ToastContainer />
         <PwaRegister />
+        <InactivityGuard />
         <BottomNav />
       </div>
     </div>

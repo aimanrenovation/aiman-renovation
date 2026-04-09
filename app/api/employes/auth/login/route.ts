@@ -14,6 +14,31 @@ import { ACCESS_COOKIE, REFRESH_COOKIE } from "@/lib/auth/session";
 const MAX_FAILS = 5;
 const WINDOW_MINUTES = 15;
 
+async function notifyPatronNewDevice(
+  employe: { firstname: string; lastname: string; email: string },
+  ua: string | null,
+  ip: string | null,
+) {
+  const webhookUrl = process.env.EMPLOYES_WEBHOOK_URL;
+  const webhookSecret = process.env.EMPLOYES_WEBHOOK_SECRET;
+  if (!webhookUrl) return;
+  await fetch(webhookUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...(webhookSecret ? { "X-Webhook-Secret": webhookSecret } : {}),
+    },
+    body: JSON.stringify({
+      type: "new_device_login",
+      employe: `${employe.firstname} ${employe.lastname}`,
+      email: employe.email,
+      ip,
+      userAgent: ua,
+      timestamp: new Date().toISOString(),
+    }),
+  });
+}
+
 export async function POST(request: Request) {
   let body: { email?: string; password?: string };
   try {
@@ -59,18 +84,54 @@ export async function POST(request: Request) {
     });
   };
 
+  const logLogin = async (employeId: string | null, success: boolean, isNewDevice: boolean) => {
+    await db.insert(schema.loginLogs).values({
+      employeId,
+      email,
+      ip,
+      userAgent,
+      success,
+      newDevice: isNewDevice,
+    });
+  };
+
   if (!employe || !employe.actif) {
     await recordAttempt(false);
+    await logLogin(null, false, false);
     return NextResponse.json({ error: "invalid_credentials" }, { status: 401 });
   }
 
   const ok = await verifyPassword(password, employe.passwordHash);
   if (!ok) {
     await recordAttempt(false);
+    await logLogin(employe.id, false, false);
     return NextResponse.json({ error: "invalid_credentials" }, { status: 401 });
   }
 
   await recordAttempt(true);
+
+  // Detect new device: compare user-agent with previous successful logins
+  let isNewDevice = false;
+  if (userAgent) {
+    const previousAgents = await db
+      .select({ userAgent: schema.loginLogs.userAgent })
+      .from(schema.loginLogs)
+      .where(
+        and(
+          eq(schema.loginLogs.employeId, employe.id),
+          eq(schema.loginLogs.success, true),
+        )
+      );
+    const knownAgents = new Set(previousAgents.map((r) => r.userAgent).filter(Boolean));
+    isNewDevice = knownAgents.size > 0 && !knownAgents.has(userAgent);
+  }
+
+  await logLogin(employe.id, true, isNewDevice);
+
+  // Alert patron if new device detected
+  if (isNewDevice) {
+    notifyPatronNewDevice(employe, userAgent, ip).catch(() => {});
+  }
 
   // Issue tokens
   const accessToken = await signAccessToken(employe.id, employe.role as EmployeRole);

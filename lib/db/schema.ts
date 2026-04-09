@@ -213,6 +213,18 @@ export const webauthnChallenges = pgTable("webauthn_challenges", {
   expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
 });
 
+// ---- login_logs (connexion history for security) ----
+export const loginLogs = pgTable("login_logs", {
+  id: bigserial("id", { mode: "number" }).primaryKey(),
+  employeId: uuid("employe_id").references(() => employes.id, { onDelete: "cascade" }),
+  email: text("email").notNull(),
+  ip: text("ip"),
+  userAgent: text("user_agent"),
+  success: boolean("success").notNull(),
+  newDevice: boolean("new_device").notNull().default(false),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+});
+
 export type Employe = typeof employes.$inferSelect;
 export type NewEmploye = typeof employes.$inferInsert;
 export type Chantier = typeof chantiers.$inferSelect;
