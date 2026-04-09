@@ -48,7 +48,7 @@ export async function POST(request: Request) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "Aiman Rénovation <noreply@aiman-renovation.fr>",
+          from: process.env.RESEND_FROM_EMAIL ?? "Aiman Rénovation <onboarding@resend.dev>",
           to: employe.email,
           subject: "Réinitialisation de votre mot de passe — Espace équipe",
           html: `<p>Bonjour ${employe.firstname},</p>
