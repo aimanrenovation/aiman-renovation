@@ -1,6 +1,5 @@
 // Seed script: creates test employes + chantiers (with geocoding) for local dev.
-// Usage: DATABASE_URL=... MAPBOX_TOKEN=... npx tsx scripts/seed-employes.ts
-import "dotenv/config";
+// Usage: npx tsx --env-file=.env.local scripts/seed-employes.ts
 import { eq } from "drizzle-orm";
 import { db, schema } from "@/lib/db/client";
 import { hashPassword } from "@/lib/auth/password";
