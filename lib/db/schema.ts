@@ -177,6 +177,34 @@ export const loginAttempts = pgTable("login_attempts", {
   attemptedAt: timestamp("attempted_at", { withTimezone: true }).notNull().default(sql`now()`),
 });
 
+// ---- webauthn_credentials ----
+export const webauthnCredentials = pgTable("webauthn_credentials", {
+  id: text("id").primaryKey(), // credential ID base64url
+  employeId: uuid("employe_id")
+    .notNull()
+    .references(() => employes.id, { onDelete: "cascade" }),
+  publicKey: text("public_key").notNull(), // base64url encoded
+  counter: bigint("counter", { mode: "number" }).notNull().default(0),
+  deviceName: text("device_name"), // "iPhone de Yassine"
+  transports: jsonb("transports"), // ["internal", "hybrid"]
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  lastUsedAt: timestamp("last_used_at", { withTimezone: true }),
+});
+
+// ---- messages_chantier ----
+export const messagesChantier = pgTable("messages_chantier", {
+  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  chantierId: uuid("chantier_id")
+    .notNull()
+    .references(() => chantiers.id, { onDelete: "cascade" }),
+  employeId: uuid("employe_id")
+    .notNull()
+    .references(() => employes.id, { onDelete: "cascade" }),
+  contenu: text("contenu").notNull(),
+  lu: boolean("lu").notNull().default(false),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+});
+
 export type Employe = typeof employes.$inferSelect;
 export type NewEmploye = typeof employes.$inferInsert;
 export type Chantier = typeof chantiers.$inferSelect;

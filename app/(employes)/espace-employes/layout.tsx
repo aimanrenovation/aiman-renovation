@@ -1,16 +1,33 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import type { Metadata } from "next";
 import { BottomNav } from "@/components/employes/bottom-nav";
+import { ToastContainer } from "@/components/employes/toast";
+import { PwaRegister } from "@/components/employes/pwa-register";
 import { getEmployeSession } from "@/lib/auth/session";
 
 export const dynamic = "force-dynamic";
-export const metadata = {
+export const metadata: Metadata = {
   title: "Espace équipe — Aiman Rénovation",
   robots: { index: false, follow: false },
+  manifest: "/employes-manifest.webmanifest",
+  other: {
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+  },
 };
 
 export default async function EmployesLayout({ children }: { children: ReactNode }) {
   const session = await getEmployeSession();
+
+  // Pas de session = login/reset → plein écran sans chrome
+  if (!session) {
+    return (
+      <div className="min-h-dvh font-sans">
+        {children}
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-dvh bg-neutral-50 font-sans text-neutral-900">
@@ -19,21 +36,21 @@ export default async function EmployesLayout({ children }: { children: ReactNode
           <Link href="/espace-employes/dashboard" className="text-sm font-semibold tracking-tight">
             <span className="text-[#E50000]">Aiman</span> · Équipe
           </Link>
-          {session && (
-            <form action="/api/employes/auth/logout" method="post">
-              <button
-                type="submit"
-                className="text-xs font-medium text-neutral-500 underline-offset-2 hover:underline"
-              >
-                Déconnexion
-              </button>
-            </form>
-          )}
+          <form action="/api/employes/auth/logout" method="post">
+            <button
+              type="submit"
+              className="text-xs font-medium text-neutral-500 underline-offset-2 hover:underline"
+            >
+              Déconnexion
+            </button>
+          </form>
         </header>
 
         <main className="flex-1 px-4 pb-24 pt-4">{children}</main>
 
-        {session && <BottomNav />}
+        <ToastContainer />
+        <PwaRegister />
+        <BottomNav />
       </div>
     </div>
   );

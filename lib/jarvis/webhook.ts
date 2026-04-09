@@ -7,7 +7,8 @@ export type JarvisEventType =
   | "pointage.off_site"
   | "rapport.created"
   | "photo.uploaded"
-  | "materiel.requested";
+  | "materiel.requested"
+  | "message.sent";
 
 export interface JarvisEventPayload {
   type: JarvisEventType;

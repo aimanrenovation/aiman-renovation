@@ -1,13 +1,14 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CalendarDays, ClipboardList, Home, Timer } from "lucide-react";
+import { CalendarDays, ClipboardList, Home, MessageCircle, Timer } from "lucide-react";
 
 const TABS = [
   { href: "/espace-employes/dashboard", label: "Accueil", icon: Home },
   { href: "/espace-employes/planning", label: "Planning", icon: CalendarDays },
   { href: "/espace-employes/pointage", label: "Pointage", icon: Timer },
   { href: "/espace-employes/rapport", label: "Rapport", icon: ClipboardList },
+  { href: "/espace-employes/messages", label: "Messages", icon: MessageCircle },
 ] as const;
 
 export function BottomNav() {

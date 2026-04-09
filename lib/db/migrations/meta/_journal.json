@@ -8,6 +8,20 @@
       "when": 1775694447483,
       "tag": "0000_unusual_venus",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1775780847483,
+      "tag": "0001_webauthn_credentials",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1775867247483,
+      "tag": "0002_messages_chantier",
+      "breakpoints": true
     }
   ]
 }

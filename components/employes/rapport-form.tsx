@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { PhotoUploader } from "./photo-uploader";
+import { showToast } from "@/lib/employes/use-toast";
 
 interface ChantierOption {
   chantierId: string;
@@ -14,12 +15,133 @@ interface MaterielItem {
   urgence: "normale" | "urgente";
 }
 
+interface DraftData {
+  chantierId: string;
+  description: string;
+  travaux: string;
+  blocages: string;
+  savedAt: number;
+}
+
+function getDraftKey(): string {
+  const date = new Date().toISOString().slice(0, 10);
+  return `rapport-draft-${date}`;
+}
+
+function loadDraft(): DraftData | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = localStorage.getItem(getDraftKey());
+    if (!raw) return null;
+    return JSON.parse(raw) as DraftData;
+  } catch {
+    return null;
+  }
+}
+
+function saveDraft(data: Omit<DraftData, "savedAt">) {
+  if (typeof window === "undefined") return;
+  try {
+    const payload: DraftData = { ...data, savedAt: Date.now() };
+    localStorage.setItem(getDraftKey(), JSON.stringify(payload));
+  } catch {
+    // localStorage full or unavailable — ignore
+  }
+}
+
+function clearDraft() {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.removeItem(getDraftKey());
+  } catch {
+    // ignore
+  }
+}
+
+function VoiceRecorder({
+  onRecorded,
+}: {
+  onRecorded: (blob: Blob) => void;
+}) {
+  const [supported, setSupported] = useState(false);
+  const [recording, setRecording] = useState(false);
+  const recorderRef = useRef<MediaRecorder | null>(null);
+  const chunksRef = useRef<Blob[]>([]);
+
+  useEffect(() => {
+    setSupported(
+      typeof window !== "undefined" &&
+        typeof navigator !== "undefined" &&
+        typeof navigator.mediaDevices !== "undefined" &&
+        typeof MediaRecorder !== "undefined"
+    );
+  }, []);
+
+  const startRecording = useCallback(async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      // Prefer webm/opus, fallback to whatever is available
+      const mimeType = MediaRecorder.isTypeSupported("audio/webm;codecs=opus")
+        ? "audio/webm;codecs=opus"
+        : MediaRecorder.isTypeSupported("audio/webm")
+          ? "audio/webm"
+          : undefined;
+      const recorder = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
+      chunksRef.current = [];
+      recorder.ondataavailable = (e) => {
+        if (e.data.size > 0) chunksRef.current.push(e.data);
+      };
+      recorder.onstop = () => {
+        const blob = new Blob(chunksRef.current, {
+          type: recorder.mimeType || "audio/webm",
+        });
+        onRecorded(blob);
+        stream.getTracks().forEach((t) => t.stop());
+      };
+      recorder.start();
+      recorderRef.current = recorder;
+      setRecording(true);
+    } catch {
+      showToast("Micro non disponible", "error");
+    }
+  }, [onRecorded]);
+
+  const stopRecording = useCallback(() => {
+    if (recorderRef.current && recorderRef.current.state !== "inactive") {
+      recorderRef.current.stop();
+    }
+    setRecording(false);
+  }, []);
+
+  if (!supported) return null;
+
+  return (
+    <button
+      type="button"
+      onClick={recording ? stopRecording : startRecording}
+      className={`flex h-12 items-center justify-center gap-2 rounded-2xl border text-sm font-medium transition-colors ${
+        recording
+          ? "animate-pulse border-red-300 bg-red-50 text-red-700"
+          : "border-neutral-300 bg-white text-neutral-600"
+      }`}
+    >
+      {recording ? "⏹ Arrêter l'enregistrement" : "🎤 Note vocale"}
+    </button>
+  );
+}
+
 export function RapportForm({ chantiers }: { chantiers: ChantierOption[] }) {
   const router = useRouter();
-  const [chantierId, setChantierId] = useState(chantiers[0]?.chantierId ?? "");
-  const [description, setDescription] = useState("");
-  const [travaux, setTravaux] = useState<string>("");
-  const [blocages, setBlocages] = useState("");
+
+  // Load draft on mount
+  const draft = useRef(loadDraft());
+
+  const [chantierId, setChantierId] = useState(
+    draft.current?.chantierId || chantiers[0]?.chantierId || ""
+  );
+  const [description, setDescription] = useState(draft.current?.description || "");
+  const [travaux, setTravaux] = useState(draft.current?.travaux || "");
+  const [blocages, setBlocages] = useState(draft.current?.blocages || "");
   const [materiel, setMateriel] = useState<MaterielItem[]>([]);
   const [newItemName, setNewItemName] = useState("");
   const [newItemQty, setNewItemQty] = useState(1);
@@ -27,6 +149,37 @@ export function RapportForm({ chantiers }: { chantiers: ChantierOption[] }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
+  const [draftSaved, setDraftSaved] = useState(!!draft.current);
+
+  // Voice notes
+  const [voiceBlobs, setVoiceBlobs] = useState<Blob[]>([]);
+  const [voiceUrls, setVoiceUrls] = useState<string[]>([]);
+  const [uploadingVoice, setUploadingVoice] = useState(false);
+
+  // Auto-save draft every 5 seconds (debounced)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (description || travaux || blocages) {
+        saveDraft({ chantierId, description, travaux, blocages });
+        setDraftSaved(true);
+      }
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [chantierId, description, travaux, blocages]);
+
+  const handleVoiceRecorded = useCallback((blob: Blob) => {
+    setVoiceBlobs((prev) => [...prev, blob]);
+    setVoiceUrls((prev) => [...prev, URL.createObjectURL(blob)]);
+    showToast("Note vocale enregistrée", "success");
+  }, []);
+
+  const removeVoice = useCallback((idx: number) => {
+    setVoiceUrls((prev) => {
+      URL.revokeObjectURL(prev[idx]);
+      return prev.filter((_, i) => i !== idx);
+    });
+    setVoiceBlobs((prev) => prev.filter((_, i) => i !== idx));
+  }, []);
 
   function addItem() {
     if (!newItemName.trim()) return;
@@ -65,7 +218,7 @@ export function RapportForm({ chantiers }: { chantiers: ChantierOption[] }) {
         .split("\n")
         .map((s) => s.trim())
         .filter(Boolean)
-        .map((description) => ({ type: "autre", severity: "normale", description }));
+        .map((desc) => ({ type: "autre", severity: "normale", description: desc }));
 
       const rapportRes = await fetch("/api/employes/rapport", {
         method: "POST",
@@ -88,7 +241,28 @@ export function RapportForm({ chantiers }: { chantiers: ChantierOption[] }) {
         if (!matRes.ok) throw new Error("materiel_failed");
       }
 
+      // Upload voice notes via photos API
+      if (voiceBlobs.length > 0) {
+        setUploadingVoice(true);
+        for (let i = 0; i < voiceBlobs.length; i++) {
+          const blob = voiceBlobs[i];
+          const ext = blob.type.includes("webm") ? "webm" : "ogg";
+          const file = new File([blob], `note-vocale-${i + 1}.${ext}`, { type: blob.type });
+          const form = new FormData();
+          form.append("file", file);
+          form.append("chantier_id", chantierId);
+          form.append("caption", `Note vocale ${i + 1}`);
+          await fetch("/api/employes/photos", { method: "POST", body: form });
+        }
+        setUploadingVoice(false);
+      }
+
+      // Clear draft after successful send
+      clearDraft();
+      setDraftSaved(false);
+
       setDone(true);
+      showToast("Rapport envoyé avec succès", "success");
       router.refresh();
     } catch (e) {
       setError(e instanceof Error ? e.message : "Erreur");
@@ -112,6 +286,8 @@ export function RapportForm({ chantiers }: { chantiers: ChantierOption[] }) {
             setTravaux("");
             setBlocages("");
             setMateriel([]);
+            setVoiceBlobs([]);
+            setVoiceUrls([]);
           }}
           className="mt-4 text-sm font-medium text-green-700 underline"
         >
@@ -123,6 +299,13 @@ export function RapportForm({ chantiers }: { chantiers: ChantierOption[] }) {
 
   return (
     <div className="flex flex-col gap-5">
+      {/* Draft indicator */}
+      {draftSaved && (
+        <div className="text-center text-xs text-neutral-400">
+          Brouillon sauvegardé
+        </div>
+      )}
+
       {chantiers.length > 1 && (
         <label className="flex flex-col gap-1.5">
           <span className="text-sm font-medium text-neutral-700">Chantier</span>
@@ -178,6 +361,25 @@ export function RapportForm({ chantiers }: { chantiers: ChantierOption[] }) {
       <div className="flex flex-col gap-2">
         <span className="text-sm font-medium text-neutral-700">Photos du chantier</span>
         {chantierId && <PhotoUploader chantierId={chantierId} />}
+      </div>
+
+      {/* Voice recorder */}
+      <div className="flex flex-col gap-2">
+        <span className="text-sm font-medium text-neutral-700">Note vocale</span>
+        <VoiceRecorder onRecorded={handleVoiceRecorded} />
+        {voiceUrls.map((url, i) => (
+          <div key={i} className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white p-2">
+            <audio src={url} controls className="h-10 flex-1" />
+            <button
+              type="button"
+              onClick={() => removeVoice(i)}
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-100 text-xs text-neutral-500"
+              aria-label="Supprimer la note vocale"
+            >
+              ✕
+            </button>
+          </div>
+        ))}
       </div>
 
       <div className="flex flex-col gap-2 rounded-2xl border border-neutral-200 bg-white p-4">
@@ -246,10 +448,14 @@ export function RapportForm({ chantiers }: { chantiers: ChantierOption[] }) {
       <button
         type="button"
         onClick={handleSubmit}
-        disabled={loading}
+        disabled={loading || uploadingVoice}
         className="h-14 rounded-2xl bg-[#E50000] text-base font-semibold text-white disabled:opacity-50"
       >
-        {loading ? "Envoi…" : "Envoyer mon rapport"}
+        {loading
+          ? uploadingVoice
+            ? "Envoi notes vocales…"
+            : "Envoi…"
+          : "Envoyer mon rapport"}
       </button>
     </div>
   );
