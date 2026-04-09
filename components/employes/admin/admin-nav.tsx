@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 const NAV_ITEMS = [
-  { href: "/espace-employes/admin", label: "Tableau de bord", icon: LayoutDashboard, exact: true },
+  { href: "/espace-employes/admin/dashboard", label: "Tableau de bord", icon: LayoutDashboard, exact: true },
   { href: "/espace-employes/admin/employes", label: "Employes", icon: Users },
   { href: "/espace-employes/admin/planning", label: "Planning", icon: CalendarDays },
   { href: "/espace-employes/admin/chantiers", label: "Chantiers", icon: Building2 },
