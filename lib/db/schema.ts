@@ -225,7 +225,54 @@ export const loginLogs = pgTable("login_logs", {
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
 });
 
+// ---- demandes_absence ----
+export const demandesAbsence = pgTable("demandes_absence", {
+  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  employeId: uuid("employe_id").notNull().references(() => employes.id, { onDelete: "cascade" }),
+  dateDebut: date("date_debut").notNull(),
+  dateFin: date("date_fin").notNull(),
+  type: text("type").notNull(), // conge_paye | maladie | accident_travail | sans_solde | formation | evenement_familial | autre
+  raison: text("raison"),
+  justificatifS3Key: text("justificatif_s3_key"),
+  statut: text("statut").notNull().default("en_attente"), // en_attente | accepte | refuse
+  reponsePatron: text("reponse_patron"),
+  reponduLe: timestamp("repondu_le", { withTimezone: true }),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+});
+
+// ---- solde_conges ----
+export const soldeConges = pgTable("solde_conges", {
+  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  employeId: uuid("employe_id").notNull().unique().references(() => employes.id, { onDelete: "cascade" }),
+  joursAcquis: numeric("jours_acquis", { precision: 5, scale: 1 }).notNull().default("25"),
+  joursPris: numeric("jours_pris", { precision: 5, scale: 1 }).notNull().default("0"),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().default(sql`now()`),
+});
+
+// ---- missions_urgentes ----
+export const missionsUrgentes = pgTable("missions_urgentes", {
+  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  titre: text("titre").notNull(),
+  description: text("description").notNull(),
+  chantierId: uuid("chantier_id").references(() => chantiers.id, { onDelete: "set null" }),
+  bonusDescription: text("bonus_description"),
+  bonusMontantCents: integer("bonus_montant_cents"),
+  dateLimite: timestamp("date_limite", { withTimezone: true }).notNull(),
+  statut: text("statut").notNull().default("ouverte"), // ouverte | prise | annulee | expiree
+  acceptePar: uuid("accepte_par").references(() => employes.id, { onDelete: "set null" }),
+  accepteLe: timestamp("accepte_le", { withTimezone: true }),
+  creePar: uuid("cree_par")
+    .notNull()
+    .references(() => employes.id, { onDelete: "cascade" }),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+});
+
 export type Employe = typeof employes.$inferSelect;
 export type NewEmploye = typeof employes.$inferInsert;
 export type Chantier = typeof chantiers.$inferSelect;
 export type Pointage = typeof pointages.$inferSelect;
+export type DemandeAbsence = typeof demandesAbsence.$inferSelect;
+export type SoldeConges = typeof soldeConges.$inferSelect;
+export type MissionUrgente = typeof missionsUrgentes.$inferSelect;
+export type NewMissionUrgente = typeof missionsUrgentes.$inferInsert;
