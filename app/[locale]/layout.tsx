@@ -6,6 +6,8 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import SmoothScrollProvider from "@/components/3d/providers/SmoothScrollProvider";
 import { JsonLd } from "@/components/seo/json-ld";
+import { ExitIntentPopup } from "@/components/sections/exit-intent-popup";
+import { FloatingTrustBar } from "@/components/sections/floating-trust-bar";
 
 type Props = {
   children: React.ReactNode;
@@ -169,6 +171,8 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <FloatingTrustBar />
+        <ExitIntentPopup />
       </SmoothScrollProvider>
     </NextIntlClientProvider>
   );

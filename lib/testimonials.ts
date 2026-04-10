@@ -390,6 +390,130 @@ export const TESTIMONIALS: Testimonial[] = [
       "Maßgefertigte Küche in unserer Basler Wohnung. Handwerker erreichbar, pünktlich und gewissenhaft. Mit einem französischen Profi gleich jenseits des Rheins zu arbeiten ist ein echter Vorteil: gleiche Qualität, Schweizer Preis halbiert.",
     verified: true,
   },
+  {
+    id: "t31",
+    author: "Rachid B.",
+    location: "Mulhouse",
+    country: "FR",
+    rating: 5,
+    date: "2026-03-28",
+    serviceSlug: "salle-de-bain",
+    commentFR:
+      "Salle de bain entièrement refaite dans notre appartement à Mulhouse : douche à l'italienne avec paroi en verre, meuble double vasque, carrelage grand format au sol et murs. L'équipe a protégé tout le couloir pendant les travaux. Résultat moderne et impeccable, on ne regrette pas du tout.",
+    verified: true,
+  },
+  {
+    id: "t32",
+    author: "Christine E.",
+    location: "Colmar",
+    country: "FR",
+    rating: 5,
+    date: "2026-03-10",
+    serviceSlug: "cuisine",
+    commentFR:
+      "Cuisine ouverte sur le salon avec plan de travail en granit, crédence en carreaux de ciment et meubles laqués blancs. La pose est millimétrique, les tiroirs coulissent sans bruit. Aiman a même coordonné le cuisiniste pour nous. Chantier propre, délai respecté, on est ravis.",
+    verified: true,
+  },
+  {
+    id: "t33",
+    author: "Hans W.",
+    location: "Basel",
+    country: "CH",
+    rating: 4,
+    date: "2026-02-15",
+    serviceSlug: "facade",
+    commentFR:
+      "Ravalement de façade de notre maison à Bâle avec isolation par l'extérieur. Le rendu est très propre, les finitions soignées autour des fenêtres. Un petit retard de deux jours à cause de la météo, mais le résultat final est excellent. Rapport qualité-prix imbattable par rapport aux artisans suisses.",
+    commentDE:
+      "Fassadenrenovierung unseres Hauses in Basel mit Außendämmung. Sehr sauberes Ergebnis, sorgfältige Fensteranschlüsse. Zwei Tage Verzögerung wegen Wetter, aber das Endergebnis ist ausgezeichnet. Preis-Leistung unschlagbar im Vergleich zu Schweizer Handwerkern.",
+    verified: true,
+  },
+  {
+    id: "t34",
+    author: "Nadia K.",
+    location: "Rixheim",
+    country: "FR",
+    rating: 5,
+    date: "2026-01-22",
+    serviceSlug: "peinture",
+    commentFR:
+      "Peinture complète d'une maison de 140 m² à Rixheim : murs, plafonds et boiseries. Préparation impeccable, ponçage des anciens enduits, application de deux couches de peinture haut de gamme. Les teintes choisies ensemble sont exactement au rendu attendu. Travail soigné du sol au plafond.",
+    verified: true,
+  },
+  {
+    id: "t35",
+    author: "Pascal J.",
+    location: "Saint-Louis",
+    country: "FR",
+    rating: 5,
+    date: "2025-12-18",
+    serviceSlug: "electricite",
+    commentFR:
+      "Rénovation électrique complète d'une maison des années 60. Nouveau tableau aux normes NF C 15-100, câblage encastré dans toutes les pièces, prises RJ45 pour le réseau. L'électricien de l'équipe est un vrai pro, chaque gaine est parfaitement tirée. Consuel passé du premier coup.",
+    verified: true,
+  },
+  {
+    id: "t36",
+    author: "Simone L.",
+    location: "Huningue",
+    country: "FR",
+    rating: 5,
+    date: "2025-11-05",
+    serviceSlug: "renovation-complete",
+    commentFR:
+      "On a fait refaire tout l'appartement avant la vente : peinture, sols, salle de bain et cuisine. En 3 semaines c'était terminé, clé en main. L'agent immobilier n'en revenait pas du résultat. On a vendu au prix demandé en 10 jours. Merci Aiman pour cette réactivité incroyable.",
+    verified: true,
+  },
+  {
+    id: "t37",
+    author: "Mehdi A.",
+    location: "Mulhouse",
+    country: "FR",
+    rating: 5,
+    date: "2025-09-28",
+    serviceSlug: "sols-carrelage",
+    commentFR:
+      "Pose de carrelage imitation parquet chêne dans tout le rez-de-chaussée, 65 m². Chape ragréée, pose droite avec joints fins, plinthes assorties. Résultat bluffant, on dirait du vrai bois. L'équipe a travaillé vite et proprement, pas une trace de colle ni de poussière en partant.",
+    verified: true,
+  },
+  {
+    id: "t38",
+    author: "Eva M.",
+    location: "Basel",
+    country: "CH",
+    rating: 5,
+    date: "2025-08-30",
+    serviceSlug: "salle-de-bain",
+    commentFR:
+      "Rénovation de deux salles de bain dans notre immeuble à Bâle. Carrelage mosaïque, robinetterie Grohe, miroirs rétroéclairés. Le tout en 12 jours pour les deux. Les locataires sont enchantés. Prix suisse divisé par deux pour une qualité identique, voire supérieure. Je recommande sans réserve.",
+    commentDE:
+      "Renovierung von zwei Badezimmern in unserem Gebäude in Basel. Mosaikfliesen, Grohe-Armaturen, hinterleuchtete Spiegel. Alles in 12 Tagen fertig. Die Mieter sind begeistert. Schweizer Preis halbiert bei gleicher oder besserer Qualität. Uneingeschränkt empfehlenswert.",
+    verified: true,
+  },
+  {
+    id: "t39",
+    author: "Franck T.",
+    location: "Colmar",
+    country: "FR",
+    rating: 5,
+    date: "2025-07-15",
+    serviceSlug: "cuisine",
+    commentFR:
+      "Remplacement total de la cuisine dans notre maison colmarienne. Dépose de l'ancienne, plomberie reprise, électricité mise aux normes, pose de la nouvelle cuisine avec îlot. Coordination parfaite entre les corps de métier. On cuisine enfin dans un espace lumineux et fonctionnel. Merci à toute l'équipe !",
+    verified: true,
+  },
+  {
+    id: "t40",
+    author: "Claudine D.",
+    location: "Saint-Louis",
+    country: "FR",
+    rating: 4,
+    date: "2025-06-20",
+    serviceSlug: "entretien-exterieur",
+    commentFR:
+      "Réfection complète de la terrasse et clôture du jardin. Dalles posées sur plots, nouvelle clôture composite, éclairage extérieur LED. Le jardin est métamorphosé. Petit bémol sur le délai de livraison des dalles qui a décalé le chantier d'une semaine, mais le résultat est superbe.",
+    verified: true,
+  },
 ];
 
 export function getAverageRating(): number {
