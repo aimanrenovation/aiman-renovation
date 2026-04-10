@@ -51,7 +51,7 @@ export default async function DashboardPage() {
       {openPointage && (
         <Link
           href="/espace-employes/pointage"
-          className="flex items-center justify-between rounded-2xl bg-[#E50000] px-5 py-4 text-white shadow-sm"
+          className="flex items-center justify-between rounded-2xl bg-[#E50000] px-5 py-4 text-white shadow-sm transition-transform active:scale-[0.97]"
         >
           <div>
             <div className="text-xs font-medium uppercase tracking-wide opacity-80">
@@ -99,12 +99,12 @@ export default async function DashboardPage() {
               <li key={m.id}>
                 <Link
                   href={`/espace-employes/mission/${m.chantierId}`}
-                  className="block rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm transition-colors active:bg-neutral-50"
+                  className="block rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm transition-all active:scale-[0.97] active:bg-neutral-50"
                 >
                   <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <div className="text-base font-semibold">{m.chantierNom}</div>
-                      <div className="text-xs text-neutral-500">
+                    <div className="min-w-0 flex-1">
+                      <div className="truncate text-base font-semibold">{m.chantierNom}</div>
+                      <div className="truncate text-xs text-neutral-500">
                         {m.chantierAdresse}
                         {m.chantierVille ? `, ${m.chantierVille}` : ""}
                       </div>
@@ -133,7 +133,7 @@ export default async function DashboardPage() {
       {!openPointage && missions.length > 0 && (
         <Link
           href="/espace-employes/pointage"
-          className="flex h-14 items-center justify-center rounded-2xl bg-[#E50000] text-base font-semibold text-white shadow-sm"
+          className="flex h-14 items-center justify-center rounded-2xl bg-[#E50000] text-base font-semibold text-white shadow-sm transition-transform active:scale-[0.97]"
         >
           Démarrer ma journée
         </Link>
