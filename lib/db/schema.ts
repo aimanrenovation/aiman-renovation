@@ -28,6 +28,7 @@ export const employes = pgTable("employes", {
   passwordMustChange: boolean("password_must_change").notNull().default(false),
   cguAcceptedAt: timestamp("cgu_accepted_at", { withTimezone: true }),
   cguVersion: text("cgu_version"),
+  avatarUrl: text("avatar_url"),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
   updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().default(sql`now()`),
 });
