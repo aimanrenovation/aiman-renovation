@@ -45,7 +45,7 @@ export default async function MessagesPage() {
             <li key={r.chantierId}>
               <Link
                 href={`/espace-employes/messages/${r.chantierId}`}
-                className="flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm transition-colors active:bg-neutral-50"
+                className="flex items-center gap-3 rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm transition-all active:scale-[0.97] active:bg-neutral-50"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-100">
                   <MessageCircle className="h-5 w-5 text-neutral-500" />

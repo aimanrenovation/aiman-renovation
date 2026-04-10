@@ -137,6 +137,13 @@
   animation: slide-up 0.25s ease-out;
 }
 
+@utility animate-press {
+  transition: transform 100ms ease;
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

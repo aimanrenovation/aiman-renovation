@@ -10,6 +10,7 @@ import { NightModeProvider } from "@/components/employes/night-mode-provider";
 import { OfflineIndicator } from "@/components/employes/offline-indicator";
 import { CallPatronFab } from "@/components/employes/call-patron-fab";
 import { PlanningNotifier } from "@/components/employes/planning-notifier";
+import { PushPermission } from "@/components/employes/push-permission";
 import { eq } from "drizzle-orm";
 import { db, schema } from "@/lib/db/client";
 import { getEmployeSession } from "@/lib/auth/session";
@@ -92,6 +93,7 @@ export default async function EmployesLayout({ children }: { children: ReactNode
         <InactivityGuard />
         <CallPatronFab />
         <PlanningNotifier />
+        <PushPermission />
         <BottomNav />
       </div>
     </div>
