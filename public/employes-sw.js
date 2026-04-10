@@ -45,6 +45,12 @@ async function enqueueRequest(url, options) {
 }
 
 async function replayQueue() {
+  // Notify clients that sync is starting
+  const allClients = await self.clients.matchAll({ type: "window" });
+  for (const client of allClients) {
+    client.postMessage({ type: "OFFLINE_SYNC_START" });
+  }
+
   const db = await openOfflineDB();
   const items = await new Promise((resolve, reject) => {
     const tx = db.transaction("requests", "readonly");
@@ -120,6 +126,11 @@ self.addEventListener("fetch", (event) => {
         const body = await request.clone().text();
         const headers = Object.fromEntries(request.headers.entries());
         await enqueueRequest(request.url, { method: "POST", headers, body });
+        // Notify clients that a request was queued
+        const queueClients = await self.clients.matchAll({ type: "window" });
+        for (const client of queueClients) {
+          client.postMessage({ type: "OFFLINE_QUEUE_UPDATED" });
+        }
         return new Response(
           JSON.stringify({ queued: true, message: "Sauvegardé hors ligne" }),
           {
@@ -187,6 +198,26 @@ self.addEventListener("sync", (event) => {
   if (event.tag === "employes-offline-sync") {
     event.waitUntil(replayQueue());
   }
+});
+
+// ── Push notifications ───────────────────────────────────────────────
+self.addEventListener("push", (event) => {
+  const data = event.data?.json() ?? { title: "Aiman Équipe", body: "Nouvelle notification" };
+  event.waitUntil(
+    self.registration.showNotification(data.title, {
+      body: data.body,
+      icon: "/favicon.png",
+      badge: "/favicon.png",
+      tag: data.tag ?? "default",
+      data: { url: data.url ?? "/espace-employes/dashboard" },
+    })
+  );
+});
+
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  const url = event.notification.data?.url ?? "/espace-employes/dashboard";
+  event.waitUntil(clients.openWindow(url));
 });
 
 // ── Message handler (manual sync trigger) ────────────────────────────

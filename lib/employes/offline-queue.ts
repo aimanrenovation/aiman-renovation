@@ -90,6 +90,20 @@ export async function replayOfflineQueue(): Promise<void> {
   }
 }
 
+export async function getQueueCount(): Promise<number> {
+  try {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(STORE, "readonly");
+      const req = tx.objectStore(STORE).count();
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+  } catch {
+    return 0;
+  }
+}
+
 // ── Network listener — auto-replay when back online ──────────────────
 let listenerAttached = false;
 
