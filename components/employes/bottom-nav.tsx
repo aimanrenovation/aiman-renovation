@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CalendarDays, CalendarX2, ClipboardList, Home, MessageCircle, Timer, Zap } from "lucide-react";
+import { CalendarDays, CalendarX2, ClipboardList, Home, MessageCircle, Timer, User, Zap } from "lucide-react";
 
 const TABS = [
   { href: "/espace-employes/dashboard", label: "Accueil", icon: Home },
@@ -11,12 +11,13 @@ const TABS = [
   { href: "/espace-employes/rapport", label: "Rapport", icon: ClipboardList },
   { href: "/espace-employes/absences", label: "Absences", icon: CalendarX2 },
   { href: "/espace-employes/messages", label: "Messages", icon: MessageCircle },
+  { href: "/espace-employes/profil", label: "Profil", icon: User },
 ] as const;
 
 export function BottomNav() {
   const pathname = usePathname();
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-20 mx-auto flex max-w-md border-t border-neutral-200 bg-white/95 backdrop-blur">
+    <nav className="fixed inset-x-0 bottom-0 z-20 mx-auto flex max-w-md border-t border-neutral-200 bg-white/95 backdrop-blur dark:border-neutral-700 dark:bg-neutral-900/95">
       {TABS.map(({ href, label, icon: Icon }) => {
         const active = pathname?.startsWith(href);
         return (
@@ -24,7 +25,7 @@ export function BottomNav() {
             key={href}
             href={href}
             className={`flex flex-1 flex-col items-center gap-1 py-3 text-[11px] font-medium transition-colors ${
-              active ? "text-[#E50000]" : "text-neutral-500"
+              active ? "text-[#E50000] dark:text-[#E50000]" : "text-neutral-500 dark:text-neutral-400"
             }`}
           >
             <Icon className="h-5 w-5" strokeWidth={active ? 2.4 : 1.8} />

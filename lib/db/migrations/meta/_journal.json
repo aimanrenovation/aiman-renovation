@@ -36,6 +36,34 @@
       "when": 1776040047483,
       "tag": "0004_password_must_change",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1776126447483,
+      "tag": "0005_login_logs",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1776212847483,
+      "tag": "0006_absences",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1776299247483,
+      "tag": "0007_missions_urgentes",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1776385647483,
+      "tag": "0008_avatar_url",
+      "breakpoints": true
     }
   ]
 }

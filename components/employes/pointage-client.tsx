@@ -25,6 +25,22 @@ interface Props {
   missions: Mission[];
 }
 
+function vibrate(pattern: number | number[]) {
+  try { navigator?.vibrate?.(pattern); } catch { /* unsupported */ }
+}
+
+function playBeep() {
+  try {
+    const ctx = new AudioContext();
+    const o = ctx.createOscillator();
+    o.type = "sine";
+    o.frequency.value = 880;
+    o.connect(ctx.destination);
+    o.start();
+    o.stop(ctx.currentTime + 0.15);
+  } catch { /* unsupported */ }
+}
+
 async function getPosition(): Promise<{ lat: number; lng: number } | null> {
   if (typeof navigator === "undefined" || !navigator.geolocation) return null;
   return new Promise((resolve) => {
@@ -144,6 +160,8 @@ export function PointageClient({ openPointage, missions }: Props) {
         }),
       });
       if (!res.ok) throw new Error((await res.json()).error ?? "start_failed");
+      vibrate(200);
+      playBeep();
       showToast("Pointage démarré", "success");
       // Reset pause state for new pointage
       setPaused(false);
@@ -175,6 +193,8 @@ export function PointageClient({ openPointage, missions }: Props) {
         }),
       });
       if (!res.ok) throw new Error((await res.json()).error ?? "stop_failed");
+      vibrate([100, 50, 100]);
+      playBeep();
       showToast("Pointage terminé", "success");
       setPaused(false);
       setTotalPausedMs(0);
@@ -194,11 +214,13 @@ export function PointageClient({ openPointage, missions }: Props) {
       setTotalPausedMs((prev) => prev + pauseDuration);
       setPaused(false);
       setPausedAt(null);
+      vibrate(100);
       showToast("Reprise du pointage", "info");
     } else {
       // Pause
       setPaused(true);
       setPausedAt(Date.now());
+      vibrate(100);
       showToast("Pointage en pause", "info");
     }
   }
