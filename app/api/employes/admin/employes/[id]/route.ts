@@ -15,7 +15,7 @@ export const PATCH = requireAuth(async (request, ctx) => {
   }
 
   // Only allow updating specific fields
-  const allowedFields = ["actif", "role", "hourlyRateCents", "phone", "firstname", "lastname"] as const;
+  const allowedFields = ["actif", "role", "hourlyRateCents", "phone", "firstname", "lastname", "managerId"] as const;
   const updates: Record<string, unknown> = {};
 
   for (const field of allowedFields) {

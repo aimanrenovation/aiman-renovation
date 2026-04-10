@@ -29,6 +29,7 @@ export const employes = pgTable("employes", {
   cguAcceptedAt: timestamp("cgu_accepted_at", { withTimezone: true }),
   cguVersion: text("cgu_version"),
   avatarUrl: text("avatar_url"),
+  managerId: uuid("manager_id"),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
   updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().default(sql`now()`),
 });
@@ -114,6 +115,15 @@ export const pointages = pgTable("pointages", {
   noGeoFin: boolean("no_geo_fin").notNull().default(false),
   notes: text("notes"),
   source: text("source").notNull().default("app"), // app | offline_sync | manuel_patron
+  validationStatut: text("validation_statut").notNull().default("brut"), // brut | valide_manager | valide_patron | transmis_comptabilite
+  validatedByManager: uuid("validated_by_manager"),
+  validatedByPatron: uuid("validated_by_patron"),
+  managerValidatedAt: timestamp("manager_validated_at", { withTimezone: true }),
+  patronValidatedAt: timestamp("patron_validated_at", { withTimezone: true }),
+  correctionNotes: text("correction_notes"),
+  heureDebutCorrigee: timestamp("heure_debut_corrigee", { withTimezone: true }),
+  heureFinCorrigee: timestamp("heure_fin_corrigee", { withTimezone: true }),
+  pauseMinutesCorrigee: integer("pause_minutes_corrigee"),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
 });
 
