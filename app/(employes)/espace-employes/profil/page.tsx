@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useRef, useCallback } from "react";
 import { Camera, KeyRound, Loader2 } from "lucide-react";
-import Link from "next/link";
 import { EmployeAvatar } from "@/components/employes/avatar";
 
 interface EmployeProfile {
@@ -169,14 +168,14 @@ export default function ProfilPage() {
         <InfoRow label="Rôle" value={ROLE_LABELS[profile.role] ?? profile.role} />
       </div>
 
-      {/* Actions */}
-      <Link
+      {/* Actions — hard nav to bypass RSC cache */}
+      <a
         href="/espace-employes/change-password"
         className="flex items-center gap-2 rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm font-medium transition-colors hover:bg-neutral-50"
       >
         <KeyRound className="h-4 w-4 text-neutral-500" />
         Changer mon mot de passe
-      </Link>
+      </a>
     </div>
   );
 }

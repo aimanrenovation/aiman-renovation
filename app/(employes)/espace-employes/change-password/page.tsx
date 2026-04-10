@@ -16,16 +16,20 @@ export default async function ChangePasswordPage() {
     .where(eq(schema.employes.id, session.sub))
     .limit(1);
 
-  if (!employe || !employe.passwordMustChange) {
-    redirect("/espace-employes/dashboard");
-  }
+  if (!employe) redirect("/espace-employes/login");
+
+  const forced = employe.passwordMustChange;
 
   return (
     <div className="flex min-h-[70dvh] flex-col justify-center">
       <div className="mb-6 text-center">
-        <h1 className="text-xl font-bold tracking-tight">Changez votre mot de passe</h1>
+        <h1 className="text-xl font-bold tracking-tight">
+          {forced ? "Changez votre mot de passe" : "Modifier mon mot de passe"}
+        </h1>
         <p className="mt-2 text-sm text-neutral-500">
-          {employe.firstname}, votre mot de passe provisoire doit être remplacé avant de continuer.
+          {forced
+            ? `${employe.firstname}, votre mot de passe provisoire doit être remplacé avant de continuer.`
+            : "Choisissez un nouveau mot de passe."}
         </p>
       </div>
       <ChangePasswordForm />

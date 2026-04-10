@@ -43,7 +43,10 @@ export const POST = requireAuth(async (request, _ctx, session) => {
   const key = `employes/${session.sub}/avatar.${ext}`;
 
   const buffer = Buffer.from(await file.arrayBuffer());
-  const avatarUrl = await uploadToS3({ key, body: buffer, contentType: file.type });
+  await uploadToS3({ key, body: buffer, contentType: file.type });
+
+  // Store the proxy URL instead of direct S3 URL
+  const avatarUrl = `/api/employes/avatar/${session.sub}`;
 
   await db
     .update(schema.employes)
