@@ -80,12 +80,16 @@ export function LoginForm() {
       try { localStorage.setItem(LAST_EMAIL_KEY, email); } catch { /* ignore */ }
       // Flag for webauthn registration prompt
       try { sessionStorage.setItem("just-logged-in-password", "1"); } catch { /* ignore */ }
-      const dest = data.employe?.passwordMustChange
-        ? "/espace-employes/change-password"
-        : data.employe?.cguAccepted
-          ? "/espace-employes/dashboard"
-          : "/espace-employes/cgu";
-      router.push(dest);
+      // Hard navigation for change-password/cgu to bypass Next.js RSC cache
+      if (data.employe?.passwordMustChange) {
+        window.location.href = "/espace-employes/change-password";
+        return;
+      }
+      if (!data.employe?.cguAccepted) {
+        window.location.href = "/espace-employes/cgu";
+        return;
+      }
+      router.push("/espace-employes/dashboard");
       router.refresh();
     } catch {
       setError("Erreur réseau. Vérifiez votre connexion.");
