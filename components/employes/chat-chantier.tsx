@@ -4,6 +4,23 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Send } from "lucide-react";
 
+function playNotificationBeep() {
+  try {
+    const ctx = new AudioContext();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.frequency.value = 660;
+    gain.gain.value = 0.3;
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.1);
+    osc.onended = () => ctx.close();
+  } catch {
+    // AudioContext not available
+  }
+}
+
 interface Message {
   id: string;
   chantierId: string;
@@ -59,24 +76,49 @@ export function ChatChantier({
   }, [messages.length, scrollToBottom]);
 
   // Poll every 10 seconds
+  const prevCountRef = useRef(messages.length);
+
   useEffect(() => {
     const interval = setInterval(async () => {
       try {
         const res = await fetch(`/api/employes/messages?chantier_id=${chantierId}`);
         if (res.ok) {
           const data = (await res.json()) as { messages: Message[] };
-          // Serialize dates from server (already ISO strings from JSON)
-          setMessages(data.messages.map((m) => ({
+          const fresh = data.messages.map((m) => ({
             ...m,
             createdAt: typeof m.createdAt === "string" ? m.createdAt : new Date(m.createdAt).toISOString(),
-          })));
+          }));
+
+          // Detect new messages from other users
+          if (fresh.length > prevCountRef.current) {
+            const newest = fresh[fresh.length - 1];
+            if (newest && newest.employeId !== currentEmployeId) {
+              playNotificationBeep();
+              if (typeof navigator !== "undefined" && navigator.vibrate) {
+                navigator.vibrate(100);
+              }
+              if (document.hidden) {
+                const originalTitle = document.title;
+                document.title = "\uD83D\uDCAC Nouveau message \u2014 Aiman \u00C9quipe";
+                const onVisible = () => {
+                  if (!document.hidden) {
+                    document.title = originalTitle;
+                    document.removeEventListener("visibilitychange", onVisible);
+                  }
+                };
+                document.addEventListener("visibilitychange", onVisible);
+              }
+            }
+          }
+          prevCountRef.current = fresh.length;
+          setMessages(fresh);
         }
       } catch {
         // silently ignore polling errors
       }
     }, 10_000);
     return () => clearInterval(interval);
-  }, [chantierId]);
+  }, [chantierId, currentEmployeId]);
 
   const handleSend = async () => {
     const trimmed = text.trim();
