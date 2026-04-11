@@ -18,8 +18,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "missing_fields" }, { status: 400 });
   }
 
-  // Rate limit: max 30 messages per visitor per hour
-  // (simple count check)
+  // Check business hours (Europe/Paris)
+  const parisHour = new Date().toLocaleString("en-US", { timeZone: "Europe/Paris", hour: "numeric", hour12: false });
+  const parisDay = new Date().toLocaleString("en-US", { timeZone: "Europe/Paris", weekday: "short" });
+  const hour = parseInt(parisHour, 10);
+  const isSunday = parisDay === "Sun";
+  const isSaturday = parisDay === "Sat";
+  const isOpen = !isSunday && (isSaturday ? (hour >= 9 && hour < 13) : (hour >= 8 && hour < 19));
 
   // Get or create conversation
   let conversation;
@@ -43,9 +48,26 @@ export async function POST(request: Request) {
     conversation = created;
   }
 
-  // Build message history for Claude
+  // Build message history
   const history = (conversation.messages as Array<{role: string; content: string}>) || [];
   history.push({ role: "user", content: message.trim() });
+
+  // If outside business hours: save message but return auto-reply
+  if (!isOpen) {
+    const nextOpen = isSaturday && hour >= 13 ? "lundi dès 8h" : "demain dès 8h";
+    const offlineMsg = `Nos bureaux sont actuellement fermés. Votre message a bien été enregistré — je vous répondrai ${nextOpen}. En cas d'urgence, appelez le 06 33 49 69 25.`;
+    history.push({ role: "assistant", content: offlineMsg });
+    await db
+      .update(schema.chatConversations)
+      .set({ messages: history, updatedAt: new Date() })
+      .where(eq(schema.chatConversations.id, conversation.id));
+    return NextResponse.json({
+      conversationId: conversation.id,
+      message: offlineMsg,
+      cta: "appel",
+      offline: true,
+    });
+  }
 
   // Call Claude API
   const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
