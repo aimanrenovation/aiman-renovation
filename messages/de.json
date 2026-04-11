@@ -3263,6 +3263,18 @@
     "opt_elagage": "Baumschnitt",
     "opt_evacuation_dechets": "Grünschnitt-Entsorgung",
     "opt_engazonnement": "Rasenanlage",
-    "opt_contrat_annuel": "Jahrespflegevertrag"
+    "opt_contrat_annuel": "Jahrespflegevertrag",
+    "qty_ml_haies": "Heckenlänge (m)",
+    "qty_m2_debroussaillage": "Fläche (m²)",
+    "qty_nb_arbres": "Anzahl Bäume",
+    "qty_nb_arbres_elagage": "Anzahl Bäume",
+    "qty_nb_mois": "Anzahl Monate",
+    "opt_tonte_unique": "Einmaliges Mähen",
+    "opt_contrat_12_tontes": "Vertrag 12 Mähgänge/Jahr",
+    "opt_contrat_24_tontes": "Vertrag 24 Mähgänge/Jahr",
+    "opt_contrat_entretien_mensuel": "Monatlicher Pflegevertrag",
+    "qty_ml_credence": "Länge Küchenrückwand (m)",
+    "qty_ml_plinthes": "Sockelleisten (m)",
+    "qty_ml_boiseries": "Holzverkleidung (m)"
   }
 }

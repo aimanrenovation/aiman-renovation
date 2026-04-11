@@ -3263,6 +3263,18 @@
     "opt_elagage": "Tree pruning",
     "opt_evacuation_dechets": "Green waste disposal",
     "opt_engazonnement": "Lawn seeding",
-    "opt_contrat_annuel": "Annual maintenance contract"
+    "opt_contrat_annuel": "Annual maintenance contract",
+    "qty_ml_haies": "Hedge length (m)",
+    "qty_m2_debroussaillage": "Area (m²)",
+    "qty_nb_arbres": "Number of trees",
+    "qty_nb_arbres_elagage": "Number of trees",
+    "qty_nb_mois": "Number of months",
+    "opt_tonte_unique": "Single mowing",
+    "opt_contrat_12_tontes": "Contract 12 mowings/year",
+    "opt_contrat_24_tontes": "Contract 24 mowings/year",
+    "opt_contrat_entretien_mensuel": "Monthly maintenance contract",
+    "qty_ml_credence": "Backsplash length (m)",
+    "qty_ml_plinthes": "Skirting boards (m)",
+    "qty_ml_boiseries": "Woodwork length (m)"
   }
 }
