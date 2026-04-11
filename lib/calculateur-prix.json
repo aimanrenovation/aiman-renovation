@@ -113,6 +113,23 @@
         { "id": "enduit_lissage", "prix_bas": 22, "prix_haut": 30, "unite": "m2" },
         { "id": "boiseries", "prix_bas": 26, "prix_haut": 35, "unite": "ml" }
       ]
+    },
+    {
+      "id": "jardin",
+      "icon": "🌿",
+      "surface_min": 50,
+      "surface_max": 2000,
+      "surface_default": 300,
+      "options": [
+        { "id": "tonte", "prix_bas": 0.3, "prix_haut": 0.4, "unite": "m2", "defaut": true },
+        { "id": "taille_haies", "prix_bas": 12, "prix_haut": 16, "unite": "ml", "defaut": true },
+        { "id": "debroussaillage", "prix_bas": 1.5, "prix_haut": 2, "unite": "m2" },
+        { "id": "abattage_arbre", "prix_bas": 350, "prix_haut": 460, "unite": "unite" },
+        { "id": "elagage", "prix_bas": 180, "prix_haut": 240, "unite": "unite" },
+        { "id": "evacuation_dechets", "prix_bas": 150, "prix_haut": 200, "unite": "forfait" },
+        { "id": "engazonnement", "prix_bas": 8, "prix_haut": 11, "unite": "m2" },
+        { "id": "contrat_annuel", "prix_bas": 1200, "prix_haut": 1600, "unite": "forfait" }
+      ]
     }
   ]
 }

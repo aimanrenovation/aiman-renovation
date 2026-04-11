@@ -3209,6 +3209,16 @@
     "opt_sdb_complete": "SDB complète (posée)",
     "opt_platrerie": "Plâtrerie / Cloisons",
     "opt_menuiseries": "Menuiseries / Portes",
-    "total_disclaimer": "Estimation indicative hors fournitures et taxes. Devis définitif gratuit sur mesure."
+    "total_disclaimer": "Estimation indicative hors fournitures et taxes. Devis définitif gratuit sur mesure.",
+    "type_jardin": "Jardin / Espaces verts",
+    "type_jardin_desc": "Tonte, taille, abattage, entretien",
+    "opt_tonte": "Tonte pelouse",
+    "opt_taille_haies": "Taille de haies",
+    "opt_debroussaillage": "Débroussaillage",
+    "opt_abattage_arbre": "Abattage arbre",
+    "opt_elagage": "Élagage",
+    "opt_evacuation_dechets": "Évacuation déchets verts",
+    "opt_engazonnement": "Engazonnement",
+    "opt_contrat_annuel": "Contrat entretien annuel"
   }
 }
