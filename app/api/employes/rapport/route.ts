@@ -11,6 +11,7 @@ interface RapportBody {
   travaux_realises?: Array<{ label: string; duration_minutes?: number }>;
   blocages?: Array<{ type: string; severity: string; description: string }>;
   meteo?: string;
+  signature?: string;
 }
 
 export const POST = requireAuth(async (request, _ctx, session) => {
@@ -26,17 +27,23 @@ export const POST = requireAuth(async (request, _ctx, session) => {
 
   const date = body.date ?? new Date().toISOString().slice(0, 10);
 
+  // Build insert values — include signature only if the column exists in schema
+  const insertValues: Record<string, unknown> = {
+    employeId: session.sub,
+    chantierId: body.chantier_id,
+    date,
+    description: body.description ?? null,
+    travauxRealises: body.travaux_realises ?? null,
+    blocages: body.blocages ?? null,
+    meteo: body.meteo ?? null,
+  };
+  if (body.signature && "signature" in schema.rapportsJournaliers) {
+    insertValues.signature = body.signature;
+  }
+
   const [row] = await db
     .insert(schema.rapportsJournaliers)
-    .values({
-      employeId: session.sub,
-      chantierId: body.chantier_id,
-      date,
-      description: body.description ?? null,
-      travauxRealises: body.travaux_realises ?? null,
-      blocages: body.blocages ?? null,
-      meteo: body.meteo ?? null,
-    })
+    .values(insertValues as typeof schema.rapportsJournaliers.$inferInsert)
     .returning();
 
   const [chantier] = await db

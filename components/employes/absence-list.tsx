@@ -3,25 +3,19 @@
 import { useState, useEffect } from "react";
 
 const TYPE_LABELS: Record<string, string> = {
-  conge_paye: "Congé payé",
+  conge_paye: "Conge paye",
   maladie: "Maladie",
   accident_travail: "Accident du travail",
   sans_solde: "Sans solde",
   formation: "Formation",
-  evenement_familial: "Événement familial",
+  evenement_familial: "Evenement familial",
   autre: "Autre",
 };
 
-const STATUT_STYLES: Record<string, string> = {
-  en_attente: "bg-yellow-100 text-yellow-800",
-  accepte: "bg-green-100 text-green-800",
-  refuse: "bg-red-100 text-red-800",
-};
-
-const STATUT_LABELS: Record<string, string> = {
-  en_attente: "En attente",
-  accepte: "Accepté",
-  refuse: "Refusé",
+const STATUT_CONFIG: Record<string, { bg: string; text: string; label: string }> = {
+  en_attente: { bg: "bg-amber-100", text: "text-amber-800", label: "En attente" },
+  accepte: { bg: "bg-green-100", text: "text-green-800", label: "Approuve" },
+  refuse: { bg: "bg-red-100", text: "text-red-800", label: "Refuse" },
 };
 
 interface Absence {
@@ -34,6 +28,13 @@ interface Absence {
   nbJours: number;
   reponsePatron: string | null;
   createdAt: string;
+}
+
+function formatDate(d: string): string {
+  return new Date(d + "T00:00:00").toLocaleDateString("fr-FR", {
+    day: "numeric",
+    month: "short",
+  });
 }
 
 export function AbsenceList({ refreshKey }: { refreshKey: number }) {
@@ -69,33 +70,65 @@ export function AbsenceList({ refreshKey }: { refreshKey: number }) {
 
   return (
     <div className="space-y-3">
-      {absences.map((a) => (
-        <div key={a.id} className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm">
-          <div className="flex items-start justify-between">
-            <div>
-              <div className="text-sm font-medium text-neutral-900">
-                {TYPE_LABELS[a.type] || a.type}
+      {absences.map((a) => {
+        const config = STATUT_CONFIG[a.statut] ?? {
+          bg: "bg-neutral-100",
+          text: "text-neutral-600",
+          label: a.statut,
+        };
+
+        const isRefused = a.statut === "refuse";
+
+        return (
+          <div
+            key={a.id}
+            className={`rounded-xl border bg-white p-4 shadow-sm ${
+              isRefused ? "border-red-200 opacity-75" : "border-neutral-200"
+            }`}
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0 flex-1">
+                {/* Type badge */}
+                <div className="text-sm font-medium text-neutral-900">
+                  {TYPE_LABELS[a.type] || a.type}
+                </div>
+
+                {/* Dates */}
+                <div className="mt-1 flex items-center gap-1.5 text-xs text-neutral-500">
+                  <span className="font-medium">{formatDate(a.dateDebut)}</span>
+                  <span>&rarr;</span>
+                  <span className="font-medium">{formatDate(a.dateFin)}</span>
+                  <span className="text-neutral-300">|</span>
+                  <span>
+                    {a.nbJours} jour{a.nbJours > 1 ? "s" : ""}
+                  </span>
+                </div>
               </div>
-              <div className="mt-0.5 text-xs text-neutral-500">
-                {a.dateDebut} → {a.dateFin} · {a.nbJours} jour{a.nbJours > 1 ? "s" : ""}
-              </div>
+
+              {/* Status badge */}
+              <span
+                className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-semibold ${config.bg} ${config.text}`}
+              >
+                {config.label}
+              </span>
             </div>
-            <span className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-medium ${STATUT_STYLES[a.statut] || "bg-neutral-100 text-neutral-600"}`}>
-              {STATUT_LABELS[a.statut] || a.statut}
-            </span>
+
+            {/* Motif */}
+            {a.raison && (
+              <div className="mt-2 text-xs text-neutral-500">
+                {a.raison}
+              </div>
+            )}
+
+            {/* Refusal reason */}
+            {isRefused && a.reponsePatron && (
+              <div className="mt-2 rounded-lg bg-red-50 px-3 py-2 text-xs text-red-700">
+                Motif du refus : {a.reponsePatron}
+              </div>
+            )}
           </div>
-          {a.statut === "refuse" && a.reponsePatron && (
-            <div className="mt-2 rounded-lg bg-red-50 px-3 py-2 text-xs text-red-700">
-              Motif : {a.reponsePatron}
-            </div>
-          )}
-          {a.raison && (
-            <div className="mt-2 text-xs text-neutral-500">
-              {a.raison}
-            </div>
-          )}
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
