@@ -12,6 +12,11 @@ const archivoBlack = localFont({
 });
 
 export const metadata: Metadata = {
+  title: {
+    default: "Aiman Renovation — Artisan Rénovation Saint-Louis 68",
+    template: "%s",
+  },
+  description: "Artisan rénovation intérieure et extérieure à Saint-Louis 68300, Haut-Rhin et zone tri-frontière. Cuisine, salle de bain, électricité, plomberie, façade, isolation. Devis gratuit.",
   icons: {
     icon: "/favicon.png",
     apple: "/apple-touch-icon.png",
@@ -21,6 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: "Aiman Renovation",
     type: "website",
+    locale: "fr_FR",
     images: [
       {
         url: "/images/ambiance-resultat.jpg",
@@ -34,6 +40,17 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@aimanrenovation",
     creator: "@aimanrenovation",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
