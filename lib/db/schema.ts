@@ -319,6 +319,32 @@ export const chatConversations = pgTable("chat_conversations", {
   updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().default(sql`now()`),
 });
 
+// ---- parrainages ----
+export const parrainages = pgTable("parrainages", {
+  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  // Le parrain = client existant (référence un chantier terminé)
+  parrainChantierId: uuid("parrain_chantier_id").references(() => chantiers.id, { onDelete: "set null" }),
+  parrainNom: text("parrain_nom").notNull(),
+  parrainPrenom: text("parrain_prenom").notNull(),
+  parrainEmail: text("parrain_email"),
+  parrainPhone: text("parrain_phone"),
+  code: text("code").notNull().unique(), // ex: PARRAIN-DUPONT-2026
+  // Le filleul = nouveau prospect
+  filleulNom: text("filleul_nom"),
+  filleulPhone: text("filleul_phone"),
+  filleulEmail: text("filleul_email"),
+  filleulChantierId: uuid("filleul_chantier_id").references(() => chantiers.id, { onDelete: "set null" }),
+  // Statut
+  statut: text("statut").notNull().default("actif"), // actif | utilise | converti | expire
+  recompense: text("recompense"), // description de la récompense
+  recompenseRemise: boolean("recompense_remise").notNull().default(false),
+  // Dates
+  messageEnvoyeAt: timestamp("message_envoye_at", { withTimezone: true }),
+  relanceEnvoyeeAt: timestamp("relance_envoyee_at", { withTimezone: true }),
+  convertAt: timestamp("convert_at", { withTimezone: true }),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+});
+
 export type Employe = typeof employes.$inferSelect;
 export type NewEmploye = typeof employes.$inferInsert;
 export type Chantier = typeof chantiers.$inferSelect;
@@ -328,3 +354,5 @@ export type SoldeConges = typeof soldeConges.$inferSelect;
 export type MissionUrgente = typeof missionsUrgentes.$inferSelect;
 export type NewMissionUrgente = typeof missionsUrgentes.$inferInsert;
 export type SuiviMateriel = typeof suiviMateriel.$inferSelect;
+export type Parrainage = typeof parrainages.$inferSelect;
+export type NewParrainage = typeof parrainages.$inferInsert;
