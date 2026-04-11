@@ -1,0 +1,92 @@
+{
+  "_generatedAt": "2026-04-11T18:08:32.953Z",
+  "_note": "Données structurées pour inscription annuaires — AIMAN RENOVATION",
+  "listing": {
+    "name": "AIMAN RENOVATION",
+    "address": "11 rue de Bâle",
+    "city": "Saint-Louis",
+    "zip": "68300",
+    "state": "Grand Est",
+    "country": "FR",
+    "phone": "+33633496925",
+    "phoneDisplay": "+33 6 33 49 69 25",
+    "website": "https://aiman-renovation.fr",
+    "email": "contact@aiman-renovation.fr",
+    "siret": "SIRET_PLACEHOLDER",
+    "categories": [
+      "Entreprise de rénovation",
+      "Artisan du bâtiment",
+      "Rénovation intérieure",
+      "Rénovation extérieure"
+    ],
+    "hours": {
+      "mon": "07:00-18:00",
+      "tue": "07:00-18:00",
+      "wed": "07:00-18:00",
+      "thu": "07:00-18:00",
+      "fri": "07:00-18:00",
+      "sat": "08:00-12:00",
+      "sun": "closed"
+    },
+    "description": {
+      "fr": "Aiman Renovation — artisan de rénovation intérieure et extérieure à Saint-Louis (68300) et dans le Haut-Rhin. Salle de bain, cuisine, façade, peinture, électricité, plomberie. Devis gratuit sous 48h. Garantie décennale.",
+      "de": "Aiman Renovation — Handwerksbetrieb für Innen- und Außenrenovierung in Saint-Louis (68300) und im Haut-Rhin. Badezimmer, Küche, Fassade, Malerei, Elektrik, Sanitär. Kostenloser Kostenvoranschlag innerhalb von 48 Stunden. 10-jährige Garantie.",
+      "en": "Aiman Renovation — interior and exterior renovation contractor in Saint-Louis (68300) and the Haut-Rhin area. Bathroom, kitchen, facade, painting, electrical, plumbing. Free quote within 48 hours. 10-year warranty."
+    },
+    "serviceArea": [
+      "Saint-Louis",
+      "Mulhouse",
+      "Colmar",
+      "Huningue",
+      "Hégenheim",
+      "Village-Neuf",
+      "Bartenheim",
+      "Kembs",
+      "Basel (Suisse)",
+      "Lörrach (Allemagne)"
+    ],
+    "lat": 47.5844,
+    "lng": 7.5607
+  },
+  "platforms": {
+    "bingPlaces": {
+      "url": "https://www.bingplaces.com",
+      "status": "CSV généré — prêt pour import",
+      "file": "bing-places-bulk.csv"
+    },
+    "googleBusinessProfile": {
+      "url": "https://business.google.com",
+      "status": "Manuel — voir annuaires-guide.md",
+      "steps": [
+        "Se connecter sur business.google.com",
+        "Cliquer « Gérer maintenant »",
+        "Chercher le nom de l'entreprise ou l'ajouter",
+        "Remplir les informations NAP",
+        "Vérification par courrier postal ou téléphone"
+      ]
+    },
+    "appleMapsConnect": {
+      "url": "https://mapsconnect.apple.com",
+      "status": "Manuel uniquement — pas d'API disponible",
+      "steps": [
+        "Se connecter avec un Apple ID",
+        "Cliquer « Ajouter un nouveau lieu »",
+        "Remplir nom, adresse, téléphone, site web",
+        "Choisir la catégorie « Entrepreneur en rénovation »",
+        "Valider — Apple vérifie sous 1 à 7 jours"
+      ]
+    },
+    "pagesJaunes": {
+      "url": "https://www.pagesjaunes.fr/inscription",
+      "status": "Manuel — voir annuaires-guide.md"
+    },
+    "yelp": {
+      "url": "https://biz.yelp.fr",
+      "status": "Manuel — voir annuaires-guide.md"
+    },
+    "houzz": {
+      "url": "https://www.houzz.fr/pro",
+      "status": "Manuel — voir annuaires-guide.md"
+    }
+  }
+}
