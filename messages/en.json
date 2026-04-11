@@ -3173,7 +3173,7 @@
     "step0_title": "What type of work?",
     "step0_subtitle": "Select the room or type of renovation",
     "step1_title": "Project details",
-    "step1_subtitle": "Define the surface area and desired services",
+    "step1_subtitle": "Adjust your project parameters",
     "step2_title": "Your estimate",
     "step2_subtitle": "Indicative price range",
     "step3_title": "Request my quote",
@@ -3247,6 +3247,12 @@
     "opt_preparation": "Surface preparation",
     "opt_enduit_lissage": "Smoothing plaster",
     "opt_boiseries": "Woodwork painting",
-    "step_label": "Step {current} of {total}"
+    "step_label": "Step {current} of {total}",
+    "nb_points": "Number of electrical points",
+    "opt_cuisine_complete": "Full kitchen (installed)",
+    "opt_sdb_complete": "Full bathroom (installed)",
+    "opt_platrerie": "Plasterwork / Partitions",
+    "opt_menuiseries": "Doors / Windows",
+    "total_disclaimer": "Indicative estimate excluding materials and taxes. Free final quote upon request."
   }
 }

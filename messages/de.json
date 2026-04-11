@@ -3173,7 +3173,7 @@
     "step0_title": "Welche Art von Arbeiten?",
     "step0_subtitle": "Wählen Sie den Raum oder die Art der Renovierung",
     "step1_title": "Projektdetails",
-    "step1_subtitle": "Definieren Sie die Fläche und gewünschte Leistungen",
+    "step1_subtitle": "Passen Sie die Parameter Ihres Projekts an",
     "step2_title": "Ihre Schätzung",
     "step2_subtitle": "Indikative Preisspanne",
     "step3_title": "Mein Angebot anfordern",
@@ -3247,6 +3247,12 @@
     "opt_preparation": "Untergrundvorbereitung",
     "opt_enduit_lissage": "Glättspachtel",
     "opt_boiseries": "Holzanstrich",
-    "step_label": "Schritt {current} von {total}"
+    "step_label": "Schritt {current} von {total}",
+    "nb_points": "Anzahl Elektropunkte",
+    "opt_cuisine_complete": "Komplette Küche (eingebaut)",
+    "opt_sdb_complete": "Komplettes Bad (eingebaut)",
+    "opt_platrerie": "Trockenbau / Trennwände",
+    "opt_menuiseries": "Türen / Fenster",
+    "total_disclaimer": "Unverbindliche Schätzung ohne Material und Steuern. Kostenloser endgültiger Kostenvoranschlag."
   }
 }

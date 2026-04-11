@@ -7,15 +7,15 @@
       "surface_max": 20,
       "surface_default": 8,
       "options": [
-        { "id": "depose", "prix_bas": 30, "prix_haut": 50, "unite": "m2", "defaut": true },
-        { "id": "plomberie", "prix_bas": 800, "prix_haut": 2000, "unite": "forfait", "defaut": true },
-        { "id": "carrelage_sol", "prix_bas": 55, "prix_haut": 90, "unite": "m2", "defaut": true },
-        { "id": "carrelage_murs", "prix_bas": 50, "prix_haut": 85, "unite": "m2", "defaut": true },
-        { "id": "douche_italienne", "prix_bas": 1200, "prix_haut": 2500, "unite": "forfait", "defaut": false },
-        { "id": "baignoire", "prix_bas": 800, "prix_haut": 1800, "unite": "forfait", "defaut": false },
-        { "id": "meuble_vasque", "prix_bas": 400, "prix_haut": 1200, "unite": "forfait", "defaut": false },
-        { "id": "electricite", "prix_bas": 150, "prix_haut": 400, "unite": "forfait", "defaut": true },
-        { "id": "peinture_plafond", "prix_bas": 20, "prix_haut": 35, "unite": "m2", "defaut": false }
+        { "id": "depose", "prix_bas": 52, "prix_haut": 68, "unite": "m2", "defaut": true },
+        { "id": "plomberie", "prix_bas": 1650, "prix_haut": 2200, "unite": "forfait", "defaut": true },
+        { "id": "carrelage_sol", "prix_bas": 78, "prix_haut": 102, "unite": "m2", "defaut": true, "group": "sol" },
+        { "id": "carrelage_murs", "prix_bas": 72, "prix_haut": 95, "unite": "m2", "defaut": true },
+        { "id": "douche_italienne", "prix_bas": 2200, "prix_haut": 2900, "unite": "forfait" },
+        { "id": "baignoire", "prix_bas": 1500, "prix_haut": 2000, "unite": "forfait" },
+        { "id": "meuble_vasque", "prix_bas": 720, "prix_haut": 950, "unite": "forfait" },
+        { "id": "electricite", "prix_bas": 118, "prix_haut": 155, "unite": "point", "defaut": true, "points_default": 6, "points_min": 3, "points_max": 15 },
+        { "id": "peinture_plafond", "prix_bas": 30, "prix_haut": 40, "unite": "m2" }
       ]
     },
     {
@@ -25,13 +25,14 @@
       "surface_max": 30,
       "surface_default": 12,
       "options": [
-        { "id": "depose", "prix_bas": 25, "prix_haut": 45, "unite": "m2", "defaut": true },
-        { "id": "plomberie", "prix_bas": 600, "prix_haut": 1500, "unite": "forfait", "defaut": true },
-        { "id": "electricite", "prix_bas": 300, "prix_haut": 800, "unite": "forfait", "defaut": true },
-        { "id": "carrelage_sol", "prix_bas": 50, "prix_haut": 85, "unite": "m2", "defaut": true },
-        { "id": "credence", "prix_bas": 40, "prix_haut": 80, "unite": "ml", "defaut": false },
-        { "id": "peinture_murs", "prix_bas": 18, "prix_haut": 30, "unite": "m2", "defaut": true },
-        { "id": "faux_plafond", "prix_bas": 35, "prix_haut": 60, "unite": "m2", "defaut": false }
+        { "id": "depose", "prix_bas": 48, "prix_haut": 62, "unite": "m2", "defaut": true },
+        { "id": "plomberie", "prix_bas": 1350, "prix_haut": 1800, "unite": "forfait", "defaut": true },
+        { "id": "electricite", "prix_bas": 118, "prix_haut": 155, "unite": "point", "defaut": true, "points_default": 10, "points_min": 5, "points_max": 25 },
+        { "id": "carrelage_sol", "prix_bas": 78, "prix_haut": 102, "unite": "m2", "defaut": true, "group": "sol" },
+        { "id": "parquet", "prix_bas": 72, "prix_haut": 95, "unite": "m2", "group": "sol" },
+        { "id": "credence", "prix_bas": 68, "prix_haut": 90, "unite": "ml" },
+        { "id": "peinture_murs", "prix_bas": 32, "prix_haut": 42, "unite": "m2", "defaut": true },
+        { "id": "faux_plafond", "prix_bas": 55, "prix_haut": 72, "unite": "m2" }
       ]
     },
     {
@@ -41,12 +42,13 @@
       "surface_max": 50,
       "surface_default": 20,
       "options": [
-        { "id": "depose", "prix_bas": 15, "prix_haut": 30, "unite": "m2", "defaut": true },
-        { "id": "parquet", "prix_bas": 40, "prix_haut": 80, "unite": "m2", "defaut": true },
-        { "id": "peinture_murs", "prix_bas": 18, "prix_haut": 30, "unite": "m2", "defaut": true },
-        { "id": "peinture_plafond", "prix_bas": 20, "prix_haut": 35, "unite": "m2", "defaut": false },
-        { "id": "electricite", "prix_bas": 80, "prix_haut": 200, "unite": "point", "defaut": false },
-        { "id": "plinthes", "prix_bas": 8, "prix_haut": 15, "unite": "ml", "defaut": false }
+        { "id": "depose", "prix_bas": 28, "prix_haut": 38, "unite": "m2", "defaut": true },
+        { "id": "parquet", "prix_bas": 72, "prix_haut": 95, "unite": "m2", "defaut": true, "group": "sol" },
+        { "id": "carrelage_sol", "prix_bas": 78, "prix_haut": 102, "unite": "m2", "group": "sol" },
+        { "id": "peinture_murs", "prix_bas": 32, "prix_haut": 42, "unite": "m2", "defaut": true },
+        { "id": "peinture_plafond", "prix_bas": 30, "prix_haut": 40, "unite": "m2" },
+        { "id": "electricite", "prix_bas": 118, "prix_haut": 155, "unite": "point", "points_default": 8, "points_min": 3, "points_max": 20 },
+        { "id": "plinthes", "prix_bas": 14, "prix_haut": 18, "unite": "ml" }
       ]
     },
     {
@@ -56,11 +58,12 @@
       "surface_max": 30,
       "surface_default": 14,
       "options": [
-        { "id": "depose", "prix_bas": 10, "prix_haut": 25, "unite": "m2", "defaut": true },
-        { "id": "parquet", "prix_bas": 35, "prix_haut": 70, "unite": "m2", "defaut": true },
-        { "id": "peinture_murs", "prix_bas": 18, "prix_haut": 30, "unite": "m2", "defaut": true },
-        { "id": "peinture_plafond", "prix_bas": 20, "prix_haut": 35, "unite": "m2", "defaut": false },
-        { "id": "plinthes", "prix_bas": 8, "prix_haut": 15, "unite": "ml", "defaut": false }
+        { "id": "depose", "prix_bas": 22, "prix_haut": 30, "unite": "m2", "defaut": true },
+        { "id": "parquet", "prix_bas": 68, "prix_haut": 90, "unite": "m2", "defaut": true, "group": "sol" },
+        { "id": "carrelage_sol", "prix_bas": 78, "prix_haut": 102, "unite": "m2", "group": "sol" },
+        { "id": "peinture_murs", "prix_bas": 32, "prix_haut": 42, "unite": "m2", "defaut": true },
+        { "id": "peinture_plafond", "prix_bas": 30, "prix_haut": 40, "unite": "m2" },
+        { "id": "plinthes", "prix_bas": 14, "prix_haut": 18, "unite": "ml" }
       ]
     },
     {
@@ -70,11 +73,11 @@
       "surface_max": 200,
       "surface_default": 80,
       "options": [
-        { "id": "nettoyage", "prix_bas": 8, "prix_haut": 15, "unite": "m2", "defaut": true },
-        { "id": "enduit", "prix_bas": 30, "prix_haut": 60, "unite": "m2", "defaut": true },
-        { "id": "peinture_facade", "prix_bas": 20, "prix_haut": 40, "unite": "m2", "defaut": true },
-        { "id": "isolation_exterieure", "prix_bas": 80, "prix_haut": 150, "unite": "m2", "defaut": false },
-        { "id": "echafaudage", "prix_bas": 800, "prix_haut": 2000, "unite": "forfait", "defaut": true }
+        { "id": "nettoyage", "prix_bas": 15, "prix_haut": 20, "unite": "m2", "defaut": true },
+        { "id": "enduit", "prix_bas": 58, "prix_haut": 78, "unite": "m2", "defaut": true },
+        { "id": "peinture_facade", "prix_bas": 35, "prix_haut": 46, "unite": "m2", "defaut": true },
+        { "id": "isolation_exterieure", "prix_bas": 145, "prix_haut": 190, "unite": "m2" },
+        { "id": "echafaudage", "prix_bas": 1500, "prix_haut": 2000, "unite": "forfait", "defaut": true }
       ]
     },
     {
@@ -84,12 +87,17 @@
       "surface_max": 120,
       "surface_default": 50,
       "options": [
-        { "id": "depose", "prix_bas": 15, "prix_haut": 30, "unite": "m2", "defaut": true },
-        { "id": "parquet", "prix_bas": 35, "prix_haut": 70, "unite": "m2", "defaut": true },
-        { "id": "peinture_murs", "prix_bas": 18, "prix_haut": 30, "unite": "m2", "defaut": true },
-        { "id": "electricite", "prix_bas": 80, "prix_haut": 200, "unite": "point", "defaut": false },
-        { "id": "plomberie", "prix_bas": 800, "prix_haut": 2500, "unite": "forfait", "defaut": false },
-        { "id": "carrelage_sol", "prix_bas": 50, "prix_haut": 85, "unite": "m2", "defaut": false }
+        { "id": "depose", "prix_bas": 45, "prix_haut": 58, "unite": "m2", "defaut": true },
+        { "id": "parquet", "prix_bas": 98, "prix_haut": 128, "unite": "m2", "defaut": true, "group": "sol" },
+        { "id": "carrelage_sol", "prix_bas": 85, "prix_haut": 112, "unite": "m2", "group": "sol" },
+        { "id": "peinture_murs", "prix_bas": 38, "prix_haut": 50, "unite": "m2", "defaut": true },
+        { "id": "peinture_plafond", "prix_bas": 35, "prix_haut": 46, "unite": "m2", "defaut": true },
+        { "id": "platrerie", "prix_bas": 50, "prix_haut": 65, "unite": "m2" },
+        { "id": "electricite", "prix_bas": 118, "prix_haut": 155, "unite": "point", "defaut": true, "points_default": 15, "points_min": 5, "points_max": 50 },
+        { "id": "plomberie", "prix_bas": 9000, "prix_haut": 11800, "unite": "forfait", "defaut": true },
+        { "id": "cuisine_complete", "prix_bas": 12000, "prix_haut": 15700, "unite": "forfait" },
+        { "id": "sdb_complete", "prix_bas": 8500, "prix_haut": 11100, "unite": "forfait" },
+        { "id": "menuiseries", "prix_bas": 5000, "prix_haut": 6500, "unite": "forfait" }
       ]
     },
     {
@@ -99,11 +107,11 @@
       "surface_max": 150,
       "surface_default": 40,
       "options": [
-        { "id": "preparation", "prix_bas": 5, "prix_haut": 12, "unite": "m2", "defaut": true },
-        { "id": "peinture_murs", "prix_bas": 18, "prix_haut": 30, "unite": "m2", "defaut": true },
-        { "id": "peinture_plafond", "prix_bas": 20, "prix_haut": 35, "unite": "m2", "defaut": false },
-        { "id": "enduit_lissage", "prix_bas": 12, "prix_haut": 25, "unite": "m2", "defaut": false },
-        { "id": "boiseries", "prix_bas": 15, "prix_haut": 30, "unite": "ml", "defaut": false }
+        { "id": "preparation", "prix_bas": 10, "prix_haut": 14, "unite": "m2", "defaut": true },
+        { "id": "peinture_murs", "prix_bas": 32, "prix_haut": 42, "unite": "m2", "defaut": true },
+        { "id": "peinture_plafond", "prix_bas": 30, "prix_haut": 40, "unite": "m2" },
+        { "id": "enduit_lissage", "prix_bas": 22, "prix_haut": 30, "unite": "m2" },
+        { "id": "boiseries", "prix_bas": 26, "prix_haut": 35, "unite": "ml" }
       ]
     }
   ]
