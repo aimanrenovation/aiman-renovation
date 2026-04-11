@@ -304,6 +304,21 @@ export const checklistsQualite = pgTable("checklists_qualite", {
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
 });
 
+// ---- chat_conversations ----
+export const chatConversations = pgTable("chat_conversations", {
+  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  visitorId: text("visitor_id").notNull(), // anonymous browser fingerprint
+  messages: jsonb("messages").notNull().default(sql`'[]'::jsonb`), // [{role, content, timestamp}]
+  qualificationData: jsonb("qualification_data"), // {type_travaux, surface, localisation, budget, urgence}
+  prospectNom: text("prospect_nom"),
+  prospectTel: text("prospect_tel"),
+  prospectEmail: text("prospect_email"),
+  prospectChaud: boolean("prospect_chaud").notNull().default(false),
+  dossierCreated: boolean("dossier_created").notNull().default(false),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().default(sql`now()`),
+});
+
 export type Employe = typeof employes.$inferSelect;
 export type NewEmploye = typeof employes.$inferInsert;
 export type Chantier = typeof chantiers.$inferSelect;
