@@ -130,7 +130,7 @@ export function ChatWindow({
   return (
     <div
       ref={chatRootRef}
-      className="fixed bottom-20 right-6 z-50 flex h-[500px] w-80 flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl max-md:inset-x-4 max-md:right-auto max-md:bottom-20 max-md:w-auto"
+      className="fixed bottom-36 right-6 z-50 flex h-[450px] w-80 flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl max-md:inset-x-4 max-md:right-auto max-md:bottom-36 max-md:h-[400px] max-md:w-auto"
       style={{ animation: "slideUp 0.3s ease-out" }}
     >
       {/* Header with assistant photo */}

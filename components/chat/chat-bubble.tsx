@@ -22,8 +22,8 @@ export function ChatBubble({ open, onClick }: ChatBubbleProps) {
       onClick={onClick}
       aria-label={open ? "Fermer le chat" : "Ouvrir le chat"}
       className={[
-        "fixed bottom-6 right-6 z-50 flex items-center justify-center rounded-full bg-[#E50000] text-white shadow-lg transition-all duration-300 hover:bg-[#CC0000] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E50000] focus-visible:ring-offset-2",
-        "h-14 w-14 md:h-14 md:w-14 h-12 w-12",
+        "fixed bottom-20 right-6 z-50 flex items-center justify-center rounded-full bg-[#E50000] text-white shadow-lg transition-all duration-300 hover:bg-[#CC0000] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E50000] focus-visible:ring-offset-2",
+        "h-14 w-14 max-md:h-12 max-md:w-12",
         pulse && !open ? "animate-pulse" : "",
       ]
         .join(" ")
