@@ -3219,6 +3219,18 @@
     "opt_elagage": "Élagage",
     "opt_evacuation_dechets": "Évacuation déchets verts",
     "opt_engazonnement": "Engazonnement",
-    "opt_contrat_annuel": "Contrat entretien annuel"
+    "opt_contrat_annuel": "Contrat entretien annuel",
+    "qty_ml_haies": "Longueur haies (ml)",
+    "qty_m2_debroussaillage": "Surface (m²)",
+    "qty_nb_arbres": "Nombre d arbres",
+    "qty_nb_arbres_elagage": "Nombre d arbres",
+    "qty_nb_mois": "Nombre de mois",
+    "opt_tonte_unique": "Tonte unique",
+    "opt_contrat_12_tontes": "Contrat 12 tontes/an",
+    "opt_contrat_24_tontes": "Contrat 24 tontes/an",
+    "opt_contrat_entretien_mensuel": "Contrat entretien mensuel",
+    "qty_ml_credence": "Longueur crédence (ml)",
+    "qty_ml_plinthes": "Périmètre plinthes (ml)",
+    "qty_ml_boiseries": "Longueur boiseries (ml)"
   }
 }

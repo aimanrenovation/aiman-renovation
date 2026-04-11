@@ -17,6 +17,10 @@ type Option = TypeTravaux["options"][number] & {
   points_default?: number;
   points_min?: number;
   points_max?: number;
+  qty_min?: number;
+  qty_max?: number;
+  qty_default?: number;
+  qty_label?: string;
 };
 
 /* ------------------------------------------------------------------ */
@@ -37,9 +41,12 @@ const typeImage = (id: string) => `/images/calculateur/${id}.webp`;
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
 /* ------------------------------------------------------------------ */
-function calcPrice(opt: Option, surface: number, pts: number) {
-  const qty = opt.unite === "forfait" || opt.unite === "unite" ? 1
-    : opt.unite === "point" ? pts : surface;
+function calcPrice(opt: Option, surface: number, pts: number, customQtys: Record<string, number>) {
+  let qty: number;
+  if (opt.unite === "forfait" || opt.unite === "unite") qty = 1;
+  else if (opt.unite === "point") qty = pts;
+  else if (opt.unite === "custom") qty = customQtys[opt.id] ?? opt.qty_default ?? 1;
+  else qty = surface; // m2, ml
   return { bas: opt.prix_bas * qty, haut: opt.prix_haut * qty, qty };
 }
 
@@ -81,6 +88,7 @@ export function CalculateurClient() {
   const [selectedType, setSelectedType] = useState<TypeTravaux | null>(null);
   const [surface, setSurface] = useState(10);
   const [nbPoints, setNbPoints] = useState(15);
+  const [customQtys, setCustomQtys] = useState<Record<string, number>>({});
   const [selectedOptions, setSelectedOptions] = useState<Set<string>>(new Set());
   const [formData, setFormData] = useState({ nom: "", telephone: "", email: "", adresse: "" });
   const [submitting, setSubmitting] = useState(false);
@@ -116,6 +124,11 @@ export function CalculateurClient() {
     setSelectedOptions(new Set(type.options.filter(o => o.defaut).map(o => o.id)));
     const ptOpt = type.options.find(o => o.unite === "point") as Option | undefined;
     setNbPoints(ptOpt?.points_default ?? 15);
+    const cq: Record<string, number> = {};
+    for (const o of type.options as Option[]) {
+      if (o.unite === "custom" && o.qty_default != null) cq[o.id] = o.qty_default;
+    }
+    setCustomQtys(cq);
     goTo(1);
   }, [goTo]);
 
@@ -139,7 +152,7 @@ export function CalculateurClient() {
     const rows = selectedType.options
       .filter(o => selectedOptions.has(o.id))
       .map(o => {
-        const { bas, haut, qty } = calcPrice(o as Option, surface, nbPoints);
+        const { bas, haut, qty } = calcPrice(o as Option, surface, nbPoints, customQtys);
         return { id: o.id, unite: o.unite, qty, bas, haut };
       });
     const rawBas = rows.reduce((s, r) => s + r.bas, 0);
@@ -149,7 +162,7 @@ export function CalculateurClient() {
       totalHaut: Math.round(rawHaut * geo.mult),
       breakdown: rows.map(r => ({ ...r, bas: Math.round(r.bas * geo.mult), haut: Math.round(r.haut * geo.mult) })),
     };
-  }, [selectedType, selectedOptions, surface, nbPoints, geo.mult]);
+  }, [selectedType, selectedOptions, surface, nbPoints, customQtys, geo.mult]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -309,32 +322,51 @@ export function CalculateurClient() {
                 {(selectedType.options as Option[]).map(opt => {
                   const isGrouped = !!opt.group;
                   const isSelected = selectedOptions.has(opt.id);
-                  const priceHint = opt.unite === "point" ? `${opt.prix_bas}€/pt` : opt.unite === "forfait" ? `${opt.prix_bas}€` : `${opt.prix_bas}€/${opt.unite}`;
+                  const hasCustomQty = opt.unite === "custom";
+                  const priceHint = opt.unite === "point" ? `${opt.prix_bas}€/pt`
+                    : opt.unite === "forfait" ? `${opt.prix_bas}€`
+                    : opt.unite === "custom" ? `${opt.prix_bas}€/u`
+                    : `${opt.prix_bas}€/${opt.unite}`;
                   return (
-                    <label key={opt.id}
-                      className={`flex cursor-pointer items-center gap-3 rounded-xl border backdrop-blur-sm px-4 py-3.5 transition-all duration-200 ${
-                        isSelected
-                          ? "border-[#E50000]/30 bg-[#E50000]/[0.06] shadow-[0_0_20px_rgba(229,0,0,0.05)]"
-                          : "border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05]"
-                      }`}>
-                      <input
-                        type={isGrouped ? "radio" : "checkbox"}
-                        name={isGrouped ? `group-${opt.group}` : undefined}
-                        checked={isSelected}
-                        onChange={() => toggleOption(opt.id, opt)}
-                        className="sr-only"
-                      />
-                      <div className={`h-5 w-5 rounded-${isGrouped ? "full" : "md"} border-2 flex items-center justify-center transition-all ${
-                        isSelected ? "border-[#E50000] bg-[#E50000]" : "border-white/20 bg-transparent"
-                      }`}>
-                        {isSelected && <Check className="h-3 w-3 text-white" />}
-                      </div>
-                      <div className="flex-1">
-                        <span className="font-medium text-sm">{t(`opt_${opt.id}` as any)}</span>
-                        {isGrouped && <span className="ml-2 text-[10px] px-1.5 py-0.5 rounded-full bg-white/[0.06] text-white/30">{opt.group}</span>}
-                      </div>
-                      <span className="text-xs text-white/30 font-mono">{priceHint}</span>
-                    </label>
+                    <div key={opt.id} className={`rounded-xl border backdrop-blur-sm transition-all duration-200 ${
+                      isSelected
+                        ? "border-[#E50000]/30 bg-[#E50000]/[0.06] shadow-[0_0_20px_rgba(229,0,0,0.05)]"
+                        : "border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05]"
+                    }`}>
+                      <label className="flex cursor-pointer items-center gap-3 px-4 py-3.5">
+                        <input
+                          type={isGrouped ? "radio" : "checkbox"}
+                          name={isGrouped ? `group-${opt.group}` : undefined}
+                          checked={isSelected}
+                          onChange={() => toggleOption(opt.id, opt)}
+                          className="sr-only"
+                        />
+                        <div className={`h-5 w-5 shrink-0 ${isGrouped ? "rounded-full" : "rounded-md"} border-2 flex items-center justify-center transition-all ${
+                          isSelected ? "border-[#E50000] bg-[#E50000]" : "border-white/20 bg-transparent"
+                        }`}>
+                          {isSelected && <Check className="h-3 w-3 text-white" />}
+                        </div>
+                        <div className="flex-1">
+                          <span className="font-medium text-sm">{t(`opt_${opt.id}` as any)}</span>
+                          {isGrouped && <span className="ml-2 text-[10px] px-1.5 py-0.5 rounded-full bg-white/[0.06] text-white/30">{opt.group}</span>}
+                        </div>
+                        <span className="text-xs text-white/30 font-mono">{priceHint}</span>
+                      </label>
+                      {/* Custom quantity slider — shown when selected */}
+                      {hasCustomQty && isSelected && (
+                        <div className="px-4 pb-3 flex items-center gap-3">
+                          <span className="text-[10px] text-white/40 shrink-0">{t(`qty_${opt.qty_label}` as any)}</span>
+                          <input type="range"
+                            min={opt.qty_min ?? 1} max={opt.qty_max ?? 100}
+                            value={customQtys[opt.id] ?? opt.qty_default ?? 1}
+                            onChange={e => setCustomQtys(prev => ({ ...prev, [opt.id]: Number(e.target.value) }))}
+                            className="flex-1 h-1 appearance-none rounded-full bg-white/10 cursor-pointer [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#E50000]" />
+                          <span className="min-w-[3rem] text-center text-sm font-bold text-white/80">
+                            {customQtys[opt.id] ?? opt.qty_default ?? 1}
+                          </span>
+                        </div>
+                      )}
+                    </div>
                   );
                 })}
               </div>
