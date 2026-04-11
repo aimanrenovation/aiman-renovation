@@ -54,8 +54,8 @@ export async function POST(request: Request) {
 
   // If outside business hours: save message but return auto-reply
   if (!isOpen) {
-    const nextOpen = isSaturday && hour >= 13 ? "lundi dès 8h" : "demain dès 8h";
-    const offlineMsg = `Nos bureaux sont actuellement fermés. Votre message a bien été enregistré — je vous répondrai ${nextOpen}. En cas d'urgence, appelez le 06 33 49 69 25.`;
+    const nextOpen = isSunday ? "lundi dès 8h" : (isSaturday && hour >= 13) ? "lundi dès 8h" : "demain dès 8h";
+    const offlineMsg = `Nos bureaux sont ouverts du lundi au vendredi de 8h à 19h et le samedi de 9h à 13h. Votre message a bien été enregistré — nous vous répondrons ${nextOpen}. En cas d'urgence, appelez le 06 33 49 69 25.`;
     history.push({ role: "assistant", content: offlineMsg });
     await db
       .update(schema.chatConversations)

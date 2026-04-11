@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ChatBubble } from "./chat-bubble";
 import { ChatWindow } from "./chat-window";
-import { getAssistant, type ChatAssistant } from "@/lib/chat/assistants";
+import { getAssistant, isBusinessHours, type ChatAssistant } from "@/lib/chat/assistants";
 
 function getVisitorId(): string {
   if (typeof window === "undefined") return "";
@@ -29,11 +29,16 @@ export function ChatWidget() {
   const [cta, setCta] = useState<string | null>(null);
   const [hidden, setHidden] = useState(false);
   const [assistant, setAssistant] = useState<ChatAssistant | null>(null);
+  const [online, setOnline] = useState(false);
   const visitorId = useRef("");
 
   useEffect(() => {
     visitorId.current = getVisitorId();
     setAssistant(getAssistant(visitorId.current));
+    setOnline(isBusinessHours());
+    // Re-check every minute
+    const interval = setInterval(() => setOnline(isBusinessHours()), 60_000);
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
@@ -113,7 +118,9 @@ export function ChatWidget() {
           loading={loading}
           cta={cta}
           assistantName={assistant.name}
+          assistantTitle={assistant.title}
           assistantPhoto={assistant.photo}
+          online={online}
           onSend={sendMessage}
           onClose={() => setOpen(false)}
         />

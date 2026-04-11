@@ -13,15 +13,15 @@ const MODEL = 'imagen-4.0-generate-001';
 const AVATARS = [
   {
     name: 'sophie',
-    prompt: 'Professional LinkedIn headshot portrait of a French woman, approximately 30 years old, warm friendly smile, light brown hair in a neat low bun, wearing a navy blue blazer over a white blouse, neutral light grey studio background, soft diffused studio lighting, shallow depth of field, shoulders and head visible. Corporate portrait photography, high quality, photorealistic.',
+    prompt: 'Candid portrait photograph of a real French woman employee, approximately 30 years old, natural warm smile, light brown hair loosely tied back, wearing a bright red polo shirt with a small embroidered company logo on the chest, standing in a bright modern office with a blurred renovation construction site visible through the window behind her. Natural daylight from window, warm tones, shallow depth of field on face. She looks like a real renovation company employee, not a model. Authentic, approachable. Square crop, shoulders and head. Photorealistic.',
   },
   {
     name: 'lucas',
-    prompt: 'Professional LinkedIn headshot portrait of a French man, approximately 28 years old, clean shaven, short dark brown hair neatly styled, confident approachable smile, wearing a charcoal grey suit jacket over light blue dress shirt with no tie, neutral light grey studio background, soft diffused studio lighting, shallow depth of field, shoulders and head visible. Corporate portrait photography, high quality, photorealistic.',
+    prompt: 'Candid portrait photograph of a real French man employee, approximately 28 years old, short dark brown hair, light stubble, natural confident smile, wearing a bright red polo shirt with a small embroidered company logo on the chest, standing in a workshop or garage with renovation tools and materials blurred in the background. Natural daylight, warm tones, shallow depth of field on face. He looks like a real construction project manager, not a stock photo model. Authentic, down to earth. Square crop, shoulders and head. Photorealistic.',
   },
   {
     name: 'amira',
-    prompt: 'Professional LinkedIn headshot portrait of a French woman of North African descent, approximately 25 years old, warm welcoming smile, dark wavy hair past shoulders, wearing a burgundy red blazer over a cream silk blouse, neutral light grey studio background, soft diffused studio lighting, shallow depth of field, shoulders and head visible. Corporate portrait photography, high quality, photorealistic.',
+    prompt: 'Candid portrait photograph of a real young French woman of North African descent, approximately 25 years old, dark wavy hair past shoulders, warm genuine smile with dimples, wearing a bright red polo shirt with a small embroidered company logo on the chest, sitting at a desk with a laptop and renovation blueprints blurred in background. Natural office lighting, warm tones, shallow depth of field on face. She looks like a real sales assistant at a renovation company, not a model. Authentic, welcoming. Square crop, shoulders and head. Photorealistic.',
   },
 ];
 
