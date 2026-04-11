@@ -180,6 +180,20 @@ export const demandesMateriel = pgTable("demandes_materiel", {
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
 });
 
+// ---- suivi_materiel ----
+export const suiviMateriel = pgTable("suivi_materiel", {
+  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  chantierId: uuid("chantier_id").notNull().references(() => chantiers.id, { onDelete: "cascade" }),
+  employeId: uuid("employe_id").notNull().references(() => employes.id, { onDelete: "cascade" }),
+  materiau: text("materiau").notNull(),
+  quantitePrevue: integer("quantite_prevue").notNull().default(0),
+  quantiteUtilisee: integer("quantite_utilisee").notNull().default(0),
+  unite: text("unite").notNull().default("unité"),
+  notes: text("notes"),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().default(sql`now()`),
+});
+
 // ---- login_attempts (rate limit) ----
 export const loginAttempts = pgTable("login_attempts", {
   id: bigserial("id", { mode: "number" }).primaryKey(),
@@ -279,6 +293,17 @@ export const missionsUrgentes = pgTable("missions_urgentes", {
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
 });
 
+// ---- checklists_qualite ----
+export const checklistsQualite = pgTable("checklists_qualite", {
+  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  pointageId: uuid("pointage_id").notNull().references(() => pointages.id, { onDelete: "cascade" }),
+  employeId: uuid("employe_id").notNull().references(() => employes.id, { onDelete: "cascade" }),
+  chantierId: uuid("chantier_id").notNull().references(() => chantiers.id, { onDelete: "cascade" }),
+  items: jsonb("items").notNull(), // [{ label: string, checked: boolean }]
+  completedAt: timestamp("completed_at", { withTimezone: true }),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+});
+
 export type Employe = typeof employes.$inferSelect;
 export type NewEmploye = typeof employes.$inferInsert;
 export type Chantier = typeof chantiers.$inferSelect;
@@ -287,3 +312,4 @@ export type DemandeAbsence = typeof demandesAbsence.$inferSelect;
 export type SoldeConges = typeof soldeConges.$inferSelect;
 export type MissionUrgente = typeof missionsUrgentes.$inferSelect;
 export type NewMissionUrgente = typeof missionsUrgentes.$inferInsert;
+export type SuiviMateriel = typeof suiviMateriel.$inferSelect;

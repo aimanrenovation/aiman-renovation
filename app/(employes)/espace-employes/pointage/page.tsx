@@ -46,6 +46,7 @@ export default async function PointagePage() {
             ? {
                 id: openPointage.id,
                 heureDebutIso: openPointage.heureDebut.toISOString(),
+                chantierId: openPointage.chantierId,
                 chantierNom: openPointage.chantierNom,
                 onSiteDebut: openPointage.onSiteDebut,
                 noGeoDebut: openPointage.noGeoDebut,
