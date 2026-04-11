@@ -3253,6 +3253,16 @@
     "opt_sdb_complete": "Full bathroom (installed)",
     "opt_platrerie": "Plasterwork / Partitions",
     "opt_menuiseries": "Doors / Windows",
-    "total_disclaimer": "Indicative estimate excluding materials and taxes. Free final quote upon request."
+    "total_disclaimer": "Indicative estimate excluding materials and taxes. Free final quote upon request.",
+    "type_jardin": "Garden / Landscaping",
+    "type_jardin_desc": "Mowing, trimming, felling, maintenance",
+    "opt_tonte": "Lawn mowing",
+    "opt_taille_haies": "Hedge trimming",
+    "opt_debroussaillage": "Brush clearing",
+    "opt_abattage_arbre": "Tree felling",
+    "opt_elagage": "Tree pruning",
+    "opt_evacuation_dechets": "Green waste disposal",
+    "opt_engazonnement": "Lawn seeding",
+    "opt_contrat_annuel": "Annual maintenance contract"
   }
 }

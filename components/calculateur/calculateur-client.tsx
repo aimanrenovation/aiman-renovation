@@ -4,9 +4,9 @@ import { useState, useMemo, useCallback, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import prixData from "@/lib/calculateur-prix.json";
 import {
-  ShowerHead, UtensilsCrossed, Sofa, BedDouble, Building2, Paintbrush, Home,
-  ArrowLeft, ArrowRight, Check, Send, Zap, ChevronRight, Ruler, Grip,
+  ArrowLeft, ArrowRight, Check, Send, Zap, Ruler,
 } from "lucide-react";
+import Image from "next/image";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -32,15 +32,7 @@ const GEO_CONFIG: Record<GeoZone, { flag: string; mult: number; devise: string; 
   CH: { flag: "🇨🇭", mult: 3, devise: "CHF", label: "Schweiz" },
 };
 
-const TYPE_ICONS: Record<string, React.ReactNode> = {
-  sdb: <ShowerHead className="h-8 w-8" />,
-  cuisine: <UtensilsCrossed className="h-8 w-8" />,
-  salon: <Sofa className="h-8 w-8" />,
-  chambre: <BedDouble className="h-8 w-8" />,
-  facade: <Home className="h-8 w-8" />,
-  appartement: <Building2 className="h-8 w-8" />,
-  peinture: <Paintbrush className="h-8 w-8" />,
-};
+const typeImage = (id: string) => `/images/calculateur/${id}.webp`;
 
 /* ------------------------------------------------------------------ */
 /*  Helpers                                                            */
@@ -98,7 +90,6 @@ export function CalculateurClient() {
   const [animKey, setAnimKey] = useState(0);
   const [mounted, setMounted] = useState(false);
   const [geoZone, setGeoZone] = useState<GeoZone>("FR");
-  const [showCountryPicker, setShowCountryPicker] = useState(false);
 
   const geo = GEO_CONFIG[geoZone];
 
@@ -210,31 +201,9 @@ export function CalculateurClient() {
               </div>
             ))}
           </div>
-          <div className="flex items-center justify-center gap-3">
-            <p className="text-xs text-white/40 uppercase tracking-widest">
-              {t("step_label", { current: step + 1, total: 4 })}
-            </p>
-            <div className="relative">
-              <button type="button" onClick={() => setShowCountryPicker(!showCountryPicker)}
-                className="flex items-center gap-1 text-xs text-white/40 hover:text-white/60 transition-colors rounded-lg px-2 py-1 bg-white/[0.03] border border-white/[0.06]">
-                <span>{geo.flag}</span>
-                <span>{geo.devise}</span>
-              </button>
-              {showCountryPicker && (
-                <div className="absolute top-full mt-1 right-0 rounded-xl border border-white/10 bg-black/90 backdrop-blur-xl p-1 z-50 min-w-[140px]">
-                  {(Object.keys(GEO_CONFIG) as GeoZone[]).map(z => (
-                    <button key={z} type="button"
-                      onClick={() => { setGeoZone(z); setShowCountryPicker(false); }}
-                      className={`w-full flex items-center gap-2 px-3 py-2 rounded-lg text-xs transition-colors ${geoZone === z ? "bg-[#E50000]/10 text-white" : "text-white/50 hover:bg-white/5 hover:text-white"}`}>
-                      <span>{GEO_CONFIG[z].flag}</span>
-                      <span>{GEO_CONFIG[z].label}</span>
-                      <span className="ml-auto text-white/30">{GEO_CONFIG[z].devise}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
+          <p className="text-center text-xs text-white/40 uppercase tracking-widest">
+            {t("step_label", { current: step + 1, total: 4 })}
+          </p>
         </div>
 
         {/* ═══════════ STEP 0 — Type Selection ═══════════ */}
@@ -253,18 +222,20 @@ export function CalculateurClient() {
                   key={type.id}
                   type="button"
                   onClick={() => selectType(type)}
-                  className="group relative rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl p-5 sm:p-6 text-left transition-all duration-300 hover:scale-[1.03] hover:border-[#E50000]/30 hover:bg-white/[0.06] hover:shadow-[0_0_40px_rgba(229,0,0,0.08)]"
+                  className="group relative rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl overflow-hidden text-left transition-all duration-300 hover:scale-[1.03] hover:border-[#E50000]/30 hover:shadow-[0_0_40px_rgba(229,0,0,0.08)]"
                 >
-                  <div className="text-white/60 group-hover:text-[#E50000] transition-colors duration-300">
-                    {TYPE_ICONS[type.id] || <Grip className="h-8 w-8" />}
+                  <div className="relative h-28 sm:h-32 overflow-hidden">
+                    <Image src={typeImage(type.id)} alt={type.id} fill className="object-cover transition-transform duration-500 group-hover:scale-110" sizes="(max-width: 640px) 50vw, 25vw" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   </div>
-                  <span className="mt-4 block text-base sm:text-lg font-semibold tracking-tight">
-                    {t(`type_${type.id}` as any)}
-                  </span>
-                  <span className="mt-1 block text-xs text-white/30 leading-relaxed">
-                    {t(`type_${type.id}_desc` as any)}
-                  </span>
-                  <ChevronRight className="absolute top-5 right-4 h-4 w-4 text-white/10 group-hover:text-[#E50000]/50 transition-all duration-300 group-hover:translate-x-0.5" />
+                  <div className="p-4">
+                    <span className="block text-base font-semibold tracking-tight">
+                      {t(`type_${type.id}` as any)}
+                    </span>
+                    <span className="mt-1 block text-xs text-white/30 leading-relaxed">
+                      {t(`type_${type.id}_desc` as any)}
+                    </span>
+                  </div>
                 </button>
               ))}
             </div>
@@ -280,8 +251,8 @@ export function CalculateurClient() {
             </button>
 
             <div className="mb-8 flex items-center gap-4">
-              <div className="h-12 w-12 rounded-2xl bg-[#E50000]/10 border border-[#E50000]/20 flex items-center justify-center text-[#E50000]">
-                {TYPE_ICONS[selectedType.id]}
+              <div className="h-12 w-12 rounded-2xl overflow-hidden border border-[#E50000]/20 relative">
+                <Image src={typeImage(selectedType.id)} alt="" fill className="object-cover" sizes="48px" />
               </div>
               <div>
                 <h2 className="text-2xl font-bold tracking-tight">{t(`type_${selectedType.id}` as any)}</h2>
@@ -460,8 +431,8 @@ export function CalculateurClient() {
                 <div className="mb-8 rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl p-5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="h-10 w-10 rounded-xl bg-[#E50000]/10 flex items-center justify-center text-[#E50000]">
-                        {TYPE_ICONS[selectedType.id]}
+                      <div className="h-10 w-10 rounded-xl overflow-hidden relative">
+                        <Image src={typeImage(selectedType.id)} alt="" fill className="object-cover" sizes="40px" />
                       </div>
                       <div>
                         <span className="font-semibold text-sm">{t(`type_${selectedType.id}` as any)}</span>

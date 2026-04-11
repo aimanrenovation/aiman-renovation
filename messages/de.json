@@ -3253,6 +3253,16 @@
     "opt_sdb_complete": "Komplettes Bad (eingebaut)",
     "opt_platrerie": "Trockenbau / Trennwände",
     "opt_menuiseries": "Türen / Fenster",
-    "total_disclaimer": "Unverbindliche Schätzung ohne Material und Steuern. Kostenloser endgültiger Kostenvoranschlag."
+    "total_disclaimer": "Unverbindliche Schätzung ohne Material und Steuern. Kostenloser endgültiger Kostenvoranschlag.",
+    "type_jardin": "Garten / Grünflächen",
+    "type_jardin_desc": "Mähen, Schneiden, Fällen, Pflege",
+    "opt_tonte": "Rasenmähen",
+    "opt_taille_haies": "Heckenschnitt",
+    "opt_debroussaillage": "Rodung",
+    "opt_abattage_arbre": "Baumfällung",
+    "opt_elagage": "Baumschnitt",
+    "opt_evacuation_dechets": "Grünschnitt-Entsorgung",
+    "opt_engazonnement": "Rasenanlage",
+    "opt_contrat_annuel": "Jahrespflegevertrag"
   }
 }
