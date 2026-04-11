@@ -20,6 +20,7 @@ export function Navbar() {
     { href: "/realisations" as const, label: t("realisations") },
     { href: "/a-propos" as const, label: t("about") },
     { href: "/contact" as const, label: t("contact") },
+    { href: "/calculateur" as const, label: t("calculateur") },
   ];
 
   const ctaLink = { href: "/devis" as const, label: t("cta") };

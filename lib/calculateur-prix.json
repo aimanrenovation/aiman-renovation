@@ -1,0 +1,110 @@
+{
+  "types": [
+    {
+      "id": "sdb",
+      "icon": "🚿",
+      "surface_min": 3,
+      "surface_max": 20,
+      "surface_default": 8,
+      "options": [
+        { "id": "depose", "prix_bas": 30, "prix_haut": 50, "unite": "m2", "defaut": true },
+        { "id": "plomberie", "prix_bas": 800, "prix_haut": 2000, "unite": "forfait", "defaut": true },
+        { "id": "carrelage_sol", "prix_bas": 55, "prix_haut": 90, "unite": "m2", "defaut": true },
+        { "id": "carrelage_murs", "prix_bas": 50, "prix_haut": 85, "unite": "m2", "defaut": true },
+        { "id": "douche_italienne", "prix_bas": 1200, "prix_haut": 2500, "unite": "forfait", "defaut": false },
+        { "id": "baignoire", "prix_bas": 800, "prix_haut": 1800, "unite": "forfait", "defaut": false },
+        { "id": "meuble_vasque", "prix_bas": 400, "prix_haut": 1200, "unite": "forfait", "defaut": false },
+        { "id": "electricite", "prix_bas": 150, "prix_haut": 400, "unite": "forfait", "defaut": true },
+        { "id": "peinture_plafond", "prix_bas": 20, "prix_haut": 35, "unite": "m2", "defaut": false }
+      ]
+    },
+    {
+      "id": "cuisine",
+      "icon": "🍳",
+      "surface_min": 5,
+      "surface_max": 30,
+      "surface_default": 12,
+      "options": [
+        { "id": "depose", "prix_bas": 25, "prix_haut": 45, "unite": "m2", "defaut": true },
+        { "id": "plomberie", "prix_bas": 600, "prix_haut": 1500, "unite": "forfait", "defaut": true },
+        { "id": "electricite", "prix_bas": 300, "prix_haut": 800, "unite": "forfait", "defaut": true },
+        { "id": "carrelage_sol", "prix_bas": 50, "prix_haut": 85, "unite": "m2", "defaut": true },
+        { "id": "credence", "prix_bas": 40, "prix_haut": 80, "unite": "ml", "defaut": false },
+        { "id": "peinture_murs", "prix_bas": 18, "prix_haut": 30, "unite": "m2", "defaut": true },
+        { "id": "faux_plafond", "prix_bas": 35, "prix_haut": 60, "unite": "m2", "defaut": false }
+      ]
+    },
+    {
+      "id": "salon",
+      "icon": "🛋️",
+      "surface_min": 10,
+      "surface_max": 50,
+      "surface_default": 20,
+      "options": [
+        { "id": "depose", "prix_bas": 15, "prix_haut": 30, "unite": "m2", "defaut": true },
+        { "id": "parquet", "prix_bas": 40, "prix_haut": 80, "unite": "m2", "defaut": true },
+        { "id": "peinture_murs", "prix_bas": 18, "prix_haut": 30, "unite": "m2", "defaut": true },
+        { "id": "peinture_plafond", "prix_bas": 20, "prix_haut": 35, "unite": "m2", "defaut": false },
+        { "id": "electricite", "prix_bas": 80, "prix_haut": 200, "unite": "point", "defaut": false },
+        { "id": "plinthes", "prix_bas": 8, "prix_haut": 15, "unite": "ml", "defaut": false }
+      ]
+    },
+    {
+      "id": "chambre",
+      "icon": "🛏️",
+      "surface_min": 8,
+      "surface_max": 30,
+      "surface_default": 14,
+      "options": [
+        { "id": "depose", "prix_bas": 10, "prix_haut": 25, "unite": "m2", "defaut": true },
+        { "id": "parquet", "prix_bas": 35, "prix_haut": 70, "unite": "m2", "defaut": true },
+        { "id": "peinture_murs", "prix_bas": 18, "prix_haut": 30, "unite": "m2", "defaut": true },
+        { "id": "peinture_plafond", "prix_bas": 20, "prix_haut": 35, "unite": "m2", "defaut": false },
+        { "id": "plinthes", "prix_bas": 8, "prix_haut": 15, "unite": "ml", "defaut": false }
+      ]
+    },
+    {
+      "id": "facade",
+      "icon": "🏠",
+      "surface_min": 30,
+      "surface_max": 200,
+      "surface_default": 80,
+      "options": [
+        { "id": "nettoyage", "prix_bas": 8, "prix_haut": 15, "unite": "m2", "defaut": true },
+        { "id": "enduit", "prix_bas": 30, "prix_haut": 60, "unite": "m2", "defaut": true },
+        { "id": "peinture_facade", "prix_bas": 20, "prix_haut": 40, "unite": "m2", "defaut": true },
+        { "id": "isolation_exterieure", "prix_bas": 80, "prix_haut": 150, "unite": "m2", "defaut": false },
+        { "id": "echafaudage", "prix_bas": 800, "prix_haut": 2000, "unite": "forfait", "defaut": true }
+      ]
+    },
+    {
+      "id": "appartement",
+      "icon": "🏢",
+      "surface_min": 20,
+      "surface_max": 120,
+      "surface_default": 50,
+      "options": [
+        { "id": "depose", "prix_bas": 15, "prix_haut": 30, "unite": "m2", "defaut": true },
+        { "id": "parquet", "prix_bas": 35, "prix_haut": 70, "unite": "m2", "defaut": true },
+        { "id": "peinture_murs", "prix_bas": 18, "prix_haut": 30, "unite": "m2", "defaut": true },
+        { "id": "electricite", "prix_bas": 80, "prix_haut": 200, "unite": "point", "defaut": false },
+        { "id": "plomberie", "prix_bas": 800, "prix_haut": 2500, "unite": "forfait", "defaut": false },
+        { "id": "carrelage_sol", "prix_bas": 50, "prix_haut": 85, "unite": "m2", "defaut": false }
+      ]
+    },
+    {
+      "id": "peinture",
+      "icon": "🎨",
+      "surface_min": 10,
+      "surface_max": 150,
+      "surface_default": 40,
+      "options": [
+        { "id": "preparation", "prix_bas": 5, "prix_haut": 12, "unite": "m2", "defaut": true },
+        { "id": "peinture_murs", "prix_bas": 18, "prix_haut": 30, "unite": "m2", "defaut": true },
+        { "id": "peinture_plafond", "prix_bas": 20, "prix_haut": 35, "unite": "m2", "defaut": false },
+        { "id": "enduit_lissage", "prix_bas": 12, "prix_haut": 25, "unite": "m2", "defaut": false },
+        { "id": "boiseries", "prix_bas": 15, "prix_haut": 30, "unite": "ml", "defaut": false }
+      ]
+    }
+  ]
+}
