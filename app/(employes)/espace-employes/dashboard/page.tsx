@@ -16,6 +16,7 @@ export default async function DashboardPage() {
       heureDebut: schema.plannings.heureDebut,
       heureFin: schema.plannings.heureFin,
       mission: schema.plannings.mission,
+      statut: schema.plannings.statut,
       chantierId: schema.chantiers.id,
       chantierNom: schema.chantiers.nom,
       chantierAdresse: schema.chantiers.adresse,
@@ -95,37 +96,53 @@ export default async function DashboardPage() {
           </div>
         ) : (
           <ul className="flex flex-col gap-3">
-            {missions.map((m) => (
-              <li key={m.id}>
-                <Link
-                  href={`/espace-employes/mission/${m.chantierId}`}
-                  className="block rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm transition-all active:scale-[0.97] active:bg-neutral-50"
-                >
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="min-w-0 flex-1">
-                      <div className="truncate text-base font-semibold">{m.chantierNom}</div>
-                      <div className="truncate text-xs text-neutral-500">
-                        {m.chantierAdresse}
-                        {m.chantierVille ? `, ${m.chantierVille}` : ""}
+            {missions.map((m) => {
+              const badgeMap: Record<string, { label: string; cls: string }> = {
+                prevu: { label: "Prévu", cls: "bg-blue-100 text-blue-700" },
+                confirme: { label: "Confirmé", cls: "bg-green-100 text-green-700" },
+                fait: { label: "Fait", cls: "bg-neutral-200 text-neutral-600" },
+                annule: { label: "Annulé", cls: "bg-red-100 text-red-700" },
+              };
+              const badge = badgeMap[m.statut] ?? badgeMap.prevu;
+
+              return (
+                <li key={m.id}>
+                  <Link
+                    href={`/espace-employes/mission/${m.chantierId}`}
+                    className="block rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm transition-all active:scale-[0.97] active:bg-neutral-50"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="truncate text-base font-semibold">{m.chantierNom}</span>
+                          <span className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase ${badge.cls}`}>
+                            {badge.label}
+                          </span>
+                        </div>
+                        <div className="truncate text-xs text-neutral-500">
+                          {m.chantierVille ?? m.chantierAdresse}
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="text-right text-xs font-medium text-neutral-600">
+                          {m.heureDebut?.slice(0, 5) ?? "--"}
+                          {m.heureFin ? ` → ${m.heureFin.slice(0, 5)}` : ""}
+                        </div>
+                        <span className="text-neutral-400">&rsaquo;</span>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div className="text-right text-xs font-medium text-neutral-600">
-                        {m.heureDebut?.slice(0, 5) ?? "--"}
-                        <br />
-                        {m.heureFin?.slice(0, 5) ?? ""}
+                    {m.mission && (
+                      <div className="mt-2 rounded-lg bg-neutral-50 px-3 py-2 text-xs text-neutral-700">
+                        {m.mission}
                       </div>
-                      <span className="text-neutral-400">&rsaquo;</span>
+                    )}
+                    <div className="mt-2 text-xs font-medium text-[#E50000]">
+                      Voir la fiche mission &rarr;
                     </div>
-                  </div>
-                  {m.mission && (
-                    <div className="mt-2 rounded-lg bg-neutral-50 px-3 py-2 text-xs text-neutral-700">
-                      {m.mission}
-                    </div>
-                  )}
-                </Link>
-              </li>
-            ))}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         )}
       </section>

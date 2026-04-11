@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { PhotoUploader } from "./photo-uploader";
+import { SignaturePad } from "./signature-pad";
 import { showToast } from "@/lib/employes/use-toast";
 
 interface ChantierOption {
@@ -151,6 +152,9 @@ export function RapportForm({ chantiers }: { chantiers: ChantierOption[] }) {
   const [done, setDone] = useState(false);
   const [draftSaved, setDraftSaved] = useState(!!draft.current);
 
+  // Signature
+  const [signatureBase64, setSignatureBase64] = useState<string | null>(null);
+
   // Voice notes
   const [voiceBlobs, setVoiceBlobs] = useState<Blob[]>([]);
   const [voiceUrls, setVoiceUrls] = useState<string[]>([]);
@@ -228,6 +232,7 @@ export function RapportForm({ chantiers }: { chantiers: ChantierOption[] }) {
           description,
           travaux_realises: travauxList,
           blocages: blocagesList,
+          ...(signatureBase64 ? { signature: signatureBase64 } : {}),
         }),
       });
       if (!rapportRes.ok) throw new Error("rapport_failed");
@@ -288,6 +293,7 @@ export function RapportForm({ chantiers }: { chantiers: ChantierOption[] }) {
             setMateriel([]);
             setVoiceBlobs([]);
             setVoiceUrls([]);
+            setSignatureBase64(null);
           }}
           className="mt-4 text-sm font-medium text-green-700 underline"
         >
@@ -457,6 +463,35 @@ export function RapportForm({ chantiers }: { chantiers: ChantierOption[] }) {
             : "Envoi…"
           : "Envoyer mon rapport"}
       </button>
+
+      {/* Signature de fin de journée */}
+      <div className="rounded-2xl border border-neutral-200 bg-white p-4">
+        <h3 className="mb-1 text-sm font-semibold text-neutral-700">
+          Signature de fin de journée
+        </h3>
+        <p className="mb-3 text-xs text-neutral-500">
+          Optionnel — signez avec votre doigt pour valider votre journée.
+        </p>
+        {signatureBase64 ? (
+          <div className="flex flex-col items-center gap-3">
+            <img
+              src={signatureBase64}
+              alt="Aperçu signature"
+              className="w-full rounded-xl border border-neutral-200"
+              style={{ height: "150px", objectFit: "contain" }}
+            />
+            <button
+              type="button"
+              onClick={() => setSignatureBase64(null)}
+              className="text-xs font-medium text-neutral-500 underline"
+            >
+              Refaire la signature
+            </button>
+          </div>
+        ) : (
+          <SignaturePad onValidate={setSignatureBase64} />
+        )}
+      </div>
     </div>
   );
 }
