@@ -49,31 +49,66 @@ export function ChatWindow({
   const [input, setInput] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
+  const chatRootRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
+  // Auto-scroll on new messages
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, loading]);
 
+  // Focus input on mount
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
 
-  // Prevent scroll propagation to body
-  const handleWheel = useCallback((e: React.WheelEvent) => {
-    const el = messagesContainerRef.current;
-    if (!el) return;
-    const { scrollTop, scrollHeight, clientHeight } = el;
-    const atTop = scrollTop <= 0 && e.deltaY < 0;
-    const atBottom = scrollTop + clientHeight >= scrollHeight - 1 && e.deltaY > 0;
-    if (atTop || atBottom) {
-      e.preventDefault();
+  // ========== SCROLL ISOLATION (non-passive listeners) ==========
+  useEffect(() => {
+    const root = chatRootRef.current;
+    const container = messagesContainerRef.current;
+    if (!root || !container) return;
+
+    // Block wheel scroll from leaking to body
+    function onWheel(e: WheelEvent) {
+      const { scrollTop, scrollHeight, clientHeight } = container!;
+      const atTop = scrollTop <= 0 && e.deltaY < 0;
+      const atBottom = scrollTop + clientHeight >= scrollHeight - 1 && e.deltaY > 0;
+      if (atTop || atBottom) {
+        e.preventDefault();
+      }
       e.stopPropagation();
     }
-  }, []);
 
-  const handleTouchMove = useCallback((e: React.TouchEvent) => {
-    e.stopPropagation();
+    // Block touch scroll from leaking to body
+    let touchStartY = 0;
+    function onTouchStart(e: TouchEvent) {
+      touchStartY = e.touches[0].clientY;
+    }
+    function onTouchMove(e: TouchEvent) {
+      const { scrollTop, scrollHeight, clientHeight } = container!;
+      const deltaY = touchStartY - e.touches[0].clientY;
+      const atTop = scrollTop <= 0 && deltaY < 0;
+      const atBottom = scrollTop + clientHeight >= scrollHeight - 1 && deltaY > 0;
+      if (atTop || atBottom) {
+        e.preventDefault();
+      }
+      e.stopPropagation();
+    }
+
+    // Prevent body scroll when chat is open
+    const origOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    root.addEventListener("wheel", onWheel, { passive: false });
+    root.addEventListener("touchstart", onTouchStart, { passive: true });
+    root.addEventListener("touchmove", onTouchMove, { passive: false });
+
+    return () => {
+      document.body.style.overflow = origOverflow;
+      root.removeEventListener("wheel", onWheel);
+      root.removeEventListener("touchstart", onTouchStart);
+      root.removeEventListener("touchmove", onTouchMove);
+    };
   }, []);
 
   function handleSubmit(e: React.FormEvent) {
@@ -94,10 +129,9 @@ export function ChatWindow({
 
   return (
     <div
-      className="fixed bottom-20 right-6 z-50 flex h-[500px] w-80 flex-col overflow-hidden overscroll-contain rounded-2xl border border-gray-200 bg-white shadow-2xl max-md:inset-x-4 max-md:right-auto max-md:w-auto max-md:bottom-20"
+      ref={chatRootRef}
+      className="fixed bottom-20 right-6 z-50 flex h-[500px] w-80 flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl max-md:inset-x-4 max-md:right-auto max-md:bottom-20 max-md:w-auto"
       style={{ animation: "slideUp 0.3s ease-out" }}
-      onWheel={handleWheel}
-      onTouchMove={handleTouchMove}
     >
       {/* Header with assistant photo */}
       <div className="flex items-center gap-3 bg-gradient-to-r from-[#E50000] to-[#B80000] px-4 py-3 text-white">
@@ -122,11 +156,15 @@ export function ChatWindow({
         </button>
       </div>
 
-      {/* Messages — isolated scroll */}
+      {/* Messages — fully isolated scroll */}
       <div
         ref={messagesContainerRef}
-        className="flex-1 space-y-3 overflow-y-auto overscroll-contain px-3 py-4"
-        style={{ WebkitOverflowScrolling: "touch", touchAction: "pan-y" }}
+        className="flex-1 space-y-3 overflow-y-auto px-3 py-4"
+        style={{
+          overscrollBehavior: "contain",
+          WebkitOverflowScrolling: "touch",
+          touchAction: "pan-y",
+        }}
       >
         {messages.map((msg) => (
           <div
@@ -146,7 +184,6 @@ export function ChatWindow({
 
         {loading && <TypingIndicator />}
 
-        {/* CTA — only shown when API says so (after qualification) */}
         {ctaInfo && !loading && (
           <div className="flex justify-start">
             {ctaInfo.external ? (
