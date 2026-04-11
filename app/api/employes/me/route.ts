@@ -16,6 +16,8 @@ export const GET = requireAuth(async (_request, _ctx, session) => {
       cguAcceptedAt: schema.employes.cguAcceptedAt,
       cguVersion: schema.employes.cguVersion,
       avatarUrl: schema.employes.avatarUrl,
+      hourlyRateCents: schema.employes.hourlyRateCents,
+      createdAt: schema.employes.createdAt,
     })
     .from(schema.employes)
     .where(eq(schema.employes.id, session.sub))
