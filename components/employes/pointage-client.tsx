@@ -2,6 +2,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { showToast } from "@/lib/employes/use-toast";
+import { ChecklistQualite } from "@/components/employes/checklist-qualite";
+import { PhotosFinJournee } from "./photos-fin-journee";
+
+type StopStep = "idle" | "photos" | "checklist" | "stopping";
 
 interface Mission {
   chantierId: string;
@@ -14,6 +18,7 @@ interface Mission {
 interface OpenPointage {
   id: string;
   heureDebutIso: string;
+  chantierId: string;
   chantierNom: string;
   onSiteDebut: boolean | null;
   noGeoDebut: boolean;
@@ -78,6 +83,9 @@ export function PointageClient({ openPointage, missions }: Props) {
   const [paused, setPaused] = useState(false);
   const [totalPausedMs, setTotalPausedMs] = useState(0);
   const [pausedAt, setPausedAt] = useState<number | null>(null);
+
+  // Stop flow: photos → checklist → stopping
+  const [stopStep, setStopStep] = useState<StopStep>("idle");
 
   // Multi-chantier
   const [showChantierSwitch, setShowChantierSwitch] = useState(false);
@@ -316,29 +324,76 @@ export function PointageClient({ openPointage, missions }: Props) {
           <div className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</div>
         )}
 
-        {/* Pause / Resume + Stop buttons */}
-        <div className="flex gap-3">
-          <button
-            type="button"
-            onClick={handlePauseToggle}
-            disabled={loading}
-            className={`h-14 flex-1 rounded-2xl text-base font-semibold disabled:opacity-50 ${
-              paused
-                ? "bg-green-600 text-white"
-                : "bg-amber-500 text-white"
-            }`}
-          >
-            {paused ? "Reprendre" : "Pause"}
-          </button>
-          <button
-            type="button"
-            onClick={() => handleStop()}
-            disabled={loading}
-            className="h-14 flex-1 rounded-2xl border-2 border-[#E50000] bg-white text-base font-semibold text-[#E50000] disabled:opacity-50"
-          >
-            {loading ? "Arrêt…" : "Terminer"}
-          </button>
-        </div>
+        {/* Stop flow: photos → checklist → stopping */}
+        {stopStep === "photos" && (
+          <div className="flex flex-col gap-3">
+            <PhotosFinJournee
+              chantierId={openPointage.chantierId}
+              onComplete={() => setStopStep("checklist")}
+            />
+            <button
+              type="button"
+              onClick={() => setStopStep("idle")}
+              className="h-10 rounded-xl border border-neutral-300 bg-white text-sm font-medium text-neutral-600"
+            >
+              Annuler
+            </button>
+          </div>
+        )}
+
+        {stopStep === "checklist" && (
+          <div className="flex flex-col gap-3">
+            <ChecklistQualite
+              pointageId={openPointage.id}
+              chantierId={openPointage.chantierId}
+              chantierNom={openPointage.chantierNom}
+              onComplete={() => {
+                setStopStep("stopping");
+                handleStop();
+              }}
+            />
+            <button
+              type="button"
+              onClick={() => setStopStep("idle")}
+              className="h-10 rounded-xl border border-neutral-300 bg-white text-sm font-medium text-neutral-600"
+            >
+              Annuler
+            </button>
+          </div>
+        )}
+
+        {stopStep === "stopping" && (
+          <div className="flex items-center justify-center gap-2 rounded-2xl border border-neutral-200 bg-white p-6">
+            <div className="h-5 w-5 animate-spin rounded-full border-2 border-neutral-300 border-t-[#E50000]" />
+            <span className="text-sm text-neutral-500">Fin du pointage en cours...</span>
+          </div>
+        )}
+
+        {/* Pause / Resume + Stop buttons (hidden during stop flow) */}
+        {stopStep === "idle" && (
+          <div className="flex gap-3">
+            <button
+              type="button"
+              onClick={handlePauseToggle}
+              disabled={loading}
+              className={`h-14 flex-1 rounded-2xl text-base font-semibold disabled:opacity-50 ${
+                paused
+                  ? "bg-green-600 text-white"
+                  : "bg-amber-500 text-white"
+              }`}
+            >
+              {paused ? "Reprendre" : "Pause"}
+            </button>
+            <button
+              type="button"
+              onClick={() => setStopStep("photos")}
+              disabled={loading}
+              className="h-14 flex-1 rounded-2xl border-2 border-[#E50000] bg-white text-base font-semibold text-[#E50000] disabled:opacity-50"
+            >
+              {loading ? "Arret..." : "Terminer"}
+            </button>
+          </div>
+        )}
 
         {/* Multi-chantier switch */}
         {otherMissions.length > 0 && (
