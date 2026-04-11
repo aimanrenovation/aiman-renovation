@@ -1,7 +1,7 @@
 export const CHAT_ASSISTANTS = [
-  { name: "Sophie", photo: "/chat/sophie.svg" },
-  { name: "Lucas", photo: "/chat/lucas.svg" },
-  { name: "Amira", photo: "/chat/amira.svg" },
+  { name: "Sophie", photo: "/chat/sophie.png" },
+  { name: "Lucas", photo: "/chat/lucas.png" },
+  { name: "Amira", photo: "/chat/amira.png" },
 ] as const;
 
 export type ChatAssistant = (typeof CHAT_ASSISTANTS)[number];
