@@ -63,7 +63,7 @@ export function ChatWindow({
 
   return (
     <div
-      className="fixed bottom-20 right-6 z-50 flex h-[500px] w-80 flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl max-md:inset-x-4 max-md:right-auto max-md:w-auto max-md:bottom-20"
+      className="fixed bottom-20 right-6 z-50 flex h-[500px] w-80 flex-col overflow-hidden overscroll-contain rounded-2xl border border-gray-200 bg-white shadow-2xl max-md:inset-x-4 max-md:right-auto max-md:w-auto max-md:bottom-20"
       style={{ animation: "slideUp 0.3s ease-out" }}
     >
       {/* Header */}
@@ -83,7 +83,7 @@ export function ChatWindow({
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto px-3 py-4 space-y-3">
+      <div className="flex-1 overflow-y-auto overscroll-contain px-3 py-4 space-y-3" style={{ touchAction: "pan-y" }}>
         {messages.map((msg) => (
           <div
             key={msg.timestamp + msg.role}
