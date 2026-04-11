@@ -82,6 +82,7 @@ export async function POST(request: Request) {
     qualification?: Record<string, string | null>;
     prospect_chaud?: boolean;
     cta?: string | null;
+    budget_interne?: number | null;
   };
   try {
     // Strip markdown code fences if present
@@ -117,7 +118,16 @@ export async function POST(request: Request) {
     updates.qualificationData = merged;
   }
 
-  if (parsed.prospect_chaud) {
+  // Smart CTA routing based on budget_interne
+  let finalCta = parsed.cta || null;
+  if (parsed.budget_interne && !finalCta) {
+    if (parsed.budget_interne < 5000) finalCta = "calculateur";
+    else if (parsed.budget_interne <= 20000) finalCta = "devis";
+    else finalCta = "rdv";
+  }
+
+  const isProspectHot = parsed.prospect_chaud || finalCta === "rdv";
+  if (isProspectHot) {
     updates.prospectChaud = true;
   }
 
@@ -126,20 +136,20 @@ export async function POST(request: Request) {
     .set(updates)
     .where(eq(schema.chatConversations.id, conversation.id));
 
-  // If prospect is hot, send webhook to Jarvis (fire and forget)
-  if (parsed.prospect_chaud && !conversation.prospectChaud) {
-    notifyJarvisProspect(conversation.id, updates.qualificationData).catch(() => {});
+  // If prospect is hot (>20K or rdv), send webhook to Jarvis
+  if (isProspectHot && !conversation.prospectChaud) {
+    notifyJarvisProspect(conversation.id, updates.qualificationData, parsed.budget_interne).catch(() => {});
   }
 
   return NextResponse.json({
     conversationId: conversation.id,
     message: parsed.message,
-    cta: parsed.cta || null,
+    cta: finalCta,
     qualification: updates.qualificationData || conversation.qualificationData || null,
   });
 }
 
-async function notifyJarvisProspect(conversationId: string, qualification: unknown) {
+async function notifyJarvisProspect(conversationId: string, qualification: unknown, budgetEstime?: number | null) {
   const webhookUrl = process.env.EMPLOYES_WEBHOOK_URL;
   if (!webhookUrl) return;
   const webhookSecret = process.env.EMPLOYES_WEBHOOK_SECRET;
@@ -153,6 +163,7 @@ async function notifyJarvisProspect(conversationId: string, qualification: unkno
       type: "chat_prospect_chaud",
       conversationId,
       qualification,
+      budgetEstime: budgetEstime || null,
       timestamp: new Date().toISOString(),
     }),
   });

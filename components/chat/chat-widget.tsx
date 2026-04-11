@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ChatBubble } from "./chat-bubble";
 import { ChatWindow } from "./chat-window";
+import { getAssistant, type ChatAssistant } from "@/lib/chat/assistants";
 
 function getVisitorId(): string {
   if (typeof window === "undefined") return "";
@@ -27,40 +28,36 @@ export function ChatWidget() {
   const [conversationId, setConversationId] = useState<string | null>(null);
   const [cta, setCta] = useState<string | null>(null);
   const [hidden, setHidden] = useState(false);
+  const [assistant, setAssistant] = useState<ChatAssistant | null>(null);
   const visitorId = useRef("");
 
   useEffect(() => {
     visitorId.current = getVisitorId();
+    setAssistant(getAssistant(visitorId.current));
   }, []);
 
-  // Hide on /espace-employes pages
   useEffect(() => {
     setHidden(window.location.pathname.startsWith("/espace-employes"));
   }, []);
 
   // Welcome message on first open
   useEffect(() => {
-    if (open && messages.length === 0) {
+    if (open && messages.length === 0 && assistant) {
       setMessages([
         {
           role: "assistant",
-          content:
-            "Bonjour ! \u{1F44B} Je suis l'assistant AIMAN RENOVATION. Comment puis-je vous aider ? R\u00e9novation salle de bain, cuisine, fa\u00e7ade, peinture... je suis l\u00e0 pour r\u00e9pondre \u00e0 vos questions !",
+          content: `Bonjour ! 👋 Je suis ${assistant.name} d'AIMAN RENOVATION. Comment puis-je vous aider ?`,
           timestamp: Date.now(),
         },
       ]);
     }
-  }, [open, messages.length]);
+  }, [open, messages.length, assistant]);
 
   const sendMessage = useCallback(
     async (text: string) => {
       if (!text.trim() || loading) return;
 
-      const userMsg: Message = {
-        role: "user",
-        content: text.trim(),
-        timestamp: Date.now(),
-      };
+      const userMsg: Message = { role: "user", content: text.trim(), timestamp: Date.now() };
       setMessages((prev) => [...prev, userMsg]);
       setLoading(true);
 
@@ -81,19 +78,14 @@ export function ChatWidget() {
           setCta(data.cta);
           setMessages((prev) => [
             ...prev,
-            {
-              role: "assistant",
-              content: data.message,
-              timestamp: Date.now(),
-            },
+            { role: "assistant", content: data.message, timestamp: Date.now() },
           ]);
         } else {
           setMessages((prev) => [
             ...prev,
             {
               role: "assistant",
-              content:
-                "D\u00e9sol\u00e9, je rencontre un probl\u00e8me technique. Vous pouvez nous appeler au 06 33 49 69 25 ou remplir le formulaire sur /devis.",
+              content: "Désolé, je rencontre un problème technique. Appelez-nous au 06 33 49 69 25.",
               timestamp: Date.now(),
             },
           ]);
@@ -101,11 +93,7 @@ export function ChatWidget() {
       } catch {
         setMessages((prev) => [
           ...prev,
-          {
-            role: "assistant",
-            content: "Connexion perdue. R\u00e9essayez dans un instant.",
-            timestamp: Date.now(),
-          },
+          { role: "assistant", content: "Connexion perdue. Réessayez dans un instant.", timestamp: Date.now() },
         ]);
       } finally {
         setLoading(false);
@@ -114,7 +102,7 @@ export function ChatWidget() {
     [loading, conversationId],
   );
 
-  if (hidden) return null;
+  if (hidden || !assistant) return null;
 
   return (
     <>
@@ -124,6 +112,8 @@ export function ChatWidget() {
           messages={messages}
           loading={loading}
           cta={cta}
+          assistantName={assistant.name}
+          assistantPhoto={assistant.photo}
           onSend={sendMessage}
           onClose={() => setOpen(false)}
         />

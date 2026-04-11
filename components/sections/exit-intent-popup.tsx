@@ -26,8 +26,9 @@ export function ExitIntentPopup() {
   }, []);
 
   useEffect(() => {
-    // Don't show on the devis page itself
-    if (pathname === "/devis") return;
+    // Don't show on action pages (visitor is already converting)
+    const excluded = ["/devis", "/calculateur", "/espace-employes"];
+    if (excluded.some((p) => pathname?.startsWith(p))) return;
     if (wasDismissedRecently()) return;
 
     let fired = false;
