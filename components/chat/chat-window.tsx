@@ -15,7 +15,9 @@ interface ChatWindowProps {
   loading: boolean;
   cta: string | null;
   assistantName: string;
+  assistantTitle: string;
   assistantPhoto: string;
+  online: boolean;
   onSend: (text: string) => void;
   onClose: () => void;
 }
@@ -42,7 +44,9 @@ export function ChatWindow({
   loading,
   cta,
   assistantName,
+  assistantTitle,
   assistantPhoto,
+  online,
   onSend,
   onClose,
 }: ChatWindowProps) {
@@ -143,8 +147,12 @@ export function ChatWindow({
           className="h-9 w-9 rounded-full border-2 border-white/30 object-cover"
         />
         <div className="min-w-0 flex-1">
-          <p className="text-sm font-bold leading-tight">{assistantName} · AIMAN</p>
-          <p className="text-xs opacity-80">En ligne</p>
+          <p className="text-sm font-bold leading-tight">{assistantName}</p>
+          <p className="truncate text-[10px] opacity-70">{assistantTitle} · AIMAN RENOVATION</p>
+          <div className="mt-0.5 flex items-center gap-1">
+            <span className={`inline-block h-1.5 w-1.5 rounded-full ${online ? "bg-green-400" : "bg-gray-400"}`} />
+            <span className="text-[10px] opacity-70">{online ? "En ligne" : "Hors ligne"}</span>
+          </div>
         </div>
         <button
           type="button"
