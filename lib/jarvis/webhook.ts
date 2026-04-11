@@ -8,7 +8,10 @@ export type JarvisEventType =
   | "rapport.created"
   | "photo.uploaded"
   | "materiel.requested"
-  | "message.sent";
+  | "message.sent"
+  | "parrainage.created"
+  | "parrainage.utilise"
+  | "parrainage.converti";
 
 export interface JarvisEventPayload {
   type: JarvisEventType;
