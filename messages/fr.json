@@ -3129,7 +3129,7 @@
     "step0_title": "Quel type de travaux ?",
     "step0_subtitle": "Sélectionnez la pièce ou le type de rénovation",
     "step1_title": "Détails du projet",
-    "step1_subtitle": "Définissez la surface et les prestations souhaitées",
+    "step1_subtitle": "Ajustez les paramètres de votre projet",
     "step2_title": "Votre estimation",
     "step2_subtitle": "Fourchette de prix indicative",
     "step3_title": "Demander mon devis",
@@ -3203,6 +3203,12 @@
     "opt_preparation": "Préparation des supports",
     "opt_enduit_lissage": "Enduit de lissage",
     "opt_boiseries": "Peinture boiseries",
-    "step_label": "Étape {current} sur {total}"
+    "step_label": "Étape {current} sur {total}",
+    "nb_points": "Nombre de points électriques",
+    "opt_cuisine_complete": "Cuisine complète (posée)",
+    "opt_sdb_complete": "SDB complète (posée)",
+    "opt_platrerie": "Plâtrerie / Cloisons",
+    "opt_menuiseries": "Menuiseries / Portes",
+    "total_disclaimer": "Estimation indicative hors fournitures et taxes. Devis définitif gratuit sur mesure."
   }
 }
