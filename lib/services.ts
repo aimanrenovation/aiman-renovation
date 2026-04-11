@@ -15,6 +15,8 @@ export interface Service {
   seoDescription?: string;
   /** Slugs des services liés pour le maillage interne */
   relatedSlugs?: string[];
+  /** Questions fréquentes — FAQPage JSON-LD + rendu "People Also Ask" */
+  faq?: { question: string; answer: string }[];
 }
 
 export const PHOTO_MAP: Record<string, string> = {
@@ -79,6 +81,24 @@ export const SERVICES: Service[] = [
     seoTitle: "Rénovation Cuisine Saint-Louis 68 | Devis Gratuit",
     seoDescription: "Artisan rénovation cuisine à Saint-Louis 68300 et Haut-Rhin. Cuisine clé en main : plomberie, électricité, carrelage, menuiserie. Devis gratuit sous 48h.",
     relatedSlugs: ["salle-de-bain", "sols-carrelage", "plomberie"],
+    faq: [
+      {
+        question: "Quel est le prix d'une rénovation de cuisine à Saint-Louis (68) ?",
+        answer: "Le prix d'une rénovation de cuisine à Saint-Louis et dans le Haut-Rhin varie de 8 000 € à 25 000 € selon la superficie, les matériaux choisis et les travaux inclus (plomberie, électricité, carrelage). Aiman Renovation établit un devis gratuit et détaillé après une visite technique.",
+      },
+      {
+        question: "Combien de temps dure une rénovation de cuisine ?",
+        answer: "Une rénovation de cuisine complète prend en général 2 à 4 semaines selon l'ampleur des travaux. La phase de préparation (démolition, plomberie, électricité) représente environ la moitié du chantier, suivie par la pose des meubles, du plan de travail et des finitions.",
+      },
+      {
+        question: "Aiman Renovation intervient-il à Mulhouse et Bâle pour les cuisines ?",
+        answer: "Oui, Aiman Renovation intervient sur les cuisines à Saint-Louis, Mulhouse, Huningue, Hégenheim, Bartenheim, Blotzheim, Kembs et dans toute la zone tri-frontière France/Suisse/Allemagne, incluant Bâle.",
+      },
+      {
+        question: "Faut-il un permis pour rénover une cuisine ?",
+        answer: "Non, une rénovation de cuisine intérieure ne nécessite généralement pas de permis de construire. En revanche, si vous modifiez des cloisons porteurs ou agrandissez l'espace, une déclaration préalable de travaux peut être requise. Aiman Renovation vous conseille sur les démarches.",
+      },
+    ],
   },
   {
     slug: "salle-de-bain",
@@ -109,6 +129,24 @@ export const SERVICES: Service[] = [
     seoTitle: "Rénovation Salle de Bain Saint-Louis 68 | Artisan",
     seoDescription: "Rénovation salle de bain à Saint-Louis et Haut-Rhin. Douche italienne, carrelage, plomberie complète, étanchéité DTU. Artisan qualifié, devis gratuit.",
     relatedSlugs: ["cuisine", "plomberie", "sols-carrelage"],
+    faq: [
+      {
+        question: "Quel est le prix d'une rénovation de salle de bain à Saint-Louis (68) ?",
+        answer: "La rénovation d'une salle de bain à Saint-Louis et dans le Haut-Rhin coûte entre 6 000 € et 18 000 € selon la superficie (4 à 10 m²), les équipements choisis (douche à l'italienne, baignoire, vasque) et l'état de la plomberie existante. Devis gratuit sur demande.",
+      },
+      {
+        question: "Combien de temps prend la rénovation d'une salle de bain complète ?",
+        answer: "Une rénovation complète de salle de bain prend en moyenne 1 à 3 semaines. Le timing dépend de l'état de la plomberie, du nombre d'équipements à changer et de la complexité du carrelage. Le séchage de l'étanchéité impose une période de 24 à 48h incompressible.",
+      },
+      {
+        question: "Aiman Renovation pose-t-il des douches à l'italienne à Saint-Louis ?",
+        answer: "Oui, Aiman Renovation est spécialisé dans la pose de douches à l'italienne (douche de plain-pied) à Saint-Louis, Huningue, Mulhouse et dans tout le Haut-Rhin. Nous maîtrisons les techniques d'étanchéité sous carrelage (SPEC) conformes aux DTU.",
+      },
+      {
+        question: "La rénovation de salle de bain est-elle éligible aux aides MaPrimeAdapt' ?",
+        answer: "Oui, si vous adaptez votre salle de bain pour une personne à mobilité réduite (seniors, PMR) — douche plain-pied, barres d'appui, sol antidérapant — vous pouvez bénéficier de MaPrimeAdapt' et des aides de l'Anah. Aiman Renovation vous accompagne dans le montage du dossier.",
+      },
+    ],
   },
   {
     slug: "electricite",
@@ -139,6 +177,20 @@ export const SERVICES: Service[] = [
     seoTitle: "Électricien Saint-Louis 68300 | Mise aux Normes",
     seoDescription: "Électricien qualifié à Saint-Louis 68300, Mulhouse et Haut-Rhin. Mise aux normes NF C 15-100, tableau électrique, domotique. Attestation Consuel fournie.",
     relatedSlugs: ["plomberie", "borne-recharge", "renovation-complete"],
+    faq: [
+      {
+        question: "Quel est le prix d'une mise aux normes électriques à Saint-Louis (68) ?",
+        answer: "La mise aux normes électriques NF C 15-100 coûte entre 3 000 € et 12 000 € à Saint-Louis et dans le Haut-Rhin, selon la superficie du logement. Ce tarif inclut le nouveau tableau, les câblages et la remise du certificat Consuel.",
+      },
+      {
+        question: "Est-il obligatoire de mettre aux normes l'électricité pour vendre un bien ?",
+        answer: "Un diagnostic électrique est obligatoire pour la vente de tout logement de plus de 15 ans. Si l'installation présente des anomalies, l'acheteur peut négocier une remise à niveau. Une mise aux normes par Aiman Renovation valorise votre bien avant la mise en vente.",
+      },
+      {
+        question: "Aiman Renovation intervient-il pour l'électricité à Mulhouse et Bâle ?",
+        answer: "Oui, nos électriciens interviennent à Saint-Louis, Mulhouse, Huningue, Bartenheim, Hégenheim, Blotzheim, Kembs, Rixheim, Habsheim et dans toute la zone frontalière incluant Bâle (Suisse) et Weil am Rhein (Allemagne).",
+      },
+    ],
   },
   {
     slug: "plomberie",
@@ -169,6 +221,20 @@ export const SERVICES: Service[] = [
     seoTitle: "Plombier Saint-Louis 68300 | Dépannage Haut-Rhin",
     seoDescription: "Plombier à Saint-Louis 68300 et Haut-Rhin. Rénovation tuyauterie, installation chauffe-eau, fuites, raccordements. Intervention rapide. Devis gratuit.",
     relatedSlugs: ["salle-de-bain", "electricite", "depannage-urgence"],
+    faq: [
+      {
+        question: "Quel est le prix d'un plombier à Saint-Louis (68) ?",
+        answer: "Le tarif d'un plombier à Saint-Louis et dans le Haut-Rhin varie selon la prestation : remplacement d'un chauffe-eau (800 € à 2 500 €), réfection d'un réseau complet (2 000 € à 10 000 €), réparation de fuite (150 € à 500 €). Aiman Renovation établit un devis gratuit avant toute intervention.",
+      },
+      {
+        question: "Aiman Renovation intervient-il en urgence pour une fuite à Saint-Louis ?",
+        answer: "Oui, Aiman Renovation propose un service de dépannage urgence plomberie à Saint-Louis et dans le Haut-Rhin. Contactez-nous par téléphone ou WhatsApp pour une intervention rapide en cas de fuite, dégât des eaux ou panne de chauffe-eau.",
+      },
+      {
+        question: "Faut-il changer les tuyaux en plomb dans un logement ancien ?",
+        answer: "Oui, les canalisations en plomb sont interdites depuis 1995 et doivent être remplacées. Dans les logements anciens du Haut-Rhin, il est fortement recommandé de les remplacer par des tubes en PER ou multicouche. Aiman Renovation réalise ce type de réfection avec garantie décennale.",
+      },
+    ],
   },
   {
     slug: "paysager",
@@ -352,6 +418,20 @@ export const SERVICES: Service[] = [
     seoTitle: "Peintre Bâtiment Saint-Louis 68 | Artisan Qualifié",
     seoDescription: "Artisan peintre à Saint-Louis 68300 et Haut-Rhin. Intérieur, extérieur, enduits décoratifs. Préparation soignée, finitions impeccables. Devis gratuit sous 48h.",
     relatedSlugs: ["facade", "sols-carrelage", "renovation-complete"],
+    faq: [
+      {
+        question: "Quel est le prix d'un peintre à Saint-Louis (68) ?",
+        answer: "Le prix d'un peintre professionnel à Saint-Louis et dans le Haut-Rhin est de 20 € à 45 € / m² murs et plafonds, préparation des supports et 2 couches comprises. Pour une pièce de 15 m², comptez entre 600 € et 1 200 €. Aiman Renovation fournit un devis gratuit détaillé.",
+      },
+      {
+        question: "Combien de temps faut-il pour peindre un appartement complet à Saint-Louis ?",
+        answer: "La peinture d'un appartement T3 (60 m²) prend en général 3 à 5 jours avec une équipe professionnelle. Ce délai inclut la protection du mobilier, la préparation des supports, l'application du primaire et des 2 couches de finition, ainsi que les retouches.",
+      },
+      {
+        question: "Aiman Renovation réalise-t-il des enduits décoratifs (tadelakt, béton ciré) ?",
+        answer: "Oui, nos peintres maîtrisent les finitions décoratives artisanales : tadelakt marocain pour les salles de bain, stuc vénitien, béton ciré mural et badigeon à la chaux pour les maisons anciennes du Haut-Rhin. Ces techniques apportent un caractère unique à votre intérieur.",
+      },
+    ],
   },
   {
     slug: "sols-carrelage",
@@ -383,6 +463,20 @@ export const SERVICES: Service[] = [
     seoTitle: "Carreleur Saint-Louis 68 | Parquet & Carrelage Alsace",
     seoDescription: "Pose carrelage grand format, parquet, béton ciré à Saint-Louis 68 et Haut-Rhin. Préparation support, calepinage soigné, DTU 52. Artisan qualifié. Devis gratuit.",
     relatedSlugs: ["salle-de-bain", "cuisine", "peinture"],
+    faq: [
+      {
+        question: "Quel est le prix de la pose de carrelage à Saint-Louis (68) ?",
+        answer: "La pose de carrelage à Saint-Louis et dans le Haut-Rhin coûte entre 40 € et 120 € / m² main-d'œuvre comprise, selon le format des carreaux, la complexité du calepinage et l'état du support. Devis gratuit sur visite technique.",
+      },
+      {
+        question: "Carrelage ou parquet : que choisir pour son logement en Alsace ?",
+        answer: "Le carrelage est idéal pour les pièces humides (salle de bain, cuisine) et les espaces à fort trafic. Le parquet apporte chaleur et confort dans les chambres et séjours. En Alsace, le carrelage grand format en grès cérame est populaire pour son entretien facile et sa durabilité.",
+      },
+      {
+        question: "Aiman Renovation pose-t-il le carrelage à Mulhouse et Bâle ?",
+        answer: "Oui, nos carreleurs interviennent à Saint-Louis, Mulhouse, Rixheim, Habsheim, Huningue, Hégenheim, Bartenheim, Kembs et dans toute la zone frontalière Haut-Rhin / Bâle. Nous maîtrisons les grands formats (80x80, 120x60) et les poses en chevron ou diagonale.",
+      },
+    ],
   },
   {
     slug: "renovation-complete",
@@ -414,6 +508,20 @@ export const SERVICES: Service[] = [
     seoTitle: "Rénovation Complète Saint-Louis 68 | Clé en Main",
     seoDescription: "Rénovation complète maison ou appartement à Saint-Louis 68 et Haut-Rhin. Interlocuteur unique, tous corps de métier. Garantie décennale. Devis gratuit sous 48h.",
     relatedSlugs: ["cuisine", "salle-de-bain", "peinture"],
+    faq: [
+      {
+        question: "Combien coûte une rénovation complète à Saint-Louis et dans le Haut-Rhin ?",
+        answer: "Le prix d'une rénovation complète à Saint-Louis et Haut-Rhin varie de 30 000 € à 120 000 € selon la superficie, l'état du logement et le niveau de finition. Pour un appartement T3 de 65 m², comptez entre 35 000 € et 60 000 €. Aiman Renovation établit un devis global clé en main.",
+      },
+      {
+        question: "Combien de temps dure une rénovation complète d'appartement ?",
+        answer: "La durée d'une rénovation complète dépend de la superficie et de l'ampleur des travaux : 6 à 10 semaines pour un appartement T3, 10 à 20 semaines pour une maison individuelle. Aiman Renovation établit un planning détaillé dès le devis pour vous permettre de planifier votre relogement temporaire.",
+      },
+      {
+        question: "Aiman Renovation rénove-t-il des maisons anciennes alsaciennes ?",
+        answer: "Oui, Aiman Renovation est expérimenté dans la rénovation de maisons alsaciennes à colombages, longères et pavillons anciens dans le Haut-Rhin (Saint-Louis, Bartenheim, Hégenheim, Kembs, Sierentz). Nous gérons les contraintes spécifiques : isolation en respectant le patrimoine, mise aux normes discrète.",
+      },
+    ],
   },
   {
     slug: "isolation",
@@ -445,6 +553,20 @@ export const SERVICES: Service[] = [
     seoTitle: "Isolation Thermique Saint-Louis 68 | ITE ITI RGE",
     seoDescription: "Isolation thermique par l'extérieur (ITE) et intérieur (ITI) à Saint-Louis 68 et Haut-Rhin. RGE certifié. Éligible MaPrimeRénov' et CEE. Devis gratuit.",
     relatedSlugs: ["facade", "renovation-complete", "panneaux-photovoltaiques"],
+    faq: [
+      {
+        question: "Quelles aides pour l'isolation dans le Haut-Rhin en 2026 ?",
+        answer: "En 2026, les travaux d'isolation dans le Haut-Rhin sont éligibles à MaPrimeRénov' (jusqu'à 75 €/m² pour une ITE), aux Certificats d'Économie d'Énergie (CEE) et à l'éco-PTZ. Aiman Renovation est qualifié RGE et vous accompagne dans le montage de tous vos dossiers d'aides.",
+      },
+      {
+        question: "ITE ou ITI : quelle isolation choisir pour sa maison en Alsace ?",
+        answer: "L'ITE (par l'extérieur) est la plus performante car elle supprime les ponts thermiques sans réduire la surface habitable. L'ITI (par l'intérieur) est choisie quand l'ITE est impossible (copropriété, bâtiment classé). En Alsace, l'ITE est recommandée pour les maisons individuelles exposées au vent d'est.",
+      },
+      {
+        question: "Combien peut-on économiser sur sa facture de chauffage avec une isolation en Haut-Rhin ?",
+        answer: "Une isolation thermique bien réalisée peut réduire la facture de chauffage de 30 à 50 % dans le Haut-Rhin, où les hivers sont rigoureux. L'isolation des combles perdus offre le meilleur retour sur investissement avec un amortissement en 3 à 5 ans.",
+      },
+    ],
   },
   {
     slug: "facade",
@@ -476,5 +598,19 @@ export const SERVICES: Service[] = [
     seoTitle: "Ravalement Façade Saint-Louis 68 | Artisan Haut-Rhin",
     seoDescription: "Ravalement de façade à Saint-Louis 68 et Haut-Rhin. Enduit, crépi, peinture extérieure. Nettoyage HP, traitement fissures. Artisan qualifié. Devis gratuit.",
     relatedSlugs: ["isolation", "peinture", "paysager"],
+    faq: [
+      {
+        question: "Quel est le prix d'un ravalement de façade dans le Haut-Rhin ?",
+        answer: "Le prix d'un ravalement de façade dans le Haut-Rhin varie de 30 € à 120 € / m² selon l'état du support et le type de finition. Pour une maison individuelle de 100 m² de façade, comptez entre 8 000 € et 15 000 €. Aiman Renovation vous remet un devis gratuit après diagnostic.",
+      },
+      {
+        question: "Faut-il une autorisation pour ravaler une façade à Saint-Louis ?",
+        answer: "Oui, au-delà de 20 m² de ravalement, une déclaration préalable de travaux en mairie est obligatoire. Dans les secteurs protégés (ABF), le choix des couleurs et des matériaux est encadré. Aiman Renovation gère toutes les démarches administratives pour vous.",
+      },
+      {
+        question: "À quelle fréquence doit-on ravaler une façade en Alsace ?",
+        answer: "En Alsace, le climat (gel, pluies, variations thermiques) sollicite fortement les façades. Un ravalement est généralement nécessaire tous les 10 à 15 ans. Certaines communes comme Saint-Louis imposent un délai maximum par règlement municipal. Aiman Renovation réalise un diagnostic gratuit de l'état de votre façade.",
+      },
+    ],
   },
 ];

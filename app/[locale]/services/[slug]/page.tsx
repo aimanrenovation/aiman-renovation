@@ -111,6 +111,22 @@ export default async function ServicePage({ params }: Props) {
     (s) => (service.relatedSlugs ?? []).includes(s.slug)
   ).slice(0, 3);
 
+  // JSON-LD FAQPage — données statiques uniquement, aucune entrée utilisateur
+  const faqSchema = service.faq && service.faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: service.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
+
   // JSON-LD Service — données statiques, aucune entrée utilisateur
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -152,6 +168,7 @@ export default async function ServicePage({ params }: Props) {
   return (
     <>
       <JsonLd data={serviceSchema} />
+      {faqSchema && <JsonLd data={faqSchema} />}
       <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero full-bleed avec photo */}
@@ -440,6 +457,35 @@ export default async function ServicePage({ params }: Props) {
                   );
                 })}
               </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* FAQ — Rich Snippets "People Also Ask" */}
+      {service.faq && service.faq.length > 0 && (
+        <ScrollReveal direction="up">
+          <section className="relative z-10 bg-[#0A0A0A] py-16 md:py-24 border-t border-white/5">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
+              <h2 className="font-heading text-xl md:text-2xl mb-10">
+                QUESTIONS <span className="text-[#E50000]">FRÉQUENTES</span>
+              </h2>
+              <dl className="space-y-4">
+                {service.faq.map((item, i) => (
+                  <div
+                    key={i}
+                    className="bg-black border border-white/5 rounded-xl p-6 md:p-8 hover:border-[#E50000]/20 transition-colors"
+                  >
+                    <dt className="font-heading text-white text-base md:text-lg mb-3">
+                      {item.question}
+                    </dt>
+                    <dd className="text-gray-400 leading-relaxed text-sm md:text-base">
+                      {item.answer}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </section>
         </ScrollReveal>
