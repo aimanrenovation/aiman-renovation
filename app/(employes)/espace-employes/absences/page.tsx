@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AbsenceCalendar } from "@/components/employes/absence-calendar";
 import { AbsenceSolde } from "@/components/employes/absence-solde";
 import { AbsenceForm } from "@/components/employes/absence-form";
 import { AbsenceList } from "@/components/employes/absence-list";
@@ -13,6 +14,8 @@ export default function AbsencesPage() {
       <h1 className="text-lg font-bold text-neutral-900">Absences</h1>
 
       <AbsenceSolde />
+
+      <AbsenceCalendar key={`cal-${refreshKey}`} />
 
       <AbsenceForm onSuccess={() => setRefreshKey((k) => k + 1)} />
 

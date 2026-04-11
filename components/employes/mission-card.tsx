@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { MapPin } from "lucide-react";
+import { showToast } from "@/lib/employes/use-toast";
 
 export interface MissionCardProps {
   mission: {
@@ -34,18 +35,6 @@ function formatDateLimite(iso: string) {
   });
 }
 
-function getUrgencyClass(dateLimite: string): string {
-  const now = Date.now();
-  const limit = new Date(dateLimite).getTime();
-  const diffMs = limit - now;
-  const diffH = diffMs / (1000 * 60 * 60);
-
-  if (diffH < 0) return "text-neutral-400 line-through";
-  if (diffH < 24) return "text-red-600 font-semibold";
-  if (diffH < 48) return "text-orange-500 font-medium";
-  return "text-neutral-500";
-}
-
 function formatBonus(cents: number): string {
   return new Intl.NumberFormat("fr-FR", {
     style: "currency",
@@ -53,10 +42,69 @@ function formatBonus(cents: number): string {
   }).format(cents / 100);
 }
 
+/* ---- Countdown sub-component ---- */
+
+function CountdownDisplay({ dateLimite }: { dateLimite: string }) {
+  const [remaining, setRemaining] = useState<number>(
+    () => new Date(dateLimite).getTime() - Date.now(),
+  );
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setRemaining(new Date(dateLimite).getTime() - Date.now());
+    }, 1000);
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [dateLimite]);
+
+  if (remaining <= 0) {
+    return (
+      <span className="mt-1 inline-block rounded bg-red-100 px-2 py-0.5 text-xs font-bold text-red-600">
+        Expire
+      </span>
+    );
+  }
+
+  const totalSeconds = Math.floor(remaining / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  const isUrgent = remaining < 3600000; // < 1h
+
+  const pad = (n: number) => String(n).padStart(2, "0");
+
+  let display: string;
+  if (days > 0) {
+    display = `${days}j ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
+  } else {
+    display = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+  }
+
+  return (
+    <span
+      className={`mt-1 inline-block rounded px-2 py-0.5 font-mono text-xs font-bold ${
+        isUrgent
+          ? "animate-pulse bg-red-100 text-red-600"
+          : "bg-amber-50 text-amber-700"
+      }`}
+    >
+      {display}
+    </span>
+  );
+}
+
+/* ---- Main MissionCard ---- */
+
 export function MissionCard({ mission, currentEmployeId }: MissionCardProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [accepted, setAccepted] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const isMine =
@@ -78,9 +126,12 @@ export function MissionCard({ mission, currentEmployeId }: MissionCardProps) {
 
       if (res.ok) {
         setAccepted(true);
+        setShowConfetti(true);
+        showToast("Mission acceptee !", "success");
         setTimeout(() => {
+          setShowConfetti(false);
           router.refresh();
-        }, 1200);
+        }, 2500);
       } else if (res.status === 409) {
         setError("Mission deja prise !");
         setTimeout(() => {
@@ -102,8 +153,52 @@ export function MissionCard({ mission, currentEmployeId }: MissionCardProps) {
 
   return (
     <div
-      className={`relative rounded-xl border border-neutral-200 bg-white p-4 shadow-sm transition-opacity ${cardOpacity}`}
+      className={`relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-4 shadow-sm transition-opacity ${cardOpacity}`}
     >
+      {/* Confetti animation */}
+      {showConfetti && (
+        <>
+          <div className="pointer-events-none absolute inset-0 z-20">
+            {Array.from({ length: 30 }).map((_, i) => (
+              <span
+                key={i}
+                className="confetti-particle absolute"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 0.5}s`,
+                  backgroundColor: [
+                    "#E50000",
+                    "#22c55e",
+                    "#f59e0b",
+                    "#3b82f6",
+                    "#a855f7",
+                    "#ec4899",
+                  ][i % 6],
+                }}
+              />
+            ))}
+          </div>
+          <style>{`
+            @keyframes confettiFall {
+              0% {
+                transform: translateY(-10px) rotate(0deg);
+                opacity: 1;
+              }
+              100% {
+                transform: translateY(300px) rotate(720deg);
+                opacity: 0;
+              }
+            }
+            .confetti-particle {
+              width: 8px;
+              height: 8px;
+              border-radius: 2px;
+              animation: confettiFall 2s ease-out forwards;
+            }
+          `}</style>
+        </>
+      )}
+
       {/* Accepted animation overlay */}
       {accepted && (
         <div className="absolute inset-0 z-10 flex items-center justify-center rounded-xl bg-white/90">
@@ -157,10 +252,13 @@ export function MissionCard({ mission, currentEmployeId }: MissionCardProps) {
         </div>
       )}
 
-      {/* Date limite */}
-      <p className={`mt-3 text-xs ${getUrgencyClass(mission.dateLimite)}`}>
-        Limite : {formatDateLimite(mission.dateLimite)}
-      </p>
+      {/* Date limite with countdown */}
+      <div className="mt-3">
+        <p className="text-xs text-neutral-500">
+          Limite : {formatDateLimite(mission.dateLimite)}
+        </p>
+        {isOpen && <CountdownDisplay dateLimite={mission.dateLimite} />}
+      </div>
 
       {/* Createur */}
       <p className="mt-1 text-xs text-neutral-400">

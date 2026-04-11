@@ -3,12 +3,12 @@
 import { useState } from "react";
 
 const TYPES = [
-  { value: "conge_paye", label: "Congé payé" },
+  { value: "conge_paye", label: "Conge paye" },
   { value: "maladie", label: "Maladie" },
   { value: "accident_travail", label: "Accident du travail" },
   { value: "sans_solde", label: "Sans solde" },
   { value: "formation", label: "Formation" },
-  { value: "evenement_familial", label: "Événement familial" },
+  { value: "evenement_familial", label: "Evenement familial" },
   { value: "autre", label: "Autre" },
 ] as const;
 
@@ -18,17 +18,42 @@ export function AbsenceForm({ onSuccess }: { onSuccess: () => void }) {
   const [type, setType] = useState("conge_paye");
   const [raison, setRaison] = useState("");
   const [file, setFile] = useState<File | null>(null);
+  const [preview, setPreview] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const selected = e.target.files?.[0] ?? null;
+    setFile(selected);
+
+    // Clean up previous preview URL
+    if (preview) {
+      URL.revokeObjectURL(preview);
+      setPreview(null);
+    }
+
+    // Generate preview for images
+    if (selected && selected.type.startsWith("image/")) {
+      setPreview(URL.createObjectURL(selected));
+    }
+  }
+
+  function clearFile() {
+    setFile(null);
+    if (preview) {
+      URL.revokeObjectURL(preview);
+      setPreview(null);
+    }
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!dateDebut || !dateFin) {
-      setError("Sélectionnez les dates");
+      setError("Selectionnez les dates");
       return;
     }
     if (dateDebut > dateFin) {
-      setError("La date de fin doit être après la date de début");
+      setError("La date de fin doit etre apres la date de debut");
       return;
     }
 
@@ -52,7 +77,7 @@ export function AbsenceForm({ onSuccess }: { onSuccess: () => void }) {
       setDateFin("");
       setType("conge_paye");
       setRaison("");
-      setFile(null);
+      clearFile();
       onSuccess();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erreur");
@@ -67,7 +92,7 @@ export function AbsenceForm({ onSuccess }: { onSuccess: () => void }) {
 
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label className="mb-1 block text-xs text-neutral-500">Date début</label>
+          <label className="mb-1 block text-xs text-neutral-500">Date debut</label>
           <input
             type="date"
             value={dateDebut}
@@ -109,19 +134,53 @@ export function AbsenceForm({ onSuccess }: { onSuccess: () => void }) {
             onChange={(e) => setRaison(e.target.value)}
             className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-sm"
             rows={2}
-            placeholder="Précisez la raison..."
+            placeholder="Precisez la raison..."
           />
         </div>
       )}
 
+      {/* Upload justificatif with preview */}
       <div className="mt-3">
         <label className="mb-1 block text-xs text-neutral-500">Justificatif (optionnel)</label>
         <input
           type="file"
           accept="image/*,.pdf"
-          onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+          onChange={handleFileChange}
           className="w-full text-xs text-neutral-500 file:mr-2 file:rounded-md file:border-0 file:bg-neutral-100 file:px-3 file:py-1.5 file:text-xs file:font-medium"
         />
+
+        {/* Image preview */}
+        {preview && (
+          <div className="mt-2 relative inline-block">
+            <img
+              src={preview}
+              alt="Apercu justificatif"
+              className="h-24 w-auto rounded-lg border border-neutral-200 object-cover"
+            />
+            <button
+              type="button"
+              onClick={clearFile}
+              className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white shadow-sm"
+            >
+              &times;
+            </button>
+          </div>
+        )}
+
+        {/* PDF indicator */}
+        {file && !preview && (
+          <div className="mt-2 flex items-center gap-2 rounded-lg bg-neutral-50 px-3 py-2 text-xs text-neutral-600">
+            <span>PDF</span>
+            <span className="truncate flex-1">{file.name}</span>
+            <button
+              type="button"
+              onClick={clearFile}
+              className="text-red-500 font-medium"
+            >
+              Supprimer
+            </button>
+          </div>
+        )}
       </div>
 
       {error && (
