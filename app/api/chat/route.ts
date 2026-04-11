@@ -76,7 +76,7 @@ export async function POST(request: Request) {
   const aiResult = await claudeResponse.json();
   const rawContent = aiResult.content?.[0]?.text || "";
 
-  // Parse JSON response from Claude
+  // Parse JSON response from Claude (may be wrapped in ```json ... ```)
   let parsed: {
     message: string;
     qualification?: Record<string, string | null>;
@@ -84,7 +84,15 @@ export async function POST(request: Request) {
     cta?: string | null;
   };
   try {
-    parsed = JSON.parse(rawContent);
+    // Strip markdown code fences if present
+    let jsonStr = rawContent.trim();
+    const fenceMatch = jsonStr.match(/```(?:json)?\s*([\s\S]*?)```/);
+    if (fenceMatch) jsonStr = fenceMatch[1].trim();
+    parsed = JSON.parse(jsonStr);
+    // Ensure message field exists
+    if (!parsed.message && typeof parsed === "object") {
+      parsed.message = rawContent;
+    }
   } catch {
     // If Claude didn't return valid JSON, use raw text
     parsed = { message: rawContent };
