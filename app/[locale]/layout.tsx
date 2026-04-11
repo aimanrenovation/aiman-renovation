@@ -8,6 +8,7 @@ import SmoothScrollProvider from "@/components/3d/providers/SmoothScrollProvider
 import { JsonLd } from "@/components/seo/json-ld";
 import { ExitIntentPopup } from "@/components/sections/exit-intent-popup";
 import { FloatingTrustBar } from "@/components/sections/floating-trust-bar";
+import { ChatWidget } from "@/components/chat/chat-widget";
 
 type Props = {
   children: React.ReactNode;
@@ -195,6 +196,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Footer />
         <FloatingTrustBar />
         <ExitIntentPopup />
+        <ChatWidget />
       </SmoothScrollProvider>
     </NextIntlClientProvider>
   );
