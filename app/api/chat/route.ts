@@ -52,10 +52,25 @@ export async function POST(request: Request) {
   const history = (conversation.messages as Array<{role: string; content: string}>) || [];
   history.push({ role: "user", content: message.trim() });
 
-  // If outside business hours: save message but return auto-reply
+  // If outside business hours: save message but return auto-reply in visitor's language
   if (!isOpen) {
-    const nextOpen = isSunday ? "lundi dès 8h" : (isSaturday && hour >= 13) ? "lundi dès 8h" : "demain dès 8h";
-    const offlineMsg = `Nos bureaux sont ouverts du lundi au vendredi de 8h à 19h et le samedi de 9h à 13h. Votre message a bien été enregistré — nous vous répondrons ${nextOpen}. En cas d'urgence, appelez le 06 33 49 69 25.`;
+    // Detect language from first user message in conversation
+    const firstUserMsg = history.find((m) => m.role === "user")?.content || message;
+    const lowerMsg = firstUserMsg.toLowerCase();
+    const isDE = /^(hallo|guten|ich |wie |mein|wir |haben|können|möchte|brauche|renovier|badezimmer|küche|fassade)/.test(lowerMsg) || /ä|ö|ü|ß/.test(lowerMsg);
+    const isEN = /^(hi|hello|hey|good |i |we |my |how |can |do you|would|could|looking|need|want|bathroom|kitchen)/.test(lowerMsg);
+
+    let offlineMsg: string;
+    if (isEN) {
+      const nextOpen = isSunday || (isSaturday && hour >= 13) ? "Monday at 8am" : "tomorrow at 8am";
+      offlineMsg = `Our office is open Monday to Friday from 8am to 7pm and Saturday from 9am to 1pm. Your message has been saved — we will get back to you ${nextOpen}. For emergencies, call +33 6 33 49 69 25.`;
+    } else if (isDE) {
+      const nextOpen = isSunday || (isSaturday && hour >= 13) ? "Montag ab 8 Uhr" : "morgen ab 8 Uhr";
+      offlineMsg = `Unser Büro ist Montag bis Freitag von 8 bis 19 Uhr und Samstag von 9 bis 13 Uhr geöffnet. Ihre Nachricht wurde gespeichert — wir melden uns ${nextOpen}. Bei Notfällen: +33 6 33 49 69 25.`;
+    } else {
+      const nextOpen = isSunday || (isSaturday && hour >= 13) ? "lundi dès 8h" : "demain dès 8h";
+      offlineMsg = `Nos bureaux sont ouverts du lundi au vendredi de 8h à 19h et le samedi de 9h à 13h. Votre message a bien été enregistré — nous vous répondrons ${nextOpen}. En cas d'urgence, appelez le 06 33 49 69 25.`;
+    }
     history.push({ role: "assistant", content: offlineMsg });
     await db
       .update(schema.chatConversations)
