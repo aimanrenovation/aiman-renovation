@@ -594,7 +594,7 @@ export function StepSuccessOverlay({ dispatch, magicplanProjectId }: StepSuccess
             <ArrowLeft className="w-4 h-4 mr-2" /> {t("back_home")}
           </LinkButton>
           <LinkButton
-            href="tel:0633496925"
+            href="tel:0939245515"
             external
             variant="outline"
             size="lg"

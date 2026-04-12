@@ -52,7 +52,7 @@ photos et un témoignage client si l'angle vous intéresse.
 Cordialement,
 Aiman El Belazi
 AIMAN RENOVATION SASU
-06 33 49 69 25
+09 39 24 55 15
 https://aiman-renovation.fr
 ```
 
@@ -95,7 +95,7 @@ café à Saint-Louis ?
 
 Belle journée,
 Aiman El Belazi
-06 33 49 69 25
+09 39 24 55 15
 ```
 
 **Cibles concrètes à chercher** :
@@ -140,7 +140,7 @@ Je suis disponible pour échanger quand cela vous convient.
 Cordialement,
 Aiman El Belazi
 Gérant — AIMAN RENOVATION SASU
-06 33 49 69 25
+09 39 24 55 15
 contact@aiman-renovation.fr
 ```
 
@@ -187,7 +187,7 @@ sur nos réseaux].
 Merci infiniment !
 
 Aiman
-06 33 49 69 25
+09 39 24 55 15
 ```
 
 **Cibles concrètes** : à lister depuis ProGBat / historique chantiers — focus sur ceux qui ont un site web actif.
@@ -217,7 +217,7 @@ Voici nos infos :
 Raison sociale : AIMAN RENOVATION SASU
 SIREN : 984381564
 Adresse : 12 Rue de Bâle, 68300 Saint-Louis
-Tél : +33 6 33 49 69 25
+Tél : +33 9 39 24 55 15
 Email : contact@aiman-renovation.fr
 Web : https://aiman-renovation.fr
 Spécialités : rénovation complète, peinture, carrelage, plomberie,
@@ -282,7 +282,7 @@ und Kundenreferenzen stelle ich zur Verfügung.
 Mit freundlichen Grüssen,
 Aiman El Belazi
 Geschäftsführer — AIMAN RENOVATION SASU
-+33 6 33 49 69 25
++33 9 39 24 55 15
 https://aiman-renovation.fr/de/renovierung-schweiz/basel
 ```
 
@@ -330,7 +330,7 @@ vereinbaren einen 15-minütigen Videocall.
 
 Mit freundlichen Grüssen,
 Aiman El Belazi
-+33 6 33 49 69 25
++33 9 39 24 55 15
 contact@aiman-renovation.fr
 ```
 
@@ -360,7 +360,7 @@ Firmendaten:
 Firmenname : AIMAN RENOVATION SASU
 Handelsregister : SIREN 984381564 (Frankreich)
 Adresse : 12 Rue de Bâle, F-68300 Saint-Louis
-Telefon : +33 6 33 49 69 25
+Telefon : +33 9 39 24 55 15
 E-Mail : contact@aiman-renovation.fr
 Web : https://aiman-renovation.fr/de
 Tätigkeitsbereich : Komplettsanierung, Malerarbeiten, Plattenlegerarbeiten,

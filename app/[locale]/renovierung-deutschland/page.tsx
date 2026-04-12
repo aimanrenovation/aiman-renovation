@@ -83,7 +83,7 @@ export default async function RenovierungDeutschlandPage({ params }: Props) {
     "@id": "https://aiman-renovation.fr/#organization",
     name: "Aiman Renovation",
     url: "https://aiman-renovation.fr",
-    telephone: "+33633496925",
+    telephone: "+33939245515",
     email: "contact@aiman-renovation.fr",
     address: {
       "@type": "PostalAddress",

@@ -75,7 +75,7 @@ export function DevisWizard2D() {
             <Link href="/" className="flex items-center justify-center w-full h-9 bg-[#E50000] hover:bg-red-700 text-white rounded-lg text-sm font-medium">
               <ArrowLeft className="w-4 h-4 mr-2" /> Retour a l&apos;accueil
             </Link>
-            <a href="tel:0633496925" className="flex items-center justify-center w-full h-9 border border-white/30 text-white hover:bg-white/10 rounded-lg text-sm font-medium">
+            <a href="tel:0939245515" className="flex items-center justify-center w-full h-9 border border-white/30 text-white hover:bg-white/10 rounded-lg text-sm font-medium">
               <Phone className="w-4 h-4 mr-2" /> Appeler
             </a>
           </div>

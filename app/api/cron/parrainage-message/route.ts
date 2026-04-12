@@ -75,7 +75,7 @@ export async function GET(request: Request) {
       `Si un de vos proches a un projet de rénovation, partagez-lui notre contact.`,
       `Si le chantier se fait, on vous offre une remise de 100€ sur votre prochain projet.`,
       `Il suffit qu'il mentionne votre code : ${code}`,
-      `Aiman Rénovation — 06 33 49 69 25`,
+      `Aiman Rénovation — 09 39 24 55 15`,
     ].join("\n");
 
     await sendParrainageMessage({

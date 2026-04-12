@@ -205,7 +205,7 @@ export const COMPANY = {
   legalForm: "SASU",
   slogan: "Nous rénovons jusqu'au bout de vos rêves !",
   phone: "03 56 89 44 03",
-  mobile: "06 33 49 69 25",
+  mobile: "09 39 24 55 15",
   email: "contact@aiman-renovation.fr",
   address: "14 rue de la Paix",
   city: "Saint-Louis",

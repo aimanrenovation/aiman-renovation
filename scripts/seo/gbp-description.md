@@ -12,7 +12,7 @@ Nos spécialités : rénovation de salle de bain clé en main, cuisine sur mesur
 
 Nous intervenons à Saint-Louis, Huningue, Mulhouse, Colmar, dans tout le Sundgau, ainsi qu'à Bâle (Suisse) et Lörrach (Allemagne). Devis gratuit sous 48h, déplacement offert. Assurance décennale. Facturation en EUR ou CHF.
 
-Contactez-nous : 06 33 49 69 25 | contact@aiman-renovation.fr
+Contactez-nous : 09 39 24 55 15 | contact@aiman-renovation.fr
 
 ---
 
@@ -24,7 +24,7 @@ Unsere Leistungen: Badezimmer-Komplettrenovierung, Küche nach Mass, Malerarbeit
 
 Wir arbeiten in Basel, Allschwil, Binningen, Riehen, Muttenz, Reinach und im gesamten Baselbiet — sowie in Lörrach, Weil am Rhein, Grenzach-Wyhlen und im Markgräflerland. Kostenlose Offerte innerhalb von 48 Stunden. Französische Qualität zu fairen Preisen, 30–40 % günstiger als Schweizer Betriebe. Abrechnung in CHF oder EUR.
 
-Kontakt: 06 33 49 69 25 | contact@aiman-renovation.fr
+Kontakt: 09 39 24 55 15 | contact@aiman-renovation.fr
 
 ---
 
@@ -36,4 +36,4 @@ Our services: full bathroom renovation, custom kitchen remodeling, interior and 
 
 We serve the entire Basel area (Basel, Allschwil, Binningen, Riehen, Muttenz), southern Germany (Lörrach, Weil am Rhein), and the Haut-Rhin department in Alsace (Mulhouse, Colmar, Saint-Louis). Free quote within 48 hours, no obligation. French craftsmanship at competitive prices. Invoicing in EUR or CHF.
 
-Contact us: +33 6 33 49 69 25 | contact@aiman-renovation.fr
+Contact us: +33 9 39 24 55 15 | contact@aiman-renovation.fr

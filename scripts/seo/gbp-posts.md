@@ -1,7 +1,7 @@
 # Google Business Profile — 10 Posts prêts à publier
 
 > Copier-coller chaque texte directement dans GBP. Adapter la photo et l'URL si nécessaire.
-> Site : https://aiman-renovation.fr | Tél : 06 33 49 69 25
+> Site : https://aiman-renovation.fr | Tél : 09 39 24 55 15
 
 ---
 
@@ -37,7 +37,7 @@ Chez Aiman Renovation, on traite tous les types de façades du Sundgau et du Hau
 
 On intervient de Saint-Louis à Altkirch, en passant par Sierentz, Bartenheim et Ferrette. Un ravalement bien fait, c'est aussi une plus-value pour votre bien : comptez entre 8 et 15 % de valorisation selon l'état initial.
 
-Profitez du printemps 2026 pour redonner vie à votre façade. Appelez-nous au 06 33 49 69 25 ou demandez votre devis en ligne.
+Profitez du printemps 2026 pour redonner vie à votre façade. Appelez-nous au 09 39 24 55 15 ou demandez votre devis en ligne.
 
 **CTA :** Get quote → https://aiman-renovation.fr/devis-facade
 
@@ -128,7 +128,7 @@ Que ce soit pour un rafraîchissement locatif ou une peinture décorative avec t
 **Texte :**
 Vous avez un projet de rénovation mais vous ne savez pas par où commencer ? Voici comment ça se passe avec Aiman Renovation, en 4 étapes simples.
 
-Étape 1 — Vous remplissez le formulaire sur notre site ou vous nous appelez au 06 33 49 69 25. Décrivez votre projet en quelques mots : pièce à rénover, surface, délai souhaité.
+Étape 1 — Vous remplissez le formulaire sur notre site ou vous nous appelez au 09 39 24 55 15. Décrivez votre projet en quelques mots : pièce à rénover, surface, délai souhaité.
 
 Étape 2 — On vous rappelle dans la journée pour fixer un rendez-vous gratuit chez vous. On se déplace dans tout le Haut-Rhin, de Mulhouse à Colmar, et dans toute la zone tri-frontière (Bâle, Lörrach, Weil am Rhein).
 

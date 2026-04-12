@@ -10,7 +10,7 @@
 ```
 Nom         : AIMAN RENOVATION
 Adresse     : 11 rue de Bâle, 68300 Saint-Louis, France
-Téléphone   : +33 6 33 49 69 25
+Téléphone   : +33 9 39 24 55 15
 Site web    : https://aiman-renovation.fr
 Email       : contact@aiman-renovation.fr
 SIRET       : SIRET_PLACEHOLDER
@@ -61,7 +61,7 @@ Fichiers générés :
    - **Catégorie** : `Entreprise de rénovation`
    - **Adresse** : `11 rue de Bâle, 68300 Saint-Louis`
    - **Zone desservie** : ajouter `Mulhouse, Colmar, Huningue, Basel, Lörrach`
-   - **Téléphone** : `+33 6 33 49 69 25`
+   - **Téléphone** : `+33 9 39 24 55 15`
    - **Site web** : `https://aiman-renovation.fr`
 5. Ajouter les **horaires** : Lun-Ven 7h-18h, Sam 8h-12h
 6. Ajouter la **description** :
@@ -88,7 +88,7 @@ Fichiers générés :
 4. Remplir :
    - **Nom** : `AIMAN RENOVATION`
    - **Adresse** : `11 rue de Bâle, 68300 Saint-Louis, France`
-   - **Téléphone** : `+33 6 33 49 69 25`
+   - **Téléphone** : `+33 9 39 24 55 15`
    - **Site web** : `https://aiman-renovation.fr`
    - **Catégorie** : `Entrepreneur en rénovation` ou `Construction`
 5. Vérifier la position sur la carte (déplacer le pin si nécessaire)
@@ -104,13 +104,13 @@ Fichiers générés :
 4. Remplir :
    - **Nom** : `AIMAN RENOVATION`
    - **Adresse** : `11 rue de Bâle, 68300 Saint-Louis`
-   - **Téléphone** : `+33 6 33 49 69 25`
+   - **Téléphone** : `+33 9 39 24 55 15`
    - **Site web** : `https://aiman-renovation.fr`
    - **Catégorie** : `Entreprise de rénovation`
 5. Ajouter la description (copier depuis `output/pages-jaunes.txt`)
 6. Ajouter **5 photos minimum** (logo + chantiers)
 7. Ajouter les horaires : Lun-Ven 7h-18h, Sam 8h-12h
-8. **Valider par téléphone** (SMS ou appel au +33 6 33 49 69 25)
+8. **Valider par téléphone** (SMS ou appel au +33 9 39 24 55 15)
 9. L'inscription gratuite de base est suffisante (ne pas payer les options premium sauf si budget dédié)
 
 ---
@@ -124,7 +124,7 @@ Fichiers générés :
 5. Remplir :
    - **Nom** : `AIMAN RENOVATION`
    - **Adresse** : `11 rue de Bâle, 68300 Saint-Louis, France`
-   - **Téléphone** : `+33 6 33 49 69 25`
+   - **Téléphone** : `+33 9 39 24 55 15`
    - **Site web** : `https://aiman-renovation.fr`
    - **Catégorie** : `Rénovation intérieure` + `Rénovation extérieure`
 6. Ajouter la description (copier depuis `output/yelp.txt`)
@@ -142,7 +142,7 @@ Fichiers générés :
    - **Nom** : `AIMAN RENOVATION`
    - **Type de pro** : `Entreprise générale de rénovation`
    - **Adresse** : `11 rue de Bâle, 68300 Saint-Louis`
-   - **Téléphone** : `+33 6 33 49 69 25`
+   - **Téléphone** : `+33 9 39 24 55 15`
    - **Site web** : `https://aiman-renovation.fr`
 5. Ajouter la description (copier depuis `output/houzz.txt`)
 6. **Créer des projets** avec photos avant/après (très important sur Houzz)
