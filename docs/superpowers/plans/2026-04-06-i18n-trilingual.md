@@ -216,7 +216,7 @@ Structure:
   },
   "common": {
     "slogan": "Nous rénovons jusqu'au bout de vos rêves !",
-    "phone": "06 33 49 69 25",
+    "phone": "09 39 24 55 15",
     "email": "contact@aiman-renovation.fr",
     "city": "Saint-Louis et environs",
     "back": "Retour",

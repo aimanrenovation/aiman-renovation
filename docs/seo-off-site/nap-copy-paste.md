@@ -15,8 +15,8 @@ Ville               : Saint-Louis
 Pays                : France
 Région              : Grand Est
 Département         : Haut-Rhin (68)
-Téléphone           : +33 6 33 49 69 25
-Téléphone (format FR): 06 33 49 69 25
+Téléphone           : +33 9 39 24 55 15
+Téléphone (format FR): 09 39 24 55 15
 Email               : contact@aiman-renovation.fr
 Site web            : https://aiman-renovation.fr
 SIREN               : 984381564
@@ -115,7 +115,7 @@ Nos expertises couvrent l'intégralité des corps d'état du second œuvre :
 
 Nous proposons un devis gratuit sous 48h, une garantie décennale, et une prise en charge complète du chantier du premier contact à la livraison. Notre équipe maîtrise également les spécificités suisses (permis de construire, normes cantonales) pour les clients de Bâle-Ville et Bâle-Campagne.
 
-Contactez-nous au +33 6 33 49 69 25 ou via contact@aiman-renovation.fr.
+Contactez-nous au +33 9 39 24 55 15 ou via contact@aiman-renovation.fr.
 ```
 
 ---
@@ -171,7 +171,7 @@ Anglais (opérationnel)
 ```
 Name             : AIMAN RENOVATION
 Adresse          : 12 Rue de Bâle, 68300 Saint-Louis, Frankreich
-Telefon          : +33 6 33 49 69 25
+Telefon          : +33 9 39 24 55 15
 E-Mail           : contact@aiman-renovation.fr
 Website          : https://aiman-renovation.fr/de/
 
@@ -192,7 +192,7 @@ Saint-Louis, Mulhouse, Basel, Weil am Rhein, Lörrach und Umgebung.
 ```
 Name        : AIMAN RENOVATION
 Address     : 12 Rue de Bâle, 68300 Saint-Louis, France
-Phone       : +33 6 33 49 69 25
+Phone       : +33 9 39 24 55 15
 Email       : contact@aiman-renovation.fr
 Website     : https://aiman-renovation.fr/en/
 
@@ -214,7 +214,7 @@ Haut-Rhin (France), Basel (Switzerland), Lörrach/Weil am Rhein (Germany).
 
 - [ ] Nom exactement : **AIMAN RENOVATION** (majuscules, pas d'accent, pas de tiret)
 - [ ] Adresse exactement : **12 Rue de Bâle, 68300 Saint-Louis**
-- [ ] Téléphone format international : **+33 6 33 49 69 25** (espaces inclus)
+- [ ] Téléphone format international : **+33 9 39 24 55 15** (espaces inclus)
 - [ ] Site web avec **https://** et SANS slash final : `https://aiman-renovation.fr`
 - [ ] Email : **contact@aiman-renovation.fr** (minuscules)
 - [ ] Description : copier le bloc correspondant (courte/moyenne/longue) tel quel

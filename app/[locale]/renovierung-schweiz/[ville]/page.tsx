@@ -112,7 +112,7 @@ export default async function VilleCHPage({ params }: Props) {
     "@id": "https://aiman-renovation.fr/#organization",
     name: "Aiman Renovation",
     url: "https://aiman-renovation.fr",
-    telephone: "+33633496925",
+    telephone: "+33939245515",
     email: "contact@aiman-renovation.fr",
     address: {
       "@type": "PostalAddress",
@@ -472,8 +472,8 @@ export default async function VilleCHPage({ params }: Props) {
               <LinkButton href="/devis" variant="default" size="lg">
                 Offerte anfragen →
               </LinkButton>
-              <LinkButton href="tel:+33633496925" variant="outline" size="lg">
-                06 33 49 69 25
+              <LinkButton href="tel:+33939245515" variant="outline" size="lg">
+                09 39 24 55 15
               </LinkButton>
             </div>
           </ScrollReveal>

@@ -48,7 +48,7 @@ export default async function AvisPage({ params }: Props) {
     "@type": "LocalBusiness",
     name: "AIMAN RENOVATION",
     url: "https://aiman-renovation.fr",
-    telephone: "+33633496925",
+    telephone: "+33939245515",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Saint-Louis",

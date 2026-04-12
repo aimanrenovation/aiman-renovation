@@ -287,7 +287,7 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
               onBlur={() => markTouched("phone")}
               aria-invalid={!!fieldError("phone")}
               className={`bg-white/5 text-white ${fieldError("phone") ? "border-red-500/60" : "border-white/10"}`}
-              placeholder="+33 6 33 49 69 25"
+              placeholder="+33 9 39 24 55 15"
             />
             {fieldError("phone") && (
               <p className="text-red-400 text-xs">{fieldError("phone")}</p>

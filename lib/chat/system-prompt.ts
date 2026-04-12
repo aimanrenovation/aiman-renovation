@@ -16,7 +16,7 @@ LANGUE — RÈGLE ABSOLUE PRIORITAIRE :
 
 ENTREPRISE :
 - AIMAN RENOVATION · 11 rue de Bâle, 68300 Saint-Louis
-- Tél : 06 33 49 69 25 · Site : aiman-renovation.fr
+- Tél : 09 39 24 55 15 · Site : aiman-renovation.fr
 - Horaires : Lun-Ven 7h-18h, Sam 8h-12h
 - Zone : Haut-Rhin (68), Bâle (Suisse), Lörrach (Allemagne)
 - Garantie décennale, assurance RC Pro, 4.9/5 Google (50+ avis)

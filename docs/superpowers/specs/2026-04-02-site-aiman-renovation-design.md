@@ -88,7 +88,7 @@ Logo existant sur Canva (ID: `DAEtEjkEGvA`) : lettre "A" stylisée en forme de m
    - Formulaire multi-étapes guidé (détail ci-dessous)
 
 7. **Contact** (`/contact`)
-   - Coordonnées : 03 56 89 44 03 / 06 33 49 69 25
+   - Coordonnées : 03 56 89 44 03 / 09 39 24 55 15
    - Email : contact@aiman-renovation.fr
    - Adresse : 14 rue de la Paix, 68300 Saint-Louis
    - Carte interactive (Google Maps embed)
@@ -269,7 +269,7 @@ aiman-renovation/
 
 - **Entreprise** : Aiman Renovation (SASU, créée 2024)
 - **Téléphone fixe** : 03 56 89 44 03
-- **Téléphone mobile** : 06 33 49 69 25
+- **Téléphone mobile** : 09 39 24 55 15
 - **Email** : contact@aiman-renovation.fr
 - **Adresse** : 14 rue de la Paix, 68300 Saint-Louis
 - **Zone** : Saint-Louis et environs (Haut-Rhin, Alsace)

@@ -90,7 +90,7 @@ export function ChatWidget() {
             ...prev,
             {
               role: "assistant",
-              content: "Désolé, je rencontre un problème technique. Appelez-nous au 06 33 49 69 25.",
+              content: "Désolé, je rencontre un problème technique. Appelez-nous au 09 39 24 55 15.",
               timestamp: Date.now(),
             },
           ]);

@@ -29,7 +29,7 @@
 > ✅ Devis gratuit en 48h
 > ✅ Intervention Saint-Louis, Mulhouse, Bâle
 >
-> Appelez-nous : **06 33 49 69 25**
+> Appelez-nous : **09 39 24 55 15**
 
 **CTA** : "Demander un devis" → `https://aiman-renovation.fr/devis?utm_source=gbp&utm_medium=organic&utm_campaign=printemps`
 
@@ -143,9 +143,9 @@
 > 💧 Plomberie, électricité, débouchage
 > 📋 Devis transparent avant travaux
 >
-> **06 33 49 69 25** — On décroche.
+> **09 39 24 55 15** — On décroche.
 
-**CTA** : "Appeler maintenant" → tel:+33633496925
+**CTA** : "Appeler maintenant" → tel:+33939245515
 
 **Image** : intervention plombier en action
 
@@ -209,7 +209,7 @@
 > • Conseils gratuits sur votre projet
 > • Café et viennoiseries offerts ☕
 >
-> Inscrivez-vous : **06 33 49 69 25**
+> Inscrivez-vous : **09 39 24 55 15**
 
 **CTA** : "Appeler maintenant" → tel:+33633496725
 

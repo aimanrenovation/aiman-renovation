@@ -36,7 +36,7 @@ const CTA_CONFIG: Record<string, { label: string; href: string; external?: boole
   calculateur: { label: "Estimer mon budget →", href: "/devis" },
   devis: { label: "Demander un devis gratuit →", href: "/devis" },
   rdv: { label: "Prendre rendez-vous →", href: "/devis" },
-  appel: { label: "Appeler maintenant", href: "tel:+33633496925", external: true },
+  appel: { label: "Appeler maintenant", href: "tel:+33939245515", external: true },
 };
 
 export function ChatWindow({

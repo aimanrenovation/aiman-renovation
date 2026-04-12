@@ -2087,7 +2087,7 @@ export function StepSuccessOverlay({ dispatch }: StepSuccessProps) {
             size="lg"
             className="w-full border-white/30 text-white hover:bg-white/10"
           >
-            <a href="tel:0633496925">
+            <a href="tel:0939245515">
               <Phone className="w-4 h-4 mr-2" /> Appeler maintenant
             </a>
           </Button>
@@ -2226,7 +2226,7 @@ export function DevisWizard2D() {
               <Link href="/"><ArrowLeft className="w-4 h-4 mr-2" /> Retour a l'accueil</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="w-full border-white/30 text-white hover:bg-white/10">
-              <a href="tel:0633496925"><Phone className="w-4 h-4 mr-2" /> Appeler</a>
+              <a href="tel:0939245515"><Phone className="w-4 h-4 mr-2" /> Appeler</a>
             </Button>
           </div>
         </div>

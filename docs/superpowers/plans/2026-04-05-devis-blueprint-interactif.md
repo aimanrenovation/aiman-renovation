@@ -1745,7 +1745,7 @@ export function generateDevisEmailHtml({ data, isClientCopy }: DevisEmailProps):
     <p>${data.budget ? budgetLabels[data.budget] || data.budget : "Non renseigné"}</p>
     ${data.message ? `<h2 style="color:#E50000;font-size:18px;border-bottom:2px solid #E50000;padding-bottom:8px;">Message</h2><p>${data.message}</p>` : ""}
     <div style="margin-top:24px;padding:16px;background:#f9fafb;border-radius:8px;text-align:center;">
-      <p style="margin:0;color:#6b7280;font-size:12px;">Aiman Rénovation — Saint-Louis, 68300<br/>06 33 49 69 25 — contact@aiman-renovation.fr</p>
+      <p style="margin:0;color:#6b7280;font-size:12px;">Aiman Rénovation — Saint-Louis, 68300<br/>09 39 24 55 15 — contact@aiman-renovation.fr</p>
     </div>
   </div>
 </body></html>`;

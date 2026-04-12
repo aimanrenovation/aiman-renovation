@@ -116,12 +116,12 @@ export default function NotFound() {
           <p className="text-white/20 text-xs mb-3">{t("need_help")}</p>
           <div className="flex items-center justify-center gap-4 text-sm">
             <LinkButton
-              href="tel:0633496925"
+              href="tel:0939245515"
               external
               variant="ghost"
               className="text-white/40 hover:text-[#E50000]"
             >
-              06 33 49 69 25
+              09 39 24 55 15
             </LinkButton>
             <span className="text-white/10">|</span>
             <LinkButton

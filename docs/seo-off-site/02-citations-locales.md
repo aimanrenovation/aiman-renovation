@@ -11,7 +11,7 @@
 ```
 Nom    : AIMAN RENOVATION
 Adresse: 12 Rue de Bâle, 68300 Saint-Louis, France
-Tél    : +33 6 33 49 69 25
+Tél    : +33 9 39 24 55 15
 Email  : contact@aiman-renovation.fr
 Web    : https://aiman-renovation.fr
 SIREN  : 984381564
@@ -149,7 +149,7 @@ Créer un Google Sheet "Citations Locales 2026" avec colonnes :
 ## H. Erreurs à éviter
 
 ❌ **Variations du NAP** : "Aiman Rénovation" vs "AIMAN RENOVATION" → 2 entités différentes pour Google
-❌ **Téléphone formaté différemment** : `06 33 49 69 25` vs `+33633496925` → utiliser le format `+33 6 33 49 69 25` partout
+❌ **Téléphone formaté différemment** : `09 39 24 55 15` vs `+33939245515` → utiliser le format `+33 9 39 24 55 15` partout
 ❌ **Adresse abrégée** : "12 R. de Bâle" vs "12 Rue de Bâle" → toujours en toutes lettres
 ❌ **Soumettre le même jour** sur 30 sites → suspect pour Google. Étaler.
 
