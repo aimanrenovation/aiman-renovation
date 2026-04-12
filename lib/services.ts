@@ -265,6 +265,20 @@ export const SERVICES: Service[] = [
     seoTitle: "Aménagement Paysager Haut-Rhin | Saint-Louis 68300",
     seoDescription: "Création et aménagement de jardins, terrasses et allées à Saint-Louis 68300 et Haut-Rhin. Dallage, clôtures, plantations, éclairage extérieur. Devis gratuit.",
     relatedSlugs: ["entretien-exterieur", "facade"],
+    faq: [
+      {
+        question: "Quel est le prix d'un aménagement paysager dans le Haut-Rhin ?",
+        answer: "Le coût d'un aménagement paysager varie de 5 000 à 30 000 € selon la surface et les aménagements souhaités. Une terrasse en dalles sur plots de 30 m² revient à 4 000–8 000 €. Une allée en pavés autobloquants de 20 m² est facturée 2 500–4 500 €. Devis gratuit après visite de votre terrain à Saint-Louis ou dans le Haut-Rhin.",
+      },
+      {
+        question: "Quelle terrasse résiste aux hivers alsaciens ?",
+        answer: "En Alsace, les cycles gel/dégel exigent des matériaux adaptés. Les dalles de grès cérame grand format gel-résistantes, les lames de bois composite et les terrasses sur plots réglables sont les meilleures options. Évitez le bois naturel non traité et les bétons poreux mal drainés qui se fissurent dès le premier hiver.",
+      },
+      {
+        question: "Faut-il un permis pour construire une terrasse à Saint-Louis ?",
+        answer: "Une terrasse de plain-pied ne nécessite pas de permis si elle est inférieure à 20 m² et non couverte. Au-delà, une déclaration préalable en mairie de Saint-Louis est requise. Si la terrasse est en étage ou couverte, un permis de construire peut être nécessaire. Aiman Renovation vous conseille sur les démarches selon votre projet.",
+      },
+    ],
   },
   {
     slug: "borne-recharge",
@@ -295,6 +309,20 @@ export const SERVICES: Service[] = [
     seoTitle: "Borne Recharge Voiture Électrique Saint-Louis 68",
     seoDescription: "Installation borne IRVE à Saint-Louis 68300 et Haut-Rhin. Wallbox 7,4 à 22 kW, copropriété ou maison. Crédit d'impôt 300 €, prime ADVENIR. Devis gratuit.",
     relatedSlugs: ["electricite", "panneaux-photovoltaiques"],
+    faq: [
+      {
+        question: "Quel est le prix d'installation d'une borne de recharge à domicile ?",
+        answer: "L'installation d'une borne de recharge (wallbox) à Saint-Louis coûte entre 1 200 et 2 500 € pose comprise. Après le crédit d'impôt (300 €) et les aides disponibles, le reste à charge est souvent de 900 à 1 800 €. En copropriété, la prime ADVENIR peut couvrir jusqu'à 50 % du coût.",
+      },
+      {
+        question: "Qu'est-ce que la certification IRVE et est-elle obligatoire ?",
+        answer: "La certification IRVE (Infrastructure de Recharge pour Véhicule Électrique) est obligatoire pour l'installation de bornes de plus de 3,7 kW. Elle garantit que l'installateur maîtrise les normes de sécurité et conditionne l'accès aux aides financières (crédit d'impôt, prime ADVENIR). Aiman Renovation est certifié IRVE.",
+      },
+      {
+        question: "Peut-on installer une borne de recharge en copropriété à Mulhouse ou Saint-Louis ?",
+        answer: "Oui. La loi ELAN garantit le droit à la prise pour tout copropriétaire ou locataire souhaitant installer une borne. Aiman Renovation réalise l'étude technique, vous accompagne dans les démarches en assemblée générale et installe la borne avec raccordement individuel sur toute la zone Haut-Rhin.",
+      },
+    ],
   },
   {
     slug: "panneaux-photovoltaiques",
@@ -325,6 +353,20 @@ export const SERVICES: Service[] = [
     seoTitle: "Panneaux Solaires Saint-Louis 68 | Aiman Renovation",
     seoDescription: "Installation panneaux photovoltaïques à Saint-Louis 68300 et Haut-Rhin. RGE certifié, autoconsommation, aide MaPrimeRénov'. Devis solaire gratuit.",
     relatedSlugs: ["borne-recharge", "electricite", "isolation"],
+    faq: [
+      {
+        question: "Quel est le prix d'une installation photovoltaïque dans le Haut-Rhin ?",
+        answer: "Une installation standard de 3 kWc (8 panneaux) coûte 7 000 à 10 000 € à Saint-Louis et dans le Haut-Rhin. Après la prime à l'autoconsommation (1 000 à 1 500 €) et la TVA réduite à 10 %, le reste à charge descend à 5 500–8 000 €. La rentabilité est atteinte en 8 à 12 ans selon votre consommation.",
+      },
+      {
+        question: "Quelles aides pour les panneaux solaires en Alsace en 2025-2026 ?",
+        answer: "Les aides disponibles en Alsace : prime à l'autoconsommation EDF OA (jusqu'à 1 500 € pour 3 kWc), tarif de rachat garanti pendant 20 ans, TVA réduite à 10 % pour les installations inférieures à 3 kWc. L'éco-prêt à taux zéro (éco-PTZ) est également accessible. Aiman Renovation est certifié RGE et monte votre dossier complet.",
+      },
+      {
+        question: "Combien de kWh produit une installation photovoltaïque en Haut-Rhin ?",
+        answer: "Le Haut-Rhin bénéficie d'environ 1 700 heures de soleil par an. Une installation de 3 kWc produit approximativement 2 800 à 3 300 kWh / an, couvrant 30 à 50 % de la consommation d'un foyer moyen. L'orientation plein sud avec une inclinaison de 30–35° maximise le rendement.",
+      },
+    ],
   },
   {
     slug: "entretien-exterieur",
@@ -356,6 +398,16 @@ export const SERVICES: Service[] = [
     seoTitle: "Entretien Jardin Saint-Louis 68 | Espaces Verts Alsace",
     seoDescription: "Entretien jardins et espaces extérieurs à Saint-Louis 68 et Haut-Rhin. Tonte, taille, nettoyage haute pression, abonnement annuel. Devis gratuit.",
     relatedSlugs: ["paysager", "facade"],
+    faq: [
+      {
+        question: "Quel est le prix d'un entretien de jardin à Saint-Louis ?",
+        answer: "L'entretien ponctuel d'un jardin commence à 80 € pour une petite surface (tonte + débroussaillage). Un abonnement annuel tout compris — tonte bimensuelle, taille de haies, nettoyage saisonnier — est proposé à partir de 150 € / mois selon la superficie. Devis gratuit après visite à Saint-Louis ou dans le Haut-Rhin.",
+      },
+      {
+        question: "Qu'inclut un abonnement entretien jardin Aiman Renovation ?",
+        answer: "L'abonnement inclut : tonte selon fréquence choisie, taille des haies et arbustes, débroussaillage, ramassage des feuilles en automne, traitement anti-mousse au printemps, et un bilan saisonnier. Chaque passage est planifié et confirmé à l'avance. Intervention en Haut-Rhin et zone frontalière.",
+      },
+    ],
   },
   {
     slug: "depannage-urgence",
@@ -387,6 +439,20 @@ export const SERVICES: Service[] = [
     seoTitle: "Dépannage Urgence Saint-Louis 68 | 24h/24 Haut-Rhin",
     seoDescription: "Dépannage urgence plomberie et électricité à Saint-Louis 68300, 24h/24 7j/7. Fuite, panne, dégât des eaux. Intervention rapide Haut-Rhin et Bâle.",
     relatedSlugs: ["plomberie", "electricite"],
+    faq: [
+      {
+        question: "Combien coûte un dépannage d'urgence plomberie ou électricité à Saint-Louis ?",
+        answer: "Le coût d'une intervention d'urgence comprend un déplacement + diagnostic à partir de 90 €, puis la réparation est facturée sur devis selon la nature du problème. Pour les clients ayant déjà travaillé avec nous, nous appliquons un tarif préférentiel SAV. Zone couverte : Saint-Louis, Haut-Rhin, Mulhouse.",
+      },
+      {
+        question: "Quel est le délai d'intervention pour une urgence à Saint-Louis ?",
+        answer: "Nous nous engageons à intervenir dans les meilleurs délais à Saint-Louis et dans le Haut-Rhin. Selon notre disponibilité, l'intervention peut avoir lieu dans les 2 à 4 heures pour les urgences critiques (fuite active, panne électrique). Appelez-nous directement au 06 33 49 69 25.",
+      },
+      {
+        question: "Que faire en cas de fuite d'eau en attendant l'artisan ?",
+        answer: "En cas de fuite d'eau, fermez immédiatement le robinet d'arrêt général (sous l'évier ou au niveau du compteur). Coupez le disjoncteur de la zone si l'eau menace des équipements électriques. Posez des serviettes ou des récipients pour limiter les dégâts, puis appelez Aiman Renovation pour une intervention rapide.",
+      },
+    ],
   },
   {
     slug: "peinture",

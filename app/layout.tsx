@@ -1,9 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], display: "swap", preload: true, variable: "--font-inter" });
+// Inter bundlé localement — évite la dépendance réseau à Google Fonts au build
+const inter = localFont({
+  src: [
+    { path: "./fonts/Inter-Light.woff2", weight: "300", style: "normal" },
+    { path: "./fonts/Inter-Regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/Inter-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/Inter-SemiBold.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/Inter-Bold.woff2", weight: "700", style: "normal" },
+  ],
+  variable: "--font-inter",
+  display: "swap",
+  preload: true,
+});
 
 const archivoBlack = localFont({
   src: "./fonts/ArchivoBlack-Regular.ttf",
