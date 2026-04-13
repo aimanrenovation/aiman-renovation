@@ -3,6 +3,7 @@ import { and, asc, eq, isNull } from "drizzle-orm";
 import { db, schema } from "@/lib/db/client";
 import { requireActiveEmploye } from "@/lib/employes/guards";
 import { WebAuthnRegisterPrompt } from "@/components/employes/webauthn-register-prompt";
+import { UrgentMissionsBanner } from "@/components/employes/urgent-missions-banner";
 
 export const dynamic = "force-dynamic";
 
@@ -38,6 +39,7 @@ export default async function DashboardPage() {
   return (
     <div className="flex flex-col gap-5">
       <WebAuthnRegisterPrompt />
+      <UrgentMissionsBanner />
       <section>
         <h1 className="text-xl font-bold">Bonjour {employe.firstname} 👋</h1>
         <p className="mt-1 text-sm text-neutral-500">

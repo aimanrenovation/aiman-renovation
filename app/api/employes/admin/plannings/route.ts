@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { and, eq, gte, lte, desc } from "drizzle-orm";
 import { db, schema } from "@/lib/db/client";
 import { requireAuth } from "@/lib/auth/middleware";
+import { dispatchJarvisEvent } from "@/lib/jarvis/webhook";
 
 export const GET = requireAuth(async (request) => {
   const url = new URL(request.url);
@@ -67,6 +68,20 @@ export const POST = requireAuth(async (request) => {
       mission: mission?.trim() || null,
     })
     .returning();
+
+  dispatchJarvisEvent({
+    type: "planning_modifie",
+    employe_id: employeId,
+    chantier_id: chantierId,
+    timestamp: new Date().toISOString(),
+    data: {
+      planningId: created.id,
+      date,
+      heureDebut: heureDebut || null,
+      heureFin: heureFin || null,
+      action: "created",
+    },
+  });
 
   return NextResponse.json({ planning: created }, { status: 201 });
 }, ["patron"]);
