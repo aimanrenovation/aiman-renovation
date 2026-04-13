@@ -14,6 +14,39 @@ import { ACCESS_COOKIE, REFRESH_COOKIE } from "@/lib/auth/session";
 const MAX_FAILS = 5;
 const WINDOW_MINUTES = 15;
 
+/**
+ * Extrait un fingerprint simplifié depuis un user-agent.
+ * Retourne "device|browser" ex: "iPhone|Safari", "Mac|Chrome", "Windows|Firefox"
+ * Ignore les versions pour éviter les faux positifs à chaque mise à jour.
+ */
+function deviceFingerprint(ua: string): string {
+  const uaLower = ua.toLowerCase();
+
+  // Device type
+  let device = "unknown";
+  if (uaLower.includes("iphone")) device = "iPhone";
+  else if (uaLower.includes("ipad")) device = "iPad";
+  else if (uaLower.includes("android") && uaLower.includes("mobile")) device = "Android";
+  else if (uaLower.includes("android")) device = "Android-Tablet";
+  else if (uaLower.includes("macintosh") || uaLower.includes("mac os")) device = "Mac";
+  else if (uaLower.includes("windows")) device = "Windows";
+  else if (uaLower.includes("linux")) device = "Linux";
+  else if (uaLower.includes("cros")) device = "ChromeOS";
+
+  // Browser (check specific browsers before generic ones)
+  let browser = "unknown";
+  if (uaLower.includes("edg/") || uaLower.includes("edga/")) browser = "Edge";
+  else if (uaLower.includes("opr/") || uaLower.includes("opera")) browser = "Opera";
+  else if (uaLower.includes("samsungbrowser")) browser = "Samsung";
+  else if (uaLower.includes("firefox") || uaLower.includes("fxios")) browser = "Firefox";
+  else if (uaLower.includes("crios")) browser = "Chrome";
+  else if (uaLower.includes("chrome") && !uaLower.includes("chromium")) browser = "Chrome";
+  else if (uaLower.includes("safari") && !uaLower.includes("chrome")) browser = "Safari";
+  else if (uaLower.includes("chromium")) browser = "Chromium";
+
+  return `${device}|${browser}`;
+}
+
 async function notifyPatronNewDevice(
   employe: { firstname: string; lastname: string; email: string },
   ua: string | null,
@@ -110,9 +143,11 @@ export async function POST(request: Request) {
 
   await recordAttempt(true);
 
-  // Detect new device: compare user-agent with previous successful logins
+  // Detect new device: compare simplified fingerprint (device type + browser)
+  // instead of exact user-agent (too volatile — changes with every browser update)
   let isNewDevice = false;
   if (userAgent) {
+    const fingerprint = deviceFingerprint(userAgent);
     const previousAgents = await db
       .select({ userAgent: schema.loginLogs.userAgent })
       .from(schema.loginLogs)
@@ -122,8 +157,12 @@ export async function POST(request: Request) {
           eq(schema.loginLogs.success, true),
         )
       );
-    const knownAgents = new Set(previousAgents.map((r) => r.userAgent).filter(Boolean));
-    isNewDevice = knownAgents.size > 0 && !knownAgents.has(userAgent);
+    const knownFingerprints = new Set(
+      previousAgents
+        .map((r) => r.userAgent ? deviceFingerprint(r.userAgent) : null)
+        .filter(Boolean)
+    );
+    isNewDevice = knownFingerprints.size > 0 && !knownFingerprints.has(fingerprint);
   }
 
   await logLogin(employe.id, true, isNewDevice);
