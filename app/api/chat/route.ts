@@ -90,27 +90,38 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "chat_unavailable" }, { status: 503 });
   }
 
-  // Use Claude Haiku for speed + cost efficiency
-  const claudeResponse = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": ANTHROPIC_API_KEY,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model: "claude-haiku-4-5-20251001",
-      max_tokens: 500,
-      system: CHAT_SYSTEM_PROMPT,
-      messages: history.map((m) => ({ role: m.role as "user" | "assistant", content: m.content })),
-    }),
-  });
+  // Try models in order: Haiku 4.5 → Sonnet 3.5 → Haiku 3.5
+  const MODELS = ["claude-haiku-4-5-20251001", "claude-sonnet-4-20250514", "claude-3-5-haiku-20241022"];
+  const msgPayload = history.map((m) => ({ role: m.role as "user" | "assistant", content: m.content }));
 
-  if (!claudeResponse.ok) {
-    const errBody = await claudeResponse.text().catch(() => "");
-    console.error(`Claude API error ${claudeResponse.status}: ${errBody.slice(0, 300)}`);
+  let claudeResponse: Response | null = null;
+  let lastError = "";
+  for (const model of MODELS) {
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": ANTHROPIC_API_KEY,
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify({
+        model,
+        max_tokens: 500,
+        system: CHAT_SYSTEM_PROMPT,
+        messages: msgPayload,
+      }),
+    });
+    if (res.ok) {
+      claudeResponse = res;
+      break;
+    }
+    lastError = await res.text().catch(() => "");
+    console.error(`Claude ${model} error ${res.status}: ${lastError.slice(0, 200)}`);
+  }
+
+  if (!claudeResponse) {
     return NextResponse.json(
-      { error: "ai_error", detail: `HTTP ${claudeResponse.status}` },
+      { error: "ai_error", detail: lastError.slice(0, 100) },
       { status: 502 },
     );
   }
