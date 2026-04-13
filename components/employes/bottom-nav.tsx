@@ -2,11 +2,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { Home, MessageCircle, Timer, User, Zap } from "lucide-react";
+import { CalendarOff, Home, MessageCircle, Timer, User, Zap } from "lucide-react";
 
 const TABS = [
   { href: "/espace-employes/dashboard", label: "Accueil", icon: Home, badgeKey: null },
   { href: "/espace-employes/pointage", label: "Pointage", icon: Timer, badgeKey: null },
+  { href: "/espace-employes/absences", label: "Congés", icon: CalendarOff, badgeKey: null },
   { href: "/espace-employes/missions", label: "Missions", icon: Zap, badgeKey: "openMissions" as const },
   { href: "/espace-employes/messages", label: "Messages", icon: MessageCircle, badgeKey: "unreadMessages" as const },
   { href: "/espace-employes/profil", label: "Profil", icon: User, badgeKey: null },
