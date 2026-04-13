@@ -85,7 +85,7 @@ export async function POST(request: Request) {
   }
 
   // Call Claude API
-  const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+  const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY?.trim();
   if (!ANTHROPIC_API_KEY) {
     return NextResponse.json({ error: "chat_unavailable" }, { status: 503 });
   }
@@ -102,12 +102,17 @@ export async function POST(request: Request) {
       model: "claude-haiku-4-5-20251001",
       max_tokens: 500,
       system: CHAT_SYSTEM_PROMPT,
-      messages: history.map(m => ({ role: m.role, content: m.content })),
+      messages: history.map((m) => ({ role: m.role as "user" | "assistant", content: m.content })),
     }),
   });
 
   if (!claudeResponse.ok) {
-    return NextResponse.json({ error: "ai_error" }, { status: 502 });
+    const errBody = await claudeResponse.text().catch(() => "");
+    console.error(`Claude API error ${claudeResponse.status}: ${errBody.slice(0, 300)}`);
+    return NextResponse.json(
+      { error: "ai_error", detail: `HTTP ${claudeResponse.status}` },
+      { status: 502 },
+    );
   }
 
   const aiResult = await claudeResponse.json();
