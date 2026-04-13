@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { eq } from "drizzle-orm";
 import { db, schema } from "@/lib/db/client";
 import { requireAuth } from "@/lib/auth/middleware";
+import { dispatchJarvisEvent } from "@/lib/jarvis/webhook";
 
 export const PATCH = requireAuth(async (request, ctx) => {
   const { id } = await (ctx as { params: Promise<{ id: string }> }).params;
@@ -33,11 +34,30 @@ export const PATCH = requireAuth(async (request, ctx) => {
     return NextResponse.json({ error: "not_found" }, { status: 404 });
   }
 
+  dispatchJarvisEvent({
+    type: "planning_modifie",
+    employe_id: updated.employeId,
+    chantier_id: updated.chantierId,
+    timestamp: new Date().toISOString(),
+    data: {
+      planningId: updated.id,
+      date: updated.date,
+      action: "updated",
+    },
+  });
+
   return NextResponse.json({ planning: updated });
 }, ["patron"]);
 
 export const DELETE = requireAuth(async (_request, ctx) => {
   const { id } = await (ctx as { params: Promise<{ id: string }> }).params;
+
+  // Fetch before delete to get employe/chantier IDs for webhook
+  const [existing] = await db
+    .select({ employeId: schema.plannings.employeId, chantierId: schema.plannings.chantierId, date: schema.plannings.date })
+    .from(schema.plannings)
+    .where(eq(schema.plannings.id, id))
+    .limit(1);
 
   const [deleted] = await db
     .delete(schema.plannings)
@@ -46,6 +66,16 @@ export const DELETE = requireAuth(async (_request, ctx) => {
 
   if (!deleted) {
     return NextResponse.json({ error: "not_found" }, { status: 404 });
+  }
+
+  if (existing) {
+    dispatchJarvisEvent({
+      type: "planning_modifie",
+      employe_id: existing.employeId,
+      chantier_id: existing.chantierId,
+      timestamp: new Date().toISOString(),
+      data: { planningId: id, date: existing.date, action: "deleted" },
+    });
   }
 
   return NextResponse.json({ deleted: true });

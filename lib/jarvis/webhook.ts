@@ -11,7 +11,8 @@ export type JarvisEventType =
   | "message.sent"
   | "parrainage.created"
   | "parrainage.utilise"
-  | "parrainage.converti";
+  | "parrainage.converti"
+  | "planning_modifie";
 
 export interface JarvisEventPayload {
   type: JarvisEventType;

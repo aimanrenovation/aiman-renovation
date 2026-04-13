@@ -8,6 +8,8 @@ import {
   CalendarDays,
   Building2,
   Download,
+  CalendarOff,
+  Zap,
   ArrowLeft,
 } from "lucide-react";
 
@@ -15,6 +17,8 @@ const NAV_ITEMS = [
   { href: "/espace-employes/admin/dashboard", label: "Tableau de bord", icon: LayoutDashboard, exact: true },
   { href: "/espace-employes/admin/employes", label: "Employes", icon: Users },
   { href: "/espace-employes/admin/planning", label: "Planning", icon: CalendarDays },
+  { href: "/espace-employes/admin/absences", label: "Absences", icon: CalendarOff },
+  { href: "/espace-employes/admin/missions", label: "Missions urgentes", icon: Zap },
   { href: "/espace-employes/admin/chantiers", label: "Chantiers", icon: Building2 },
   { href: "/espace-employes/admin/export", label: "Export", icon: Download },
 ] as const;
