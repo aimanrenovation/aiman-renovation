@@ -117,4 +117,33 @@ Les slugs actuels sont bien optimisés. Redirects déjà en place dans `next.con
 
 ---
 
+---
+
+## Observations phase 2 — avril 2026
+
+### Corrections appliquées dans cette phase
+
+- ✅ `seoTitle` + `seoDescription` + `relatedSlugs` ajoutés pour les 5 services manquants : `peinture`, `sols-carrelage`, `renovation-complete`, `isolation`, `facade`
+- ✅ URLs FAQ cassées corrigées : `/services/ravalement-facade` → `/services/facade`, `/services/bornes-irve` → `/services/borne-recharge`
+- ✅ Home page description trop longue (162 chars) trimée à 155 chars, titre optimisé avec "artisan"
+- ✅ Pages `/devis-salle-de-bain`, `/devis-cuisine`, `/devis-facade` ajoutées au sitemap
+
+### Points restants (hors périmètre SEO-contenu)
+
+- **ICON_MAP manquant pour `depannage-urgence`** : la page `/services/depannage-urgence` n'a pas d'icône (aucune entrée dans `ICON_MAP`). L'icône s'affiche vide. À corriger dans la prochaine release.
+- **ICON_MAP `isolation` pointe sur `icon-facade.png`** : les services `isolation` et `facade` partagent la même icône. Créer `icon-isolation.png` distinct.
+- **`renovation-loft-mulhouse-idees`** référencé comme related dans `peinture-interieure-mulhouse-tendances` mais ce slug n'a pas encore de traduction dans `article_items` — vérifier que le rendu ne plante pas (notFound en cas de 404).
+- **Avis page** : le compteur affiche "30 avis" dans le seoDescription mais le schema JSON-LD indique 47 reviews. Synchroniser.
+- **`devis-salle-de-bain` et `devis-cuisine`** : ces pages ont-elles leur propre `generateMetadata` avec `seoTitle` / `seoDescription` optimisés ? À vérifier (vus rapidement — semblent déléguer au namespace "devis" générique).
+- **Schema `areaServed` du layout** : la version FR ne liste pas Mulhouse, Rixheim, Habsheim, Sierentz, Kembs — villes pourtant mentionnées dans le contenu. Ajouter dans `frenchCities[]`.
+- **VILLES_FR incomplètes** : les villes Rixheim, Habsheim, Sierentz sont mentionnées dans le contenu des services mais n'ont pas de page dédiée `/renovation/[ville]` (non présentes dans `VILLES_FR`). Potentiel SEO local fort.
+
+### Axes prioritaires phase 3
+
+1. **Google Business Profile** — levier n°1 SEO local non adressable via le code
+2. **Google Search Console** — soumettre le sitemap (`/sitemap.xml`) dès déploiement
+3. **Pages villes manquantes** : créer Rixheim, Habsheim, Sierentz dans VILLES_FR
+4. **FAQ par service** : ajouter une section FAQ JSON-LD sur les pages salle-de-bain et cuisine (services à plus fort volume de recherche)
+5. **Backlinks** : contacter les fournisseurs (Point P, Cedeo, Grohe), la Chambre des Métiers d'Alsace, les sites d'aides énergétiques (MaPrimeRénov') pour obtenir des liens entrants
+
 *Dernière mise à jour : phase 2 — avril 2026*
