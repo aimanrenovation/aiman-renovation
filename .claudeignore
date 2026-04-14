@@ -1,0 +1,9 @@
+node_modules/
+.next/
+.vercel/
+media/
+*.png
+*.jpg
+*.webp
+*.mp4
+.claude/worktrees/
