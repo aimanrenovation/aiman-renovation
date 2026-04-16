@@ -174,7 +174,7 @@
           "desc": "Tous nos travaux couverts par une assurance décennale et RC professionnelle."
         },
         {
-          "title": "Devis gratuit sous 4 jours",
+          "title": "Devis gratuit sous 48h",
           "desc": "Visite technique incluse, devis détaillé et transparent. Sans engagement."
         },
         {
@@ -197,7 +197,7 @@
     },
     "cta_banner": {
       "title": "UN PROJET EN TÊTE ?",
-      "subtitle": "Devis gratuit sous 4 jours, sans engagement.",
+      "subtitle": "Devis gratuit sous 48h, sans engagement.",
       "button": "Demander un devis",
       "call_prefix": "ou appelez le"
     }
@@ -258,7 +258,7 @@
       {
         "number": "03",
         "title": "Devis détaillé",
-        "desc": "Sous 4 jours, vous recevez un devis complet : travaux poste par poste, matériaux, planning et montant total."
+        "desc": "Sous 48h, vous recevez un devis complet : travaux poste par poste, matériaux, planning et montant total."
       },
       {
         "number": "04",
@@ -342,11 +342,11 @@
     "cta_title_line1": "INTÉRESSÉ PAR",
     "cta_title_line2": "CE",
     "cta_title_highlight": "SERVICE",
-    "cta_subtitle": "Décrivez votre projet et recevez un devis gratuit sous 4 jours. Sans engagement.",
+    "cta_subtitle": "Décrivez votre projet et recevez un devis gratuit sous 48h. Sans engagement.",
     "cta_button": "Demander un devis",
     "cta_hero_button": "Demander un devis gratuit",
     "service_meta_suffix": "à Saint-Louis (68) — Devis Gratuit",
-    "service_meta_desc_suffix": "Artisan qualifié à Saint-Louis et Haut-Rhin. Devis gratuit sous 4 jours."
+    "service_meta_desc_suffix": "Artisan qualifié à Saint-Louis et Haut-Rhin. Devis gratuit sous 48h."
   },
   "service_items": [
     {
@@ -905,12 +905,12 @@
   ],
   "contact": {
     "seo_title": "Contact — Rénovation Saint-Louis, Haut-Rhin | Devis Gratuit",
-    "seo_description": "Contactez Aiman Renovation pour votre projet de rénovation à Saint-Louis 68 et dans le Haut-Rhin. Devis gratuit, réponse sous 48h. ☎ 06 33 49 69 25.",
+    "seo_description": "Contactez Aiman Renovation pour votre projet de rénovation à Saint-Louis 68300 et Haut-Rhin. Devis gratuit, réponse sous 48h. Artisan qualifié, sans engagement.",
     "hero_title_highlight": "PARLONS",
     "hero_title": "DE VOTRE PROJET",
     "hero_subtitle": "Premier échange toujours sans engagement.",
     "reassurance_devis": "Devis gratuit",
-    "reassurance_response": "Réponse sous 4 jours",
+    "reassurance_response": "Réponse sous 48h",
     "reassurance_engagement": "Sans engagement",
     "mobile_whatsapp": "Mobile / WhatsApp",
     "whatsapp": "WhatsApp",
@@ -936,13 +936,13 @@
       "placeholder_message": "Décrivez votre projet...",
       "submit": "Envoyer le message",
       "sending": "Envoi en cours...",
-      "success": "Message envoyé avec succès ! Nous vous répondrons sous 4 jours.",
+      "success": "Message envoyé avec succès ! Nous vous répondrons sous 48h.",
       "error": "Une erreur est survenue. Veuillez réessayer ou nous appeler directement."
     }
   },
   "devis": {
     "seo_title": "Devis Gratuit Rénovation Saint-Louis 68 | Réponse 48h",
-    "seo_description": "Demandez votre devis gratuit en ligne pour vos travaux de rénovation à Saint-Louis 68300 et dans le Haut-Rhin. Réponse sous 48h, sans engagement.",
+    "seo_description": "Estimez votre projet de rénovation en ligne. Artisan qualifié à Saint-Louis 68300 et Haut-Rhin. Cuisine, salle de bain, carrelage, isolation. Réponse sous 48h.",
     "blueprint": {
       "touch_room": "Touchez une pièce",
       "click_room": "Cliquez sur une pièce pour commencer",
@@ -1268,7 +1268,7 @@
       {
         "category": "Devis",
         "question": "Comment obtenir un devis ?",
-        "answer": "Remplissez notre formulaire en ligne ou appelez-nous au 09 39 24 55 15. Nous vous envoyons un devis détaillé sous 4 jours après visite technique.",
+        "answer": "Remplissez notre formulaire en ligne ou appelez-nous au 09 39 24 55 15. Nous vous envoyons un devis détaillé sous 48h après visite technique.",
         "relatedServices": [
           {
             "label": "Demander un devis",
@@ -1305,7 +1305,7 @@
       {
         "category": "Devis",
         "question": "Sous quel délai recevrai-je mon devis ?",
-        "answer": "Nous nous engageons à vous envoyer votre devis sous 4 jours après la visite technique. Pour les projets complexes (façade, photovoltaïque), comptez 5 à 7 jours ouvrés.",
+        "answer": "Nous nous engageons à vous envoyer votre devis sous 48h après la visite technique. Pour les projets complexes (façade, photovoltaïque), comptez 2 à 4 jours ouvrés.",
         "relatedServices": [
           {
             "label": "Demander un devis",
@@ -1825,8 +1825,8 @@
     "seo_description": "Politique de confidentialité d'Aiman Renovation — protection de vos données personnelles, RGPD, droits d'accès et de rectification. Contact : Saint-Louis 68300."
   },
   "seo": {
-    "home_title": "Aiman Renovation — Artisan Rénovation Saint-Louis 68300",
-    "home_description": "Artisan rénovation à Saint-Louis 68300 et Haut-Rhin. Cuisine, salle de bain, électricité, plomberie, carrelage, isolation, peinture. Devis gratuit sous 48h."
+    "home_title": "Artisan Rénovation Saint-Louis 68 | Haut-Rhin & Bâle",
+    "home_description": "Artisan rénovation à Saint-Louis 68300 et Haut-Rhin. Cuisine, salle de bain, carrelage, peinture, isolation, façade. Garantie décennale. Devis gratuit sous 48h."
   },
   "schema": {
     "organization_type": "HomeAndConstructionBusiness",
@@ -2086,7 +2086,7 @@
     "filter_country": "Pays :",
     "cta_title": "REJOIGNEZ NOS",
     "cta_title_highlight": "CLIENTS SATISFAITS",
-    "cta_subtitle": "Devis gratuit sous 4 jours. Artisan local, garantie décennale.",
+    "cta_subtitle": "Devis gratuit sous 48h. Artisan local, garantie décennale.",
     "cta_button": "Demander un devis gratuit"
   },
   "article_items": [
