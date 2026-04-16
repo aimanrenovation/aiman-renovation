@@ -123,27 +123,32 @@ Les slugs actuels sont bien optimisés. Redirects déjà en place dans `next.con
 
 ### Corrections appliquées dans cette phase
 
-- ✅ `seoTitle` + `seoDescription` + `relatedSlugs` ajoutés pour les 5 services manquants : `peinture`, `sols-carrelage`, `renovation-complete`, `isolation`, `facade`
+- ✅ `seoTitle` + `seoDescription` + `relatedSlugs` + `faq` ajoutés pour les 5 services manquants : `peinture`, `sols-carrelage`, `renovation-complete`, `isolation`, `facade`
+- ✅ Délai "sous 4 jours" uniformisé à "sous 48h" sur toutes les pages publiques (FR/DE/EN) : home, contact, devis, services, CTA, FAQ, avis
 - ✅ URLs FAQ cassées corrigées : `/services/ravalement-facade` → `/services/facade`, `/services/bornes-irve` → `/services/borne-recharge`
-- ✅ Home page description trop longue (162 chars) trimée à 155 chars, titre optimisé avec "artisan"
+- ✅ Faux numéro de téléphone dans `contact.seo_description` (03 56 89 44 03) → supprimé
 - ✅ Pages `/devis-salle-de-bain`, `/devis-cuisine`, `/devis-facade` ajoutées au sitemap
+- ✅ Home title : ajout "Bâle" pour capter le trafic transfrontalier CH/DE
 
 ### Points restants (hors périmètre SEO-contenu)
 
-- **ICON_MAP manquant pour `depannage-urgence`** : la page `/services/depannage-urgence` n'a pas d'icône (aucune entrée dans `ICON_MAP`). L'icône s'affiche vide. À corriger dans la prochaine release.
-- **ICON_MAP `isolation` pointe sur `icon-facade.png`** : les services `isolation` et `facade` partagent la même icône. Créer `icon-isolation.png` distinct.
-- **`renovation-loft-mulhouse-idees`** référencé comme related dans `peinture-interieure-mulhouse-tendances` mais ce slug n'a pas encore de traduction dans `article_items` — vérifier que le rendu ne plante pas (notFound en cas de 404).
+- **ICON_MAP manquant pour `depannage-urgence`** : la page `/services/depannage-urgence` n'a pas d'icône. À corriger dans la prochaine release.
+- **ICON_MAP `isolation` pointe sur `icon-facade.png`** : créer `icon-isolation.png` distinct.
+- **`devis-cuisine/page.tsx`** : `serviceJsonLd.provider.telephone` = `"+33389700000"` → numéro factice à remplacer.
 - **Avis page** : le compteur affiche "30 avis" dans le seoDescription mais le schema JSON-LD indique 47 reviews. Synchroniser.
-- **`devis-salle-de-bain` et `devis-cuisine`** : ces pages ont-elles leur propre `generateMetadata` avec `seoTitle` / `seoDescription` optimisés ? À vérifier (vus rapidement — semblent déléguer au namespace "devis" générique).
-- **Schema `areaServed` du layout** : la version FR ne liste pas Mulhouse, Rixheim, Habsheim, Sierentz, Kembs — villes pourtant mentionnées dans le contenu. Ajouter dans `frenchCities[]`.
-- **VILLES_FR incomplètes** : les villes Rixheim, Habsheim, Sierentz sont mentionnées dans le contenu des services mais n'ont pas de page dédiée `/renovation/[ville]` (non présentes dans `VILLES_FR`). Potentiel SEO local fort.
+- **Schema `areaServed` du layout** : la version FR ne liste pas Mulhouse, Rixheim, Habsheim, Sierentz, Kembs. Ajouter dans `frenchCities[]`.
+- **VILLES_FR incomplètes** : Rixheim, Habsheim, Sierentz mentionnées dans le contenu mais sans page dédiée `/renovation/[ville]`. Potentiel SEO local fort.
+- **Pages devis spécialisées** : design différent du reste du site (fond blanc vs fond noir). SEO OK, cohérence visuelle à revoir.
+- **`blog/page.tsx`** : CTA dit "Réponse sous 24h" — incohérent avec "48h" du reste du site.
 
 ### Axes prioritaires phase 3
 
-1. **Google Business Profile** — levier n°1 SEO local non adressable via le code
+1. **Google Business Profile** — levier n°1 SEO local, non adressable via le code
 2. **Google Search Console** — soumettre le sitemap (`/sitemap.xml`) dès déploiement
 3. **Pages villes manquantes** : créer Rixheim, Habsheim, Sierentz dans VILLES_FR
-4. **FAQ par service** : ajouter une section FAQ JSON-LD sur les pages salle-de-bain et cuisine (services à plus fort volume de recherche)
-5. **Backlinks** : contacter les fournisseurs (Point P, Cedeo, Grohe), la Chambre des Métiers d'Alsace, les sites d'aides énergétiques (MaPrimeRénov') pour obtenir des liens entrants
+4. **Lien interne** : ajouter lien "Devis spécialisé" depuis `/services/cuisine` → `/devis-cuisine`, etc.
+5. **Backlinks** : contacter Point P, Cedeo, Chambre des Métiers d'Alsace, sites MaPrimeRénov' pour liens entrants
+
+---
 
 *Dernière mise à jour : phase 2 — avril 2026*
