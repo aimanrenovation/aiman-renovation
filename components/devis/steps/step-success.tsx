@@ -1,7 +1,17 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { CheckCircle, Phone, ArrowLeft, Smartphone, Mail, Upload, X, Loader2, AlertCircle } from "lucide-react";
+import {
+  CheckCircle,
+  Phone,
+  ArrowLeft,
+  Smartphone,
+  Mail,
+  Upload,
+  X,
+  Loader2,
+  AlertCircle,
+} from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { LinkButton } from "@/components/ui/link-button";
 import type { DevisAction } from "../devis-types";
@@ -29,7 +39,9 @@ export function StepSuccessOverlay({
 
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [uploading, setUploading] = useState(false);
-  const [uploadStatus, setUploadStatus] = useState<"idle" | "success" | "error">("idle");
+  const [uploadStatus, setUploadStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
 
   function addFiles(files: FileList | null) {
@@ -63,7 +75,8 @@ export function StepSuccessOverlay({
     try {
       const fd = new FormData();
       for (const f of selectedFiles) fd.append("files", f, f.name);
-      if (magicplanProjectId) fd.append("magicplanProjectId", magicplanProjectId);
+      if (magicplanProjectId)
+        fd.append("magicplanProjectId", magicplanProjectId);
       fd.append("clientEmail", clientEmail);
       fd.append("clientName", clientName);
       fd.append("locale", locale);
@@ -97,7 +110,10 @@ export function StepSuccessOverlay({
   }
 
   return (
-    <div data-lenis-prevent className="w-full max-w-md mx-4 max-h-[90dvh] overflow-y-auto overscroll-contain">
+    <div
+      data-lenis-prevent
+      className="w-full max-w-md mx-4 max-h-[90dvh] overflow-y-auto overscroll-contain"
+    >
       <div className="bg-[#111] rounded-3xl p-8 sm:p-10 shadow-2xl border border-white/10 text-center">
         <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
           <CheckCircle className="w-10 h-10 text-green-500" />
@@ -112,27 +128,52 @@ export function StepSuccessOverlay({
             <Smartphone className="w-5 h-5" />
             <h3 className="font-semibold text-sm">{t("magicplan_title")}</h3>
           </div>
-          <p className="text-gray-300 text-sm text-center mb-5">{t("magicplan_subtitle")}</p>
+          <p className="text-gray-300 text-sm text-center mb-5">
+            {t("magicplan_subtitle")}
+          </p>
 
           <ol className="space-y-3 mb-5">
             <li className="flex gap-3">
-              <span className="shrink-0 w-6 h-6 rounded-full bg-blue-500/30 text-blue-300 text-xs font-bold flex items-center justify-center">1</span>
-              <span className="text-gray-300 text-sm leading-relaxed">{t("magicplan_step1")}</span>
+              <span className="shrink-0 w-6 h-6 rounded-full bg-blue-500/30 text-blue-300 text-xs font-bold flex items-center justify-center">
+                1
+              </span>
+              <span className="text-gray-300 text-sm leading-relaxed">
+                {t("magicplan_step1")}
+              </span>
             </li>
             <li className="flex gap-3">
-              <span className="shrink-0 w-6 h-6 rounded-full bg-blue-500/30 text-blue-300 text-xs font-bold flex items-center justify-center">2</span>
-              <span className="text-gray-300 text-sm leading-relaxed">{t("magicplan_step2")}</span>
+              <span className="shrink-0 w-6 h-6 rounded-full bg-blue-500/30 text-blue-300 text-xs font-bold flex items-center justify-center">
+                2
+              </span>
+              <span className="text-gray-300 text-sm leading-relaxed">
+                {t("magicplan_step2")}
+              </span>
             </li>
             <li className="flex gap-3">
-              <span className="shrink-0 w-6 h-6 rounded-full bg-blue-500/30 text-blue-300 text-xs font-bold flex items-center justify-center">3</span>
+              <span className="shrink-0 w-6 h-6 rounded-full bg-blue-500/30 text-blue-300 text-xs font-bold flex items-center justify-center">
+                3
+              </span>
               <span className="text-gray-300 text-sm leading-relaxed">
                 {t("magicplan_step3")}{" "}
-                <a href="mailto:contact@aiman-renovation.fr" className="text-blue-400 hover:text-blue-300 underline inline-flex items-center gap-1">
-                  <Mail className="w-3 h-3" />contact@aiman-renovation.fr
+                <a
+                  href="mailto:contact@aiman-renovation.fr"
+                  className="text-blue-400 hover:text-blue-300 underline inline-flex items-center gap-1"
+                >
+                  <Mail className="w-3 h-3" />
+                  contact@aiman-renovation.fr
                 </a>
               </span>
             </li>
           </ol>
+
+          {magicplanProjectId && (
+            <a
+              href={`magicplanstd://project/${magicplanProjectId}`}
+              className="block w-full bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base font-semibold py-4 rounded-lg text-center transition-colors mb-3 shadow-lg shadow-blue-600/30"
+            >
+              🚀 Ouvrir mon projet dans MagicPlan
+            </a>
+          )}
 
           <div className="flex gap-2">
             <a
@@ -159,7 +200,10 @@ export function StepSuccessOverlay({
           // ✅ FULL-WIDTH SUCCESS BLOCK — persistent, large, bold
           <div className="bg-green-500/20 border-2 border-green-500 rounded-2xl p-6 sm:p-8 mb-6 text-center animate-in fade-in zoom-in duration-500">
             <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-green-500/40">
-              <CheckCircle className="w-10 h-10 sm:w-12 sm:h-12 text-white" strokeWidth={2.5} />
+              <CheckCircle
+                className="w-10 h-10 sm:w-12 sm:h-12 text-white"
+                strokeWidth={2.5}
+              />
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-green-400 mb-2">
               {t("upload_success_title")}
@@ -174,7 +218,9 @@ export function StepSuccessOverlay({
               <Upload className="w-5 h-5" />
               <h3 className="font-semibold text-sm">{t("upload_title")}</h3>
             </div>
-            <p className="text-gray-300 text-xs text-center mb-4">{t("upload_subtitle")}</p>
+            <p className="text-gray-300 text-xs text-center mb-4">
+              {t("upload_subtitle")}
+            </p>
 
             <input
               ref={inputRef}
@@ -207,7 +253,9 @@ export function StepSuccessOverlay({
                     >
                       <span className="text-gray-200 text-xs truncate flex-1">
                         {f.name}{" "}
-                        <span className="text-gray-500">({(f.size / 1024).toFixed(0)} KB)</span>
+                        <span className="text-gray-500">
+                          ({(f.size / 1024).toFixed(0)} KB)
+                        </span>
                       </span>
                       <button
                         type="button"
@@ -253,7 +301,10 @@ export function StepSuccessOverlay({
                   <p className="text-red-200 text-xs leading-relaxed">
                     {errorMsg ? `${errorMsg} — ` : ""}
                     {t("upload_error_call")}{" "}
-                    <a href="tel:0939245515" className="underline font-semibold whitespace-nowrap">
+                    <a
+                      href="tel:0939245515"
+                      className="underline font-semibold whitespace-nowrap"
+                    >
                       09 39 24 55 15
                     </a>
                   </p>
