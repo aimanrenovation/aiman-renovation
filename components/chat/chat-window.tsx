@@ -32,11 +32,18 @@ function TypingIndicator() {
   );
 }
 
-const CTA_CONFIG: Record<string, { label: string; href: string; external?: boolean }> = {
+const CTA_CONFIG: Record<
+  string,
+  { label: string; href: string; external?: boolean }
+> = {
   calculateur: { label: "Estimer mon budget →", href: "/devis" },
   devis: { label: "Demander un devis gratuit →", href: "/devis" },
   rdv: { label: "Prendre rendez-vous →", href: "/devis" },
-  appel: { label: "Appeler maintenant", href: "tel:+33939245515", external: true },
+  appel: {
+    label: "Appeler maintenant",
+    href: "tel:+33633496925",
+    external: true,
+  },
 };
 
 export function ChatWindow({
@@ -76,7 +83,8 @@ export function ChatWindow({
     function onWheel(e: WheelEvent) {
       const { scrollTop, scrollHeight, clientHeight } = container!;
       const atTop = scrollTop <= 0 && e.deltaY < 0;
-      const atBottom = scrollTop + clientHeight >= scrollHeight - 1 && e.deltaY > 0;
+      const atBottom =
+        scrollTop + clientHeight >= scrollHeight - 1 && e.deltaY > 0;
       if (atTop || atBottom) {
         e.preventDefault();
       }
@@ -92,7 +100,8 @@ export function ChatWindow({
       const { scrollTop, scrollHeight, clientHeight } = container!;
       const deltaY = touchStartY - e.touches[0].clientY;
       const atTop = scrollTop <= 0 && deltaY < 0;
-      const atBottom = scrollTop + clientHeight >= scrollHeight - 1 && deltaY > 0;
+      const atBottom =
+        scrollTop + clientHeight >= scrollHeight - 1 && deltaY > 0;
       if (atTop || atBottom) {
         e.preventDefault();
       }
@@ -148,10 +157,16 @@ export function ChatWindow({
         />
         <div className="min-w-0 flex-1">
           <p className="text-sm font-bold leading-tight">{assistantName}</p>
-          <p className="truncate text-[10px] opacity-70">{assistantTitle} · AIMAN RENOVATION</p>
+          <p className="truncate text-[10px] opacity-70">
+            {assistantTitle} · AIMAN RENOVATION
+          </p>
           <div className="mt-0.5 flex items-center gap-1">
-            <span className={`inline-block h-1.5 w-1.5 rounded-full ${online ? "bg-green-400" : "bg-gray-400"}`} />
-            <span className="text-[10px] opacity-70">{online ? "En ligne" : "Hors ligne"}</span>
+            <span
+              className={`inline-block h-1.5 w-1.5 rounded-full ${online ? "bg-green-400" : "bg-gray-400"}`}
+            />
+            <span className="text-[10px] opacity-70">
+              {online ? "En ligne" : "Hors ligne"}
+            </span>
           </div>
         </div>
         <button
@@ -182,7 +197,9 @@ export function ChatWindow({
             <div
               className={[
                 "max-w-[85%] rounded-2xl px-4 py-2 text-sm leading-relaxed whitespace-pre-wrap",
-                msg.role === "user" ? "ml-8 bg-[#E50000] text-white" : "mr-8 bg-gray-100 text-gray-900",
+                msg.role === "user"
+                  ? "ml-8 bg-[#E50000] text-white"
+                  : "mr-8 bg-gray-100 text-gray-900",
               ].join(" ")}
             >
               {msg.content}
@@ -216,7 +233,10 @@ export function ChatWindow({
       </div>
 
       {/* Input */}
-      <form onSubmit={handleSubmit} className="flex items-end gap-2 border-t border-gray-200 bg-white px-3 py-2">
+      <form
+        onSubmit={handleSubmit}
+        className="flex items-end gap-2 border-t border-gray-200 bg-white px-3 py-2"
+      >
         <textarea
           ref={inputRef}
           value={input}
@@ -238,8 +258,14 @@ export function ChatWindow({
 
       <style jsx>{`
         @keyframes slideUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
       `}</style>
     </div>

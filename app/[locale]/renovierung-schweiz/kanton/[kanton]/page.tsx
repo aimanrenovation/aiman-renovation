@@ -46,8 +46,7 @@ const CANTONS: Record<string, CantonMeta> = {
       "Renovierung Kanton Basel-Stadt | AIMAN RENOVATION — Französische Handwerker",
     seoDescriptionDE:
       "Renovierung im Kanton Basel-Stadt: Komplettsanierung, Bad, Küche, Malerarbeiten. Französische Qualität, Offerte in CHF oder EUR. Kostenlos in 48h.",
-    seoTitleFR:
-      "Rénovation Canton Bâle-Ville | AIMAN RENOVATION Saint-Louis",
+    seoTitleFR: "Rénovation Canton Bâle-Ville | AIMAN RENOVATION Saint-Louis",
     seoDescriptionFR:
       "Rénovation tous corps d'état dans le canton de Bâle-Ville. Devis gratuit en 48h, en CHF ou EUR. Artisan frontalier français à 5 km de Bâle.",
     introDE:
@@ -108,8 +107,7 @@ const CANTONS: Record<string, CantonMeta> = {
       "Renovierung Kanton Solothurn (Region Dorneck) | AIMAN RENOVATION",
     seoDescriptionDE:
       "Renovierung in der Region Dorneck (Kanton Solothurn): Dornach und Umgebung. Französische Handwerker, Offerte CHF/EUR. Kostenlos in 48h.",
-    seoTitleFR:
-      "Rénovation Canton Soleure (région Dorneck) | AIMAN RENOVATION",
+    seoTitleFR: "Rénovation Canton Soleure (région Dorneck) | AIMAN RENOVATION",
     seoDescriptionFR:
       "Rénovation dans la région du Dorneck (canton de Soleure). Devis gratuit en 48h, en CHF ou EUR.",
     introDE:
@@ -263,7 +261,7 @@ export default async function KantonPage({ params }: Props) {
   const isFR = locale === "fr";
 
   const villesInCanton: VilleCH[] = VILLES_CH.filter(
-    (v) => v.canton === canton.code
+    (v) => v.canton === canton.code,
   ).sort((a, b) => a.distance - b.distance);
 
   const localBusinessData = {
@@ -272,7 +270,7 @@ export default async function KantonPage({ params }: Props) {
     "@id": "https://aiman-renovation.fr/#organization",
     name: "Aiman Renovation",
     url: "https://aiman-renovation.fr",
-    telephone: "+33939245515",
+    telephone: "+33633496925",
     email: "contact@aiman-renovation.fr",
     address: {
       "@type": "PostalAddress",
@@ -314,9 +312,7 @@ export default async function KantonPage({ params }: Props) {
       {
         "@type": "ListItem",
         position: 3,
-        name: isDE
-          ? `Kanton ${canton.nameDE}`
-          : `Canton ${canton.nameFR}`,
+        name: isDE ? `Kanton ${canton.nameDE}` : `Canton ${canton.nameFR}`,
         item: `https://aiman-renovation.fr/renovierung-schweiz/kanton/${canton.slug}`,
       },
     ],
@@ -340,7 +336,9 @@ export default async function KantonPage({ params }: Props) {
               {isDE ? "Startseite" : isFR ? "Accueil" : "Home"}
             </Link>
           </li>
-          <li aria-hidden="true" className="text-gray-700">/</li>
+          <li aria-hidden="true" className="text-gray-700">
+            /
+          </li>
           <li>
             <Link
               href="/renovierung-schweiz"
@@ -353,7 +351,9 @@ export default async function KantonPage({ params }: Props) {
                   : "Renovation Switzerland"}
             </Link>
           </li>
-          <li aria-hidden="true" className="text-gray-700">/</li>
+          <li aria-hidden="true" className="text-gray-700">
+            /
+          </li>
           <li className="text-white font-medium truncate">
             {isDE ? `Kanton ${canton.nameDE}` : `Canton ${canton.nameFR}`}
           </li>
@@ -378,7 +378,11 @@ export default async function KantonPage({ params }: Props) {
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6">
             <span className="text-xs font-medium tracking-widest text-gray-300 uppercase">
               {canton.code} · {villesInCanton.length}{" "}
-              {isDE ? "Gemeinden bedient" : isFR ? "communes desservies" : "municipalities served"}
+              {isDE
+                ? "Gemeinden bedient"
+                : isFR
+                  ? "communes desservies"
+                  : "municipalities served"}
             </span>
           </div>
 
@@ -389,7 +393,10 @@ export default async function KantonPage({ params }: Props) {
           </h1>
 
           <p className="text-lg md:text-xl text-gray-300 mb-3 font-light">
-            AIMAN RENOVATION — {isDE ? "Französische Handwerker direkt aus Saint-Louis" : "Artisans français directs depuis Saint-Louis"}
+            AIMAN RENOVATION —{" "}
+            {isDE
+              ? "Französische Handwerker direkt aus Saint-Louis"
+              : "Artisans français directs depuis Saint-Louis"}
           </p>
 
           <p className="text-sm md:text-base text-gray-400 mb-8 italic">
@@ -487,7 +494,8 @@ export default async function KantonPage({ params }: Props) {
                   </div>
                   <p className="text-sm text-gray-400 mb-3">
                     {ville.nameFr} · {ville.canton}
-                    {ville.population && ` · ${ville.population.toLocaleString("de-CH")} Einw.`}
+                    {ville.population &&
+                      ` · ${ville.population.toLocaleString("de-CH")} Einw.`}
                   </p>
                   <p className="text-sm text-gray-500 line-clamp-2">
                     {ville.specificitesDE[0]}

@@ -3,7 +3,11 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ChatBubble } from "./chat-bubble";
 import { ChatWindow } from "./chat-window";
-import { getAssistant, isBusinessHours, type ChatAssistant } from "@/lib/chat/assistants";
+import {
+  getAssistant,
+  isBusinessHours,
+  type ChatAssistant,
+} from "@/lib/chat/assistants";
 
 function getVisitorId(): string {
   if (typeof window === "undefined") return "";
@@ -62,7 +66,11 @@ export function ChatWidget() {
     async (text: string) => {
       if (!text.trim() || loading) return;
 
-      const userMsg: Message = { role: "user", content: text.trim(), timestamp: Date.now() };
+      const userMsg: Message = {
+        role: "user",
+        content: text.trim(),
+        timestamp: Date.now(),
+      };
       setMessages((prev) => [...prev, userMsg]);
       setLoading(true);
 
@@ -90,7 +98,8 @@ export function ChatWidget() {
             ...prev,
             {
               role: "assistant",
-              content: "Désolé, je rencontre un problème technique. Appelez-nous au 09 39 24 55 15.",
+              content:
+                "Désolé, je rencontre un problème technique. Appelez-nous au 06 33 49 69 25.",
               timestamp: Date.now(),
             },
           ]);
@@ -98,7 +107,11 @@ export function ChatWidget() {
       } catch {
         setMessages((prev) => [
           ...prev,
-          { role: "assistant", content: "Connexion perdue. Réessayez dans un instant.", timestamp: Date.now() },
+          {
+            role: "assistant",
+            content: "Connexion perdue. Réessayez dans un instant.",
+            timestamp: Date.now(),
+          },
         ]);
       } finally {
         setLoading(false);
