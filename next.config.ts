@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   generateBuildId: () => Date.now().toString(),
   compress: true,
   poweredByHeader: false,
+  // cacheComponents: skipped — WS-B-bis requis
+  // Raison: conflit avec `export const dynamic = "force-dynamic"` sur les pages espace-employes
+  // Action: migrer les pages employes vers fetch cache avant d'activer
 
   images: {
     formats: ["image/avif", "image/webp"],
@@ -52,7 +55,7 @@ const nextConfig: NextConfig = {
         source: `${locale}/services/${oldSlug}`,
         destination: `${locale}/services/${newSlug}`,
         permanent: true,
-      }))
+      })),
     );
   },
 };
