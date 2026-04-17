@@ -1,5 +1,13 @@
 import { NextResponse } from "next/server";
-import { and, between, isNull, isNotNull, sql, eq, notExists } from "drizzle-orm";
+import {
+  and,
+  between,
+  isNull,
+  isNotNull,
+  sql,
+  eq,
+  notExists,
+} from "drizzle-orm";
 import { db, schema } from "@/lib/db/client";
 import { generateParrainageCode } from "@/lib/employes/parrainage-code";
 import { sendParrainageMessage } from "@/lib/employes/whatsapp";
@@ -42,7 +50,9 @@ export async function GET(request: Request) {
           db
             .select({ one: sql`1` })
             .from(schema.parrainages)
-            .where(eq(schema.parrainages.parrainChantierId, schema.chantiers.id)),
+            .where(
+              eq(schema.parrainages.parrainChantierId, schema.chantiers.id),
+            ),
         ),
       ),
     );
@@ -75,7 +85,7 @@ export async function GET(request: Request) {
       `Si un de vos proches a un projet de rénovation, partagez-lui notre contact.`,
       `Si le chantier se fait, on vous offre une remise de 100€ sur votre prochain projet.`,
       `Il suffit qu'il mentionne votre code : ${code}`,
-      `Aiman Rénovation — 09 39 24 55 15`,
+      `Aiman Rénovation — 06 33 49 69 25`,
     ].join("\n");
 
     await sendParrainageMessage({

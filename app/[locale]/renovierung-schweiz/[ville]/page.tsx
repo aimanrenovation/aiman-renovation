@@ -89,7 +89,12 @@ const FEATURED_SERVICE_SLUGS = [
 function JsonLd({ data }: { data: object }) {
   const json = JSON.stringify(data);
   // eslint-disable-next-line react/no-danger
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />;
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: json }}
+    />
+  );
 }
 
 export default async function VilleCHPage({ params }: Props) {
@@ -100,7 +105,7 @@ export default async function VilleCHPage({ params }: Props) {
   if (!ville) notFound();
 
   const featuredServices = SERVICES.filter((s) =>
-    FEATURED_SERVICE_SLUGS.includes(s.slug)
+    FEATURED_SERVICE_SLUGS.includes(s.slug),
   ).slice(0, 6);
 
   const isDE = locale === "de";
@@ -112,7 +117,7 @@ export default async function VilleCHPage({ params }: Props) {
     "@id": "https://aiman-renovation.fr/#organization",
     name: "Aiman Renovation",
     url: "https://aiman-renovation.fr",
-    telephone: "+33939245515",
+    telephone: "+33633496925",
     email: "contact@aiman-renovation.fr",
     address: {
       "@type": "PostalAddress",
@@ -246,7 +251,9 @@ export default async function VilleCHPage({ params }: Props) {
               {isDE ? "Startseite" : isFR ? "Accueil" : "Home"}
             </Link>
           </li>
-          <li aria-hidden="true" className="text-gray-700">/</li>
+          <li aria-hidden="true" className="text-gray-700">
+            /
+          </li>
           <li>
             <Link
               href="/renovierung-schweiz"
@@ -259,7 +266,9 @@ export default async function VilleCHPage({ params }: Props) {
                   : "Renovation Switzerland"}
             </Link>
           </li>
-          <li aria-hidden="true" className="text-gray-700">/</li>
+          <li aria-hidden="true" className="text-gray-700">
+            /
+          </li>
           <li className="text-white font-medium truncate">{ville.name}</li>
         </ol>
       </nav>
@@ -472,8 +481,8 @@ export default async function VilleCHPage({ params }: Props) {
               <LinkButton href="/devis" variant="default" size="lg">
                 Offerte anfragen →
               </LinkButton>
-              <LinkButton href="tel:+33939245515" variant="outline" size="lg">
-                09 39 24 55 15
+              <LinkButton href="tel:+33633496925" variant="outline" size="lg">
+                06 33 49 69 25
               </LinkButton>
             </div>
           </ScrollReveal>
@@ -588,7 +597,10 @@ Für Renovierungen in Liestal ist AIMAN RENOVATION ein erfahrener Partner, der s
 Liestal ist mit dem Auto von Saint-Louis in rund 30 Minuten erreichbar. Für grössere Projekte planen wir gerne auch mehrtägige Arbeitseinsätze direkt vor Ort. Offerten erstellen wir in CHF, transparent und ohne versteckte Kosten.`,
   };
 
-  return contents[ville.slug] ?? `Renovierung in ${ville.name} — AIMAN RENOVATION ist Ihr zuverlässiger Handwerker aus Saint-Louis für alle Renovierungsarbeiten in ${ville.name} und der Region ${ville.canton}. Wir bieten alle Leistungen von Küche über Bad bis Fassade, mit Offerten in CHF.`;
+  return (
+    contents[ville.slug] ??
+    `Renovierung in ${ville.name} — AIMAN RENOVATION ist Ihr zuverlässiger Handwerker aus Saint-Louis für alle Renovierungsarbeiten in ${ville.name} und der Region ${ville.canton}. Wir bieten alle Leistungen von Küche über Bad bis Fassade, mit Offerten in CHF.`
+  );
 }
 
 // ─── Contenus uniques par ville (français) ───────────────────────────────────
@@ -636,5 +648,8 @@ Chaque devis est détaillé, en CHF, sans surprise cachée.`,
     liestal: `Liestal, chef-lieu de Bâle-Campagne, mêle vieille ville médiévale et quartiers modernes. Nous y intervenons pour des rénovations patrimoniales et standard, toujours avec un devis détaillé en CHF.`,
   };
 
-  return contents[ville.slug] ?? `Rénovation à ${ville.nameFr} (${ville.canton}) : AIMAN RENOVATION intervient depuis Saint-Louis pour tous vos travaux. Devis gratuit en CHF ou EUR.`;
+  return (
+    contents[ville.slug] ??
+    `Rénovation à ${ville.nameFr} (${ville.canton}) : AIMAN RENOVATION intervient depuis Saint-Louis pour tous vos travaux. Devis gratuit en CHF ou EUR.`
+  );
 }

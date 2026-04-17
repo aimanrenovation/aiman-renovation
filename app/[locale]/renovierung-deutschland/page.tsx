@@ -75,7 +75,9 @@ export default async function RenovierungDeutschlandPage({ params }: Props) {
   const isDE = locale === "de";
   const isFR = locale === "fr";
 
-  const villesByDistance = [...VILLES_DE].sort((a, b) => a.distance - b.distance);
+  const villesByDistance = [...VILLES_DE].sort(
+    (a, b) => a.distance - b.distance,
+  );
 
   const localBusinessData = {
     "@context": "https://schema.org",
@@ -83,7 +85,7 @@ export default async function RenovierungDeutschlandPage({ params }: Props) {
     "@id": "https://aiman-renovation.fr/#organization",
     name: "Aiman Renovation",
     url: "https://aiman-renovation.fr",
-    telephone: "+33939245515",
+    telephone: "+33633496925",
     email: "contact@aiman-renovation.fr",
     address: {
       "@type": "PostalAddress",
@@ -94,8 +96,16 @@ export default async function RenovierungDeutschlandPage({ params }: Props) {
     },
     areaServed: [
       { "@type": "Country", name: "Germany" },
-      { "@type": "AdministrativeArea", name: "Baden-Württemberg", addressCountry: "DE" },
-      { "@type": "AdministrativeArea", name: "Landkreis Lörrach", addressCountry: "DE" },
+      {
+        "@type": "AdministrativeArea",
+        name: "Baden-Württemberg",
+        addressCountry: "DE",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Landkreis Lörrach",
+        addressCountry: "DE",
+      },
     ],
     priceRange: "€€",
     image: "https://aiman-renovation.fr/images/villes/weil-am-rhein.webp",
@@ -143,7 +153,9 @@ export default async function RenovierungDeutschlandPage({ params }: Props) {
               {isDE ? "Startseite" : isFR ? "Accueil" : "Home"}
             </Link>
           </li>
-          <li aria-hidden="true" className="text-gray-700">/</li>
+          <li aria-hidden="true" className="text-gray-700">
+            /
+          </li>
           <li className="text-white font-medium">
             {isDE
               ? "Renovierung Deutschland"
@@ -172,7 +184,11 @@ export default async function RenovierungDeutschlandPage({ params }: Props) {
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6">
             <span className="text-xs font-medium tracking-widest text-gray-300 uppercase">
               🇩🇪 {VILLES_DE.length}{" "}
-              {isDE ? "Städte bedient" : isFR ? "villes desservies" : "cities served"}
+              {isDE
+                ? "Städte bedient"
+                : isFR
+                  ? "villes desservies"
+                  : "cities served"}
             </span>
           </div>
 
@@ -221,10 +237,10 @@ export default async function RenovierungDeutschlandPage({ params }: Props) {
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p>
                   AIMAN RENOVATION ist ein französisches Renovierungsunternehmen
-                  aus Saint-Louis im Elsass — direkt an der deutsch-französischen
-                  Grenze, nur wenige Minuten von Weil am Rhein und Lörrach
-                  entfernt. Wir bedienen den gesamten Landkreis Lörrach im
-                  Dreiländereck.
+                  aus Saint-Louis im Elsass — direkt an der
+                  deutsch-französischen Grenze, nur wenige Minuten von Weil am
+                  Rhein und Lörrach entfernt. Wir bedienen den gesamten
+                  Landkreis Lörrach im Dreiländereck.
                 </p>
                 <p>
                   Unser Angebot umfasst alle Gewerke: Komplettsanierung,
@@ -233,19 +249,22 @@ export default async function RenovierungDeutschlandPage({ params }: Props) {
                   Wärmedämmung sowie Fassadenrenovation.
                 </p>
                 <p>
-                  <strong className="text-white">Warum französische Handwerker im Markgräflerland?</strong>{" "}
+                  <strong className="text-white">
+                    Warum französische Handwerker im Markgräflerland?
+                  </strong>{" "}
                   Die Lohnkosten in Frankreich sind tiefer als in Deutschland,
                   und unsere Materialien stammen von zertifizierten Lieferanten
                   (Cedeo, Point P, Rexel). Wir kennen die deutschen DIN-Normen
-                  ebenso gut wie die französischen DTU. Unser zweisprachiges Team
-                  bietet Beratung und Offerten auf Deutsch oder Französisch — ohne
-                  Sprachbarriere, ohne Missverständnisse.
+                  ebenso gut wie die französischen DTU. Unser zweisprachiges
+                  Team bietet Beratung und Offerten auf Deutsch oder Französisch
+                  — ohne Sprachbarriere, ohne Missverständnisse.
                 </p>
                 <p>
                   Ob klassisches Markgräflerhaus aus dem 19. Jahrhundert,
                   Reihenhaus aus den 1970ern oder moderner Neubau in Weil am
                   Rhein: wir beraten Sie individuell und schlagen die beste
-                  technische Lösung mit dem optimalen Preis-Leistungs-Verhältnis vor.
+                  technische Lösung mit dem optimalen Preis-Leistungs-Verhältnis
+                  vor.
                 </p>
               </div>
             ) : (
@@ -258,12 +277,14 @@ export default async function RenovierungDeutschlandPage({ params }: Props) {
                   dans la zone tri-frontière.
                 </p>
                 <p>
-                  Notre offre couvre tous les corps d'état : rénovation complète,
-                  salles de bains, cuisines, peinture, carrelage et sols, plomberie,
-                  électricité, isolation thermique et façades.
+                  Notre offre couvre tous les corps d'état : rénovation
+                  complète, salles de bains, cuisines, peinture, carrelage et
+                  sols, plomberie, électricité, isolation thermique et façades.
                 </p>
                 <p>
-                  <strong className="text-white">Pourquoi un artisan français pour le Markgräflerland ?</strong>{" "}
+                  <strong className="text-white">
+                    Pourquoi un artisan français pour le Markgräflerland ?
+                  </strong>{" "}
                   Les coûts salariaux en France sont inférieurs à ceux de
                   l'Allemagne, et nos matériaux proviennent de fournisseurs
                   certifiés (Cedeo, Point P, Rexel). Nous connaissons les normes
@@ -272,10 +293,11 @@ export default async function RenovierungDeutschlandPage({ params }: Props) {
                   français — sans barrière linguistique.
                 </p>
                 <p>
-                  Que ce soit une maison traditionnelle du 19e siècle, une maison
-                  mitoyenne des années 1970 ou un logement neuf à Weil am Rhein,
-                  nous vous conseillons individuellement et vous proposons la
-                  meilleure solution technique au meilleur rapport qualité-prix.
+                  Que ce soit une maison traditionnelle du 19e siècle, une
+                  maison mitoyenne des années 1970 ou un logement neuf à Weil am
+                  Rhein, nous vous conseillons individuellement et vous
+                  proposons la meilleure solution technique au meilleur rapport
+                  qualité-prix.
                 </p>
               </div>
             )}
@@ -315,7 +337,8 @@ export default async function RenovierungDeutschlandPage({ params }: Props) {
                   </div>
                   <p className="text-sm text-gray-400 mb-3">
                     {ville.kreis}
-                    {ville.population && ` · ${ville.population.toLocaleString("de-DE")} Einw.`}
+                    {ville.population &&
+                      ` · ${ville.population.toLocaleString("de-DE")} Einw.`}
                   </p>
                   <p className="text-sm text-gray-500 line-clamp-2">
                     {ville.specificitesDE[0]}

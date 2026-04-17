@@ -20,7 +20,9 @@ export default function NotFound() {
   const t = useTranslations("notFound");
   const variants = t.raw("variants") as { title: string; subtitle: string }[];
 
-  const [variantIdx] = useState(() => Math.floor(Math.random() * variants.length));
+  const [variantIdx] = useState(() =>
+    Math.floor(Math.random() * variants.length),
+  );
   const variant = variants[variantIdx];
   const image = VARIANT_IMAGES[variantIdx] || VARIANT_IMAGES[0];
 
@@ -63,7 +65,9 @@ export default function NotFound() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
           <div className="absolute bottom-3 left-0 right-0 text-center">
-            <span className="font-heading text-5xl text-white/90 drop-shadow-lg">404</span>
+            <span className="font-heading text-5xl text-white/90 drop-shadow-lg">
+              404
+            </span>
           </div>
         </div>
 
@@ -116,12 +120,12 @@ export default function NotFound() {
           <p className="text-white/20 text-xs mb-3">{t("need_help")}</p>
           <div className="flex items-center justify-center gap-4 text-sm">
             <LinkButton
-              href="tel:0939245515"
+              href="tel:0633496925"
               external
               variant="ghost"
               className="text-white/40 hover:text-[#E50000]"
             >
-              09 39 24 55 15
+              06 33 49 69 25
             </LinkButton>
             <span className="text-white/10">|</span>
             <LinkButton

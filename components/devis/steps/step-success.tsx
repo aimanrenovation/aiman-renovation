@@ -302,10 +302,10 @@ export function StepSuccessOverlay({
                     {errorMsg ? `${errorMsg} — ` : ""}
                     {t("upload_error_call")}{" "}
                     <a
-                      href="tel:0939245515"
+                      href="tel:0633496925"
                       className="underline font-semibold whitespace-nowrap"
                     >
-                      09 39 24 55 15
+                      06 33 49 69 25
                     </a>
                   </p>
                 </div>
@@ -326,7 +326,7 @@ export function StepSuccessOverlay({
             <ArrowLeft className="w-4 h-4 mr-2" /> {t("back_home")}
           </LinkButton>
           <LinkButton
-            href="tel:0939245515"
+            href="tel:0633496925"
             external
             variant="outline"
             size="lg"

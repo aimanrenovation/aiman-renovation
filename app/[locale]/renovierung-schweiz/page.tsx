@@ -100,7 +100,9 @@ export default async function RenovierungSchweizPage({ params }: Props) {
   const isFR = locale === "fr";
 
   // Cities sorted by distance
-  const villesByDistance = [...VILLES_CH].sort((a, b) => a.distance - b.distance);
+  const villesByDistance = [...VILLES_CH].sort(
+    (a, b) => a.distance - b.distance,
+  );
 
   const localBusinessData = {
     "@context": "https://schema.org",
@@ -108,7 +110,7 @@ export default async function RenovierungSchweizPage({ params }: Props) {
     "@id": "https://aiman-renovation.fr/#organization",
     name: "Aiman Renovation",
     url: "https://aiman-renovation.fr",
-    telephone: "+33939245515",
+    telephone: "+33633496925",
     email: "contact@aiman-renovation.fr",
     address: {
       "@type": "PostalAddress",
@@ -119,8 +121,16 @@ export default async function RenovierungSchweizPage({ params }: Props) {
     },
     areaServed: [
       { "@type": "Country", name: "Switzerland" },
-      { "@type": "AdministrativeArea", name: "Basel-Stadt", addressCountry: "CH" },
-      { "@type": "AdministrativeArea", name: "Basel-Landschaft", addressCountry: "CH" },
+      {
+        "@type": "AdministrativeArea",
+        name: "Basel-Stadt",
+        addressCountry: "CH",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Basel-Landschaft",
+        addressCountry: "CH",
+      },
       { "@type": "City", name: "Basel", addressCountry: "CH" },
     ],
     priceRange: "€€",
@@ -169,7 +179,9 @@ export default async function RenovierungSchweizPage({ params }: Props) {
               {isDE ? "Startseite" : isFR ? "Accueil" : "Home"}
             </Link>
           </li>
-          <li aria-hidden="true" className="text-gray-700">/</li>
+          <li aria-hidden="true" className="text-gray-700">
+            /
+          </li>
           <li className="text-white font-medium">
             {isDE
               ? "Renovierung Schweiz"
@@ -198,7 +210,11 @@ export default async function RenovierungSchweizPage({ params }: Props) {
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6">
             <span className="text-xs font-medium tracking-widest text-gray-300 uppercase">
               🇨🇭 {VILLES_CH.length}{" "}
-              {isDE ? "Gemeinden bedient" : isFR ? "communes desservies" : "municipalities served"}
+              {isDE
+                ? "Gemeinden bedient"
+                : isFR
+                  ? "communes desservies"
+                  : "municipalities served"}
             </span>
           </div>
 
@@ -246,66 +262,73 @@ export default async function RenovierungSchweizPage({ params }: Props) {
             {isDE ? (
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p>
-                  AIMAN RENOVATION ist ein französisches Renovierungsunternehmen aus
-                  Saint-Louis (Elsass), nur 5 Kilometer von Basel entfernt. Seit
-                  unserer Gründung haben wir uns auf die Bedürfnisse der Schweizer
-                  Eigentümer in der Region Nordwestschweiz spezialisiert: schnelle
-                  Anfahrt, faire Preise, Schweizer Qualität.
+                  AIMAN RENOVATION ist ein französisches Renovierungsunternehmen
+                  aus Saint-Louis (Elsass), nur 5 Kilometer von Basel entfernt.
+                  Seit unserer Gründung haben wir uns auf die Bedürfnisse der
+                  Schweizer Eigentümer in der Region Nordwestschweiz
+                  spezialisiert: schnelle Anfahrt, faire Preise, Schweizer
+                  Qualität.
                 </p>
                 <p>
-                  Wir bieten Komplettsanierungen, Badezimmer- und Küchenrenovationen,
-                  Malerarbeiten, Plattenlegerarbeiten, Sanitär- und
-                  Elektroinstallationen, Wärmedämmungen sowie Fassadenrenovationen.
-                  Unsere Handwerker sind zertifiziert (RGE in Frankreich, Schulungen
-                  zu SIA-Normen 380/1 für Wärmedämmung).
+                  Wir bieten Komplettsanierungen, Badezimmer- und
+                  Küchenrenovationen, Malerarbeiten, Plattenlegerarbeiten,
+                  Sanitär- und Elektroinstallationen, Wärmedämmungen sowie
+                  Fassadenrenovationen. Unsere Handwerker sind zertifiziert (RGE
+                  in Frankreich, Schulungen zu SIA-Normen 380/1 für
+                  Wärmedämmung).
                 </p>
                 <p>
-                  <strong className="text-white">Warum französische Handwerker für die Schweiz?</strong>{" "}
-                  Die Lohnkosten und Sozialabgaben in Frankreich sind deutlich tiefer
-                  als in der Schweiz, ohne dass die handwerkliche Qualität darunter
-                  leidet — wir verwenden zertifiziertes Material von Cedeo, Point P
-                  oder Rexel und arbeiten nach den DTU-Normen, die zu den strengsten
-                  Europas gehören. Das Resultat: 30 bis 40 % Ersparnis bei
-                  vergleichbarer oder besserer Qualität.
+                  <strong className="text-white">
+                    Warum französische Handwerker für die Schweiz?
+                  </strong>{" "}
+                  Die Lohnkosten und Sozialabgaben in Frankreich sind deutlich
+                  tiefer als in der Schweiz, ohne dass die handwerkliche
+                  Qualität darunter leidet — wir verwenden zertifiziertes
+                  Material von Cedeo, Point P oder Rexel und arbeiten nach den
+                  DTU-Normen, die zu den strengsten Europas gehören. Das
+                  Resultat: 30 bis 40 % Ersparnis bei vergleichbarer oder
+                  besserer Qualität.
                 </p>
                 <p>
-                  Wir bedienen den gesamten Kanton Basel-Stadt, das Baselbiet und
-                  die Region Dorneck im nördlichen Solothurn. Unser zweisprachiges
-                  Team (Deutsch/Französisch) erstellt Ihre Offerte in CHF oder EUR
-                  — Sie wählen die Währung und sind vor Wechselkursschwankungen
-                  geschützt.
+                  Wir bedienen den gesamten Kanton Basel-Stadt, das Baselbiet
+                  und die Region Dorneck im nördlichen Solothurn. Unser
+                  zweisprachiges Team (Deutsch/Französisch) erstellt Ihre
+                  Offerte in CHF oder EUR — Sie wählen die Währung und sind vor
+                  Wechselkursschwankungen geschützt.
                 </p>
               </div>
             ) : (
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p>
-                  AIMAN RENOVATION est une entreprise de rénovation française basée
-                  à Saint-Louis (Alsace), à seulement 5 kilomètres de Bâle. Depuis
-                  notre création, nous nous sommes spécialisés dans les besoins des
-                  propriétaires suisses de la région de Bâle : intervention rapide,
-                  prix justes, qualité suisse.
+                  AIMAN RENOVATION est une entreprise de rénovation française
+                  basée à Saint-Louis (Alsace), à seulement 5 kilomètres de
+                  Bâle. Depuis notre création, nous nous sommes spécialisés dans
+                  les besoins des propriétaires suisses de la région de Bâle :
+                  intervention rapide, prix justes, qualité suisse.
                 </p>
                 <p>
-                  Nous proposons rénovations complètes, salles de bains, cuisines,
-                  peinture, carrelage, plomberie, électricité, isolation thermique
-                  et façades. Nos artisans sont certifiés (RGE en France, formés
-                  aux normes SIA 380/1 pour l'isolation).
+                  Nous proposons rénovations complètes, salles de bains,
+                  cuisines, peinture, carrelage, plomberie, électricité,
+                  isolation thermique et façades. Nos artisans sont certifiés
+                  (RGE en France, formés aux normes SIA 380/1 pour l'isolation).
                 </p>
                 <p>
-                  <strong className="text-white">Pourquoi un artisan français pour la Suisse ?</strong>{" "}
+                  <strong className="text-white">
+                    Pourquoi un artisan français pour la Suisse ?
+                  </strong>{" "}
                   Les coûts salariaux et les charges sociales en France sont
                   nettement inférieurs à ceux de la Suisse, sans que la qualité
-                  artisanale n'en souffre — nous utilisons des matériaux certifiés
-                  Cedeo, Point P, Rexel et travaillons selon les normes DTU,
-                  parmi les plus strictes d'Europe. Résultat : 30 à 40 % d'économies
-                  pour une qualité équivalente ou supérieure.
+                  artisanale n'en souffre — nous utilisons des matériaux
+                  certifiés Cedeo, Point P, Rexel et travaillons selon les
+                  normes DTU, parmi les plus strictes d'Europe. Résultat : 30 à
+                  40 % d'économies pour une qualité équivalente ou supérieure.
                 </p>
                 <p>
                   Nous desservons tout le canton de Bâle-Ville, le Bâle-Campagne
                   et la région Dorneck dans le nord du canton de Soleure. Notre
-                  équipe bilingue (allemand/français) vous établit votre devis en
-                  CHF ou EUR — vous choisissez la monnaie et vous êtes protégé
-                  des fluctuations de change.
+                  équipe bilingue (allemand/français) vous établit votre devis
+                  en CHF ou EUR — vous choisissez la monnaie et vous êtes
+                  protégé des fluctuations de change.
                 </p>
               </div>
             )}
@@ -318,9 +341,7 @@ export default async function RenovierungSchweizPage({ params }: Props) {
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 text-center">
-              {isDE
-                ? "Wählen Sie Ihren Kanton"
-                : "Choisissez votre canton"}
+              {isDE ? "Wählen Sie Ihren Kanton" : "Choisissez votre canton"}
             </h2>
             <p className="text-gray-400 text-center mb-12">
               {isDE
@@ -331,7 +352,7 @@ export default async function RenovierungSchweizPage({ params }: Props) {
             <div className="grid md:grid-cols-3 gap-6">
               {CANTONS_META.map((canton) => {
                 const villesCount = VILLES_CH.filter(
-                  (v) => v.canton === canton.code
+                  (v) => v.canton === canton.code,
                 ).length;
                 return (
                   <Link
@@ -340,7 +361,11 @@ export default async function RenovierungSchweizPage({ params }: Props) {
                     className="group bg-black border border-white/10 rounded-2xl p-8 hover:border-white/30 transition-all"
                   >
                     <div className="text-4xl mb-3">
-                      {canton.code === "BS" ? "🏛️" : canton.code === "BL" ? "🏞️" : "🌲"}
+                      {canton.code === "BS"
+                        ? "🏛️"
+                        : canton.code === "BL"
+                          ? "🏞️"
+                          : "🌲"}
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">
                       {canton.code}
