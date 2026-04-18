@@ -350,7 +350,7 @@ export const SERVICES: Service[] = [
       "Un travail de peinture réussi repose à 70% sur la préparation du support. Sans ponçage, rebouchage et primaire adaptés, la peinture cloque, s'écaille et jaunit en 2 à 3 ans. Nos peintres maîtrisent les supports alsaciens (enduit à la chaux, crépi, béton) et choisissent les produits appropriés à chaque cas. Outils professionnels, finitions irréprochables, délais tenus : c'est la différence entre un amateur et Aiman Renovation. Garantie de résultat, sans mauvaise surprise.",
     priceRange: "20 € – 45 € / m² murs et plafonds, préparation et 2 couches comprises",
     seoTitle: "Peintre Bâtiment Saint-Louis 68 | Peinture Haut-Rhin",
-    seoDescription: "Peintre professionnel à Saint-Louis 68300 et Haut-Rhin. Peinture intérieure/extérieure, enduits décoratifs, finitions soignées. Devis gratuit sous 48h.",
+    seoDescription: "Peinture intérieure et extérieure à Saint-Louis 68300, Mulhouse et Haut-Rhin. Artisan qualifié, préparation soignée, 2 couches garanties. Devis gratuit.",
     relatedSlugs: ["sols-carrelage", "renovation-complete", "facade"],
   },
   {
@@ -412,7 +412,7 @@ export const SERVICES: Service[] = [
       "Gérer soi-même une rénovation complète en faisant appel à plusieurs artisans séparément est une source de stress, de dépassements de budget et de délais allongés. Un artisan qui attend un autre, des plannings qui se télescopent, des finitions reprises parce que le plâtre n'était pas sec — ces situations coûtent du temps et de l'argent. Aiman Renovation coordonne tout. Un devis global, un planning tenu, une garantie décennale sur l'ensemble des travaux.",
     priceRange: "30 000 € – 120 000 € selon la superficie, l'état du logement et le niveau de finition",
     seoTitle: "Rénovation Complète Saint-Louis 68 | Clé en Main",
-    seoDescription: "Rénovation complète appartement et maison à Saint-Louis et Haut-Rhin. Interlocuteur unique, tous corps de métier. Garantie décennale. Devis gratuit.",
+    seoDescription: "Rénovation complète clé en main à Saint-Louis 68, Mulhouse et Haut-Rhin. Interlocuteur unique, tous corps de métier. Garantie décennale. Devis gratuit.",
     relatedSlugs: ["cuisine", "salle-de-bain", "isolation"],
   },
   {
@@ -442,8 +442,9 @@ export const SERVICES: Service[] = [
     whyPro:
       "Une isolation mal exécutée peut créer des ponts thermiques, des condensations internes et des moisissures, aggravant la situation plutôt qu'en l'améliorant. Les matériaux doivent être certifiés Acermi et les travaux réalisés par un professionnel RGE (Reconnu Garant de l'Environnement) pour être éligibles aux aides financières. Aiman Renovation est qualifié RGE et vous accompagne de l'audit thermique jusqu'à la réception du chantier.",
     priceRange: "80 € – 200 € / m² pour une ITE, 30 € – 80 € / m² pour une ITI, 20 € – 50 € / m² pour les combles",
-    seoTitle: "Isolation Thermique Alsace | Saint-Louis 68 RGE",
-    seoDescription: "Isolation thermique par l'extérieur (ITE), intérieur (ITI) et combles à Saint-Louis 68 et Haut-Rhin. RGE certifié, MaPrimeRénov'. Devis gratuit.",
+    seoTitle: "Isolation Thermique Saint-Louis 68 | ITE ITI Alsace",
+    seoDescription: "Isolation thermique ITE/ITI et combles à Saint-Louis 68 et Haut-Rhin. RGE certifié, MaPrimeRénov', CEE, éco-PTZ. Devis gratuit sous 48h.",
+    relatedSlugs: ["facade", "renovation-complete", "panneaux-photovoltaiques"],
     relatedSlugs: ["facade", "renovation-complete", "panneaux-photovoltaiques"],
   },
   {

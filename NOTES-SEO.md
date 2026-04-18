@@ -151,4 +151,74 @@ Les slugs actuels sont bien optimisés. Redirects déjà en place dans `next.con
 
 ---
 
+---
+
+## Phase 2 — Réalisé (avril 2026, branche seo/phase-2-content)
+
+### Metadata services corrigés
+- `peinture` : seoTitle, seoDescription et relatedSlugs ajoutés
+- `sols-carrelage` : seoTitle, seoDescription et relatedSlugs ajoutés
+- `renovation-complete` : seoTitle, seoDescription et relatedSlugs ajoutés
+- `isolation` : seoTitle, seoDescription et relatedSlugs ajoutés
+- Toutes les pages services ont maintenant un seoTitle (50-60 chars) et seoDescription (140-155 chars) optimisés
+
+### Métadonnées pages clés améliorées
+- Homepage FR : title renforcé avec "Artisan Rénovation Saint-Louis 68 | Haut-Rhin | Aiman" (54 chars, keyword-first), description réécrite avec mots-clés prioritaires en début de phrase (153 chars)
+- Services FR : title "Services Rénovation Saint-Louis & Haut-Rhin | Artisan" (54 chars, +9 chars vs avant), description enrichie
+- Services DE : title renforcé (51 chars vs 49 chars)
+- Services EN : title renforcé (51 chars vs 41 chars)
+
+### Security headers ajoutés (next.config.ts)
+- `X-Frame-Options: SAMEORIGIN` — protection clickjacking
+- `X-Content-Type-Options: nosniff` — protection MIME sniffing
+- `Referrer-Policy: strict-origin-when-cross-origin` — contrôle données referrer
+- `Permissions-Policy: camera=(), microphone=(), geolocation=(self)` — contrôle API navigateur
+- Impact : confiance Google, meilleur score sécurité PageSpeed, signal indirect de qualité pour le ranking
+
+### Maillage interne services
+- Tous les services ont maintenant des `relatedSlugs` pour le maillage interne :
+  - `peinture` → [sols-carrelage, facade, renovation-complete]
+  - `sols-carrelage` → [salle-de-bain, cuisine, renovation-complete]
+  - `renovation-complete` → [salle-de-bain, cuisine, isolation]
+  - `isolation` → [facade, renovation-complete, panneaux-photovoltaiques]
+- Les services peinture, sols-carrelage, renovation-complete, isolation ont donc maintenant des "Services Associés" affichés en bas de page
+
+### Audit initial (phase 2) — points déjà couverts avant cette PR
+- Structure JSON-LD complète : Organisation, Service, FAQ, LocalBusiness, AggregateRating
+- Sitemap dynamique (600+ URLs, 3 locales)
+- Robots.txt correct avec blocage API et espace-employés
+- Hreflang FR/DE/EN sur toutes les pages
+- 200+ pages géolocalisées (villes FR, DE, CH)
+- Images AVIF/WebP auto-converties, lazy loading, alt text
+- Redirections 301 en place (carrelage→sols-carrelage, peinture-finitions→peinture, facade-isolation→facade)
+
+---
+
+## Améliorations SEO phase 3 — Priorités
+
+### Haute priorité
+- **FAQ par service** : section FAQ avec schema `FAQPage` sur chaque page service — fort potentiel People Also Ask
+- **Google Business Profile** : fiche Google optimisée = levier n°1 référencement local (photos avant/après, réponses avis, posts réguliers)
+- **Google Search Console** : vérification propriété, soumission sitemap, monitoring erreurs
+- **Articles blog géolocalisés** : 20+ articles ciblant la longue traîne (ex: "Combien coûte une rénovation salle de bain à Saint-Louis 2026 ?", "Aides isolation Alsace 2026", "Carreleur Mulhouse prix")
+
+### Moyenne priorité
+- `google-site-verification` : balise meta à ajouter dans `app/layout.tsx` → `metadata.verification`
+- Manifests PWA multilingues : créer `/public/manifest-de.webmanifest` et `/manifest-en.webmanifest` + icône 512×512
+- Intégration `Review` schema : quand avis Google disponibles, les intégrer avec `@type: Review` pour rich snippets étoiles
+- Pages villes enrichies : ajouter section FAQ avec `FAQPage` schema par ville pour People Also Ask locaux
+
+### Mots-clés non encore couverts (opportunités phase 3)
+- "renovation maison 68300" (fort volume local)
+- "artisan haut-rhin" (générique, fort volume)
+- "renovation appartement bale" (transfrontalier CH)
+- "devis renovation gratuit alsace"
+- "Renovierung Wohnung Basel" (DE, potentiel CH)
+- "Badezimmer renovieren Elsass" (DE, tri-frontière)
+- "entreprise renovation mulhouse" (Mulhouse = 2e ville 68)
+- "isolation thermique exterieure alsace" (ITE, fort volume, aides État)
+- "peintre alsace" + "peintre mulhouse"
+
+---
+
 *Dernière mise à jour : phase 2 — avril 2026*
