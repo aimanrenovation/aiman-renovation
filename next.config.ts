@@ -18,6 +18,18 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 365, // 1 an
     dangerouslyAllowSVG: false,
     contentDispositionType: "attachment",
+    remotePatterns: [
+      // Scaleway Object Storage — bucket Jarvis médias (photos chantiers)
+      {
+        protocol: "https",
+        hostname: "**.s3.fr-par.scw.cloud",
+      },
+      // Scaleway CDN alternatif
+      {
+        protocol: "https",
+        hostname: "**.s3.nl-ams.scw.cloud",
+      },
+    ],
   },
 
   async headers() {
