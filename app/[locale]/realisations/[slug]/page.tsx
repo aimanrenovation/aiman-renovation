@@ -11,6 +11,9 @@ import {
   getAllRealisationSlugs,
   getRealisationBySlug,
 } from "@/lib/realisations";
+import { routing } from "@/i18n/routing";
+
+export const runtime = "nodejs";
 
 interface Props {
   params: Promise<{ slug: string; locale: string }>;
@@ -18,7 +21,9 @@ interface Props {
 
 export function generateStaticParams() {
   const slugs = getAllRealisationSlugs();
-  return slugs.map((slug) => ({ slug }));
+  return routing.locales.flatMap((locale) =>
+    slugs.map((slug) => ({ locale, slug })),
+  );
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -232,13 +237,18 @@ export default async function RealisationDetailPage({ params }: Props) {
       </section>
 
       {/* Schema.org JSON-LD */}
-      <script
-        type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(realisation.schema_org),
-        }}
-      />
+      {realisation.schema_org && typeof realisation.schema_org === "object" && (
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(realisation.schema_org).replace(
+              /</g,
+              "\\u003c",
+            ),
+          }}
+        />
+      )}
 
       <CtaBanner />
     </>

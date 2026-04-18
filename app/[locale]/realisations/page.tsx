@@ -6,6 +6,8 @@ import { getAlternates } from "@/lib/i18n-helpers";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { getAllRealisations } from "@/lib/realisations";
 
+export const runtime = "nodejs";
+
 type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props) {
