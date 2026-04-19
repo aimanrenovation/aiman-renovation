@@ -16,7 +16,9 @@ import {
 
 // ---- employes ----
 export const employes = pgTable("employes", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   firstname: text("firstname").notNull(),
   lastname: text("lastname").notNull(),
   email: text("email").notNull().unique(),
@@ -30,27 +32,37 @@ export const employes = pgTable("employes", {
   cguVersion: text("cgu_version"),
   avatarUrl: text("avatar_url"),
   managerId: uuid("manager_id"),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
-  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- employes_sessions (refresh tokens) ----
 export const employesSessions = pgTable("employes_sessions", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   employeId: uuid("employe_id")
     .notNull()
     .references(() => employes.id, { onDelete: "cascade" }),
   refreshTokenHash: text("refresh_token_hash").notNull(),
   ip: text("ip"),
   userAgent: text("user_agent"),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
   expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
   revokedAt: timestamp("revoked_at", { withTimezone: true }),
 });
 
 // ---- chantiers ----
 export const chantiers = pgTable("chantiers", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   clientNom: text("client_nom").notNull(),
   clientEmail: text("client_email"),
   clientPhone: text("client_phone"),
@@ -70,12 +82,16 @@ export const chantiers = pgTable("chantiers", {
   budgetPrevuCents: bigint("budget_prevu_cents", { mode: "number" }),
   budgetReelCents: bigint("budget_reel_cents", { mode: "number" }),
   devisId: text("devis_id"),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- plannings ----
 export const plannings = pgTable("plannings", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   employeId: uuid("employe_id")
     .notNull()
     .references(() => employes.id, { onDelete: "cascade" }),
@@ -87,12 +103,16 @@ export const plannings = pgTable("plannings", {
   heureFin: time("heure_fin"),
   mission: text("mission"),
   statut: text("statut").notNull().default("prevu"), // prevu | confirme | fait | annule
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- pointages ----
 export const pointages = pgTable("pointages", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   employeId: uuid("employe_id")
     .notNull()
     .references(() => employes.id, { onDelete: "cascade" }),
@@ -124,12 +144,16 @@ export const pointages = pgTable("pointages", {
   heureDebutCorrigee: timestamp("heure_debut_corrigee", { withTimezone: true }),
   heureFinCorrigee: timestamp("heure_fin_corrigee", { withTimezone: true }),
   pauseMinutesCorrigee: integer("pause_minutes_corrigee"),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- rapports_journaliers ----
 export const rapportsJournaliers = pgTable("rapports_journaliers", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   employeId: uuid("employe_id")
     .notNull()
     .references(() => employes.id, { onDelete: "cascade" }),
@@ -141,19 +165,25 @@ export const rapportsJournaliers = pgTable("rapports_journaliers", {
   travauxRealises: jsonb("travaux_realises"),
   blocages: jsonb("blocages"),
   meteo: text("meteo"),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- photos_chantier ----
 export const photosChantier = pgTable("photos_chantier", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   employeId: uuid("employe_id")
     .notNull()
     .references(() => employes.id, { onDelete: "cascade" }),
   chantierId: uuid("chantier_id")
     .notNull()
     .references(() => chantiers.id, { onDelete: "cascade" }),
-  rapportId: uuid("rapport_id").references(() => rapportsJournaliers.id, { onDelete: "set null" }),
+  rapportId: uuid("rapport_id").references(() => rapportsJournaliers.id, {
+    onDelete: "set null",
+  }),
   s3Key: text("s3_key").notNull(),
   caption: text("caption"),
   tags: jsonb("tags"),
@@ -161,12 +191,16 @@ export const photosChantier = pgTable("photos_chantier", {
   width: integer("width"),
   height: integer("height"),
   bytes: bigint("bytes", { mode: "number" }),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- demandes_materiel ----
 export const demandesMateriel = pgTable("demandes_materiel", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   employeId: uuid("employe_id")
     .notNull()
     .references(() => employes.id, { onDelete: "cascade" }),
@@ -177,21 +211,33 @@ export const demandesMateriel = pgTable("demandes_materiel", {
   items: jsonb("items").notNull(),
   statut: text("statut").notNull().default("en_attente"), // en_attente | commandé | reçu | annulé
   notes: text("notes"),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- suivi_materiel ----
 export const suiviMateriel = pgTable("suivi_materiel", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
-  chantierId: uuid("chantier_id").notNull().references(() => chantiers.id, { onDelete: "cascade" }),
-  employeId: uuid("employe_id").notNull().references(() => employes.id, { onDelete: "cascade" }),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
+  chantierId: uuid("chantier_id")
+    .notNull()
+    .references(() => chantiers.id, { onDelete: "cascade" }),
+  employeId: uuid("employe_id")
+    .notNull()
+    .references(() => employes.id, { onDelete: "cascade" }),
   materiau: text("materiau").notNull(),
   quantitePrevue: integer("quantite_prevue").notNull().default(0),
   quantiteUtilisee: integer("quantite_utilisee").notNull().default(0),
   unite: text("unite").notNull().default("unité"),
   notes: text("notes"),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
-  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- login_attempts (rate limit) ----
@@ -200,7 +246,9 @@ export const loginAttempts = pgTable("login_attempts", {
   identifier: text("identifier").notNull(),
   ip: text("ip"),
   success: boolean("success").notNull(),
-  attemptedAt: timestamp("attempted_at", { withTimezone: true }).notNull().default(sql`now()`),
+  attemptedAt: timestamp("attempted_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- webauthn_credentials ----
@@ -213,13 +261,17 @@ export const webauthnCredentials = pgTable("webauthn_credentials", {
   counter: bigint("counter", { mode: "number" }).notNull().default(0),
   deviceName: text("device_name"), // "iPhone de Yassine"
   transports: jsonb("transports"), // ["internal", "hybrid"]
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
   lastUsedAt: timestamp("last_used_at", { withTimezone: true }),
 });
 
 // ---- messages_chantier ----
 export const messagesChantier = pgTable("messages_chantier", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   chantierId: uuid("chantier_id")
     .notNull()
     .references(() => chantiers.id, { onDelete: "cascade" }),
@@ -228,7 +280,9 @@ export const messagesChantier = pgTable("messages_chantier", {
     .references(() => employes.id, { onDelete: "cascade" }),
   contenu: text("contenu").notNull(),
   lu: boolean("lu").notNull().default(false),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- webauthn_challenges (ephemeral, replaces in-memory store for serverless) ----
@@ -241,19 +295,27 @@ export const webauthnChallenges = pgTable("webauthn_challenges", {
 // ---- login_logs (connexion history for security) ----
 export const loginLogs = pgTable("login_logs", {
   id: bigserial("id", { mode: "number" }).primaryKey(),
-  employeId: uuid("employe_id").references(() => employes.id, { onDelete: "cascade" }),
+  employeId: uuid("employe_id").references(() => employes.id, {
+    onDelete: "cascade",
+  }),
   email: text("email").notNull(),
   ip: text("ip"),
   userAgent: text("user_agent"),
   success: boolean("success").notNull(),
   newDevice: boolean("new_device").notNull().default(false),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- demandes_absence ----
 export const demandesAbsence = pgTable("demandes_absence", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
-  employeId: uuid("employe_id").notNull().references(() => employes.id, { onDelete: "cascade" }),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
+  employeId: uuid("employe_id")
+    .notNull()
+    .references(() => employes.id, { onDelete: "cascade" }),
   dateDebut: date("date_debut").notNull(),
   dateFin: date("date_fin").notNull(),
   type: text("type").notNull(), // conge_paye | maladie | accident_travail | sans_solde | formation | evenement_familial | autre
@@ -262,68 +324,114 @@ export const demandesAbsence = pgTable("demandes_absence", {
   statut: text("statut").notNull().default("en_attente"), // en_attente | accepte | refuse
   reponsePatron: text("reponse_patron"),
   reponduLe: timestamp("repondu_le", { withTimezone: true }),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- solde_conges ----
 export const soldeConges = pgTable("solde_conges", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
-  employeId: uuid("employe_id").notNull().unique().references(() => employes.id, { onDelete: "cascade" }),
-  joursAcquis: numeric("jours_acquis", { precision: 5, scale: 1 }).notNull().default("25"),
-  joursPris: numeric("jours_pris", { precision: 5, scale: 1 }).notNull().default("0"),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
-  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().default(sql`now()`),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
+  employeId: uuid("employe_id")
+    .notNull()
+    .unique()
+    .references(() => employes.id, { onDelete: "cascade" }),
+  joursAcquis: numeric("jours_acquis", { precision: 5, scale: 1 })
+    .notNull()
+    .default("25"),
+  joursPris: numeric("jours_pris", { precision: 5, scale: 1 })
+    .notNull()
+    .default("0"),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- missions_urgentes ----
 export const missionsUrgentes = pgTable("missions_urgentes", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   titre: text("titre").notNull(),
   description: text("description").notNull(),
-  chantierId: uuid("chantier_id").references(() => chantiers.id, { onDelete: "set null" }),
+  chantierId: uuid("chantier_id").references(() => chantiers.id, {
+    onDelete: "set null",
+  }),
   bonusDescription: text("bonus_description"),
   bonusMontantCents: integer("bonus_montant_cents"),
   dateLimite: timestamp("date_limite", { withTimezone: true }).notNull(),
   statut: text("statut").notNull().default("ouverte"), // ouverte | prise | annulee | expiree
-  acceptePar: uuid("accepte_par").references(() => employes.id, { onDelete: "set null" }),
+  acceptePar: uuid("accepte_par").references(() => employes.id, {
+    onDelete: "set null",
+  }),
   accepteLe: timestamp("accepte_le", { withTimezone: true }),
   creePar: uuid("cree_par")
     .notNull()
     .references(() => employes.id, { onDelete: "cascade" }),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- checklists_qualite ----
 export const checklistsQualite = pgTable("checklists_qualite", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
-  pointageId: uuid("pointage_id").notNull().references(() => pointages.id, { onDelete: "cascade" }),
-  employeId: uuid("employe_id").notNull().references(() => employes.id, { onDelete: "cascade" }),
-  chantierId: uuid("chantier_id").notNull().references(() => chantiers.id, { onDelete: "cascade" }),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
+  pointageId: uuid("pointage_id")
+    .notNull()
+    .references(() => pointages.id, { onDelete: "cascade" }),
+  employeId: uuid("employe_id")
+    .notNull()
+    .references(() => employes.id, { onDelete: "cascade" }),
+  chantierId: uuid("chantier_id")
+    .notNull()
+    .references(() => chantiers.id, { onDelete: "cascade" }),
   items: jsonb("items").notNull(), // [{ label: string, checked: boolean }]
   completedAt: timestamp("completed_at", { withTimezone: true }),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- chat_conversations ----
 export const chatConversations = pgTable("chat_conversations", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   visitorId: text("visitor_id").notNull(), // anonymous browser fingerprint
-  messages: jsonb("messages").notNull().default(sql`'[]'::jsonb`), // [{role, content, timestamp}]
+  messages: jsonb("messages")
+    .notNull()
+    .default(sql`'[]'::jsonb`), // [{role, content, timestamp}]
   qualificationData: jsonb("qualification_data"), // {type_travaux, surface, localisation, budget, urgence}
   prospectNom: text("prospect_nom"),
   prospectTel: text("prospect_tel"),
   prospectEmail: text("prospect_email"),
   prospectChaud: boolean("prospect_chaud").notNull().default(false),
   dossierCreated: boolean("dossier_created").notNull().default(false),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
-  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 // ---- parrainages ----
 export const parrainages = pgTable("parrainages", {
-  id: uuid("id").primaryKey().default(sql`gen_random_uuid()`),
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
   // Le parrain = client existant (référence un chantier terminé)
-  parrainChantierId: uuid("parrain_chantier_id").references(() => chantiers.id, { onDelete: "set null" }),
+  parrainChantierId: uuid("parrain_chantier_id").references(
+    () => chantiers.id,
+    { onDelete: "set null" },
+  ),
   parrainNom: text("parrain_nom").notNull(),
   parrainPrenom: text("parrain_prenom").notNull(),
   parrainEmail: text("parrain_email"),
@@ -333,7 +441,10 @@ export const parrainages = pgTable("parrainages", {
   filleulNom: text("filleul_nom"),
   filleulPhone: text("filleul_phone"),
   filleulEmail: text("filleul_email"),
-  filleulChantierId: uuid("filleul_chantier_id").references(() => chantiers.id, { onDelete: "set null" }),
+  filleulChantierId: uuid("filleul_chantier_id").references(
+    () => chantiers.id,
+    { onDelete: "set null" },
+  ),
   // Statut
   statut: text("statut").notNull().default("actif"), // actif | utilise | converti | expire
   recompense: text("recompense"), // description de la récompense
@@ -342,11 +453,53 @@ export const parrainages = pgTable("parrainages", {
   messageEnvoyeAt: timestamp("message_envoye_at", { withTimezone: true }),
   relanceEnvoyeeAt: timestamp("relance_envoyee_at", { withTimezone: true }),
   convertAt: timestamp("convert_at", { withTimezone: true }),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().default(sql`now()`),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
 });
 
 export type Employe = typeof employes.$inferSelect;
 export type NewEmploye = typeof employes.$inferInsert;
+// ---- realisations (publiees automatiquement par Jarvis agent #16) ----
+export const realisations = pgTable("realisations", {
+  id: uuid("id")
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
+  slug: text("slug").notNull().unique(),
+  titre: text("titre").notNull(),
+  titre_de: text("titre_de"),
+  titre_en: text("titre_en"),
+  meta_title: text("meta_title"),
+  meta_description: text("meta_description"),
+  description: text("description").notNull().default(""),
+  description_de: text("description_de"),
+  description_en: text("description_en"),
+  ville: text("ville").notNull().default("Saint-Louis"),
+  type_chantier: text("type_chantier").notNull().default("renovation"),
+  reference_dossier: text("reference_dossier"),
+  photos_avant: jsonb("photos_avant")
+    .notNull()
+    .default(sql`'[]'::jsonb`),
+  photos_apres: jsonb("photos_apres")
+    .notNull()
+    .default(sql`'[]'::jsonb`),
+  photos_pendant: jsonb("photos_pendant")
+    .notNull()
+    .default(sql`'[]'::jsonb`),
+  tags: jsonb("tags")
+    .notNull()
+    .default(sql`'[]'::jsonb`),
+  schema_org: jsonb("schema_org"),
+  date_publication: text("date_publication"),
+  publiee: boolean("publiee").notNull().default(true),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .default(sql`now()`),
+});
+
 export type Chantier = typeof chantiers.$inferSelect;
 export type Pointage = typeof pointages.$inferSelect;
 export type DemandeAbsence = typeof demandesAbsence.$inferSelect;
@@ -356,3 +509,5 @@ export type NewMissionUrgente = typeof missionsUrgentes.$inferInsert;
 export type SuiviMateriel = typeof suiviMateriel.$inferSelect;
 export type Parrainage = typeof parrainages.$inferSelect;
 export type NewParrainage = typeof parrainages.$inferInsert;
+export type Realisation = typeof realisations.$inferSelect;
+export type NewRealisation = typeof realisations.$inferInsert;
