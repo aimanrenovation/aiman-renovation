@@ -15,6 +15,8 @@ export interface Service {
   seoDescription?: string;
   /** Slugs des services liés pour le maillage interne */
   relatedSlugs?: string[];
+  /** Questions fréquentes pour le schéma FAQPage */
+  faq?: { question: string; answer: string }[];
 }
 
 export const PHOTO_MAP: Record<string, string> = {
@@ -445,7 +447,6 @@ export const SERVICES: Service[] = [
     seoTitle: "Isolation Thermique Saint-Louis 68 | ITE ITI Alsace",
     seoDescription: "Isolation thermique ITE/ITI et combles à Saint-Louis 68 et Haut-Rhin. RGE certifié, MaPrimeRénov', CEE, éco-PTZ. Devis gratuit sous 48h.",
     relatedSlugs: ["facade", "renovation-complete", "panneaux-photovoltaiques"],
-    relatedSlugs: ["facade", "renovation-complete", "panneaux-photovoltaiques"],
   },
   {
     slug: "facade",
@@ -474,5 +475,8 @@ export const SERVICES: Service[] = [
     whyPro:
       "Un ravalement mal exécuté peut entraîner des décollements d'enduit en 2 à 3 ans, des infiltrations d'eau dans les murs et une dégradation accélérée du bâtiment. Le montage d'un échafaudage, le choix des enduits adaptés au support et la gestion des fissures structurelles nécessitent un savoir-faire professionnel. De plus, au-delà de 20 m² de façade, le ravalement doit être déclaré en mairie. Aiman Renovation gère toutes les démarches et vous garantit un résultat qui tient dans le temps.",
     priceRange: "30 € – 80 € / m² pour un ravalement simple, 60 € – 120 € / m² pour un ravalement avec réparations",
+    seoTitle: "Ravalement Façade Saint-Louis 68 | Artisan Haut-Rhin",
+    seoDescription: "Ravalement façade à Saint-Louis et Haut-Rhin. Nettoyage, traitement fissures, enduit finition, échafaudage. Peinture microporeuse. Devis gratuit.",
+    relatedSlugs: ["isolation", "peinture", "entretien-exterieur"],
   },
 ];
