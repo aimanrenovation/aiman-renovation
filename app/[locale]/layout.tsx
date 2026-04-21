@@ -76,6 +76,27 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const catalogName = ts("catalog_name");
 
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://aiman-renovation.fr/#website",
+    url: "https://aiman-renovation.fr",
+    name: "Aiman Renovation",
+    description: tc("slogan"),
+    publisher: {
+      "@id": "https://aiman-renovation.fr/#organization",
+    },
+    inLanguage: locale,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://aiman-renovation.fr/services/{search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": ["GeneralContractor", "HomeAndConstructionBusiness", "LocalBusiness"],
@@ -167,6 +188,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider messages={messages}>
+      <JsonLd data={websiteJsonLd} />
       <JsonLd data={organizationJsonLd} />
       <SmoothScrollProvider>
         <Navbar />

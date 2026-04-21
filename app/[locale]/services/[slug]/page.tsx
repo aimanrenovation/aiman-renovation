@@ -462,35 +462,30 @@ export default async function ServicePage({ params }: Props) {
         </ScrollReveal>
       )}
 
-      {/* FAQ */}
+      {/* FAQ — Rich Snippets "People Also Ask" */}
       {faq.length > 0 && (
         <ScrollReveal direction="up">
-          <section className="relative z-10 bg-[#0A0A0A] py-24 md:py-32 border-t border-white/5">
+          <section className="relative z-10 bg-[#0A0A0A] py-16 md:py-24 border-t border-white/5">
             <div className="max-w-5xl mx-auto px-6">
               <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
-              <h2 className="font-heading text-2xl md:text-3xl mb-12">
+              <h2 className="font-heading text-xl md:text-2xl mb-10">
                 QUESTIONS <span className="text-[#E50000]">FRÉQUENTES</span>
               </h2>
-              <div className="space-y-4">
+              <dl className="space-y-4">
                 {faq.map((item, i) => (
-                  <details
+                  <div
                     key={i}
-                    className="group bg-[#111111] border border-white/5 rounded-xl overflow-hidden hover:border-[#E50000]/20 transition-colors"
+                    className="bg-black border border-white/5 rounded-xl p-6 md:p-8 hover:border-[#E50000]/20 transition-colors"
                   >
-                    <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none">
-                      <h3 className="font-heading text-base md:text-lg text-white leading-snug">
-                        {item.question}
-                      </h3>
-                      <span className="shrink-0 w-8 h-8 rounded-full bg-[#E50000]/10 flex items-center justify-center text-[#E50000] group-open:rotate-45 transition-transform duration-200">
-                        +
-                      </span>
-                    </summary>
-                    <div className="px-6 pb-6">
-                      <p className="text-gray-400 leading-relaxed">{item.answer}</p>
-                    </div>
-                  </details>
+                    <dt className="font-heading text-white text-base md:text-lg mb-3">
+                      {item.question}
+                    </dt>
+                    <dd className="text-gray-400 leading-relaxed text-sm md:text-base">
+                      {item.answer}
+                    </dd>
+                  </div>
                 ))}
-              </div>
+              </dl>
             </div>
           </section>
         </ScrollReveal>
