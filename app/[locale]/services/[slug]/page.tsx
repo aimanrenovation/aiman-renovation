@@ -28,6 +28,7 @@ interface TranslatedService {
   process: { step: string; detail: string }[];
   whyPro: string;
   priceRange: string;
+  faq?: { question: string; answer: string }[];
 }
 
 async function getTranslatedService(locale: string, slug: string): Promise<TranslatedService | undefined> {
@@ -107,6 +108,8 @@ export default async function ServicePage({ params }: Props) {
   const whyPro = translated?.whyPro ?? service.whyPro;
   const priceRange = translated?.priceRange ?? service.priceRange;
 
+  const faq = translated?.faq ?? service.faq ?? [];
+
   const relatedServices = SERVICES.filter(
     (s) => (service.relatedSlugs ?? []).includes(s.slug)
   ).slice(0, 3);
@@ -140,6 +143,19 @@ export default async function ServicePage({ params }: Props) {
     },
   };
 
+  const faqSchema = faq.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map(({ question, answer }) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: answer,
+      },
+    })),
+  } : null;
+
   const breadcrumbItems = [
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
@@ -152,6 +168,7 @@ export default async function ServicePage({ params }: Props) {
   return (
     <>
       <JsonLd data={serviceSchema} />
+      {faqSchema && <JsonLd data={faqSchema} />}
       <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero full-bleed avec photo */}
@@ -439,6 +456,40 @@ export default async function ServicePage({ params }: Props) {
                     </Link>
                   );
                 })}
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* FAQ */}
+      {faq.length > 0 && (
+        <ScrollReveal direction="up">
+          <section className="relative z-10 bg-[#0A0A0A] py-24 md:py-32 border-t border-white/5">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
+              <h2 className="font-heading text-2xl md:text-3xl mb-12">
+                QUESTIONS <span className="text-[#E50000]">FRÉQUENTES</span>
+              </h2>
+              <div className="space-y-4">
+                {faq.map((item, i) => (
+                  <details
+                    key={i}
+                    className="group bg-[#111111] border border-white/5 rounded-xl overflow-hidden hover:border-[#E50000]/20 transition-colors"
+                  >
+                    <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none">
+                      <h3 className="font-heading text-base md:text-lg text-white leading-snug">
+                        {item.question}
+                      </h3>
+                      <span className="shrink-0 w-8 h-8 rounded-full bg-[#E50000]/10 flex items-center justify-center text-[#E50000] group-open:rotate-45 transition-transform duration-200">
+                        +
+                      </span>
+                    </summary>
+                    <div className="px-6 pb-6">
+                      <p className="text-gray-400 leading-relaxed">{item.answer}</p>
+                    </div>
+                  </details>
+                ))}
               </div>
             </div>
           </section>
