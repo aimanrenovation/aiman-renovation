@@ -156,6 +156,20 @@ export default async function ServicePage({ params }: Props) {
     })),
   } : null;
 
+  // JSON-LD HowTo — étapes du processus → rich snippets Google
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: `Comment se déroule une intervention ${title.toLowerCase()} — Aiman Renovation`,
+    description: `Les ${process.length} étapes de notre intervention pour ${title.toLowerCase()} à Saint-Louis et dans le Haut-Rhin.`,
+    step: process.map((step, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: step.step,
+      text: step.detail,
+    })),
+  };
+
   const breadcrumbItems = [
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
@@ -168,6 +182,7 @@ export default async function ServicePage({ params }: Props) {
   return (
     <>
       <JsonLd data={serviceSchema} />
+      <JsonLd data={howToSchema} />
       {faqSchema && <JsonLd data={faqSchema} />}
       <Breadcrumb items={breadcrumbItems} />
 
