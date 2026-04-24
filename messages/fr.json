@@ -321,8 +321,8 @@
     ]
   },
   "services": {
-    "seo_title": "Services Rénovation Saint-Louis & Haut-Rhin | Artisan",
-    "seo_description": "Cuisine, salle de bain, plomberie, électricité, carrelage, façade, isolation, peinture, borne IRVE, photovoltaïque. Artisan qualifié Saint-Louis 68300.",
+    "seo_title": "Services Rénovation Saint-Louis 68 | Artisan Haut-Rhin",
+    "seo_description": "Cuisine, salle de bain, plomberie, électricité, carrelage, peinture, isolation, façade, borne IRVE. Artisan qualifié Saint-Louis 68300, Mulhouse et Bâle.",
     "hero_title": "NOS",
     "hero_title_highlight": "SERVICES",
     "hero_subtitle": "Du sol au plafond, de l'intérieur à l'extérieur — nous maîtrisons tous les corps de métier.",
@@ -942,7 +942,7 @@
   },
   "devis": {
     "seo_title": "Devis Gratuit Rénovation Saint-Louis 68 | Réponse 48h",
-    "seo_description": "Estimez votre projet de rénovation en ligne. Artisan qualifié à Saint-Louis 68300 et Haut-Rhin. Cuisine, salle de bain, carrelage, isolation. Réponse sous 48h.",
+    "seo_description": "Estimez votre projet de rénovation à Saint-Louis, Mulhouse ou Bâle. Artisan qualifié Haut-Rhin. Cuisine, salle de bain, carrelage, isolation. Réponse sous 48h.",
     "blueprint": {
       "touch_room": "Touchez une pièce",
       "click_room": "Cliquez sur une pièce pour commencer",
@@ -1249,7 +1249,7 @@
   },
   "faq": {
     "seo_title": "FAQ Rénovation Saint-Louis 68 | Devis, Délais, Garanties",
-    "seo_description": "Réponses à vos questions sur la rénovation à Saint-Louis 68 et Haut-Rhin : devis, délais, garanties, aides MaPrimeRénov'. Artisan qualifié. 06 33 49 69 25.",
+    "seo_description": "Réponses à vos questions sur la rénovation à Saint-Louis et Haut-Rhin : devis, délais, garanties, aides MaPrimeRénov'. Artisan qualifié depuis 19 ans.",
     "hero_title": "QUESTIONS",
     "hero_title_highlight": "FRÉQUENTES",
     "hero_subtitle": "Tout ce que vous devez savoir avant de lancer votre projet.",
@@ -1565,7 +1565,7 @@
   },
   "realisations": {
     "seo_title": "Réalisations Rénovation Saint-Louis 68 | Photos Avant/Après",
-    "seo_description": "Découvrez nos chantiers réalisés à Saint-Louis et dans le Haut-Rhin : cuisine, salle de bain, façades, carrelage. Photos avant/après. Artisan qualifié 68300.",
+    "seo_description": "Photos avant/après de nos chantiers à Saint-Louis, Mulhouse et Bâle : cuisine, salle de bain, façades, carrelage. Artisan qualifié Haut-Rhin 68300.",
     "hero_title": "NOS",
     "hero_title_highlight": "RÉALISATIONS",
     "hero_subtitle": "Chaque projet est unique. Voici un aperçu de nos transformations à Saint-Louis et dans le Haut-Rhin. Des rénovations menées avec exigence, du premier coup de masse à la touche finale.",
@@ -1826,7 +1826,7 @@
   },
   "seo": {
     "home_title": "Artisan Rénovation Saint-Louis 68 | Haut-Rhin & Bâle",
-    "home_description": "Artisan rénovation à Saint-Louis 68300 et Haut-Rhin. Salle de bain, cuisine, carrelage, peinture, isolation, façade. Garantie décennale. Devis gratuit."
+    "home_description": "Artisan rénovation à Saint-Louis 68300, Mulhouse et Bâle. Cuisine, salle de bain, carrelage, peinture, isolation, façade. Garantie décennale. Devis gratuit."
   },
   "schema": {
     "organization_type": "HomeAndConstructionBusiness",
@@ -3122,8 +3122,8 @@
     }
   ],
   "calculateur": {
-    "meta_title": "Calculateur de Devis | Estimez vos travaux en ligne",
-    "meta_description": "Estimez le coût de vos travaux de rénovation en quelques clics. Calculateur gratuit et instantané pour salle de bain, cuisine, salon et plus.",
+    "meta_title": "Calculateur de Devis Rénovation | Saint-Louis Haut-Rhin",
+    "meta_description": "Estimez le coût de vos travaux à Saint-Louis et Haut-Rhin en quelques clics. Calculateur gratuit : salle de bain, cuisine, carrelage, peinture et plus.",
     "title": "Calculateur de Devis",
     "subtitle": "Estimez le coût de vos travaux en quelques clics",
     "step0_title": "Quel type de travaux ?",

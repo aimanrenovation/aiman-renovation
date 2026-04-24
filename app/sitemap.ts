@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localizedEntry("/devis", 0.9, "monthly"),
     ...localizedEntry("/devis-salle-de-bain", 0.8, "monthly"),
     ...localizedEntry("/devis-cuisine", 0.8, "monthly"),
-    ...localizedEntry("/devis-facade", 0.7, "monthly"),
+    ...localizedEntry("/devis-facade", 0.8, "monthly"),
     ...localizedEntry("/contact", 0.7, "monthly"),
     ...localizedEntry("/faq", 0.6, "monthly"),
     ...localizedEntry("/carrieres", 0.7, "monthly"),
