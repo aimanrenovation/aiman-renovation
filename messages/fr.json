@@ -174,7 +174,7 @@
           "desc": "Tous nos travaux couverts par une assurance décennale et RC professionnelle."
         },
         {
-          "title": "Devis gratuit sous 48h",
+          "title": "Devis gratuit sous 4 jours",
           "desc": "Visite technique incluse, devis détaillé et transparent. Sans engagement."
         },
         {
@@ -197,14 +197,14 @@
     },
     "cta_banner": {
       "title": "UN PROJET EN TÊTE ?",
-      "subtitle": "Devis gratuit sous 48h, sans engagement.",
+      "subtitle": "Devis gratuit sous 4 jours, sans engagement.",
       "button": "Demander un devis",
       "call_prefix": "ou appelez le"
     }
   },
   "about": {
-    "seo_title": "À Propos — Aiman Renovation | Artisan Saint-Louis 68300",
-    "seo_description": "19 ans d'expérience en rénovation à Saint-Louis 68 et Haut-Rhin. Histoire, valeurs et équipe d'artisans qualifiés. Garantie décennale. Zone tri-frontière.",
+    "seo_title": "À propos — Artisan Rénovation Saint-Louis Haut-Rhin",
+    "seo_description": "19 ans d'expérience en rénovation à Saint-Louis et Haut-Rhin. Découvrez l'histoire d'Aiman Renovation, nos valeurs et notre équipe d'artisans qualifiés.",
     "hero_title_prefix": "À",
     "hero_title_highlight": "PROPOS",
     "hero_subtitle": "{experience} ans d'expérience. Un seul objectif : rénover jusqu'au bout de vos rêves.",
@@ -258,7 +258,7 @@
       {
         "number": "03",
         "title": "Devis détaillé",
-        "desc": "Sous 48h, vous recevez un devis complet : travaux poste par poste, matériaux, planning et montant total."
+        "desc": "Sous 4 jours, vous recevez un devis complet : travaux poste par poste, matériaux, planning et montant total."
       },
       {
         "number": "04",
@@ -321,8 +321,8 @@
     ]
   },
   "services": {
-    "seo_title": "Services Rénovation Saint-Louis 68 | Artisan Haut-Rhin",
-    "seo_description": "Cuisine, salle de bain, plomberie, électricité, carrelage, peinture, isolation, façade, borne IRVE. Artisan qualifié Saint-Louis 68300, Mulhouse et Bâle.",
+    "seo_title": "Services Rénovation Saint-Louis 68 | Artisan Qualifié Haut-Rhin",
+    "seo_description": "Cuisine, salle de bain, électricité, plomberie, carrelage, façade, isolation, peinture, photovoltaïque. Artisan qualifié Haut-Rhin, zone tri-frontière Bâle.",
     "hero_title": "NOS",
     "hero_title_highlight": "SERVICES",
     "hero_subtitle": "Du sol au plafond, de l'intérieur à l'extérieur — nous maîtrisons tous les corps de métier.",
@@ -342,11 +342,11 @@
     "cta_title_line1": "INTÉRESSÉ PAR",
     "cta_title_line2": "CE",
     "cta_title_highlight": "SERVICE",
-    "cta_subtitle": "Décrivez votre projet et recevez un devis gratuit sous 48h. Sans engagement.",
+    "cta_subtitle": "Décrivez votre projet et recevez un devis gratuit sous 4 jours. Sans engagement.",
     "cta_button": "Demander un devis",
     "cta_hero_button": "Demander un devis gratuit",
     "service_meta_suffix": "à Saint-Louis (68) — Devis Gratuit",
-    "service_meta_desc_suffix": "Artisan qualifié à Saint-Louis et Haut-Rhin. Devis gratuit sous 48h."
+    "service_meta_desc_suffix": "Artisan qualifié à Saint-Louis et Haut-Rhin. Devis gratuit sous 4 jours."
   },
   "service_items": [
     {
@@ -905,12 +905,12 @@
   ],
   "contact": {
     "seo_title": "Contact — Rénovation Saint-Louis, Haut-Rhin | Devis Gratuit",
-    "seo_description": "Contactez Aiman Renovation pour votre projet de rénovation à Saint-Louis 68300 et Haut-Rhin. Devis gratuit, réponse sous 48h. Artisan qualifié, sans engagement.",
+    "seo_description": "Contactez Aiman Renovation pour votre projet de rénovation à Saint-Louis et dans le Haut-Rhin. Devis gratuit sous 48h. Tél. 06 33 49 69 25. Sans engagement.",
     "hero_title_highlight": "PARLONS",
     "hero_title": "DE VOTRE PROJET",
     "hero_subtitle": "Premier échange toujours sans engagement.",
     "reassurance_devis": "Devis gratuit",
-    "reassurance_response": "Réponse sous 48h",
+    "reassurance_response": "Réponse sous 4 jours",
     "reassurance_engagement": "Sans engagement",
     "mobile_whatsapp": "Mobile / WhatsApp",
     "whatsapp": "WhatsApp",
@@ -936,13 +936,13 @@
       "placeholder_message": "Décrivez votre projet...",
       "submit": "Envoyer le message",
       "sending": "Envoi en cours...",
-      "success": "Message envoyé avec succès ! Nous vous répondrons sous 48h.",
+      "success": "Message envoyé avec succès ! Nous vous répondrons sous 4 jours.",
       "error": "Une erreur est survenue. Veuillez réessayer ou nous appeler directement."
     }
   },
   "devis": {
-    "seo_title": "Devis Gratuit Rénovation Saint-Louis 68 | Réponse 48h",
-    "seo_description": "Estimez votre projet de rénovation à Saint-Louis, Mulhouse ou Bâle. Artisan qualifié Haut-Rhin. Cuisine, salle de bain, carrelage, isolation. Réponse sous 48h.",
+    "seo_title": "Devis Gratuit Rénovation Saint-Louis 68 | Haut-Rhin",
+    "seo_description": "Demandez votre devis gratuit en ligne pour vos travaux de rénovation à Saint-Louis 68300 et Haut-Rhin. Cuisine, salle de bain, façade, isolation. Réponse sous 48h.",
     "blueprint": {
       "touch_room": "Touchez une pièce",
       "click_room": "Cliquez sur une pièce pour commencer",
@@ -1248,8 +1248,8 @@
     }
   },
   "faq": {
-    "seo_title": "FAQ Rénovation Saint-Louis 68 | Devis, Délais, Garanties",
-    "seo_description": "Réponses à vos questions sur la rénovation à Saint-Louis et Haut-Rhin : devis, délais, garanties, aides MaPrimeRénov'. Artisan qualifié depuis 19 ans.",
+    "seo_title": "FAQ Rénovation Saint-Louis 68 | Artisan Haut-Rhin",
+    "seo_description": "Réponses à vos questions sur la rénovation à Saint-Louis et Haut-Rhin : devis gratuit, délais, garanties, aides financières. Artisan qualifié depuis 19 ans.",
     "hero_title": "QUESTIONS",
     "hero_title_highlight": "FRÉQUENTES",
     "hero_subtitle": "Tout ce que vous devez savoir avant de lancer votre projet.",
@@ -1268,7 +1268,7 @@
       {
         "category": "Devis",
         "question": "Comment obtenir un devis ?",
-        "answer": "Remplissez notre formulaire en ligne ou appelez-nous au 06 33 49 69 25. Nous vous envoyons un devis détaillé sous 48h après visite technique.",
+        "answer": "Remplissez notre formulaire en ligne ou appelez-nous au 06 33 49 69 25. Nous vous envoyons un devis détaillé sous 4 jours après visite technique.",
         "relatedServices": [
           {
             "label": "Demander un devis",
@@ -1305,7 +1305,7 @@
       {
         "category": "Devis",
         "question": "Sous quel délai recevrai-je mon devis ?",
-        "answer": "Nous nous engageons à vous envoyer votre devis sous 48h après la visite technique. Pour les projets complexes (façade, photovoltaïque), comptez 2 à 4 jours ouvrés.",
+        "answer": "Nous nous engageons à vous envoyer votre devis sous 4 jours après la visite technique. Pour les projets complexes (façade, photovoltaïque), comptez 5 à 7 jours ouvrés.",
         "relatedServices": [
           {
             "label": "Demander un devis",
@@ -1564,8 +1564,8 @@
     ]
   },
   "realisations": {
-    "seo_title": "Réalisations Rénovation Saint-Louis 68 | Photos Avant/Après",
-    "seo_description": "Photos avant/après de nos chantiers à Saint-Louis, Mulhouse et Bâle : cuisine, salle de bain, façades, carrelage. Artisan qualifié Haut-Rhin 68300.",
+    "seo_title": "Nos Réalisations — Projets de Rénovation Haut-Rhin",
+    "seo_description": "Découvrez nos projets de rénovation terminés à Saint-Louis et dans le Haut-Rhin : cuisine, salle de bain, façades, aménagement. Photos avant/après.",
     "hero_title": "NOS",
     "hero_title_highlight": "RÉALISATIONS",
     "hero_subtitle": "Chaque projet est unique. Voici un aperçu de nos transformations à Saint-Louis et dans le Haut-Rhin. Des rénovations menées avec exigence, du premier coup de masse à la touche finale.",
@@ -1825,8 +1825,8 @@
     "seo_description": "Politique de confidentialité d'Aiman Renovation — protection de vos données personnelles, RGPD, droits d'accès et de rectification. Contact : Saint-Louis 68300."
   },
   "seo": {
-    "home_title": "Artisan Rénovation Saint-Louis 68 | Haut-Rhin & Bâle",
-    "home_description": "Artisan rénovation à Saint-Louis 68300, Mulhouse et Bâle. Cuisine, salle de bain, carrelage, peinture, isolation, façade. Garantie décennale. Devis gratuit."
+    "home_title": "Aiman Renovation — Rénovation sur mesure à Saint-Louis (68)",
+    "home_description": "Rénovation intérieure et extérieure à Saint-Louis et Haut-Rhin. Cuisine, salle de bain, électricité, plomberie, façades, isolation. Devis gratuit sous 4 jours."
   },
   "schema": {
     "organization_type": "HomeAndConstructionBusiness",
@@ -2075,8 +2075,8 @@
     }
   },
   "avis": {
-    "seo_title": "Avis Clients Aiman Renovation — 4.9/5 | Saint-Louis 68",
-    "seo_description": "30 avis vérifiés Aiman Renovation, artisan rénovation à Saint-Louis 68300. Note 4.9/5. Clients France, Suisse (Bâle) et Allemagne satisfaits. Voir les témoignages.",
+    "seo_title": "Avis Clients Aiman Renovation | 4.9/5 — Saint-Louis 68",
+    "seo_description": "Découvrez les 30 avis clients d'AIMAN RENOVATION, artisan rénovation à Saint-Louis 68300. Note moyenne 4.9/5. Clients France, Suisse et Allemagne satisfaits.",
     "breadcrumb": "Avis clients",
     "hero_title": "AVIS",
     "hero_title_highlight": "CLIENTS",
@@ -2086,7 +2086,7 @@
     "filter_country": "Pays :",
     "cta_title": "REJOIGNEZ NOS",
     "cta_title_highlight": "CLIENTS SATISFAITS",
-    "cta_subtitle": "Devis gratuit sous 48h. Artisan local, garantie décennale.",
+    "cta_subtitle": "Devis gratuit sous 4 jours. Artisan local, garantie décennale.",
     "cta_button": "Demander un devis gratuit"
   },
   "article_items": [
@@ -3122,8 +3122,8 @@
     }
   ],
   "calculateur": {
-    "meta_title": "Calculateur de Devis Rénovation | Saint-Louis Haut-Rhin",
-    "meta_description": "Estimez le coût de vos travaux à Saint-Louis et Haut-Rhin en quelques clics. Calculateur gratuit : salle de bain, cuisine, carrelage, peinture et plus.",
+    "meta_title": "Calculateur de Devis | Estimez vos travaux en ligne",
+    "meta_description": "Estimez le coût de vos travaux de rénovation en quelques clics. Calculateur gratuit et instantané pour salle de bain, cuisine, salon et plus.",
     "title": "Calculateur de Devis",
     "subtitle": "Estimez le coût de vos travaux en quelques clics",
     "step0_title": "Quel type de travaux ?",

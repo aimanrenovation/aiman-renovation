@@ -151,8 +151,6 @@ Les slugs actuels sont bien optimisés. Redirects déjà en place dans `next.con
 
 ---
 
----
-
 ## Phase 2 — Réalisé (avril 2026, branche seo/phase-2-content)
 
 ### Metadata services corrigés
@@ -220,25 +218,5 @@ Les slugs actuels sont bien optimisés. Redirects déjà en place dans `next.con
 - "peintre alsace" + "peintre mulhouse"
 
 ---
-
----
-
-## Observations phase 2 (ajouts)
-
-- **Compteur d'avis incohérent** : `app/[locale]/page.tsx` affiche "30 avis vérifiés" en dur
-  alors que le schéma Organization déclare `reviewCount: "47"`. Unifier le chiffre.
-
-- **Téléphone contact** : `messages/fr.json` mentionnait "03 56 89 44 03" dans la description SEO contact — corrigé en phase 2 (remplacé par la mention tri-frontière). Vérifier que ce numéro fixe est correct.
-
-- **`calculateur/page.tsx`** : utilise `alternates.canonical` hardcodé plutôt que `getAlternates()`.
-  Peut générer des hreflang incorrects pour `/de` et `/en`.
-
-- **Pages devis spécialisées** (`devis-cuisine`, `devis-salle-de-bain`, `devis-facade`) :
-  même problème de canonical hardcodé sans hreflang multi-langue.
-
-- **Pages canton suisse** (`/renovierung-schweiz/kanton/*`) : schéma `LocalBusiness` absent.
-  Ajouter le même pattern que les pages ville FR.
-
-- **Texte "Voir tous les avis →"** dans homepage : hardcodé en français, non i18né.
 
 *Dernière mise à jour : phase 2 — avril 2026*
