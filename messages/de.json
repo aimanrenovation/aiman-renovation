@@ -174,7 +174,7 @@
           "desc": "Alle unsere Arbeiten sind durch eine Haftpflicht- und Zehnjahresgarantie abgedeckt."
         },
         {
-          "title": "Kostenlose Offerte innert 4 Tagen",
+          "title": "Kostenlose Offerte innert 48h",
           "desc": "Technische Besichtigung inklusive, detaillierte und transparente Offerte. Unverbindlich."
         },
         {
@@ -197,7 +197,7 @@
     },
     "cta_banner": {
       "title": "EIN PROJEKT IM KOPF?",
-      "subtitle": "Kostenlose Offerte innert 4 Tagen, unverbindlich.",
+      "subtitle": "Kostenlose Offerte innert 48h, unverbindlich.",
       "button": "Offerte anfordern",
       "call_prefix": "oder rufen Sie an"
     }
@@ -258,7 +258,7 @@
       {
         "number": "03",
         "title": "Detaillierte Offerte",
-        "desc": "Innert 4 Tagen erhalten Sie eine komplette Offerte: Arbeiten Posten für Posten, Materialien, Zeitplan und Gesamtbetrag."
+        "desc": "Innert 48h erhalten Sie eine komplette Offerte: Arbeiten Posten für Posten, Materialien, Zeitplan und Gesamtbetrag."
       },
       {
         "number": "04",
@@ -321,7 +321,7 @@
     ]
   },
   "services": {
-    "seo_title": "Unsere Renovierungsleistungen in der Region Basel",
+    "seo_title": "Renovierungsleistungen Region Basel & Dreiländereck",
     "seo_description": "Küche, Badezimmer, Elektrik, Sanitär, Fliesen, Fassaden, Dämmung, Malerarbeiten, Ladestationen, Photovoltaik. Qualifizierter Handwerker im Dreiländereck.",
     "hero_title": "UNSERE",
     "hero_title_highlight": "LEISTUNGEN",
@@ -342,11 +342,11 @@
     "cta_title_line1": "INTERESSE AN",
     "cta_title_line2": "DIESER",
     "cta_title_highlight": "LEISTUNG",
-    "cta_subtitle": "Beschreiben Sie Ihr Projekt und erhalten Sie eine kostenlose Offerte innert 4 Tagen. Unverbindlich.",
+    "cta_subtitle": "Beschreiben Sie Ihr Projekt und erhalten Sie eine kostenlose Offerte innert 48h. Unverbindlich.",
     "cta_button": "Offerte anfordern",
     "cta_hero_button": "Kostenlose Offerte anfordern",
     "service_meta_suffix": "Region Basel — Kostenlose Offerte",
-    "service_meta_desc_suffix": "Qualifizierter Handwerker in der Region Basel und im Dreiländereck. Kostenlose Offerte innert 4 Tagen."
+    "service_meta_desc_suffix": "Qualifizierter Handwerker in der Region Basel und im Dreiländereck. Kostenlose Offerte innert 48h."
   },
   "service_items": [
     {
@@ -905,12 +905,12 @@
   ],
   "contact": {
     "seo_title": "Kontakt — Renovation Region Basel & Dreiländereck | Offerte",
-    "seo_description": "Kontaktieren Sie Aiman Renovation unter 03 56 89 44 03 oder per E-Mail. Kostenlose Offerte innert 4 Tagen für Ihre Renovierungsarbeiten in der Region Basel.",
+    "seo_description": "Kontaktieren Sie Aiman Renovation für Ihr Renovierungsprojekt in der Region Basel und im Dreiländereck. Kostenlose Offerte, Antwort innert 48h.",
     "hero_title_highlight": "SPRECHEN WIR",
     "hero_title": "ÜBER IHR PROJEKT",
     "hero_subtitle": "Erstes Gespräch immer unverbindlich.",
     "reassurance_devis": "Kostenlose Offerte",
-    "reassurance_response": "Antwort innert 4 Tagen",
+    "reassurance_response": "Antwort innert 48h",
     "reassurance_engagement": "Unverbindlich",
     "mobile_whatsapp": "Mobil / WhatsApp",
     "whatsapp": "WhatsApp",
@@ -936,13 +936,13 @@
       "placeholder_message": "Beschreiben Sie Ihr Projekt...",
       "submit": "Nachricht senden",
       "sending": "Wird gesendet...",
-      "success": "Nachricht erfolgreich gesendet! Wir antworten Ihnen innert 4 Tagen.",
+      "success": "Nachricht erfolgreich gesendet! Wir antworten Ihnen innert 48h.",
       "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an."
     }
   },
   "devis": {
     "seo_title": "Kostenlose Offerte Renovation — Region Basel und Dreiländereck",
-    "seo_description": "Fordern Sie Ihre kostenlose Offerte online an für Ihre Renovierungsarbeiten in der Region Basel und im Dreiländereck. Antwort innert 4 Tagen, unverbindlich.",
+    "seo_description": "Kostenlose Offerte online anfordern für Renovierungsarbeiten in Basel und im Dreiländereck. Qualifizierter Handwerker, Antwort innert 48h, unverbindlich.",
     "blueprint": {
       "touch_room": "Tippen Sie auf einen Raum",
       "click_room": "Klicken Sie auf einen Raum, um zu beginnen",
@@ -1268,7 +1268,7 @@
       {
         "category": "Devis",
         "question": "Wie erhalte ich eine Offerte?",
-        "answer": "Füllen Sie unser Online-Formular aus oder rufen Sie uns an unter 06 33 49 69 25. Wir senden Ihnen innert 4 Tagen nach technischer Besichtigung eine detaillierte Offerte.",
+        "answer": "Füllen Sie unser Online-Formular aus oder rufen Sie uns an unter 06 33 49 69 25. Wir senden Ihnen innert 48h nach technischer Besichtigung eine detaillierte Offerte.",
         "relatedServices": [
           {
             "label": "Offerte anfordern",
@@ -1305,7 +1305,7 @@
       {
         "category": "Devis",
         "question": "Wie schnell erhalte ich meine Offerte?",
-        "answer": "Wir verpflichten uns, Ihnen Ihre Offerte innert 4 Tagen nach der technischen Besichtigung zuzusenden. Bei komplexen Projekten (Fassade, Photovoltaik) rechnen Sie mit 5 bis 7 Werktagen.",
+        "answer": "Wir verpflichten uns, Ihnen Ihre Offerte innert 48h nach der technischen Besichtigung zuzusenden. Bei komplexen Projekten (Fassade, Photovoltaik) rechnen Sie mit 2 bis 4 Werktagen.",
         "relatedServices": [
           {
             "label": "Offerte anfordern",
@@ -1826,7 +1826,7 @@
   },
   "seo": {
     "home_title": "Renovation Region Basel | Kostenlose Offerte — Aiman",
-    "home_description": "Renovation Region Basel — Küche, Bad, Elektrik, Sanitär, Fassaden, Dämmung. Handwerker im Dreiländereck. Kostenlose Offerte innert 4 Tagen."
+    "home_description": "Renovation Region Basel — Küche, Bad, Elektrik, Sanitär, Fassaden, Dämmung, Bodenbelag. Handwerker im Dreiländereck. Kostenlose Offerte innert 48h."
   },
   "schema": {
     "organization_type": "HomeAndConstructionBusiness",
@@ -2086,7 +2086,7 @@
     "filter_country": "Land:",
     "cta_title": "WERDEN SIE TEIL UNSERER",
     "cta_title_highlight": "ZUFRIEDENEN KUNDEN",
-    "cta_subtitle": "Kostenloses Angebot in 4 Tagen. Lokaler Handwerker, 10 Jahre Garantie.",
+    "cta_subtitle": "Kostenloses Angebot innert 48h. Lokaler Handwerker, 10 Jahre Garantie.",
     "cta_button": "Kostenloses Angebot anfordern"
   },
   "ville_de_items": [

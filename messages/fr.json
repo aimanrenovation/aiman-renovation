@@ -321,8 +321,8 @@
     ]
   },
   "services": {
-    "seo_title": "Nos Services de Rénovation — Saint-Louis 68 & Haut-Rhin",
-    "seo_description": "Cuisine, salle de bain, carrelage, électricité, plomberie, peinture, façades, isolation. Artisan qualifié à Saint-Louis 68300 et zone tri-frontière Bâle. Devis gratuit.",
+    "seo_title": "Services Rénovation Saint-Louis 68 | Artisan Qualifié Haut-Rhin",
+    "seo_description": "Cuisine, salle de bain, électricité, plomberie, carrelage, façade, isolation, peinture, photovoltaïque. Artisan qualifié Haut-Rhin, zone tri-frontière Bâle.",
     "hero_title": "NOS",
     "hero_title_highlight": "SERVICES",
     "hero_subtitle": "Du sol au plafond, de l'intérieur à l'extérieur — nous maîtrisons tous les corps de métier.",
@@ -905,7 +905,7 @@
   ],
   "contact": {
     "seo_title": "Contact — Rénovation Saint-Louis, Haut-Rhin | Devis Gratuit",
-    "seo_description": "Contactez Aiman Renovation pour votre projet de rénovation à Saint-Louis et dans le Haut-Rhin. Devis gratuit sous 4 jours. Tél. 03 56 89 44 03.",
+    "seo_description": "Contactez Aiman Renovation pour votre projet de rénovation à Saint-Louis et dans le Haut-Rhin. Devis gratuit sous 48h. Tél. 06 33 49 69 25. Sans engagement.",
     "hero_title_highlight": "PARLONS",
     "hero_title": "DE VOTRE PROJET",
     "hero_subtitle": "Premier échange toujours sans engagement.",
@@ -941,8 +941,8 @@
     }
   },
   "devis": {
-    "seo_title": "Devis Gratuit Rénovation — Saint-Louis et Haut-Rhin",
-    "seo_description": "Demandez votre devis gratuit en ligne pour vos travaux de rénovation à Saint-Louis et dans le Haut-Rhin. Réponse sous 4 jours, sans engagement.",
+    "seo_title": "Devis Gratuit Rénovation Saint-Louis 68 | Haut-Rhin",
+    "seo_description": "Demandez votre devis gratuit en ligne pour vos travaux de rénovation à Saint-Louis 68300 et Haut-Rhin. Cuisine, salle de bain, façade, isolation. Réponse sous 48h.",
     "blueprint": {
       "touch_room": "Touchez une pièce",
       "click_room": "Cliquez sur une pièce pour commencer",
@@ -2185,7 +2185,7 @@
     }
   },
   "avis": {
-    "seo_title": "Avis Clients AIMAN RENOVATION — 4.9/5 sur 30 avis | Saint-Louis 68",
+    "seo_title": "Avis Clients Aiman Renovation | 4.9/5 — Saint-Louis 68",
     "seo_description": "Découvrez les 30 avis clients d'AIMAN RENOVATION, artisan rénovation à Saint-Louis 68300. Note moyenne 4.9/5. Clients France, Suisse et Allemagne satisfaits.",
     "breadcrumb": "Avis clients",
     "hero_title": "AVIS",

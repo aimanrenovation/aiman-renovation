@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ServicesPageContent } from "@/components/services/services-page-content";
 import { getAlternates } from "@/lib/i18n-helpers";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -29,11 +30,27 @@ export async function generateMetadata({ params }: Props) {
         },
       ],
     },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://aiman-renovation.fr/images/ambiance-resultat.jpg"],
+    },
   };
 }
 
 export default async function ServicesPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <ServicesPageContent />;
+  return (
+    <>
+      <Breadcrumb
+        items={[
+          { name: "Accueil", url: "/" },
+          { name: "Services", url: "/services" },
+        ]}
+      />
+      <ServicesPageContent />
+    </>
+  );
 }

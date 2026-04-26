@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props) {
       type: "website",
       images: [
         {
-          url: "https://aiman-renovation.fr/images/ambiance-resultat.jpg",
+          url: "https://aiman-renovation.fr/images/photo-facade.jpg",
           width: 1200,
           height: 630,
           alt: "Ravalement de façade — Aiman Renovation Haut-Rhin",
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props) {
       card: "summary_large_image" as const,
       title,
       description,
-      images: ["https://aiman-renovation.fr/images/ambiance-resultat.jpg"],
+      images: ["https://aiman-renovation.fr/images/photo-facade.jpg"],
     },
     alternates: {
       canonical: "https://aiman-renovation.fr/devis-facade",
