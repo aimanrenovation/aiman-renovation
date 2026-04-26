@@ -42,8 +42,12 @@ function MagicPlanSection() {
           <Ruler className="w-5 h-5 text-blue-400" />
         </div>
         <div>
-          <h4 className="text-white font-semibold text-sm">{t("magicplan_title")}</h4>
-          <p className="text-gray-400 text-xs mt-1">{t("magicplan_auto_info")}</p>
+          <h4 className="text-white font-semibold text-sm">
+            {t("magicplan_title")}
+          </h4>
+          <p className="text-gray-400 text-xs mt-1">
+            {t("magicplan_auto_info")}
+          </p>
         </div>
       </div>
     </div>
@@ -74,12 +78,12 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
   }
 
   const zonesWithWorks = ZONES_CONFIG.filter(
-    (z) => state.selectedWorks[z.id] && state.selectedWorks[z.id].length > 0
+    (z) => state.selectedWorks[z.id] && state.selectedWorks[z.id].length > 0,
   );
 
   const totalWorks = zonesWithWorks.reduce(
     (sum, z) => sum + state.selectedWorks[z.id].length,
-    0
+    0,
   );
 
   // --- Per-field validation results ---
@@ -138,7 +142,10 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
           </button>
           <h2 className="text-xl font-semibold text-white">{t("title")}</h2>
           <span className="text-sm text-white/50">
-            {t("works_zones", { works: totalWorks, zones: zonesWithWorks.length })}
+            {t("works_zones", {
+              works: totalWorks,
+              zones: zonesWithWorks.length,
+            })}
           </span>
         </div>
 
@@ -149,12 +156,12 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
               key={zone.id}
               className="bg-[#111] rounded-xl border border-white/10 p-4"
             >
-              <h3 className="text-white font-medium mb-2">{tZones(`${zone.labelKey}.label`)}</h3>
+              <h3 className="text-white font-medium mb-2">
+                {tZones(`${zone.labelKey}.label`)}
+              </h3>
               <div className="flex flex-wrap gap-2">
                 {state.selectedWorks[zone.id].map((workId) => {
-                  const workItem = zone.workItems.find(
-                    (w) => w.id === workId
-                  );
+                  const workItem = zone.workItems.find((w) => w.id === workId);
                   const workLabel = workItem
                     ? tZones(`${zone.labelKey}.workItems.${workItem.labelKey}`)
                     : workId;
@@ -240,7 +247,9 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
                 className={`bg-white/5 text-white ${fieldError("firstName") ? "border-red-500/60" : "border-white/10"}`}
               />
               {fieldError("firstName") && (
-                <p className="text-red-400 text-xs">{fieldError("firstName")}</p>
+                <p className="text-red-400 text-xs">
+                  {fieldError("firstName")}
+                </p>
               )}
             </div>
 
@@ -287,7 +296,7 @@ export function PanelRecap({ state, dispatch, onSubmit }: PanelRecapProps) {
               onBlur={() => markTouched("phone")}
               aria-invalid={!!fieldError("phone")}
               className={`bg-white/5 text-white ${fieldError("phone") ? "border-red-500/60" : "border-white/10"}`}
-              placeholder="+33 9 39 24 55 15"
+              placeholder="+33 6 33 49 69 25"
             />
             {fieldError("phone") && (
               <p className="text-red-400 text-xs">{fieldError("phone")}</p>
