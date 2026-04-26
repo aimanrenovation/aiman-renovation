@@ -72,4 +72,27 @@ Les slugs actuels ne correspondent pas exactement à certaines requêtes cibles 
 
 ---
 
+---
+
+## Observations Phase 2 — avril 2026 (audit complémentaire)
+
+### Bugs corrigés dans cette phase
+- Liens brisés dans FAQ (fr/de/en) : `/services/ravalement-facade` → `/services/facade`, `/services/bornes-irve` → `/services/borne-recharge` — corrigés dans les 3 fichiers de locale
+- 5 services sans seoTitle/seoDescription dans `lib/services.ts` : `peinture`, `sols-carrelage`, `renovation-complete`, `isolation`, `facade` — corrigés
+- 5 services sans relatedSlugs (maillage interne) — corrigés
+
+### Problèmes hors scope SEO identifiés
+
+- **`renovation-complete` dans ICON_MAP** pointe sur `icon-cuisine.png` (mauvaise icône) — ligne ~49 de services.ts
+- **`isolation` dans PHOTO_MAP** pointe sur `photo-facade.jpg` (mauvaise photo) — ligne ~27 de services.ts
+- **`contactPoint.areaServed: "FR"`** dans le JSON-LD Organization trop restrictif pour les locales de/en — `app/[locale]/layout.tsx` ligne ~161
+- **`foundingDate: "2024"`** dans le JSON-LD Organization ne correspond pas aux "19 ans d'expérience" mentionnés dans le contenu — à clarifier avec le client
+- **Pages manquantes dans le sitemap** : `/devis-cuisine`, `/devis-salle-de-bain`, `/devis-facade`, `/calculateur` — ajoutées dans cette phase
+
+### Opportunités SEO à travailler (phase 3)
+- **FAQ par service** : Ajouter une section FAQ avec schema FAQPage sur chaque page service individuelle (pas seulement la page /faq globale) — fort impact sur les "People Also Ask" Google
+- **Schema `Review`** sur la page `/avis` pour les avis individuels (actuellement seul AggregateRating est présent)
+- **Netlinking local** : Inscription sur Pages Jaunes, Houzz, Travaux.com, Artisans du Haut-Rhin — backlinks locaux de qualité
+- **Contenu Bâle/tri-frontière** : Les pages renovierung-schweiz et renovierung-deutschland existent mais mériteraient un contenu plus dense sur la zone tri-frontière FR/CH/DE
+
 *Dernière mise à jour : phase 2 — avril 2026*
