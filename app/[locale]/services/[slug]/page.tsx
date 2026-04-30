@@ -132,6 +132,12 @@ export default async function ServicePage({ params }: Props) {
       { "@type": "City", name: "Hégenheim" },
       { "@type": "City", name: "Bartenheim" },
       { "@type": "City", name: "Kembs" },
+      { "@type": "City", name: "Blotzheim" },
+      { "@type": "City", name: "Rixheim" },
+      { "@type": "City", name: "Habsheim" },
+      { "@type": "City", name: "Sierentz" },
+      { "@type": "City", name: "Basel" },
+      { "@type": "AdministrativeArea", name: "Haut-Rhin" },
     ],
     offers: {
       "@type": "Offer",

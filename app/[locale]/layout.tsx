@@ -54,8 +54,12 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const frenchAreas = [
     ...frenchCities.map((name) => ({ "@type": "City", name })),
+    { "@type": "City", name: "Basel" },
+    { "@type": "City", name: "Mulhouse" },
     { "@type": "AdministrativeArea", name: "Haut-Rhin" },
+    { "@type": "AdministrativeArea", name: "Basel-Stadt" },
     { "@type": "Country", name: "France" },
+    { "@type": "Country", name: "Suisse" },
   ];
 
   const triboarderAreas = [

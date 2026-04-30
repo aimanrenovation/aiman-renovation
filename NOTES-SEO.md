@@ -190,6 +190,13 @@ Les slugs actuels sont bien optimisés. Redirects déjà en place dans `next.con
 - Images AVIF/WebP auto-converties, lazy loading, alt text
 - Redirections 301 en place (carrelage→sols-carrelage, peinture-finitions→peinture, facade-isolation→facade)
 
+### Compléments phase 2 — session 2026-04-30
+
+- **`app/[locale]/layout.tsx`** — `frenchAreas` du LocalBusiness schema étendu : ajout de Basel, Mulhouse, Basel-Stadt, Suisse. Le schema FR capte désormais les recherches transfrontalières (clients suisses cherchant en français). Note : `frenchCities[]` ne contient pas encore Mulhouse (à ajouter dans le tableau si nécessaire).
+- **`app/[locale]/services/[slug]/page.tsx`** — `areaServed` du Service schema étendu de 6 à 12 zones : ajout Blotzheim, Rixheim, Habsheim, Sierentz, Basel, Haut-Rhin.
+- **`messages/fr.json`** — contact.seo_description et devis.seo_description enrichis avec mention "zone Bâle" (mots-clés transfrontaliers).
+- Adresse le point relevé ligne 139 : "Schema areaServed du layout : la version FR ne liste pas Mulhouse…" → corrigé.
+
 ---
 
 ## Améliorations SEO phase 3 — Priorités
