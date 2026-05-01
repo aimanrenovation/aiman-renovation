@@ -2,15 +2,52 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import { CalendarOff, Home, MessageCircle, Timer, User, Zap } from "lucide-react";
+import {
+  CalendarOff,
+  Home,
+  MessageCircle,
+  Timer,
+  User,
+  Zap,
+} from "lucide-react";
 
 const TABS = [
-  { href: "/espace-employes/dashboard", label: "Accueil", icon: Home, badgeKey: null },
-  { href: "/espace-employes/pointage", label: "Pointage", icon: Timer, badgeKey: null },
-  { href: "/espace-employes/absences", label: "Congés", icon: CalendarOff, badgeKey: null },
-  { href: "/espace-employes/missions", label: "Missions", icon: Zap, badgeKey: "openMissions" as const },
-  { href: "/espace-employes/messages", label: "Messages", icon: MessageCircle, badgeKey: "unreadMessages" as const },
-  { href: "/espace-employes/profil", label: "Profil", icon: User, badgeKey: null },
+  {
+    href: "/espace-employes/dashboard",
+    label: "Accueil",
+    icon: Home,
+    badgeKey: null,
+  },
+  {
+    href: "/espace-employes/pointage",
+    label: "Pointage",
+    icon: Timer,
+    badgeKey: null,
+  },
+  {
+    href: "/espace-employes/absences",
+    label: "Congés",
+    icon: CalendarOff,
+    badgeKey: null,
+  },
+  {
+    href: "/espace-employes/missions",
+    label: "Missions",
+    icon: Zap,
+    badgeKey: "openMissions" as const,
+  },
+  {
+    href: "/espace-employes/messages",
+    label: "Messages",
+    icon: MessageCircle,
+    badgeKey: "unreadMessages" as const,
+  },
+  {
+    href: "/espace-employes/profil",
+    label: "Profil",
+    icon: User,
+    badgeKey: null,
+  },
 ] as const;
 
 type BadgeKey = "unreadMessages" | "openMissions";
@@ -24,14 +61,20 @@ const POLL_INTERVAL = 30_000;
 
 export function BottomNav() {
   const pathname = usePathname();
-  const [badges, setBadges] = useState<Badges>({ unreadMessages: 0, openMissions: 0 });
+  const [badges, setBadges] = useState<Badges>({
+    unreadMessages: 0,
+    openMissions: 0,
+  });
 
   const fetchBadges = useCallback(async () => {
     try {
       const res = await fetch("/api/employes/me/badges");
       if (res.ok) {
         const data = await res.json();
-        setBadges({ unreadMessages: data.unreadMessages ?? 0, openMissions: data.openMissions ?? 0 });
+        setBadges({
+          unreadMessages: data.unreadMessages ?? 0,
+          openMissions: data.openMissions ?? 0,
+        });
       }
     } catch {
       // silently ignore network errors
@@ -54,7 +97,9 @@ export function BottomNav() {
             key={href}
             href={href}
             className={`relative flex flex-1 flex-col items-center gap-1 py-3 text-[11px] font-medium transition-colors ${
-              active ? "text-[#E50000] dark:text-[#E50000]" : "text-neutral-500 dark:text-neutral-400"
+              active
+                ? "text-[#E50000] dark:text-[#E50000]"
+                : "text-neutral-500 dark:text-neutral-400"
             }`}
           >
             <span className="relative">

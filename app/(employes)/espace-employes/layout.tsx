@@ -27,16 +27,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function EmployesLayout({ children }: { children: ReactNode }) {
+export default async function EmployesLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   const session = await getEmployeSession();
 
   // Pas de session = login/reset → plein écran sans chrome
   if (!session) {
-    return (
-      <div className="min-h-dvh font-sans">
-        {children}
-      </div>
-    );
+    return <div className="min-h-dvh font-sans">{children}</div>;
   }
 
   const [employe] = await db
@@ -53,7 +53,10 @@ export default async function EmployesLayout({ children }: { children: ReactNode
     <div className="min-h-dvh bg-neutral-50 font-sans text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100">
       <div className="mx-auto flex min-h-dvh max-w-md flex-col">
         <header className="sticky top-0 z-30 flex items-center justify-between border-b border-neutral-200 bg-white/90 px-4 py-3 backdrop-blur dark:border-neutral-700 dark:bg-neutral-800/90">
-          <Link href="/espace-employes/dashboard" className="flex items-center gap-2 text-sm font-semibold tracking-tight">
+          <Link
+            href="/espace-employes/dashboard"
+            className="flex items-center gap-2 text-sm font-semibold tracking-tight"
+          >
             {employe ? (
               <>
                 <EmployeAvatar
