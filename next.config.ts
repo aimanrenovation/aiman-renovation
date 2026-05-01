@@ -62,13 +62,21 @@ const nextConfig: NextConfig = {
       ["facade-isolation", "facade"],
     ];
     const locales = ["", "/de", "/en"];
-    return oldToNew.flatMap(([oldSlug, newSlug]) =>
-      locales.map((locale) => ({
-        source: `${locale}/services/${oldSlug}`,
-        destination: `${locale}/services/${newSlug}`,
-        permanent: true,
-      })),
-    );
+    return [
+      // /portail → /espace-employes/login (alias court pour les employés)
+      {
+        source: "/portail",
+        destination: "/espace-employes/login",
+        permanent: false,
+      },
+      ...oldToNew.flatMap(([oldSlug, newSlug]) =>
+        locales.map((locale) => ({
+          source: `${locale}/services/${oldSlug}`,
+          destination: `${locale}/services/${newSlug}`,
+          permanent: true,
+        })),
+      ),
+    ];
   },
 };
 
