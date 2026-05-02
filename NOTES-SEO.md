@@ -249,4 +249,27 @@ Les slugs actuels sont bien optimisés. Redirects déjà en place dans `next.con
 - **Netlinking local** : Inscription sur Pages Jaunes, Houzz, Travaux.com, Artisans du Haut-Rhin — backlinks locaux de qualité
 - **Contenu Bâle/tri-frontière** : Les pages renovierung-schweiz et renovierung-deutschland existent mais mériteraient un contenu plus dense sur la zone tri-frontière FR/CH/DE
 
-*Dernière mise à jour : phase 2 — avril 2026*
+---
+
+## Compléments Phase 2 — mai 2026 (session d'enrichissement)
+
+### Corrections appliquées
+
+- ✅ **LocalBusiness schema** (`app/[locale]/layout.tsx`) enrichi :
+  - `contactPoint` → tableau de 2 contacts (téléphone + email), `areaServed: ["FR", "CH", "DE"]`, `hoursAvailable`
+  - `knowsAbout` → 14 termes (services + mots-clés locaux FR/DE pour la zone tri-frontière)
+  - `hasCredential` → garantie décennale + RC professionnelle
+  - `numberOfEmployees` → 5-15 employés
+- ✅ **relatedSlugs à 3 items** pour les 4 services incomplets :
+  - `paysager` → ajout `renovation-complete`
+  - `borne-recharge` → ajout `renovation-complete`
+  - `entretien-exterieur` → ajout `isolation`
+  - `depannage-urgence` → ajout `renovation-complete`
+
+### Observations supplémentaires (hors SEO)
+
+- **`contactPoint.areaServed: "FR"`** sur locale de/en était trop restrictif → corrigé (FR/CH/DE)
+- **devis-cuisine/page.tsx** : `serviceJsonLd.provider.telephone: "+33389700000"` — numéro factice à remplacer par le vrai numéro
+- **Cohérence "30 avis" / "47 avis"** : vérifier tous les composants React qui affichent un compteur d'avis (pas seulement fr.json)
+
+*Dernière mise à jour : phase 2 — mai 2026*

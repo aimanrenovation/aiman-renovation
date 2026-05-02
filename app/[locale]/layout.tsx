@@ -181,12 +181,59 @@ export default async function LocaleLayout({ children, params }: Props) {
       "https://www.linkedin.com/company/aiman-renovation",
       "https://www.tiktok.com/@aimanrenovation",
     ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: tc("phone"),
-      contactType: "customer service",
-      areaServed: "FR",
-      availableLanguage: ["French", "Arabic"],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: tc("phone"),
+        contactType: "customer service",
+        areaServed: ["FR", "CH", "DE"],
+        availableLanguage: ["French", "Arabic", "English"],
+        hoursAvailable: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "08:00",
+          closes: "18:00",
+        },
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: tc("email"),
+        availableLanguage: ["French", "Arabic", "English"],
+      },
+    ],
+    knowsAbout: [
+      "Rénovation intérieure",
+      "Rénovation extérieure",
+      "Salle de bain",
+      "Cuisine équipée",
+      "Électricité bâtiment",
+      "Plomberie",
+      "Carrelage grand format",
+      "Isolation thermique ITE",
+      "Ravalement de façade",
+      "Peinture en bâtiment",
+      "Renovation Haut-Rhin",
+      "Artisan Saint-Louis 68300",
+      "Renovierung Basel",
+      "Rénovation tri-frontière",
+    ],
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Garantie Décennale",
+        description: "Assurance décennale couvrant tous les travaux de rénovation pendant 10 ans",
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "RC Professionnelle",
+        description: "Responsabilité civile professionnelle",
+      },
+    ],
+    numberOfEmployees: {
+      "@type": "QuantitativeValue",
+      minValue: 5,
+      maxValue: 15,
     },
   };
 

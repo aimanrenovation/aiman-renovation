@@ -200,7 +200,7 @@ export const SERVICES: Service[] = [
     priceRange: "5 000 € – 30 000 € selon la surface et les aménagements souhaités",
     seoTitle: "Aménagement Paysager Haut-Rhin | Saint-Louis 68300",
     seoDescription: "Création et aménagement de jardins, terrasses et allées à Saint-Louis 68300 et Haut-Rhin. Dallage, clôtures, plantations, éclairage extérieur. Devis gratuit.",
-    relatedSlugs: ["entretien-exterieur", "facade"],
+    relatedSlugs: ["entretien-exterieur", "facade", "renovation-complete"],
   },
   {
     slug: "borne-recharge",
@@ -230,7 +230,7 @@ export const SERVICES: Service[] = [
     priceRange: "1 200 € – 2 500 € pose comprise (avant aides), 900 € – 1 800 € après crédit d'impôt",
     seoTitle: "Borne Recharge Voiture Électrique Saint-Louis 68",
     seoDescription: "Installation borne IRVE à Saint-Louis 68300 et Haut-Rhin. Wallbox 7,4 à 22 kW, copropriété ou maison. Crédit d'impôt 300 €, prime ADVENIR. Devis gratuit.",
-    relatedSlugs: ["electricite", "panneaux-photovoltaiques"],
+    relatedSlugs: ["electricite", "panneaux-photovoltaiques", "renovation-complete"],
   },
   {
     slug: "panneaux-photovoltaiques",
@@ -291,7 +291,7 @@ export const SERVICES: Service[] = [
     priceRange: "À partir de 80 € / intervention ponctuelle, abonnement annuel à partir de 150 € / mois",
     seoTitle: "Entretien Jardin Saint-Louis 68 | Espaces Verts Alsace",
     seoDescription: "Entretien jardins et espaces extérieurs à Saint-Louis 68 et Haut-Rhin. Tonte, taille, nettoyage haute pression, abonnement annuel. Devis gratuit.",
-    relatedSlugs: ["paysager", "facade"],
+    relatedSlugs: ["paysager", "facade", "isolation"],
   },
   {
     slug: "depannage-urgence",
@@ -322,7 +322,7 @@ export const SERVICES: Service[] = [
     priceRange: "Déplacement + diagnostic : à partir de 90 €, réparation sur devis",
     seoTitle: "Dépannage Urgence Saint-Louis 68 | 24h/24 Haut-Rhin",
     seoDescription: "Dépannage urgence plomberie et électricité à Saint-Louis 68300, 24h/24 7j/7. Fuite, panne, dégât des eaux. Intervention rapide Haut-Rhin et Bâle.",
-    relatedSlugs: ["plomberie", "electricite"],
+    relatedSlugs: ["plomberie", "electricite", "renovation-complete"],
   },
   {
     slug: "peinture",
