@@ -14,23 +14,40 @@ type Messages = typeof frMessages;
 
 function getMessages(locale: string): Messages {
   switch (locale) {
-    case "en": return enMessages;
-    case "de": return deMessages;
-    default: return frMessages;
+    case "en":
+      return enMessages;
+    case "de":
+      return deMessages;
+    default:
+      return frMessages;
   }
 }
 
 function getZoneLabel(messages: Messages, zoneKey: string): string {
-  const zones = messages.devis.zones as Record<string, { label: string; workItems: Record<string, string> }>;
+  const zones = messages.devis.zones as Record<
+    string,
+    { label: string; workItems: Record<string, string> }
+  >;
   return zones[zoneKey]?.label ?? zoneKey;
 }
 
-function getWorkLabel(messages: Messages, zoneKey: string, workKey: string): string {
-  const zones = messages.devis.zones as Record<string, { label: string; workItems: Record<string, string> }>;
+function getWorkLabel(
+  messages: Messages,
+  zoneKey: string,
+  workKey: string,
+): string {
+  const zones = messages.devis.zones as Record<
+    string,
+    { label: string; workItems: Record<string, string> }
+  >;
   return zones[zoneKey]?.workItems?.[workKey] ?? workKey;
 }
 
-function getEmailText(messages: Messages, key: string, replacements?: Record<string, string | number>): string {
+function getEmailText(
+  messages: Messages,
+  key: string,
+  replacements?: Record<string, string | number>,
+): string {
   const email = messages.email as Record<string, string>;
   let text = email[key] ?? key;
   if (replacements) {
@@ -41,16 +58,20 @@ function getEmailText(messages: Messages, key: string, replacements?: Record<str
   return text;
 }
 
-export function generateDevisEmailHtml({ data, isClientCopy, locale }: GenerateEmailProps): string {
+export function generateDevisEmailHtml({
+  data,
+  isClientCopy,
+  locale,
+}: GenerateEmailProps): string {
   const messages = getMessages(locale);
 
   const zonesWithWorks = ZONES_CONFIG.filter(
-    (z) => data.selectedWorks[z.id] && data.selectedWorks[z.id].length > 0
+    (z) => data.selectedWorks[z.id] && data.selectedWorks[z.id].length > 0,
   );
 
   const totalWorks = zonesWithWorks.reduce(
     (sum, z) => sum + data.selectedWorks[z.id].length,
-    0
+    0,
   );
 
   const zonesHtml = zonesWithWorks
@@ -58,11 +79,13 @@ export function generateDevisEmailHtml({ data, isClientCopy, locale }: GenerateE
       const works = data.selectedWorks[zone.id]
         .map((workId) => {
           const item = zone.workItems.find((w) => w.id === workId);
-          return item ? getWorkLabel(messages, zone.labelKey, item.labelKey) : workId;
+          return item
+            ? getWorkLabel(messages, zone.labelKey, item.labelKey)
+            : workId;
         })
         .join(", ");
 
-      const note = data.zoneNotes[zone.id];
+      const note = data.zoneNotes?.[zone.id];
       const noteLabel = getEmailText(messages, "label_note");
       return `
         <tr>
@@ -78,7 +101,10 @@ export function generateDevisEmailHtml({ data, isClientCopy, locale }: GenerateE
 
   const title = isClientCopy
     ? getEmailText(messages, "devis_client_title")
-    : getEmailText(messages, "devis_admin_title", { firstName: data.contact.firstName, lastName: data.contact.lastName });
+    : getEmailText(messages, "devis_admin_title", {
+        firstName: data.contact.firstName,
+        lastName: data.contact.lastName,
+      });
 
   const intro = isClientCopy
     ? `<p style="color:#555;font-size:15px;line-height:1.6;">${getEmailText(messages, "devis_client_intro", { firstName: data.contact.firstName }).replace(/\n/g, "<br/>")}</p>`
@@ -89,7 +115,10 @@ export function generateDevisEmailHtml({ data, isClientCopy, locale }: GenerateE
   const labelPhone = getEmailText(messages, "label_phone");
   const labelEmail = getEmailText(messages, "label_email");
   const labelAddress = getEmailText(messages, "label_address");
-  const sectionWorks = getEmailText(messages, "section_works", { totalWorks, totalZones: zonesWithWorks.length });
+  const sectionWorks = getEmailText(messages, "section_works", {
+    totalWorks,
+    totalZones: zonesWithWorks.length,
+  });
   const sectionBudget = getEmailText(messages, "section_budget");
   const sectionMagicplan = getEmailText(messages, "section_magicplan");
   const sectionMessage = getEmailText(messages, "section_message");
@@ -126,20 +155,32 @@ export function generateDevisEmailHtml({ data, isClientCopy, locale }: GenerateE
           ${zonesHtml}
         </table>
 
-        ${data.budget ? `
+        ${
+          data.budget
+            ? `
         <h2 style="font-size:16px;color:#333;margin:24px 0 12px;border-bottom:2px solid #E50000;padding-bottom:8px;">${sectionBudget}</h2>
         <p style="color:#333;font-size:15px;">${data.budget} €</p>
-        ` : ""}
+        `
+            : ""
+        }
 
-        ${"magicplanLink" in data && data.magicplanLink ? `
+        ${
+          "magicplanLink" in data && data.magicplanLink
+            ? `
         <h2 style="font-size:16px;color:#333;margin:24px 0 12px;border-bottom:2px solid #E50000;padding-bottom:8px;">${sectionMagicplan}</h2>
         <p style="font-size:14px;"><a href="${data.magicplanLink}" style="color:#E50000;">${data.magicplanLink}</a></p>
-        ` : ""}
+        `
+            : ""
+        }
 
-        ${data.message ? `
+        ${
+          data.message
+            ? `
         <h2 style="font-size:16px;color:#333;margin:24px 0 12px;border-bottom:2px solid #E50000;padding-bottom:8px;">${sectionMessage}</h2>
         <p style="color:#555;font-size:14px;line-height:1.6;white-space:pre-wrap;">${data.message}</p>
-        ` : ""}
+        `
+            : ""
+        }
       </div>
 
       <!-- Footer -->
