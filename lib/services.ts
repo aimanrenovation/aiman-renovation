@@ -15,8 +15,6 @@ export interface Service {
   seoDescription?: string;
   /** Slugs des services liés pour le maillage interne */
   relatedSlugs?: string[];
-  /** FAQ spécifique au service pour le schema FAQPage */
-  faq?: { question: string; answer: string }[];
 }
 
 export const PHOTO_MAP: Record<string, string> = {
@@ -200,7 +198,7 @@ export const SERVICES: Service[] = [
     priceRange: "5 000 € – 30 000 € selon la surface et les aménagements souhaités",
     seoTitle: "Aménagement Paysager Haut-Rhin | Saint-Louis 68300",
     seoDescription: "Création et aménagement de jardins, terrasses et allées à Saint-Louis 68300 et Haut-Rhin. Dallage, clôtures, plantations, éclairage extérieur. Devis gratuit.",
-    relatedSlugs: ["entretien-exterieur", "facade", "renovation-complete"],
+    relatedSlugs: ["entretien-exterieur", "facade"],
   },
   {
     slug: "borne-recharge",
@@ -230,7 +228,7 @@ export const SERVICES: Service[] = [
     priceRange: "1 200 € – 2 500 € pose comprise (avant aides), 900 € – 1 800 € après crédit d'impôt",
     seoTitle: "Borne Recharge Voiture Électrique Saint-Louis 68",
     seoDescription: "Installation borne IRVE à Saint-Louis 68300 et Haut-Rhin. Wallbox 7,4 à 22 kW, copropriété ou maison. Crédit d'impôt 300 €, prime ADVENIR. Devis gratuit.",
-    relatedSlugs: ["electricite", "panneaux-photovoltaiques", "renovation-complete"],
+    relatedSlugs: ["electricite", "panneaux-photovoltaiques"],
   },
   {
     slug: "panneaux-photovoltaiques",
@@ -291,7 +289,7 @@ export const SERVICES: Service[] = [
     priceRange: "À partir de 80 € / intervention ponctuelle, abonnement annuel à partir de 150 € / mois",
     seoTitle: "Entretien Jardin Saint-Louis 68 | Espaces Verts Alsace",
     seoDescription: "Entretien jardins et espaces extérieurs à Saint-Louis 68 et Haut-Rhin. Tonte, taille, nettoyage haute pression, abonnement annuel. Devis gratuit.",
-    relatedSlugs: ["paysager", "facade", "isolation"],
+    relatedSlugs: ["paysager", "facade"],
   },
   {
     slug: "depannage-urgence",
@@ -322,7 +320,7 @@ export const SERVICES: Service[] = [
     priceRange: "Déplacement + diagnostic : à partir de 90 €, réparation sur devis",
     seoTitle: "Dépannage Urgence Saint-Louis 68 | 24h/24 Haut-Rhin",
     seoDescription: "Dépannage urgence plomberie et électricité à Saint-Louis 68300, 24h/24 7j/7. Fuite, panne, dégât des eaux. Intervention rapide Haut-Rhin et Bâle.",
-    relatedSlugs: ["plomberie", "electricite", "renovation-complete"],
+    relatedSlugs: ["plomberie", "electricite"],
   },
   {
     slug: "peinture",
@@ -351,9 +349,9 @@ export const SERVICES: Service[] = [
     whyPro:
       "Un travail de peinture réussi repose à 70% sur la préparation du support. Sans ponçage, rebouchage et primaire adaptés, la peinture cloque, s'écaille et jaunit en 2 à 3 ans. Nos peintres maîtrisent les supports alsaciens (enduit à la chaux, crépi, béton) et choisissent les produits appropriés à chaque cas. Outils professionnels, finitions irréprochables, délais tenus : c'est la différence entre un amateur et Aiman Renovation. Garantie de résultat, sans mauvaise surprise.",
     priceRange: "20 € – 45 € / m² murs et plafonds, préparation et 2 couches comprises",
-    seoTitle: "Peintre Saint-Louis 68300 | Peinture Bâtiment Haut-Rhin",
-    seoDescription: "Peintre professionnel à Saint-Louis 68300, Mulhouse et Haut-Rhin. Peinture intérieure, extérieure, enduits décoratifs. Finitions impeccables. Devis gratuit.",
-    relatedSlugs: ["renovation-complete", "sols-carrelage", "facade"],
+    seoTitle: "Peinture Intérieure Extérieure Saint-Louis 68 | Artisan",
+    seoDescription: "Peintre professionnel à Saint-Louis et Haut-Rhin. Peinture intérieure, extérieure, enduits décoratifs. Préparation soignée, finitions impeccables. Devis gratuit.",
+    relatedSlugs: ["facade", "sols-carrelage", "renovation-complete"],
   },
   {
     slug: "sols-carrelage",
@@ -382,8 +380,8 @@ export const SERVICES: Service[] = [
     whyPro:
       "Un carrelage mal posé se fissure, sonne creux et se décolle en quelques années. La préparation du support, la sélection de la colle adaptée au format et au support, et le respect des joints de dilatation sont des étapes techniques qui exigent un savoir-faire réel. Nos carreleurs utilisent des outils professionnels et cumulant des années d'expérience dans le Haut-Rhin. Résultat garanti, conforme aux DTU 52.1 et 52.2.",
     priceRange: "40 € – 120 € / m² pose comprise, selon le type de revêtement et la complexité",
-    seoTitle: "Carreleur Saint-Louis 68 | Sols & Carrelage Haut-Rhin",
-    seoDescription: "Carrelage, parquet, béton ciré à Saint-Louis 68300 et Haut-Rhin. Grand format, terrasse, extérieur. Ragréage inclus, conforme DTU 52.1. Artisan qualifié, devis gratuit.",
+    seoTitle: "Carrelage et Parquet Saint-Louis 68 | Artisan Sols",
+    seoDescription: "Pose carrelage, parquet et béton ciré à Saint-Louis et Haut-Rhin. Ragréage, grand format, extérieur antidérapant. Artisan qualifié, DTU 52. Devis gratuit.",
     relatedSlugs: ["salle-de-bain", "cuisine", "renovation-complete"],
   },
   {
@@ -413,8 +411,8 @@ export const SERVICES: Service[] = [
     whyPro:
       "Gérer soi-même une rénovation complète en faisant appel à plusieurs artisans séparément est une source de stress, de dépassements de budget et de délais allongés. Un artisan qui attend un autre, des plannings qui se télescopent, des finitions reprises parce que le plâtre n'était pas sec — ces situations coûtent du temps et de l'argent. Aiman Renovation coordonne tout. Un devis global, un planning tenu, une garantie décennale sur l'ensemble des travaux.",
     priceRange: "30 000 € – 120 000 € selon la superficie, l'état du logement et le niveau de finition",
-    seoTitle: "Rénovation Complète Appartement Maison — Saint-Louis 68",
-    seoDescription: "Rénovation complète à Saint-Louis 68300 et Haut-Rhin. Un interlocuteur, tous corps de métier coordonnés. Garantie décennale, devis global. Devis gratuit sous 48h.",
+    seoTitle: "Rénovation Complète Saint-Louis 68 | Clé en Main",
+    seoDescription: "Rénovation complète appartement et maison à Saint-Louis et Haut-Rhin. Un artisan unique, tous corps de métier, garantie décennale. Devis gratuit sous 48h.",
     relatedSlugs: ["cuisine", "salle-de-bain", "isolation"],
   },
   {
@@ -444,8 +442,8 @@ export const SERVICES: Service[] = [
     whyPro:
       "Une isolation mal exécutée peut créer des ponts thermiques, des condensations internes et des moisissures, aggravant la situation plutôt qu'en l'améliorant. Les matériaux doivent être certifiés Acermi et les travaux réalisés par un professionnel RGE (Reconnu Garant de l'Environnement) pour être éligibles aux aides financières. Aiman Renovation est qualifié RGE et vous accompagne de l'audit thermique jusqu'à la réception du chantier.",
     priceRange: "80 € – 200 € / m² pour une ITE, 30 € – 80 € / m² pour une ITI, 20 € – 50 € / m² pour les combles",
-    seoTitle: "Isolation Thermique Saint-Louis 68 | ITE ITI Haut-Rhin",
-    seoDescription: "Isolation thermique à Saint-Louis 68300 et Haut-Rhin. ITE, ITI, combles perdus. RGE certifié, éligible MaPrimeRénov' et CEE. Devis isolation gratuit sous 48h.",
+    seoTitle: "Isolation Thermique Haut-Rhin | ITE ITI Saint-Louis 68",
+    seoDescription: "Isolation thermique par l'extérieur (ITE) et intérieur à Saint-Louis 68300. RGE certifié. MaPrimeRénov' jusqu'à 75 €/m². CEE. Devis isolation gratuit.",
     relatedSlugs: ["facade", "renovation-complete", "panneaux-photovoltaiques"],
   },
   {
@@ -475,8 +473,8 @@ export const SERVICES: Service[] = [
     whyPro:
       "Un ravalement mal exécuté peut entraîner des décollements d'enduit en 2 à 3 ans, des infiltrations d'eau dans les murs et une dégradation accélérée du bâtiment. Le montage d'un échafaudage, le choix des enduits adaptés au support et la gestion des fissures structurelles nécessitent un savoir-faire professionnel. De plus, au-delà de 20 m² de façade, le ravalement doit être déclaré en mairie. Aiman Renovation gère toutes les démarches et vous garantit un résultat qui tient dans le temps.",
     priceRange: "30 € – 80 € / m² pour un ravalement simple, 60 € – 120 € / m² pour un ravalement avec réparations",
-    seoTitle: "Ravalement Façade Saint-Louis 68 | Artisan Haut-Rhin",
-    seoDescription: "Ravalement de façade à Saint-Louis 68300 et Haut-Rhin. Enduit, ITE, crépi, peinture extérieure. Traitement fissures, démarches mairie incluses. Devis gratuit.",
-    relatedSlugs: ["isolation", "paysager", "renovation-complete"],
+    seoTitle: "Ravalement Façade Haut-Rhin | Artisan Saint-Louis 68",
+    seoDescription: "Ravalement de façade, enduits et crépis à Saint-Louis et Haut-Rhin. Traitement fissures, nettoyage haute pression. Artisan qualifié. Devis gratuit sous 48h.",
+    relatedSlugs: ["isolation", "peinture", "renovation-complete"],
   },
 ];

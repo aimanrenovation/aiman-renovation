@@ -176,10 +176,10 @@ export default async function LocaleLayout({ children, params }: Props) {
       },
     ],
     sameAs: [
-      "https://www.facebook.com/aimanrenovation",
-      "https://www.instagram.com/aimanrenovation",
-      "https://www.linkedin.com/company/aiman-renovation",
-      "https://www.tiktok.com/@aimanrenovation",
+      "https://www.facebook.com/AimanRenovation/",
+      "https://www.instagram.com/aiman_renovation/",
+      "https://www.linkedin.com/company/aiman-renovation-68",
+      "https://www.tiktok.com/@aiman.renovation",
     ],
     contactPoint: [
       {
