@@ -1286,6 +1286,17 @@
           "velux": "Fenêtre de toit / Velux",
           "zinguerie": "Zinguerie"
         }
+      },
+      "nettoyage_hp": {
+        "label": "Nettoyage Haute Pression",
+        "workItems": {
+          "nettoyage_hp": "Nettoyage Haute Pression Eau Chaude",
+          "nettoyage_dalles": "Dalles / Allées / Terrasses",
+          "nettoyage_facade": "Façades / Crépi",
+          "nettoyage_toiture": "Toiture / Tuiles",
+          "traitement_antimousse": "Traitement Anti-mousse / Anti-algues",
+          "deplacement": "Déplacement (forfait)"
+        }
       }
     }
   },
