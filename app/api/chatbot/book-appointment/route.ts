@@ -360,13 +360,32 @@ export async function GET(request: Request) {
     });
 
     return NextResponse.json({ slots: availableSlots, gcal: true });
-  } catch (err) {
-    console.error("[book-appointment] freebusy error:", err);
+  } catch (err: unknown) {
+    const e = err as {
+      message?: string;
+      code?: number | string;
+      errors?: unknown;
+      status?: number;
+    };
+    console.error(
+      "[GCal] freebusy error:",
+      e.message,
+      "code:",
+      e.code,
+      "status:",
+      e.status,
+      "errors:",
+      JSON.stringify(e.errors),
+    );
     // Fallback: return all slots if GCal query fails
     return NextResponse.json({
       slots: hourRange,
       gcal: false,
       error: "gcal_query_failed",
+      // TODO: remove after debug
+      debug_error: e.message,
+      debug_code: e.code,
+      debug_status: e.status,
     });
   }
 }
