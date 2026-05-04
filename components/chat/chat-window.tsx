@@ -11,10 +11,18 @@ interface Message {
   timestamp: number;
 }
 
+interface Qualification {
+  type_travaux?: string | null;
+  surface?: string | null;
+  localisation?: string | null;
+  [key: string]: string | null | undefined;
+}
+
 interface ChatWindowProps {
   messages: Message[];
   loading: boolean;
   cta: string | null;
+  qualification: Qualification | null;
   conversationId: string | null;
   assistantName: string;
   assistantTitle: string;
@@ -52,6 +60,7 @@ export function ChatWindow({
   messages,
   loading,
   cta,
+  qualification,
   conversationId,
   assistantName,
   assistantTitle,
@@ -64,12 +73,18 @@ export function ChatWindow({
   const [showRdvForm, setShowRdvForm] = useState(false);
   const [rdvDone, setRdvDone] = useState(false);
 
-  // Auto-show RDV form when cta === "rdv" is received from the bot
+  // Frontend guard: only open the RDV widget when cta === "rdv" AND all 3 qualification
+  // fields are present. This is a safety net in case the API guard is bypassed.
+  const qualComplete =
+    !!qualification?.type_travaux &&
+    !!qualification?.surface &&
+    !!qualification?.localisation;
+
   useEffect(() => {
-    if (cta === "rdv" && !rdvDone) {
+    if (cta === "rdv" && qualComplete && !rdvDone) {
       setShowRdvForm(true);
     }
-  }, [cta, rdvDone]);
+  }, [cta, qualComplete, rdvDone]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const chatRootRef = useRef<HTMLDivElement>(null);
