@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
+import { getLocale } from "next-intl/server";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], display: "swap", preload: true, variable: "--font-inter" });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  variable: "--font-inter",
+});
 
 const archivoBlack = localFont({
   src: "./fonts/ArchivoBlack-Regular.ttf",
@@ -37,13 +43,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
   return (
-    <html lang="fr" className={`${inter.variable} ${archivoBlack.variable} h-full antialiased`}>
+    <html
+      lang={locale}
+      className={`${inter.variable} ${archivoBlack.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col bg-black text-white font-sans">
         {children}
       </body>
