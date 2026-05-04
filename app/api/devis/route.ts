@@ -25,22 +25,71 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const formData = await request.formData();
+    const contentType = request.headers.get("content-type") || "";
+    const isJson = contentType.includes("application/json");
+
+    let formData: FormData | null = null;
+    let jsonBody: Record<string, unknown> | null = null;
+
+    if (isJson) {
+      jsonBody = await request.json();
+    } else {
+      formData = await request.formData();
+    }
 
     // --- Honeypot — silent rejection ---
-    const honeypot = formData.get("website");
+    const honeypot = formData ? formData.get("website") : null;
     if (typeof honeypot === "string" && honeypot.trim() !== "") {
       // Pretend success — bots don't get feedback
       return NextResponse.json({ success: true, magicplanProjectId: null });
     }
 
-    const dataStr = formData.get("data") as string;
-    if (!dataStr) {
-      return NextResponse.json({ error: "Donnees manquantes" }, { status: 400 });
-    }
+    let data: Omit<DevisState, "zonePhotos">;
+    let locale: string;
 
-    const data: Omit<DevisState, "zonePhotos"> = JSON.parse(dataStr);
-    const locale = (formData.get("locale") as string) || "fr";
+    if (isJson && jsonBody) {
+      // JSON callers (calculateur, wizard-2d) send a flat object
+      // Normalise into the DevisState shape expected by email template
+      const j = jsonBody as Record<string, unknown>;
+      data = {
+        contact: {
+          firstName:
+            (j.firstName as string) || (j.nom as string)?.split(" ")[0] || "",
+          lastName:
+            (j.lastName as string) ||
+            (j.nom as string)?.split(" ").slice(1).join(" ") ||
+            "",
+          email: (j.email as string) || "",
+          phone: (j.telephone as string) || (j.phone as string) || "",
+          address: (j.address as string) || (j.ville as string) || "",
+          addressValidated: true, // JSON callers don't geocode, trust them
+        },
+        selectedWorks: (j.selectedWorks as DevisState["selectedWorks"]) || {
+          [(j.type_travaux as string) || "autre"]: [
+            (j.type_travaux as string) || "travaux",
+          ],
+        },
+        budget:
+          (j.budget as string) ||
+          (j.estimation_basse
+            ? `${j.estimation_basse}–${j.estimation_haute}`
+            : undefined),
+        message: (j.message as string) || undefined,
+        zoneNotes: {},
+        zonePhotos: {},
+      } as unknown as Omit<DevisState, "zonePhotos">;
+      locale = (j.locale as string) || "fr";
+    } else {
+      const dataStr = formData!.get("data") as string;
+      if (!dataStr) {
+        return NextResponse.json(
+          { error: "Donnees manquantes" },
+          { status: 400 },
+        );
+      }
+      data = JSON.parse(dataStr);
+      locale = (formData!.get("locale") as string) || "fr";
+    }
 
     // --- Strict server-side contact validation ---
     const contactCheck = await validateContactServer({
@@ -53,21 +102,28 @@ export async function POST(request: NextRequest) {
     });
     if (!contactCheck.ok) {
       return NextResponse.json(
-        { error: "validation_failed", field: contactCheck.field, code: contactCheck.code },
+        {
+          error: "validation_failed",
+          field: contactCheck.field,
+          code: contactCheck.code,
+        },
         { status: 400 },
       );
     }
 
     const hasWork = Object.values(data.selectedWorks).some(
-      (works) => works && works.length > 0
+      (works) => works && works.length > 0,
     );
     if (!hasWork) {
-      return NextResponse.json({ error: "Veuillez selectionner au moins un travail" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Veuillez selectionner au moins un travail" },
+        { status: 400 },
+      );
     }
 
-    // Recuperer les photos du FormData
+    // Recuperer les photos du FormData (only available for multipart submissions)
     const attachments: { filename: string; content: Buffer }[] = [];
-    for (const [key, value] of formData.entries()) {
+    for (const [key, value] of (formData ?? new FormData()).entries()) {
       if (key.startsWith("photo_") && value instanceof File) {
         const zoneId = key.replace("photo_", "");
         const zone = ZONES_CONFIG.find((z) => z.id === zoneId);
@@ -83,11 +139,11 @@ export async function POST(request: NextRequest) {
 
     // Compter zones et travaux
     const zonesWithWorks = ZONES_CONFIG.filter(
-      (z) => data.selectedWorks[z.id] && data.selectedWorks[z.id].length > 0
+      (z) => data.selectedWorks[z.id] && data.selectedWorks[z.id].length > 0,
     );
     const totalWorks = Object.values(data.selectedWorks).reduce(
       (sum, works) => sum + (works ? works.length : 0),
-      0
+      0,
     );
     // Zone names in email subject always in French for Aiman
     const zonesShort = zonesWithWorks.map((z) => z.labelKey).join(", ");
@@ -97,7 +153,11 @@ export async function POST(request: NextRequest) {
       from: DEVIS_FROM_EMAIL,
       to: DEVIS_RECIPIENT_EMAIL,
       subject: `Nouvelle demande de devis — ${data.contact.firstName} ${data.contact.lastName} — ${zonesWithWorks.length} zone(s), ${totalWorks} travaux — ${zonesShort}`,
-      html: generateDevisEmailHtml({ data: data as DevisState, isClientCopy: false, locale: "fr" }),
+      html: generateDevisEmailHtml({
+        data: data as DevisState,
+        isClientCopy: false,
+        locale: "fr",
+      }),
       attachments: attachments.length > 0 ? attachments : undefined,
     });
 
@@ -105,12 +165,17 @@ export async function POST(request: NextRequest) {
     await resend.emails.send({
       from: DEVIS_FROM_EMAIL,
       to: data.contact.email,
-      subject: locale === "de"
-        ? "Ihre Offerte-Anfrage — Aiman Renovation"
-        : locale === "en"
-          ? "Your quote request — Aiman Renovation"
-          : "Votre demande de devis — Aiman Renovation",
-      html: generateDevisEmailHtml({ data: data as DevisState, isClientCopy: true, locale }),
+      subject:
+        locale === "de"
+          ? "Ihre Offerte-Anfrage — Aiman Renovation"
+          : locale === "en"
+            ? "Your quote request — Aiman Renovation"
+            : "Votre demande de devis — Aiman Renovation",
+      html: generateDevisEmailHtml({
+        data: data as DevisState,
+        isClientCopy: true,
+        locale,
+      }),
     });
 
     // Create a MagicPlan project with the CLIENT's email so MagicPlan invites
@@ -153,7 +218,7 @@ export async function POST(request: NextRequest) {
     console.error("Erreur envoi devis:", error);
     return NextResponse.json(
       { error: "Erreur lors de l'envoi du devis" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
