@@ -901,6 +901,48 @@
       ],
       "whyPro": "Schlecht ausgeführter Putz kann innerhalb von 2 bis 3 Jahren abplatzen, Wasser in die Wände eindringen und das Gebäude beschleunigt verschlechtern. Gerüstaufbau, Auswahl untergrundgerechter Putze und Umgang mit strukturellen Rissen erfordern Fachkenntnisse. Zudem müssen Fassadenarbeiten über 20 m² bei der Gemeindeverwaltung gemeldet werden. Aiman Renovation erledigt alle Formalitäten und garantiert ein dauerhaftes Ergebnis.",
       "priceRange": "30 € – 80 € / m² für einfache Fassadensanierung, 60 € – 120 € / m² für Fassadensanierung mit Instandsetzungen"
+    },
+    {
+      "slug": "nettoyage-haute-pression",
+      "title": "Heisswasser-Hochdruckreinigung",
+      "shortTitle": "Hochdruckreinigung",
+      "description": "Fassaden, Dächer und Aussenböden wie neu dank industrieller Heisswasser-Hochdruckreinigung. Garantierte Beseitigung von Moos, Flechten, Algen und Graffiti.",
+      "icon": "💧",
+      "features": [
+        "Industrielle Heisswasser-Hochdruckreinigung (bis 250 bar, 90°C)",
+        "Verputzte, gestrichene, steinerne Fassaden und Verschalungen",
+        "Ziegel- und Schieferdächer",
+        "Terrassen, Betonfliesen, Wege, Pflastersteine",
+        "Gartenmöbel und Zäune",
+        "Gewerbliche Fassaden und Industriegebäude",
+        "Anti-Moos / Anti-Algen-Behandlung nach der Reinigung",
+        "Vorbereitung vor Anstrich oder Fassadensanierung"
+      ],
+      "longDescription": "Die Heisswasser-Hochdruckreinigung ist die effektivste Lösung, um Ihren Aussenoberflächen ein neues Aussehen zu verleihen. Im Gegensatz zur herkömmlichen Kaltwasserreinigung löst heisses Wasser (bis zu 90°C) Fette, eingewachsenes Moos, Flechten und hartnäckigen Schmutz sofort auf, ohne aggressive Chemikalien zu benötigen.\n\nAiman Renovation setzt mit professionellem thermischem Hochdruckgerät in der gesamten Region Saint-Louis / Basel / Mulhouse / Lörrach ein. Unsere Techniker passen Druck und Temperatur jedem Unterlagstyp an: 60 bis 100 bar für empfindliche Dächer, 150 bis 250 bar für Betonflächen.\n\nWir behandeln alle Aussenoberflächen: Putzfassaden, Naturstein, Ziegel, Beton, Holz- oder Kompositverkleidungen, Ziegel- und Schieferdächer, Terrassen, Wege, Pflastersteine, Gartenmöbel, Zäune und Gewerbefassaden. Eine abschliessende Präventivbehandlung verlängert die Wirkung um 3 bis 5 Jahre.",
+      "process": [
+        {
+          "step": "Oberflächenbewertung",
+          "detail": "Technische Besichtigung zur Identifikation der Unterlagstypen, der Verschmutzungen und zur Festlegung des optimalen Drucks und der Temperatur."
+        },
+        {
+          "step": "Schutz der Umgebung",
+          "detail": "Abdecken von Pflanzen, Möbeln und Öffnungen. Schutzabdeckungen gegen Spritzwasser an Fenstern, Tischlerarbeiten und Nachbarschaft."
+        },
+        {
+          "step": "Heisswasser-Hochdruckreinigung",
+          "detail": "Methodische Reinigung mit professionellem Thermikgerät. Druck und Temperatur an jede Oberfläche angepasst für 100% Schmutzentfernung."
+        },
+        {
+          "step": "Spülung und Inspektion",
+          "detail": "Kaltwasserspülung zur Rückstandsentfernung. Vollständige Sichtprüfung und Nachbehandlung hartnäckiger Stellen."
+        },
+        {
+          "step": "Präventivbehandlung (optional)",
+          "detail": "Auftragen einer Langzeit-Anti-Moos- und Anti-Algen-Behandlung (3 bis 5 Jahre) zur Vermeidung von Wiederbesiedlung."
+        }
+      ],
+      "whyPro": "Eine schlecht ausgeführte Hochdruckreinigung kann einen empfindlichen Putz rissig machen, Schiefer ablösen, Fliesen lösen oder Fugen einer Fassade beschädigen. Druck und Temperatur müssen jedem Unterlagstyp angepasst werden — was professionelle Ausrüstung und Erfahrung erfordert. Aiman Renovation garantiert ein einwandfreies Ergebnis ohne Substratverschädigung, mit Zehnjahresgarantie.",
+      "priceRange": "Ab 8 €/m² für Platten und Wege, 10 bis 18 €/m² für Fassaden, 12 bis 20 €/m² für Dächer"
     }
   ],
   "contact": {
@@ -3275,6 +3317,13 @@
     "opt_contrat_entretien_mensuel": "Monatlicher Pflegevertrag",
     "qty_ml_credence": "Länge Küchenrückwand (m)",
     "qty_ml_plinthes": "Sockelleisten (m)",
-    "qty_ml_boiseries": "Holzverkleidung (m)"
+    "qty_ml_boiseries": "Holzverkleidung (m)",
+    "type_nettoyage_hp": "Hochdruckreinigung",
+    "type_nettoyage_hp_desc": "Fassaden, Dächer, Platten, Wege",
+    "opt_nettoyage_dalles": "Platten, Wege und Terrassen",
+    "opt_nettoyage_facade": "Fassaden (Putz, Stein, Ziegel)",
+    "opt_nettoyage_toiture": "Dach (Ziegel, Schiefer)",
+    "opt_traitement_antimousse": "Anti-Moos / Anti-Algen-Behandlung",
+    "opt_deplacement": "Anfahrt und Einrichtung"
   }
 }
