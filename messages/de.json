@@ -1286,6 +1286,17 @@
           "velux": "Dachfenster / Velux",
           "zinguerie": "Klempnerarbeiten"
         }
+      },
+      "nettoyage_hp": {
+        "label": "Hochdruckreinigung",
+        "workItems": {
+          "nettoyage_hp": "Heißwasser-Hochdruckreinigung",
+          "nettoyage_dalles": "Platten / Wege / Terrassen",
+          "nettoyage_facade": "Fassaden / Putz",
+          "nettoyage_toiture": "Dach / Ziegel",
+          "traitement_antimousse": "Anti-Moos / Anti-Algen-Behandlung",
+          "deplacement": "Anfahrt (Pauschale)"
+        }
       }
     }
   },

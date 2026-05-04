@@ -1286,6 +1286,17 @@
           "velux": "Roof window / Velux",
           "zinguerie": "Zinc work"
         }
+      },
+      "nettoyage_hp": {
+        "label": "High-Pressure Cleaning",
+        "workItems": {
+          "nettoyage_hp": "Hot Water High-Pressure Cleaning",
+          "nettoyage_dalles": "Slabs / Pathways / Terraces",
+          "nettoyage_facade": "Facades / Render",
+          "nettoyage_toiture": "Roof / Tiles",
+          "traitement_antimousse": "Anti-moss / Anti-algae Treatment",
+          "deplacement": "Travel (flat fee)"
+        }
       }
     }
   },

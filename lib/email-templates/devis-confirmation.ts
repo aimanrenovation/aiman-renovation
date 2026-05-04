@@ -69,10 +69,25 @@ export function generateDevisEmailHtml({
     (z) => data.selectedWorks[z.id] && data.selectedWorks[z.id].length > 0,
   );
 
-  const totalWorks = zonesWithWorks.reduce(
-    (sum, z) => sum + data.selectedWorks[z.id].length,
-    0,
+  // Works submitted from calculateur (e.g. nettoyage_hp) that are NOT zone-based
+  // Cast to open record to handle dynamic keys not in the ZoneId union
+  const allSelectedWorks = data.selectedWorks as Record<string, string[]>;
+  const allZoneNotes = (data.zoneNotes ?? {}) as Record<string, string>;
+
+  const extraWorkKeys = Object.keys(allSelectedWorks).filter(
+    (key) =>
+      !ZONES_CONFIG.some((z) => z.id === key) &&
+      allSelectedWorks[key] &&
+      allSelectedWorks[key].length > 0,
   );
+
+  const totalWorks =
+    zonesWithWorks.reduce(
+      (sum, z) => sum + data.selectedWorks[z.id].length,
+      0,
+    ) + extraWorkKeys.length;
+
+  const noteLabel = getEmailText(messages, "label_note");
 
   const zonesHtml = zonesWithWorks
     .map((zone) => {
@@ -85,12 +100,32 @@ export function generateDevisEmailHtml({
         })
         .join(", ");
 
-      const note = data.zoneNotes?.[zone.id];
-      const noteLabel = getEmailText(messages, "label_note");
+      const note = allZoneNotes[zone.id];
       return `
         <tr>
           <td style="padding:12px 16px;border-bottom:1px solid #eee;font-weight:600;vertical-align:top;width:160px;color:#333;">
             ${getZoneLabel(messages, zone.labelKey)}
+          </td>
+          <td style="padding:12px 16px;border-bottom:1px solid #eee;color:#555;">
+            ${works}${note ? `<br/><span style="color:#888;font-size:13px;">${noteLabel} ${note}</span>` : ""}
+          </td>
+        </tr>`;
+    })
+    .join("");
+
+  // Render extra (non-zone) works — e.g. nettoyage_hp from calculateur
+  const extraZonesHtml = extraWorkKeys
+    .map((key) => {
+      const workIds = allSelectedWorks[key];
+      const zoneLabel = getZoneLabel(messages, key);
+      const works = workIds
+        .map((workId) => getWorkLabel(messages, key, workId))
+        .join(", ");
+      const note = allZoneNotes[key];
+      return `
+        <tr>
+          <td style="padding:12px 16px;border-bottom:1px solid #eee;font-weight:600;vertical-align:top;width:160px;color:#333;">
+            ${zoneLabel}
           </td>
           <td style="padding:12px 16px;border-bottom:1px solid #eee;color:#555;">
             ${works}${note ? `<br/><span style="color:#888;font-size:13px;">${noteLabel} ${note}</span>` : ""}
@@ -117,7 +152,7 @@ export function generateDevisEmailHtml({
   const labelAddress = getEmailText(messages, "label_address");
   const sectionWorks = getEmailText(messages, "section_works", {
     totalWorks,
-    totalZones: zonesWithWorks.length,
+    totalZones: zonesWithWorks.length + extraWorkKeys.length,
   });
   const sectionBudget = getEmailText(messages, "section_budget");
   const sectionMagicplan = getEmailText(messages, "section_magicplan");
@@ -152,7 +187,7 @@ export function generateDevisEmailHtml({
           ${sectionWorks}
         </h2>
         <table style="width:100%;border-collapse:collapse;font-size:14px;">
-          ${zonesHtml}
+          ${zonesHtml}${extraZonesHtml}
         </table>
 
         ${
