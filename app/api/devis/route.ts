@@ -148,6 +148,9 @@ export async function POST(request: NextRequest) {
     // Zone names in email subject always in French for Aiman
     const zonesShort = zonesWithWorks.map((z) => z.labelKey).join(", ");
 
+    // User-Agent simplifié pour le template email
+    const rawUserAgent = request.headers.get("user-agent") ?? undefined;
+
     // Email a Aiman Renovation (avec photos) — always French
     const resendAiman = await resend.emails.send({
       from: DEVIS_FROM_EMAIL,
@@ -157,6 +160,9 @@ export async function POST(request: NextRequest) {
         data: data as DevisState,
         isClientCopy: false,
         locale: "fr",
+        sourceIp: ip,
+        userAgent: rawUserAgent,
+        photosCount: attachments.length,
       }),
       attachments: attachments.length > 0 ? attachments : undefined,
     });
@@ -190,6 +196,7 @@ export async function POST(request: NextRequest) {
         data: data as DevisState,
         isClientCopy: true,
         locale,
+        photosCount: attachments.length,
       }),
     });
     if (resendClient.error) {
