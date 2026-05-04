@@ -2,17 +2,28 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
+import { X } from "lucide-react";
+
+const DISMISSED_KEY = "trust-bar-dismissed";
 
 export function FloatingTrustBar() {
   const pathname = usePathname();
   const [show, setShow] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
   const lastScrollY = useRef(0);
 
   // Hide on employee pages
   const isEmployeePage = pathname.startsWith("/espace-employes");
 
+  // Check localStorage once on mount
   useEffect(() => {
-    if (isEmployeePage) return;
+    if (typeof window !== "undefined") {
+      setDismissed(localStorage.getItem(DISMISSED_KEY) === "1");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isEmployeePage || dismissed) return;
 
     // Small initial delay so the bar doesn't flash on page load
     const initTimer = setTimeout(() => {
@@ -39,9 +50,17 @@ export function FloatingTrustBar() {
       clearTimeout(initTimer);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isEmployeePage]);
+  }, [isEmployeePage, dismissed]);
 
-  if (isEmployeePage) return null;
+  function handleDismiss() {
+    setDismissed(true);
+    setShow(false);
+    if (typeof window !== "undefined") {
+      localStorage.setItem(DISMISSED_KEY, "1");
+    }
+  }
+
+  if (isEmployeePage || dismissed) return null;
 
   return (
     <div
@@ -56,8 +75,13 @@ export function FloatingTrustBar() {
             <p className="text-zinc-700 text-xs sm:text-sm leading-snug">
               <span className="text-yellow-500">&#9733;</span>{" "}
               <span className="font-semibold">4.9/5</span> sur Google
-              <span className="hidden sm:inline"> &middot; 50+ projets &middot; Devis gratuit en 48h</span>
-              <span className="sm:hidden block text-zinc-500 text-[11px]">50+ projets &middot; Devis gratuit en 48h</span>
+              <span className="hidden sm:inline">
+                {" "}
+                &middot; 50+ projets &middot; Devis gratuit en 48h
+              </span>
+              <span className="sm:hidden block text-zinc-500 text-[11px]">
+                50+ projets &middot; Devis gratuit en 48h
+              </span>
             </p>
           </div>
 
@@ -68,6 +92,15 @@ export function FloatingTrustBar() {
           >
             Demander un devis
           </Link>
+
+          {/* Dismiss */}
+          <button
+            onClick={handleDismiss}
+            aria-label="Fermer"
+            className="shrink-0 p-1 text-zinc-400 hover:text-zinc-700 transition-colors"
+          >
+            <X size={16} />
+          </button>
         </div>
       </div>
     </div>
