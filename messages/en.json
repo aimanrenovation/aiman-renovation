@@ -174,7 +174,7 @@
           "desc": "All our work is covered by a ten-year structural guarantee and professional liability insurance."
         },
         {
-          "title": "Free quote within 4 days",
+          "title": "Free quote within 48h",
           "desc": "On-site survey included, detailed and transparent quote. No obligation."
         },
         {
@@ -197,7 +197,7 @@
     },
     "cta_banner": {
       "title": "GOT A PROJECT IN MIND?",
-      "subtitle": "Free quote within 4 days, no obligation.",
+      "subtitle": "Free quote within 48h, no obligation.",
       "button": "Request a quote",
       "call_prefix": "or call us on"
     }
@@ -258,7 +258,7 @@
       {
         "number": "03",
         "title": "Detailed quote",
-        "desc": "Within 4 days you receive a full quote: work item by item, materials, timeline and total cost."
+        "desc": "Within 48h you receive a full quote: work item by item, materials, timeline and total cost."
       },
       {
         "number": "04",
@@ -321,7 +321,7 @@
     ]
   },
   "services": {
-    "seo_title": "Our Renovation Services in the Basel Area",
+    "seo_title": "Renovation Services Basel Area & Tri-Border Region",
     "seo_description": "Kitchen, bathroom, electrical work, plumbing, tiling, facades, insulation, painting, EV charging, solar panels. Qualified contractor, Basel tri-border region.",
     "hero_title": "OUR",
     "hero_title_highlight": "SERVICES",
@@ -342,11 +342,11 @@
     "cta_title_line1": "INTERESTED IN",
     "cta_title_line2": "THIS",
     "cta_title_highlight": "SERVICE",
-    "cta_subtitle": "Describe your project and receive a free quote within 4 days. No obligation.",
+    "cta_subtitle": "Describe your project and receive a free quote within 48h. No obligation.",
     "cta_button": "Request a quote",
     "cta_hero_button": "Request a free quote",
     "service_meta_suffix": "in the Basel Area — Free Quote",
-    "service_meta_desc_suffix": "Qualified contractor in the Basel tri-border area. Free quote within 4 days."
+    "service_meta_desc_suffix": "Qualified contractor in the Basel tri-border area. Free quote within 48h."
   },
   "service_items": [
     {
@@ -905,12 +905,12 @@
   ],
   "contact": {
     "seo_title": "Contact — Renovation Basel & Tri-border Area | Free Quote",
-    "seo_description": "Contact Aiman Renovation on 06 33 49 69 25 or by email. Free quote within 4 days for your renovation work in the Basel tri-border area.",
+    "seo_description": "Contact Aiman Renovation on 03 56 89 44 03 or by email. Free quote within 48h for your renovation work in the Basel tri-border area, no obligation.",
     "hero_title_highlight": "LET'S TALK",
     "hero_title": "ABOUT YOUR PROJECT",
     "hero_subtitle": "First discussion always with no obligation.",
     "reassurance_devis": "Free quote",
-    "reassurance_response": "Response within 4 days",
+    "reassurance_response": "Response within 48h",
     "reassurance_engagement": "No obligation",
     "mobile_whatsapp": "Mobile / WhatsApp",
     "whatsapp": "WhatsApp",
@@ -936,13 +936,13 @@
       "placeholder_message": "Describe your project...",
       "submit": "Send message",
       "sending": "Sending...",
-      "success": "Message sent successfully! We will reply within 4 days.",
+      "success": "Message sent successfully! We will reply within 48h.",
       "error": "An error occurred. Please try again or call us directly."
     }
   },
   "devis": {
     "seo_title": "Free Renovation Quote — Basel Area",
-    "seo_description": "Request your free online quote for renovation work in the Basel area and Haut-Rhin. Response within 4 days, no obligation.",
+    "seo_description": "Request your free online quote for renovation work in the Basel area and Haut-Rhin. Qualified contractor, response within 48h, no obligation.",
     "blueprint": {
       "touch_room": "Tap a room",
       "click_room": "Click a room to get started",
@@ -1268,7 +1268,7 @@
       {
         "category": "Devis",
         "question": "How do I get a quote?",
-        "answer": "Fill in our online form or call us on 06 33 49 69 25. We will send you a detailed quote within 4 days after the site survey.",
+        "answer": "Fill in our online form or call us on 06 33 49 69 25. We will send you a detailed quote within 48h after the site survey.",
         "relatedServices": [
           {
             "label": "Request a quote",
@@ -1305,7 +1305,7 @@
       {
         "category": "Devis",
         "question": "How long will it take to receive my quote?",
-        "answer": "We commit to sending your quote within 4 days of the site survey. For complex projects (facade, solar panels), allow 5 to 7 working days.",
+        "answer": "We commit to sending your quote within 48h of the site survey. For complex projects (facade, solar panels), allow 2 to 4 working days.",
         "relatedServices": [
           {
             "label": "Request a quote",
@@ -1313,7 +1313,7 @@
           },
           {
             "label": "Facade renovation",
-            "href": "/services/ravalement-facade"
+            "href": "/services/facade"
           }
         ]
       },
@@ -1347,7 +1347,7 @@
           },
           {
             "label": "Facade renovation",
-            "href": "/services/ravalement-facade"
+            "href": "/services/facade"
           }
         ]
       },
@@ -1358,7 +1358,7 @@
         "relatedServices": [
           {
             "label": "Facade renovation",
-            "href": "/services/ravalement-facade"
+            "href": "/services/facade"
           },
           {
             "label": "Thermal insulation (EWI)",
@@ -1366,7 +1366,7 @@
           },
           {
             "label": "EV charging points",
-            "href": "/services/bornes-irve"
+            "href": "/services/borne-recharge"
           }
         ]
       },
@@ -1443,7 +1443,7 @@
         "relatedServices": [
           {
             "label": "EV charging points",
-            "href": "/services/bornes-irve"
+            "href": "/services/borne-recharge"
           },
           {
             "label": "Request a quote",
@@ -1826,7 +1826,7 @@
   },
   "seo": {
     "home_title": "Home Renovation Basel Area | Free Quote — Aiman",
-    "home_description": "Home renovation Basel area — kitchen, bathroom, electrical, plumbing, facades, insulation. Qualified contractor, tri-border region. Free quote within 4 days."
+    "home_description": "Home renovation Basel area — kitchen, bathroom, tiling, painting, insulation, facades. Qualified contractor, tri-border region. 10-year guarantee. Free quote within 48h."
   },
   "schema": {
     "organization_type": "HomeAndConstructionBusiness",
@@ -2086,7 +2086,7 @@
     "filter_country": "Country:",
     "cta_title": "JOIN OUR",
     "cta_title_highlight": "SATISFIED CLIENTS",
-    "cta_subtitle": "Free quote within 4 days. Local craftsman, ten-year warranty.",
+    "cta_subtitle": "Free quote within 48h. Local craftsman, ten-year warranty.",
     "cta_button": "Request a free quote"
   },
   "ville_de_items": [

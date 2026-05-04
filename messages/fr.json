@@ -321,8 +321,8 @@
     ]
   },
   "services": {
-    "seo_title": "Nos Services de Rénovation à Saint-Louis (68)",
-    "seo_description": "Cuisine, salle de bain, électricité, plomberie, carrelage, façades, isolation, peinture, bornes de recharge, photovoltaïque. Artisan qualifié Haut-Rhin.",
+    "seo_title": "Services Rénovation Saint-Louis 68 | Artisan Haut-Rhin",
+    "seo_description": "Cuisine, salle de bain, électricité, plomberie, carrelage, façade, isolation, peinture, photovoltaïque. Artisan qualifié Haut-Rhin, zone tri-frontière Bâle.",
     "hero_title": "NOS",
     "hero_title_highlight": "SERVICES",
     "hero_subtitle": "Du sol au plafond, de l'intérieur à l'extérieur — nous maîtrisons tous les corps de métier.",
@@ -905,7 +905,7 @@
   ],
   "contact": {
     "seo_title": "Contact — Rénovation Saint-Louis, Haut-Rhin | Devis Gratuit",
-    "seo_description": "Contactez Aiman Renovation pour votre projet de rénovation à Saint-Louis et dans le Haut-Rhin. Devis gratuit sous 4 jours. Tél. 06 33 49 69 25.",
+    "seo_description": "Contactez Aiman Renovation pour votre rénovation à Saint-Louis, Haut-Rhin et zone Bâle. Devis gratuit sous 48h. Tél. 06 33 49 69 25. Sans engagement.",
     "hero_title_highlight": "PARLONS",
     "hero_title": "DE VOTRE PROJET",
     "hero_subtitle": "Premier échange toujours sans engagement.",
@@ -941,8 +941,8 @@
     }
   },
   "devis": {
-    "seo_title": "Devis Gratuit Rénovation — Saint-Louis et Haut-Rhin",
-    "seo_description": "Demandez votre devis gratuit en ligne pour vos travaux de rénovation à Saint-Louis et dans le Haut-Rhin. Réponse sous 4 jours, sans engagement.",
+    "seo_title": "Devis Gratuit Rénovation Saint-Louis 68 | Haut-Rhin",
+    "seo_description": "Devis gratuit pour vos travaux de rénovation à Saint-Louis 68300, Haut-Rhin et zone Bâle. Salle de bain, cuisine, façade, isolation. Réponse sous 48h.",
     "blueprint": {
       "touch_room": "Touchez une pièce",
       "click_room": "Cliquez sur une pièce pour commencer",
@@ -1248,8 +1248,8 @@
     }
   },
   "faq": {
-    "seo_title": "FAQ Rénovation Saint-Louis — Questions Fréquentes",
-    "seo_description": "Réponses à vos questions sur la rénovation à Saint-Louis et Haut-Rhin : devis gratuit, délais, garanties, aides financières. Artisan qualifié depuis 19 ans.",
+    "seo_title": "FAQ Rénovation Saint-Louis 68 | Questions Fréquentes Artisan",
+    "seo_description": "Toutes vos questions sur la rénovation à Saint-Louis 68300 : devis, délais, garanties, aides MaPrimeRénov', zone d'intervention. Artisan qualifié Haut-Rhin.",
     "hero_title": "QUESTIONS",
     "hero_title_highlight": "FRÉQUENTES",
     "hero_subtitle": "Tout ce que vous devez savoir avant de lancer votre projet.",
@@ -1313,7 +1313,7 @@
           },
           {
             "label": "Ravalement de façade",
-            "href": "/services/ravalement-facade"
+            "href": "/services/facade"
           }
         ]
       },
@@ -1347,7 +1347,7 @@
           },
           {
             "label": "Ravalement de façade",
-            "href": "/services/ravalement-facade"
+            "href": "/services/facade"
           }
         ]
       },
@@ -1358,15 +1358,15 @@
         "relatedServices": [
           {
             "label": "Ravalement de façade",
-            "href": "/services/ravalement-facade"
+            "href": "/services/facade"
           },
           {
             "label": "Isolation thermique (ITE)",
             "href": "/services/isolation"
           },
           {
-            "label": "Bornes de recharge IRVE",
-            "href": "/services/bornes-irve"
+            "label": "Borne de recharge IRVE",
+            "href": "/services/borne-recharge"
           }
         ]
       },
@@ -1442,8 +1442,8 @@
         "answer": "Oui, nous disposons de la certification IRVE (Infrastructure de Recharge pour Véhicule Électrique), obligatoire pour l'installation de bornes de recharge de plus de 3,7 kW. Cette certification vous permet de bénéficier du crédit d'impôt et de la prime ADVENIR.",
         "relatedServices": [
           {
-            "label": "Bornes de recharge IRVE",
-            "href": "/services/bornes-irve"
+            "label": "Borne de recharge IRVE",
+            "href": "/services/borne-recharge"
           },
           {
             "label": "Demander un devis",
@@ -1560,6 +1560,116 @@
             "href": "/devis"
           }
         ]
+      },
+      {
+        "category": "Travaux",
+        "question": "Intervenez-vous à Bâle et en zone tri-frontière ?",
+        "answer": "Nous intervenons principalement en France (Haut-Rhin, 68), notamment à Saint-Louis, Huningue, Village-Neuf, Blotzheim, Bartenheim, Kembs. Pour des projets spécifiques, nous pouvons nous déplacer sur Bâle (Suisse) et la zone tri-frontière FR/CH/DE sur demande.",
+        "relatedServices": [
+          {
+            "label": "Rénovation à Huningue",
+            "href": "/renovation/huningue"
+          },
+          {
+            "label": "Nous contacter",
+            "href": "/contact"
+          }
+        ]
+      },
+      {
+        "category": "Travaux",
+        "question": "Rénovez-vous des appartements à Mulhouse ?",
+        "answer": "Oui, nous intervenons à Mulhouse et dans l'agglomération mulhousienne pour tous types de travaux : rénovation complète d'appartement, salle de bain, cuisine, peinture, électricité, sols. Contactez-nous pour planifier une visite technique.",
+        "relatedServices": [
+          {
+            "label": "Rénovation à Mulhouse",
+            "href": "/renovation/mulhouse"
+          },
+          {
+            "label": "Rénovation complète",
+            "href": "/services/renovation-complete"
+          }
+        ]
+      },
+      {
+        "category": "Aides financières",
+        "question": "Quelles aides pour ma rénovation en Haut-Rhin ?",
+        "answer": "Plusieurs aides sont disponibles : MaPrimeRénov' (jusqu'à 90% des travaux d'isolation selon les revenus), les CEE (Certificats d'Économie d'Énergie), l'éco-PTZ à taux zéro, la TVA réduite à 5,5% ou 10% selon les travaux. Aiman Renovation vous aide à constituer vos dossiers d'aides.",
+        "relatedServices": [
+          {
+            "label": "Isolation thermique",
+            "href": "/services/isolation"
+          },
+          {
+            "label": "Demander un devis",
+            "href": "/devis"
+          }
+        ]
+      },
+      {
+        "category": "Aides financières",
+        "question": "Comment bénéficier de MaPrimeRénov' ?",
+        "answer": "MaPrimeRénov' est accessible à tous les propriétaires occupants ou bailleurs. Le montant dépend de vos revenus et du type de travaux (isolation, chauffage, ventilation). Les travaux doivent être réalisés par un artisan RGE. Aiman Renovation est certifié RGE et monte votre dossier intégralement.",
+        "relatedServices": [
+          {
+            "label": "Isolation par l'extérieur (ITE)",
+            "href": "/services/isolation"
+          },
+          {
+            "label": "Panneaux photovoltaïques",
+            "href": "/services/panneaux-photovoltaiques"
+          }
+        ]
+      },
+      {
+        "category": "Déroulement",
+        "question": "Proposez-vous un devis pour rénovation de salle de bain à Saint-Louis ?",
+        "answer": "Oui, nous réalisons des devis gratuits pour la rénovation de salle de bain à Saint-Louis 68300 et dans tout le Haut-Rhin. Douche italienne, baignoire, carrelage, plomberie complète, ventilation — nous intervenons sur l'ensemble du projet. Réponse sous 48h.",
+        "relatedServices": [
+          {
+            "label": "Rénovation salle de bain",
+            "href": "/services/salle-de-bain"
+          },
+          {
+            "label": "Devis salle de bain",
+            "href": "/devis-salle-de-bain"
+          }
+        ]
+      },
+      {
+        "category": "Déroulement",
+        "question": "Proposez-vous des devis pour cuisine à Saint-Louis ?",
+        "answer": "Oui, nous établissons des devis gratuits et sans engagement pour la rénovation de cuisine à Saint-Louis et dans le Haut-Rhin. Notre équipe intervient sur tous les corps de métier : plomberie, électricité, carrelage, menuiserie, peinture. Réponse garantie sous 48h.",
+        "relatedServices": [
+          {
+            "label": "Rénovation cuisine",
+            "href": "/services/cuisine"
+          },
+          {
+            "label": "Devis cuisine",
+            "href": "/devis-cuisine"
+          }
+        ]
+      },
+      {
+        "category": "Garanties",
+        "question": "Êtes-vous qualifié RGE ?",
+        "answer": "Oui, Aiman Renovation détient la qualification RGE (Reconnu Garant de l'Environnement) pour les travaux d'isolation thermique et d'énergie renouvelable. Cette certification est indispensable pour bénéficier de MaPrimeRénov', des CEE et de la TVA réduite sur ces travaux.",
+        "relatedServices": [
+          {
+            "label": "Isolation thermique",
+            "href": "/services/isolation"
+          },
+          {
+            "label": "Panneaux solaires",
+            "href": "/services/panneaux-photovoltaiques"
+          }
+        ]
+      },
+      {
+        "category": "Paiement",
+        "question": "Acceptez-vous les chèques ANCV ou les paiements échelonnés ?",
+        "answer": "Nous acceptons les virements bancaires, chèques et espèces. Pour les montants importants, un échelonnement en 3 fois peut être envisagé : acompte à la commande, versement intermédiaire en cours de chantier, solde à la réception des travaux. Renseignez-vous lors du devis."
       }
     ]
   },
@@ -1825,8 +1935,8 @@
     "seo_description": "Politique de confidentialité d'Aiman Renovation — protection de vos données personnelles, RGPD, droits d'accès et de rectification. Contact : Saint-Louis 68300."
   },
   "seo": {
-    "home_title": "Artisan Rénovation Saint-Louis 68 | Haut-Rhin & Bâle",
-    "home_description": "Artisan rénovation à Saint-Louis 68300 et Haut-Rhin. Cuisine, salle de bain, carrelage, peinture, plomberie, façades. Zone tri-frontière Bâle. Devis gratuit."
+    "home_title": "Artisan Rénovation Saint-Louis 68300 | Haut-Rhin & Bâle",
+    "home_description": "Artisan rénovation à Saint-Louis 68300, Mulhouse, Bâle. Cuisine, salle de bain, électricité, plomberie, isolation, façade. Devis gratuit sous 48h."
   },
   "schema": {
     "organization_type": "HomeAndConstructionBusiness",
@@ -2075,8 +2185,8 @@
     }
   },
   "avis": {
-    "seo_title": "Avis Clients AIMAN RENOVATION — 4.9/5 sur 30 avis | Saint-Louis 68",
-    "seo_description": "Découvrez les 30 avis clients d'AIMAN RENOVATION, artisan rénovation à Saint-Louis 68300. Note moyenne 4.9/5. Clients France, Suisse et Allemagne satisfaits.",
+    "seo_title": "Avis Clients Aiman Renovation | 4.9/5 — Saint-Louis 68",
+    "seo_description": "30 avis clients d'Aiman Renovation, artisan rénovation à Saint-Louis 68300. Note moyenne 4.9/5. Clients France, Suisse et Allemagne satisfaits.",
     "breadcrumb": "Avis clients",
     "hero_title": "AVIS",
     "hero_title_highlight": "CLIENTS",

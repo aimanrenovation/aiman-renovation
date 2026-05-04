@@ -16,10 +16,10 @@ export async function generateMetadata({ params }: Props) {
   const isFR = locale === "fr";
 
   const title = isDE
-    ? "Renovierung in Deutschland | AIMAN RENOVATION — Französische Handwerker im Dreiländereck"
+    ? "Renovierung Lörrach, Weil am Rhein | Handwerker Aiman"
     : isFR
-      ? "Rénovation en Allemagne (Bade-Wurtemberg) | AIMAN RENOVATION"
-      : "Renovation in Germany (Baden-Württemberg) | AIMAN RENOVATION";
+      ? "Rénovation Allemagne — Lörrach, Weil am Rhein | Aiman"
+      : "Renovation Germany — Lörrach, Weil am Rhein | Aiman";
 
   const description = isDE
     ? "Renovierung in Deutschland: Weil am Rhein, Lörrach, Grenzach-Wyhlen, Kandern. Französische Qualität direkt aus dem Elsass. Kostenlose Offerte in 48 Stunden."
