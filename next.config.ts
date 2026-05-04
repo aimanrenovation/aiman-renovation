@@ -72,6 +72,9 @@ const nextConfig: NextConfig = {
       ["carrelage", "sols-carrelage"],
       ["peinture-finitions", "peinture"],
       ["facade-isolation", "facade"],
+      ["borne-irve", "borne-recharge"],
+      ["photovoltaique", "panneaux-photovoltaiques"],
+      ["depannage", "depannage-urgence"],
     ];
     const locales = ["", "/de", "/en"];
     return [
