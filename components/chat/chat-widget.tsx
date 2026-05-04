@@ -31,6 +31,7 @@ export function ChatWidget() {
   const [loading, setLoading] = useState(false);
   const [conversationId, setConversationId] = useState<string | null>(null);
   const [cta, setCta] = useState<string | null>(null);
+  const [rdvSubject, setRdvSubject] = useState<string | null>(null);
   const [hidden, setHidden] = useState(false);
   const [assistant, setAssistant] = useState<ChatAssistant | null>(null);
   const [online, setOnline] = useState(false);
@@ -104,6 +105,7 @@ export function ChatWidget() {
           const data = await res.json();
           setConversationId(data.conversationId);
           setCta(data.cta);
+          if (data.rdv_subject) setRdvSubject(data.rdv_subject);
           setMessages((prev) => [
             ...prev,
             { role: "assistant", content: data.message, timestamp: Date.now() },
@@ -145,6 +147,7 @@ export function ChatWidget() {
           messages={messages}
           loading={loading}
           cta={cta}
+          rdvSubject={rdvSubject}
           conversationId={conversationId}
           assistantName={assistant.name}
           assistantTitle={assistant.title}
