@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { Send, X } from "lucide-react";
 import Link from "next/link";
+import { RdvBookingForm } from "./rdv-booking-form";
 
 interface Message {
   role: "user" | "assistant";
@@ -14,6 +15,7 @@ interface ChatWindowProps {
   messages: Message[];
   loading: boolean;
   cta: string | null;
+  conversationId: string | null;
   assistantName: string;
   assistantTitle: string;
   assistantPhoto: string;
@@ -32,13 +34,13 @@ function TypingIndicator() {
   );
 }
 
-const CTA_CONFIG: Record<
+// CTAs that resolve to a link (rdv is handled separately via inline booking form)
+const CTA_LINK_CONFIG: Record<
   string,
   { label: string; href: string; external?: boolean }
 > = {
   calculateur: { label: "Estimer mon budget →", href: "/devis" },
   devis: { label: "Demander un devis gratuit →", href: "/devis" },
-  rdv: { label: "Prendre rendez-vous →", href: "/devis" },
   appel: {
     label: "Appeler maintenant",
     href: "tel:+33633496925",
@@ -50,6 +52,7 @@ export function ChatWindow({
   messages,
   loading,
   cta,
+  conversationId,
   assistantName,
   assistantTitle,
   assistantPhoto,
@@ -58,6 +61,8 @@ export function ChatWindow({
   onClose,
 }: ChatWindowProps) {
   const [input, setInput] = useState("");
+  const [showRdvForm, setShowRdvForm] = useState(false);
+  const [rdvDone, setRdvDone] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const chatRootRef = useRef<HTMLDivElement>(null);
@@ -138,7 +143,8 @@ export function ChatWindow({
     }
   }
 
-  const ctaInfo = cta ? CTA_CONFIG[cta] : null;
+  const ctaInfo = cta && cta !== "rdv" ? CTA_LINK_CONFIG[cta] : null;
+  const showRdvButton = cta === "rdv" && !loading && !showRdvForm && !rdvDone;
 
   return (
     <div
@@ -209,6 +215,7 @@ export function ChatWindow({
 
         {loading && <TypingIndicator />}
 
+        {/* Standard CTAs (calculateur, devis, appel) */}
         {ctaInfo && !loading && (
           <div className="flex justify-start">
             {ctaInfo.external ? (
@@ -226,6 +233,53 @@ export function ChatWindow({
                 {ctaInfo.label}
               </Link>
             )}
+          </div>
+        )}
+
+        {/* RDV CTA — opens inline booking form */}
+        {showRdvButton && (
+          <div className="flex justify-start">
+            <button
+              type="button"
+              onClick={() => setShowRdvForm(true)}
+              className="inline-block rounded-xl bg-[#E50000] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#CC0000]"
+            >
+              Prendre rendez-vous →
+            </button>
+          </div>
+        )}
+
+        {/* Inline booking form */}
+        {showRdvForm && !rdvDone && (
+          <div className="mr-2">
+            <RdvBookingForm
+              conversationId={conversationId}
+              sujet={
+                messages
+                  .filter((m) => m.role === "user")
+                  .map((m) => m.content)
+                  .slice(-1)[0]
+              }
+              onSuccess={({ date, heure }) => {
+                setShowRdvForm(false);
+                setRdvDone(true);
+                const dateLabel = new Intl.DateTimeFormat("fr-FR", {
+                  weekday: "long",
+                  day: "numeric",
+                  month: "long",
+                }).format(new Date(`${date}T12:00:00`));
+                onSend(
+                  `__rdv_confirmed__:${dateLabel} à ${String(heure).padStart(2, "0")}h00`,
+                );
+              }}
+              onCancel={() => setShowRdvForm(false)}
+            />
+          </div>
+        )}
+
+        {rdvDone && (
+          <div className="mr-2 rounded-xl bg-green-50 px-4 py-2 text-sm text-green-800">
+            ✓ Rendez-vous confirmé — un email vous a été envoyé.
           </div>
         )}
 

@@ -79,10 +79,9 @@ function loadSavedState(locale: string): DevisState {
 export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
   const locale = useLocale();
   const t = useTranslations("devis.panel_recap");
-  const [state, dispatch] = useReducer(
-    devisReducer,
-    initialDevisState,
-    () => loadSavedState(locale),
+  const tErrors = useTranslations("devis.validation");
+  const [state, dispatch] = useReducer(devisReducer, initialDevisState, () =>
+    loadSavedState(locale),
   );
   const [isMobile, setIsMobile] = useState(false);
 
@@ -101,51 +100,94 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
   }, []);
 
   // Submit handler
-  const handleSubmit = useCallback(async (extra: { honeypot: string }) => {
-    // Silent client-side honeypot rejection — bots filled it
-    if (extra.honeypot) {
-      dispatch({ type: "SET_SUCCESS" });
-      return;
-    }
+  const handleSubmit = useCallback(
+    async (extra: { honeypot: string }) => {
+      // Silent client-side honeypot rejection — bots filled it
+      if (extra.honeypot) {
+        dispatch({ type: "SET_SUCCESS" });
+        return;
+      }
 
-    dispatch({ type: "SET_SUBMITTING", isSubmitting: true });
-    try {
-      const formData = new FormData();
+      dispatch({ type: "SET_SUBMITTING", isSubmitting: true });
+      try {
+        const formData = new FormData();
 
-      // State sans les photos (pas serialisable)
-      const { zonePhotos, ...stateWithoutPhotos } = state;
-      formData.append("data", JSON.stringify(stateWithoutPhotos));
-      formData.append("locale", locale);
-      formData.append("website", extra.honeypot); // honeypot for server
+        // State sans les photos (pas serialisable)
+        const { zonePhotos, ...stateWithoutPhotos } = state;
+        formData.append("data", JSON.stringify(stateWithoutPhotos));
+        formData.append("locale", locale);
+        formData.append("website", extra.honeypot); // honeypot for server
 
-      // Ajouter les photos avec le format zone__filename
-      for (const [zoneId, files] of Object.entries(zonePhotos)) {
-        for (const file of files) {
-          formData.append(`photo_${zoneId}`, file, file.name);
+        // Ajouter les photos avec le format zone__filename
+        for (const [zoneId, files] of Object.entries(zonePhotos)) {
+          for (const file of files) {
+            formData.append(`photo_${zoneId}`, file, file.name);
+          }
         }
-      }
 
-      const res = await fetch("/api/devis", {
-        method: "POST",
-        body: formData,
-      });
-      if (!res.ok) throw new Error(t("error_server"));
+        const res = await fetch("/api/devis", {
+          method: "POST",
+          body: formData,
+        });
 
-      const result = await res.json();
-      if (result.magicplanProjectId) {
-        dispatch({ type: "SET_MAGICPLAN_PROJECT", projectId: result.magicplanProjectId });
+        if (!res.ok) {
+          // Try to extract structured error from the response body
+          let errorMsg = t("error_server");
+          try {
+            const body = await res.json();
+            if (body?.code === "rate_limited") {
+              errorMsg = tErrors("rate_limited");
+            } else if (body?.code) {
+              // Validation error with a known code — use its translation
+              let codeMsg: string;
+              try {
+                codeMsg = tErrors(body.code);
+              } catch {
+                codeMsg = tErrors("generic");
+              }
+              // Prefix with human-readable field name when available
+              const fieldLabels: Record<string, string> = {
+                firstName: "Prénom",
+                lastName: "Nom",
+                phone: "Téléphone",
+                email: "Email",
+                address: "Adresse",
+              };
+              const fieldLabel = body.field
+                ? (fieldLabels[body.field as string] ?? body.field)
+                : null;
+              errorMsg = fieldLabel ? `${fieldLabel} : ${codeMsg}` : codeMsg;
+            } else if (
+              body?.error &&
+              typeof body.error === "string" &&
+              body.error !== "validation_failed"
+            ) {
+              // Server returned a plain error string
+              errorMsg = body.error;
+            }
+          } catch {
+            // Body not JSON — keep generic message
+          }
+          throw new Error(errorMsg);
+        }
+
+        const result = await res.json();
+        if (result.magicplanProjectId) {
+          dispatch({
+            type: "SET_MAGICPLAN_PROJECT",
+            projectId: result.magicplanProjectId,
+          });
+        }
+        dispatch({ type: "SET_SUCCESS" });
+      } catch (err) {
+        dispatch({
+          type: "SET_ERROR",
+          error: err instanceof Error ? err.message : t("error_generic"),
+        });
       }
-      dispatch({ type: "SET_SUCCESS" });
-    } catch (err) {
-      dispatch({
-        type: "SET_ERROR",
-        error:
-          err instanceof Error
-            ? err.message
-            : t("error_generic"),
-      });
-    }
-  }, [state, locale, t]);
+    },
+    [state, locale, t, tErrors],
+  );
 
   const totalWorks = countTotalWorks(state);
 
@@ -153,7 +195,10 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
 
   if (state.view === "success") {
     return (
-      <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/80 backdrop-blur-sm" style={{ paddingTop: 64 }}>
+      <div
+        className="fixed inset-0 z-30 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+        style={{ paddingTop: 64 }}
+      >
         <StepSuccessOverlay
           dispatch={dispatch}
           magicplanProjectId={state.magicplanProjectId}
@@ -168,9 +213,19 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
 
   if (state.view === "recap") {
     return (
-      <div className="fixed inset-0 z-20 flex items-center justify-center bg-black/60 backdrop-blur-sm" style={{ paddingTop: 64 }}>
-        <div data-lenis-prevent className="relative w-full max-w-2xl max-h-[85dvh] mx-4 overflow-y-auto overscroll-contain rounded-2xl shadow-2xl border border-white/10 [-webkit-overflow-scrolling:touch]">
-          <PanelRecap state={state} dispatch={dispatch} onSubmit={handleSubmit} />
+      <div
+        className="fixed inset-0 z-20 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+        style={{ paddingTop: 64 }}
+      >
+        <div
+          data-lenis-prevent
+          className="relative w-full max-w-2xl max-h-[85dvh] mx-4 overflow-y-auto overscroll-contain rounded-2xl shadow-2xl border border-white/10 [-webkit-overflow-scrolling:touch]"
+        >
+          <PanelRecap
+            state={state}
+            dispatch={dispatch}
+            onSubmit={handleSubmit}
+          />
         </div>
       </div>
     );
@@ -179,9 +234,15 @@ export function DevisBlueprint({ BlueprintComponent }: DevisBlueprintProps) {
   // --- Global / Zoomed view ---
 
   return (
-    <div className="flex w-full bg-[#091428] overflow-hidden" style={{ height: "calc(100dvh - 64px)" }}>
+    <div
+      className="flex w-full bg-[#091428] overflow-hidden"
+      style={{ height: "calc(100dvh - 64px)" }}
+    >
       {/* Plan area */}
-      <div className="relative flex-1 h-full" style={{ touchAction: "manipulation" }}>
+      <div
+        className="relative flex-1 h-full"
+        style={{ touchAction: "manipulation" }}
+      >
         <BlueprintComponent state={state} dispatch={dispatch} />
       </div>
 
