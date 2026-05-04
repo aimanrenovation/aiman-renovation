@@ -901,6 +901,48 @@
       ],
       "whyPro": "A poorly executed render can lead to delamination within 2 to 3 years, water ingress into walls and accelerated building deterioration. Erecting scaffolding, choosing renders suited to the substrate and handling structural cracks all require professional expertise. Furthermore, facade works over 20 m² must be declared to the local planning authority. Aiman Renovation handles all formalities and guarantees a result that stands the test of time.",
       "priceRange": "€30 – €80 / m² for a standard render, €60 – €120 / m² for render with repairs"
+    },
+    {
+      "slug": "nettoyage-haute-pression",
+      "title": "Hot Water High-Pressure Cleaning",
+      "shortTitle": "HP Cleaning",
+      "description": "Facades, roofs and outdoor surfaces like new thanks to industrial hot water high-pressure cleaning. Guaranteed removal of moss, lichen, algae and graffiti.",
+      "icon": "💧",
+      "features": [
+        "Industrial hot water high-pressure cleaning (up to 250 bar, 90°C)",
+        "Rendered, painted, stone and cladded facades",
+        "Tile and slate roofs",
+        "Terraces, concrete slabs, pathways, paving",
+        "Garden furniture and fencing",
+        "Commercial facades and industrial buildings",
+        "Post-cleaning anti-moss / anti-algae treatment",
+        "Preparation before painting or rendering"
+      ],
+      "longDescription": "Hot water high-pressure cleaning is the most effective solution to restore your outdoor surfaces to a like-new condition. Unlike standard cold water cleaning, hot water (up to 90°C) instantly dissolves grease, ingrained moss, lichen and stubborn dirt without requiring aggressive chemicals — faster, deeper, and more environmentally friendly.\n\nAiman Renovation deploys professional thermal high-pressure equipment across the Saint-Louis / Basel / Mulhouse / Lörrach tri-border region. Our technicians calibrate pressure and temperature to each surface type: 60 to 100 bar for fragile roofs, 150 to 250 bar for concrete slabs and driveways.\n\nWe treat all outdoor surface types: rendered, natural stone, brick, concrete, wood and composite cladding facades; tile and slate roofs; concrete, paving and ceramic terraces; garden furniture, fencing and commercial shopfronts. A preventive anti-moss / anti-algae treatment applied at the end extends the effect by 3 to 5 years.\n\nIn the Saint-Louis / Basel (CH) / Lörrach (DE) / Mulhouse area, very few tradespeople offer hot-water service — most use cold water only. A clean facade raises a property's perceived value, ideally prepares it for rendering or exterior painting, and prevents premature degradation from acidic moss. Unbeatable value: from just 8 €/m².",
+      "process": [
+        {
+          "step": "Surface Assessment",
+          "detail": "Technical visit to identify surface types, soiling (moss, lichen, graffiti, grease) and determine the appropriate pressure and temperature for each area."
+        },
+        {
+          "step": "Protection of Surroundings",
+          "detail": "Covering of plants, furniture and openings. Protective sheeting to prevent spray on glazing, joinery and neighbouring properties."
+        },
+        {
+          "step": "Hot Water High-Pressure Cleaning",
+          "detail": "Methodical zone-by-zone application with professional thermal equipment. Pressure and temperature adapted to each surface for 100% soiling removal."
+        },
+        {
+          "step": "Rinsing and Inspection",
+          "detail": "Cold water rinse to remove residues. Full visual inspection and spot treatment on stubborn areas."
+        },
+        {
+          "step": "Preventive Treatment (optional)",
+          "detail": "Application of long-lasting anti-moss and anti-algae treatment (3 to 5 years) to prevent regrowth on facades, roofs and slabs."
+        }
+      ],
+      "whyPro": "Poorly executed high-pressure cleaning can crack a fragile render, dislodge roof slates, lift tiles or damage facade joints. Pressure and temperature must be precisely matched to each substrate — requiring professional equipment and field experience. Working at height (roofs, upper-floor facades) also demands compliant safety equipment. Aiman Renovation guarantees a flawless result with no substrate damage, backed by ten-year liability cover.",
+      "priceRange": "From 8 €/m² for slabs and pathways, 10 to 18 €/m² for facades, 12 to 20 €/m² for roofs"
     }
   ],
   "contact": {
@@ -3275,6 +3317,13 @@
     "opt_contrat_entretien_mensuel": "Monthly maintenance contract",
     "qty_ml_credence": "Backsplash length (m)",
     "qty_ml_plinthes": "Skirting boards (m)",
-    "qty_ml_boiseries": "Woodwork length (m)"
+    "qty_ml_boiseries": "Woodwork length (m)",
+    "type_nettoyage_hp": "High-Pressure Cleaning",
+    "type_nettoyage_hp_desc": "Facades, roofs, slabs, pathways",
+    "opt_nettoyage_dalles": "Slabs, pathways and terraces",
+    "opt_nettoyage_facade": "Facades (render, stone, brick)",
+    "opt_nettoyage_toiture": "Roof (tiles, slate)",
+    "opt_traitement_antimousse": "Anti-moss / anti-algae treatment",
+    "opt_deplacement": "Travel and setup"
   }
 }

@@ -901,6 +901,48 @@
       ],
       "whyPro": "Un ravalement mal exécuté peut entraîner des décollements d'enduit en 2 à 3 ans, des infiltrations d'eau dans les murs et une dégradation accélérée du bâtiment. Le montage d'un échafaudage, le choix des enduits adaptés au support et la gestion des fissures structurelles nécessitent un savoir-faire professionnel. De plus, au-delà de 20 m² de façade, le ravalement doit être déclaré en mairie. Aiman Renovation gère toutes les démarches et vous garantit un résultat qui tient dans le temps.",
       "priceRange": "30 € – 80 € / m² pour un ravalement simple, 60 € – 120 € / m² pour un ravalement avec réparations"
+    },
+    {
+      "slug": "nettoyage-haute-pression",
+      "title": "Nettoyage Haute Pression Eau Chaude",
+      "shortTitle": "Nettoyage HP",
+      "description": "Façades, toitures et sols extérieurs comme neufs grâce au nettoyage haute pression à eau chaude industrielle. Élimination garantie des mousses, lichens, algues et graffitis.",
+      "icon": "💧",
+      "features": [
+        "Nettoyage haute pression eau chaude industrielle (jusqu'à 250 bars, 90°C)",
+        "Façades crépies, peintes, pierre et bardage",
+        "Toitures tuiles et ardoises",
+        "Terrasses, dalles béton, allées, pavés",
+        "Mobilier extérieur et clôtures",
+        "Façades commerciales et bâtiments industriels",
+        "Traitement anti-mousse / anti-algues post-nettoyage",
+        "Préparation avant peinture ou ravalement"
+      ],
+      "longDescription": "Le nettoyage haute pression à eau chaude industrielle est la solution la plus efficace pour redonner un aspect neuf à vos surfaces extérieures. Contrairement à un nettoyage à eau froide classique, l'eau chaude (jusqu'à 90°C) dissout instantanément les graisses, les mousses incrustées, les lichens et les salissures tenaces sans nécessiter de produits chimiques agressifs. Résultat : un nettoyage plus rapide, plus profond et plus respectueux de l'environnement.\n\nAiman Renovation intervient avec un équipement professionnel haute pression thermique dans toute la zone Saint-Louis / Bâle / Mulhouse / Lörrach. Nos techniciens adaptent la pression et la température à chaque type de surface pour un résultat optimal sans endommager le support : 60 à 100 bars pour les toitures fragiles, 150 à 250 bars pour les dalles béton et les allées.\n\nNous traitons tous les types de surfaces extérieures : façades en crépi, pierre naturelle, brique, béton, bardage bois ou composite, toitures en tuiles, ardoises ou bac acier, terrasses et allées en béton, dalle, pavés autobloquants ou grès cérame, mobilier extérieur, clôtures et murs de clôture, façades commerciales et vitrines. Un traitement préventif anti-mousse / anti-algues appliqué en fin de prestation prolonge l'effet du nettoyage de 3 à 5 ans.\n\nDans la région tri-frontalière Saint-Louis / Bâle (CH) / Lörrach (DE) / Mulhouse, peu d'artisans proposent ce service à l'eau chaude — la plupart n'utilisent que de l'eau froide. C'est une opportunité rare : une façade propre augmente la valeur perçue d'un bien, prépare idéalement un ravalement ou une peinture extérieure, et évite la dégradation prématurée des enduits par les mousses acides. Le rapport qualité/prix est imbattable : à partir de 8 €/m², soit 5 à 10 fois moins cher qu'un ravalement.",
+      "process": [
+        {
+          "step": "Évaluation des surfaces",
+          "detail": "Visite technique pour identifier les types de surfaces, les salissures (mousses, lichens, graffitis, graisses), et définir la pression et la température adaptées à chaque zone."
+        },
+        {
+          "step": "Protection des abords",
+          "detail": "Bâchage des végétaux, mobilier et ouvertures. Mise en place des protections pour éviter toute projection sur les vitres, menuiseries et voisinage."
+        },
+        {
+          "step": "Nettoyage haute pression eau chaude",
+          "detail": "Application méthodique par zones avec équipement thermique professionnel. Pression et température adaptées à chaque surface pour éliminer 100 % des salissures sans endommager le support."
+        },
+        {
+          "step": "Rinçage et inspection",
+          "detail": "Rinçage à l'eau froide pour éliminer les résidus. Inspection visuelle complète et retouches sur les zones récalcitrantes."
+        },
+        {
+          "step": "Traitement préventif (en option)",
+          "detail": "Application d'un traitement anti-mousse et anti-algues longue durée (3 à 5 ans) pour prévenir la reprise de la végétation sur les façades, toitures et dalles."
+        }
+      ],
+      "whyPro": "Un nettoyage haute pression mal maîtrisé peut fissurer un enduit fragile, déloger des ardoises, décoller un carrelage ou endommager les joints d'une façade. La pression et la température doivent être rigoureusement adaptées à chaque support — ce qui exige un équipement professionnel et une expérience terrain. De plus, travailler en hauteur (toitures, façades de 2e étage) nécessite un équipement de sécurité conforme. Aiman Renovation garantit un résultat impeccable sans dégradation du support, avec assurance décennale.",
+      "priceRange": "À partir de 8 €/m² pour dalles et allées, 10 à 18 €/m² pour façades, 12 à 20 €/m² pour toitures"
     }
   ],
   "contact": {
@@ -3341,6 +3383,13 @@
     "opt_contrat_entretien_mensuel": "Contrat entretien mensuel",
     "qty_ml_credence": "Longueur crédence (ml)",
     "qty_ml_plinthes": "Périmètre plinthes (ml)",
-    "qty_ml_boiseries": "Longueur boiseries (ml)"
+    "qty_ml_boiseries": "Longueur boiseries (ml)",
+    "type_nettoyage_hp": "Nettoyage Haute Pression",
+    "type_nettoyage_hp_desc": "Façades, toitures, dalles, allées",
+    "opt_nettoyage_dalles": "Dalles, allées et terrasses",
+    "opt_nettoyage_facade": "Façades (crépi, pierre, brique)",
+    "opt_nettoyage_toiture": "Toiture (tuiles, ardoises)",
+    "opt_traitement_antimousse": "Traitement anti-mousse / anti-algues",
+    "opt_deplacement": "Déplacement et mise en place"
   }
 }
