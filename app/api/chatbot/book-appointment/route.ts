@@ -1,6 +1,12 @@
 import { NextResponse } from "next/server";
 import { google } from "googleapis";
 import { resend } from "@/lib/email";
+import {
+  validateName,
+  validateEmailFormat,
+  validatePhone,
+  validateAddressString,
+} from "@/lib/validation/devis";
 
 export const dynamic = "force-dynamic";
 
@@ -9,8 +15,21 @@ const AIMAN_EMAIL = "contact@aiman-renovation.fr";
 const FROM_EMAIL = "Aiman Renovation <devis@aiman-renovation.fr>";
 
 // Slots available: Mon-Fri 8h-18h, Sat 9h-12h — step 1h
-// Booked slots are checked against Google Calendar
 const SLOT_DURATION_MINUTES = 60;
+
+const GENERIC_SUBJECTS = [
+  "rdv",
+  "test",
+  "j'en sais rien",
+  "je sais pas",
+  "bonjour",
+  "hello",
+  "rien",
+  "...",
+  "???",
+  "aaaa",
+  "asdf",
+];
 
 /** Build an OAuth2 client from env vars */
 function buildOAuth2Client() {
@@ -31,22 +50,6 @@ function buildOAuth2Client() {
 function isValidSlot(dateStr: string, hour: number): boolean {
   const d = new Date(`${dateStr}T00:00:00+00:00`);
   if (isNaN(d.getTime())) return false;
-  // day-of-week in Paris (0=Sun ... 6=Sat)
-  const parisDow = parseInt(
-    new Intl.DateTimeFormat("en-US", {
-      timeZone: "Europe/Paris",
-      weekday: "narrow",
-    }).format(new Date(`${dateStr}T12:00:00`)) === "S"
-      ? // crude trick — use numeric weekday
-        new Intl.DateTimeFormat("en-US", {
-          timeZone: "Europe/Paris",
-        })
-          .formatToParts(new Date(`${dateStr}T12:00:00`))
-          .find((p) => p.type === "weekday")?.value || "0"
-      : "0",
-    10,
-  );
-  // Better approach: use Intl weekday index via en-US long name
   const weekdayLong = new Intl.DateTimeFormat("en-US", {
     timeZone: "Europe/Paris",
     weekday: "long",
@@ -64,53 +67,182 @@ function sanitize(val: string, maxLen = 200): string {
     .trim();
 }
 
-/** Validate email */
-function isValidEmail(email: string): boolean {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= 200;
+/** Validate subject: min 10 chars, not generic */
+function isValidSubject(raw: string): boolean {
+  const v = raw.trim();
+  if (v.length < 10) return false;
+  if (GENERIC_SUBJECTS.some((g) => v.toLowerCase() === g)) return false;
+  return true;
+}
+
+/** Validate all contact fields — returns first error or null */
+function validateContactFields(body: {
+  firstName: string;
+  lastName: string;
+  email: string;
+  telephone: string;
+  address: string;
+  addressValidated?: boolean;
+  sujet?: string;
+}): { field: string; code: string; detail: string } | null {
+  const firstNameResult = validateName(body.firstName);
+  if (!firstNameResult.ok)
+    return {
+      field: "firstName",
+      code: firstNameResult.code,
+      detail: "Prénom invalide.",
+    };
+
+  const lastNameResult = validateName(body.lastName);
+  if (!lastNameResult.ok)
+    return {
+      field: "lastName",
+      code: lastNameResult.code,
+      detail: "Nom invalide.",
+    };
+
+  const phoneResult = validatePhone(body.telephone);
+  if (!phoneResult.ok)
+    return {
+      field: "telephone",
+      code: phoneResult.code,
+      detail: "Téléphone invalide (FR/CH/DE/LU acceptés).",
+    };
+
+  const emailResult = validateEmailFormat(body.email);
+  if (!emailResult.ok)
+    return {
+      field: "email",
+      code: emailResult.code,
+      detail: "Email invalide.",
+    };
+
+  const addressResult = validateAddressString(body.address);
+  if (!addressResult.ok)
+    return {
+      field: "address",
+      code: addressResult.code,
+      detail: "Adresse incomplète (numéro + rue requis).",
+    };
+
+  if (!body.addressValidated) {
+    return {
+      field: "address",
+      code: "address_not_geocoded",
+      detail: "L'adresse doit être sélectionnée via l'autocomplete.",
+    };
+  }
+
+  if (body.sujet && !isValidSubject(body.sujet)) {
+    return {
+      field: "sujet",
+      code: "subject_too_short_or_generic",
+      detail: "Sujet trop court ou générique (min. 10 caractères).",
+    };
+  }
+
+  return null;
 }
 
 export async function POST(request: Request) {
-  // 1. Parse + validate body
+  // 1. Parse body
   let body: {
+    firstName?: string;
+    lastName?: string;
+    // Legacy "nom" field kept for backwards-compat (e.g. direct API calls)
     nom?: string;
     email?: string;
     telephone?: string;
+    address?: string;
+    addressValidated?: boolean;
+    addressLat?: number;
+    addressLng?: number;
     date?: string; // YYYY-MM-DD
     heure?: number; // 8-17 integer
     sujet?: string;
     conversationId?: string;
   };
+
   try {
     body = await request.json();
   } catch {
     return NextResponse.json({ error: "invalid_body" }, { status: 400 });
   }
 
-  const { nom, email, telephone, date, heure, sujet, conversationId } = body;
+  // Support legacy "nom" field — split on first space if firstName/lastName not provided
+  let firstName = body.firstName?.trim() || "";
+  let lastName = body.lastName?.trim() || "";
+  if (!firstName && !lastName && body.nom) {
+    const parts = body.nom.trim().split(/\s+/);
+    firstName = parts[0] || "";
+    lastName = parts.slice(1).join(" ") || parts[0] || "";
+  }
 
-  // Required fields validation
-  if (!nom || !email || !date || heure === undefined) {
+  const {
+    email,
+    telephone,
+    address,
+    addressValidated,
+    addressLat,
+    addressLng,
+    date,
+    heure,
+    sujet,
+    conversationId,
+  } = body;
+
+  // 2. Required fields presence check
+  if (
+    !firstName ||
+    !lastName ||
+    !email ||
+    !telephone ||
+    !address ||
+    !date ||
+    heure === undefined
+  ) {
     return NextResponse.json(
       {
         error: "missing_fields",
-        detail: "nom, email, date et heure sont obligatoires",
+        detail:
+          "firstName, lastName, email, telephone, address, date et heure sont obligatoires",
       },
       { status: 400 },
     );
   }
 
-  const nomClean = sanitize(nom, 100);
+  // 3. Validate all contact fields
+  const contactError = validateContactFields({
+    firstName,
+    lastName,
+    email: email.trim(),
+    telephone: telephone.trim(),
+    address: address.trim(),
+    addressValidated,
+    sujet,
+  });
+  if (contactError) {
+    return NextResponse.json(
+      {
+        error: contactError.code,
+        field: contactError.field,
+        detail: contactError.detail,
+      },
+      { status: 400 },
+    );
+  }
+
+  // 4. Sanitize
+  const firstNameClean = sanitize(firstName, 50);
+  const lastNameClean = sanitize(lastName, 50);
+  const nomClean = `${firstNameClean} ${lastNameClean}`.trim();
   const emailClean = email.trim().toLowerCase();
-  const telephoneClean = telephone
-    ? sanitize(telephone, 20).replace(/[^0-9+\s()-]/g, "")
-    : "";
+  const telephoneClean = sanitize(telephone, 25).replace(/[^0-9+\s()-]/g, "");
+  const addressClean = sanitize(address, 300);
   const sujetClean = sujet ? sanitize(sujet, 300) : "Rendez-vous rénovation";
   const dateClean = sanitize(date, 10);
 
-  if (!isValidEmail(emailClean)) {
-    return NextResponse.json({ error: "invalid_email" }, { status: 400 });
-  }
-
+  // 5. Date + slot validation
   if (!/^\d{4}-\d{2}-\d{2}$/.test(dateClean)) {
     return NextResponse.json(
       { error: "invalid_date_format", detail: "Format attendu: YYYY-MM-DD" },
@@ -136,11 +268,11 @@ export async function POST(request: Request) {
     );
   }
 
-  // 2. Build event times
+  // 6. Build event times
   const startISO = `${dateClean}T${String(heureInt).padStart(2, "0")}:00:00`;
   const endISO = `${dateClean}T${String(heureInt + 1).padStart(2, "0")}:00:00`;
 
-  // 3. Create Google Calendar event
+  // 7. Create Google Calendar event
   const oauth2 = buildOAuth2Client();
 
   let gcalEventId: string | null = null;
@@ -171,21 +303,27 @@ export async function POST(request: Request) {
         );
       }
 
+      // Build description including full address for Aiman on-site navigation
+      const descriptionLines = [
+        `Client : ${nomClean}`,
+        `Email : ${emailClean}`,
+        `Tél : ${telephoneClean}`,
+        `Adresse chantier : ${addressClean}`,
+        addressLat && addressLng
+          ? `Coordonnées : ${addressLat.toFixed(6)}, ${addressLng.toFixed(6)}`
+          : "",
+        `Sujet : ${sujetClean}`,
+        conversationId ? `Chat ID : ${conversationId}` : "",
+      ].filter(Boolean);
+
       // Create event
       const event = await calendar.events.insert({
         calendarId: AIMAN_CALENDAR_ID,
         sendUpdates: "none",
         requestBody: {
           summary: `RDV Rénovation — ${nomClean}`,
-          description: [
-            `Client : ${nomClean}`,
-            `Email : ${emailClean}`,
-            telephoneClean ? `Tél : ${telephoneClean}` : "",
-            `Sujet : ${sujetClean}`,
-            conversationId ? `Chat ID : ${conversationId}` : "",
-          ]
-            .filter(Boolean)
-            .join("\n"),
+          description: descriptionLines.join("\n"),
+          location: addressClean,
           start: {
             dateTime: `${startISO}+01:00`,
             timeZone: "Europe/Paris",
@@ -213,7 +351,7 @@ export async function POST(request: Request) {
     }
   }
 
-  // 4. Format date for emails
+  // 8. Format date for emails
   const dateFormatted = new Intl.DateTimeFormat("fr-FR", {
     weekday: "long",
     day: "numeric",
@@ -224,7 +362,7 @@ export async function POST(request: Request) {
 
   const heureFormatted = `${String(heureInt).padStart(2, "0")}h00`;
 
-  // 5. Send confirmation email to client
+  // 9. Send confirmation email to client
   const emailErrors: string[] = [];
   try {
     await resend.emails.send({
@@ -239,16 +377,16 @@ export async function POST(request: Request) {
             <p style="color:rgba(255,255,255,0.85);margin:8px 0 0;font-size:14px">Votre rendez-vous est confirmé ✓</p>
           </div>
           <div style="background:white;padding:32px 24px;border:1px solid #e5e7eb;border-top:none;border-radius:0 0 12px 12px">
-            <p style="margin:0 0 16px">Bonjour <strong>${nomClean}</strong>,</p>
+            <p style="margin:0 0 16px">Bonjour <strong>${firstNameClean}</strong>,</p>
             <p style="margin:0 0 24px;color:#4b5563">Votre rendez-vous avec AIMAN RENOVATION a bien été enregistré.</p>
             <div style="background:#fef2f2;border-left:4px solid #E50000;padding:16px 20px;border-radius:0 8px 8px 0;margin-bottom:24px">
               <p style="margin:0 0 8px;font-weight:600;color:#E50000">📅 Détails du rendez-vous</p>
               <p style="margin:0 0 4px"><strong>Date :</strong> ${dateFormatted}</p>
               <p style="margin:0 0 4px"><strong>Heure :</strong> ${heureFormatted}</p>
               <p style="margin:0 0 4px"><strong>Durée :</strong> 1 heure</p>
-              <p style="margin:0"><strong>Lieu :</strong> 11 rue de Bâle, 68300 Saint-Louis (ou sur votre chantier)</p>
+              <p style="margin:0 0 4px"><strong>Adresse :</strong> ${addressClean}</p>
+              <p style="margin:0"><strong>Sujet :</strong> ${sujetClean}</p>
             </div>
-            ${sujetClean !== "Rendez-vous rénovation" ? `<p style="margin:0 0 16px;color:#4b5563"><strong>Sujet :</strong> ${sujetClean}</p>` : ""}
             <p style="margin:0 0 24px;color:#4b5563">Nous vous contacterons la veille pour confirmer. En cas d'empêchement, appelez-nous au <strong>06 33 49 69 25</strong>.</p>
             <div style="border-top:1px solid #e5e7eb;padding-top:16px;margin-top:16px">
               <p style="margin:0;color:#9ca3af;font-size:13px">AIMAN RENOVATION · 11 rue de Bâle, 68300 Saint-Louis · 06 33 49 69 25</p>
@@ -262,7 +400,7 @@ export async function POST(request: Request) {
     emailErrors.push("client_email_failed");
   }
 
-  // 6. Notify Aiman
+  // 10. Notify Aiman
   try {
     await resend.emails.send({
       from: FROM_EMAIL,
@@ -275,7 +413,8 @@ export async function POST(request: Request) {
           <table style="width:100%;border-collapse:collapse">
             <tr><td style="padding:6px 0;color:#666;width:120px">Client</td><td style="padding:6px 0;font-weight:bold">${nomClean}</td></tr>
             <tr><td style="padding:6px 0;color:#666">Email</td><td style="padding:6px 0"><a href="mailto:${emailClean}">${emailClean}</a></td></tr>
-            ${telephoneClean ? `<tr><td style="padding:6px 0;color:#666">Tél</td><td style="padding:6px 0"><a href="tel:${telephoneClean}">${telephoneClean}</a></td></tr>` : ""}
+            <tr><td style="padding:6px 0;color:#666">Tél</td><td style="padding:6px 0"><a href="tel:${telephoneClean}">${telephoneClean}</a></td></tr>
+            <tr><td style="padding:6px 0;color:#666">Adresse chantier</td><td style="padding:6px 0"><a href="https://maps.google.com/?q=${encodeURIComponent(addressClean)}">${addressClean}</a></td></tr>
             <tr><td style="padding:6px 0;color:#666">Date</td><td style="padding:6px 0;font-weight:bold">${dateFormatted} à ${heureFormatted}</td></tr>
             <tr><td style="padding:6px 0;color:#666">Sujet</td><td style="padding:6px 0">${sujetClean}</td></tr>
             ${gcalEventLink ? `<tr><td style="padding:6px 0;color:#666">Google Cal</td><td style="padding:6px 0"><a href="${gcalEventLink}">Voir l'événement</a></td></tr>` : "<tr><td colspan='2' style='padding:6px 0;color:#f97316'>⚠️ Google Calendar non configuré — RDV enregistré par email uniquement</td></tr>"}
@@ -382,7 +521,6 @@ export async function GET(request: Request) {
       slots: hourRange,
       gcal: false,
       error: "gcal_query_failed",
-      // TODO: remove after debug
       debug_error: e.message,
       debug_code: e.code,
       debug_status: e.status,
