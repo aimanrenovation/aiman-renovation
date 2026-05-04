@@ -1,75 +1,58 @@
 # NOTES SEO — Aiman Renovation
 
-Fichier de suivi des observations hors périmètre SEO et des axes d'amélioration futurs.
-Ne pas modifier le code ici — traiter séparément.
+Observations faites lors de l'audit SEO Phase 2. Ces éléments ne sont PAS corrigés dans cette branche — à traiter séparément.
 
 ---
 
-## Bugs / problèmes identifiés (hors SEO)
+## Problèmes critiques
 
-- `COMPANY.address` et `COMPANY.zip` étaient vides dans `lib/constants.ts` → corrigé dans cette PR
-- Le `experience: 19` dans constants.ts semble incohérent avec `founded: 2024` — à clarifier avec le client (19 ans d'expérience personnelle du fondateur ?)
-- `COMPANY.projects: 50` → valeur faible, à mettre à jour régulièrement
+### 1. Incohérence `foundingDate` vs contenu marketing
+- **Fichier** : `app/[locale]/layout.tsx`, ligne ~83
+- **Problème** : Le JSON-LD Organisation déclare `foundingDate: "2024"`, alors que le contenu du site revendique "19 ans d'expérience" (ce qui implique ~2005-2006). L'incohérence nuit au score E-E-A-T.
+- **Action** : Corriger `foundingDate` avec la vraie date de création, ou supprimer le champ.
 
----
-
-## Améliorations SEO futures (phase 3+)
-
-### Contenu
-
-- **Blog / actualités** : Créer une section blog avec des articles géolocalisés (ex: "Combien coûte une rénovation de salle de bain à Saint-Louis ?", "Les aides à la rénovation en Alsace en 2025") pour capter du trafic longue traîne. Impact SEO très fort.
-- **Pages villes** : Créer des pages dédiées par zone (ex: `/renovation-mulhouse`, `/renovation-huningue`) avec du contenu unique par ville. Fort potentiel pour dominer les recherches locales.
-- **Section témoignages structurés** : Ajouter schema `Review` / `AggregateRating` dès que des avis Google seront disponibles. Afficher les étoiles dans les résultats de recherche (rich snippets).
-- **FAQ par service** : Ajouter une section FAQ sur chaque page service avec schema `FAQPage` pour capter les People Also Ask de Google.
-
-### Technique
-
-- **Google Search Console** : Vérifier que le site est indexé, soumettre le sitemap, surveiller les erreurs d'exploration.
-- **Google Business Profile** : Créer / optimiser la fiche Google (anciennement Google My Business) avec photos, services, horaires, réponses aux avis. C'est LE levier n°1 pour le référencement local.
-- **Vérification propriété** : Ajouter la balise meta de vérification Google (`google-site-verification`) dans `app/layout.tsx` → métadonnée `verification`.
-- **Core Web Vitals** : La page `/devis` charge Three.js (bibliothèque 3D lourde). Vérifier LCP, CLS et INP avec PageSpeed Insights. Envisager le lazy-loading de la scène 3D.
-- **Images WebP/AVIF** : Ajouter `formats: ['image/avif', 'image/webp']` dans `next.config.ts` pour activer la conversion automatique. Gain de poids significatif.
-- **Compression** : Activer `compress: true` dans `next.config.ts` (devrait être actif par défaut sur Vercel).
-- **Manifest i18n** : Le fichier `manifest.webmanifest` ne supporte qu'une seule langue (FR). Créer `/manifest-de.webmanifest` et `/manifest-en.webmanifest` si le public DE/EN est ciblé.
-- **Icône 512x512** : Le manifest ne référence qu'une icône 192x192. Ajouter une version 512x512 pour une meilleure compatibilité PWA.
-- **Headers de sécurité** : Ajouter dans `next.config.ts` les headers `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`. Impact indirect sur la confiance Google.
-
-### Maillage interne
-
-- **Footer enrichi** : Ajouter dans le footer une liste complète des services avec liens. Actuellement, le footer ne semble pas lier chaque service individuellement.
-- **Liens depuis la homepage** : Vérifier que chaque service a un lien direct depuis la homepage (via ServicesPreview) — c'est probablement déjà le cas.
-- **Liens croisés FAQ ↔ Services** : La page FAQ référence les services, mais les pages services ne renvoient pas vers la FAQ. À envisager.
-
-### Réseaux sociaux
-
-- **Instagram** : Ajouter un profil Instagram pour partager les réalisations "avant/après". Ajouter l'URL dans `sameAs` du schema.
-- **LinkedIn** : Profil professionnel pour crédibiliser la SASU.
-- **Twitter/X card** : Le handle `@twitter` est vide dans les métadonnées — à remplir si un compte existe.
+### 2. Absence de `favicon.ico`
+- **Problème** : Seul un `favicon.png` est configuré. Certains navigateurs et outils (Google Search Console) attendent un `/favicon.ico`.
+- **Action** : Générer un `favicon.ico` 32×32 et l'ajouter dans `public/`.
 
 ---
 
-## Mots-clés non couverts (opportunités)
+## Améliorations recommandées
 
-- "renovation maison 68300" (fort volume local)
-- "artisan haut-rhin" (générique, fort volume)
-- "renovation appartement bale" (transfrontalier)
-- "devis renovation gratuit alsace"
-- "Renovierung Wohnung Basel" (allemand, potentiel CH)
-- "Badezimmer renovieren Elsass" (allemand)
-- "entreprise renovation mulhouse" (Mulhouse = 2e ville 68)
-- "renovation maison tri-frontiere"
-- "peintre alsace" + "peintre mulhouse"
-- "isolation thermique exterieure alsace" (ITE, fort volume, aides État)
+### 3. Balise `canonical` — vérification post-déploiement
+- Les canonicals sont générés via `alternates` dans `generateMetadata`. Vérifier après déploiement que le `<head>` contient bien `<link rel="canonical">` absolu sur chaque page dynamique (services/[slug], renovation/[ville]).
+- Commande de vérification : `curl -s https://aiman-renovation.fr/services/cuisine | grep canonical`
+
+### 4. Images — audit des `alt` dans les composants sections
+- Certaines images de contenu dans `components/sections/` pourraient avoir des `alt` insuffisamment descriptifs.
+- Action : Audit manuel des composants `Hero`, `SavoirFaire`, `RealisationsGrid`.
+
+### 5. Schema `WebSite` avec `SearchAction`
+- Opportunité : Ajouter un schema WebSite avec SearchAction dans le layout pour activer la sitelinks searchbox Google. Nécessite une page de recherche fonctionnelle.
+
+### 6. Pages de devis spécialisées — metadata à vérifier
+- `/devis-cuisine`, `/devis-salle-de-bain`, `/devis-facade` existent mais n'ont pas été auditées.
+- Action : Vérifier que chaque page a un title/description ciblé sur les mots-clés locaux.
+
+### 7. Blog — cadence de publication
+- Publier au minimum 2 articles par mois ciblant des requêtes longue-traîne (ex : "coût renovation salle de bain Mulhouse 2025", "prix isolation maison Alsace").
+
+### 8. Google Business Profile (hors code)
+- Vérifier que la fiche GBP est complète, vérifiée, et synchronisée avec les données du site.
+- Catégories GBP recommandées : "Entrepreneur en rénovation", "Plombier", "Électricien", "Carreleur", "Peintre en bâtiment".
+
+### 9. Core Web Vitals — scènes 3D mobile
+- Les scènes Three.js/R3F peuvent dégrader le LCP sur mobile. Vérifier que `GPUFallback` se déclenche sur les appareils faibles.
+- Action : Audit Lighthouse mobile sur la page d'accueil.
 
 ---
 
-## Structure URLs — observations
+## Points forts à conserver
 
-Les slugs actuels ne correspondent pas exactement à certaines requêtes cibles :
-- `/services/peinture-finitions` → les internautes cherchent `/services/peinture` — envisager un redirect ou un alias
-- `/services/carrelage` → les internautes cherchent aussi "sols" — slug OK car "carrelage" est le terme principal
-- `/services/facade-isolation` → deux services différents dans un seul slug ; à long terme, les séparer en `/services/facade` et `/services/isolation` aurait plus de poids SEO
-
----
-
-*Dernière mise à jour : phase 2 — avril 2026*
+- Sitemap dynamique multi-locale (FR/DE/EN) avec alternates : OK
+- hreflang sur toutes les pages : OK
+- JSON-LD Organisation très complet : OK (à corriger sur foundingDate)
+- 48+ pages villes France avec contenu unique : OK
+- Pages Suisse et Allemagne en allemand : OK
+- Robots.txt bloquant les crawlers IA : OK
+- Images AVIF/WebP avec cache 1 an : OK

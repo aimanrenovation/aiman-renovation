@@ -111,6 +111,8 @@ export default async function ServicePage({ params }: Props) {
     (s) => (service.relatedSlugs ?? []).includes(s.slug)
   ).slice(0, 3);
 
+  const faq = service.faq ?? [];
+
   // JSON-LD Service — données statiques, aucune entrée utilisateur
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -140,6 +142,19 @@ export default async function ServicePage({ params }: Props) {
     },
   };
 
+  const faqSchema = faq.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  } : null;
+
   const breadcrumbItems = [
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
@@ -152,6 +167,7 @@ export default async function ServicePage({ params }: Props) {
   return (
     <>
       <JsonLd data={serviceSchema} />
+      {faqSchema && <JsonLd data={faqSchema} />}
       <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero full-bleed avec photo */}
@@ -439,6 +455,33 @@ export default async function ServicePage({ params }: Props) {
                     </Link>
                   );
                 })}
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* FAQ — rich results Google */}
+      {faq.length > 0 && (
+        <ScrollReveal direction="up">
+          <section className="relative z-10 bg-[#0A0A0A] py-24 md:py-32 border-t border-white/5">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
+              <h2 className="font-heading text-2xl md:text-3xl mb-12">
+                QUESTIONS <span className="text-[#E50000]">FRÉQUENTES</span>
+              </h2>
+              <div className="space-y-6">
+                {faq.map((item, i) => (
+                  <div
+                    key={i}
+                    className="bg-black border border-white/5 rounded-xl p-6 md:p-8 hover:border-[#E50000]/20 transition-colors"
+                  >
+                    <h3 className="font-heading text-lg md:text-xl text-white mb-3">
+                      {item.question}
+                    </h3>
+                    <p className="text-gray-400 leading-relaxed">{item.answer}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
