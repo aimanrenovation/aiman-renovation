@@ -149,7 +149,7 @@ export async function POST(request: NextRequest) {
     const zonesShort = zonesWithWorks.map((z) => z.labelKey).join(", ");
 
     // Email a Aiman Renovation (avec photos) — always French
-    await resend.emails.send({
+    const resendAiman = await resend.emails.send({
       from: DEVIS_FROM_EMAIL,
       to: DEVIS_RECIPIENT_EMAIL,
       subject: `Nouvelle demande de devis — ${data.contact.firstName} ${data.contact.lastName} — ${zonesWithWorks.length} zone(s), ${totalWorks} travaux — ${zonesShort}`,
@@ -160,9 +160,24 @@ export async function POST(request: NextRequest) {
       }),
       attachments: attachments.length > 0 ? attachments : undefined,
     });
+    if (resendAiman.error) {
+      console.error(
+        "[Resend] Email Aiman FAILED:",
+        JSON.stringify(resendAiman.error),
+      );
+      throw new Error(`Resend error (aiman): ${resendAiman.error.message}`);
+    }
+    console.log(
+      "[Resend] Email Aiman sent OK — id:",
+      resendAiman.data?.id,
+      "to:",
+      DEVIS_RECIPIENT_EMAIL,
+      "from:",
+      DEVIS_FROM_EMAIL,
+    );
 
     // Email de confirmation au client (sans photos) — in client's locale
-    await resend.emails.send({
+    const resendClient = await resend.emails.send({
       from: DEVIS_FROM_EMAIL,
       to: data.contact.email,
       subject:
@@ -177,6 +192,19 @@ export async function POST(request: NextRequest) {
         locale,
       }),
     });
+    if (resendClient.error) {
+      console.error(
+        "[Resend] Email client FAILED:",
+        JSON.stringify(resendClient.error),
+      );
+      throw new Error(`Resend error (client): ${resendClient.error.message}`);
+    }
+    console.log(
+      "[Resend] Email client sent OK — id:",
+      resendClient.data?.id,
+      "to:",
+      data.contact.email,
+    );
 
     // Create a MagicPlan project with the CLIENT's email so MagicPlan invites
     // them to join. The project is visible in AIMAN's account (via customer_id
