@@ -7,15 +7,69 @@
       "surface_max": 20,
       "surface_default": 8,
       "options": [
-        { "id": "depose", "prix_bas": 52, "prix_haut": 68, "unite": "m2", "defaut": true },
-        { "id": "plomberie", "prix_bas": 1650, "prix_haut": 2200, "unite": "forfait", "defaut": true },
-        { "id": "carrelage_sol", "prix_bas": 78, "prix_haut": 102, "unite": "m2", "defaut": true, "group": "sol" },
-        { "id": "carrelage_murs", "prix_bas": 72, "prix_haut": 95, "unite": "m2", "defaut": true },
-        { "id": "douche_italienne", "prix_bas": 2200, "prix_haut": 2900, "unite": "forfait" },
-        { "id": "baignoire", "prix_bas": 1500, "prix_haut": 2000, "unite": "forfait" },
-        { "id": "meuble_vasque", "prix_bas": 720, "prix_haut": 950, "unite": "forfait" },
-        { "id": "electricite", "prix_bas": 118, "prix_haut": 155, "unite": "point", "defaut": true, "points_default": 6, "points_min": 3, "points_max": 15 },
-        { "id": "peinture_plafond", "prix_bas": 30, "prix_haut": 40, "unite": "m2" }
+        {
+          "id": "depose",
+          "prix_bas": 52,
+          "prix_haut": 68,
+          "unite": "m2",
+          "defaut": true
+        },
+        {
+          "id": "plomberie",
+          "prix_bas": 1650,
+          "prix_haut": 2200,
+          "unite": "forfait",
+          "defaut": true
+        },
+        {
+          "id": "carrelage_sol",
+          "prix_bas": 78,
+          "prix_haut": 102,
+          "unite": "m2",
+          "defaut": true,
+          "group": "sol"
+        },
+        {
+          "id": "carrelage_murs",
+          "prix_bas": 72,
+          "prix_haut": 95,
+          "unite": "m2",
+          "defaut": true
+        },
+        {
+          "id": "douche_italienne",
+          "prix_bas": 2200,
+          "prix_haut": 2900,
+          "unite": "forfait"
+        },
+        {
+          "id": "baignoire",
+          "prix_bas": 1500,
+          "prix_haut": 2000,
+          "unite": "forfait"
+        },
+        {
+          "id": "meuble_vasque",
+          "prix_bas": 720,
+          "prix_haut": 950,
+          "unite": "forfait"
+        },
+        {
+          "id": "electricite",
+          "prix_bas": 118,
+          "prix_haut": 155,
+          "unite": "point",
+          "defaut": true,
+          "points_default": 6,
+          "points_min": 3,
+          "points_max": 15
+        },
+        {
+          "id": "peinture_plafond",
+          "prix_bas": 30,
+          "prix_haut": 40,
+          "unite": "m2"
+        }
       ]
     },
     {
@@ -25,13 +79,62 @@
       "surface_max": 30,
       "surface_default": 12,
       "options": [
-        { "id": "depose", "prix_bas": 48, "prix_haut": 62, "unite": "m2", "defaut": true },
-        { "id": "plomberie", "prix_bas": 1350, "prix_haut": 1800, "unite": "forfait", "defaut": true },
-        { "id": "electricite", "prix_bas": 118, "prix_haut": 155, "unite": "point", "defaut": true, "points_default": 10, "points_min": 5, "points_max": 25 },
-        { "id": "carrelage_sol", "prix_bas": 78, "prix_haut": 102, "unite": "m2", "defaut": true, "group": "sol" },
-        { "id": "parquet", "prix_bas": 72, "prix_haut": 95, "unite": "m2", "group": "sol" },
-        { "id": "credence", "prix_bas": 68, "prix_haut": 90, "unite": "custom", "qty_min": 1, "qty_max": 8, "qty_default": 3, "qty_label": "ml_credence" },
-        { "id": "peinture_murs", "prix_bas": 32, "prix_haut": 42, "unite": "m2", "defaut": true },
+        {
+          "id": "depose",
+          "prix_bas": 48,
+          "prix_haut": 62,
+          "unite": "m2",
+          "defaut": true
+        },
+        {
+          "id": "plomberie",
+          "prix_bas": 1350,
+          "prix_haut": 1800,
+          "unite": "forfait",
+          "defaut": true
+        },
+        {
+          "id": "electricite",
+          "prix_bas": 118,
+          "prix_haut": 155,
+          "unite": "point",
+          "defaut": true,
+          "points_default": 10,
+          "points_min": 5,
+          "points_max": 25
+        },
+        {
+          "id": "carrelage_sol",
+          "prix_bas": 78,
+          "prix_haut": 102,
+          "unite": "m2",
+          "defaut": true,
+          "group": "sol"
+        },
+        {
+          "id": "parquet",
+          "prix_bas": 72,
+          "prix_haut": 95,
+          "unite": "m2",
+          "group": "sol"
+        },
+        {
+          "id": "credence",
+          "prix_bas": 68,
+          "prix_haut": 90,
+          "unite": "custom",
+          "qty_min": 1,
+          "qty_max": 8,
+          "qty_default": 3,
+          "qty_label": "ml_credence"
+        },
+        {
+          "id": "peinture_murs",
+          "prix_bas": 32,
+          "prix_haut": 42,
+          "unite": "m2",
+          "defaut": true
+        },
         { "id": "faux_plafond", "prix_bas": 55, "prix_haut": 72, "unite": "m2" }
       ]
     },
@@ -42,13 +145,60 @@
       "surface_max": 50,
       "surface_default": 20,
       "options": [
-        { "id": "depose", "prix_bas": 28, "prix_haut": 38, "unite": "m2", "defaut": true },
-        { "id": "parquet", "prix_bas": 72, "prix_haut": 95, "unite": "m2", "defaut": true, "group": "sol" },
-        { "id": "carrelage_sol", "prix_bas": 78, "prix_haut": 102, "unite": "m2", "group": "sol" },
-        { "id": "peinture_murs", "prix_bas": 32, "prix_haut": 42, "unite": "m2", "defaut": true },
-        { "id": "peinture_plafond", "prix_bas": 30, "prix_haut": 40, "unite": "m2" },
-        { "id": "electricite", "prix_bas": 118, "prix_haut": 155, "unite": "point", "points_default": 8, "points_min": 3, "points_max": 20 },
-        { "id": "plinthes", "prix_bas": 14, "prix_haut": 18, "unite": "custom", "qty_min": 5, "qty_max": 40, "qty_default": 16, "qty_label": "ml_plinthes" }
+        {
+          "id": "depose",
+          "prix_bas": 28,
+          "prix_haut": 38,
+          "unite": "m2",
+          "defaut": true
+        },
+        {
+          "id": "parquet",
+          "prix_bas": 72,
+          "prix_haut": 95,
+          "unite": "m2",
+          "defaut": true,
+          "group": "sol"
+        },
+        {
+          "id": "carrelage_sol",
+          "prix_bas": 78,
+          "prix_haut": 102,
+          "unite": "m2",
+          "group": "sol"
+        },
+        {
+          "id": "peinture_murs",
+          "prix_bas": 32,
+          "prix_haut": 42,
+          "unite": "m2",
+          "defaut": true
+        },
+        {
+          "id": "peinture_plafond",
+          "prix_bas": 30,
+          "prix_haut": 40,
+          "unite": "m2"
+        },
+        {
+          "id": "electricite",
+          "prix_bas": 118,
+          "prix_haut": 155,
+          "unite": "point",
+          "points_default": 8,
+          "points_min": 3,
+          "points_max": 20
+        },
+        {
+          "id": "plinthes",
+          "prix_bas": 14,
+          "prix_haut": 18,
+          "unite": "custom",
+          "qty_min": 5,
+          "qty_max": 40,
+          "qty_default": 16,
+          "qty_label": "ml_plinthes"
+        }
       ]
     },
     {
@@ -58,12 +208,51 @@
       "surface_max": 30,
       "surface_default": 14,
       "options": [
-        { "id": "depose", "prix_bas": 22, "prix_haut": 30, "unite": "m2", "defaut": true },
-        { "id": "parquet", "prix_bas": 68, "prix_haut": 90, "unite": "m2", "defaut": true, "group": "sol" },
-        { "id": "carrelage_sol", "prix_bas": 78, "prix_haut": 102, "unite": "m2", "group": "sol" },
-        { "id": "peinture_murs", "prix_bas": 32, "prix_haut": 42, "unite": "m2", "defaut": true },
-        { "id": "peinture_plafond", "prix_bas": 30, "prix_haut": 40, "unite": "m2" },
-        { "id": "plinthes", "prix_bas": 14, "prix_haut": 18, "unite": "custom", "qty_min": 5, "qty_max": 40, "qty_default": 16, "qty_label": "ml_plinthes" }
+        {
+          "id": "depose",
+          "prix_bas": 22,
+          "prix_haut": 30,
+          "unite": "m2",
+          "defaut": true
+        },
+        {
+          "id": "parquet",
+          "prix_bas": 68,
+          "prix_haut": 90,
+          "unite": "m2",
+          "defaut": true,
+          "group": "sol"
+        },
+        {
+          "id": "carrelage_sol",
+          "prix_bas": 78,
+          "prix_haut": 102,
+          "unite": "m2",
+          "group": "sol"
+        },
+        {
+          "id": "peinture_murs",
+          "prix_bas": 32,
+          "prix_haut": 42,
+          "unite": "m2",
+          "defaut": true
+        },
+        {
+          "id": "peinture_plafond",
+          "prix_bas": 30,
+          "prix_haut": 40,
+          "unite": "m2"
+        },
+        {
+          "id": "plinthes",
+          "prix_bas": 14,
+          "prix_haut": 18,
+          "unite": "custom",
+          "qty_min": 5,
+          "qty_max": 40,
+          "qty_default": 16,
+          "qty_label": "ml_plinthes"
+        }
       ]
     },
     {
@@ -73,11 +262,40 @@
       "surface_max": 200,
       "surface_default": 80,
       "options": [
-        { "id": "nettoyage", "prix_bas": 15, "prix_haut": 20, "unite": "m2", "defaut": true },
-        { "id": "enduit", "prix_bas": 58, "prix_haut": 78, "unite": "m2", "defaut": true },
-        { "id": "peinture_facade", "prix_bas": 35, "prix_haut": 46, "unite": "m2", "defaut": true },
-        { "id": "isolation_exterieure", "prix_bas": 145, "prix_haut": 190, "unite": "m2" },
-        { "id": "echafaudage", "prix_bas": 1500, "prix_haut": 2000, "unite": "forfait", "defaut": true }
+        {
+          "id": "nettoyage",
+          "prix_bas": 15,
+          "prix_haut": 20,
+          "unite": "m2",
+          "defaut": true
+        },
+        {
+          "id": "enduit",
+          "prix_bas": 58,
+          "prix_haut": 78,
+          "unite": "m2",
+          "defaut": true
+        },
+        {
+          "id": "peinture_facade",
+          "prix_bas": 35,
+          "prix_haut": 46,
+          "unite": "m2",
+          "defaut": true
+        },
+        {
+          "id": "isolation_exterieure",
+          "prix_bas": 145,
+          "prix_haut": 190,
+          "unite": "m2"
+        },
+        {
+          "id": "echafaudage",
+          "prix_bas": 1500,
+          "prix_haut": 2000,
+          "unite": "forfait",
+          "defaut": true
+        }
       ]
     },
     {
@@ -87,17 +305,78 @@
       "surface_max": 120,
       "surface_default": 50,
       "options": [
-        { "id": "depose", "prix_bas": 45, "prix_haut": 58, "unite": "m2", "defaut": true },
-        { "id": "parquet", "prix_bas": 98, "prix_haut": 128, "unite": "m2", "defaut": true, "group": "sol" },
-        { "id": "carrelage_sol", "prix_bas": 85, "prix_haut": 112, "unite": "m2", "group": "sol" },
-        { "id": "peinture_murs", "prix_bas": 38, "prix_haut": 50, "unite": "m2", "defaut": true },
-        { "id": "peinture_plafond", "prix_bas": 35, "prix_haut": 46, "unite": "m2", "defaut": true },
+        {
+          "id": "depose",
+          "prix_bas": 45,
+          "prix_haut": 58,
+          "unite": "m2",
+          "defaut": true
+        },
+        {
+          "id": "parquet",
+          "prix_bas": 98,
+          "prix_haut": 128,
+          "unite": "m2",
+          "defaut": true,
+          "group": "sol"
+        },
+        {
+          "id": "carrelage_sol",
+          "prix_bas": 85,
+          "prix_haut": 112,
+          "unite": "m2",
+          "group": "sol"
+        },
+        {
+          "id": "peinture_murs",
+          "prix_bas": 38,
+          "prix_haut": 50,
+          "unite": "m2",
+          "defaut": true
+        },
+        {
+          "id": "peinture_plafond",
+          "prix_bas": 35,
+          "prix_haut": 46,
+          "unite": "m2",
+          "defaut": true
+        },
         { "id": "platrerie", "prix_bas": 50, "prix_haut": 65, "unite": "m2" },
-        { "id": "electricite", "prix_bas": 118, "prix_haut": 155, "unite": "point", "defaut": true, "points_default": 15, "points_min": 5, "points_max": 50 },
-        { "id": "plomberie", "prix_bas": 9000, "prix_haut": 11800, "unite": "forfait", "defaut": true },
-        { "id": "cuisine_complete", "prix_bas": 12000, "prix_haut": 15700, "unite": "forfait" },
-        { "id": "sdb_complete", "prix_bas": 8500, "prix_haut": 11100, "unite": "forfait" },
-        { "id": "menuiseries", "prix_bas": 5000, "prix_haut": 6500, "unite": "forfait" }
+        {
+          "id": "electricite",
+          "prix_bas": 118,
+          "prix_haut": 155,
+          "unite": "point",
+          "defaut": true,
+          "points_default": 15,
+          "points_min": 5,
+          "points_max": 50
+        },
+        {
+          "id": "plomberie",
+          "prix_bas": 9000,
+          "prix_haut": 11800,
+          "unite": "forfait",
+          "defaut": true
+        },
+        {
+          "id": "cuisine_complete",
+          "prix_bas": 12000,
+          "prix_haut": 15700,
+          "unite": "forfait"
+        },
+        {
+          "id": "sdb_complete",
+          "prix_bas": 8500,
+          "prix_haut": 11100,
+          "unite": "forfait"
+        },
+        {
+          "id": "menuiseries",
+          "prix_bas": 5000,
+          "prix_haut": 6500,
+          "unite": "forfait"
+        }
       ]
     },
     {
@@ -107,11 +386,42 @@
       "surface_max": 150,
       "surface_default": 40,
       "options": [
-        { "id": "preparation", "prix_bas": 10, "prix_haut": 14, "unite": "m2", "defaut": true },
-        { "id": "peinture_murs", "prix_bas": 32, "prix_haut": 42, "unite": "m2", "defaut": true },
-        { "id": "peinture_plafond", "prix_bas": 30, "prix_haut": 40, "unite": "m2" },
-        { "id": "enduit_lissage", "prix_bas": 22, "prix_haut": 30, "unite": "m2" },
-        { "id": "boiseries", "prix_bas": 26, "prix_haut": 35, "unite": "custom", "qty_min": 2, "qty_max": 30, "qty_default": 8, "qty_label": "ml_boiseries" }
+        {
+          "id": "preparation",
+          "prix_bas": 10,
+          "prix_haut": 14,
+          "unite": "m2",
+          "defaut": true
+        },
+        {
+          "id": "peinture_murs",
+          "prix_bas": 32,
+          "prix_haut": 42,
+          "unite": "m2",
+          "defaut": true
+        },
+        {
+          "id": "peinture_plafond",
+          "prix_bas": 30,
+          "prix_haut": 40,
+          "unite": "m2"
+        },
+        {
+          "id": "enduit_lissage",
+          "prix_bas": 22,
+          "prix_haut": 30,
+          "unite": "m2"
+        },
+        {
+          "id": "boiseries",
+          "prix_bas": 26,
+          "prix_haut": 35,
+          "unite": "custom",
+          "qty_min": 2,
+          "qty_max": 30,
+          "qty_default": 8,
+          "qty_label": "ml_boiseries"
+        }
       ]
     },
     {
@@ -121,16 +431,135 @@
       "surface_max": 2000,
       "surface_default": 300,
       "options": [
-        { "id": "tonte_unique", "prix_bas": 0.08, "prix_haut": 0.11, "unite": "m2", "defaut": true, "group": "tonte" },
-        { "id": "contrat_12_tontes", "prix_bas": 0.7, "prix_haut": 0.95, "unite": "m2", "group": "tonte" },
-        { "id": "contrat_24_tontes", "prix_bas": 1.2, "prix_haut": 1.6, "unite": "m2", "group": "tonte" },
-        { "id": "taille_haies", "prix_bas": 12, "prix_haut": 16, "unite": "custom", "defaut": true, "qty_min": 5, "qty_max": 100, "qty_default": 20, "qty_label": "ml_haies" },
-        { "id": "debroussaillage", "prix_bas": 1.8, "prix_haut": 2.4, "unite": "custom", "qty_min": 10, "qty_max": 500, "qty_default": 50, "qty_label": "m2_debroussaillage" },
-        { "id": "abattage_arbre", "prix_bas": 350, "prix_haut": 460, "unite": "custom", "qty_min": 1, "qty_max": 10, "qty_default": 1, "qty_label": "nb_arbres" },
-        { "id": "elagage", "prix_bas": 180, "prix_haut": 240, "unite": "custom", "qty_min": 1, "qty_max": 10, "qty_default": 2, "qty_label": "nb_arbres_elagage" },
-        { "id": "evacuation_dechets", "prix_bas": 150, "prix_haut": 200, "unite": "forfait" },
-        { "id": "engazonnement", "prix_bas": 8, "prix_haut": 11, "unite": "m2" },
-        { "id": "contrat_entretien_mensuel", "prix_bas": 120, "prix_haut": 160, "unite": "custom", "qty_min": 6, "qty_max": 12, "qty_default": 12, "qty_label": "nb_mois" }
+        {
+          "id": "tonte_unique",
+          "prix_bas": 0.08,
+          "prix_haut": 0.11,
+          "unite": "m2",
+          "defaut": true,
+          "group": "tonte"
+        },
+        {
+          "id": "contrat_12_tontes",
+          "prix_bas": 0.7,
+          "prix_haut": 0.95,
+          "unite": "m2",
+          "group": "tonte"
+        },
+        {
+          "id": "contrat_24_tontes",
+          "prix_bas": 1.2,
+          "prix_haut": 1.6,
+          "unite": "m2",
+          "group": "tonte"
+        },
+        {
+          "id": "taille_haies",
+          "prix_bas": 12,
+          "prix_haut": 16,
+          "unite": "custom",
+          "defaut": true,
+          "qty_min": 5,
+          "qty_max": 100,
+          "qty_default": 20,
+          "qty_label": "ml_haies"
+        },
+        {
+          "id": "debroussaillage",
+          "prix_bas": 1.8,
+          "prix_haut": 2.4,
+          "unite": "custom",
+          "qty_min": 10,
+          "qty_max": 500,
+          "qty_default": 50,
+          "qty_label": "m2_debroussaillage"
+        },
+        {
+          "id": "abattage_arbre",
+          "prix_bas": 350,
+          "prix_haut": 460,
+          "unite": "custom",
+          "qty_min": 1,
+          "qty_max": 10,
+          "qty_default": 1,
+          "qty_label": "nb_arbres"
+        },
+        {
+          "id": "elagage",
+          "prix_bas": 180,
+          "prix_haut": 240,
+          "unite": "custom",
+          "qty_min": 1,
+          "qty_max": 10,
+          "qty_default": 2,
+          "qty_label": "nb_arbres_elagage"
+        },
+        {
+          "id": "evacuation_dechets",
+          "prix_bas": 150,
+          "prix_haut": 200,
+          "unite": "forfait"
+        },
+        {
+          "id": "engazonnement",
+          "prix_bas": 8,
+          "prix_haut": 11,
+          "unite": "m2"
+        },
+        {
+          "id": "contrat_entretien_mensuel",
+          "prix_bas": 120,
+          "prix_haut": 160,
+          "unite": "custom",
+          "qty_min": 6,
+          "qty_max": 12,
+          "qty_default": 12,
+          "qty_label": "nb_mois"
+        }
+      ]
+    },
+    {
+      "id": "nettoyage_hp",
+      "icon": "💧",
+      "surface_min": 20,
+      "surface_max": 500,
+      "surface_default": 80,
+      "options": [
+        {
+          "id": "nettoyage_dalles",
+          "prix_bas": 8,
+          "prix_haut": 12,
+          "unite": "m2",
+          "defaut": true,
+          "group": "type_surface"
+        },
+        {
+          "id": "nettoyage_facade",
+          "prix_bas": 10,
+          "prix_haut": 18,
+          "unite": "m2",
+          "group": "type_surface"
+        },
+        {
+          "id": "nettoyage_toiture",
+          "prix_bas": 12,
+          "prix_haut": 20,
+          "unite": "m2",
+          "group": "type_surface"
+        },
+        {
+          "id": "traitement_antimousse",
+          "prix_bas": 4,
+          "prix_haut": 7,
+          "unite": "m2"
+        },
+        {
+          "id": "deplacement",
+          "prix_bas": 80,
+          "prix_haut": 120,
+          "unite": "forfait",
+          "defaut": true
+        }
       ]
     }
   ]
