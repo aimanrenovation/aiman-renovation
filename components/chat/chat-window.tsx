@@ -63,6 +63,13 @@ export function ChatWindow({
   const [input, setInput] = useState("");
   const [showRdvForm, setShowRdvForm] = useState(false);
   const [rdvDone, setRdvDone] = useState(false);
+
+  // Auto-show RDV form when cta === "rdv" is received from the bot
+  useEffect(() => {
+    if (cta === "rdv" && !rdvDone) {
+      setShowRdvForm(true);
+    }
+  }, [cta, rdvDone]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const chatRootRef = useRef<HTMLDivElement>(null);
@@ -144,7 +151,6 @@ export function ChatWindow({
   }
 
   const ctaInfo = cta && cta !== "rdv" ? CTA_LINK_CONFIG[cta] : null;
-  const showRdvButton = cta === "rdv" && !loading && !showRdvForm && !rdvDone;
 
   return (
     <div
@@ -233,19 +239,6 @@ export function ChatWindow({
                 {ctaInfo.label}
               </Link>
             )}
-          </div>
-        )}
-
-        {/* RDV CTA — opens inline booking form */}
-        {showRdvButton && (
-          <div className="flex justify-start">
-            <button
-              type="button"
-              onClick={() => setShowRdvForm(true)}
-              className="inline-block rounded-xl bg-[#E50000] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#CC0000]"
-            >
-              Prendre rendez-vous →
-            </button>
           </div>
         )}
 
