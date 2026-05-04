@@ -66,6 +66,21 @@ export function ChatWidget() {
     async (text: string) => {
       if (!text.trim() || loading) return;
 
+      // Internal signal from RdvBookingForm — just add assistant confirmation, no API call
+      if (text.startsWith("__rdv_confirmed__:")) {
+        const slot = text.slice("__rdv_confirmed__:".length);
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content: `Parfait ! Votre rendez-vous du ${slot} est confirmé. Vous recevrez un email de confirmation. À très bientôt ! 👋`,
+            timestamp: Date.now(),
+          },
+        ]);
+        setCta(null);
+        return;
+      }
+
       const userMsg: Message = {
         role: "user",
         content: text.trim(),
@@ -130,6 +145,7 @@ export function ChatWidget() {
           messages={messages}
           loading={loading}
           cta={cta}
+          conversationId={conversationId}
           assistantName={assistant.name}
           assistantTitle={assistant.title}
           assistantPhoto={assistant.photo}
