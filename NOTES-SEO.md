@@ -54,8 +54,21 @@ Observations faites lors de l'audit SEO Phase 2. Ces éléments ne sont PAS corr
 
 - Sitemap dynamique multi-locale (FR/DE/EN) avec alternates hreflang : OK
 - 14 services avec seoTitle/seoDescription/relatedSlugs + FAQ : OK (Phase 2)
+- Schema ItemList sur /services (liste tous les services avec URL + description) : OK (Phase 2)
 - 48+ pages villes France avec contenu unique : OK
 - Pages Suisse et Allemagne en allemand : OK
 - JSON-LD Organisation très complet + Service + FAQPage + HowTo : OK
 - Robots.txt bloquant les crawlers IA : OK
 - Images AVIF/WebP avec cache 1 an : OK
+
+---
+
+### Observations additionnelles (mai 2026)
+
+- `ICON_MAP["renovation-complete"]` pointe vers `icon-cuisine.png` — devrait avoir sa propre icône
+- `PHOTO_MAP["isolation"]` et `ICON_MAP["isolation"]` pointent vers les fichiers façade — prévoir des visuels dédiés isolation
+- `/blog/[slug]` : JSON-LD breadcrumb présent, mais pas de composant visuel `<Breadcrumb>` dans le template article
+- Les pages devis spécialisées (`devis-cuisine`, `devis-salle-de-bain`, `devis-facade`) n'ont pas de breadcrumb visuel
+- Chaque page service a une section processus en étapes sans schema `HowTo / HowToStep` — fort potentiel rich snippets Google
+
+*Dernière mise à jour : phase 2 — mai 2026*
