@@ -40,6 +40,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localizedEntry("/cgv", 0.3, "yearly"),
     ...localizedEntry("/mentions-legales", 0.3, "yearly"),
     ...localizedEntry("/politique-confidentialite", 0.3, "yearly"),
+    ...localizedEntry("/calculateur", 0.7, "monthly"),
+    ...localizedEntry("/devis-cuisine", 0.85, "monthly"),
+    ...localizedEntry("/devis-salle-de-bain", 0.85, "monthly"),
+    ...localizedEntry("/devis-facade", 0.8, "monthly"),
     ...localizedEntry("/blog", 0.8, "weekly"),
     ...ARTICLES.flatMap((a) => localizedEntry(`/blog/${a.slug}`, 0.7, "monthly")),
     ...VILLES_FR.flatMap((v) =>

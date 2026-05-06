@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const title = "Devis Salle de Bain Saint-Louis 68 | Rénovation Complète";
   const description =
-    "Obtenez un devis gratuit pour la rénovation de votre salle de bain à Saint-Louis et dans le Haut-Rhin. Douche italienne, plomberie complète, garantie décennale. Réponse sous 48h.";
+    "Devis gratuit rénovation salle de bain à Saint-Louis 68300 et Haut-Rhin. Douche italienne, carrelage, plomberie complète. Garantie décennale. Réponse sous 48h.";
   return {
     title,
     description,
