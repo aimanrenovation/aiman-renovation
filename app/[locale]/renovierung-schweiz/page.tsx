@@ -40,10 +40,10 @@ export async function generateMetadata({ params }: Props) {
   const isFR = locale === "fr";
 
   const title = isDE
-    ? "Renovierung in der Schweiz | AIMAN RENOVATION — Französische Handwerker Basel"
+    ? "Renovierung in der Schweiz — Elsässer Handwerker Basel"
     : isFR
-      ? "Rénovation en Suisse (Bâle, Bâle-Campagne) | AIMAN RENOVATION"
-      : "Renovation in Switzerland (Basel area) | AIMAN RENOVATION";
+      ? "Rénovation Suisse — Région Bâle | Artisan Aiman"
+      : "Renovation in Switzerland (Basel area) | Aiman";
 
   const description = isDE
     ? "Renovierung in der Schweiz: Komplettsanierung, Bad, Küche, Malerarbeiten in Basel, Riehen, Allschwil, Muttenz... Französische Qualität, 30-40% günstiger. Offerte CHF/EUR in 48h."

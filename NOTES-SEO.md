@@ -1,7 +1,6 @@
 # NOTES SEO — Aiman Renovation
 
-Fichier de suivi des observations hors périmètre SEO et des axes d'amélioration futurs.
-Ne pas modifier le code ici — traiter séparément.
+Observations faites lors de l'audit SEO Phase 2. Ces éléments ne sont PAS corrigés dans cette branche — à traiter séparément.
 
 ---
 
@@ -27,9 +26,12 @@ Ne pas modifier le code ici — traiter séparément.
 
 ---
 
-## Améliorations SEO futures (phase 3+)
+## Observations hors-scope (à traiter en Phase 3+)
 
-### Contenu
+### Incohérences données entreprise
+- `COMPANY.experience: 19` mais `COMPANY.founded: 2024` — incohérent (19 ans d'expérience depuis 2024 ?). Clarifier si c'est l'expérience personnelle du fondateur ou la création de la SASU. Le JSON-LD Organisation a `foundingDate: "2024"` — à corriger pour E-E-A-T.
+- `COMPANY.projects: 50` — faible pour un artisan avec 19 ans d'expérience. À mettre à jour régulièrement.
+- `aggregateRating.reviewCount: "47"` dans le schema layout mais la page avis peut afficher un chiffre différent — incohérence à corriger.
 
 - **Blog / actualités** : Créer des articles géolocalisés (ex: "Combien coûte une rénovation de salle de bain à Saint-Louis ?", "Les aides à la rénovation en Alsace en 2026") pour capter du trafic longue traîne. Impact SEO très fort.
 - **Pages villes supplémentaires** : Ajouter Rixheim, Habsheim, Sierentz, Rosenau dans VILLES_FR si pas déjà présentes. Chaque ville = une page dédiée indexable.
@@ -37,7 +39,10 @@ Ne pas modifier le code ici — traiter séparément.
 - **FAQ inter-services** : Les pages services ne renvoient pas vers la page FAQ globale. Ajouter un lien "Voir toutes nos FAQ" en bas de chaque section FAQ.
 - **Contenu en allemand sur les pages services** : Ajouter des paragraphes ou sections en allemand pour capter le trafic transfrontalier suisse/allemand (Renovierung, Badezimmer renovieren, Küche renovieren Elsass…)
 
-### Technique
+### Performance (hors SEO direct)
+- Page `/devis` charge Three.js — LCP probablement élevé. Envisager un import dynamique ou lazy-load au clic.
+- Images de villes (`/images/villes/*.webp`) : vérifier qu'elles existent toutes en production (certaines peuvent générer des 404).
+- Favicon : seul `/favicon.png` configuré. Ajouter un `/favicon.ico` pour compatibilité maximale.
 
 - **Google Search Console** : Vérifier que le site est indexé, soumettre le sitemap `https://aiman-renovation.fr/sitemap.xml`, surveiller les erreurs d'exploration.
 - **Google Business Profile** : Créer/optimiser la fiche Google Maps (anciennement Google My Business) avec photos réalisations, services, horaires, réponses aux avis. C'est LE levier n°1 pour le référencement local dans le Haut-Rhin.
@@ -47,7 +52,10 @@ Ne pas modifier le code ici — traiter séparément.
 - **Headers de sécurité** : Ajouter dans `next.config.ts` les headers `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`. Impact indirect sur la confiance Google.
 - **Balises `<details>` FAQ** : L'accordion FAQ sur les pages service utilise `<details>/<summary>` natif HTML. Vérifier que Google indexe bien le contenu des `<details>` fermés (généralement oui depuis 2020, mais à confirmer via Search Console après déploiement).
 
-### Maillage interne
+### Contenu (Phase 3)
+- Blog : objectif 2-3 nouveaux articles/mois sur keywords longue traîne (ex: "prix isolation combles Mulhouse", "plombier urgence Bartenheim 24h", "rénovation appartement investissement locatif Haut-Rhin").
+- Pages ville : vérifier que chaque ville a un contenu unique — pas de duplication qui pénaliserait le crawl.
+- Termes allemands à enrichir dans les pages Suisse/Allemagne : Badsanierung, Küchensanierung, Malerarbeiten, Bodenbelag, Wärmedämmung, Fassadenrenovierung.
 
 - **Footer enrichi** : Ajouter dans le footer une liste complète des services avec liens directs. Actuellement, le footer ne semble pas lier chaque service individuellement.
 - **Liens croisés FAQ ↔ Services** : La page FAQ globale référence les services via `relatedServices`, mais les sections FAQ des pages service ne renvoient pas vers la FAQ globale. Ajouter un lien "Voir toutes les questions →" pointant vers `/faq`.
@@ -78,7 +86,7 @@ Ne pas modifier le code ici — traiter séparément.
 
 ---
 
-## Structure URLs — observations
+### Observations additionnelles (mai 2026)
 
 Les slugs actuels correspondent bien aux requêtes principales :
 - `/services/peinture` → OK

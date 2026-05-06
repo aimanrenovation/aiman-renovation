@@ -170,18 +170,22 @@ export default async function ArticlePage({ params }: Props) {
 
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: translated.seoTitle,
     description: translated.seoDescription,
     image: `${BASE}${article.featuredImage}`,
     datePublished: article.datePublished,
     dateModified: article.dateModified,
+    inLanguage: locale,
     author: {
-      "@type": "Person",
-      name: translated.author,
+      "@type": "Organization",
+      "@id": "https://aiman-renovation.fr/#organization",
+      name: "Aiman Renovation",
+      url: BASE,
     },
     publisher: {
       "@type": "Organization",
+      "@id": "https://aiman-renovation.fr/#organization",
       name: "Aiman Renovation",
       url: BASE,
       logo: {

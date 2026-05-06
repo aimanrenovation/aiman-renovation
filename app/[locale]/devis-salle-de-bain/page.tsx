@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const title = "Devis Salle de Bain Saint-Louis 68 | Rénovation Complète";
   const description =
-    "Devis gratuit rénovation salle de bain à Saint-Louis 68300 et Haut-Rhin. Douche italienne, carrelage, plomberie complète. Garantie décennale. Réponse sous 48h.";
+    "Devis gratuit salle de bain à Saint-Louis 68 et Haut-Rhin. Douche italienne, carrelage, plomberie complète, étanchéité DTU. Artisan qualifié. Réponse sous 48h.";
   return {
     title,
     description,
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props) {
       type: "website",
       images: [
         {
-          url: "https://aiman-renovation.fr/images/ambiance-resultat.jpg",
+          url: "https://aiman-renovation.fr/images/photo-salle-de-bain.jpg",
           width: 1200,
           height: 630,
           alt: "Rénovation salle de bain — Aiman Renovation Saint-Louis",
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props) {
       card: "summary_large_image" as const,
       title,
       description,
-      images: ["https://aiman-renovation.fr/images/ambiance-resultat.jpg"],
+      images: ["https://aiman-renovation.fr/images/photo-salle-de-bain.jpg"],
     },
     alternates: {
       canonical: "https://aiman-renovation.fr/devis-salle-de-bain",
