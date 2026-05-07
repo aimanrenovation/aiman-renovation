@@ -72,4 +72,25 @@ Les slugs actuels ne correspondent pas exactement à certaines requêtes cibles 
 
 ---
 
-*Dernière mise à jour : phase 2 — avril 2026*
+---
+
+## Phase 2 — Mai 2026 (seo/phase-2-content)
+
+### Réalisé
+
+- **seoTitle + seoDescription** ajoutés pour les 5 services qui n'en avaient pas : `peinture`, `sols-carrelage`, `renovation-complete`, `isolation`, `facade`
+- **relatedSlugs** ajoutés pour `peinture` (→ sols-carrelage, facade, renovation-complete) et `sols-carrelage` (→ salle-de-bain, cuisine, peinture)
+- **FAQ par service** (3-4 questions géolocalisées, People Also Ask) ajoutées pour 9 services prioritaires : cuisine, salle-de-bain, electricite, plomberie, peinture, sols-carrelage, renovation-complete, isolation, facade
+- **FAQPage JSON-LD** intégré dans le template `/services/[slug]/page.tsx` — génère des rich snippets Google
+- **Section FAQ visuelle** ajoutée dans le template service (design cohérent avec les pages ville)
+- **Métadonnées fr.json** améliorées : home_description trimée à 163 chars, seo_title services optimisé avec "Artisan Qualifié Haut-Rhin"
+
+### Opportunités futures (phase 3)
+
+- **FAQ pour les services secondaires** : paysager, borne-recharge, panneaux-photovoltaiques, entretien-exterieur, depannage-urgence, nettoyage-haute-pression
+- **Contenu FAQ en DE/EN** : traduire les FAQs dans les messages/de.json et messages/en.json
+- **Page /devis** : ajouter un schema `Service` + FAQ sur la page devis (très haute intention d'achat)
+- **AggregateRating par service** : si des avis Google spécifiques par service existent, les intégrer
+- **Google Site Verification** : ajouter la balise `google-site-verification` dans app/layout.tsx
+
+*Dernière mise à jour : phase 2 — mai 2026*

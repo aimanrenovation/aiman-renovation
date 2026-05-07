@@ -111,6 +111,8 @@ export default async function ServicePage({ params }: Props) {
     (s) => (service.relatedSlugs ?? []).includes(s.slug)
   ).slice(0, 3);
 
+  const faq = service.faq ?? [];
+
   // JSON-LD Service — données statiques, aucune entrée utilisateur
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -140,6 +142,21 @@ export default async function ServicePage({ params }: Props) {
     },
   };
 
+  const faqSchema = faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
+
   const breadcrumbItems = [
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
@@ -152,6 +169,7 @@ export default async function ServicePage({ params }: Props) {
   return (
     <>
       <JsonLd data={serviceSchema} />
+      {faqSchema && <JsonLd data={faqSchema} />}
       <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero full-bleed avec photo */}
@@ -397,6 +415,38 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </section>
       </ScrollReveal>
+
+      {/* FAQ — People Also Ask */}
+      {faq.length > 0 && (
+        <ScrollReveal direction="up">
+          <section className="relative z-10 bg-[#0A0A0A] py-24 md:py-32 border-t border-white/5">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
+              <h2 className="font-heading text-2xl md:text-3xl mb-12">
+                QUESTIONS <span className="text-[#E50000]">FRÉQUENTES</span>
+              </h2>
+              <div className="space-y-4">
+                {faq.map((item, i) => (
+                  <details
+                    key={i}
+                    className="group bg-[#111111] border border-white/5 rounded-xl overflow-hidden"
+                  >
+                    <summary className="flex items-center justify-between gap-4 cursor-pointer p-6 text-white font-medium text-base md:text-lg hover:text-[#E50000] transition-colors list-none [&::-webkit-details-marker]:hidden">
+                      <span>{item.question}</span>
+                      <span className="shrink-0 w-6 h-6 rounded-full bg-[#E50000]/10 flex items-center justify-center text-[#E50000] text-sm transition-transform group-open:rotate-45">
+                        +
+                      </span>
+                    </summary>
+                    <div className="px-6 pb-6 text-gray-400 leading-relaxed">
+                      {item.answer}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
 
       {/* Services liés — maillage interne */}
       {relatedServices.length > 0 && (
