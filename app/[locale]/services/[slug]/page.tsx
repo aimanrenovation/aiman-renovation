@@ -9,6 +9,7 @@ import { ScrollReveal } from "@/components/sections/scroll-reveal";
 import { getAlternates } from "@/lib/i18n-helpers";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Breadcrumb } from "@/components/breadcrumb";
+import { FAQ_SERVICES } from "@/lib/faq-services";
 
 interface Props {
   params: Promise<{ slug: string; locale: string }>;
@@ -108,7 +109,9 @@ export default async function ServicePage({ params }: Props) {
   const whyPro = translated?.whyPro ?? service.whyPro;
   const priceRange = translated?.priceRange ?? service.priceRange;
 
-  const faq = translated?.faq ?? service.faq ?? [];
+  // FAQ : translations en priorité, sinon fallback sur lib/faq-services
+  const translatedFaq = translated?.faq ?? service.faq ?? [];
+  const faqData = translatedFaq.length > 0 ? translatedFaq : (FAQ_SERVICES[slug] ?? []);
 
   const relatedServices = SERVICES.filter(
     (s) => (service.relatedSlugs ?? []).includes(s.slug)
@@ -149,16 +152,13 @@ export default async function ServicePage({ params }: Props) {
     },
   };
 
-  const faqSchema = faq.length > 0 ? {
+  const faqSchema = faqData.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faq.map(({ question, answer }) => ({
+    mainEntity: faqData.map(({ question, answer }) => ({
       "@type": "Question",
       name: question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: answer,
-      },
+      acceptedAnswer: { "@type": "Answer", text: answer },
     })),
   } : null;
 
@@ -436,8 +436,8 @@ export default async function ServicePage({ params }: Props) {
         </section>
       </ScrollReveal>
 
-      {/* FAQ */}
-      {service.faq && service.faq.length > 0 && (
+      {/* FAQ — Questions fréquentes / rich snippets */}
+      {faqData.length > 0 && (
         <ScrollReveal direction="up">
           <section className="relative z-10 bg-[#0A0A0A] py-16 md:py-24 border-t border-white/5">
             <div className="max-w-5xl mx-auto px-6">
@@ -446,7 +446,7 @@ export default async function ServicePage({ params }: Props) {
                 QUESTIONS <span className="text-[#E50000]">FRÉQUENTES</span>
               </h2>
               <div className="space-y-4">
-                {service.faq.map((item, i) => (
+                {faqData.map((item, i) => (
                   <details
                     key={i}
                     className="group border border-white/5 rounded-xl bg-[#111111] hover:border-[#E50000]/20 transition-colors"
@@ -513,34 +513,6 @@ export default async function ServicePage({ params }: Props) {
         </ScrollReveal>
       )}
 
-      {/* FAQ — Rich Snippets "People Also Ask" */}
-      {faq.length > 0 && (
-        <ScrollReveal direction="up">
-          <section className="relative z-10 bg-[#0A0A0A] py-16 md:py-24 border-t border-white/5">
-            <div className="max-w-5xl mx-auto px-6">
-              <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
-              <h2 className="font-heading text-xl md:text-2xl mb-10">
-                QUESTIONS <span className="text-[#E50000]">FRÉQUENTES</span>
-              </h2>
-              <dl className="space-y-4">
-                {faq.map((item, i) => (
-                  <div
-                    key={i}
-                    className="bg-black border border-white/5 rounded-xl p-6 md:p-8 hover:border-[#E50000]/20 transition-colors"
-                  >
-                    <dt className="font-heading text-white text-base md:text-lg mb-3">
-                      {item.question}
-                    </dt>
-                    <dd className="text-gray-400 leading-relaxed text-sm md:text-base">
-                      {item.answer}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </section>
-        </ScrollReveal>
-      )}
 
       {/* CTA final */}
       <section className="relative z-10 overflow-hidden">

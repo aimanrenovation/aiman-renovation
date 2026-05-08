@@ -120,4 +120,44 @@ Les slugs actuels correspondent bien aux requêtes principales :
 | Google Business Profile | ✗ | À créer/optimiser — priorité absolue |
 | Google Search Console | ✗ | Sitemap à soumettre |
 
+---
+
+## Phase 2 — Mai 2026 — Ce qui a été fait
+
+### Optimisations réalisées
+
+- **seoTitle + seoDescription** ajoutés pour les 5 services manquants : peinture, sols-carrelage, renovation-complete, isolation, facade
+- **relatedSlugs** ajoutés pour les services qui en manquaient (maillage interne completé sur 100% des services)
+- **lib/faq-services.ts** créé : 3 à 6 questions/réponses géolocalisées par service — utilisées à la fois pour le FAQPage JSON-LD (rich snippets Google) et la section FAQ visuelle sur les pages service
+- **FAQPage JSON-LD** ajouté sur toutes les pages service (People Also Ask / rich snippets)
+- **Section FAQ visuelle** ajoutée sur les pages service, avant le CTA final
+- **Titres SEO améliorés** : home_title démarre désormais par le mot-clé ("Rénovation Saint-Louis..."), services/contact/devis/faq/about enrichis avec ville + 68300
+- **Twitter card** ajoutée sur les pages manquantes : services, contact, a-propos, blog (liste), réalisations
+- **BreadcrumbList JSON-LD** ajouté sur la page services (via JsonLd statique, les autres pages utilisent déjà le composant Breadcrumb qui émet le JSON-LD automatiquement)
+
+### Observations hors SEO (ne pas corriger dans cette PR)
+
+- Le composant `<Breadcrumb>` n'affiche le fil visuellement que pour les pages avec 3+ items (profondeur 2+). Pour les pages de niveau 1 (contact, faq), le JSON-LD est émis mais le fil d'Ariane visuel ne s'affiche pas. C'est un choix UX intentionnel documenté dans le composant.
+- La page `/devis` n'a pas de `<Breadcrumb>` dans son rendu — le JSON-LD breadcrumb est absent pour cette page. À ajouter en phase 3.
+- La page `/avis` n'a pas encore de metadata Twitter card. À vérifier en phase 3.
+
+---
+
+## Améliorations SEO Phase 3+ (backlog)
+
+### Contenu prioritaire
+
+- **FAQ par service** : Les FAQ ajoutées en phase 2 sont basées sur les questions les plus fréquentes. Les enrichir en analysant les requêtes Search Console pour chaque service une fois le site bien indexé.
+- **Articles de blog locaux** : Créer des articles sur des requêtes à fort volume local : "Combien coûte une rénovation de salle de bain à Saint-Louis ?", "Aides rénovation en Alsace 2026", "ITE ou ITI : que choisir dans le Haut-Rhin ?". Impact fort sur le trafic longue traîne.
+- **Pages villes supplémentaires** : Mulhouse (2e ville du Haut-Rhin) mérite une page dédiée avec contenu unique. Même chose pour Bâle (marché suisse à fort pouvoir d'achat).
+- **Contenu allemand** : Les pages renovierung-schweiz et renovierung-deutschland existent mais leur contenu peut être enrichi avec des termes cibles comme "Badezimmer renovieren Elsass", "Küche renovieren Basel".
+
+### Technique prioritaire
+
+- **Google Search Console** : Vérifier l'indexation, soumettre le sitemap.xml, analyser les erreurs d'exploration.
+- **Google Business Profile** : Créer/optimiser la fiche locale avec photos, services, réponses aux avis. Levier n°1 pour le référencement local.
+- **Core Web Vitals** : Vérifier LCP/CLS/INP sur la page /devis (Three.js). Envisager lazy-loading de la scène 3D.
+- **Images WebP/AVIF** : Ajouter `formats: ['image/avif', 'image/webp']` dans next.config.ts.
+- **Schema Review** : Ajouter des avis Google structurés dès qu'ils sont disponibles (Review/AggregateRating sur les pages service).
+
 *Dernière mise à jour : phase 2 — mai 2026*
