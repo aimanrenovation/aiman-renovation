@@ -64,7 +64,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Huningue", "Saint-Louis", "Rosenau", "Ottmarsheim", "Kembs"],
     seoTitle: "Rénovation Village-Neuf (68128) | Artisan AIMAN",
     seoDescription:
-      "Artisan rénovation à Village-Neuf 68128, bord du Rhin. Travaux intérieurs et extérieurs. Devis gratuit sous 48h, intervention rapide.",
+      "Artisan rénovation à Village-Neuf 68128, bord du Rhin. Cuisine, carrelage, peinture, salle de bain. Intervention rapide depuis Saint-Louis. Devis gratuit.",
   },
   {
     slug: "hesingue",
@@ -81,7 +81,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Saint-Louis", "Blotzheim", "Hégenheim", "Bartenheim", "Buschwiller"],
     seoTitle: "Rénovation Hésingue (68220) | Artisan AIMAN",
     seoDescription:
-      "Rénovation maison à Hésingue 68220, proche EuroAirport. Peinture, carrelage, isolation, salle de bain. Artisan local. Devis gratuit.",
+      "Rénovation maison à Hésingue 68220, proche EuroAirport Bâle-Mulhouse. Peinture, carrelage, isolation, salle de bain. Artisan local. Devis gratuit sous 48h.",
   },
   {
     slug: "hegenheim",
@@ -115,7 +115,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Sierentz", "Hésingue", "Blotzheim", "Saint-Louis", "Michelbach-le-Bas"],
     seoTitle: "Rénovation Bartenheim (68870) | Artisan AIMAN",
     seoDescription:
-      "Rénovation intérieure à Bartenheim 68870 (Sundgau). Cuisine, peinture, carrelage, isolation. Artisan de confiance. Devis gratuit sous 48h.",
+      "Rénovation intérieure et extérieure à Bartenheim 68870 (Sundgau). Cuisine, peinture, carrelage, isolation. Artisan qualifié. Devis gratuit sous 48h.",
   },
   {
     slug: "blotzheim",
@@ -132,7 +132,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Saint-Louis", "Hésingue", "Bartenheim", "Michelbach-le-Bas", "Hégenheim"],
     seoTitle: "Rénovation Blotzheim (68730) | Artisan AIMAN",
     seoDescription:
-      "Artisan rénovation à Blotzheim 68730, proche aéroport Bâle-Mulhouse. Tous travaux intérieurs. Devis gratuit, réponse sous 48h.",
+      "Artisan rénovation à Blotzheim 68730, proche EuroAirport. Cuisine, salle de bain, peinture, carrelage, isolation. Devis gratuit, réponse sous 48h.",
   },
   {
     slug: "kembs",
@@ -150,7 +150,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Sierentz", "Village-Neuf", "Huningue", "Ottmarsheim", "Bartenheim"],
     seoTitle: "Rénovation Kembs (68680) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Rénovation bâti ancien et maisons à Kembs 68680, bord du Rhin. Artisan qualifié. Façade, peinture, carrelage. Devis gratuit.",
+      "Rénovation bâti ancien et maisons à Kembs 68680, bord du Rhin. Façade, peinture, carrelage, cuisine, salle de bain. Artisan qualifié. Devis gratuit.",
   },
   {
     slug: "sierentz",
@@ -167,7 +167,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Bartenheim", "Kembs", "Habsheim", "Blotzheim", "Ottmarsheim"],
     seoTitle: "Rénovation Sierentz (68510) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Sierentz 68510, chef-lieu de canton. Cuisine, salle de bain, peinture, isolation. Devis gratuit sous 48h.",
+      "Artisan rénovation à Sierentz 68510, chef-lieu de canton Haut-Rhin. Cuisine, salle de bain, peinture, isolation, carrelage. Devis gratuit sous 48h.",
   },
   {
     slug: "rixheim",
@@ -184,7 +184,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Mulhouse", "Habsheim", "Riedisheim", "Sierentz", "Ottmarsheim"],
     seoTitle: "Rénovation Rixheim (68170) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Rénovation appartement et maison à Rixheim 68170, proche Mulhouse. Carrelage, cuisine, peinture. Artisan local. Devis gratuit.",
+      "Rénovation appartement et maison à Rixheim 68170, proche Mulhouse. Carrelage, cuisine, salle de bain, peinture. Artisan local. Devis gratuit sous 48h.",
   },
   {
     slug: "habsheim",
@@ -201,7 +201,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Sierentz", "Rixheim", "Mulhouse", "Riedisheim", "Kembs"],
     seoTitle: "Rénovation Habsheim (68440) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Habsheim 68440. Travaux cuisine, salle de bain, sols, peinture. Intervention rapide depuis Saint-Louis. Devis gratuit.",
+      "Artisan rénovation à Habsheim 68440. Travaux cuisine, salle de bain, sols, carrelage, peinture. Intervention rapide depuis Saint-Louis. Devis gratuit.",
   },
   {
     slug: "riedisheim",
@@ -218,7 +218,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Mulhouse", "Rixheim", "Habsheim", "Ottmarsheim", "Sierentz"],
     seoTitle: "Rénovation Riedisheim (68400) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Rénovation intérieure à Riedisheim 68400. Artisan qualifié, cuisine, salle de bain, carrelage, peinture. Devis gratuit sous 48h.",
+      "Rénovation intérieure et extérieure à Riedisheim 68400. Artisan qualifié : cuisine, salle de bain, carrelage, peinture. Devis gratuit sous 48h.",
   },
   {
     slug: "mulhouse",
@@ -237,7 +237,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Riedisheim", "Rixheim", "Habsheim", "Illzach", "Wittenheim"],
     seoTitle: "Rénovation Mulhouse (68100) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Mulhouse 68. Appartements, maisons, commerces. Cuisine, salle de bain, peinture, carrelage. Devis gratuit.",
+      "Artisan rénovation à Mulhouse 68100. Appartements, maisons, commerces. Cuisine, salle de bain, peinture, carrelage, isolation. Devis gratuit sous 48h.",
   },
   {
     slug: "ottmarsheim",
@@ -254,7 +254,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Kembs", "Village-Neuf", "Rixheim", "Sierentz", "Habsheim"],
     seoTitle: "Rénovation Ottmarsheim (68490) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Rénovation maison et bâti ancien à Ottmarsheim 68490, bord du Rhin. Artisan qualifié. Peinture, carrelage, façade. Devis gratuit.",
+      "Rénovation maison et bâti ancien à Ottmarsheim 68490, bord du Rhin. Peinture, carrelage, façade, isolation. Artisan qualifié. Devis gratuit sous 48h.",
   },
   {
     slug: "rosenau",
@@ -271,7 +271,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Village-Neuf", "Huningue", "Saint-Louis", "Kembs", "Ottmarsheim"],
     seoTitle: "Rénovation Rosenau (68128) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Rosenau 68128, bord du Rhin. Travaux intérieurs et extérieurs. Devis gratuit, intervention depuis Saint-Louis.",
+      "Artisan rénovation à Rosenau 68128, bord du Rhin. Cuisine, carrelage, peinture, isolation. Travaux intérieurs et extérieurs. Devis gratuit depuis Saint-Louis.",
   },
   {
     slug: "buschwiller",
@@ -287,7 +287,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Saint-Louis", "Hégenheim", "Hésingue", "Folgensbourg", "Hagenthal-le-Bas"],
     seoTitle: "Rénovation Buschwiller (68220) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Rénovation maison à Buschwiller 68220, vue sur Bâle. Peinture, carrelage, salle de bain. Artisan local. Devis gratuit.",
+      "Rénovation maison à Buschwiller 68220, vue sur Bâle. Peinture, carrelage, salle de bain, cuisine. Artisan local Haut-Rhin. Devis gratuit sous 48h.",
   },
   {
     slug: "folgensbourg",
@@ -303,7 +303,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Hégenheim", "Buschwiller", "Hagenthal-le-Bas", "Wentzwiller", "Saint-Louis"],
     seoTitle: "Rénovation Folgensbourg (68220) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Folgensbourg 68220 (Sundgau). Fermes alsaciennes, intérieurs. Peinture, carrelage, cuisine. Devis gratuit.",
+      "Artisan rénovation à Folgensbourg 68220 (Sundgau). Fermes alsaciennes, maisons. Peinture, carrelage, cuisine, salle de bain. Devis gratuit sous 48h.",
   },
   {
     slug: "hagenthal-le-bas",
@@ -319,7 +319,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Buschwiller", "Folgensbourg", "Hégenheim", "Leymen", "Wentzwiller"],
     seoTitle: "Rénovation Hagenthal-le-Bas (68220) | Artisan AIMAN",
     seoDescription:
-      "Rénovation maison à Hagenthal-le-Bas 68220, vallée de la Birsig. Artisan local. Peinture, sols, salle de bain. Devis gratuit.",
+      "Rénovation maison à Hagenthal-le-Bas 68220, vallée de la Birsig. Peinture, sols, salle de bain, cuisine. Artisan local Haut-Rhin. Devis gratuit sous 48h.",
   },
   {
     slug: "leymen",
@@ -335,7 +335,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Hagenthal-le-Bas", "Wentzwiller", "Folgensbourg", "Hégenheim", "Buschwiller"],
     seoTitle: "Rénovation Leymen (68220) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Leymen 68220 (Sundgau). Château du Landskron, village historique. Cuisine, peinture, carrelage. Devis gratuit.",
+      "Artisan rénovation à Leymen 68220 (Sundgau), village historique du Haut-Rhin. Cuisine, peinture, carrelage, salle de bain. Devis gratuit sous 48h.",
   },
   {
     slug: "wentzwiller",
@@ -351,7 +351,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Leymen", "Hagenthal-le-Bas", "Folgensbourg", "Michelbach-le-Bas", "Bartenheim"],
     seoTitle: "Rénovation Wentzwiller (68220) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Rénovation maison à Wentzwiller 68220. Maisons alsaciennes, peinture, carrelage, cuisine. Artisan local. Devis gratuit.",
+      "Rénovation maison à Wentzwiller 68220. Maisons alsaciennes typiques du Sundgau. Peinture, carrelage, cuisine, salle de bain. Artisan local. Devis gratuit.",
   },
   {
     slug: "michelbach-le-bas",
@@ -367,7 +367,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Bartenheim", "Blotzheim", "Hésingue", "Wentzwiller", "Sierentz"],
     seoTitle: "Rénovation Michelbach-le-Bas (68730) | Artisan AIMAN",
     seoDescription:
-      "Artisan rénovation à Michelbach-le-Bas 68730. Peinture, carrelage, salle de bain, cuisine. Intervention rapide. Devis gratuit.",
+      "Artisan rénovation à Michelbach-le-Bas 68730. Peinture, carrelage, salle de bain, cuisine, isolation. Intervention rapide Haut-Rhin. Devis gratuit.",
   },
   {
     slug: "ferrette",
@@ -385,7 +385,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Leymen", "Folgensbourg", "Wentzwiller", "Hagenthal-le-Bas", "Rosenau"],
     seoTitle: "Rénovation Ferrette (68480) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Rénovation maison et bâti ancien à Ferrette 68480, capitale du Sundgau. Artisan qualifié. Peinture, carrelage, façade. Devis gratuit.",
+      "Rénovation maison et bâti ancien à Ferrette 68480, capitale du Sundgau. Peinture, carrelage, façade, cuisine. Artisan qualifié Haut-Rhin. Devis gratuit.",
   },
   {
     slug: "colmar",
@@ -404,7 +404,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Ingersheim", "Wintzenheim", "Horbourg-Wihr", "Turckheim", "Ribeauvillé"],
     seoTitle: "Rénovation Colmar (68000) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Colmar 68000 — cuisine, salle de bain, peinture, carrelage. 19 ans d'expérience en Haut-Rhin. Devis gratuit sous 48h.",
+      "Artisan rénovation à Colmar 68000 — cuisine, salle de bain, peinture, carrelage, isolation. Artisan qualifié Haut-Rhin. Devis gratuit sous 48h.",
   },
   {
     slug: "guebwiller",
@@ -440,7 +440,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Kingersheim", "Pfastatt", "Mulhouse", "Illzach", "Wittelsheim"],
     seoTitle: "Rénovation Wittenheim (68270) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Wittenheim 68270. Cités minières, maisons individuelles. Cuisine, peinture, carrelage. Devis gratuit sous 48h.",
+      "Artisan rénovation à Wittenheim 68270. Cités minières, maisons individuelles, appartements. Cuisine, peinture, carrelage. Devis gratuit sous 48h.",
   },
   {
     slug: "illzach",
@@ -458,7 +458,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Mulhouse", "Kingersheim", "Wittenheim", "Sausheim", "Rixheim"],
     seoTitle: "Rénovation Illzach (68110) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Rénovation à Illzach 68110, agglomération mulhousienne. Cuisine, salle de bain, sols, peinture. Artisan qualifié. Devis gratuit.",
+      "Rénovation à Illzach 68110, agglomération mulhousienne. Cuisine, salle de bain, sols, peinture, isolation. Artisan qualifié. Devis gratuit sous 48h.",
   },
   {
     slug: "kingersheim",
@@ -476,7 +476,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Wittenheim", "Pfastatt", "Mulhouse", "Illzach", "Lutterbach"],
     seoTitle: "Rénovation Kingersheim (68260) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Kingersheim 68260. Maisons, appartements, isolation. Cuisine, salle de bain, peinture. Devis gratuit sous 48h.",
+      "Artisan rénovation à Kingersheim 68260. Maisons, appartements, isolation thermique. Cuisine, salle de bain, carrelage, peinture. Devis gratuit sous 48h.",
   },
   {
     slug: "wittelsheim",
@@ -494,7 +494,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Cernay", "Wittenheim", "Staffelfelden", "Bollwiller", "Ensisheim"],
     seoTitle: "Rénovation Wittelsheim (68310) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Rénovation à Wittelsheim 68310, bassin potassique. Cités minières, maisons individuelles. Peinture, carrelage, isolation. Devis gratuit.",
+      "Rénovation à Wittelsheim 68310, bassin potassique. Cités minières et maisons. Peinture, carrelage, isolation, cuisine. Artisan qualifié. Devis gratuit.",
   },
   {
     slug: "cernay",
@@ -512,7 +512,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Thann", "Wittelsheim", "Steinbach", "Wattwiller", "Vieux-Thann"],
     seoTitle: "Rénovation Cernay (68700) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Cernay 68700. Cuisine, salle de bain, peinture, isolation. Intervention Haut-Rhin sud. Devis gratuit sous 48h.",
+      "Artisan rénovation à Cernay 68700. Cuisine, salle de bain, peinture, carrelage, isolation. Intervention Haut-Rhin sud. Devis gratuit sous 48h.",
   },
   {
     slug: "thann",
@@ -530,7 +530,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Cernay", "Vieux-Thann", "Bitschwiller-lès-Thann", "Leimbach", "Aspach-le-Bas"],
     seoTitle: "Rénovation Thann (68800) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Rénovation intérieure et extérieure à Thann 68800. Artisan qualifié, bâti ancien et moderne. Peinture, carrelage, façade. Devis gratuit.",
+      "Rénovation intérieure et extérieure à Thann 68800. Artisan qualifié Haut-Rhin. Peinture, carrelage, façade, cuisine, salle de bain. Devis gratuit sous 48h.",
   },
   {
     slug: "altkirch",
@@ -548,7 +548,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Carspach", "Hirsingue", "Aspach", "Waldighofen", "Ferrette"],
     seoTitle: "Rénovation Altkirch (68130) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Altkirch 68130, capitale du Sundgau. Maisons anciennes, cuisine, salle de bain, peinture. Devis gratuit sous 48h.",
+      "Artisan rénovation à Altkirch 68130, capitale du Sundgau. Maisons alsaciennes et bâti ancien. Cuisine, salle de bain, peinture, carrelage. Devis gratuit.",
   },
   {
     slug: "soultz-haut-rhin",
@@ -566,7 +566,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Guebwiller", "Issenheim", "Wuenheim", "Jungholtz", "Bollwiller"],
     seoTitle: "Rénovation Soultz-Haut-Rhin (68360) | Artisan AIMAN",
     seoDescription:
-      "Rénovation à Soultz-Haut-Rhin 68360. Maisons anciennes, cuisine, salle de bain, peinture, carrelage. Artisan qualifié. Devis gratuit.",
+      "Rénovation à Soultz-Haut-Rhin 68360. Maisons anciennes du vignoble alsacien. Cuisine, salle de bain, peinture, carrelage. Artisan qualifié. Devis gratuit.",
   },
   {
     slug: "brunstatt-didenheim",
@@ -584,7 +584,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Mulhouse", "Riedisheim", "Flaxlanden", "Zillisheim", "Pfastatt"],
     seoTitle: "Rénovation Brunstatt-Didenheim (68350) | Artisan AIMAN",
     seoDescription:
-      "Artisan rénovation à Brunstatt-Didenheim 68350. Pavillons, cuisines, salles de bain, isolation. Devis gratuit sous 48h.",
+      "Artisan rénovation à Brunstatt-Didenheim 68350. Pavillons, maisons individuelles. Cuisine, salle de bain, carrelage, isolation. Devis gratuit sous 48h.",
   },
   {
     slug: "pfastatt",
@@ -602,7 +602,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Mulhouse", "Kingersheim", "Lutterbach", "Wittenheim", "Brunstatt-Didenheim"],
     seoTitle: "Rénovation Pfastatt (68120) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Rénovation à Pfastatt 68120, agglomération mulhousienne. Cuisine, salle de bain, peinture, isolation. Artisan qualifié. Devis gratuit.",
+      "Rénovation à Pfastatt 68120, agglomération mulhousienne. Cuisine, salle de bain, peinture, carrelage, isolation. Artisan qualifié. Devis gratuit sous 48h.",
   },
   {
     slug: "lutterbach",
@@ -620,7 +620,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Pfastatt", "Kingersheim", "Mulhouse", "Wittelsheim", "Reiningue"],
     seoTitle: "Rénovation Lutterbach (68460) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Lutterbach 68460. Maisons, appartements. Cuisine, peinture, carrelage, isolation. Devis gratuit sous 48h.",
+      "Artisan rénovation à Lutterbach 68460, vallée de la Doller. Maisons, appartements. Cuisine, peinture, carrelage, isolation. Devis gratuit sous 48h.",
   },
   {
     slug: "ensisheim",
@@ -638,7 +638,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Bollwiller", "Wittelsheim", "Réguisheim", "Meyenheim", "Ungersheim"],
     seoTitle: "Rénovation Ensisheim (68190) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Rénovation à Ensisheim 68190, ancienne capitale des Habsbourg. Bâti ancien et moderne. Cuisine, peinture, carrelage. Devis gratuit.",
+      "Rénovation à Ensisheim 68190, ancienne capitale des Habsbourg. Bâti ancien, maisons modernes. Cuisine, peinture, carrelage, salle de bain. Devis gratuit.",
   },
   {
     slug: "rouffach",
@@ -656,7 +656,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Soultzmatt", "Pfaffenheim", "Westhalten", "Gueberschwihr", "Issenheim"],
     seoTitle: "Rénovation Rouffach (68250) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Rouffach 68250, cité viticole. Maisons vigneronnes, cuisine, salle de bain, peinture. Devis gratuit sous 48h.",
+      "Artisan rénovation à Rouffach 68250, cité viticole du Haut-Rhin. Maisons vigneronnes, cuisine, salle de bain, peinture, carrelage. Devis gratuit sous 48h.",
   },
   {
     slug: "munster",
@@ -674,7 +674,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Gunsbach", "Griesbach-au-Val", "Luttenbach-près-Munster", "Hohrod", "Stosswihr"],
     seoTitle: "Rénovation Munster (68140) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Rénovation à Munster 68140, vallée vosgienne. Maisons, gîtes, hôtels. Cuisine, salle de bain, isolation. Artisan qualifié. Devis gratuit.",
+      "Rénovation à Munster 68140, vallée vosgienne du Haut-Rhin. Maisons, gîtes, hôtels. Cuisine, salle de bain, isolation, carrelage. Artisan qualifié. Devis gratuit.",
   },
   {
     slug: "sainte-marie-aux-mines",
@@ -692,7 +692,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Lièpvre", "Rombach-le-Franc", "Echéry", "Fertrupt", "Ribeauvillé"],
     seoTitle: "Rénovation Sainte-Marie-aux-Mines (68160) | Artisan AIMAN",
     seoDescription:
-      "Artisan rénovation à Sainte-Marie-aux-Mines 68160, Val d'Argent. Maisons anciennes, peinture, carrelage, isolation. Devis gratuit.",
+      "Artisan rénovation à Sainte-Marie-aux-Mines 68160, Val d'Argent. Maisons anciennes, peinture, carrelage, isolation, salle de bain. Devis gratuit.",
   },
   {
     slug: "bollwiller",
@@ -710,7 +710,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Soultz-Haut-Rhin", "Ensisheim", "Wittelsheim", "Staffelfelden", "Guebwiller"],
     seoTitle: "Rénovation Bollwiller (68540) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Rénovation à Bollwiller 68540. Maisons, appartements. Cuisine, peinture, carrelage, isolation. Artisan qualifié. Devis gratuit.",
+      "Rénovation à Bollwiller 68540. Maisons, appartements. Cuisine, salle de bain, peinture, carrelage, isolation. Artisan qualifié Haut-Rhin. Devis gratuit sous 48h.",
   },
   {
     slug: "orbey",
@@ -728,7 +728,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Kaysersberg-Vignoble", "Labaroche", "Lapoutroie", "Le Bonhomme", "Pairis"],
     seoTitle: "Rénovation Orbey (68370) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Orbey 68370, montagne vosgienne. Chalets, maisons, gîtes. Isolation, peinture, aménagement. Devis gratuit.",
+      "Artisan rénovation à Orbey 68370, montagne vosgienne du Haut-Rhin. Chalets, maisons, gîtes. Isolation, peinture, salle de bain, aménagement. Devis gratuit.",
   },
   {
     slug: "kaysersberg-vignoble",
@@ -746,7 +746,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Orbey", "Ammerschwihr", "Kientzheim", "Sigolsheim", "Turckheim"],
     seoTitle: "Rénovation Kaysersberg-Vignoble (68240) | Artisan AIMAN",
     seoDescription:
-      "Rénovation à Kaysersberg-Vignoble 68240. Maisons à colombages, gîtes, hôtels. Peinture, carrelage, façade. Artisan qualifié. Devis gratuit.",
+      "Rénovation à Kaysersberg-Vignoble 68240. Maisons à colombages, gîtes, hôtels du vignoble. Peinture, carrelage, façade. Artisan qualifié. Devis gratuit sous 48h.",
   },
   {
     slug: "ribeauville",
@@ -764,7 +764,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Bergheim", "Hunawihr", "Saint-Hippolyte", "Guémar", "Sainte-Marie-aux-Mines"],
     seoTitle: "Rénovation Ribeauvillé (68150) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Ribeauvillé 68150, cité des Ménétriers. Colombages, bâti ancien, peinture, carrelage. Devis gratuit sous 48h.",
+      "Artisan rénovation à Ribeauvillé 68150, cité des Ménétriers. Colombages, bâti ancien, peinture, carrelage, façade. Artisan qualifié Haut-Rhin. Devis gratuit.",
   },
   {
     slug: "turckheim",
@@ -782,7 +782,7 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Colmar", "Wintzenheim", "Kaysersberg-Vignoble", "Niedermorschwihr", "Ingersheim"],
     seoTitle: "Rénovation Turckheim (68230) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Rénovation à Turckheim 68230, cité fortifiée. Maisons anciennes, colombages, peinture, carrelage, façade. Artisan qualifié. Devis gratuit.",
+      "Rénovation à Turckheim 68230, cité fortifiée médiévale. Maisons alsaciennes et colombages. Peinture, carrelage, façade, cuisine. Artisan qualifié. Devis gratuit.",
   },
   {
     slug: "sausheim",
@@ -800,6 +800,6 @@ export const VILLES_FR: VilleFR[] = [
     communesAlentours: ["Illzach", "Mulhouse", "Rixheim", "Habsheim", "Baldersheim"],
     seoTitle: "Rénovation Sausheim (68390) | Artisan AIMAN Haut-Rhin",
     seoDescription:
-      "Artisan rénovation à Sausheim 68390. Pavillons, cuisine, salle de bain, peinture, isolation. Intervention rapide. Devis gratuit.",
+      "Artisan rénovation à Sausheim 68390, nord de Mulhouse. Pavillons, cuisine, salle de bain, peinture, carrelage, isolation. Intervention rapide. Devis gratuit.",
   },
 ];
