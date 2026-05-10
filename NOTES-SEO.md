@@ -131,15 +131,18 @@ Les slugs actuels correspondent bien aux requêtes principales :
 - **lib/faq-services.ts** créé : 3 à 6 questions/réponses géolocalisées par service — utilisées à la fois pour le FAQPage JSON-LD (rich snippets Google) et la section FAQ visuelle sur les pages service
 - **FAQPage JSON-LD** ajouté sur toutes les pages service (People Also Ask / rich snippets)
 - **Section FAQ visuelle** ajoutée sur les pages service, avant le CTA final
-- **Titres SEO améliorés** : home_title démarre désormais par le mot-clé ("Rénovation Saint-Louis..."), services/contact/devis/faq/about enrichis avec ville + 68300
-- **Twitter card** ajoutée sur les pages manquantes : services, contact, a-propos, blog (liste), réalisations
+- **Titres SEO améliorés** : home_title démarre désormais par le mot-clé ("Artisan Rénovation Saint-Louis 68 | Haut-Rhin & Bâle"), services/contact/devis/faq/about enrichis avec ville + 68300
+- **Twitter card** ajoutée sur les pages manquantes : services, faq, contact, a-propos, blog (liste), réalisations
 - **BreadcrumbList JSON-LD** ajouté sur la page services (via JsonLd statique, les autres pages utilisent déjà le composant Breadcrumb qui émet le JSON-LD automatiquement)
+- **Sitemap enrichi** : `/devis-cuisine` (0.85), `/devis-salle-de-bain` (0.85), `/devis-facade` (0.8), `/calculateur` (0.7) ajoutés
 
 ### Observations hors SEO (ne pas corriger dans cette PR)
 
 - Le composant `<Breadcrumb>` n'affiche le fil visuellement que pour les pages avec 3+ items (profondeur 2+). Pour les pages de niveau 1 (contact, faq), le JSON-LD est émis mais le fil d'Ariane visuel ne s'affiche pas. C'est un choix UX intentionnel documenté dans le composant.
 - La page `/devis` n'a pas de `<Breadcrumb>` dans son rendu — le JSON-LD breadcrumb est absent pour cette page. À ajouter en phase 3.
-- La page `/avis` n'a pas encore de metadata Twitter card. À vérifier en phase 3.
+- Les pages `/devis-cuisine`, `/devis-salle-de-bain`, `/devis-facade` ne sont pas liées depuis le footer ni depuis les pages services correspondantes. Maillage interne à améliorer.
+- La page `/avis` utilise `dangerouslySetInnerHTML` pour ses schemas JSON-LD au lieu du composant `<JsonLd>` — fonctionnellement identique mais inconsistant avec le reste. À uniformiser lors d'un refactoring.
+- `/renovation/` sans slug n'a pas de page d'atterrissage dédiée (hub des villes françaises). À créer pour le maillage interne.
 
 ---
 

@@ -217,7 +217,7 @@ export default async function ServicePage({ params }: Props) {
           {icon && (
             <Image
               src={icon}
-              alt=""
+              alt={`Icône ${title}`}
               width={80}
               height={80}
               priority
