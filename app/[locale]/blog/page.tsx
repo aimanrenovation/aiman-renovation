@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ARTICLES } from "@/lib/articles";
 import { getAlternates } from "@/lib/i18n-helpers";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -119,6 +120,8 @@ export default async function BlogPage({ params }: Props) {
   };
 
   return (
+    <>
+    <Breadcrumb items={[{ name: "Accueil", url: "/" }, { name: "Blog", url: "/blog" }]} />
     <main className="min-h-screen bg-black text-white">
       {/* JSON-LD */}
       <script
@@ -231,5 +234,6 @@ export default async function BlogPage({ params }: Props) {
         </div>
       </section>
     </main>
+    </>
   );
 }

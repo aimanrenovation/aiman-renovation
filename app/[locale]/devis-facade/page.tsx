@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { setRequestLocale } from "next-intl/server";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -136,6 +137,11 @@ export default async function DevisFacadePage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
+      <Breadcrumb items={[
+        { name: "Accueil", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Devis Ravalement Façade", url: "/devis-facade" },
+      ]} />
 
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-red-700 to-red-900 py-20 px-4 text-center text-white md:py-28 lg:py-32">

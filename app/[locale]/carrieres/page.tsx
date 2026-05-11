@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getAlternates } from "@/lib/i18n-helpers";
 import CarrieresClient from "./carrieres-client";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -41,5 +42,10 @@ export async function generateMetadata({ params }: Props) {
 export default async function CarrieresPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <CarrieresClient />;
+  return (
+    <>
+      <Breadcrumb items={[{ name: "Accueil", url: "/" }, { name: "Carrières", url: "/carrieres" }]} />
+      <CarrieresClient />
+    </>
+  );
 }
