@@ -1,5 +1,5 @@
-import { setRequestLocale } from "next-intl/server";
-import { getTranslations } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import { getAlternates } from "@/lib/i18n-helpers";
 import { CalculateurClient } from "@/components/calculateur/calculateur-client";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -36,9 +36,7 @@ export async function generateMetadata({ params }: Props) {
       description,
       images: ["https://aiman-renovation.fr/images/ambiance-resultat.jpg"],
     },
-    alternates: {
-      canonical: "https://aiman-renovation.fr/calculateur",
-    },
+    alternates: getAlternates("/calculateur"),
   };
 }
 
