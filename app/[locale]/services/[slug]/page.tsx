@@ -111,6 +111,8 @@ export default async function ServicePage({ params }: Props) {
     (s) => (service.relatedSlugs ?? []).includes(s.slug)
   ).slice(0, 3);
 
+  const faq = service.faq ?? [];
+
   // JSON-LD Service — données statiques, aucune entrée utilisateur
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -140,6 +142,21 @@ export default async function ServicePage({ params }: Props) {
     },
   };
 
+  const faqSchema = faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
+
   const breadcrumbItems = [
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
@@ -152,6 +169,7 @@ export default async function ServicePage({ params }: Props) {
   return (
     <>
       <JsonLd data={serviceSchema} />
+      {faqSchema && <JsonLd data={faqSchema} />}
       <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero full-bleed avec photo */}
@@ -439,6 +457,40 @@ export default async function ServicePage({ params }: Props) {
                     </Link>
                   );
                 })}
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* FAQ — People Also Ask */}
+      {faq.length > 0 && (
+        <ScrollReveal direction="up">
+          <section className="relative z-10 bg-[#0A0A0A] py-16 md:py-24 border-t border-white/5">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
+              <h2 className="font-heading text-xl md:text-2xl mb-10">
+                QUESTIONS <span className="text-[#E50000]">FRÉQUENTES</span>
+              </h2>
+              <div className="space-y-4">
+                {faq.map((item, i) => (
+                  <details
+                    key={i}
+                    className="group bg-[#111111] border border-white/5 rounded-xl overflow-hidden hover:border-[#E50000]/20 transition-colors"
+                  >
+                    <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none">
+                      <h3 className="font-heading text-base md:text-lg text-white leading-snug">
+                        {item.question}
+                      </h3>
+                      <span className="shrink-0 w-8 h-8 rounded-full bg-[#E50000]/10 flex items-center justify-center text-[#E50000] group-open:rotate-45 transition-transform duration-200">
+                        +
+                      </span>
+                    </summary>
+                    <div className="px-6 pb-6 text-gray-400 leading-relaxed">
+                      {item.answer}
+                    </div>
+                  </details>
+                ))}
               </div>
             </div>
           </section>
