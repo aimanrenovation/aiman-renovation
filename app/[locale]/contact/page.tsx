@@ -33,6 +33,12 @@ export async function generateMetadata({ params }: Props) {
         },
       ],
     },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://aiman-renovation.fr/images/ambiance-contact.jpg"],
+    },
   };
 }
 

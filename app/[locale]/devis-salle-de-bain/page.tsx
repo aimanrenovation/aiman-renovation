@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { setRequestLocale } from "next-intl/server";
+import { Breadcrumb } from "@/components/breadcrumb";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -7,7 +8,7 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const title = "Devis Salle de Bain Saint-Louis 68 | Rénovation Complète";
   const description =
-    "Obtenez un devis gratuit pour la rénovation de votre salle de bain à Saint-Louis et dans le Haut-Rhin. Douche italienne, plomberie complète, garantie décennale. Réponse sous 48h.";
+    "Devis gratuit salle de bain à Saint-Louis 68 et Haut-Rhin. Douche italienne, carrelage, plomberie complète, étanchéité DTU. Artisan qualifié. Réponse sous 48h.";
   return {
     title,
     description,
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: Props) {
       type: "website",
       images: [
         {
-          url: "https://aiman-renovation.fr/images/ambiance-resultat.jpg",
+          url: "https://aiman-renovation.fr/images/photo-salle-de-bain.jpg",
           width: 1200,
           height: 630,
           alt: "Rénovation salle de bain — Aiman Renovation Saint-Louis",
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: Props) {
       card: "summary_large_image" as const,
       title,
       description,
-      images: ["https://aiman-renovation.fr/images/ambiance-resultat.jpg"],
+      images: ["https://aiman-renovation.fr/images/photo-salle-de-bain.jpg"],
     },
     alternates: {
       canonical: "https://aiman-renovation.fr/devis-salle-de-bain",
@@ -135,6 +136,11 @@ export default async function DevisSalleDeBainPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
+      <Breadcrumb items={[
+        { name: "Accueil", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "Devis Salle de Bain", url: "/devis-salle-de-bain" },
+      ]} />
 
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-red-700 to-red-900 py-20 px-4 text-center text-white md:py-28 lg:py-32">

@@ -1,5 +1,4 @@
-import { setRequestLocale } from "next-intl/server";
-import { getTranslations } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { getAlternates } from "@/lib/i18n-helpers";
 import { CalculateurClient } from "@/components/calculateur/calculateur-client";
 
