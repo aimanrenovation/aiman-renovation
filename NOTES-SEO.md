@@ -5,6 +5,32 @@ Ne pas modifier le code ici — traiter séparément.
 
 ---
 
+## ✅ Phase 2 — Réalisé le 2026-05-16 (branche seo/phase-2-content)
+
+### Métadonnées services
+- Ajout `seoTitle`, `seoDescription`, `relatedSlugs` manquants sur 5 services : `peinture`, `sols-carrelage`, `renovation-complete`, `isolation`, `facade`
+- Amélioration du titre de la page `/services` : 45 → 54 chars avec mot-clé "Artisan Haut-Rhin"
+- Correction incohérence : "30 avis" → "47 avis" dans fr.json (3 occurrences)
+
+### Sections FAQ (impact People Also Ask / rich snippets)
+- Champ `faq` ajouté à l'interface `Service` dans `lib/services.ts`
+- 4 questions/réponses ciblées ajoutées pour chacun des 14 services
+- Section FAQ visuelle (accordion `<details>`) sur toutes les pages `/services/[slug]`
+- Schema `FAQPage` JSON-LD injecté sur chaque page service concernée
+- Impact attendu : apparition dans les "People Also Ask" Google + rich snippets
+
+### Nouveaux articles blog
+- `renovation-maison-mulhouse-artisan` : cible "artisan renovation Mulhouse", "renovation appartement Mulhouse" (FR/DE/EN)
+- `devis-renovation-gratuit-saint-louis` : cible "devis renovation gratuit saint-louis", "devis artisan haut-rhin" (FR/DE/EN)
+- Sitemap : 471 URLs indexées (vs 465 avant)
+
+### SEO technique
+- `/calculateur` : ajout des alternates hreflang manquants (via `getAlternates`)
+
+---
+
+---
+
 ## Bugs / problèmes identifiés (hors SEO)
 
 - `COMPANY.address` et `COMPANY.zip` étaient vides dans `lib/constants.ts` → corrigé dans cette PR
