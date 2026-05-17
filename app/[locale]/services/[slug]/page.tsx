@@ -9,6 +9,12 @@ import { ScrollReveal } from "@/components/sections/scroll-reveal";
 import { getAlternates } from "@/lib/i18n-helpers";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Breadcrumb } from "@/components/breadcrumb";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 interface Props {
   params: Promise<{ slug: string; locale: string }>;
@@ -140,6 +146,18 @@ export default async function ServicePage({ params }: Props) {
     },
   };
 
+  const faqSchema = service.faq && service.faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: service.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      }
+    : null;
+
   const breadcrumbItems = [
     { name: "Accueil", url: "/" },
     { name: "Services", url: "/services" },
@@ -152,6 +170,7 @@ export default async function ServicePage({ params }: Props) {
   return (
     <>
       <JsonLd data={serviceSchema} />
+      {faqSchema && <JsonLd data={faqSchema} />}
       <Breadcrumb items={breadcrumbItems} />
 
       {/* Hero full-bleed avec photo */}
@@ -397,6 +416,36 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </section>
       </ScrollReveal>
+
+      {/* FAQ service — rich snippets */}
+      {service.faq && service.faq.length > 0 && (
+        <ScrollReveal direction="up">
+          <section className="relative z-10 bg-[#0A0A0A] py-16 md:py-24 border-t border-white/5">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
+              <h2 className="font-heading text-xl md:text-2xl mb-8">
+                QUESTIONS <span className="text-[#E50000]">FRÉQUENTES</span>
+              </h2>
+              <Accordion className="space-y-3">
+                {service.faq.map((item, i) => (
+                  <AccordionItem
+                    key={i}
+                    value={`faq-${i}`}
+                    className="border border-white/5 rounded-xl px-6 bg-[#111111] hover:border-[#E50000]/20 transition-colors"
+                  >
+                    <AccordionTrigger className="text-white text-left hover:text-[#E50000]">
+                      {item.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-400 leading-relaxed">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
 
       {/* Services liés — maillage interne */}
       {relatedServices.length > 0 && (
