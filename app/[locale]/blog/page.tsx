@@ -25,14 +25,14 @@ const CATEGORY_COLORS: Record<string, string> = {
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const titles: Record<string, string> = {
-    fr: "Blog Rénovation | Conseils, Prix & Guides — Aiman Renovation",
-    en: "Renovation Blog | Advice, Prices & Guides — Aiman Renovation",
-    de: "Renovierungsblog | Tipps, Preise & Ratgeber — Aiman Renovation",
+    fr: "Blog Rénovation Haut-Rhin | Conseils, Prix & Guides",
+    en: "Renovation Blog Haut-Rhin | Advice, Prices & Guides",
+    de: "Renovierungsblog Elsass | Tipps, Preise & Ratgeber",
   };
   const descs: Record<string, string> = {
-    fr: "Conseils d'experts, grilles de prix et guides pratiques pour rénover à Saint-Louis, Mulhouse, Bâle et l'Alsace.",
-    en: "Expert advice, price guides and practical tips for renovation in Saint-Louis, Mulhouse, Basel and Alsace.",
-    de: "Expertentipps, Preisleitfäden und praktische Ratgeber für Renovierungen in Saint-Louis, Mulhouse und dem Elsass.",
+    fr: "Conseils d'experts, grilles de prix et guides pratiques pour votre rénovation à Saint-Louis 68300, Mulhouse et Bâle. Artisan qualifié en Haut-Rhin.",
+    en: "Expert advice, price guides and practical tips for your renovation in Saint-Louis, Mulhouse and Basel. Qualified craftsman in Haut-Rhin.",
+    de: "Expertentipps, Preisleitfäden und Ratgeber für Ihre Renovierung in Saint-Louis, Mulhouse und Basel. Qualifizierter Handwerker im Elsass.",
   };
   const title = titles[locale] ?? titles.fr;
   const description = descs[locale] ?? descs.fr;

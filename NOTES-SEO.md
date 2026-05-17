@@ -72,4 +72,28 @@ Les slugs actuels ne correspondent pas exactement à certaines requêtes cibles 
 
 ---
 
-*Dernière mise à jour : phase 2 — avril 2026*
+---
+
+## Phase 2 — mai 2026 — Réalisé dans cette session
+
+### Implémentés
+
+- **seoTitle / seoDescription / relatedSlugs** : Ajouté aux 5 services qui en manquaient (peinture, sols-carrelage, renovation-complete, isolation, facade). Tous les 15 services ont maintenant leurs métadonnées SEO complètes.
+- **FAQ par service avec FAQPage JSON-LD** : Ajout de 3 questions/réponses géolocalisées sur les 9 services principaux (salle-de-bain, cuisine, électricité, plomberie, peinture, sols-carrelage, renovation-complete, isolation, facade). Section FAQ visuelle avec Accordion sur les pages service. Rich snippets Google (FAQ accordéons dans les SERP) activés.
+- **Amélioration meta home** : Ajout de "Bâle" dans le title homepage. Description enrichie (Mulhouse, Bâle).
+- **Amélioration meta services/FAQ/contact/devis/a-propos/réalisations/avis** : Mots-clés "68300", "Mulhouse", "Bâle" ajoutés ou renforcés dans les titres/descriptions.
+- **Sitemap priorités** : Les 9 services principaux passent à 0.85–0.9, les services secondaires à 0.75.
+- **Blog** : Titre et description améliorés (ajout "Haut-Rhin", longueur description corrigée à 148 chars).
+
+### Recommandations prioritaires restantes
+
+1. **Google Business Profile** (levier n°1 local) — Créer/optimiser la fiche Google My Business avec photos avant/après, services détaillés, horaires, réponses aux avis. Ne nécessite pas de code.
+2. **Schema HowTo** sur les pages services — Les étapes "processus" pourraient utiliser `schema.org/HowTo` pour des rich snippets supplémentaires. Implémenter dans le template service.
+3. **Title renovierung-schweiz (DE)** — Le titre allemand fait 77 chars (cible : 60). À rogner : "Renovierung Basel & Schweiz | AIMAN RENOVATION Elsass" (54 chars).
+4. **Balise `google-site-verification`** — Ajouter dans `app/layout.tsx` `metadata.verification.google` pour valider la Search Console.
+5. **Pages devis-cuisine/devis-salle-de-bain** — Ces pages spécialisées (`/devis-cuisine`, `/devis-salle-de-bain`) ont-elles des métadonnées SEO ? À vérifier et enrichir.
+6. **Calculateur** — La page `/calculateur` mérite un seo_title et seo_description dédiés orientés "prix rénovation Haut-Rhin".
+7. **Maillage FAQ ↔ Services** — Les pages services renvoient vers la FAQ générale ? Sinon, ajouter un lien "Plus de questions ? Voir notre FAQ" dans la section FAQ service.
+8. **Images WebP/AVIF** — `next.config.ts` : `images.formats: ['image/avif', 'image/webp']`
+
+*Dernière mise à jour : phase 2 — mai 2026*

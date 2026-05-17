@@ -28,7 +28,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...localizedEntry("/", 1, "weekly"),
     ...localizedEntry("/services", 0.9, "monthly"),
-    ...SERVICES.flatMap((s) => localizedEntry(`/services/${s.slug}`, 0.8, "monthly")),
+    // Services prioritaires : pages les plus recherchées localement
+    ...localizedEntry("/services/salle-de-bain", 0.9, "monthly"),
+    ...localizedEntry("/services/cuisine", 0.9, "monthly"),
+    ...localizedEntry("/services/renovation-complete", 0.9, "monthly"),
+    ...localizedEntry("/services/peinture", 0.85, "monthly"),
+    ...localizedEntry("/services/electricite", 0.85, "monthly"),
+    ...localizedEntry("/services/plomberie", 0.85, "monthly"),
+    ...localizedEntry("/services/facade", 0.85, "monthly"),
+    ...localizedEntry("/services/isolation", 0.85, "monthly"),
+    ...localizedEntry("/services/sols-carrelage", 0.85, "monthly"),
+    // Autres services
+    ...SERVICES.filter(
+      (s) => !["salle-de-bain", "cuisine", "renovation-complete", "peinture", "electricite", "plomberie", "facade", "isolation", "sols-carrelage"].includes(s.slug)
+    ).flatMap((s) => localizedEntry(`/services/${s.slug}`, 0.75, "monthly")),
     ...localizedEntry("/realisations", 0.8, "weekly"),
     ...localizedEntry("/avis", 0.7, "weekly"),
     ...localizedEntry("/a-propos", 0.6, "monthly"),
