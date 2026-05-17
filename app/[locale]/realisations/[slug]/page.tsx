@@ -250,6 +250,43 @@ export default async function RealisationDetailPage({ params }: Props) {
         />
       )}
 
+      {/* CreativeWork schema — rich snippets chantiers */}
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            name: realisation.titre,
+            description: realisation.description,
+            dateCreated: realisation.date_livraison ?? realisation.date_publication,
+            datePublished: realisation.date_publication ?? realisation.date_livraison,
+            ...(heroImage && { image: heroImage }),
+            locationCreated: {
+              "@type": "Place",
+              name: realisation.ville,
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: realisation.ville,
+                addressRegion: "Haut-Rhin",
+                addressCountry: "FR",
+              },
+            },
+            creator: {
+              "@type": "HomeAndConstructionBusiness",
+              "@id": "https://aiman-renovation.fr/#organization",
+              name: "Aiman Renovation",
+            },
+            about: {
+              "@type": "Service",
+              name: realisation.type_chantier,
+              provider: { "@id": "https://aiman-renovation.fr/#organization" },
+            },
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
+
       <CtaBanner />
     </>
   );

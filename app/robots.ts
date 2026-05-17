@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/"],
+        disallow: ["/api/", "/espace-employes/"],
       },
       // Bloquer les crawlers IA (scraping de contenu sans valeur SEO)
       {

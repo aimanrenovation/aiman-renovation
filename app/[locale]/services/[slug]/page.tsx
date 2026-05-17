@@ -9,12 +9,7 @@ import { ScrollReveal } from "@/components/sections/scroll-reveal";
 import { getAlternates } from "@/lib/i18n-helpers";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Breadcrumb } from "@/components/breadcrumb";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { FAQ_SERVICES } from "@/lib/faq-services";
 
 interface Props {
   params: Promise<{ slug: string; locale: string }>;
@@ -34,6 +29,7 @@ interface TranslatedService {
   process: { step: string; detail: string }[];
   whyPro: string;
   priceRange: string;
+  faq?: { question: string; answer: string }[];
 }
 
 async function getTranslatedService(locale: string, slug: string): Promise<TranslatedService | undefined> {
@@ -113,9 +109,15 @@ export default async function ServicePage({ params }: Props) {
   const whyPro = translated?.whyPro ?? service.whyPro;
   const priceRange = translated?.priceRange ?? service.priceRange;
 
+  // FAQ : translations en priorité, sinon fallback sur lib/faq-services
+  const translatedFaq = translated?.faq ?? service.faq ?? [];
+  const faqData = translatedFaq.length > 0 ? translatedFaq : (FAQ_SERVICES[slug] ?? []);
+
   const relatedServices = SERVICES.filter(
     (s) => (service.relatedSlugs ?? []).includes(s.slug)
   ).slice(0, 3);
+
+  const faq = service.faq ?? [];
 
   // JSON-LD Service — données statiques, aucune entrée utilisateur
   const serviceSchema = {
@@ -135,6 +137,12 @@ export default async function ServicePage({ params }: Props) {
       { "@type": "City", name: "Hégenheim" },
       { "@type": "City", name: "Bartenheim" },
       { "@type": "City", name: "Kembs" },
+      { "@type": "City", name: "Blotzheim" },
+      { "@type": "City", name: "Rixheim" },
+      { "@type": "City", name: "Habsheim" },
+      { "@type": "City", name: "Sierentz" },
+      { "@type": "City", name: "Basel" },
+      { "@type": "AdministrativeArea", name: "Haut-Rhin" },
     ],
     offers: {
       "@type": "Offer",
@@ -146,17 +154,29 @@ export default async function ServicePage({ params }: Props) {
     },
   };
 
-  const faqSchema = service.faq && service.faq.length > 0
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: service.faq.map((item) => ({
-          "@type": "Question",
-          name: item.question,
-          acceptedAnswer: { "@type": "Answer", text: item.answer },
-        })),
-      }
-    : null;
+  const faqSchema = faqData.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map(({ question, answer }) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: { "@type": "Answer", text: answer },
+    })),
+  } : null;
+
+  // JSON-LD HowTo — étapes du processus → rich snippets Google
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: `Comment se déroule une intervention ${title.toLowerCase()} — Aiman Renovation`,
+    description: `Les ${process.length} étapes de notre intervention pour ${title.toLowerCase()} à Saint-Louis et dans le Haut-Rhin.`,
+    step: process.map((step, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: step.step,
+      text: step.detail,
+    })),
+  };
 
   const breadcrumbItems = [
     { name: "Accueil", url: "/" },
@@ -170,6 +190,7 @@ export default async function ServicePage({ params }: Props) {
   return (
     <>
       <JsonLd data={serviceSchema} />
+      <JsonLd data={howToSchema} />
       {faqSchema && <JsonLd data={faqSchema} />}
       <Breadcrumb items={breadcrumbItems} />
 
@@ -198,7 +219,7 @@ export default async function ServicePage({ params }: Props) {
           {icon && (
             <Image
               src={icon}
-              alt=""
+              alt={`Icône ${title}`}
               width={80}
               height={80}
               priority
@@ -417,31 +438,31 @@ export default async function ServicePage({ params }: Props) {
         </section>
       </ScrollReveal>
 
-      {/* FAQ service — rich snippets */}
-      {service.faq && service.faq.length > 0 && (
+      {/* FAQ — Questions fréquentes / rich snippets */}
+      {faqData.length > 0 && (
         <ScrollReveal direction="up">
           <section className="relative z-10 bg-[#0A0A0A] py-16 md:py-24 border-t border-white/5">
             <div className="max-w-5xl mx-auto px-6">
               <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
-              <h2 className="font-heading text-xl md:text-2xl mb-8">
+              <h2 className="font-heading text-xl md:text-2xl mb-10">
                 QUESTIONS <span className="text-[#E50000]">FRÉQUENTES</span>
               </h2>
-              <Accordion className="space-y-3">
-                {service.faq.map((item, i) => (
-                  <AccordionItem
+              <div className="space-y-4">
+                {faqData.map((item, i) => (
+                  <details
                     key={i}
-                    value={`faq-${i}`}
-                    className="border border-white/5 rounded-xl px-6 bg-[#111111] hover:border-[#E50000]/20 transition-colors"
+                    className="group border border-white/5 rounded-xl bg-[#111111] hover:border-[#E50000]/20 transition-colors"
                   >
-                    <AccordionTrigger className="text-white text-left hover:text-[#E50000]">
-                      {item.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-gray-400 leading-relaxed">
+                    <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-white font-medium">
+                      <h3 className="text-base md:text-lg leading-snug">{item.question}</h3>
+                      <span className="shrink-0 text-[#E50000] text-xl leading-none group-open:rotate-45 transition-transform duration-200">+</span>
+                    </summary>
+                    <div className="px-6 pb-6 text-gray-400 leading-relaxed text-base">
                       {item.answer}
-                    </AccordionContent>
-                  </AccordionItem>
+                    </div>
+                  </details>
                 ))}
-              </Accordion>
+              </div>
             </div>
           </section>
         </ScrollReveal>
@@ -488,6 +509,40 @@ export default async function ServicePage({ params }: Props) {
                     </Link>
                   );
                 })}
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* FAQ — People Also Ask */}
+      {faqData.length > 0 && (
+        <ScrollReveal direction="up">
+          <section className="relative z-10 bg-[#0A0A0A] py-16 md:py-24 border-t border-white/5">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="w-12 h-0.5 bg-[#E50000] mb-6" />
+              <h2 className="font-heading text-xl md:text-2xl mb-10">
+                QUESTIONS <span className="text-[#E50000]">FRÉQUENTES</span>
+              </h2>
+              <div className="space-y-4">
+                {faqData.map((item, i) => (
+                  <details
+                    key={i}
+                    className="group bg-[#111111] border border-white/5 rounded-xl overflow-hidden hover:border-[#E50000]/20 transition-colors"
+                  >
+                    <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none">
+                      <h3 className="font-heading text-base md:text-lg text-white leading-snug">
+                        {item.question}
+                      </h3>
+                      <span className="shrink-0 w-8 h-8 rounded-full bg-[#E50000]/10 flex items-center justify-center text-[#E50000] group-open:rotate-45 transition-transform duration-200">
+                        +
+                      </span>
+                    </summary>
+                    <div className="px-6 pb-6 text-gray-400 leading-relaxed">
+                      {item.answer}
+                    </div>
+                  </details>
+                ))}
               </div>
             </div>
           </section>

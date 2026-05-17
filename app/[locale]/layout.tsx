@@ -54,8 +54,12 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const frenchAreas = [
     ...frenchCities.map((name) => ({ "@type": "City", name })),
+    { "@type": "City", name: "Basel" },
+    { "@type": "City", name: "Mulhouse" },
     { "@type": "AdministrativeArea", name: "Haut-Rhin" },
+    { "@type": "AdministrativeArea", name: "Basel-Stadt" },
     { "@type": "Country", name: "France" },
+    { "@type": "Country", name: "Suisse" },
   ];
 
   const triboarderAreas = [
@@ -75,6 +79,27 @@ export default async function LocaleLayout({ children, params }: Props) {
   const serviceNames = ts.raw("service_names") as string[];
 
   const catalogName = ts("catalog_name");
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://aiman-renovation.fr/#website",
+    url: "https://aiman-renovation.fr",
+    name: "Aiman Renovation",
+    description: tc("slogan"),
+    publisher: {
+      "@id": "https://aiman-renovation.fr/#organization",
+    },
+    inLanguage: locale,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://aiman-renovation.fr/services/{search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
 
   const organizationJsonLd = {
     "@context": "https://schema.org",
@@ -151,22 +176,70 @@ export default async function LocaleLayout({ children, params }: Props) {
       },
     ],
     sameAs: [
-      "https://www.facebook.com/aimanrenovation",
-      "https://www.instagram.com/aimanrenovation",
-      "https://www.linkedin.com/company/aiman-renovation",
-      "https://www.tiktok.com/@aimanrenovation",
+      "https://www.facebook.com/AimanRenovation/",
+      "https://www.instagram.com/aiman_renovation/",
+      "https://www.linkedin.com/company/aiman-renovation-68",
+      "https://www.tiktok.com/@aiman.renovation",
     ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: tc("phone"),
-      contactType: "customer service",
-      areaServed: "FR",
-      availableLanguage: ["French", "Arabic"],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: tc("phone"),
+        contactType: "customer service",
+        areaServed: ["FR", "CH", "DE"],
+        availableLanguage: ["French", "Arabic", "English"],
+        hoursAvailable: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "08:00",
+          closes: "18:00",
+        },
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: tc("email"),
+        availableLanguage: ["French", "Arabic", "English"],
+      },
+    ],
+    knowsAbout: [
+      "Rénovation intérieure",
+      "Rénovation extérieure",
+      "Salle de bain",
+      "Cuisine équipée",
+      "Électricité bâtiment",
+      "Plomberie",
+      "Carrelage grand format",
+      "Isolation thermique ITE",
+      "Ravalement de façade",
+      "Peinture en bâtiment",
+      "Renovation Haut-Rhin",
+      "Artisan Saint-Louis 68300",
+      "Renovierung Basel",
+      "Rénovation tri-frontière",
+    ],
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "Garantie Décennale",
+        description: "Assurance décennale couvrant tous les travaux de rénovation pendant 10 ans",
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        name: "RC Professionnelle",
+        description: "Responsabilité civile professionnelle",
+      },
+    ],
+    numberOfEmployees: {
+      "@type": "QuantitativeValue",
+      minValue: 5,
+      maxValue: 15,
     },
   };
 
   return (
     <NextIntlClientProvider messages={messages}>
+      <JsonLd data={websiteJsonLd} />
       <JsonLd data={organizationJsonLd} />
       <SmoothScrollProvider>
         <Navbar />

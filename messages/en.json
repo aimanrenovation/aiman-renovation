@@ -174,7 +174,7 @@
           "desc": "All our work is covered by a ten-year structural guarantee and professional liability insurance."
         },
         {
-          "title": "Free quote within 4 days",
+          "title": "Free quote within 48h",
           "desc": "On-site survey included, detailed and transparent quote. No obligation."
         },
         {
@@ -197,7 +197,7 @@
     },
     "cta_banner": {
       "title": "GOT A PROJECT IN MIND?",
-      "subtitle": "Free quote within 4 days, no obligation.",
+      "subtitle": "Free quote within 48h, no obligation.",
       "button": "Request a quote",
       "call_prefix": "or call us on"
     }
@@ -258,7 +258,7 @@
       {
         "number": "03",
         "title": "Detailed quote",
-        "desc": "Within 4 days you receive a full quote: work item by item, materials, timeline and total cost."
+        "desc": "Within 48h you receive a full quote: work item by item, materials, timeline and total cost."
       },
       {
         "number": "04",
@@ -321,7 +321,7 @@
     ]
   },
   "services": {
-    "seo_title": "Our Renovation Services in the Basel Area",
+    "seo_title": "Renovation Services Basel Area & Tri-Border Region",
     "seo_description": "Kitchen, bathroom, electrical work, plumbing, tiling, facades, insulation, painting, EV charging, solar panels. Qualified contractor, Basel tri-border region.",
     "hero_title": "OUR",
     "hero_title_highlight": "SERVICES",
@@ -342,11 +342,11 @@
     "cta_title_line1": "INTERESTED IN",
     "cta_title_line2": "THIS",
     "cta_title_highlight": "SERVICE",
-    "cta_subtitle": "Describe your project and receive a free quote within 4 days. No obligation.",
+    "cta_subtitle": "Describe your project and receive a free quote within 48h. No obligation.",
     "cta_button": "Request a quote",
     "cta_hero_button": "Request a free quote",
     "service_meta_suffix": "in the Basel Area — Free Quote",
-    "service_meta_desc_suffix": "Qualified contractor in the Basel tri-border area. Free quote within 4 days."
+    "service_meta_desc_suffix": "Qualified contractor in the Basel tri-border area. Free quote within 48h."
   },
   "service_items": [
     {
@@ -947,12 +947,12 @@
   ],
   "contact": {
     "seo_title": "Contact — Renovation Basel & Tri-border Area | Free Quote",
-    "seo_description": "Contact Aiman Renovation on 06 33 49 69 25 or by email. Free quote within 4 days for your renovation work in the Basel tri-border area.",
+    "seo_description": "Contact Aiman Renovation on 03 56 89 44 03 or by email. Free quote within 48h for your renovation work in the Basel tri-border area, no obligation.",
     "hero_title_highlight": "LET'S TALK",
     "hero_title": "ABOUT YOUR PROJECT",
     "hero_subtitle": "First discussion always with no obligation.",
     "reassurance_devis": "Free quote",
-    "reassurance_response": "Response within 4 days",
+    "reassurance_response": "Response within 48h",
     "reassurance_engagement": "No obligation",
     "mobile_whatsapp": "Mobile / WhatsApp",
     "whatsapp": "WhatsApp",
@@ -978,13 +978,13 @@
       "placeholder_message": "Describe your project...",
       "submit": "Send message",
       "sending": "Sending...",
-      "success": "Message sent successfully! We will reply within 4 days.",
+      "success": "Message sent successfully! We will reply within 48h.",
       "error": "An error occurred. Please try again or call us directly."
     }
   },
   "devis": {
     "seo_title": "Free Renovation Quote — Basel Area",
-    "seo_description": "Request your free online quote for renovation work in the Basel area and Haut-Rhin. Response within 4 days, no obligation.",
+    "seo_description": "Request your free online quote for renovation work in the Basel area and Haut-Rhin. Qualified contractor, response within 48h, no obligation.",
     "blueprint": {
       "touch_room": "Tap a room",
       "click_room": "Click a room to get started",
@@ -1321,7 +1321,7 @@
       {
         "category": "Devis",
         "question": "How do I get a quote?",
-        "answer": "Fill in our online form or call us on 06 33 49 69 25. We will send you a detailed quote within 4 days after the site survey.",
+        "answer": "Fill in our online form or call us on 06 33 49 69 25. We will send you a detailed quote within 48h after the site survey.",
         "relatedServices": [
           {
             "label": "Request a quote",
@@ -1358,7 +1358,7 @@
       {
         "category": "Devis",
         "question": "How long will it take to receive my quote?",
-        "answer": "We commit to sending your quote within 4 days of the site survey. For complex projects (facade, solar panels), allow 5 to 7 working days.",
+        "answer": "We commit to sending your quote within 48h of the site survey. For complex projects (facade, solar panels), allow 2 to 4 working days.",
         "relatedServices": [
           {
             "label": "Request a quote",
@@ -1366,7 +1366,7 @@
           },
           {
             "label": "Facade renovation",
-            "href": "/services/ravalement-facade"
+            "href": "/services/facade"
           }
         ]
       },
@@ -1400,7 +1400,7 @@
           },
           {
             "label": "Facade renovation",
-            "href": "/services/ravalement-facade"
+            "href": "/services/facade"
           }
         ]
       },
@@ -1411,7 +1411,7 @@
         "relatedServices": [
           {
             "label": "Facade renovation",
-            "href": "/services/ravalement-facade"
+            "href": "/services/facade"
           },
           {
             "label": "Thermal insulation (EWI)",
@@ -1419,7 +1419,7 @@
           },
           {
             "label": "EV charging points",
-            "href": "/services/bornes-irve"
+            "href": "/services/borne-recharge"
           }
         ]
       },
@@ -1496,7 +1496,7 @@
         "relatedServices": [
           {
             "label": "EV charging points",
-            "href": "/services/bornes-irve"
+            "href": "/services/borne-recharge"
           },
           {
             "label": "Request a quote",
@@ -1879,7 +1879,7 @@
   },
   "seo": {
     "home_title": "Home Renovation Basel Area | Free Quote — Aiman",
-    "home_description": "Home renovation Basel area — kitchen, bathroom, electrical, plumbing, facades, insulation. Qualified contractor, tri-border region. Free quote within 4 days."
+    "home_description": "Home renovation Basel area — kitchen, bathroom, tiling, painting, insulation, facades. Qualified contractor, tri-border region. 10-year guarantee. Free quote within 48h."
   },
   "schema": {
     "organization_type": "HomeAndConstructionBusiness",
@@ -2139,7 +2139,7 @@
     "filter_country": "Country:",
     "cta_title": "JOIN OUR",
     "cta_title_highlight": "SATISFIED CLIENTS",
-    "cta_subtitle": "Free quote within 4 days. Local craftsman, ten-year warranty.",
+    "cta_subtitle": "Free quote within 48h. Local craftsman, ten-year warranty.",
     "cta_button": "Request a free quote"
   },
   "ville_de_items": [
@@ -3216,6 +3216,24 @@
       "excerpt": "Half-timbered houses, multi-story homes, Alsatian farms: renovating an old house in the tri-border area requires specific expertise. Complete guide to local specificities.",
       "author": "AIMAN RENOVATION",
       "content": "## Renovating an Old House in the Tri-Border Area: A Unique Challenge\n\nThe tri-border area uniting southern Alsace, northwestern Switzerland, and southwestern Germany has an exceptionally rich built heritage. From Huningue's half-timbered houses to Hégenheim's Alsatian farms, from Basel's Altbauten to Markgräflerland village houses.\n\n## Types of Old Houses\n\n### Half-Timbered Houses\n\nTimber-frame construction with infill of cob, brick, or sandstone. Found in <a href=\"/renovation/saint-louis\">Saint-Louis</a>, <a href=\"/renovation/huningue\">Huningue</a>, Hégenheim, and Blotzheim. Challenges: wood-boring insects, crumbling infill, shallow foundations, rising damp.\n\n### Multi-Story Alsatian Houses (1850-1940)\n\nRubble stone or brick masonry, wooden beam floors, steep-pitched tile roofs. Thick walls (40-60 cm) with good thermal inertia but poor insulation.\n\n### Alsatian Farms\n\nLarge buildings combining living quarters and agricultural use. Magnificent oak frames, massive volumes, earth or stone floors. Conversion to modern homes is complex but rewarding.\n\n### Basel Altbauten and Markgräflerland Houses\n\nBasel's 1880-1920 apartment buildings with high ceilings and decorative stucco. German houses in rendered masonry.\n\n## Regulatory Differences\n\n### France\n\nDTU standards, prior declaration for exterior changes. 10-year structural warranty, 1-year defect liability.\n\n### Switzerland\n\nSIA standards, cantonal building permits. Stricter energy requirements. SECO declaration for French craftsmen.\n\n### Germany\n\nDIN standards, GEG energy regulations. BEG federal renovation aid.\n\n## Common Issues\n\n### Moisture\n\nRising damp (high water table near Rhine), lateral infiltration, interior condensation. Treatment: resin injection (€200-400/linear metre), drainage, VMC installation.\n\n### Insufficient Insulation\n\n50 cm stone walls: R = 0.5-1 vs R = 4-5 for modern standards. <a href=\"/services/isolation\">Insulation</a> is the most cost-effective investment. Use breathable materials for old walls.\n\n### Weak Foundations\n\nShallow rubble masonry foundations. Signs: staircase cracks, doors not closing, sinking floors. Reinforcement: €5,000-20,000.\n\n## Preserving Character While Modernising\n\nRestore original elements rather than replacing. Respect proportions and materials. Use lime renders over cement. Choose biosourced insulation (wood fibre, hemp, cork) for breathability.\n\n## Cross-Border Workers as Clients\n\nThousands of French cross-border workers know Swiss and German quality standards. At <a href=\"/a-propos\">AIMAN RENOVATION</a>, we offer evening and Saturday appointments and daily WhatsApp photo updates.\n\n## FAQ\n\n### How much does it cost to renovate a 120 m² old house?\n\nIntermediate renovation: €80,000-140,000. Complete renovation including roof and foundations: €150,000-250,000.\n\n### Can a French craftsman work in Switzerland and Germany?\n\nYes. In Germany, EU free movement applies. In Switzerland, SECO declaration required for stays over 8 days/year.\n\n### Interior or exterior insulation for half-timbered houses?\n\nInterior with breathable materials for visible timber facades. Exterior for non-visible walls. Mixed approach often best.\n\nContact <a href=\"/devis\">AIMAN RENOVATION</a> for a free technical visit. We know every municipality and building type in the region."
+    },
+    {
+      "slug": "renovation-maison-mulhouse-artisan",
+      "title": "Renovation in Mulhouse: Finding a Qualified Craftsman in Haut-Rhin",
+      "seoTitle": "Home Renovation Mulhouse | Qualified Craftsman Haut-Rhin",
+      "seoDescription": "Renovation contractor in Mulhouse and Haut-Rhin. Kitchen, bathroom, electrical, plumbing, facade. AIMAN RENOVATION based in Saint-Louis 68300. Free quote.",
+      "excerpt": "Mulhouse, the second largest city in Haut-Rhin, has strong demand for renovation. AIMAN RENOVATION, based in Saint-Louis, works regularly throughout the Greater Mulhouse area.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Mulhouse: A Growing Renovation Market\n\nMulhouse, with 110,000 inhabitants, is the second largest city in Haut-Rhin. The housing stock from the 1960s-70s requires significant renovation work.\n\n**AIMAN RENOVATION**, based in Saint-Louis 68300, just 20km from Mulhouse, regularly works in the city and surroundings: Illzach, Wittenheim, Kingersheim, Rixheim, Habsheim.\n\n## Most Requested Services in Mulhouse\n\n### Bathroom Renovation in Mulhouse\n\nComplete bathroom renovation in Mulhouse: €6,000 to €16,000 depending on configuration. We install walk-in showers, double vanities and large-format tiles.\n\n### Kitchen Renovation in Mulhouse\n\nOpen kitchens, kitchen islands, complete renovation — Aiman Renovation coordinates all trades for a turnkey result between €8,000 and €22,000.\n\n### Complete Apartment Renovation in Mulhouse\n\nA fully renovated 2-bedroom apartment in Mulhouse (electrical, plumbing, kitchen, bathroom, flooring, painting) costs €30,000 to €50,000. One contact, one overall quote, one schedule.\n\n## Why Choose a Craftsman from Saint-Louis for Mulhouse?\n\nIn 30 minutes, our teams are on-site in any neighborhood of Mulhouse. We know Alsatian construction specificities and local regulations.\n\n## Get a Free Quote for Mulhouse\n\n- Call 06 33 49 69 25\n- Send photos via our online quote form\n- Free technical visit within 48h in Mulhouse\n- Detailed quote within 4 working days, no commitment"
+    },
+    {
+      "slug": "devis-renovation-gratuit-saint-louis",
+      "title": "How to Get a Free Renovation Quote in Saint-Louis 68?",
+      "seoTitle": "Free Renovation Quote Saint-Louis 68 | Within 48h",
+      "seoDescription": "Get your free renovation quote in Saint-Louis 68300 within 48h. Kitchen, bathroom, electrical, plumbing, insulation. Qualified craftsman Haut-Rhin.",
+      "excerpt": "At AIMAN RENOVATION, the renovation quote is always free, detailed and provided within 4 working days in Saint-Louis and throughout Haut-Rhin.",
+      "author": "AIMAN RENOVATION",
+      "content": "## Why Request a Free Renovation Quote in Saint-Louis?\n\nA renovation quote is the contractual document that sets out the exact scope of work, materials, deadlines and total price. At **AIMAN RENOVATION**, the quote is always free, detailed and provided within 4 working days. No work begins without your written agreement.\n\n## How Does a Quote Work at Aiman Renovation?\n\n### 1. First Contact\n\nCall 06 33 49 69 25 or fill in our online quote form. Describe your project: type of work, area, desired timeline, indicative budget. We call back within 24h.\n\n### 2. Free Technical Visit\n\nFor any significant project, we organize a free technical visit at your home. Our craftsmen assess the condition of the surfaces, technical constraints and site access. Visit lasts 30-90 minutes.\n\n### 3. Detailed Quote Within 4 Days\n\nYou receive a written quote including:\n- Precise description of each item of work\n- Proposed materials and equipment\n- Provisional construction schedule\n- Total price excl. and incl. tax\n- Payment terms\n\n## What Work Can I Get a Free Quote For?\n\nAiman Renovation provides free quotes for all renovation work in Haut-Rhin:\n- Bathroom and kitchen renovation\n- Electrical and plumbing work\n- Tiling, parquet, polished concrete, LVT\n- Interior and exterior painting\n- Facade rendering\n- Thermal and acoustic insulation\n- Complete apartment or house renovation\n- EV charging point installation and solar panels\n\n## Coverage Area for Free Quotes\n\nFree quotes at home throughout Haut-Rhin: **Saint-Louis, Huningue, Hégenheim, Bartenheim, Blotzheim, Kembs, Mulhouse, Rixheim, Habsheim.** We also work regularly for clients in Switzerland (Basel) and Germany (Lörrach, Weil am Rhein)."
     }
   ],
   "calculateur": {
