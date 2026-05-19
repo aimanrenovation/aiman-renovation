@@ -1,7 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { getAlternates } from "@/lib/i18n-helpers";
 import { CalculateurClient } from "@/components/calculateur/calculateur-client";
-import { getAlternates } from "@/lib/i18n-helpers";
 
 type Props = { params: Promise<{ locale: string }> };
 
