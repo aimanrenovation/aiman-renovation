@@ -158,17 +158,26 @@ Les slugs actuels correspondent bien aux requêtes principales :
 - **FAQPage JSON-LD** ajouté sur toutes les pages service (People Also Ask / rich snippets)
 - **Section FAQ visuelle** ajoutée sur les pages service, avant le CTA final
 - **Titres SEO améliorés** : home_title démarre désormais par le mot-clé ("Artisan Rénovation Saint-Louis 68 | Haut-Rhin & Bâle"), services/contact/devis/faq/about enrichis avec ville + 68300
-- **Twitter card** ajoutée sur les pages manquantes : services, faq, contact, a-propos, blog (liste), réalisations
+- **Twitter card** ajoutée sur les pages manquantes : services, faq, contact, a-propos, blog (liste), réalisations, carrieres, partenaires, avis
 - **BreadcrumbList JSON-LD** ajouté sur la page services (via JsonLd statique, les autres pages utilisent déjà le composant Breadcrumb qui émet le JSON-LD automatiquement)
-- **Sitemap enrichi** : `/devis-cuisine` (0.85), `/devis-salle-de-bain` (0.85), `/devis-facade` (0.8), `/calculateur` (0.7) ajoutés
+- **Sitemap enrichi** : `/devis-cuisine` (0.85), `/devis-salle-de-bain` (0.85), `/devis-facade` (0.8), `/calculateur` (0.8) ajoutés
+- **schema service_names** : 15 services au lieu de 12, libellés précis et complets
+- **sameAs** corrigé dans layout (URLs Instagram/Facebook/LinkedIn/TikTok exactes depuis constants.ts)
+- **contactPoint** étendu : areaServed ["FR", "CH", "DE"] + langue allemande, 2 points de contact (téléphone + email)
+- **OG images** service-spécifiques sur devis-salle-de-bain, devis-cuisine, devis-facade, carrieres
+- **hreflang** ajouté aux pages devis spécialisées et calculateur via getAlternates
 
-### Observations hors SEO (ne pas corriger dans cette PR)
+### Observations hors périmètre (à traiter phase 3)
 
 - Le composant `<Breadcrumb>` n'affiche le fil visuellement que pour les pages avec 3+ items (profondeur 2+). Pour les pages de niveau 1 (contact, faq), le JSON-LD est émis mais le fil d'Ariane visuel ne s'affiche pas. C'est un choix UX intentionnel documenté dans le composant.
 - La page `/devis` n'a pas de `<Breadcrumb>` dans son rendu — le JSON-LD breadcrumb est absent pour cette page. À ajouter en phase 3.
 - Les pages `/devis-cuisine`, `/devis-salle-de-bain`, `/devis-facade` ne sont pas liées depuis le footer ni depuis les pages services correspondantes. Maillage interne à améliorer.
 - La page `/avis` utilise `dangerouslySetInnerHTML` pour ses schemas JSON-LD au lieu du composant `<JsonLd>` — fonctionnellement identique mais inconsistant avec le reste. À uniformiser lors d'un refactoring.
 - `/renovation/` sans slug n'a pas de page d'atterrissage dédiée (hub des villes françaises). À créer pour le maillage interne.
+- `app/[locale]/blog/[slug]/page.tsx` : les articles de blog n'ont pas de balise `datePublished` dans le schema Article — à ajouter pour les rich snippets Google News.
+- Pages `mentions-legales`, `cgv`, `politique-confidentialite` : pas de `robots: { index: false }` — ces pages légales pourraient avoir `noindex` pour éviter le contenu dupliqué dans l'index Google.
+- La page `/calculateur` n'a pas de schema `HowTo` ou `WebApplication` — opportunité rich snippet à exploiter.
+- Le champ `telephone` dans le schema LocalBusiness utilise le format local FR (`06 33 49 69 25`) — Google préfère le format E.164 international (`+33633496925`) pour la zone transfrontalière.
 
 ---
 
@@ -188,5 +197,6 @@ Les slugs actuels correspondent bien aux requêtes principales :
 - **Core Web Vitals** : Vérifier LCP/CLS/INP sur la page /devis (Three.js). Envisager lazy-loading de la scène 3D.
 - **Images WebP/AVIF** : Ajouter `formats: ['image/avif', 'image/webp']` dans next.config.ts.
 - **Schema Review** : Ajouter des avis Google structurés dès qu'ils sont disponibles (Review/AggregateRating sur les pages service).
+- **robots.ts** : envisager d'ajouter `Google-Extended` aux crawlers bloqués si nécessaire.
 
 *Dernière mise à jour : phase 2 — mai 2026*
