@@ -944,7 +944,7 @@ export const SERVICES: Service[] = [
           "Une isolation thermique par l'extérieur (ITE) coûte entre 80 et 200 €/m² à Saint-Louis et dans le Haut-Rhin, selon l'épaisseur de l'isolant et la finition choisie. Après déduction de MaPrimeRénov' et des CEE, le reste à charge peut être réduit de 40 à 70 %. Devis et simulation d'aides gratuits sur demande.",
       },
     ],
-    relatedSlugs: ["facade", "renovation-complete", "peinture"],
+    relatedSlugs: ["facade", "renovation-complete", "panneaux-photovoltaiques"],
   },
   {
     slug: "facade",
