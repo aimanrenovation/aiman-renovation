@@ -53,6 +53,20 @@ export async function generateMetadata({ params }: Props) {
       siteName: "Aiman Renovation",
       type: "website",
       locale: isDE ? "de_DE" : isFR ? "fr_FR" : "en_US",
+      images: [
+        {
+          url: "https://aiman-renovation.fr/images/ambiance-resultat.jpg",
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["https://aiman-renovation.fr/images/ambiance-resultat.jpg"],
     },
   };
 }

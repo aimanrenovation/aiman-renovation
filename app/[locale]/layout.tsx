@@ -187,7 +187,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         telephone: tc("phone"),
         contactType: "customer service",
         areaServed: ["FR", "CH", "DE"],
-        availableLanguage: ["French", "Arabic", "English"],
+        availableLanguage: ["French", "Arabic", "German"],
         hoursAvailable: {
           "@type": "OpeningHoursSpecification",
           dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -199,7 +199,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         "@type": "ContactPoint",
         contactType: "sales",
         email: tc("email"),
-        availableLanguage: ["French", "Arabic", "English"],
+        availableLanguage: ["French", "Arabic", "German"],
       },
     ],
     knowsAbout: [

@@ -1998,16 +1998,19 @@
     "service_names": [
       "Rénovation de cuisine",
       "Rénovation de salle de bain",
-      "Électricité",
-      "Plomberie",
-      "Carrelage",
-      "Façade & Isolation",
+      "Électricité — mise aux normes NF C 15-100",
+      "Plomberie — réseaux eau et sanitaires",
+      "Sols et carrelage",
+      "Peinture intérieure et extérieure",
+      "Ravalement de façade",
+      "Isolation thermique et acoustique",
       "Aménagement paysager",
-      "Peinture & Finitions",
-      "Borne de recharge",
+      "Rénovation complète appartement et maison",
+      "Borne de recharge IRVE",
       "Panneaux photovoltaïques",
-      "Entretien extérieur",
-      "Dépannage & Urgence"
+      "Entretien des espaces extérieurs",
+      "Dépannage urgence 24h/24",
+      "Nettoyage haute pression eau chaude"
     ],
     "catalog_name": "Nos services de rénovation"
   },

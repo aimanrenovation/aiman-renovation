@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { setRequestLocale } from "next-intl/server";
 import { Breadcrumb } from "@/components/breadcrumb";
+import { getAlternates } from "@/lib/i18n-helpers";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: Props) {
           url: "https://aiman-renovation.fr/images/photo-facade.jpg",
           width: 1200,
           height: 630,
-          alt: "Ravalement de façade — Aiman Renovation Haut-Rhin",
+          alt: "Ravalement de façade — Aiman Renovation Haut-Rhin Alsace",
         },
       ],
     },
@@ -34,9 +35,7 @@ export async function generateMetadata({ params }: Props) {
       description,
       images: ["https://aiman-renovation.fr/images/photo-facade.jpg"],
     },
-    alternates: {
-      canonical: "https://aiman-renovation.fr/devis-facade",
-    },
+    alternates: getAlternates("/devis-facade"),
   };
 }
 
